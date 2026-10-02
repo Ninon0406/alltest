@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สคริปต์พรีเซนต์ & ละครสั้น - เภสัชกร vs AI</title>
+    <title>สคริปต์พรีเซนต์ & ละครสั้น - AI vs. Humans: Pharmacist</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Kanit & Inter -->
@@ -45,7 +45,6 @@
             font-weight: 600;
             border: 1px dashed #ca8a04;
         }
-        /* Custom scrollbar for horizontal button container */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -63,91 +62,90 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen pb-16">
 
     <!-- Header (Scrolls away naturally) -->
-    <header class="bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900 text-white shadow-md no-print">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+    <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white shadow-md no-print">
+        <div class="max-w-5xl mx-auto px-4 py-3.5 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center space-x-3 w-full sm:w-auto">
-                <div class="bg-indigo-500/30 p-2 rounded-xl border border-indigo-400/30 shrink-0">
+                <div class="bg-indigo-500/30 p-2.5 rounded-xl border border-indigo-400/30 shrink-0">
                     <i class="fa-solid fa-user-doctor text-xl text-cyan-400"></i>
                 </div>
                 <div>
-                    <h1 class="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-200 leading-tight">
+                    <h1 class="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-200 to-white leading-tight">
                         AI vs. Humans: Pharmacist
                     </h1>
-                    <p class="text-[11px] text-slate-300">สคริปต์การนำเสนอ & บทละครสั้น (4 คน)</p>
+                    <p class="text-[11px] text-slate-300">สคริปต์พรีเซนต์ & ละครสั้น (แบ่งบทเท่ากัน 4 คน ~25%)</p>
                 </div>
             </div>
             
             <!-- Quick Actions -->
             <div class="flex items-center space-x-2 text-xs w-full sm:w-auto justify-end">
-                <button onclick="openTeleprompter()" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg shadow-sm flex items-center space-x-1.5 transition">
+                <button onclick="openTeleprompter()" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl shadow-sm flex items-center space-x-1.5 transition">
                     <i class="fa-solid fa-circle-play text-cyan-300"></i>
                     <span>โหมดซ้อมพูด (Prompter)</span>
                 </button>
-                <button onclick="window.print()" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg border border-slate-700 flex items-center space-x-1 transition" title="พิมพ์">
+                <button onclick="window.print()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl border border-slate-700 flex items-center space-x-1 transition" title="พิมพ์สคริปต์">
                     <i class="fa-solid fa-print text-cyan-400"></i>
                 </button>
-                <button onclick="toggleVocabModal()" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg border border-slate-700 flex items-center space-x-1 transition" title="เช็คคำศัพท์">
+                <button onclick="toggleVocabModal()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl border border-slate-700 flex items-center space-x-1 transition" title="เช็คคำศัพท์บังคับ">
                     <i class="fa-solid fa-book-bookmark text-yellow-400"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Container -->
     <main class="max-w-5xl mx-auto px-3 sm:px-4 pt-4">
 
         <!-- Role Selector & Display Controls (Scrolls away naturally) -->
-        <section class="bg-white rounded-xl p-3 shadow-sm border border-slate-200/80 mb-4 no-print">
+        <section class="bg-white rounded-2xl p-3.5 shadow-sm border border-slate-200/80 mb-4 no-print">
             <div class="flex flex-col gap-3">
-                <!-- Compact Horizontal Scrollable Member Filter -->
+                <!-- Member Filter -->
                 <div>
-                    <div class="flex items-center justify-between mb-1.5">
+                    <div class="flex items-center justify-between mb-2">
                         <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wider flex items-center">
-                            <i class="fa-solid fa-filter text-indigo-500 mr-1"></i> เลือกส่องบทของคุณ:
+                            <i class="fa-solid fa-filter text-indigo-500 mr-1.5"></i> กรองดูบทเฉพาะบุคคล:
                         </label>
-                        <span id="activeFilterBadge" class="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
-                            แสดงทั้งหมด
+                        <span id="activeFilterBadge" class="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
+                            แสดงบททั้งหมด
                         </span>
                     </div>
-                    <div class="flex space-x-1.5 overflow-x-auto no-scrollbar py-1" id="memberFilterContainer">
-                        <button onclick="filterMember('all')" id="btn-all" class="member-btn active whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition border border-indigo-600 bg-indigo-600 text-white shadow-sm shrink-0">
-                            👥 ทั้งหมด
+                    <div class="flex space-x-2 overflow-x-auto no-scrollbar py-0.5" id="memberFilterContainer">
+                        <button onclick="filterMember('all')" id="btn-all" class="member-btn active whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-indigo-600 bg-indigo-600 text-white shadow-sm shrink-0">
+                            👥 ทั้งหมด (100%)
                         </button>
-                        <button onclick="filterMember('boat')" id="btn-boat" class="member-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-blue-50 shrink-0">
-                            🤖 โบ๊ท (~30%)
+                        <button onclick="filterMember('boat')" id="btn-boat" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-blue-50 shrink-0">
+                            🤖 โบ๊ท (~25%)
                         </button>
-                        <button onclick="filterMember('nont')" id="btn-nont" class="member-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-teal-50 shrink-0">
-                            👨‍⚕️ นนท์ (~30%)
+                        <button onclick="filterMember('nont')" id="btn-nont" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-teal-50 shrink-0">
+                            👨‍⚕️️ นนท์ (~25%)
                         </button>
-                        <button onclick="filterMember('pun')" id="btn-pun" class="member-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-rose-50 shrink-0">
-                            🤒 ปั้น (~20%)
+                        <button onclick="filterMember('pun')" id="btn-pun" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-rose-50 shrink-0">
+                            🤒 ปั้น (~25%)
                         </button>
-                        <button onclick="filterMember('game')" id="btn-game" class="member-btn whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-purple-50 shrink-0">
-                            👨‍💼 เกม (~20%)
+                        <button onclick="filterMember('game')" id="btn-game" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-purple-50 shrink-0">
+                            👨‍💼 เกม (~25%)
                         </button>
                     </div>
                 </div>
 
-                <!-- Display Toggles & TTS Speed -->
-                <div class="border-t border-slate-100 pt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <!-- Display Toggles & Speech Settings -->
+                <div class="border-t border-slate-100 pt-2.5 flex flex-wrap items-center justify-between gap-2 text-xs">
                     <div class="flex items-center space-x-4">
                         <label class="inline-flex items-center cursor-pointer font-medium text-slate-700">
                             <input type="checkbox" id="togglePhonetics" checked onchange="toggleDisplayOptions()" class="sr-only peer">
                             <div class="w-7 h-3.5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[1px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-indigo-600 relative"></div>
-                            <span class="ml-1.5 text-[11px]">คำอ่านไทย</span>
+                            <span class="ml-1.5 text-[11px] text-slate-600">คำอ่านไทย</span>
                         </label>
                         <label class="inline-flex items-center cursor-pointer font-medium text-slate-700">
                             <input type="checkbox" id="toggleTranslation" checked onchange="toggleDisplayOptions()" class="sr-only peer">
                             <div class="w-7 h-3.5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[1px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-indigo-600 relative"></div>
-                            <span class="ml-1.5 text-[11px]">คำแปลไทย</span>
+                            <span class="ml-1.5 text-[11px] text-slate-600">คำแปลไทย</span>
                         </label>
                     </div>
 
                     <!-- Audio Speed Control -->
-                    <div class="flex items-center space-x-1 bg-slate-100 px-2 py-1 rounded-lg">
-                        <i class="fa-solid fa-gauge-high text-slate-400 text-[10px]"></i>
-                        <span class="text-[10px] text-slate-500 font-medium">ความเร็วเสียง:</span>
-                        <select id="ttsRate" class="bg-transparent font-bold text-indigo-600 focus:outline-none text-xs">
+                    <div class="flex items-center space-x-1.5 bg-slate-100 px-2.5 py-1 rounded-lg">
+                        <i class="fa-solid fa-gauge-high text-slate-400 text-[11px]"></i>
+                        <span class="text-[11px] text-slate-500 font-medium">ความเร็วเสียง:</span>
+                        <select id="ttsRate" class="bg-transparent font-bold text-indigo-600 focus:outline-none text-xs cursor-pointer">
                             <option value="0.75">0.75x</option>
                             <option value="0.9" selected>0.9x</option>
                             <option value="1.0">1.0x</option>
@@ -157,15 +155,15 @@
             </div>
         </section>
 
-        <!-- Member Summary Banner -->
+        <!-- Equal Share Banner -->
         <section class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6 no-print">
             <div class="bg-blue-50/80 border border-blue-200/80 rounded-xl p-2.5 flex items-center space-x-2.5">
                 <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
                     โบ๊ท
                 </div>
                 <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-blue-900 truncate">โบ๊ท (30%)</h3>
-                    <p class="text-[10px] text-blue-700 truncate">ผู้หลัก / AI</p>
+                    <h3 class="text-xs font-bold text-blue-900 truncate">โบ๊ท (25%)</h3>
+                    <p class="text-[10px] text-blue-700 truncate">Intro / AI Assistant</p>
                 </div>
             </div>
 
@@ -174,8 +172,8 @@
                     นนท์
                 </div>
                 <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-teal-900 truncate">นนท์ (30%)</h3>
-                    <p class="text-[10px] text-teal-700 truncate">พูดหลัก / เภสัชกร</p>
+                    <h3 class="text-xs font-bold text-teal-900 truncate">นนท์ (25%)</h3>
+                    <p class="text-[10px] text-teal-700 truncate">Human Factors / Pharmacist</p>
                 </div>
             </div>
 
@@ -184,8 +182,8 @@
                     ปั้น
                 </div>
                 <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-rose-900 truncate">ปั้น (20%)</h3>
-                    <p class="text-[10px] text-rose-700 truncate">พูดสั้นง่าย / คนไข้</p>
+                    <h3 class="text-xs font-bold text-rose-900 truncate">ปั้น (25%)</h3>
+                    <p class="text-[10px] text-rose-700 truncate">AI Limitations / Patient</p>
                 </div>
             </div>
 
@@ -194,8 +192,8 @@
                     เกม
                 </div>
                 <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-purple-900 truncate">เกม (20%)</h3>
-                    <p class="text-[10px] text-purple-700 truncate">พูดสั้นง่าย / ผู้ช่วย</p>
+                    <h3 class="text-xs font-bold text-purple-900 truncate">เกม (25%)</h3>
+                    <p class="text-[10px] text-purple-700 truncate">Responsibility / Co-worker</p>
                 </div>
             </div>
         </section>
@@ -204,10 +202,10 @@
         <div class="mb-8">
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center space-x-2">
-                    <span class="bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-md">PART 1</span>
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">PART 1</span>
                     <h2 class="text-lg font-bold text-slate-800">Presentation (การนำเสนอ)</h2>
                 </div>
-                <span class="text-[11px] text-slate-500 font-normal">~3 นาที</span>
+                <span class="text-[11px] text-slate-500 font-normal">8 บทพูด (~3 นาที)</span>
             </div>
 
             <div class="space-y-3" id="presentationContainer">
@@ -219,10 +217,10 @@
         <div class="mb-8">
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center space-x-2">
-                    <span class="bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-md">PART 2</span>
+                    <span class="bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">PART 2</span>
                     <h2 class="text-lg font-bold text-slate-800">Short Role-Play (บทละครสั้น)</h2>
                 </div>
-                <span class="text-[11px] text-slate-500 font-normal">~1.5 นาที</span>
+                <span class="text-[11px] text-slate-500 font-normal">8 บทพูด (~2 นาที)</span>
             </div>
 
             <div class="space-y-3" id="roleplayContainer">
@@ -234,11 +232,11 @@
 
     <!-- Vocab Modal -->
     <div id="vocabModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-100">
+        <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-100">
             <div class="flex justify-between items-center pb-3 border-b border-slate-100 mb-3">
                 <h3 class="text-base font-bold text-slate-800 flex items-center">
                     <i class="fa-solid fa-graduation-cap text-indigo-600 mr-2"></i>
-                    ตารางคำศัพท์บังคับ (Units 1-4)
+                    การกระจายคำศัพท์บังคับ (Units 1-4)
                 </h3>
                 <button onclick="toggleVocabModal()" class="text-slate-400 hover:text-slate-600 p-1">
                     <i class="fa-solid fa-xmark text-lg"></i>
@@ -246,28 +244,28 @@
             </div>
 
             <p class="text-xs text-slate-500 mb-3">
-                คำศัพท์ตามเกณฑ์ที่ต้องมีในบทเรียน Units 1, 2, 3 และ 4 (ครบถ้วน):
+                ตรวจสอบตำแหน่งคำศัพท์สำคัญทั้ง 4 บทตามโครงสร้างบทเรียน:
             </p>
 
             <div class="space-y-2.5 text-xs">
-                <div class="p-2.5 bg-yellow-50 border border-yellow-200 rounded-xl">
-                    <div class="font-bold text-yellow-900">Unit 1: <span class="text-yellow-700">multitasker</span> (หน้า WHO ARE YOU?)</div>
-                    <div class="text-[11px] text-yellow-800 mt-0.5">ผู้พูด: <b>โบ๊ท</b> (Presentation 1)</div>
+                <div class="p-2.5 bg-blue-50 border border-blue-200 rounded-xl">
+                    <div class="font-bold text-blue-900">Unit 1: <span class="text-blue-700">multitasker</span></div>
+                    <div class="text-[11px] text-blue-800 mt-0.5">ผู้พูด: <b>โบ๊ท</b> (Presentation - ประโยคที่ 1)</div>
                 </div>
 
                 <div class="p-2.5 bg-teal-50 border border-teal-200 rounded-xl">
-                    <div class="font-bold text-teal-900">Unit 2: <span class="text-teal-700">in a bad mood</span> (หน้า People Pleaser)</div>
-                    <div class="text-[11px] text-teal-800 mt-0.5">ผู้พูด: <b>นนท์</b> (Presentation 3)</div>
+                    <div class="font-bold text-teal-900">Unit 2: <span class="text-teal-700">in a bad mood</span></div>
+                    <div class="text-[11px] text-teal-800 mt-0.5">ผู้พูด: <b>นนท์</b> (Presentation - ประโยคที่ 3)</div>
                 </div>
 
                 <div class="p-2.5 bg-rose-50 border border-rose-200 rounded-xl">
-                    <div class="font-bold text-rose-900">Unit 3: <span class="text-rose-700">doubted</span> (หน้า The Great Hip Hop Hoax)</div>
-                    <div class="text-[11px] text-rose-800 mt-0.5">ผู้พูด: <b>ปั้น</b> (Role-Play 3)</div>
+                    <div class="font-bold text-rose-900">Unit 3: <span class="text-rose-700">doubted</span></div>
+                    <div class="text-[11px] text-rose-800 mt-0.5">ผู้พูด: <b>ปั้น</b> (Role-Play - ฉากที่ 3)</div>
                 </div>
 
                 <div class="p-2.5 bg-purple-50 border border-purple-200 rounded-xl">
-                    <div class="font-bold text-purple-900">Unit 4: <span class="text-purple-700">take responsibility for</span> (หน้า Gig Work)</div>
-                    <div class="text-[11px] text-purple-800 mt-0.5">ผู้พูด: <b>นนท์</b> (Presentation 4)</div>
+                    <div class="font-bold text-purple-900">Unit 4: <span class="text-purple-700">take responsibility for</span></div>
+                    <div class="text-[11px] text-purple-800 mt-0.5">ผู้พูด: <b>เกม</b> (Presentation - ประโยคที่ 7) ✨</div>
                 </div>
             </div>
 
@@ -284,8 +282,8 @@
         <!-- Top Bar -->
         <div class="p-3 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <span class="text-xs bg-indigo-600 px-2 py-0.5 rounded font-bold">REHEARSAL MODE</span>
-                <span id="prompterCounter" class="text-xs text-slate-400">1 / 14</span>
+                <span class="text-xs bg-indigo-600 px-2.5 py-0.5 rounded font-bold">REHEARSAL MODE</span>
+                <span id="prompterCounter" class="text-xs text-slate-400">1 / 16</span>
             </div>
             <button onclick="closeTeleprompter()" class="text-slate-400 hover:text-white px-2 py-1 text-sm">
                 <i class="fa-solid fa-xmark mr-1"></i> ปิด
@@ -334,19 +332,18 @@
     </div>
 
     <script>
-        // Script Data (Rebalanced: Boat ~30%, Nont ~30%, Pun ~20%, Game ~20%)
-        // Pun & Game lines are simpler & concentrated towards the end of Part 1 & Part 2
+        // Script Data (Rebalanced to ~25% equal split among 4 members)
         const scriptData = [
-            // PART 1: PRESENTATION
+            // PART 1: PRESENTATION (8 Lines - 2 Lines Each)
             {
                 id: "p1",
                 section: "presentation",
                 memberKey: "boat",
                 memberName: "โบ๊ท",
-                memberRole: "Member 1 (~30%)",
+                memberRole: "Member 1 (~25%)",
                 avatarBg: "bg-blue-600",
                 badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "1. Intro & AI Efficiency",
+                roleTitle: "1. Intro & AI Power",
                 en: "Hello everyone. Today, our group presents on Pharmacists vs. AI. I’m Boat, with Nont, Pun, and Game. First, AI is an ultimate <span class='vocab-highlight'>multitasker</span> that checks prescriptions with high accuracy.",
                 rawEn: "Hello everyone. Today, our group presents on Pharmacists vs. AI. I’m Boat, with Nont, Pun, and Game. First, AI is an ultimate multitasker that checks prescriptions with high accuracy.",
                 phonetics: "เฮลโล เอเวอรีวัน. ทูเดย์, เอาเออร์ กรุ๊ป พรีเซนต์ส ออน ฟาร์มาซิสท์ส เวอซัส เอไอ. ไอเอ็ม โบ๊ท, วิธ นนท์, ปั้น, แอนด์ เกม. เฟิร์สท์, เอไอ อิส แอน อัลติเมท มัลติแทสเกอร์ แดต เช็คส์ พรีสคริปชันส์ วิธ ไฮ แอคคิวเรซี.",
@@ -358,14 +355,14 @@
                 section: "presentation",
                 memberKey: "boat",
                 memberName: "โบ๊ท",
-                memberRole: "Member 1 (~30%)",
+                memberRole: "Member 1 (~25%)",
                 avatarBg: "bg-blue-600",
                 badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "2. AI Speed & Accuracy",
-                en: "AI can process thousands of medical records per second without resting, reducing human calculation errors to zero.",
-                rawEn: "AI can process thousands of medical records per second without resting, reducing human calculation errors to zero.",
-                phonetics: "เอไอ แคน โปรเซส เธาแซนดส์ ออฟ เมดิคอล เรคคอร์ดส์ เพอร์ เซเคิลน์ วิธออท เรสติง, รีดิ้วซิง ฮิวแมน แคลคิวเลชัน เออร์เรอร์ส ทู ซีโร.",
-                translation: "AI สามารถประมวลผลข้อมูลการแพทย์ได้หลายพันรายการต่อวินาทีโดยไม่ต้องพัก ซึ่งช่วยลดข้อผิดพลาดในการคำนวณของมนุษย์ให้เป็นศูนย์ครับ",
+                roleTitle: "2. Speed & Data Processing",
+                en: "It can process thousands of medical records per second without resting, reducing human calculation errors to zero.",
+                rawEn: "It can process thousands of medical records per second without resting, reducing human calculation errors to zero.",
+                phonetics: "อิท แคน โปรเซส เธาแซนดส์ ออฟ เมดิคอล เรคคอร์ดส์ เพอร์ เซเคิลน์ วิธออท เรสติง, รีดิ้วซิง ฮิวแมน แคลคิวเลชัน เออร์เรอร์ส ทู ซีโร.",
+                translation: "มันสามารถประมวลผลข้อมูลการแพทย์ได้หลายพันรายการต่อวินาทีโดยไม่ต้องพัก ซึ่งช่วยลดข้อผิดพลาดในการคำนวณของมนุษย์ให้เป็นศูนย์ครับ",
                 vocabBadge: null
             },
             {
@@ -373,14 +370,14 @@
                 section: "presentation",
                 memberKey: "nont",
                 memberName: "นนท์",
-                memberRole: "Member 2 (~30%)",
+                memberRole: "Member 2 (~25%)",
                 avatarBg: "bg-teal-600",
                 badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "3. Human Factors & Limitations",
-                en: "On the other hand, human pharmacists can be tired or <span class='vocab-highlight'>in a bad mood</span>, which may lead to mistakes. However, AI lacks genuine empathy.",
-                rawEn: "On the other hand, human pharmacists can be tired or in a bad mood, which may lead to mistakes. However, AI lacks genuine empathy.",
-                phonetics: "ออน ดิ ออเธอร์ แฮนด์, ฮิวแมน ฟาร์มาซิสท์ส แคน บี ไทเออร์ด ออร์ อิน แอ แบด มูด, วิช เมย์ ลีด ทู มิสเทคส์. เฮาเอฟเวอร์, เอไอ แคล็กส์ เจนยูอิน เอมพาธี.",
-                translation: "ในทางกลับกัน เภสัชกรมนุษย์อาจจะเหนื่อยล้าหรืออารมณ์ไม่ดี (in a bad mood) ซึ่งอาจทำให้เกิดข้อผิดพลาดได้ แต่ AI ก็ขาดความเข้าใจและความเห็นอกเห็นใจที่แท้จริงครับ",
+                roleTitle: "3. Human Limitations",
+                en: "On the other hand, human pharmacists can get tired or be <span class='vocab-highlight'>in a bad mood</span>, which may lead to occasional mistakes.",
+                rawEn: "On the other hand, human pharmacists can get tired or be in a bad mood, which may lead to occasional mistakes.",
+                phonetics: "ออน ดิ ออเธอร์ แฮนด์, ฮิวแมน ฟาร์มาซิสท์ส แคน เก็ต ไทเออร์ด ออร์ บี อิน แอ แบด มูด, วิช เมย์ ลีด ทู ออเคชันเนิล มิสเทคส์.",
+                translation: "ในทางกลับกัน เภสัชกรมนุษย์อาจจะเหนื่อยล้าหรืออารมณ์ไม่ดี (in a bad mood) ซึ่งอาจทำให้เกิดข้อผิดพลาดขึ้นได้เป็นบางครั้งครับ",
                 vocabBadge: "Unit 2 Vocab: in a bad mood"
             },
             {
@@ -388,61 +385,91 @@
                 section: "presentation",
                 memberKey: "nont",
                 memberName: "นนท์",
-                memberRole: "Member 2 (~30%)",
+                memberRole: "Member 2 (~25%)",
                 avatarBg: "bg-teal-600",
                 badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "4. Human Responsibility",
-                en: "Human pharmacists must <span class='vocab-highlight'>take responsibility for</span> real patient care, giving personal advice that machines cannot provide.",
-                rawEn: "Human pharmacists must take responsibility for real patient care, giving personal advice that machines cannot provide.",
-                phonetics: "ฮิวแมน ฟาร์มาซิสท์ส มัสท์ เทค รีสปอนซิบิลิตี ฟอร์ เรียล เพเชียนท์ แคร์, กิฟวิง เพอร์ซันเนิล แอดไวซ์ แดต แมชชีนส์ แคนน็อต โปรไวด์.",
-                translation: "เภสัชกรมนุษย์ต้องรับผิดชอบต่อ (take responsibility for) การดูแลผู้ป่วยจริง โดยให้คำแนะนำเฉพาะบุคคลที่เครื่องจักรไม่สามารถให้ได้ครับ",
-                vocabBadge: "Unit 4 Vocab: take responsibility for"
+                roleTitle: "4. Human Empathy & Trust",
+                en: "However, AI lacks genuine empathy, personal warm advice, and the ability to build real trust with patients.",
+                rawEn: "However, AI lacks genuine empathy, personal warm advice, and the ability to build real trust with patients.",
+                phonetics: "เฮาเอฟเวอร์, เอไอ แคล็กส์ เจนยูอิน เอมพาธี, เพอร์ซันเนิล วอร์ม แอดไวซ์, แอนด์ ดิ แอบิลิตี ทู บิลด์ เรียล ทรัสท์ วิธ เพเชียนท์ส.",
+                translation: "อย่างไรก็ตาม AI ก็ขาดความเข้าใจและความเห็นอกเห็นใจที่แท้จริง ขาดคำแนะนำที่อบอุ่น และไม่สามารถสร้างความไว้วางใจกับผู้ป่วยได้ครับ",
+                vocabBadge: null
             },
             {
                 id: "p5",
                 section: "presentation",
                 memberKey: "pun",
                 memberName: "ปั้น",
-                memberRole: "Member 3 (~20% - ง่าย)",
+                memberRole: "Member 3 (~25%)",
                 avatarBg: "bg-rose-600",
                 badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "5. Short Key Summary",
-                en: "So, AI works fast, but human pharmacists give personal care.",
-                rawEn: "So, AI works fast, but human pharmacists give personal care.",
-                phonetics: "โซ, เอไอ เวิร์คส์ ฟาสท์, บัท ฮิวแมน ฟาร์มาซิสท์ส กิฟ เพอร์ซันเนิล แคร์.",
-                translation: "ดังนั้น AI ทำงานได้เร็ว แต่เภสัชกรมนุษย์ให้การดูแลอย่างใส่ใจครับ",
+                roleTitle: "5. AI Limitations & Handwriting",
+                en: "AI might misread complex doctor handwriting or miss unique patient medical history that needs human judgment.",
+                rawEn: "AI might misread complex doctor handwriting or miss unique patient medical history that needs human judgment.",
+                phonetics: "เอไอ ไมท์ มิสรีด คอมเพล็กซ์ ดอกเตอร์ แฮนด์ไรทิง ออร์ มิส ยูนีค เพเชียนท์ เมดิคอล ฮิสทรี แดต นีดส์ ฮิวแมน จัดจ์เมนท์.",
+                translation: "นอกจากนี้ AI อาจอ่านลายมือหมอที่ซับซ้อนผิด หรือมองข้ามประวัติสุขภาพเฉพาะบุคคลที่ต้องใช้วิจารณญาณของมนุษย์ครับ",
                 vocabBadge: null
             },
             {
                 id: "p6",
                 section: "presentation",
+                memberKey: "pun",
+                memberName: "ปั้น",
+                memberRole: "Member 3 (~25%)",
+                avatarBg: "bg-rose-600",
+                badgeBg: "bg-rose-100 text-rose-800",
+                roleTitle: "6. Double-checking Safety",
+                en: "Human pharmacists can double-check unexpected side effects and adjust dosages based on real patient conditions.",
+                rawEn: "Human pharmacists can double-check unexpected side effects and adjust dosages based on real patient conditions.",
+                phonetics: "ฮิวแมน ฟาร์มาซิสท์ส แคน ดับเบิล-เช็ค อันเอ็กซ์เพคเทด ไซด์ เอฟเฟกต์ส แอนด์ แอดยัสท์ โดเสจเจส เบสท์ ออน เรียล เพเชียนท์ คอนดิชันส์.",
+                translation: "เภสัชกรมนุษย์สามารถตรวจสอบผลข้างเคียงที่ไม่คาดคิด และปรับขนาดยาตามอาการจริงของผู้ป่วยได้อย่างเหมาะสมครับ",
+                vocabBadge: null
+            },
+            {
+                id: "p7",
+                section: "presentation",
                 memberKey: "game",
                 memberName: "เกม",
-                memberRole: "Member 4 (~20% - ง่าย)",
+                memberRole: "Member 4 (~25%)",
                 avatarBg: "bg-purple-600",
                 badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "6. Transition to Role-play",
-                en: "Together, they make healthcare safer! Now, please enjoy our role-play.",
-                rawEn: "Together, they make healthcare safer! Now, please enjoy our role-play.",
-                phonetics: "ทูเกธเธอร์, เด เมค เฮลท์แคร์ เซฟเฟอร์! นาว, พลีส เอ็นจอย เอาเออร์ โรลเพลย์.",
-                translation: "เมื่อทำงานร่วมกัน จะทำให้การดูแลสุขภาพปลอดภัยยิ่งขึ้น! ต่อไปเชิญรับชมละครสั้นได้เลยครับ",
+                roleTitle: "7. Final Responsibility",
+                en: "Therefore, pharmacists must <span class='vocab-highlight'>take responsibility for</span> final medicine delivery and keep patients completely safe.",
+                rawEn: "Therefore, pharmacists must take responsibility for final medicine delivery and keep patients completely safe.",
+                phonetics: "แดร์ฟอร์, ฟาร์มาซิสท์ส มัสท์ เทค รีสปอนซิบิลิตี ฟอร์ ไฟเนิล เมดิซิน ดีลิเวอรี แอนด์ คีพ เพเชียนท์ส คอมพลีทลี เซฟ.",
+                translation: "ดังนั้น เภสัชกรจึงต้องรับผิดชอบต่อ (take responsibility for) การจ่ายยาขั้นสุดท้าย และดูแลความปลอดภัยของผู้ป่วยให้สมบูรณ์แบบครับ",
+                vocabBadge: "Unit 4 Vocab: take responsibility for"
+            },
+            {
+                id: "p8",
+                section: "presentation",
+                memberKey: "game",
+                memberName: "เกม",
+                memberRole: "Member 4 (~25%)",
+                avatarBg: "bg-purple-600",
+                badgeBg: "bg-purple-100 text-purple-800",
+                roleTitle: "8. Summary & Transition",
+                en: "In conclusion, AI handles data, while humans handle care! Now, please enjoy our short role-play.",
+                rawEn: "In conclusion, AI handles data, while humans handle care! Now, please enjoy our short role-play.",
+                phonetics: "อิน คอนคลูชัน, เอไอ แฮนเดิลส์ เดตา, ไวล ฮิวแมนส์ แฮนเดิล แคร์! นาว, พลีส เอ็นจอย เอาเออร์ โรลเพลย์.",
+                translation: "โดยสรุปแล้ว AI จัดการข้อมูล แต่มนุษย์เป็นผู้ให้การดูแล! ต่อไปเชิญรับชมละครสั้นของพวกเราได้เลยครับ",
                 vocabBadge: null
             },
 
-            // PART 2: ROLE PLAY
+            // PART 2: ROLE PLAY (8 Lines - 2 Lines Each)
             {
                 id: "r1",
                 section: "roleplay",
                 memberKey: "boat",
                 memberName: "โบ๊ท",
-                memberRole: "AI Assistant (หุ่นยนต์)",
+                memberRole: "AI Robot Assistant",
                 avatarBg: "bg-blue-600",
                 badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "ฉาก 1: AI ต้อนรับและตรวจใบสั่งยา",
-                en: "Welcome to AI Pharmacy. Prescription verified. Zero error detected.",
-                rawEn: "Welcome to AI Pharmacy. Prescription verified. Zero error detected.",
-                phonetics: "เวลคัม ทู เอไอ ฟาร์มาซี. พรีสคริปชัน เวอริไฟด์. ซีโร เออร์เรอร์ ดีเทคเทด.",
-                translation: "ยินดีต้อนรับสู่ AI เภสัชกรรม ตรวจสอบใบสั่งยาเรียบร้อย ไม่พบข้อผิดพลาดครับ",
+                roleTitle: "ฉาก 1: AI ต้อนรับและประมวลผลใบสั่งยา",
+                en: "Welcome to AI Pharmacy. Prescription verified. Zero error detected. Dispensing medication now.",
+                rawEn: "Welcome to AI Pharmacy. Prescription verified. Zero error detected. Dispensing medication now.",
+                phonetics: "เวลคัม ทู เอไอ ฟาร์มาซี. พรีสคริปชัน เวอริไฟด์. ซีโร เออร์เรอร์ ดีเทคเทด. ดิสเพนซิง เมดิเคชัน นาว.",
+                translation: "ยินดีต้อนรับสู่ AI เภสัชกรรม ตรวจสอบใบสั่งยาเรียบร้อย ไม่พบข้อผิดพลาด กำลังจ่ายยาครับ",
                 vocabBadge: null
             },
             {
@@ -450,14 +477,14 @@
                 section: "roleplay",
                 memberKey: "nont",
                 memberName: "นนท์",
-                memberRole: "Human Pharmacist (เภสัชกร)",
+                memberRole: "Human Pharmacist",
                 avatarBg: "bg-teal-600",
                 badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "ฉาก 2: เภสัชกรมนุษย์ทักทายและส่งมอบยา",
-                en: "Hello! Here is your medication. Please take one tablet every morning after breakfast.",
-                rawEn: "Hello! Here is your medication. Please take one tablet every morning after breakfast.",
-                phonetics: "เฮลโล! เฮียร์ อิส ยัวร์ เมดิเคชัน. พลีส เทค วัน แทเบล็ต เอเวอรี มอร์นิง อาฟเตอร์ เบรคฟาสท์.",
-                translation: "สวัสดีครับ นี่คือยาของคุณนะครับ รับประทานวันละ 1 เม็ดทุกเช้าหลังอาหารครับ",
+                roleTitle: "ฉาก 2: เภสัชกรมนุษย์ส่งมอบยาและอธิบายวิธีใช้",
+                en: "Hello sir! Here is your medicine. Please take one tablet every morning after breakfast with a full glass of water.",
+                rawEn: "Hello sir! Here is your medicine. Please take one tablet every morning after breakfast with a full glass of water.",
+                phonetics: "เฮลโล เซอร์! เฮียร์ อิส ยัวร์ เมดิซิน. พลีส เทค วัน แทเบล็ต เอเวอรี มอร์นิง อาฟเตอร์ เบรคฟาสท์ วิธ แอ ฟูล กลาส ออฟ วอเทอร์.",
+                translation: "สวัสดีครับคุณผู้ชาย! นี่คือยาของคุณนะครับ รับประทานวันละ 1 เม็ดทุกเช้าหลังอาหาร พร้อมน้ำเต็มแก้วนะครับ",
                 vocabBadge: null
             },
             {
@@ -468,11 +495,11 @@
                 memberRole: "Patient (คนไข้)",
                 avatarBg: "bg-rose-600",
                 badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "ฉาก 3: คนไข้สอบถามด้วยความกังวล",
-                en: "Thank you, but I <span class='vocab-highlight'>doubted</span> if this pill will hurt my stomach.",
-                rawEn: "Thank you, but I doubted if this pill will hurt my stomach.",
-                phonetics: "แธงค์ ยู, บัท ไอ ดาวท์เทด อิฟ ดิส พิลล์ วิล เฮิร์ท ไม สตอมมัค.",
-                translation: "ขอบคุณครับ แต่ผมสงสัย/กังวล (doubted) ว่ายานี้จะกัดกระเพาะผมไหมครับ",
+                roleTitle: "ฉาก 3: คนไข้สอบถามด้วยความกังวลใจ",
+                en: "Thank you, doctor. But I <span class='vocab-highlight'>doubted</span> if this pill will cause any stomach pain or make me feel dizzy.",
+                rawEn: "Thank you, doctor. But I doubted if this pill will cause any stomach pain or make me feel dizzy.",
+                phonetics: "แธงค์ ยู, ดอกเตอร์. บัท ไอ ดาวท์เทด อิฟ ดิส พิลล์ วิล คอส เอนี สตอมมัค เพน ออร์ เมค มี ฟีล ดิซซี.",
+                translation: "ขอบคุณครับคุณหมอ แต่ผมสงสัย/กังวล (doubted) ว่ายานี้จะทำให้ปวดท้องหรือเวียนหัวไหมครับ",
                 vocabBadge: "Unit 3 Vocab: doubted"
             },
             {
@@ -480,74 +507,74 @@
                 section: "roleplay",
                 memberKey: "game",
                 memberName: "เกม",
-                memberRole: "Co-worker / Relative (เพื่อนคนไข้)",
+                memberRole: "Pharmacist Assistant (ผู้ช่วยเภสัชกร)",
                 avatarBg: "bg-purple-600",
                 badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "ฉาก 4: เพื่อนช่วยเสริมคำถาม",
-                en: "Yes, doctor! He often gets stomach pain easily.",
-                rawEn: "Yes, doctor! He often gets stomach pain easily.",
-                phonetics: "เยส, ดอกเตอร์! ฮี ออฟเฟน เก็ตส์ สตอมมัค เพน อีซิลี.",
-                translation: "ใช่ครับคุณหมอ เพื่อนผมปวดท้องง่ายมากครับ",
+                roleTitle: "ฉาก 4: ผู้ช่วยเภสัชกรตรวจสอบประวัติเพิ่มเติม",
+                en: "Don't worry! I have checked your health profile. This medicine is very gentle on the stomach.",
+                rawEn: "Don't worry! I have checked your health profile. This medicine is very gentle on the stomach.",
+                phonetics: "โดนท์ วอร์รี! ไอ แฮฟ เช็คท์ ยัวร์ เฮลท์ โปรไฟล์. ดิส เมดิซิน อิส เวรี เจนเทิล ออน ดิ สตอมมัค.",
+                translation: "ไม่ต้องกังวลนะครับ! ผมเช็คประวัติสุขภาพของคุณแล้ว ยาตัวนี้อ่อนโยนต่อกระเพาะอาหารมากครับ",
                 vocabBadge: null
             },
             {
                 id: "r5",
                 section: "roleplay",
-                memberKey: "nont",
-                memberName: "นนท์",
-                memberRole: "Human Pharmacist (เภสัชกร)",
-                avatarBg: "bg-teal-600",
-                badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "ฉาก 5: เภสัชกรให้คำแนะนำเฉพาะบุคคล",
-                en: "Don't worry! Drink a full glass of water with it, and eat a small meal first. You will be completely safe.",
-                rawEn: "Don't worry! Drink a full glass of water with it, and eat a small meal first. You will be completely safe.",
-                phonetics: "โดนท์ วอร์รี! ดริงค์ แอ ฟูล กลาส ออฟ วอเทอร์ วิธ อิท, แอนด์ อีท แอ สモール มีล เฟิร์สท์. ยู วิล บี คอมพลีทลี เซฟ.",
-                translation: "ไม่ต้องกังวลครับ! ดื่มน้ำตามเต็มแก้ว และทานอาหารรองท้องก่อน ยาจะปลอดภัยแน่นอนครับ",
+                memberKey: "boat",
+                memberName: "โบ๊ท",
+                memberRole: "AI Robot Assistant",
+                avatarBg: "bg-blue-600",
+                badgeBg: "bg-blue-100 text-blue-800",
+                roleTitle: "ฉาก 5: AI แจ้งเตือนข้อควรระวังพิเศษ",
+                en: "Alert! Patient has a history of mild allergies. Re-confirming safety data with human staff.",
+                rawEn: "Alert! Patient has a history of mild allergies. Re-confirming safety data with human staff.",
+                phonetics: "อะเลิร์ต! เพเชียนท์ แฮส แอ ฮิสทรี ออฟ ไมลด์ แอลเลอร์จีส. รี-คอนเฟิร์มมิง เซฟตี เดตา วิธ ฮิวแมน สต๊าฟ.",
+                translation: "แจ้งเตือน! ผู้ป่วยมีประวัติแพ้ยาเล็กน้อย กำลังยืนยันข้อมูลความปลอดภัยกับเจ้าหน้าที่มนุษย์ครับ",
                 vocabBadge: null
             },
             {
                 id: "r6",
+                section: "roleplay",
+                memberKey: "nont",
+                memberName: "นนท์",
+                memberRole: "Human Pharmacist",
+                avatarBg: "bg-teal-600",
+                badgeBg: "bg-teal-100 text-teal-800",
+                roleTitle: "ฉาก 6: เภสัชกรยืนยันและปรับแต่งคำแนะนำ",
+                en: "Good catch, AI! We will adjust the dose slightly to make sure it is 100% safe for you.",
+                rawEn: "Good catch, AI! We will adjust the dose slightly to make sure it is 100% safe for you.",
+                phonetics: "กู๊ด แคทช์, เอไอ! วี วิล แอดยัสท์ เดอะ โดส สไลท์ลี ทู เมค ชัวร์ อิท อิส วันฮันเดรด เพอร์เซนต์ เซฟ ฟอร์ ยู.",
+                translation: "เตือนได้ดีมาก AI! เราจะปรับขนาดยาลงเล็กน้อยเพื่อให้มั่นใจว่าปลอดภัย 100% สำหรับคุณครับ",
+                vocabBadge: null
+            },
+            {
+                id: "r7",
                 section: "roleplay",
                 memberKey: "pun",
                 memberName: "ปั้น",
                 memberRole: "Patient (คนไข้)",
                 avatarBg: "bg-rose-600",
                 badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "ฉาก 6: คนไข้สบายใจขึ้น",
-                en: "That sounds great! I feel much better now.",
-                rawEn: "That sounds great! I feel much better now.",
-                phonetics: "แดต ซาวนด์ส เกรท! ไอ ฟีล มัช เบทเทอร์ นาว.",
-                translation: "ฟังดูดีมากเลยครับ! ตอนนี้ผมสบายใจขึ้นเยอะเลยครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r7",
-                section: "roleplay",
-                memberKey: "game",
-                memberName: "เกม",
-                memberRole: "Co-worker / Relative (เพื่อนคนไข้)",
-                avatarBg: "bg-purple-600",
-                badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "ฉาก 7: สรุปความประทับใจ",
-                en: "AI is fast, but human warmth is truly important!",
-                rawEn: "AI is fast, but human warmth is truly important!",
-                phonetics: "เอไอ อิส ฟาสท์, บัท ฮิวแมน วอร์มธ อิส ทรูลี อิมพอร์แทนต์!",
-                translation: "AI ทำงานเร็วครับ แต่น้ำใจและความ อบอุ่นของมนุษย์สำคัญจริงๆ!",
+                roleTitle: "ฉาก 7: คนไข้สบายใจและประทับใจ",
+                en: "That makes me feel so relieved! Having both AI and human experts is wonderful.",
+                rawEn: "That makes me feel so relieved! Having both AI and human experts is wonderful.",
+                phonetics: "แดต เมคส์ มี ฟีล โซ รีลีฟท์! แฮฟวิง โบธ เอไอ แอนด์ ฮิวแมน เอ็กซ์เพิร์ทส อิส วันเดอร์ฟูล.",
+                translation: "ทำให้ผม โล่งอกขึ้นเยอะเลยครับ! การมีทั้ง AI และผู้เชี่ยวชาญที่เป็นมนุษย์ช่วยเหลือ มันยอดเยี่ยมจริงๆ ครับ",
                 vocabBadge: null
             },
             {
                 id: "r8",
                 section: "roleplay",
-                memberKey: "all",
-                memberName: "ทุกคน (All)",
-                memberRole: "All Members",
-                avatarBg: "bg-slate-700",
-                badgeBg: "bg-slate-200 text-slate-800",
-                roleTitle: "ฉาก 8: ปิดท้ายพร้อมกัน",
-                en: "AI handles data, humans handle care! Thank you for listening!",
-                rawEn: "AI handles data, humans handle care! Thank you for listening!",
-                phonetics: "เอไอ แฮนเดิลส์ เดตา, ฮิวแมนส์ แฮนเดิล แคร์! แธงค์ ยู ฟอร์ ลิสเซนนิง!",
-                translation: "AI จัดการข้อมูล แต่มนุษย์คือผู้ให้การดูแล! ขอบคุณที่รับฟังครับ!",
+                memberKey: "game",
+                memberName: "เกม",
+                memberRole: "Pharmacist Assistant (ผู้ช่วยเภสัชกร)",
+                avatarBg: "bg-purple-600",
+                badgeBg: "bg-purple-100 text-purple-800",
+                roleTitle: "ฉาก 8: สรุปความร่วมมือปิดท้าย",
+                en: "Exactly! Technology gives speed, but human care gives safety and peace of mind!",
+                rawEn: "Exactly! Technology gives speed, but human care gives safety and peace of mind!",
+                phonetics: "เอ็กแซกต์ลี! เทคโนโลยี กิฟส์ สปีด, บัท ฮิวแมน แคร์ กิฟส์ เซฟตี แอนด์ พีซ ออฟ ไมน์ด!",
+                translation: "ถูกต้องเลยครับ! เทคโนโลยีให้ความเร็ว แต่การดูแลของมนุษย์ให้ความปลอดภัยและความอุ่นใจครับ!",
                 vocabBadge: null
             }
         ];
@@ -565,7 +592,7 @@
             const showPhonetics = document.getElementById('togglePhonetics').checked;
             const showTranslation = document.getElementById('toggleTranslation').checked;
 
-            scriptData.forEach((item, index) => {
+            scriptData.forEach((item) => {
                 if (currentFilter !== 'all' && item.memberKey !== currentFilter && item.memberKey !== 'all') {
                     return;
                 }
@@ -573,7 +600,7 @@
                 const isHighlightedRole = (currentFilter !== 'all' && (item.memberKey === currentFilter || item.memberKey === 'all'));
 
                 const cardHtml = `
-                    <div class="card-box bg-white rounded-xl p-3.5 sm:p-4 border ${isHighlightedRole ? 'ring-2 ring-indigo-500 shadow-sm' : 'border-slate-200/90 shadow-sm'} transition duration-200">
+                    <div class="card-box bg-white rounded-2xl p-3.5 sm:p-4 border ${isHighlightedRole ? 'ring-2 ring-indigo-500 shadow-sm' : 'border-slate-200/90 shadow-sm'} transition duration-200">
                         <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
                             <div class="flex items-center space-x-2.5 min-w-0">
                                 <div class="w-8 h-8 rounded-full ${item.avatarBg} text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
@@ -589,8 +616,8 @@
                             </div>
 
                             <div class="flex items-center space-x-1.5 shrink-0 no-print">
-                                ${item.vocabBadge ? `<span class="text-[9px] sm:text-[10px] bg-amber-100 text-amber-800 font-semibold px-1.5 py-0.5 rounded border border-amber-300/60"><i class="fa-solid fa-star text-amber-500 mr-0.5"></i>${item.vocabBadge.split(':')[0]}</span>` : ''}
-                                <button onclick="playSpeech('${escapeQuotes(item.rawEn)}')" class="px-2 py-1 bg-slate-100 hover:bg-indigo-100 text-slate-600 hover:text-indigo-600 rounded-lg text-xs font-medium transition flex items-center space-x-1" title="ฟังเสียง">
+                                ${item.vocabBadge ? `<span class="text-[9px] sm:text-[10px] bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded border border-amber-300/60"><i class="fa-solid fa-star text-amber-500 mr-1"></i>${item.vocabBadge.split(':')[0]}</span>` : ''}
+                                <button onclick="playSpeech('${escapeQuotes(item.rawEn)}')" class="px-2.5 py-1 bg-slate-100 hover:bg-indigo-100 text-slate-600 hover:text-indigo-600 rounded-xl text-xs font-medium transition flex items-center space-x-1" title="ฟังเสียง">
                                     <i class="fa-solid fa-volume-high text-indigo-500 text-xs"></i>
                                 </button>
                             </div>
@@ -605,14 +632,14 @@
 
                             <!-- Thai Phonetics -->
                             ${showPhonetics ? `
-                            <div class="text-xs font-medium text-amber-900 bg-amber-50/70 p-2 rounded-lg border border-amber-100/80 leading-relaxed">
+                            <div class="text-xs font-medium text-amber-900 bg-amber-50/70 p-2 rounded-xl border border-amber-100/80 leading-relaxed">
                                 <span class="text-[10px] font-bold text-amber-600 uppercase mr-1">[คำอ่าน]:</span> ${item.phonetics}
                             </div>
                             ` : ''}
 
                             <!-- Thai Translation -->
                             ${showTranslation ? `
-                            <div class="text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100 leading-relaxed">
+                            <div class="text-xs text-slate-600 bg-slate-50 p-2 rounded-xl border border-slate-100 leading-relaxed">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase mr-1">[คำแปล]:</span> ${item.translation}
                             </div>
                             ` : ''}
@@ -627,7 +654,7 @@
                 }
             });
 
-            // Handle Empty state
+            // Empty states
             if (presContainer.children.length === 0) {
                 presContainer.innerHTML = '<div class="text-center py-4 text-slate-400 text-xs">ไม่มีบทพูดส่วนนี้สำหรับสมาชิกที่เลือก</div>';
             }
@@ -636,12 +663,10 @@
             }
         }
 
-        // Helper escape function for Speech API
         function escapeQuotes(str) {
             return str.replace(/'/g, "\\'");
         }
 
-        // Text to Speech
         function playSpeech(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
@@ -654,16 +679,13 @@
             }
         }
 
-        // Filter Member Function
         function filterMember(memberKey) {
             currentFilter = memberKey;
 
-            // Update Badge Text
             const badge = document.getElementById('activeFilterBadge');
-            const names = { all: 'แสดงทั้งหมด', boat: 'โบ๊ท (30%)', nont: 'นนท์ (30%)', pun: 'ปั้น (20%)', game: 'เกม (20%)' };
-            if (badge) badge.innerText = names[memberKey] || 'แสดงทั้งหมด';
+            const names = { all: 'แสดงบททั้งหมด', boat: 'โบ๊ท (25%)', nont: 'นนท์ (25%)', pun: 'ปั้น (25%)', game: 'เกม (25%)' };
+            if (badge) badge.innerText = names[memberKey] || 'แสดงบททั้งหมด';
 
-            // Update UI Button states
             document.querySelectorAll('.member-btn').forEach(btn => {
                 btn.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600', 'shadow-sm');
                 btn.classList.add('bg-slate-100', 'text-slate-700', 'border-slate-200');
@@ -678,18 +700,15 @@
             renderCards();
         }
 
-        // Toggle Displays
         function toggleDisplayOptions() {
             renderCards();
         }
 
-        // Vocab Modal Toggle
         function toggleVocabModal() {
             const modal = document.getElementById('vocabModal');
             modal.classList.toggle('hidden');
         }
 
-        // Teleprompter / Rehearsal Mode Functions
         function openTeleprompter() {
             currentPrompterIndex = 0;
             document.getElementById('prompterModal').classList.remove('hidden');
