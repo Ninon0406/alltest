@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI vs. Humans in the Workplace - Pharmacist Script (PDF Template)</title>
+    <title>AI vs. Humans in the Workplace - Interactive Script & A4 PDF</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Times New Roman style -->
+    <!-- Google Fonts: Inter & Noto Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Base typography for formal document view */
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #334155;
-            color: #0f172a;
+            font-family: 'Inter', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
         }
 
-        .document-font {
+        .doc-font {
             font-family: 'Inter', sans-serif;
         }
 
-        /* Target Vocabulary Styling: Yellow + Bold */
+        /* Target Vocabulary Highlight: Yellow + Bold */
         .vocab-tag {
             background-color: #fef08a !important; /* Yellow 200 */
             color: #713f12 !important;
             font-weight: 700 !important;
-            padding: 1px 4px;
-            border-radius: 2px;
+            padding: 1px 5px;
+            border-radius: 3px;
             display: inline-block;
         }
 
-        /* Target Grammar Styling: Green + Bold + Underline */
+        /* Target Grammar Highlight: Green + Bold + Underline */
         .grammar-tag {
             background-color: #bbf7d0 !important; /* Green 200 */
             color: #14532d !important;
@@ -43,32 +42,33 @@
             text-decoration: underline !important;
             text-decoration-color: #16a34a !important;
             text-underline-offset: 2px;
-            padding: 1px 4px;
-            border-radius: 2px;
+            padding: 1px 5px;
+            border-radius: 3px;
             display: inline-block;
         }
 
-        /* Superscript tags */
+        /* Superscript labels */
         sup.tag-label {
             font-size: 0.65em;
             font-weight: 800;
-            margin-left: 1px;
+            margin-left: 2px;
             vertical-align: super;
         }
 
-        /* Printable A4 Page Settings */
+        /* Printable A4 Page formatting */
         .a4-page {
             width: 210mm;
             min-height: 297mm;
-            padding: 20mm 20mm 20mm 20mm;
-            margin: 20px auto;
+            padding: 18mm 18mm 18mm 18mm;
+            margin: 0 auto;
             background: white;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            color: #0f172a;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
             position: relative;
             box-sizing: border-box;
         }
 
-        /* Table borders matching image style */
+        /* Official Document Table styles */
         .doc-table {
             border-collapse: collapse;
             width: 100%;
@@ -91,11 +91,17 @@
             background-color: #e2e8f0 !important;
         }
 
-        /* Print Specific Styles */
+        /* Speaker Badge Colors */
+        .speaker-boat { background-color: #3b82f6; color: white; }
+        .speaker-nont { background-color: #10b981; color: white; }
+        .speaker-pun  { background-color: #f59e0b; color: white; }
+        .speaker-game { background-color: #8b5cf6; color: white; }
+
+        /* Print Specific CSS */
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 15mm 15mm 15mm 15mm;
+                margin: 12mm 12mm 12mm 12mm;
             }
 
             body {
@@ -107,20 +113,26 @@
                 display: none !important;
             }
 
+            .tab-page {
+                display: none !important;
+            }
+
+            #page-official {
+                display: block !important;
+            }
+
             .a4-page {
                 width: 100% !important;
                 min-height: auto !important;
                 box-shadow: none !important;
                 padding: 0 !important;
                 margin: 0 !important;
-                page-break-after: always;
             }
 
             .page-break {
                 page-break-before: always;
             }
 
-            /* Force exact background colors when printing to PDF */
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -128,288 +140,697 @@
         }
     </style>
 </head>
-<body class="py-6 min-h-screen">
+<body class="min-h-screen pb-12">
 
-    <!-- Top Action Control Bar (Hidden when printing) -->
-    <header class="no-print max-w-4xl mx-auto mb-6 px-4">
-        <div class="bg-slate-900 text-white rounded-2xl p-4 shadow-xl border border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-600 p-2.5 rounded-xl">
-                    <i class="fa-solid fa-file-pdf text-xl text-white"></i>
+    <!-- Top Navigation Header -->
+    <header class="no-print bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-2xl backdrop-blur-md bg-opacity-90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between py-3 gap-3">
+                
+                <!-- Title / Info -->
+                <div class="flex items-center space-x-3 text-center sm:text-left">
+                    <div class="bg-gradient-to-tr from-blue-600 to-indigo-600 p-2.5 rounded-xl shadow-lg">
+                        <i class="fa-solid fa-graduation-cap text-xl text-white"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 justify-center sm:justify-start">
+                            <h1 class="font-bold text-white text-base sm:text-lg">AI vs. Humans in the Workplace</h1>
+                            <span class="text-[10px] bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2 py-0.5 rounded-full font-semibold">Pharmacist</span>
+                        </div>
+                        <p class="text-xs text-slate-400">Speak Out Project Script | Section _____ (Equal 25% Lines)</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="font-bold text-base sm:text-lg">AI vs. Humans in the Workplace (PDF Template)</h1>
-                    <p class="text-xs text-slate-400">Speak Out Project Script | Career: Pharmacist (Exact 100% Match)</p>
-                </div>
-            </div>
 
-            <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
-                <button onclick="window.print()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-xl shadow-lg hover:shadow-blue-500/30 transition flex items-center space-x-2">
-                    <i class="fa-solid fa-print"></i>
-                    <span>Print / Save as PDF</span>
-                </button>
+                <!-- Navigation Tabs -->
+                <div class="flex items-center bg-slate-800 p-1.5 rounded-xl border border-slate-700/80 w-full md:w-auto justify-center overflow-x-auto">
+                    <button onclick="switchTab('official')" id="tab-btn-official" class="tab-btn px-4 py-2 rounded-lg text-xs font-semibold transition flex items-center space-x-2 bg-blue-600 text-white shadow-md">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span>1. Official Script (A4 PDF)</span>
+                    </button>
+                    <button onclick="switchTab('thai')" id="tab-btn-thai" class="tab-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center space-x-2">
+                        <i class="fa-solid fa-language"></i>
+                        <span>2. Thai Translation (แปลไทย)</span>
+                    </button>
+                    <button onclick="switchTab('bilingual')" id="tab-btn-bilingual" class="tab-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition flex items-center space-x-2">
+                        <i class="fa-solid fa-columns"></i>
+                        <span>3. Rehearsal & Audio (ซ้อมพูด)</span>
+                    </button>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="flex items-center space-x-2 w-full md:w-auto justify-end">
+                    <button onclick="window.print()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs rounded-xl shadow-lg transition flex items-center space-x-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Print / Save PDF</span>
+                    </button>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <!-- DOCUMENT CONTAINER (A4 PAGES) -->
-    <main class="document-font">
+    <!-- Main Content Body -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
 
-        <!-- PAGE 1 -->
-        <article class="a4-page">
+        <!-- TAB 1: OFFICIAL ENGLISH SCRIPT (A4 FORMAT FOR PDF) -->
+        <section id="page-official" class="tab-page block">
             
-            <!-- Main Title Header -->
-            <div class="text-center mb-5">
-                <h1 class="text-xl font-bold text-indigo-950 tracking-tight">AI vs. Humans in the Workplace</h1>
-                <p class="text-xs font-semibold text-slate-600 mt-1">Speak Out Project Script | Career: Pharmacist</p>
+            <div class="no-print max-w-4xl mx-auto mb-4 bg-slate-800/80 border border-slate-700 p-3 rounded-xl flex items-center justify-between text-xs text-slate-300">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-blue-400"></i>
+                    This view is formatted exactly for printing on A4 paper or saving as a PDF file.
+                </span>
+                <button onclick="window.print()" class="text-blue-400 font-semibold hover:underline">
+                    Click to Print
+                </button>
             </div>
 
-            <!-- Summary Table 1: Group Details -->
-            <table class="doc-table mb-3">
-                <tbody>
-                    <tr>
-                        <td class="font-bold w-24 table-header-bg">Group</td>
-                        <td class="w-1/2">Group _____ Section _____</td>
-                        <td class="font-bold w-24 table-header-bg">Career</td>
-                        <td>Pharmacist</td>
-                    </tr>
-                    <tr>
-                        <td class="font-bold table-header-bg">Time</td>
-                        <td colspan="3">7 minutes | 4 speakers</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Summary Table 2: Speakers List -->
-            <table class="doc-table mb-1">
-                <thead>
-                    <tr class="table-header-bg">
-                        <th class="w-20">Speaker</th>
-                        <th class="w-28">Nickname</th>
-                        <th class="w-20">Class No.</th>
-                        <th>Presentation part</th>
-                        <th>Skit role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="font-semibold">Speaker 1</td>
-                        <td>Boat (โบ๊ท)</td>
-                        <td>1</td>
-                        <td>Point 1: AI Advantage</td>
-                        <td>AI Assistant</td>
-                    </tr>
-                    <tr>
-                        <td class="font-semibold">Speaker 2</td>
-                        <td>Nont (นนท์)</td>
-                        <td>2</td>
-                        <td>Point 2: Human Advantage</td>
-                        <td>Lead Pharmacist</td>
-                    </tr>
-                    <tr>
-                        <td class="font-semibold">Speaker 3</td>
-                        <td>Pun (ปั้น)</td>
-                        <td>3</td>
-                        <td>Point 3: AI Limitations</td>
-                        <td>Patient</td>
-                    </tr>
-                    <tr>
-                        <td class="font-semibold">Speaker 4</td>
-                        <td>Game (เกม)</td>
-                        <td>4</td>
-                        <td>Point 4: Responsibility & Conclusion</td>
-                        <td>Assistant Pharmacist</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Speaking Amount Note -->
-            <p class="text-[10px] italic text-slate-500 mb-4">
-                Speaking amount in Parts 1-4: Boat, Nont, Pun, and Game each speak equally (~25% equal split).
-            </p>
-
-            <!-- Target Vocabulary & Grammar Mapping Table -->
-            <table class="doc-table mb-6">
-                <thead>
-                    <tr class="table-header-bg">
-                        <th class="w-1/2">Target Vocabulary</th>
-                        <th class="w-1/2">Target Grammar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="vocab-tag">Yellow + bold</span> V1-V4</td>
-                        <td><span class="grammar-tag">Green + bold + underline</span> G1-G4</td>
-                    </tr>
-                    <tr>
-                        <td><b>Unit 1:</b> V1: <span class="vocab-tag">multitasker</span><sup>V1</sup></td>
-                        <td><b>G1:</b> Present Simple</td>
-                    </tr>
-                    <tr>
-                        <td><b>Unit 2:</b> V2: <span class="vocab-tag">in a bad mood</span><sup>V2</sup></td>
-                        <td><b>G2:</b> Comparative Adjectives</td>
-                    </tr>
-                    <tr>
-                        <td><b>Unit 3:</b> V3: <span class="vocab-tag">doubted</span><sup>V3</sup></td>
-                        <td><b>G3:</b> Modal Verbs</td>
-                    </tr>
-                    <tr>
-                        <td><b>Unit 4:</b> V4: <span class="vocab-tag">take responsibility for</span><sup>V4</sup></td>
-                        <td><b>G4:</b> Indirect & Negative Questions</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- SCRIPT CONTENT STARTS -->
-
-            <!-- PART 1: INTRODUCTION -->
-            <div class="mb-5">
-                <div class="border-b border-indigo-900 pb-1 mb-2">
-                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 1: INTRODUCTION (about 1 minute)</h2>
+            <!-- Page 1 Document Container -->
+            <div class="a4-page doc-font mb-8">
+                <!-- Main Header -->
+                <div class="text-center mb-5">
+                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">AI vs. Humans in the Workplace</h1>
+                    <p class="text-xs font-semibold text-slate-600 mt-1">Speak Out Project Script | Career: Pharmacist</p>
                 </div>
 
-                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
-                    <p>
-                        <b>Speaker 1 (Boat):</b> Good morning, everyone. We are Group _____ from Section _____. Today we're going to talk about AI vs. Humans in the Workplace, and our career is Pharmacist.
-                    </p>
-                    <p>
-                        <b>Speaker 1 (Boat):</b> Let us introduce the members of our group. I'm Boat, and these are Nont, Pun, and Game.
-                    </p>
-                    <p>
-                        <b>Speaker 1 (Boat):</b> A pharmacist <span class="grammar-tag">dispenses</span><sup>G1</sup> medications, checks prescriptions, and counsels patients. It is a challenging job because accuracy directly affects human lives. So today we ask one question: who does this job better, AI or humans? Let's find out!
-                    </p>
-                </div>
-            </div>
+                <!-- Group Info Table -->
+                <table class="doc-table mb-3">
+                    <tbody>
+                        <tr>
+                            <td class="font-bold w-24 table-header-bg">Group</td>
+                            <td class="w-1/2">Group _____ Section _____</td>
+                            <td class="font-bold w-24 table-header-bg">Career</td>
+                            <td>Pharmacist</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold table-header-bg">Time</td>
+                            <td colspan="3">7 minutes | 4 speakers</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <!-- PART 2: POINT 1 - AI'S ADVANTAGE -->
-            <div class="mb-5">
-                <div class="border-b border-indigo-900 pb-1 mb-2">
-                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 2: POINT 1 - AI'S ADVANTAGE (about 1.5 minutes)</h2>
-                </div>
+                <!-- Speakers Summary Table -->
+                <table class="doc-table mb-1">
+                    <thead>
+                        <tr class="table-header-bg">
+                            <th class="w-20">Speaker</th>
+                            <th class="w-28">Nickname</th>
+                            <th class="w-20">Class No.</th>
+                            <th>Presentation part</th>
+                            <th>Skit role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-semibold">Speaker 1</td>
+                            <td>Boat (โบ๊ท)</td>
+                            <td>1</td>
+                            <td>Point 1: AI Advantage</td>
+                            <td>AI Assistant</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Speaker 2</td>
+                            <td>Nont (นนท์)</td>
+                            <td>2</td>
+                            <td>Point 2: Human Advantage</td>
+                            <td>Lead Pharmacist</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Speaker 3</td>
+                            <td>Pun (ปั้น)</td>
+                            <td>3</td>
+                            <td>Point 3: AI Limitations</td>
+                            <td>Patient</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Speaker 4</td>
+                            <td>Game (เกม)</td>
+                            <td>4</td>
+                            <td>Point 4: Responsibility & Conclusion</td>
+                            <td>Assistant Pharmacist</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
-                    <p>
-                        <b>Speaker 1 (Boat):</b> Now let's move to our first point: AI's strengths in pharmacy design and operation.
-                    </p>
-                    <p>
-                        <b>Speaker 1 (Boat):</b> AI uses advanced technology to work with huge medical databases. AI is an ultimate <span class="vocab-tag">multitasker</span><sup>V1</sup> that <span class="grammar-tag">checks</span><sup>G1</sup> thousands of drug interactions <span class="grammar-tag">much faster than</span><sup>G2</sup> a human team.
-                    </p>
-                    <p>
-                        <b>Speaker 2 (Nont):</b> In addition, AI <span class="grammar-tag">can process</span><sup>G3</sup> prescription scans in milliseconds with zero math errors. What's more, it detects dosage conflicts instantly. In fact, <span class="grammar-tag">could you imagine how different medicine dispensing would be without AI?</span><sup>G4</sup> It would take much longer and cost far more time for every hospital.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Page 1 Footer -->
-            <div class="absolute bottom-6 left-20 right-20 flex justify-between text-[10px] text-slate-400 border-t border-slate-200 pt-2">
-                <span>Pharmacist - Script | Section _____</span>
-                <span>Page 1</span>
-            </div>
-        </article>
-
-
-        <!-- PAGE 2 -->
-        <article class="a4-page page-break">
-
-            <!-- PART 3: POINT 2 - HUMANS' ADVANTAGE -->
-            <div class="mb-5">
-                <div class="border-b border-indigo-900 pb-1 mb-2">
-                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 3: POINT 2 - HUMANS' ADVANTAGE (about 1.5 minutes)</h2>
-                </div>
-
-                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
-                    <p>
-                        <b>Speaker 2 (Nont):</b> Moving on to the next part: human strengths. On one hand, human pharmacists can get tired or be <span class="vocab-tag">in a bad mood</span><sup>V2</sup>, which may lead to occasional mistakes.
-                    </p>
-                    <p>
-                        <b>Speaker 3 (Pun):</b> <span class="grammar-tag">Isn't human empathy the heart of patient care?</span><sup>G4</sup> Yes, it is! Humans <span class="grammar-tag">create</span><sup>G1</sup> warm relationships and emotional trust that make patients feel safe, heard, and cared for.
-                    </p>
-                    <p>
-                        <b>Speaker 3 (Pun):</b> Humans are <span class="grammar-tag">more observant than</span><sup>G2</sup> algorithms. AI learns from old data, but humans understand subtle non-verbal signals. For example, a patient might feel anxious about side effects that AI cannot detect.
-                    </p>
-                    <p>
-                        <b>Speaker 3 (Pun):</b> On top of that, a human pharmacist <span class="grammar-tag">should balance</span><sup>G3</sup> technical checks with personal lifestyle advice so that patients stay healthy, not confused. AI cannot feel compassion, so it can't fully understand patient fears.
-                    </p>
-                </div>
-            </div>
-
-            <!-- PART 4: CONCLUSION -->
-            <div class="mb-5">
-                <div class="border-b border-indigo-900 pb-1 mb-2">
-                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 4: CONCLUSION (about 1 minute)</h2>
-                </div>
-
-                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
-                    <p>
-                        <b>Speaker 4 (Game):</b> To sum up, AI is excellent at speed, verification, and technical data processing. But humans are irreplaceable for empathy, trust, and critical ethical judgment.
-                    </p>
-                    <p>
-                        <b>Speaker 4 (Game):</b> Pharmacists must <span class="vocab-tag">take responsibility for</span><sup>V4</sup> final medicine delivery and overall patient health.
-                    </p>
-                    <p>
-                        <b>Speaker 4 (Game):</b> In the future, pharmacists <span class="grammar-tag">should use</span><sup>G3</sup> AI as a powerful assistant, while humans stay in control of patient care decisions.
-                    </p>
-                    <p>
-                        <b>Speaker 4 (Game):</b> Together, AI and humans can make healthcare better than ever. Now, please enjoy a short skit about a hospital pharmacy.
-                    </p>
-                </div>
-            </div>
-
-            <!-- PART 5: SHORT ROLE-PLAY -->
-            <div class="mb-5">
-                <div class="border-b border-indigo-900 pb-1 mb-2">
-                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 5: SHORT ROLE-PLAY (about 1.5 minutes)</h2>
-                </div>
-
-                <p class="text-xs italic text-slate-600 mb-3 bg-slate-50 p-2 rounded border border-slate-200">
-                    Setting: A busy hospital pharmacy counter. Characters: Lead Pharmacist (Nont), AI Assistant (Boat), Patient (Pun), Assistant Pharmacist (Game).
+                <p class="text-[10px] italic text-slate-500 mb-4">
+                    Speaking amount in Parts 1-4: Boat, Nont, Pun, and Game each speak equally (~25% equal split).
                 </p>
 
-                <div class="space-y-2.5 text-xs leading-relaxed text-slate-800">
-                    <p>
-                        <b>Lead Pharmacist (Nont):</b> Team, our prescription queue is huge today! Can AI help us verify all these prescriptions quickly?
-                    </p>
-                    <p>
-                        <b>AI Assistant (Boat):</b> <i>(robotic voice and movements)</i> Beep boop! Verified one thousand prescriptions and checked five hundred drug interactions in two seconds!
-                    </p>
-                    <p>
-                        <b>Lead Pharmacist (Nont):</b> <i>(testing the system)</i> Wait! The database runs fast, but AI cannot explain the advice warmly.
-                    </p>
-                    <p>
-                        <b>Patient (Pun):</b> <i>(looking confused and worried)</i> Excuse me doctor, I <span class="vocab-tag">doubted</span><sup>V3</sup> if this pill will cause stomach pain. <span class="grammar-tag">Could you tell me how I should take this medication?</span><sup>G4</sup>
-                    </p>
-                    <p>
-                        <b>Lead Pharmacist (Nont):</b> <i>(pointing to the Assistant)</i> Easy! Our Assistant Pharmacist has a clear plan.
-                    </p>
-                    <p>
-                        <b>Assistant Pharmacist (Game):</b> <i>(speaking kindly)</i> Take one tablet after breakfast with water. This medicine is very gentle on the stomach!
-                    </p>
-                    <p>
-                        <b>AI Assistant (Boat):</b> <i>(shaking head)</i> Error! Error! System does not understand 'warm human care'.
-                    </p>
-                    <p>
-                        <b>Patient (Pun):</b> <i>(smiling with relief)</i> Wow! Now I feel so safe. The human touch makes all the difference!
-                    </p>
-                    <p>
-                        <b>Lead Pharmacist (Nont):</b> Exactly. AI gives us speed, but humans give healthcare a soul.
-                    </p>
-                    <p>
-                        <b>Assistant Pharmacist (Game):</b> Great job, team! AI and humans work best together.
-                    </p>
-                    <p>
-                        <b>All Together:</b> <i>(bow)</i> Thank you for listening to our presentation. We hope you enjoyed learning about AI vs. Humans in the Workplace! If you have any questions, we'd be happy to answer them.
-                    </p>
+                <!-- Vocabulary & Grammar Mapping Table -->
+                <table class="doc-table mb-6">
+                    <thead>
+                        <tr class="table-header-bg">
+                            <th class="w-1/2">Target Vocabulary</th>
+                            <th class="w-1/2">Target Grammar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="vocab-tag">Yellow + bold</span> V1-V4</td>
+                            <td><span class="grammar-tag">Green + bold + underline</span> G1-G4</td>
+                        </tr>
+                        <tr>
+                            <td><b>Unit 1:</b> V1: <span class="vocab-tag">multitasker</span><sup class="tag-label">V1</sup></td>
+                            <td><b>G1:</b> Present Simple</td>
+                        </tr>
+                        <tr>
+                            <td><b>Unit 2:</b> V2: <span class="vocab-tag">in a bad mood</span><sup class="tag-label">V2</sup></td>
+                            <td><b>G2:</b> Comparative Adjectives</td>
+                        </tr>
+                        <tr>
+                            <td><b>Unit 3:</b> V3: <span class="vocab-tag">doubted</span><sup class="tag-label">V3</sup></td>
+                            <td><b>G3:</b> Modal Verbs</td>
+                        </tr>
+                        <tr>
+                            <td><b>Unit 4:</b> V4: <span class="vocab-tag">take responsibility for</span><sup class="tag-label">V4</sup></td>
+                            <td><b>G4:</b> Indirect & Negative Questions</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- SCRIPT CONTENT STARTS -->
+
+                <!-- PART 1 -->
+                <div class="mb-5">
+                    <div class="border-b border-indigo-900 pb-1 mb-2">
+                        <h2 class="text-xs font-bold text-slate-900 uppercase tracking-wider">PART 1: INTRODUCTION (about 1 minute)</h2>
+                    </div>
+                    <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                        <p><b>Speaker 1 (Boat):</b> Good morning, everyone. We are Group _____ from Section _____. Today we're going to talk about AI vs. Humans in the Workplace, and our career is Pharmacist.</p>
+                        <p><b>Speaker 1 (Boat):</b> Let us introduce the members of our group. I'm Boat, and these are Nont, Pun, and Game.</p>
+                        <p><b>Speaker 1 (Boat):</b> A pharmacist <span class="grammar-tag">dispenses</span><sup class="tag-label">G1</sup> medications, checks prescriptions, and counsels patients. It is a challenging job because accuracy directly affects human lives. So today we ask one question: who does this job better, AI or humans? Let's find out!</p>
+                    </div>
+                </div>
+
+                <!-- PART 2 -->
+                <div class="mb-5">
+                    <div class="border-b border-indigo-900 pb-1 mb-2">
+                        <h2 class="text-xs font-bold text-slate-900 uppercase tracking-wider">PART 2: POINT 1 - AI'S ADVANTAGE (about 1.5 minutes)</h2>
+                    </div>
+                    <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                        <p><b>Speaker 1 (Boat):</b> Now let's move to our first point: AI's strengths in pharmacy design and operation.</p>
+                        <p><b>Speaker 1 (Boat):</b> AI uses advanced technology to work with huge medical databases. AI is an ultimate <span class="vocab-tag">multitasker</span><sup class="tag-label">V1</sup> that <span class="grammar-tag">checks</span><sup class="tag-label">G1</sup> thousands of drug interactions <span class="grammar-tag">much faster than</span><sup class="tag-label">G2</sup> a human team.</p>
+                        <p><b>Speaker 2 (Nont):</b> In addition, AI <span class="grammar-tag">can process</span><sup class="tag-label">G3</sup> prescription scans in milliseconds with zero math errors. What's more, it detects dosage conflicts instantly. In fact, <span class="grammar-tag">could you imagine how different medicine dispensing would be without AI?</span><sup class="tag-label">G4</sup> It would take much longer and cost far more time for every hospital.</p>
+                    </div>
+                </div>
+
+                <!-- Page 1 Footer -->
+                <div class="absolute bottom-6 left-18 right-18 flex justify-between text-[10px] text-slate-400 border-t border-slate-200 pt-2">
+                    <span>Pharmacist - Script | Section _____</span>
+                    <span>Page 1</span>
                 </div>
             </div>
 
-            <!-- Page 2 Footer -->
-            <div class="absolute bottom-6 left-20 right-20 flex justify-between text-[10px] text-slate-400 border-t border-slate-200 pt-2">
-                <span>Pharmacist - Script | Section _____</span>
-                <span>Page 2</span>
+            <!-- Page 2 Document Container -->
+            <div class="a4-page doc-font page-break">
+
+                <!-- PART 3 -->
+                <div class="mb-5">
+                    <div class="border-b border-indigo-900 pb-1 mb-2">
+                        <h2 class="text-xs font-bold text-slate-900 uppercase tracking-wider">PART 3: POINT 2 - HUMANS' ADVANTAGE (about 1.5 minutes)</h2>
+                    </div>
+                    <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                        <p><b>Speaker 2 (Nont):</b> Moving on to the next part: human strengths. On one hand, human pharmacists can get tired or be <span class="vocab-tag">in a bad mood</span><sup class="tag-label">V2</sup>, which may lead to occasional mistakes.</p>
+                        <p><b>Speaker 3 (Pun):</b> <span class="grammar-tag">Isn't human empathy the heart of patient care?</span><sup class="tag-label">G4</sup> Yes, it is! Humans <span class="grammar-tag">create</span><sup class="tag-label">G1</sup> warm relationships and emotional trust that make patients feel safe, heard, and cared for.</p>
+                        <p><b>Speaker 3 (Pun):</b> Humans are <span class="grammar-tag">more observant than</span><sup class="tag-label">G2</sup> algorithms. AI learns from old data, but humans understand subtle non-verbal signals. For example, a patient might feel anxious about side effects that AI cannot detect.</p>
+                        <p><b>Speaker 3 (Pun):</b> On top of that, a human pharmacist <span class="grammar-tag">should balance</span><sup class="tag-label">G3</sup> technical checks with personal lifestyle advice so that patients stay healthy, not confused. AI cannot feel compassion, so it can't fully understand patient fears.</p>
+                    </div>
+                </div>
+
+                <!-- PART 4 -->
+                <div class="mb-5">
+                    <div class="border-b border-indigo-900 pb-1 mb-2">
+                        <h2 class="text-xs font-bold text-slate-900 uppercase tracking-wider">PART 4: CONCLUSION (about 1 minute)</h2>
+                    </div>
+                    <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                        <p><b>Speaker 4 (Game):</b> To sum up, AI is excellent at speed, verification, and technical data processing. But humans are irreplaceable for empathy, trust, and critical ethical judgment.</p>
+                        <p><b>Speaker 4 (Game):</b> Pharmacists must <span class="vocab-tag">take responsibility for</span><sup class="tag-label">V4</sup> final medicine delivery and overall patient health.</p>
+                        <p><b>Speaker 4 (Game):</b> In the future, pharmacists <span class="grammar-tag">should use</span><sup class="tag-label">G3</sup> AI as a powerful assistant, while humans stay in control of patient care decisions.</p>
+                        <p><b>Speaker 4 (Game):</b> Together, AI and humans can make healthcare better than ever. Now, please enjoy a short skit about a hospital pharmacy.</p>
+                    </div>
+                </div>
+
+                <!-- PART 5 -->
+                <div class="mb-5">
+                    <div class="border-b border-indigo-900 pb-1 mb-2">
+                        <h2 class="text-xs font-bold text-slate-900 uppercase tracking-wider">PART 5: SHORT ROLE-PLAY (about 1.5 minutes)</h2>
+                    </div>
+
+                    <p class="text-xs italic text-slate-600 mb-3 bg-slate-50 p-2 rounded border border-slate-200">
+                        Setting: A busy hospital pharmacy counter. Characters: Lead Pharmacist (Nont), AI Assistant (Boat), Patient (Pun), Assistant Pharmacist (Game).
+                    </p>
+
+                    <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                        <p><b>Lead Pharmacist (Nont):</b> Team, our prescription queue is huge today! Can AI help us verify all these prescriptions quickly?</p>
+                        <p><b>AI Assistant (Boat):</b> <i>(robotic voice and movements)</i> Beep boop! Verified one thousand prescriptions and checked five hundred drug interactions in two seconds!</p>
+                        <p><b>Lead Pharmacist (Nont):</b> <i>(testing the system)</i> Wait! The database runs fast, but AI cannot explain the advice warmly.</p>
+                        <p><b>Patient (Pun):</b> <i>(looking confused and worried)</i> Excuse me doctor, I <span class="vocab-tag">doubted</span><sup class="tag-label">V3</sup> if this pill will cause stomach pain. <span class="grammar-tag">Could you tell me how I should take this medication?</span><sup class="tag-label">G4</sup></p>
+                        <p><b>Lead Pharmacist (Nont):</b> <i>(pointing to the Assistant)</i> Easy! Our Assistant Pharmacist has a clear plan.</p>
+                        <p><b>Assistant Pharmacist (Game):</b> <i>(speaking kindly)</i> Take one tablet after breakfast with water. This medicine is very gentle on the stomach!</p>
+                        <p><b>AI Assistant (Boat):</b> <i>(shaking head)</i> Error! Error! System does not understand 'warm human care'.</p>
+                        <p><b>Patient (Pun):</b> <i>(smiling with relief)</i> Wow! Now I feel so safe. The human touch makes all the difference!</p>
+                        <p><b>Lead Pharmacist (Nont):</b> Exactly. AI gives us speed, but humans give healthcare a soul.</p>
+                        <p><b>Assistant Pharmacist (Game):</b> Great job, team! AI and humans work best together.</p>
+                        <p><b>All Together:</b> <i>(bow)</i> Thank you for listening to our presentation. We hope you enjoyed learning about AI vs. Humans in the Workplace! If you have any questions, we'd be happy to answer them.</p>
+                    </div>
+                </div>
+
+                <!-- Page 2 Footer -->
+                <div class="absolute bottom-6 left-18 right-18 flex justify-between text-[10px] text-slate-400 border-t border-slate-200 pt-2">
+                    <span>Pharmacist - Script | Section _____</span>
+                    <span>Page 2</span>
+                </div>
             </div>
-        </article>
+
+        </section>
+
+
+        <!-- TAB 2: THAI TRANSLATION VIEW -->
+        <section id="page-thai" class="tab-page hidden">
+            <div class="max-w-4xl mx-auto space-y-6">
+
+                <!-- Header Intro Banner -->
+                <div class="bg-gradient-to-r from-blue-900/40 to-slate-800 border border-blue-500/30 p-5 rounded-2xl">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="text-2xl">🇹🇭</span>
+                        <h2 class="text-lg font-bold text-white">บทแปลภาษาไทย (Thai Script Translation)</h2>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        แปลภาษาไทยตรงเป๊ะ 100% ครบถ้วนทุกประโยค พร้อมไฮไลต์คำศัพท์บังคับและไวยากรณ์ เพื่อให้เข้าใจเนื้อหาและนำไปซ้อมพูดได้อย่างมั่นใจ
+                    </p>
+                </div>
+
+                <!-- PART 1 THAI -->
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
+                    <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">
+                        PART 1: INTRODUCTION (บทนำ)
+                    </h3>
+                    <div class="space-y-4 text-sm text-slate-200">
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Good morning, everyone. We are Group _____ from Section _____. Today we're going to talk about AI vs. Humans in the Workplace, and our career is Pharmacist.</p>
+                                <p class="font-medium text-emerald-300">สวัสดีครับทุกคน พวกเรากลุ่ม _____ จากเซกชัน _____ วันนี้พวกเราจะมาพูดเรื่อง AI vs. Humans in the Workplace และอาชีพของพวกเราคือ เภสัชกร ครับ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Let us introduce the members of our group. I'm Boat, and these are Nont, Pun, and Game.</p>
+                                <p class="font-medium text-emerald-300">ขอแนะนำสมาชิกในกลุ่มของพวกเราครับ ผมโบ๊ท และนี่คือนนท์ ปั้น และเกมครับ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">A pharmacist <span class="text-green-400 underline font-bold">dispenses [G1]</span> medications, checks prescriptions, and counsels patients. It is a challenging job because accuracy directly affects human lives. So today we ask one question: who does this job better, AI or humans? Let's find out!</p>
+                                <p class="font-medium text-emerald-300">เภสัชกรทำหน้าที่ <span class="bg-emerald-950 text-emerald-300 px-1 rounded border border-emerald-500/40">จ่ายยา [G1: Present Simple]</span> ตรวจสอบใบสั่งยา และให้คำปรึกษาแก่คนไข้ เป็นงานที่ท้าทายเพราะความแม่นยำส่งผลโดยตรงต่อชีวิตคน ดังนั้นวันนี้เราจึงตั้งคำถามว่า ใครทำหน้าที่นี้ได้ดีกว่ากัน ระหว่าง AI กับมนุษย์? เรามาหาคำตอบกันครับ!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PART 2 THAI -->
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
+                    <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">
+                        PART 2: POINT 1 - AI'S ADVANTAGE (จุดเด่นของ AI)
+                    </h3>
+                    <div class="space-y-4 text-sm text-slate-200">
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Now let's move to our first point: AI's strengths in pharmacy design and operation.</p>
+                                <p class="font-medium text-emerald-300">คราวนี้มาต่อกันที่หัวข้อแรกครับ: จุดเด่นของ AI ในการออกแบบและดำเนินงานทางเภสัชกรรม</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">AI uses advanced technology to work with huge medical databases. AI is an ultimate <span class="text-yellow-300 font-bold">multitasker [V1]</span> that <span class="text-green-400 underline font-bold">checks [G1]</span> thousands of drug interactions <span class="text-green-400 underline font-bold">much faster than [G2]</span> a human team.</p>
+                                <p class="font-medium text-emerald-300">AI ใช้นวัตกรรมเทคโนโลยีขั้นสูงในการทำงานกับฐานข้อมูลทางการแพทย์ขนาดใหญ่ AI เป็นผู้ช่วยที่ <span class="bg-yellow-950 text-yellow-300 px-1 rounded border border-yellow-500/40">ทำงานหลายอย่างพร้อมกัน [V1: multitasker]</span> ได้อย่างดีเยี่ยม โดย <span class="bg-emerald-950 text-emerald-300 px-1 rounded">ตรวจสอบ [G1]</span> ปฏิกิริยาร่วมของยานับพันรายการได้ <span class="bg-emerald-950 text-emerald-300 px-1 rounded">เร็วกว่า [G2: Comparative]</span> ทีมมนุษย์อย่างมาก</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-nont px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Nont</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">In addition, AI <span class="text-green-400 underline font-bold">can process [G3]</span> prescription scans in milliseconds with zero math errors. What's more, it detects dosage conflicts instantly. In fact, <span class="text-green-400 underline font-bold">could you imagine how different medicine dispensing would be without AI? [G4]</span> It would take much longer and cost far more time for every hospital.</p>
+                                <p class="font-medium text-emerald-300">นอกจากนี้ AI ยัง <span class="bg-emerald-950 text-emerald-300 px-1 rounded">สามารถประมวลผล [G3: Modal]</span> การสแกนใบสั่งยาได้ในเวลาเพียงเสี้ยววินาทีโดยไม่มีข้อผิดพลาดทางตัวเลข ตรวจพบข้อขัดแย้งของขนาดยาได้ทันที อันที่จริง <span class="bg-emerald-950 text-emerald-300 px-1 rounded">คุณพอจะจินตนาการออกไหมว่าการจ่ายยาจะแตกต่างออกไปอย่างไรหากไม่มี AI? [G4: Indirect Question]</span> มันคงต้องใช้เวลานานกว่าเดิมมากและสิ้นเปลืองเวลาสำหรับทุกโรงพยาบาล</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PART 3 THAI -->
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
+                    <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">
+                        PART 3: POINT 2 - HUMANS' ADVANTAGE (จุดเด่นของมนุษย์)
+                    </h3>
+                    <div class="space-y-4 text-sm text-slate-200">
+                        <div class="flex gap-3">
+                            <span class="speaker-nont px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Nont</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Moving on to the next part: human strengths. On one hand, human pharmacists can get tired or be <span class="text-yellow-300 font-bold">in a bad mood [V2]</span>, which may lead to occasional mistakes.</p>
+                                <p class="font-medium text-emerald-300">ถัดมาที่จุดเด่นของมนุษย์ครับ ในมุมหนึ่ง เภสัชกรที่เป็นมนุษย์อาจรู้สึกเหนื่อยล้าหรือ <span class="bg-yellow-950 text-yellow-300 px-1 rounded">อยู่ในอารมณ์ไม่ดี [V2: in a bad mood]</span> ได้ ซึ่งอาจนำไปสู่ข้อผิดพลาดชั่วคราว</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-pun px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Pun</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><span class="text-green-400 underline font-bold">Isn't human empathy the heart of patient care? [G4]</span> Yes, it is! Humans <span class="text-green-400 underline font-bold">create [G1]</span> warm relationships and emotional trust that make patients feel safe, heard, and cared for.</p>
+                                <p class="font-medium text-emerald-300"><span class="bg-emerald-950 text-emerald-300 px-1 rounded">ความเห็นอกเห็นใจของมนุษย์ไม่ได้เป็นหัวใจสำคัญของการดูแลสุขภาพหรอกหรือ? [G4: Negative Question]</span> ใช่แล้วครับ! มนุษย์ <span class="bg-emerald-950 text-emerald-300 px-1 rounded">สร้าง [G1]</span> สัมพันธภาพที่อบอุ่นและความไว้วางใจทางอารมณ์ที่ทำให้คนไข้รู้สึกปลอดภัย มีคนรับฟัง และได้รับการดูแล</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-pun px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Pun</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Humans are <span class="text-green-400 underline font-bold">more observant than [G2]</span> algorithms. AI learns from old data, but humans understand subtle non-verbal signals. For example, a patient might feel anxious about side effects that AI cannot detect.</p>
+                                <p class="font-medium text-emerald-300">มนุษย์ <span class="bg-emerald-950 text-emerald-300 px-1 rounded">มีความช่างสังเกตมากกว่า [G2: Comparative]</span> อัลกอริทึม AI เรียนรู้จากข้อมูลเก่า แต่มนุษย์เข้าใจภาษากายและสัญญาณที่แยบคาย ตัวอย่างเช่น คนไข้อาจรู้สึกกังวลเกี่ยวกับผลข้างเคียงซึ่ง AI ไม่สามารถตรวจจับได้</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-pun px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Pun</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">On top of that, a human pharmacist <span class="text-green-400 underline font-bold">should balance [G3]</span> technical checks with personal lifestyle advice so that patients stay healthy, not confused. AI cannot feel compassion, so it can't fully understand patient fears.</p>
+                                <p class="font-medium text-emerald-300">ยิ่งไปกว่านั้น เภสัชกรที่เป็นมนุษย์ <span class="bg-emerald-950 text-emerald-300 px-1 rounded">ควรสร้างสมดุล [G3: Modal]</span> ระหว่างการตรวจสอบทางเทคนิคกับการให้คำแนะนำวิถีชีวิตส่วนบุคคล เพื่อให้คนไข้มีสุขภาพดีและไม่สับสน AI ไม่สามารถรู้สึกเห็นอกเห็นใจ ดังนั้นจึงไม่สามารถเข้าใจความกลัวของคนไข้ได้อย่างแท้จริง</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PART 4 THAI -->
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
+                    <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2">
+                        PART 4: CONCLUSION (สรุป)
+                    </h3>
+                    <div class="space-y-4 text-sm text-slate-200">
+                        <div class="flex gap-3">
+                            <span class="speaker-game px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Game</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">To sum up, AI is excellent at speed, verification, and technical data processing. But humans are irreplaceable for empathy, trust, and critical ethical judgment.</p>
+                                <p class="font-medium text-emerald-300">โดยสรุปแล้ว AI โดดเด่นอย่างยิ่งในเรื่องความเร็ว การตรวจสอบ และการประมวลผลข้อมูลทางเทคนิค แต่การจะมาแทนที่มนุษย์ในเรื่องความเห็นอกเห็นใจ ความไว้วางใจ และการตัดสินใจทางจริยธรรมที่สำคัญนั้นเป็นไปไม่ได้</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-game px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Game</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Pharmacists must <span class="text-yellow-300 font-bold">take responsibility for [V4]</span> final medicine delivery and overall patient health.</p>
+                                <p class="font-medium text-emerald-300">เภสัชกรต้อง <span class="bg-yellow-950 text-yellow-300 px-1 rounded">รับผิดชอบต่อ [V4: take responsibility for]</span> การจ่ายยาขั้นสุดท้ายและสุขภาพโดยรวมของคนไข้</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-game px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Game</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">In the future, pharmacists <span class="text-green-400 underline font-bold">should use [G3]</span> AI as a powerful assistant, while humans stay in control of patient care decisions.</p>
+                                <p class="font-medium text-emerald-300">ในอนาคต เภสัชกร <span class="bg-emerald-950 text-emerald-300 px-1 rounded">ควรใช้ [G3: Modal]</span> AI เป็นผู้ช่วยอันทรงพลัง ในขณะที่มนุษย์ยังคงเป็นผู้ควบคุมการตัดสินใจดูแลคนไข้</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-game px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Game</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Together, AI and humans can make healthcare better than ever. Now, please enjoy a short skit about a hospital pharmacy.</p>
+                                <p class="font-medium text-emerald-300">เมื่อทำงานร่วมกัน AI และมนุษย์สามารถทำให้การดูแลสุขภาพดียิ่งกว่าที่เคย บัดนี้ ขอเชิญรับชมละครสั้นเกี่ยวกับห้องยาในโรงพยาบาลได้เลยครับ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PART 5 THAI -->
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-xl">
+                    <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider mb-2">
+                        PART 5: SHORT ROLE-PLAY (ละครสั้น)
+                    </h3>
+                    <p class="text-xs italic text-slate-400 bg-slate-900/60 p-2.5 rounded-lg mb-4 border border-slate-700/50">
+                        <b>ฉาก:</b> เคาน์เตอร์ห้องยาในโรงพยาบาลที่วุ่นวาย. <b>ตัวละคร:</b> เภสัชกรหลัก (นนท์), AI ผู้ช่วย (โบ๊ท), คนไข้ (ปั้น), ผู้ช่วยเภสัชกร (เกม)
+                    </p>
+
+                    <div class="space-y-4 text-sm text-slate-200">
+                        <div class="flex gap-3">
+                            <span class="speaker-nont px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Nont</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Team, our prescription queue is huge today! Can AI help us verify all these prescriptions quickly?</p>
+                                <p class="font-medium text-emerald-300">คิวใบสั่งยาของเรายาวมากวันนี้! AI สามารถช่วยพวกเราตรวจสอบใบสั่งยาทั้งหมดนี้อย่างรวดเร็วได้ไหม?</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat (AI)</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(robotic voice and movements)</i> Beep boop! Verified one thousand prescriptions and checked five hundred drug interactions in two seconds!</p>
+                                <p class="font-medium text-emerald-300"><i>(ทำเสียงและท่าทางหุ่นยนต์)</i> บี๊บ บู๊บ! ตรวจสอบใบสั่งยาหนึ่งพันรายการและเช็กปฏิกิริยายาห้าร้อยรายการในเวลาสองวินาที!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-nont px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Nont</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(testing the system)</i> Wait! The database runs fast, but AI cannot explain the advice warmly.</p>
+                                <p class="font-medium text-emerald-300"><i>(ลองทดสอบระบบ)</i> เดี๋ยวสิ! ฐานข้อมูลทำงานเร็วมาก แต่ AI ไม่สามารถอธิบายคำแนะนำด้วยความอบอุ่นได้</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-pun px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Pun</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(looking confused and worried)</i> Excuse me doctor, I <span class="text-yellow-300 font-bold">doubted [V3]</span> if this pill will cause stomach pain. <span class="text-green-400 underline font-bold">Could you tell me how I should take this medication? [G4]</span></p>
+                                <p class="font-medium text-emerald-300"><i>(มองด้วยความสับสนและกังวล)</i> ขอโทษนะครับหมอ ผม <span class="bg-yellow-950 text-yellow-300 px-1 rounded">ยังสงสัย/แคลงใจ [V3: doubted]</span> ว่ายาเม็ดนี้จะทำให้ปวดท้องหรือเปล่า? <span class="bg-emerald-950 text-emerald-300 px-1 rounded">คุณช่วยบอกผมหน่อยได้ไหมว่าผมควรทานยานี้อย่างไร? [G4: Indirect Question]</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-nont px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Nont</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(pointing to the Assistant)</i> Easy! Our Assistant Pharmacist has a clear plan.</p>
+                                <p class="font-medium text-emerald-300"><i>(ชี้ไปที่ผู้ช่วย)</i> สบายมากครับ! ผู้ช่วยเภสัชกรของเรามีคำแนะนำที่ชัดเจน</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-game px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Game</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(speaking kindly)</i> Take one tablet after breakfast with water. This medicine is very gentle on the stomach!</p>
+                                <p class="font-medium text-emerald-300"><i>(พูดด้วยความอ่อนโยน)</i> ทานวันละหนึ่งเม็ดหลังอาหารเช้าพร้อมน้ำเปล่านะครับ ยานี้อ่อนโยนต่อกระเพาะอาหารมากครับ!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-boat px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Boat (AI)</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(shaking head)</i> Error! Error! System does not understand 'warm human care'.</p>
+                                <p class="font-medium text-emerald-300"><i>(สั่นหัว)</i> ข้อผิดพลาด! ข้อผิดพลาด! ระบบไม่เข้าใจคำว่า 'การดูแลอันอบอุ่นแบบมนุษย์'</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-pun px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Pun</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(smiling with relief)</i> Wow! Now I feel so safe. The human touch makes all the difference!</p>
+                                <p class="font-medium text-emerald-300"><i>(ยิ้มด้วยความโล่งอก)</i> ว้าว! ตอนนี้ผมรู้สึกปลอดภัยมากเลยครับ สัมผัสแห่งความเป็นมนุษย์ทำให้ทุกอย่างแตกต่างจริงๆ!</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-nont px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Nont</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Exactly. AI gives us speed, but humans give healthcare a soul.</p>
+                                <p class="font-medium text-emerald-300">ถูกต้องเลยครับ AI มอบความเร็วให้เรา แต่ มนุษย์มอบจิตวิญญาณให้กับการดูแลสุขภาพ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="speaker-game px-2 py-1 rounded text-xs font-bold h-fit shrink-0">Game</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1">Great job, team! AI and humans work best together.</p>
+                                <p class="font-medium text-emerald-300">เยี่ยมมากทุกคน! AI และมนุษย์ทำงานร่วมกันได้ดีที่สุดครับ</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <span class="bg-slate-700 text-white px-2 py-1 rounded text-xs font-bold h-fit shrink-0">All</span>
+                            <div>
+                                <p class="text-slate-300 text-xs mb-1"><i>(bow)</i> Thank you for listening to our presentation. We hope you enjoyed learning about AI vs. Humans in the Workplace! If you have any questions, we'd be happy to answer them.</p>
+                                <p class="font-medium text-emerald-300"><i>(โค้งคำนับ)</i> ขอบคุณสำหรับการรับฟังการนำเสนอของพวกเราครับ พวกเราหวังว่าทุกคนจะได้รับความเพลิดเพลินและเรียนรู้เกี่ยวกับ AI กับมนุษย์ในสถานที่ทำงาน หากมีคำถามใดๆ พวกเรายินดีที่จะตอบครับ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TAB 3: REHEARSAL & AUDIO COMPARISON MODE -->
+        <section id="page-bilingual" class="tab-page hidden">
+            <div class="max-w-5xl mx-auto space-y-6">
+
+                <!-- Filter & Controls -->
+                <div class="bg-slate-800 border border-slate-700 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center space-x-3 w-full sm:w-auto">
+                        <i class="fa-solid fa-filter text-blue-400"></i>
+                        <span class="text-xs font-semibold text-slate-300">Filter by Member:</span>
+                        <select id="speaker-filter" onchange="filterRehearsalScript()" class="bg-slate-900 text-white text-xs px-3 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-blue-500">
+                            <option value="all">All Speakers (แสดงทุกคน)</option>
+                            <option value="Boat">Boat (โบ๊ท) - AI Assistant</option>
+                            <option value="Nont">Nont (นนท์) - Lead Pharmacist</option>
+                            <option value="Pun">Pun (ปั้น) - Patient</option>
+                            <option value="Game">Game (เกม) - Assistant Pharmacist</option>
+                        </select>
+                    </div>
+
+                    <div class="text-xs text-slate-400 flex items-center gap-2">
+                        <i class="fa-solid fa-volume-high text-emerald-400"></i>
+                        <span>Click speaker icon <i class="fa-solid fa-play text-xs text-emerald-400"></i> to listen to English pronunciation</span>
+                    </div>
+                </div>
+
+                <!-- Rehearsal Cards List -->
+                <div id="rehearsal-container" class="space-y-3">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+
+            </div>
+        </section>
 
     </main>
 
+    <script>
+        // Full Script Data for Rehearsal & Text-to-Speech
+        const scriptLines = [
+            // PART 1
+            { part: "PART 1: INTRODUCTION", speaker: "Boat", text: "Good morning, everyone. We are Group _____ from Section _____. Today we're going to talk about AI vs. Humans in the Workplace, and our career is Pharmacist.", thai: "สวัสดีครับทุกคน พวกเรากลุ่ม _____ จากเซกชัน _____ วันนี้พวกเราจะมาพูดเรื่อง AI vs. Humans in the Workplace และอาชีพของพวกเราคือ เภสัชกร ครับ" },
+            { part: "PART 1: INTRODUCTION", speaker: "Boat", text: "Let us introduce the members of our group. I'm Boat, and these are Nont, Pun, and Game.", thai: "ขอแนะนำสมาชิกในกลุ่มของพวกเราครับ ผมโบ๊ท และนี่คือนนท์ ปั้น และเกมครับ" },
+            { part: "PART 1: INTRODUCTION", speaker: "Boat", text: "A pharmacist dispenses medications, checks prescriptions, and counsels patients. It is a challenging job because accuracy directly affects human lives. So today we ask one question: who does this job better, AI or humans? Let's find out!", thai: "เภสัชกรทำหน้าที่จ่ายยา [G1] ตรวจสอบใบสั่งยา และให้คำปรึกษาแก่คนไข้ เป็นงานที่ท้าทายเพราะความแม่นยำส่งผลโดยตรงต่อชีวิตคน ดังนั้นวันนี้เราจึงตั้งคำถามว่า ใครทำหน้าที่นี้ได้ดีกว่ากัน ระหว่าง AI กับมนุษย์? เรามาหาคำตอบกันครับ!" },
+            
+            // PART 2
+            { part: "PART 2: AI ADVANTAGE", speaker: "Boat", text: "Now let's move to our first point: AI's strengths in pharmacy design and operation.", thai: "คราวนี้มาต่อกันที่หัวข้อแรกครับ: จุดเด่นของ AI ในการออกแบบและดำเนินงานทางเภสัชกรรม" },
+            { part: "PART 2: AI ADVANTAGE", speaker: "Boat", text: "AI uses advanced technology to work with huge medical databases. AI is an ultimate multitasker that checks thousands of drug interactions much faster than a human team.", thai: "AI ใช้นวัตกรรมเทคโนโลยีขั้นสูงในการทำงานกับฐานข้อมูลทางการแพทย์ขนาดใหญ่ AI เป็นผู้ช่วยที่ทำงานหลายอย่างพร้อมกัน [V1] ได้อย่างดีเยี่ยม โดยตรวจสอบ [G1] ปฏิกิริยาร่วมของยานับพันรายการได้เร็วกว่า [G2] ทีมมนุษย์อย่างมาก" },
+            { part: "PART 2: AI ADVANTAGE", speaker: "Nont", text: "In addition, AI can process prescription scans in milliseconds with zero math errors. What's more, it detects dosage conflicts instantly. In fact, could you imagine how different medicine dispensing would be without AI? It would take much longer and cost far more time for every hospital.", thai: "นอกจากนี้ AI ยังสามารถประมวลผล [G3] การสแกนใบสั่งยาได้ในเวลาเพียงเสี้ยววินาทีโดยไม่มีข้อผิดพลาดทางตัวเลข ตรวจพบข้อขัดแย้งของขนาดยาได้ทันที อันที่จริง คุณพอจะจินตนาการออกไหมว่าการจ่ายยาจะแตกต่างออกไปอย่างไรหากไม่มี AI? [G4] มันคงต้องใช้เวลานานกว่าเดิมมากและสิ้นเปลืองเวลาสำหรับทุกโรงพยาบาล" },
+
+            // PART 3
+            { part: "PART 3: HUMANS ADVANTAGE", speaker: "Nont", text: "Moving on to the next part: human strengths. On one hand, human pharmacists can get tired or be in a bad mood, which may lead to occasional mistakes.", thai: "ถัดมาที่จุดเด่นของมนุษย์ครับ ในมุมหนึ่ง เภสัชกรที่เป็นมนุษย์อาจรู้สึกเหนื่อยล้าหรืออยู่ในอารมณ์ไม่ดี [V2] ได้ ซึ่งอาจนำไปสู่ข้อผิดพลาดชั่วคราว" },
+            { part: "PART 3: HUMANS ADVANTAGE", speaker: "Pun", text: "Isn't human empathy the heart of patient care? Yes, it is! Humans create warm relationships and emotional trust that make patients feel safe, heard, and cared for.", thai: "ความเห็นอกเห็นใจของมนุษย์ไม่ได้เป็นหัวใจสำคัญของการดูแลสุขภาพหรอกหรือ? [G4] ใช่แล้วครับ! มนุษย์สร้าง [G1] สัมพันธภาพที่อบอุ่นและความไว้วางใจทางอารมณ์ที่ทำให้คนไข้รู้สึกปลอดภัย มีคนรับฟัง และได้รับการดูแล" },
+            { part: "PART 3: HUMANS ADVANTAGE", speaker: "Pun", text: "Humans are more observant than algorithms. AI learns from old data, but humans understand subtle non-verbal signals. For example, a patient might feel anxious about side effects that AI cannot detect.", thai: "มนุษย์มีความช่างสังเกตมากกว่า [G2] อัลกอริทึม AI เรียนรู้จากข้อมูลเก่า แต่มนุษย์เข้าใจภาษากายและสัญญาณที่แยบคาย ตัวอย่างเช่น คนไข้อาจรู้สึกกังวลเกี่ยวกับผลข้างเคียงซึ่ง AI ไม่สามารถตรวจจับได้" },
+            { part: "PART 3: HUMANS ADVANTAGE", speaker: "Pun", text: "On top of that, a human pharmacist should balance technical checks with personal lifestyle advice so that patients stay healthy, not confused. AI cannot feel compassion, so it can't fully understand patient fears.", thai: "ยิ่งไปกว่านั้น เภสัชกรที่เป็นมนุษย์ควรสร้างสมดุล [G3] ระหว่างการตรวจสอบทางเทคนิคกับการให้คำแนะนำวิถีชีวิตส่วนบุคคล เพื่อให้คนไข้มีสุขภาพดีและไม่สับสน AI ไม่สามารถรู้สึกเห็นอกเห็นใจ ดังนั้นจึงไม่สามารถเข้าใจความกลัวของคนไข้ได้อย่างแท้จริง" },
+
+            // PART 4
+            { part: "PART 4: CONCLUSION", speaker: "Game", text: "To sum up, AI is excellent at speed, verification, and technical data processing. But humans are irreplaceable for empathy, trust, and critical ethical judgment.", thai: "โดยสรุปแล้ว AI โดดเด่นอย่างยิ่งในเรื่องความเร็ว การตรวจสอบ และการประมวลผลข้อมูลทางเทคนิค แต่การจะมาแทนที่มนุษย์ในเรื่องความเห็นอกเห็นใจ ความไว้วางใจ และการตัดสินใจทางจริยธรรมที่สำคัญนั้นเป็นไปไม่ได้" },
+            { part: "PART 4: CONCLUSION", speaker: "Game", text: "Pharmacists must take responsibility for final medicine delivery and overall patient health.", thai: "เภสัชกรต้องรับผิดชอบต่อ [V4] การจ่ายยาขั้นสุดท้ายและสุขภาพโดยรวมของคนไข้" },
+            { part: "PART 4: CONCLUSION", speaker: "Game", text: "In the future, pharmacists should use AI as a powerful assistant, while humans stay in control of patient care decisions.", thai: "ในอนาคต เภสัชกรควรใช้ [G3] AI เป็นผู้ช่วยอันทรงพลัง ในขณะที่มนุษย์ยังคงเป็นผู้ควบคุมการตัดสินใจดูแลคนไข้" },
+            { part: "PART 4: CONCLUSION", speaker: "Game", text: "Together, AI and humans can make healthcare better than ever. Now, please enjoy a short skit about a hospital pharmacy.", thai: "เมื่อทำงานร่วมกัน AI และมนุษย์สามารถทำให้การดูแลสุขภาพดียิ่งกว่าที่เคย บัดนี้ ขอเชิญรับชมละครสั้นเกี่ยวกับห้องยาในโรงพยาบาลได้เลยครับ" },
+
+            // PART 5
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Nont", text: "Team, our prescription queue is huge today! Can AI help us verify all these prescriptions quickly?", thai: "คิวใบสั่งยาของเรายาวมากวันนี้! AI สามารถช่วยพวกเราตรวจสอบใบสั่งยาทั้งหมดนี้อย่างรวดเร็วได้ไหม?" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Boat", text: "Beep boop! Verified one thousand prescriptions and checked five hundred drug interactions in two seconds!", thai: "(ทำเสียงหุ่นยนต์) บี๊บ บู๊บ! ตรวจสอบใบสั่งยาหนึ่งพันรายการและเช็กปฏิกิริยายาห้าร้อยรายการในเวลาสองวินาที!" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Nont", text: "Wait! The database runs fast, but AI cannot explain the advice warmly.", thai: "(ลองทดสอบระบบ) เดี๋ยวสิ! ฐานข้อมูลทำงานเร็วมาก แต่ AI ไม่สามารถอธิบายคำแนะนำด้วยความอบอุ่นได้" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Pun", text: "Excuse me doctor, I doubted if this pill will cause stomach pain. Could you tell me how I should take this medication?", thai: "(กังวล) ขอโทษนะครับหมอ ผมยังสงสัย [V3] ว่ายาเม็ดนี้จะทำให้ปวดท้องหรือเปล่า? คุณช่วยบอกผมหน่อยได้ไหมว่าผมควรทานยานี้อย่างไร? [G4]" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Nont", text: "Easy! Our Assistant Pharmacist has a clear plan.", thai: "สบายมากครับ! ผู้ช่วยเภสัชกรของเรามีคำแนะนำที่ชัดเจน" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Game", text: "Take one tablet after breakfast with water. This medicine is very gentle on the stomach!", thai: "ทานวันละหนึ่งเม็ดหลังอาหารเช้าพร้อมน้ำเปล่านะครับ ยานี้อ่อนโยนต่อกระเพาะอาหารมากครับ!" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Boat", text: "Error! Error! System does not understand 'warm human care'.", thai: "ข้อผิดพลาด! ข้อผิดพลาด! ระบบไม่เข้าใจคำว่า 'การดูแลอันอบอุ่นแบบมนุษย์'" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Pun", text: "Wow! Now I feel so safe. The human touch makes all the difference!", thai: "ว้าว! ตอนนี้ผมรู้สึกปลอดภัยมากเลยครับ สัมผัสแห่งความเป็นมนุษย์ทำให้ทุกอย่างแตกต่างจริงๆ!" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Nont", text: "Exactly. AI gives us speed, but humans give healthcare a soul.", thai: "ถูกต้องเลยครับ AI มอบความเร็วให้เรา แต่ มนุษย์มอบจิตวิญญาณให้กับการดูแลสุขภาพ" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "Game", text: "Great job, team! AI and humans work best together.", thai: "เยี่ยมมากทุกคน! AI และมนุษย์ทำงานร่วมกันได้ดีที่สุดครับ" },
+            { part: "PART 5: SHORT ROLE-PLAY", speaker: "All", text: "Thank you for listening to our presentation. We hope you enjoyed learning about AI vs. Humans in the Workplace! If you have any questions, we'd be happy to answer them.", thai: "ขอบคุณสำหรับการรับฟังการนำเสนอของพวกเราครับ พวกเราหวังว่าทุกคนจะได้รับความเพลิดเพลินและเรียนรู้เกี่ยวกับ AI กับมนุษย์ในสถานที่ทำงาน หากมีคำถามใดๆ พวกเรายินดีที่จะตอบครับ" }
+        ];
+
+        // Tab Switching Function
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-page').forEach(page => page.classList.add('hidden'));
+            document.querySelectorAll('.tab-page').forEach(page => page.classList.remove('block'));
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                btn.classList.add('text-slate-400');
+            });
+
+            document.getElementById(`page-${tabName}`).classList.remove('hidden');
+            document.getElementById(`page-${tabName}`).classList.add('block');
+
+            const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+            activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+            activeBtn.classList.remove('text-slate-400');
+
+            if (tabName === 'bilingual') {
+                filterRehearsalScript();
+            }
+        }
+
+        // Speaker Badge Styling class
+        function getSpeakerBadgeClass(speaker) {
+            switch(speaker) {
+                case 'Boat': return 'speaker-boat';
+                case 'Nont': return 'speaker-nont';
+                case 'Pun': return 'speaker-pun';
+                case 'Game': return 'speaker-game';
+                default: return 'bg-slate-700 text-white';
+            }
+        }
+
+        // Render & Filter Rehearsal Cards
+        function filterRehearsalScript() {
+            const filterValue = document.getElementById('speaker-filter').value;
+            const container = document.getElementById('rehearsal-container');
+            container.innerHTML = '';
+
+            const filtered = filterValue === 'all' 
+                ? scriptLines 
+                : scriptLines.filter(item => item.speaker === filterValue || item.speaker === 'All');
+
+            filtered.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl shadow-md hover:border-slate-600 transition flex flex-col md:flex-row gap-4 justify-between items-start";
+                
+                card.innerHTML = `
+                    <div class="flex-1 space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="${getSpeakerBadgeClass(item.speaker)} text-[10px] uppercase font-extrabold px-2 py-0.5 rounded tracking-wider">${item.speaker}</span>
+                            <span class="text-[10px] text-slate-400 uppercase font-semibold">${item.part}</span>
+                        </div>
+                        <p class="text-sm font-semibold text-white leading-relaxed">${item.text}</p>
+                        <p class="text-xs text-emerald-400 font-medium leading-relaxed">${item.thai}</p>
+                    </div>
+
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="speakText('${escapeQuotes(item.text)}')" class="p-2.5 bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 rounded-lg text-xs font-semibold transition flex items-center gap-2">
+                            <i class="fa-solid fa-volume-high"></i>
+                            <span>Listen</span>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Escape string quotes for inline JS execution
+        function escapeQuotes(str) {
+            return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+
+        // Web Speech API for Text-to-Speech
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Stop current speech
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.95; // Slightly slower for clear speech practice
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Text-to-speech is not supported in this browser.");
+            }
+        }
+
+        // Initial setup on load
+        window.onload = function() {
+            filterRehearsalScript();
+        }
+    </script>
 </body>
 </html>
