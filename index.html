@@ -1,775 +1,415 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สคริปต์พรีเซนต์ & ละครสั้น - AI vs. Humans: Pharmacist</title>
+    <title>AI vs. Humans in the Workplace - Pharmacist Script (PDF Template)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Kanit & Inter -->
+    <!-- Google Fonts: Inter & Times New Roman style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Kanit', 'Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            boat: '#2563eb', // Blue for Boat (Member 1)
-                            nont: '#0d9488', // Teal for Nont (Member 2)
-                            pun: '#e11d48',  // Rose for Pun (Member 3)
-                            game: '#7c3aed', // Purple for Game (Member 4)
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+
     <style>
+        /* Base typography for formal document view */
         body {
-            font-family: 'Kanit', sans-serif;
-            background-color: #f8fafc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #334155;
+            color: #0f172a;
         }
-        .vocab-highlight {
-            background-color: #fef08a;
-            color: #854d0e;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-            border: 1px dashed #ca8a04;
+
+        .document-font {
+            font-family: 'Inter', sans-serif;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+
+        /* Target Vocabulary Styling: Yellow + Bold */
+        .vocab-tag {
+            background-color: #fef08a !important; /* Yellow 200 */
+            color: #713f12 !important;
+            font-weight: 700 !important;
+            padding: 1px 4px;
+            border-radius: 2px;
+            display: inline-block;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+
+        /* Target Grammar Styling: Green + Bold + Underline */
+        .grammar-tag {
+            background-color: #bbf7d0 !important; /* Green 200 */
+            color: #14532d !important;
+            font-weight: 700 !important;
+            text-decoration: underline !important;
+            text-decoration-color: #16a34a !important;
+            text-underline-offset: 2px;
+            padding: 1px 4px;
+            border-radius: 2px;
+            display: inline-block;
         }
+
+        /* Superscript tags */
+        sup.tag-label {
+            font-size: 0.65em;
+            font-weight: 800;
+            margin-left: 1px;
+            vertical-align: super;
+        }
+
+        /* Printable A4 Page Settings */
+        .a4-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm 20mm 20mm 20mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Table borders matching image style */
+        .doc-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .doc-table th, .doc-table td {
+            border: 1px solid #cbd5e1;
+            padding: 6px 10px;
+            font-size: 11.5px;
+            text-align: left;
+        }
+
+        .doc-table th {
+            background-color: #f1f5f9;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .table-header-bg {
+            background-color: #e2e8f0 !important;
+        }
+
+        /* Print Specific Styles */
         @media print {
-            .no-print { display: none !important; }
-            .print-only { display: block !important; }
-            .card-box { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+            @page {
+                size: A4 portrait;
+                margin: 15mm 15mm 15mm 15mm;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .a4-page {
+                width: 100% !important;
+                min-height: auto !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                page-break-after: always;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            /* Force exact background colors when printing to PDF */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen pb-16">
+<body class="py-6 min-h-screen">
 
-    <!-- Header (Scrolls away naturally) -->
-    <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white shadow-md no-print">
-        <div class="max-w-5xl mx-auto px-4 py-3.5 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <div class="flex items-center space-x-3 w-full sm:w-auto">
-                <div class="bg-indigo-500/30 p-2.5 rounded-xl border border-indigo-400/30 shrink-0">
-                    <i class="fa-solid fa-user-doctor text-xl text-cyan-400"></i>
+    <!-- Top Action Control Bar (Hidden when printing) -->
+    <header class="no-print max-w-4xl mx-auto mb-6 px-4">
+        <div class="bg-slate-900 text-white rounded-2xl p-4 shadow-xl border border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 p-2.5 rounded-xl">
+                    <i class="fa-solid fa-file-pdf text-xl text-white"></i>
                 </div>
                 <div>
-                    <h1 class="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-200 to-white leading-tight">
-                        AI vs. Humans: Pharmacist
-                    </h1>
-                    <p class="text-[11px] text-slate-300">สคริปต์พรีเซนต์ & ละครสั้น (แบ่งบทเท่ากัน 4 คน ~25%)</p>
+                    <h1 class="font-bold text-base sm:text-lg">AI vs. Humans in the Workplace (PDF Template)</h1>
+                    <p class="text-xs text-slate-400">Speak Out Project Script | Career: Pharmacist (Exact 100% Match)</p>
                 </div>
             </div>
-            
-            <!-- Quick Actions -->
-            <div class="flex items-center space-x-2 text-xs w-full sm:w-auto justify-end">
-                <button onclick="openTeleprompter()" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl shadow-sm flex items-center space-x-1.5 transition">
-                    <i class="fa-solid fa-circle-play text-cyan-300"></i>
-                    <span>โหมดซ้อมพูด (Prompter)</span>
-                </button>
-                <button onclick="window.print()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl border border-slate-700 flex items-center space-x-1 transition" title="พิมพ์สคริปต์">
-                    <i class="fa-solid fa-print text-cyan-400"></i>
-                </button>
-                <button onclick="toggleVocabModal()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl border border-slate-700 flex items-center space-x-1 transition" title="เช็คคำศัพท์บังคับ">
-                    <i class="fa-solid fa-book-bookmark text-yellow-400"></i>
+
+            <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
+                <button onclick="window.print()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-xl shadow-lg hover:shadow-blue-500/30 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Print / Save as PDF</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-3 sm:px-4 pt-4">
+    <!-- DOCUMENT CONTAINER (A4 PAGES) -->
+    <main class="document-font">
 
-        <!-- Role Selector & Display Controls (Scrolls away naturally) -->
-        <section class="bg-white rounded-2xl p-3.5 shadow-sm border border-slate-200/80 mb-4 no-print">
-            <div class="flex flex-col gap-3">
-                <!-- Member Filter -->
-                <div>
-                    <div class="flex items-center justify-between mb-2">
-                        <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wider flex items-center">
-                            <i class="fa-solid fa-filter text-indigo-500 mr-1.5"></i> กรองดูบทเฉพาะบุคคล:
-                        </label>
-                        <span id="activeFilterBadge" class="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
-                            แสดงบททั้งหมด
-                        </span>
-                    </div>
-                    <div class="flex space-x-2 overflow-x-auto no-scrollbar py-0.5" id="memberFilterContainer">
-                        <button onclick="filterMember('all')" id="btn-all" class="member-btn active whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-indigo-600 bg-indigo-600 text-white shadow-sm shrink-0">
-                            👥 ทั้งหมด (100%)
-                        </button>
-                        <button onclick="filterMember('boat')" id="btn-boat" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-blue-50 shrink-0">
-                            🤖 โบ๊ท (~25%)
-                        </button>
-                        <button onclick="filterMember('nont')" id="btn-nont" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-teal-50 shrink-0">
-                            👨‍⚕️️ นนท์ (~25%)
-                        </button>
-                        <button onclick="filterMember('pun')" id="btn-pun" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-rose-50 shrink-0">
-                            🤒 ปั้น (~25%)
-                        </button>
-                        <button onclick="filterMember('game')" id="btn-game" class="member-btn whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-semibold transition border border-slate-200 bg-slate-100 text-slate-700 hover:bg-purple-50 shrink-0">
-                            👨‍💼 เกม (~25%)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Display Toggles & Speech Settings -->
-                <div class="border-t border-slate-100 pt-2.5 flex flex-wrap items-center justify-between gap-2 text-xs">
-                    <div class="flex items-center space-x-4">
-                        <label class="inline-flex items-center cursor-pointer font-medium text-slate-700">
-                            <input type="checkbox" id="togglePhonetics" checked onchange="toggleDisplayOptions()" class="sr-only peer">
-                            <div class="w-7 h-3.5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[1px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-indigo-600 relative"></div>
-                            <span class="ml-1.5 text-[11px] text-slate-600">คำอ่านไทย</span>
-                        </label>
-                        <label class="inline-flex items-center cursor-pointer font-medium text-slate-700">
-                            <input type="checkbox" id="toggleTranslation" checked onchange="toggleDisplayOptions()" class="sr-only peer">
-                            <div class="w-7 h-3.5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[1px] after:left-[1px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-indigo-600 relative"></div>
-                            <span class="ml-1.5 text-[11px] text-slate-600">คำแปลไทย</span>
-                        </label>
-                    </div>
-
-                    <!-- Audio Speed Control -->
-                    <div class="flex items-center space-x-1.5 bg-slate-100 px-2.5 py-1 rounded-lg">
-                        <i class="fa-solid fa-gauge-high text-slate-400 text-[11px]"></i>
-                        <span class="text-[11px] text-slate-500 font-medium">ความเร็วเสียง:</span>
-                        <select id="ttsRate" class="bg-transparent font-bold text-indigo-600 focus:outline-none text-xs cursor-pointer">
-                            <option value="0.75">0.75x</option>
-                            <option value="0.9" selected>0.9x</option>
-                            <option value="1.0">1.0x</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Equal Share Banner -->
-        <section class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6 no-print">
-            <div class="bg-blue-50/80 border border-blue-200/80 rounded-xl p-2.5 flex items-center space-x-2.5">
-                <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-                    โบ๊ท
-                </div>
-                <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-blue-900 truncate">โบ๊ท (25%)</h3>
-                    <p class="text-[10px] text-blue-700 truncate">Intro / AI Assistant</p>
-                </div>
+        <!-- PAGE 1 -->
+        <article class="a4-page">
+            
+            <!-- Main Title Header -->
+            <div class="text-center mb-5">
+                <h1 class="text-xl font-bold text-indigo-950 tracking-tight">AI vs. Humans in the Workplace</h1>
+                <p class="text-xs font-semibold text-slate-600 mt-1">Speak Out Project Script | Career: Pharmacist</p>
             </div>
 
-            <div class="bg-teal-50/80 border border-teal-200/80 rounded-xl p-2.5 flex items-center space-x-2.5">
-                <div class="w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-                    นนท์
+            <!-- Summary Table 1: Group Details -->
+            <table class="doc-table mb-3">
+                <tbody>
+                    <tr>
+                        <td class="font-bold w-24 table-header-bg">Group</td>
+                        <td class="w-1/2">Group _____ Section _____</td>
+                        <td class="font-bold w-24 table-header-bg">Career</td>
+                        <td>Pharmacist</td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold table-header-bg">Time</td>
+                        <td colspan="3">7 minutes | 4 speakers</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Summary Table 2: Speakers List -->
+            <table class="doc-table mb-1">
+                <thead>
+                    <tr class="table-header-bg">
+                        <th class="w-20">Speaker</th>
+                        <th class="w-28">Nickname</th>
+                        <th class="w-20">Class No.</th>
+                        <th>Presentation part</th>
+                        <th>Skit role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-semibold">Speaker 1</td>
+                        <td>Boat (โบ๊ท)</td>
+                        <td>1</td>
+                        <td>Point 1: AI Advantage</td>
+                        <td>AI Assistant</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold">Speaker 2</td>
+                        <td>Nont (นนท์)</td>
+                        <td>2</td>
+                        <td>Point 2: Human Advantage</td>
+                        <td>Lead Pharmacist</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold">Speaker 3</td>
+                        <td>Pun (ปั้น)</td>
+                        <td>3</td>
+                        <td>Point 3: AI Limitations</td>
+                        <td>Patient</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold">Speaker 4</td>
+                        <td>Game (เกม)</td>
+                        <td>4</td>
+                        <td>Point 4: Responsibility & Conclusion</td>
+                        <td>Assistant Pharmacist</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Speaking Amount Note -->
+            <p class="text-[10px] italic text-slate-500 mb-4">
+                Speaking amount in Parts 1-4: Boat, Nont, Pun, and Game each speak equally (~25% equal split).
+            </p>
+
+            <!-- Target Vocabulary & Grammar Mapping Table -->
+            <table class="doc-table mb-6">
+                <thead>
+                    <tr class="table-header-bg">
+                        <th class="w-1/2">Target Vocabulary</th>
+                        <th class="w-1/2">Target Grammar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="vocab-tag">Yellow + bold</span> V1-V4</td>
+                        <td><span class="grammar-tag">Green + bold + underline</span> G1-G4</td>
+                    </tr>
+                    <tr>
+                        <td><b>Unit 1:</b> V1: <span class="vocab-tag">multitasker</span><sup>V1</sup></td>
+                        <td><b>G1:</b> Present Simple</td>
+                    </tr>
+                    <tr>
+                        <td><b>Unit 2:</b> V2: <span class="vocab-tag">in a bad mood</span><sup>V2</sup></td>
+                        <td><b>G2:</b> Comparative Adjectives</td>
+                    </tr>
+                    <tr>
+                        <td><b>Unit 3:</b> V3: <span class="vocab-tag">doubted</span><sup>V3</sup></td>
+                        <td><b>G3:</b> Modal Verbs</td>
+                    </tr>
+                    <tr>
+                        <td><b>Unit 4:</b> V4: <span class="vocab-tag">take responsibility for</span><sup>V4</sup></td>
+                        <td><b>G4:</b> Indirect & Negative Questions</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- SCRIPT CONTENT STARTS -->
+
+            <!-- PART 1: INTRODUCTION -->
+            <div class="mb-5">
+                <div class="border-b border-indigo-900 pb-1 mb-2">
+                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 1: INTRODUCTION (about 1 minute)</h2>
                 </div>
-                <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-teal-900 truncate">นนท์ (25%)</h3>
-                    <p class="text-[10px] text-teal-700 truncate">Human Factors / Pharmacist</p>
+
+                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                    <p>
+                        <b>Speaker 1 (Boat):</b> Good morning, everyone. We are Group _____ from Section _____. Today we're going to talk about AI vs. Humans in the Workplace, and our career is Pharmacist.
+                    </p>
+                    <p>
+                        <b>Speaker 1 (Boat):</b> Let us introduce the members of our group. I'm Boat, and these are Nont, Pun, and Game.
+                    </p>
+                    <p>
+                        <b>Speaker 1 (Boat):</b> A pharmacist <span class="grammar-tag">dispenses</span><sup>G1</sup> medications, checks prescriptions, and counsels patients. It is a challenging job because accuracy directly affects human lives. So today we ask one question: who does this job better, AI or humans? Let's find out!
+                    </p>
                 </div>
             </div>
 
-            <div class="bg-rose-50/80 border border-rose-200/80 rounded-xl p-2.5 flex items-center space-x-2.5">
-                <div class="w-8 h-8 rounded-full bg-rose-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-                    ปั้น
+            <!-- PART 2: POINT 1 - AI'S ADVANTAGE -->
+            <div class="mb-5">
+                <div class="border-b border-indigo-900 pb-1 mb-2">
+                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 2: POINT 1 - AI'S ADVANTAGE (about 1.5 minutes)</h2>
                 </div>
-                <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-rose-900 truncate">ปั้น (25%)</h3>
-                    <p class="text-[10px] text-rose-700 truncate">AI Limitations / Patient</p>
+
+                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                    <p>
+                        <b>Speaker 1 (Boat):</b> Now let's move to our first point: AI's strengths in pharmacy design and operation.
+                    </p>
+                    <p>
+                        <b>Speaker 1 (Boat):</b> AI uses advanced technology to work with huge medical databases. AI is an ultimate <span class="vocab-tag">multitasker</span><sup>V1</sup> that <span class="grammar-tag">checks</span><sup>G1</sup> thousands of drug interactions <span class="grammar-tag">much faster than</span><sup>G2</sup> a human team.
+                    </p>
+                    <p>
+                        <b>Speaker 2 (Nont):</b> In addition, AI <span class="grammar-tag">can process</span><sup>G3</sup> prescription scans in milliseconds with zero math errors. What's more, it detects dosage conflicts instantly. In fact, <span class="grammar-tag">could you imagine how different medicine dispensing would be without AI?</span><sup>G4</sup> It would take much longer and cost far more time for every hospital.
+                    </p>
                 </div>
             </div>
 
-            <div class="bg-purple-50/80 border border-purple-200/80 rounded-xl p-2.5 flex items-center space-x-2.5">
-                <div class="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-                    เกม
-                </div>
-                <div class="min-w-0">
-                    <h3 class="text-xs font-bold text-purple-900 truncate">เกม (25%)</h3>
-                    <p class="text-[10px] text-purple-700 truncate">Responsibility / Co-worker</p>
-                </div>
+            <!-- Page 1 Footer -->
+            <div class="absolute bottom-6 left-20 right-20 flex justify-between text-[10px] text-slate-400 border-t border-slate-200 pt-2">
+                <span>Pharmacist - Script | Section _____</span>
+                <span>Page 1</span>
             </div>
-        </section>
+        </article>
 
-        <!-- SECTION 1: PRESENTATION -->
-        <div class="mb-8">
-            <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center space-x-2">
-                    <span class="bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">PART 1</span>
-                    <h2 class="text-lg font-bold text-slate-800">Presentation (การนำเสนอ)</h2>
+
+        <!-- PAGE 2 -->
+        <article class="a4-page page-break">
+
+            <!-- PART 3: POINT 2 - HUMANS' ADVANTAGE -->
+            <div class="mb-5">
+                <div class="border-b border-indigo-900 pb-1 mb-2">
+                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 3: POINT 2 - HUMANS' ADVANTAGE (about 1.5 minutes)</h2>
                 </div>
-                <span class="text-[11px] text-slate-500 font-normal">8 บทพูด (~3 นาที)</span>
-            </div>
 
-            <div class="space-y-3" id="presentationContainer">
-                <!-- Cards injected via JS -->
-            </div>
-        </div>
-
-        <!-- SECTION 2: ROLE PLAY -->
-        <div class="mb-8">
-            <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center space-x-2">
-                    <span class="bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-md shadow-sm">PART 2</span>
-                    <h2 class="text-lg font-bold text-slate-800">Short Role-Play (บทละครสั้น)</h2>
+                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                    <p>
+                        <b>Speaker 2 (Nont):</b> Moving on to the next part: human strengths. On one hand, human pharmacists can get tired or be <span class="vocab-tag">in a bad mood</span><sup>V2</sup>, which may lead to occasional mistakes.
+                    </p>
+                    <p>
+                        <b>Speaker 3 (Pun):</b> <span class="grammar-tag">Isn't human empathy the heart of patient care?</span><sup>G4</sup> Yes, it is! Humans <span class="grammar-tag">create</span><sup>G1</sup> warm relationships and emotional trust that make patients feel safe, heard, and cared for.
+                    </p>
+                    <p>
+                        <b>Speaker 3 (Pun):</b> Humans are <span class="grammar-tag">more observant than</span><sup>G2</sup> algorithms. AI learns from old data, but humans understand subtle non-verbal signals. For example, a patient might feel anxious about side effects that AI cannot detect.
+                    </p>
+                    <p>
+                        <b>Speaker 3 (Pun):</b> On top of that, a human pharmacist <span class="grammar-tag">should balance</span><sup>G3</sup> technical checks with personal lifestyle advice so that patients stay healthy, not confused. AI cannot feel compassion, so it can't fully understand patient fears.
+                    </p>
                 </div>
-                <span class="text-[11px] text-slate-500 font-normal">8 บทพูด (~2 นาที)</span>
             </div>
 
-            <div class="space-y-3" id="roleplayContainer">
-                <!-- Cards injected via JS -->
+            <!-- PART 4: CONCLUSION -->
+            <div class="mb-5">
+                <div class="border-b border-indigo-900 pb-1 mb-2">
+                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 4: CONCLUSION (about 1 minute)</h2>
+                </div>
+
+                <div class="space-y-2 text-xs leading-relaxed text-slate-800">
+                    <p>
+                        <b>Speaker 4 (Game):</b> To sum up, AI is excellent at speed, verification, and technical data processing. But humans are irreplaceable for empathy, trust, and critical ethical judgment.
+                    </p>
+                    <p>
+                        <b>Speaker 4 (Game):</b> Pharmacists must <span class="vocab-tag">take responsibility for</span><sup>V4</sup> final medicine delivery and overall patient health.
+                    </p>
+                    <p>
+                        <b>Speaker 4 (Game):</b> In the future, pharmacists <span class="grammar-tag">should use</span><sup>G3</sup> AI as a powerful assistant, while humans stay in control of patient care decisions.
+                    </p>
+                    <p>
+                        <b>Speaker 4 (Game):</b> Together, AI and humans can make healthcare better than ever. Now, please enjoy a short skit about a hospital pharmacy.
+                    </p>
+                </div>
             </div>
-        </div>
+
+            <!-- PART 5: SHORT ROLE-PLAY -->
+            <div class="mb-5">
+                <div class="border-b border-indigo-900 pb-1 mb-2">
+                    <h2 class="text-xs font-bold text-indigo-950 uppercase tracking-wider">PART 5: SHORT ROLE-PLAY (about 1.5 minutes)</h2>
+                </div>
+
+                <p class="text-xs italic text-slate-600 mb-3 bg-slate-50 p-2 rounded border border-slate-200">
+                    Setting: A busy hospital pharmacy counter. Characters: Lead Pharmacist (Nont), AI Assistant (Boat), Patient (Pun), Assistant Pharmacist (Game).
+                </p>
+
+                <div class="space-y-2.5 text-xs leading-relaxed text-slate-800">
+                    <p>
+                        <b>Lead Pharmacist (Nont):</b> Team, our prescription queue is huge today! Can AI help us verify all these prescriptions quickly?
+                    </p>
+                    <p>
+                        <b>AI Assistant (Boat):</b> <i>(robotic voice and movements)</i> Beep boop! Verified one thousand prescriptions and checked five hundred drug interactions in two seconds!
+                    </p>
+                    <p>
+                        <b>Lead Pharmacist (Nont):</b> <i>(testing the system)</i> Wait! The database runs fast, but AI cannot explain the advice warmly.
+                    </p>
+                    <p>
+                        <b>Patient (Pun):</b> <i>(looking confused and worried)</i> Excuse me doctor, I <span class="vocab-tag">doubted</span><sup>V3</sup> if this pill will cause stomach pain. <span class="grammar-tag">Could you tell me how I should take this medication?</span><sup>G4</sup>
+                    </p>
+                    <p>
+                        <b>Lead Pharmacist (Nont):</b> <i>(pointing to the Assistant)</i> Easy! Our Assistant Pharmacist has a clear plan.
+                    </p>
+                    <p>
+                        <b>Assistant Pharmacist (Game):</b> <i>(speaking kindly)</i> Take one tablet after breakfast with water. This medicine is very gentle on the stomach!
+                    </p>
+                    <p>
+                        <b>AI Assistant (Boat):</b> <i>(shaking head)</i> Error! Error! System does not understand 'warm human care'.
+                    </p>
+                    <p>
+                        <b>Patient (Pun):</b> <i>(smiling with relief)</i> Wow! Now I feel so safe. The human touch makes all the difference!
+                    </p>
+                    <p>
+                        <b>Lead Pharmacist (Nont):</b> Exactly. AI gives us speed, but humans give healthcare a soul.
+                    </p>
+                    <p>
+                        <b>Assistant Pharmacist (Game):</b> Great job, team! AI and humans work best together.
+                    </p>
+                    <p>
+                        <b>All Together:</b> <i>(bow)</i> Thank you for listening to our presentation. We hope you enjoyed learning about AI vs. Humans in the Workplace! If you have any questions, we'd be happy to answer them.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Page 2 Footer -->
+            <div class="absolute bottom-6 left-20 right-20 flex justify-between text-[10px] text-slate-400 border-t border-slate-200 pt-2">
+                <span>Pharmacist - Script | Section _____</span>
+                <span>Page 2</span>
+            </div>
+        </article>
 
     </main>
 
-    <!-- Vocab Modal -->
-    <div id="vocabModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-100">
-            <div class="flex justify-between items-center pb-3 border-b border-slate-100 mb-3">
-                <h3 class="text-base font-bold text-slate-800 flex items-center">
-                    <i class="fa-solid fa-graduation-cap text-indigo-600 mr-2"></i>
-                    การกระจายคำศัพท์บังคับ (Units 1-4)
-                </h3>
-                <button onclick="toggleVocabModal()" class="text-slate-400 hover:text-slate-600 p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <p class="text-xs text-slate-500 mb-3">
-                ตรวจสอบตำแหน่งคำศัพท์สำคัญทั้ง 4 บทตามโครงสร้างบทเรียน:
-            </p>
-
-            <div class="space-y-2.5 text-xs">
-                <div class="p-2.5 bg-blue-50 border border-blue-200 rounded-xl">
-                    <div class="font-bold text-blue-900">Unit 1: <span class="text-blue-700">multitasker</span></div>
-                    <div class="text-[11px] text-blue-800 mt-0.5">ผู้พูด: <b>โบ๊ท</b> (Presentation - ประโยคที่ 1)</div>
-                </div>
-
-                <div class="p-2.5 bg-teal-50 border border-teal-200 rounded-xl">
-                    <div class="font-bold text-teal-900">Unit 2: <span class="text-teal-700">in a bad mood</span></div>
-                    <div class="text-[11px] text-teal-800 mt-0.5">ผู้พูด: <b>นนท์</b> (Presentation - ประโยคที่ 3)</div>
-                </div>
-
-                <div class="p-2.5 bg-rose-50 border border-rose-200 rounded-xl">
-                    <div class="font-bold text-rose-900">Unit 3: <span class="text-rose-700">doubted</span></div>
-                    <div class="text-[11px] text-rose-800 mt-0.5">ผู้พูด: <b>ปั้น</b> (Role-Play - ฉากที่ 3)</div>
-                </div>
-
-                <div class="p-2.5 bg-purple-50 border border-purple-200 rounded-xl">
-                    <div class="font-bold text-purple-900">Unit 4: <span class="text-purple-700">take responsibility for</span></div>
-                    <div class="text-[11px] text-purple-800 mt-0.5">ผู้พูด: <b>เกม</b> (Presentation - ประโยคที่ 7) ✨</div>
-                </div>
-            </div>
-
-            <div class="mt-5 text-right">
-                <button onclick="toggleVocabModal()" class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-semibold hover:bg-indigo-500">
-                    ปิดหน้าต่าง
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Teleprompter / Rehearsal Fullscreen Modal -->
-    <div id="prompterModal" class="fixed inset-0 bg-slate-950 z-50 flex flex-col hidden text-white">
-        <!-- Top Bar -->
-        <div class="p-3 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="text-xs bg-indigo-600 px-2.5 py-0.5 rounded font-bold">REHEARSAL MODE</span>
-                <span id="prompterCounter" class="text-xs text-slate-400">1 / 16</span>
-            </div>
-            <button onclick="closeTeleprompter()" class="text-slate-400 hover:text-white px-2 py-1 text-sm">
-                <i class="fa-solid fa-xmark mr-1"></i> ปิด
-            </button>
-        </div>
-
-        <!-- Main Prompter Screen -->
-        <div class="flex-1 flex flex-col justify-center items-center px-6 text-center max-w-3xl mx-auto w-full">
-            <div id="prompterBadge" class="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 bg-blue-600 text-white">
-                โบ๊ท (Member 1)
-            </div>
-
-            <!-- English Display -->
-            <div id="prompterEn" class="text-2xl sm:text-3xl font-bold leading-relaxed mb-6 text-slate-100">
-                Loading...
-            </div>
-
-            <!-- Phonetics -->
-            <div id="prompterPhonetics" class="text-base sm:text-lg text-amber-300 bg-amber-950/40 p-3 rounded-xl border border-amber-800/40 mb-4 max-w-xl w-full">
-                -
-            </div>
-
-            <!-- Translation -->
-            <div id="prompterTranslation" class="text-sm sm:text-base text-slate-300 bg-slate-900 p-3 rounded-xl border border-slate-800 max-w-xl w-full">
-                -
-            </div>
-        </div>
-
-        <!-- Bottom Controls -->
-        <div class="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between max-w-3xl mx-auto w-full">
-            <button onclick="prevPrompter()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-sm font-semibold flex items-center space-x-1.5">
-                <i class="fa-solid fa-chevron-left"></i>
-                <span>ก่อนหน้า</span>
-            </button>
-
-            <button onclick="playCurrentPrompterAudio()" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-bold flex items-center space-x-2 shadow-lg">
-                <i class="fa-solid fa-volume-high"></i>
-                <span>ฟังเสียง</span>
-            </button>
-
-            <button onclick="nextPrompter()" class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-semibold flex items-center space-x-1.5">
-                <span>ถัดไป</span>
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
-    </div>
-
-    <script>
-        // Script Data (Rebalanced to ~25% equal split among 4 members)
-        const scriptData = [
-            // PART 1: PRESENTATION (8 Lines - 2 Lines Each)
-            {
-                id: "p1",
-                section: "presentation",
-                memberKey: "boat",
-                memberName: "โบ๊ท",
-                memberRole: "Member 1 (~25%)",
-                avatarBg: "bg-blue-600",
-                badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "1. Intro & AI Power",
-                en: "Hello everyone. Today, our group presents on Pharmacists vs. AI. I’m Boat, with Nont, Pun, and Game. First, AI is an ultimate <span class='vocab-highlight'>multitasker</span> that checks prescriptions with high accuracy.",
-                rawEn: "Hello everyone. Today, our group presents on Pharmacists vs. AI. I’m Boat, with Nont, Pun, and Game. First, AI is an ultimate multitasker that checks prescriptions with high accuracy.",
-                phonetics: "เฮลโล เอเวอรีวัน. ทูเดย์, เอาเออร์ กรุ๊ป พรีเซนต์ส ออน ฟาร์มาซิสท์ส เวอซัส เอไอ. ไอเอ็ม โบ๊ท, วิธ นนท์, ปั้น, แอนด์ เกม. เฟิร์สท์, เอไอ อิส แอน อัลติเมท มัลติแทสเกอร์ แดต เช็คส์ พรีสคริปชันส์ วิธ ไฮ แอคคิวเรซี.",
-                translation: "สวัสดีครับทุกคน วันนี้กลุ่มพวกเรานำเสนอเรื่อง เภสัชกร กับ AI ครับ ผมโบ๊ท ร่วมกับ นนท์, ปั้น และ เกม ครับ อย่างแรกเลย AI เป็นระบบที่ทำงานหลากหลายพร้อมกัน (multitasker) ที่ตรวจสอบใบสั่งยาได้อย่างแม่นยำสูงครับ",
-                vocabBadge: "Unit 1 Vocab: multitasker"
-            },
-            {
-                id: "p2",
-                section: "presentation",
-                memberKey: "boat",
-                memberName: "โบ๊ท",
-                memberRole: "Member 1 (~25%)",
-                avatarBg: "bg-blue-600",
-                badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "2. Speed & Data Processing",
-                en: "It can process thousands of medical records per second without resting, reducing human calculation errors to zero.",
-                rawEn: "It can process thousands of medical records per second without resting, reducing human calculation errors to zero.",
-                phonetics: "อิท แคน โปรเซส เธาแซนดส์ ออฟ เมดิคอล เรคคอร์ดส์ เพอร์ เซเคิลน์ วิธออท เรสติง, รีดิ้วซิง ฮิวแมน แคลคิวเลชัน เออร์เรอร์ส ทู ซีโร.",
-                translation: "มันสามารถประมวลผลข้อมูลการแพทย์ได้หลายพันรายการต่อวินาทีโดยไม่ต้องพัก ซึ่งช่วยลดข้อผิดพลาดในการคำนวณของมนุษย์ให้เป็นศูนย์ครับ",
-                vocabBadge: null
-            },
-            {
-                id: "p3",
-                section: "presentation",
-                memberKey: "nont",
-                memberName: "นนท์",
-                memberRole: "Member 2 (~25%)",
-                avatarBg: "bg-teal-600",
-                badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "3. Human Limitations",
-                en: "On the other hand, human pharmacists can get tired or be <span class='vocab-highlight'>in a bad mood</span>, which may lead to occasional mistakes.",
-                rawEn: "On the other hand, human pharmacists can get tired or be in a bad mood, which may lead to occasional mistakes.",
-                phonetics: "ออน ดิ ออเธอร์ แฮนด์, ฮิวแมน ฟาร์มาซิสท์ส แคน เก็ต ไทเออร์ด ออร์ บี อิน แอ แบด มูด, วิช เมย์ ลีด ทู ออเคชันเนิล มิสเทคส์.",
-                translation: "ในทางกลับกัน เภสัชกรมนุษย์อาจจะเหนื่อยล้าหรืออารมณ์ไม่ดี (in a bad mood) ซึ่งอาจทำให้เกิดข้อผิดพลาดขึ้นได้เป็นบางครั้งครับ",
-                vocabBadge: "Unit 2 Vocab: in a bad mood"
-            },
-            {
-                id: "p4",
-                section: "presentation",
-                memberKey: "nont",
-                memberName: "นนท์",
-                memberRole: "Member 2 (~25%)",
-                avatarBg: "bg-teal-600",
-                badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "4. Human Empathy & Trust",
-                en: "However, AI lacks genuine empathy, personal warm advice, and the ability to build real trust with patients.",
-                rawEn: "However, AI lacks genuine empathy, personal warm advice, and the ability to build real trust with patients.",
-                phonetics: "เฮาเอฟเวอร์, เอไอ แคล็กส์ เจนยูอิน เอมพาธี, เพอร์ซันเนิล วอร์ม แอดไวซ์, แอนด์ ดิ แอบิลิตี ทู บิลด์ เรียล ทรัสท์ วิธ เพเชียนท์ส.",
-                translation: "อย่างไรก็ตาม AI ก็ขาดความเข้าใจและความเห็นอกเห็นใจที่แท้จริง ขาดคำแนะนำที่อบอุ่น และไม่สามารถสร้างความไว้วางใจกับผู้ป่วยได้ครับ",
-                vocabBadge: null
-            },
-            {
-                id: "p5",
-                section: "presentation",
-                memberKey: "pun",
-                memberName: "ปั้น",
-                memberRole: "Member 3 (~25%)",
-                avatarBg: "bg-rose-600",
-                badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "5. AI Limitations & Handwriting",
-                en: "AI might misread complex doctor handwriting or miss unique patient medical history that needs human judgment.",
-                rawEn: "AI might misread complex doctor handwriting or miss unique patient medical history that needs human judgment.",
-                phonetics: "เอไอ ไมท์ มิสรีด คอมเพล็กซ์ ดอกเตอร์ แฮนด์ไรทิง ออร์ มิส ยูนีค เพเชียนท์ เมดิคอล ฮิสทรี แดต นีดส์ ฮิวแมน จัดจ์เมนท์.",
-                translation: "นอกจากนี้ AI อาจอ่านลายมือหมอที่ซับซ้อนผิด หรือมองข้ามประวัติสุขภาพเฉพาะบุคคลที่ต้องใช้วิจารณญาณของมนุษย์ครับ",
-                vocabBadge: null
-            },
-            {
-                id: "p6",
-                section: "presentation",
-                memberKey: "pun",
-                memberName: "ปั้น",
-                memberRole: "Member 3 (~25%)",
-                avatarBg: "bg-rose-600",
-                badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "6. Double-checking Safety",
-                en: "Human pharmacists can double-check unexpected side effects and adjust dosages based on real patient conditions.",
-                rawEn: "Human pharmacists can double-check unexpected side effects and adjust dosages based on real patient conditions.",
-                phonetics: "ฮิวแมน ฟาร์มาซิสท์ส แคน ดับเบิล-เช็ค อันเอ็กซ์เพคเทด ไซด์ เอฟเฟกต์ส แอนด์ แอดยัสท์ โดเสจเจส เบสท์ ออน เรียล เพเชียนท์ คอนดิชันส์.",
-                translation: "เภสัชกรมนุษย์สามารถตรวจสอบผลข้างเคียงที่ไม่คาดคิด และปรับขนาดยาตามอาการจริงของผู้ป่วยได้อย่างเหมาะสมครับ",
-                vocabBadge: null
-            },
-            {
-                id: "p7",
-                section: "presentation",
-                memberKey: "game",
-                memberName: "เกม",
-                memberRole: "Member 4 (~25%)",
-                avatarBg: "bg-purple-600",
-                badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "7. Final Responsibility",
-                en: "Therefore, pharmacists must <span class='vocab-highlight'>take responsibility for</span> final medicine delivery and keep patients completely safe.",
-                rawEn: "Therefore, pharmacists must take responsibility for final medicine delivery and keep patients completely safe.",
-                phonetics: "แดร์ฟอร์, ฟาร์มาซิสท์ส มัสท์ เทค รีสปอนซิบิลิตี ฟอร์ ไฟเนิล เมดิซิน ดีลิเวอรี แอนด์ คีพ เพเชียนท์ส คอมพลีทลี เซฟ.",
-                translation: "ดังนั้น เภสัชกรจึงต้องรับผิดชอบต่อ (take responsibility for) การจ่ายยาขั้นสุดท้าย และดูแลความปลอดภัยของผู้ป่วยให้สมบูรณ์แบบครับ",
-                vocabBadge: "Unit 4 Vocab: take responsibility for"
-            },
-            {
-                id: "p8",
-                section: "presentation",
-                memberKey: "game",
-                memberName: "เกม",
-                memberRole: "Member 4 (~25%)",
-                avatarBg: "bg-purple-600",
-                badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "8. Summary & Transition",
-                en: "In conclusion, AI handles data, while humans handle care! Now, please enjoy our short role-play.",
-                rawEn: "In conclusion, AI handles data, while humans handle care! Now, please enjoy our short role-play.",
-                phonetics: "อิน คอนคลูชัน, เอไอ แฮนเดิลส์ เดตา, ไวล ฮิวแมนส์ แฮนเดิล แคร์! นาว, พลีส เอ็นจอย เอาเออร์ โรลเพลย์.",
-                translation: "โดยสรุปแล้ว AI จัดการข้อมูล แต่มนุษย์เป็นผู้ให้การดูแล! ต่อไปเชิญรับชมละครสั้นของพวกเราได้เลยครับ",
-                vocabBadge: null
-            },
-
-            // PART 2: ROLE PLAY (8 Lines - 2 Lines Each)
-            {
-                id: "r1",
-                section: "roleplay",
-                memberKey: "boat",
-                memberName: "โบ๊ท",
-                memberRole: "AI Robot Assistant",
-                avatarBg: "bg-blue-600",
-                badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "ฉาก 1: AI ต้อนรับและประมวลผลใบสั่งยา",
-                en: "Welcome to AI Pharmacy. Prescription verified. Zero error detected. Dispensing medication now.",
-                rawEn: "Welcome to AI Pharmacy. Prescription verified. Zero error detected. Dispensing medication now.",
-                phonetics: "เวลคัม ทู เอไอ ฟาร์มาซี. พรีสคริปชัน เวอริไฟด์. ซีโร เออร์เรอร์ ดีเทคเทด. ดิสเพนซิง เมดิเคชัน นาว.",
-                translation: "ยินดีต้อนรับสู่ AI เภสัชกรรม ตรวจสอบใบสั่งยาเรียบร้อย ไม่พบข้อผิดพลาด กำลังจ่ายยาครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r2",
-                section: "roleplay",
-                memberKey: "nont",
-                memberName: "นนท์",
-                memberRole: "Human Pharmacist",
-                avatarBg: "bg-teal-600",
-                badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "ฉาก 2: เภสัชกรมนุษย์ส่งมอบยาและอธิบายวิธีใช้",
-                en: "Hello sir! Here is your medicine. Please take one tablet every morning after breakfast with a full glass of water.",
-                rawEn: "Hello sir! Here is your medicine. Please take one tablet every morning after breakfast with a full glass of water.",
-                phonetics: "เฮลโล เซอร์! เฮียร์ อิส ยัวร์ เมดิซิน. พลีส เทค วัน แทเบล็ต เอเวอรี มอร์นิง อาฟเตอร์ เบรคฟาสท์ วิธ แอ ฟูล กลาส ออฟ วอเทอร์.",
-                translation: "สวัสดีครับคุณผู้ชาย! นี่คือยาของคุณนะครับ รับประทานวันละ 1 เม็ดทุกเช้าหลังอาหาร พร้อมน้ำเต็มแก้วนะครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r3",
-                section: "roleplay",
-                memberKey: "pun",
-                memberName: "ปั้น",
-                memberRole: "Patient (คนไข้)",
-                avatarBg: "bg-rose-600",
-                badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "ฉาก 3: คนไข้สอบถามด้วยความกังวลใจ",
-                en: "Thank you, doctor. But I <span class='vocab-highlight'>doubted</span> if this pill will cause any stomach pain or make me feel dizzy.",
-                rawEn: "Thank you, doctor. But I doubted if this pill will cause any stomach pain or make me feel dizzy.",
-                phonetics: "แธงค์ ยู, ดอกเตอร์. บัท ไอ ดาวท์เทด อิฟ ดิส พิลล์ วิล คอส เอนี สตอมมัค เพน ออร์ เมค มี ฟีล ดิซซี.",
-                translation: "ขอบคุณครับคุณหมอ แต่ผมสงสัย/กังวล (doubted) ว่ายานี้จะทำให้ปวดท้องหรือเวียนหัวไหมครับ",
-                vocabBadge: "Unit 3 Vocab: doubted"
-            },
-            {
-                id: "r4",
-                section: "roleplay",
-                memberKey: "game",
-                memberName: "เกม",
-                memberRole: "Pharmacist Assistant (ผู้ช่วยเภสัชกร)",
-                avatarBg: "bg-purple-600",
-                badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "ฉาก 4: ผู้ช่วยเภสัชกรตรวจสอบประวัติเพิ่มเติม",
-                en: "Don't worry! I have checked your health profile. This medicine is very gentle on the stomach.",
-                rawEn: "Don't worry! I have checked your health profile. This medicine is very gentle on the stomach.",
-                phonetics: "โดนท์ วอร์รี! ไอ แฮฟ เช็คท์ ยัวร์ เฮลท์ โปรไฟล์. ดิส เมดิซิน อิส เวรี เจนเทิล ออน ดิ สตอมมัค.",
-                translation: "ไม่ต้องกังวลนะครับ! ผมเช็คประวัติสุขภาพของคุณแล้ว ยาตัวนี้อ่อนโยนต่อกระเพาะอาหารมากครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r5",
-                section: "roleplay",
-                memberKey: "boat",
-                memberName: "โบ๊ท",
-                memberRole: "AI Robot Assistant",
-                avatarBg: "bg-blue-600",
-                badgeBg: "bg-blue-100 text-blue-800",
-                roleTitle: "ฉาก 5: AI แจ้งเตือนข้อควรระวังพิเศษ",
-                en: "Alert! Patient has a history of mild allergies. Re-confirming safety data with human staff.",
-                rawEn: "Alert! Patient has a history of mild allergies. Re-confirming safety data with human staff.",
-                phonetics: "อะเลิร์ต! เพเชียนท์ แฮส แอ ฮิสทรี ออฟ ไมลด์ แอลเลอร์จีส. รี-คอนเฟิร์มมิง เซฟตี เดตา วิธ ฮิวแมน สต๊าฟ.",
-                translation: "แจ้งเตือน! ผู้ป่วยมีประวัติแพ้ยาเล็กน้อย กำลังยืนยันข้อมูลความปลอดภัยกับเจ้าหน้าที่มนุษย์ครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r6",
-                section: "roleplay",
-                memberKey: "nont",
-                memberName: "นนท์",
-                memberRole: "Human Pharmacist",
-                avatarBg: "bg-teal-600",
-                badgeBg: "bg-teal-100 text-teal-800",
-                roleTitle: "ฉาก 6: เภสัชกรยืนยันและปรับแต่งคำแนะนำ",
-                en: "Good catch, AI! We will adjust the dose slightly to make sure it is 100% safe for you.",
-                rawEn: "Good catch, AI! We will adjust the dose slightly to make sure it is 100% safe for you.",
-                phonetics: "กู๊ด แคทช์, เอไอ! วี วิล แอดยัสท์ เดอะ โดส สไลท์ลี ทู เมค ชัวร์ อิท อิส วันฮันเดรด เพอร์เซนต์ เซฟ ฟอร์ ยู.",
-                translation: "เตือนได้ดีมาก AI! เราจะปรับขนาดยาลงเล็กน้อยเพื่อให้มั่นใจว่าปลอดภัย 100% สำหรับคุณครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r7",
-                section: "roleplay",
-                memberKey: "pun",
-                memberName: "ปั้น",
-                memberRole: "Patient (คนไข้)",
-                avatarBg: "bg-rose-600",
-                badgeBg: "bg-rose-100 text-rose-800",
-                roleTitle: "ฉาก 7: คนไข้สบายใจและประทับใจ",
-                en: "That makes me feel so relieved! Having both AI and human experts is wonderful.",
-                rawEn: "That makes me feel so relieved! Having both AI and human experts is wonderful.",
-                phonetics: "แดต เมคส์ มี ฟีล โซ รีลีฟท์! แฮฟวิง โบธ เอไอ แอนด์ ฮิวแมน เอ็กซ์เพิร์ทส อิส วันเดอร์ฟูล.",
-                translation: "ทำให้ผม โล่งอกขึ้นเยอะเลยครับ! การมีทั้ง AI และผู้เชี่ยวชาญที่เป็นมนุษย์ช่วยเหลือ มันยอดเยี่ยมจริงๆ ครับ",
-                vocabBadge: null
-            },
-            {
-                id: "r8",
-                section: "roleplay",
-                memberKey: "game",
-                memberName: "เกม",
-                memberRole: "Pharmacist Assistant (ผู้ช่วยเภสัชกร)",
-                avatarBg: "bg-purple-600",
-                badgeBg: "bg-purple-100 text-purple-800",
-                roleTitle: "ฉาก 8: สรุปความร่วมมือปิดท้าย",
-                en: "Exactly! Technology gives speed, but human care gives safety and peace of mind!",
-                rawEn: "Exactly! Technology gives speed, but human care gives safety and peace of mind!",
-                phonetics: "เอ็กแซกต์ลี! เทคโนโลยี กิฟส์ สปีด, บัท ฮิวแมน แคร์ กิฟส์ เซฟตี แอนด์ พีซ ออฟ ไมน์ด!",
-                translation: "ถูกต้องเลยครับ! เทคโนโลยีให้ความเร็ว แต่การดูแลของมนุษย์ให้ความปลอดภัยและความอุ่นใจครับ!",
-                vocabBadge: null
-            }
-        ];
-
-        let currentFilter = 'all';
-        let currentPrompterIndex = 0;
-
-        function renderCards() {
-            const presContainer = document.getElementById('presentationContainer');
-            const roleContainer = document.getElementById('roleplayContainer');
-
-            presContainer.innerHTML = '';
-            roleContainer.innerHTML = '';
-
-            const showPhonetics = document.getElementById('togglePhonetics').checked;
-            const showTranslation = document.getElementById('toggleTranslation').checked;
-
-            scriptData.forEach((item) => {
-                if (currentFilter !== 'all' && item.memberKey !== currentFilter && item.memberKey !== 'all') {
-                    return;
-                }
-
-                const isHighlightedRole = (currentFilter !== 'all' && (item.memberKey === currentFilter || item.memberKey === 'all'));
-
-                const cardHtml = `
-                    <div class="card-box bg-white rounded-2xl p-3.5 sm:p-4 border ${isHighlightedRole ? 'ring-2 ring-indigo-500 shadow-sm' : 'border-slate-200/90 shadow-sm'} transition duration-200">
-                        <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
-                            <div class="flex items-center space-x-2.5 min-w-0">
-                                <div class="w-8 h-8 rounded-full ${item.avatarBg} text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-sm">
-                                    ${item.memberName}
-                                </div>
-                                <div class="min-w-0">
-                                    <div class="flex items-center space-x-1.5">
-                                        <span class="font-bold text-slate-800 text-xs sm:text-sm truncate">${item.memberName}</span>
-                                        <span class="text-[10px] px-1.5 py-0.2 rounded font-medium ${item.badgeBg} shrink-0">${item.memberRole}</span>
-                                    </div>
-                                    <span class="text-[10px] text-slate-400 font-normal truncate block">${item.roleTitle}</span>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center space-x-1.5 shrink-0 no-print">
-                                ${item.vocabBadge ? `<span class="text-[9px] sm:text-[10px] bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded border border-amber-300/60"><i class="fa-solid fa-star text-amber-500 mr-1"></i>${item.vocabBadge.split(':')[0]}</span>` : ''}
-                                <button onclick="playSpeech('${escapeQuotes(item.rawEn)}')" class="px-2.5 py-1 bg-slate-100 hover:bg-indigo-100 text-slate-600 hover:text-indigo-600 rounded-xl text-xs font-medium transition flex items-center space-x-1" title="ฟังเสียง">
-                                    <i class="fa-solid fa-volume-high text-indigo-500 text-xs"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Speech Content -->
-                        <div class="space-y-1.5">
-                            <!-- English -->
-                            <div class="text-xs sm:text-sm font-semibold text-slate-900 leading-relaxed">
-                                <span class="text-[10px] font-bold text-indigo-500 uppercase mr-1">[EN]:</span> ${item.en}
-                            </div>
-
-                            <!-- Thai Phonetics -->
-                            ${showPhonetics ? `
-                            <div class="text-xs font-medium text-amber-900 bg-amber-50/70 p-2 rounded-xl border border-amber-100/80 leading-relaxed">
-                                <span class="text-[10px] font-bold text-amber-600 uppercase mr-1">[คำอ่าน]:</span> ${item.phonetics}
-                            </div>
-                            ` : ''}
-
-                            <!-- Thai Translation -->
-                            ${showTranslation ? `
-                            <div class="text-xs text-slate-600 bg-slate-50 p-2 rounded-xl border border-slate-100 leading-relaxed">
-                                <span class="text-[10px] font-bold text-slate-400 uppercase mr-1">[คำแปล]:</span> ${item.translation}
-                            </div>
-                            ` : ''}
-                        </div>
-                    </div>
-                `;
-
-                if (item.section === 'presentation') {
-                    presContainer.innerHTML += cardHtml;
-                } else {
-                    roleContainer.innerHTML += cardHtml;
-                }
-            });
-
-            // Empty states
-            if (presContainer.children.length === 0) {
-                presContainer.innerHTML = '<div class="text-center py-4 text-slate-400 text-xs">ไม่มีบทพูดส่วนนี้สำหรับสมาชิกที่เลือก</div>';
-            }
-            if (roleContainer.children.length === 0) {
-                roleContainer.innerHTML = '<div class="text-center py-4 text-slate-400 text-xs">ไม่มีบทพูดส่วนนี้สำหรับสมาชิกที่เลือก</div>';
-            }
-        }
-
-        function escapeQuotes(str) {
-            return str.replace(/'/g, "\\'");
-        }
-
-        function playSpeech(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US';
-                utterance.rate = parseFloat(document.getElementById('ttsRate').value || 0.9);
-                window.speechSynthesis.speak(utterance);
-            } else {
-                alert('เบราว์เซอร์ของคุณไม่รองรับการออกเสียงอัตโนมัติ');
-            }
-        }
-
-        function filterMember(memberKey) {
-            currentFilter = memberKey;
-
-            const badge = document.getElementById('activeFilterBadge');
-            const names = { all: 'แสดงบททั้งหมด', boat: 'โบ๊ท (25%)', nont: 'นนท์ (25%)', pun: 'ปั้น (25%)', game: 'เกม (25%)' };
-            if (badge) badge.innerText = names[memberKey] || 'แสดงบททั้งหมด';
-
-            document.querySelectorAll('.member-btn').forEach(btn => {
-                btn.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600', 'shadow-sm');
-                btn.classList.add('bg-slate-100', 'text-slate-700', 'border-slate-200');
-            });
-
-            const activeBtn = document.getElementById(`btn-${memberKey}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-slate-100', 'text-slate-700', 'border-slate-200');
-                activeBtn.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600', 'shadow-sm');
-            }
-
-            renderCards();
-        }
-
-        function toggleDisplayOptions() {
-            renderCards();
-        }
-
-        function toggleVocabModal() {
-            const modal = document.getElementById('vocabModal');
-            modal.classList.toggle('hidden');
-        }
-
-        function openTeleprompter() {
-            currentPrompterIndex = 0;
-            document.getElementById('prompterModal').classList.remove('hidden');
-            updatePrompterView();
-        }
-
-        function closeTeleprompter() {
-            document.getElementById('prompterModal').classList.add('hidden');
-            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-        }
-
-        function updatePrompterView() {
-            const item = scriptData[currentPrompterIndex];
-            document.getElementById('prompterCounter').innerText = `${currentPrompterIndex + 1} / ${scriptData.length}`;
-            
-            const badge = document.getElementById('prompterBadge');
-            badge.innerText = `${item.memberName} - ${item.memberRole}`;
-            badge.className = `inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 text-white ${item.avatarBg}`;
-
-            document.getElementById('prompterEn').innerHTML = item.en;
-            document.getElementById('prompterPhonetics').innerText = item.phonetics;
-            document.getElementById('prompterTranslation').innerText = item.translation;
-        }
-
-        function nextPrompter() {
-            if (currentPrompterIndex < scriptData.length - 1) {
-                currentPrompterIndex++;
-                updatePrompterView();
-            }
-        }
-
-        function prevPrompter() {
-            if (currentPrompterIndex > 0) {
-                currentPrompterIndex--;
-                updatePrompterView();
-            }
-        }
-
-        function playCurrentPrompterAudio() {
-            const item = scriptData[currentPrompterIndex];
-            playSpeech(item.rawEn);
-        }
-
-        // Keyboard Shortcuts for Prompter
-        document.addEventListener('keydown', function(e) {
-            const modal = document.getElementById('prompterModal');
-            if (!modal.classList.contains('hidden')) {
-                if (e.key === 'ArrowRight' || e.key === ' ') {
-                    nextPrompter();
-                } else if (e.key === 'ArrowLeft') {
-                    prevPrompter();
-                } else if (e.key === 'Escape') {
-                    closeTeleprompter();
-                }
-            }
-        });
-
-        // Initialize App
-        window.onload = function() {
-            renderCards();
-        };
-    </script>
 </body>
 </html>
