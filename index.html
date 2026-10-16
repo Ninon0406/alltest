@@ -1,525 +1,505 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speak Out Project Script - Pharmacist (AI vs Humans)</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Sarabun', 'Inter', sans-serif;
-            background-color: #f8fafc;
-        }
-
-        /* Printable A4 PDF Formatting */
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-            body {
-                background-color: #ffffff !important;
-                color: #000000 !important;
-            }
-            .a4-page {
-                box-shadow: none !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                width: 100% !important;
-            }
-            .page-break {
-                page-break-before: always;
-            }
-        }
-
-        .a4-page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 20mm 18mm;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-
-        .highlight-v {
-            background-color: #fef08a;
-            font-weight: 700;
-            padding: 0.1rem 0.3rem;
-            border-radius: 0.2rem;
-            border-bottom: 2px solid #eab308;
-        }
-
-        .highlight-g {
-            background-color: #bbf7d0;
-            font-weight: 700;
-            text-decoration: underline;
-            padding: 0.1rem 0.3rem;
-            border-radius: 0.2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>สรุปแคลคูลัส หัวข้อ 3.5 เป็นต้นไป - สูตร เทคนิค และวิธีการตอบ</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { margin: 0; padding: 0; font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #1e293b; }
+    .slide-container {
+      width: 1280px;
+      height: 720px;
+      margin: 0 auto 32px auto;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    }
+    .star-rating { color: #f59e0b; font-size: 16px; margin-left: 8px; }
+    .formula-box { background: #f8fafc; border-left: 4px solid #2563eb; padding: 12px 16px; border-radius: 6px; font-family: monospace; font-size: 16px; color: #0f172a; margin-bottom: 12px; line-height: 1.6; }
+    .step-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; flex: 1 1 0; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 14px; font-weight: 600; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+  </style>
 </head>
-<body class="text-slate-800 min-h-screen pb-12">
+<body>
 
-    <!-- Top Navigation Header (No Print) -->
-    <header class="no-print bg-slate-900 text-white sticky top-0 z-50 shadow-lg border-b border-slate-700">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid me-2 fa-file-lines text-teal-400 text-2xl"></i>
-                <div>
-                    <h1 class="font-bold text-lg leading-tight">Speak Out Project Script</h1>
-                    <p class="text-xs text-slate-400">Career: Pharmacist | Section __ (AI vs. Humans)</p>
-                </div>
-            </div>
+  <!-- Slide 1: Title Slide (Dark) -->
+  <div class="slide-container" id="slide1" style="background:#0f172a; padding:64px; display:flex; flex-direction:column; justify-content:center;">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <span class="badge badge-amber" contenteditable="true"><i class="fa-solid fa-graduation-cap"></i> สรุปเนื้อหาแคลคูลัสขั้นสูง</span>
+      <span style="color:#94a3b8; font-size:16px;" contenteditable="true">หัวข้อ 3.5 ถึงบทสรุปสุดท้าย</span>
+    </div>
+    <h1 contenteditable="true" style="font-size:52px; font-weight:700; color:#f8fafc; margin:0 0 20px 0; line-height:1.2;">
+      คัมภีร์สรุปแคลคูลัส:<br><span style="color:#38bdf8;">การหาอนุพันธ์ &amp; ปริพันธ์</span>
+    </h1>
+    <p contenteditable="true" style="font-size:20px; color:#94a3b8; max-width:780px; margin:0 0 32px 0; line-height:1.6;">
+      รวบรวมสูตรลัด เทคนิคคิดแบบมองปุ๊บรู้ขั้นตอน วิธีการแก้อย่างเป็นระบบ พร้อมรูปแบบคำตอบที่ถูกต้อง และระดับความยากของแต่ละหัวข้อ
+    </p>
+    <div style="display:flex; gap:24px; border-top:1px solid #334155; padding-top:24px;">
+      <div>
+        <p contenteditable="true" style="color:#64748b; font-size:14px; margin:0;">ขอบเขตเนื้อหา</p>
+        <p contenteditable="true" style="color:#f1f5f9; font-size:18px; font-weight:600; margin:4px 0 0 0;">หัวข้อ 3.5 ถึง จบบทปริพันธ์</p>
+      </div>
+      <div style="width:1px; background:#334155;"></div>
+      <div>
+        <p contenteditable="true" style="color:#64748b; font-size:14px; margin:0;">เป้าหมาย</p>
+        <p contenteditable="true" style="color:#38bdf8; font-size:18px; font-weight:600; margin:4px 0 0 0;">แก้โจทย์ไว ตอบถูกรูปแบบ 100%</p>
+      </div>
+    </div>
+  </div>
 
-            <!-- Page View Switcher -->
-            <div class="flex items-center bg-slate-800 p-1 rounded-lg border border-slate-700">
-                <button onclick="switchTab('page1')" id="tab-page1" class="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md transition-all bg-teal-600 text-white shadow">
-                    <i class="fa-solid fa-file-pdf mr-1.5"></i> 1. A4 Script (PDF)
-                </button>
-                <button onclick="switchTab('page2')" id="tab-page2" class="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md transition-all text-slate-300 hover:text-white">
-                    <i class="fa-solid fa-language mr-1.5"></i> 2. บทแปลไทย
-                </button>
-                <button onclick="switchTab('page3')" id="tab-page3" class="px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md transition-all text-slate-300 hover:text-white">
-                    <i class="fa-solid fa-headphones mr-1.5"></i> 3. ห้องซ้อมพูด (TTS)
-                </button>
-            </div>
+  <!-- Slide 2: Topic Map & Rating (Light) -->
+  <div class="slide-container" id="slide2" style="background:#f8fafc; padding:48px 64px; display:flex; flex-direction:column;">
+    <h2 contenteditable="true" style="font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px 0;">
+      แผนที่หัวข้อเรียนและดาวความยาก (Difficulty Map)
+    </h2>
+    <p contenteditable="true" style="font-size:16px; color:#64748b; margin:0 0 28px 0;">
+      ภาพรวมหัวข้อใหญ่และหัวข้อย่อยตั้งแต่ 3.5 พร้อมระดับความยากประเมินตามการออกสอบ
+    </p>
 
-            <button onclick="window.print()" class="bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold px-4 py-1.5 rounded-md text-sm transition flex items-center shadow">
-                <i class="fa-solid fa-print mr-2"></i> พิมพ์ / Save PDF
-            </button>
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="background:#ffffff; padding:24px; border-radius:12px; border:1px solid #e2e8f0; flex:1 1 0;">
+        <h3 contenteditable="true" style="font-size:20px; color:#1e293b; margin:0 0 16px 0; border-bottom:2px solid #3b82f6; padding-bottom:8px;">
+          กลุ่ม 1: การดริฟพื้นฐาน &amp; ลูกโซ่ <span class="star-rating">★★☆☆☆</span>
+        </h3>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#22c55e;"></i> <b>3.5 ดิฟพีชคณิต &amp; กฎลูกโซ่:</b> ดิฟนอก-ดิฟใน</li>
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#22c55e;"></i> <b>3.6 อนุพันธ์อันดับสูง:</b> ดิฟซ้ำหลายรอบ Find fⁿ(x)</li>
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#22c55e;"></i> <b>3.7 ฟังก์ชันโดยปริยาย:</b> เทก d/dx หา dy/dx</li>
+        </ul>
+      </div>
+
+      <div style="background:#ffffff; padding:24px; border-radius:12px; border:1px solid #e2e8f0; flex:1 1 0;">
+        <h3 contenteditable="true" style="font-size:20px; color:#1e293b; margin:0 0 16px 0; border-bottom:2px solid #f59e0b; padding-bottom:8px;">
+          กลุ่ม 2: ฟังก์ชันอดิสัย &amp; ประยุกต์ <span class="star-rating">★★★★☆</span>
+        </h3>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#eab308;"></i> <b>3.8 ฟังก์ชันอดิสัย:</b> ดิฟ ตรีโกณ, eˣ, ln(x)</li>
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#eab308;"></i> <b>3.9 เส้นสัมผัส &amp; เส้นปกติ:</b> หาความชัน m = f'(x)</li>
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#ef4444;"></i> <b>3.10 อัตราเกี่ยวเนื่อง:</b> ดิฟเทียบเวลา d/dt</li>
+        </ul>
+      </div>
+
+      <div style="background:#ffffff; padding:24px; border-radius:12px; border:1px solid #e2e8f0; flex:1 1 0;">
+        <h3 contenteditable="true" style="font-size:20px; color:#1e293b; margin:0 0 16px 0; border-bottom:2px solid #8b5cf6; padding-bottom:8px;">
+          กลุ่ม 3: ค่าสุดขีด &amp; ปริพันธ์ <span class="star-rating">★★★★☆</span>
+        </h3>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#eab308;"></i> <b>3.11 ค่าสูงสุด-ต่ำสุด:</b> จุดวิกฤต f'(x)=0</li>
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#8b5cf6;"></i> <b>4.1 ปริพันธ์ไม่จำกัดเขต:</b> อินทิเกรตเปลี่ยนตัวแปร u</li>
+          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#8b5cf6;"></i> <b>4.2 พื้นที่ใต้โค้ง:</b> ปริพันธ์จำกัดเขต F(b)-F(a)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Topic 3.5 Algebraic & Chain Rule -->
+  <div class="slide-container" id="slide3" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.5 การหาอนุพันธ์ฟังก์ชันพีชคณิต &amp; กฎลูกโซ่
+      </h2>
+      <span class="badge badge-blue" contenteditable="true">ความยาก: ★★☆☆☆</span>
+    </div>
+
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>สูตรหลักที่ต้องจำ:</b><br>
+          • d/dx(xⁿ) = n·xⁿ⁻¹<br>
+          • d/dx(uⁿ) = n·uⁿ⁻¹ · (du/dx) [กฎลูกโซ่]<br>
+          • d/dx(หน้า·หลัง) = หน้า·ดิฟหลัง + หลัง·ดิฟหน้า<br>
+          • d/dx(บน/ล่าง) = (ล่าง·ดิฟบน - บน·ดิฟล่าง) / ล่าง²
         </div>
-    </header>
-
-    <main class="max-w-6xl mx-auto mt-6 px-2 sm:px-4">
-
-        <!-- PAGE 1: OFFICIAL PRINTABLE A4 SCRIPT -->
-        <div id="view-page1" class="block">
-            <div class="a4-page rounded-sm border border-slate-200">
-                
-                <!-- Document Header Title -->
-                <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-slate-900 tracking-tight">AI vs. Humans in the Workplace</h1>
-                    <p class="text-sm font-medium text-slate-600">Speak Out Project Script | Career: Pharmacist</p>
-                </div>
-
-                <!-- Group & Speakers Table -->
-                <div class="mb-6 overflow-x-auto">
-                    <table class="w-full text-xs text-left border-collapse border border-slate-300">
-                        <thead class="bg-slate-100 text-slate-700">
-                            <tr>
-                                <th class="border border-slate-300 px-2 py-1.5">Group</th>
-                                <th class="border border-slate-300 px-2 py-1.5" colspan="2">Group ____ Section ____</th>
-                                <th class="border border-slate-300 px-2 py-1.5">Time</th>
-                                <th class="border border-slate-300 px-2 py-1.5">7 minutes | 4 speakers</th>
-                            </tr>
-                            <tr class="bg-slate-200/70 font-bold">
-                                <th class="border border-slate-300 px-2 py-1.5">Speaker</th>
-                                <th class="border border-slate-300 px-2 py-1.5">Nickname</th>
-                                <th class="border border-slate-300 px-2 py-1.5">Word Share</th>
-                                <th class="border border-slate-300 px-2 py-1.5">Presentation Part</th>
-                                <th class="border border-slate-300 px-2 py-1.5">Skit Role</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200">
-                            <tr>
-                                <td class="border border-slate-300 px-2 py-1 font-semibold">Speaker 1</td>
-                                <td class="border border-slate-300 px-2 py-1">Boat (โบ๊ท)</td>
-                                <td class="border border-slate-300 px-2 py-1">~76 words (26%)</td>
-                                <td class="border border-slate-300 px-2 py-1">Intro & Point 1 (AI)</td>
-                                <td class="border border-slate-300 px-2 py-1">AI Bot</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 px-2 py-1 font-semibold">Speaker 2</td>
-                                <td class="border border-slate-300 px-2 py-1">Nont (นนท์)</td>
-                                <td class="border border-slate-300 px-2 py-1">~73 words (25%)</td>
-                                <td class="border border-slate-300 px-2 py-1">Intro & Point 2 (Human)</td>
-                                <td class="border border-slate-300 px-2 py-1">Pharmacist</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 px-2 py-1 font-semibold">Speaker 3</td>
-                                <td class="border border-slate-300 px-2 py-1">Game (เกม)</td>
-                                <td class="border border-slate-300 px-2 py-1">~70 words (24%)</td>
-                                <td class="border border-slate-300 px-2 py-1">Points 1 & 2</td>
-                                <td class="border border-slate-300 px-2 py-1">Co-pharmacist</td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 px-2 py-1 font-semibold">Speaker 4</td>
-                                <td class="border border-slate-300 px-2 py-1">Pun (ปั้น)</td>
-                                <td class="border border-slate-300 px-2 py-1">~67 words (23%)</td>
-                                <td class="border border-slate-300 px-2 py-1">Point 2 & Conclusion</td>
-                                <td class="border border-slate-300 px-2 py-1">Patient</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="text-[10px] text-slate-500 italic mt-1">* Speaking distribution balanced (~51% Boat & Nont / ~49% Game & Pun with clear, concise lines).</p>
-                </div>
-
-                <!-- Target Vocab & Grammar Table -->
-                <div class="mb-6 overflow-x-auto">
-                    <table class="w-full text-xs text-left border-collapse border border-slate-300">
-                        <thead>
-                            <tr class="bg-slate-100 text-slate-800">
-                                <th class="border border-slate-300 px-3 py-1.5 w-1/2">Target Vocabulary (Yellow + Bold V1-V4)</th>
-                                <th class="border border-slate-300 px-3 py-1.5 w-1/2">Target Grammar (Green + Bold + Underline G1-G4)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200">
-                            <tr>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-v">Unit 1 (V1): multitasker</span></td>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-g">Unit 1 (G1): Present Simple</span></td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-v">Unit 2 (V2): in a bad mood</span></td>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-g">Unit 2 (G2): Comparative Adjectives</span></td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-v">Unit 3 (V3): doubted</span></td>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-g">Unit 3 (G3): Modal Verbs</span></td>
-                            </tr>
-                            <tr>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-v">Unit 4 (V4): take responsibility for</span></td>
-                                <td class="border border-slate-300 px-3 py-1"><span class="highlight-g">Unit 4 (G4): Indirect & Negative Questions</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- SCRIPT PARTS -->
-                <div class="space-y-4 text-xs sm:text-sm text-slate-800 leading-relaxed">
-                    
-                    <!-- PART 1 -->
-                    <div>
-                        <h2 class="font-bold text-slate-900 border-b border-slate-300 pb-1 mb-2 uppercase text-xs tracking-wider">
-                            PART 1: INTRODUCTION (about 1 minute)
-                        </h2>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 1 (Boat):</span> Good morning, everyone. We are Group _____ from Section _____. Today we'll talk about AI vs. Humans in the Workplace, and our career is Pharmacist.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 2 (Nont):</span> Let us introduce our team. I'm Nont, and these are Boat, Game, and Pun.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 3 (Game):</span> A pharmacist <span class="highlight-g">dispenses<sup>G1</sup></span> medicines and checks drug safety. It is a job for a true <span class="highlight-v">multitasker<sup>V1</sup></span>.
-                        </p>
-                    </div>
-
-                    <!-- PART 2 -->
-                    <div>
-                        <h2 class="font-bold text-slate-900 border-b border-slate-300 pb-1 mb-2 uppercase text-xs tracking-wider">
-                            PART 2: POINT 1 - AI'S ADVANTAGE (about 1 minute)
-                        </h2>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 1 (Boat):</span> AI can calculate drug doses <span class="highlight-g">much faster than<sup>G2</sup></span> humans. It works 24/7 without rest.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 4 (Pun):</span> AI does not have bad emotions, human errors, or speak rudely to customers.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 3 (Game):</span> AI quickly checks thousands of prescriptions to prevent dangerous mistakes.
-                        </p>
-                    </div>
-
-                    <!-- PART 3 -->
-                    <div>
-                        <h2 class="font-bold text-slate-900 border-b border-slate-300 pb-1 mb-2 uppercase text-xs tracking-wider">
-                            PART 3: POINT 2 - HUMANS' ADVANTAGE (about 1 minute)
-                        </h2>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 2 (Nont):</span> <span class="highlight-g">Isn't human care important<sup>G4</sup></span> for sick patients? AI cannot feel empathy or emotion.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 4 (Pun):</span> Even when a patient is <span class="highlight-v">in a bad mood<sup>V2</sup></span>, a human pharmacist listens kindly.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 3 (Game):</span> Humans are better at reading messy doctor handwriting and handling complex health cases.
-                        </p>
-                    </div>
-
-                    <!-- PART 4 -->
-                    <div>
-                        <h2 class="font-bold text-slate-900 border-b border-slate-300 pb-1 mb-2 uppercase text-xs tracking-wider">
-                            PART 4: CONCLUSION (about 1 minute)
-                        </h2>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 4 (Pun):</span> To sum up, AI brings speed and accuracy to pharmacy.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 2 (Nont):</span> However, human pharmacists <span class="highlight-g">must<sup>G3</sup></span> <span class="highlight-v">take responsibility for<sup>V4</sup></span> patient safety.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Speaker 1 (Boat):</span> AI and humans work best together. Now, please enjoy our short role-play!
-                        </p>
-                    </div>
-
-                    <!-- PART 5 -->
-                    <div>
-                        <h2 class="font-bold text-slate-900 border-b border-slate-300 pb-1 mb-2 uppercase text-xs tracking-wider">
-                            PART 5: SHORT ROLE-PLAY (about 1.5 minutes)
-                        </h2>
-                        <p class="italic text-slate-500 mb-2">Setting: Hospital Pharmacy Counter. Characters: AI Bot (Boat), Pharmacist (Nont), Co-pharmacist (Game), Patient (Pun).</p>
-                        
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">AI Bot (Boat):</span> <em>(robotic voice)</em> Beep boop! Prescription processed in 0.1 seconds! Next patient, please!
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Patient (Pun):</span> <em>(worried)</em> Wait! I <span class="highlight-v">doubted<sup>V3</sup></span> this dose. Is 3 pills a day safe for me?
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Co-pharmacist (Game):</span> Let me check! AI calculated by standard weight, but missed your kidney condition.
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">Pharmacist (Nont):</span> Don't worry! I will adjust it to 1 pill daily. AI gives speed, but humans give real care!
-                        </p>
-                        <p class="mb-1.5">
-                            <span class="font-bold text-slate-900">All Together:</span> <em>(bow)</em> Thank you for listening!
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- Footer Document Stamp -->
-                <div class="mt-8 pt-3 border-t border-slate-200 flex justify-between items-center text-[10px] text-slate-400">
-                    <span>Pharmacist - Script | Section ____</span>
-                    <span>Speak Out Project Eng 1</span>
-                    <span>Page 1 of 1</span>
-                </div>
-
-            </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            ให้ตอบในรูป <b>f'(x) = ...</b> หรือ <b>dy/dx = ...</b> โดยจัดรูปเศษส่วน จัดการกำลังติดลบให้อยู่ในรูปพจน์บวก หรือดึงตัวองค์ประกอบร่วมออกให้เรียบร้อยที่สุด
+          </p>
         </div>
+      </div>
 
-        <!-- PAGE 2: THAI TRANSLATION -->
-        <div id="view-page2" class="hidden">
-            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-6">
-                <div class="border-b pb-4">
-                    <h2 class="text-xl font-bold text-slate-900 flex items-center">
-                        <i class="fa-solid fa-language text-teal-600 mr-2"></i> บทแปลภาษาไทย (Sentence-by-Sentence Translation)
-                    </h2>
-                    <p class="text-xs text-slate-500 mt-1">ถอดความภาษาไทยตรงเป๊ะแบบประโยคต่อประโยค เพื่อความเข้าใจง่ายและการซ้อมพูดที่แม่นยำ</p>
-                </div>
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 วิธีคิดและขั้นตอนการทำแบบมองปุ๊บแก้ได้ปั๊บ
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>มองรูปแบบโจทย์:</b> ถ้าเห็นกลุ่มก้อนยกกำลัง เช่น y = (3x² - 5)⁴ ให้มองทั้งก้อนเป็น u จะได้ y = u⁴</li>
+          <li><b>ดิฟชั้นนอก:</b> เอาเลขชี้กำลังลงมาคูณข้างหน้าแล้วลดกำลังลง 1 จะได้ 4(3x² - 5)³</li>
+          <li><b>ดิฟไส้ใน (ดิฟ u):</b> ดริฟก้อนข้างใน (3x² - 5) ได้ 6x แล้วเอามาคูณต่อท้าย</li>
+          <li><b>รวมพจน์ตอบ:</b> dy/dx = 4(3x² - 5)³ · (6x) = <b>24x(3x² - 5)³</b> ตอบได้เลย!</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 
-                <div class="space-y-6 text-sm text-slate-700">
-                    <!-- PART 1 -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3 text-teal-700">PART 1: INTRODUCTION (บทนำ)</h3>
-                        <div class="space-y-2">
-                            <p><strong>Boat (โบ๊ท):</strong> สวัสดีครับทุกคน พวกเรากลุ่ม _____ จากเซกชัน _____ วันนี้พวกเราจะมาพูดเรื่อง AI กับมนุษย์ในสถานที่ทำงาน และอาชีพของพวกเราคือเภสัชกรครับ</p>
-                            <p><strong>Nont (นนท์):</strong> ขอแนะนำสมาชิกกลุ่มของพวกเราครับ ผมนนท์ และนี่คือโบ๊ท เกม และปั้นครับ</p>
-                            <p><strong>Game (เกม):</strong> เภสัชกรทำหน้าที่จ่ายยาและตรวจเช็กความปลอดภัยของยา ซึ่งเป็นงานสำหรับคนที่ทำงานได้หลายอย่างพร้อมกัน (multitasker) อย่างแท้จริงครับ</p>
-                        </div>
-                    </div>
+  <!-- Slide 4: Topic 3.6 Higher Order Derivatives -->
+  <div class="slide-container" id="slide4" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.6 อนุพันธ์อันดับสูง (Higher-Order Derivatives)
+      </h2>
+      <span class="badge badge-blue" contenteditable="true">ความยาก: ★★☆☆☆</span>
+    </div>
 
-                    <!-- PART 2 -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3 text-teal-700">PART 2: POINT 1 - AI'S ADVANTAGE (จุดเด่นของ AI)</h3>
-                        <div class="space-y-2">
-                            <p><strong>Boat (โบ๊ท):</strong> AI สามารถคำนวณขนาดยาได้เร็วกว่ามนุษย์อย่างมาก มันทำงานได้ตลอด 24 ชั่วโมงโดยไม่ต้องพักครับ</p>
-                            <p><strong>Pun (ปั้น):</strong> AI ไม่มีอารมณ์ด้านลบ ไม่มีข้อผิดพลาดแบบมนุษย์ หรือพูดจาหยาบคายกับลูกค้า</p>
-                            <p><strong>Game (เกม):</strong> AI ตรวจสอบใบสั่งยาหลายพันรายการได้อย่างรวดเร็วเพื่อป้องกันความผิดพลาดที่อันตรายครับ</p>
-                        </div>
-                    </div>
-
-                    <!-- PART 3 -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3 text-teal-700">PART 3: POINT 2 - HUMANS' ADVANTAGE (จุดเด่นของมนุษย์)</h3>
-                        <div class="space-y-2">
-                            <p><strong>Nont (นนท์):</strong> การดูแลจากมนุษย์เป็นสิ่งสำคัญสำหรับคนไข้ไม่ใช่หรือ? AI ไม่สามารถรู้สึกถึงความเห็นอกเห็นใจหรืออารมณ์ได้ครับ</p>
-                            <p><strong>Pun (ปั้น):</strong> แม้กระทั่งตอนที่คนไข้อารมณ์ไม่ดี (in a bad mood) เภสัชกรที่เป็นมนุษย์ก็ยังรับฟังด้วยความใส่ใจครับ</p>
-                            <p><strong>Game (เกม):</strong> มนุษย์เก่งกว่าในการอ่านลายมือหมอที่อ่านยาก และการรับมือกับเคสสุขภาพที่ซับซ้อนครับ</p>
-                        </div>
-                    </div>
-
-                    <!-- PART 4 -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3 text-teal-700">PART 4: CONCLUSION (สรุป)</h3>
-                        <div class="space-y-2">
-                            <p><strong>Pun (ปั้น):</strong> สรุปคือ AI ให้ความเร็วและความแม่นยำแก่งานเภสัชกรรมครับ</p>
-                            <p><strong>Nont (นนท์):</strong> อย่างไรก็ตาม เภสัชกรที่เป็นมนุษย์ต้องรับผิดชอบต่อ (take responsibility for) ความปลอดภัยของคนไข้ครับ</p>
-                            <p><strong>Boat (โบ๊ท):</strong> AI และมนุษย์ทำงานร่วมกันได้ดีที่สุด ต่อไปขอเชิญรับชมละครสั้นของพวกเราครับ!</p>
-                        </div>
-                    </div>
-
-                    <!-- PART 5 -->
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3 text-teal-700">PART 5: SHORT ROLE-PLAY (ละครสั้น)</h3>
-                        <p class="text-xs text-slate-500 italic mb-2">ฉาก: เคาน์เตอร์ห้องยาในโรงพยาบาล</p>
-                        <div class="space-y-2">
-                            <p><strong>AI Bot (Boat):</strong> <em>(เสียงหุ่นยนต์)</em> บี๊บ บู๊บ! ประมวลผลใบสั่งยาเสร็จใน 0.1 วินาที! ขอเชิญคนไข้รายถัดไปครับ!</p>
-                            <p><strong>Patient (Pun):</strong> <em>(กังวล)</em> เดี๋ยวครับ! ผมสงสัย (doubted) ขนาดยานี้ กินวันละ 3 เม็ดปลอดภัยสำหรับผมจริงๆ เหรอครับ?</p>
-                            <p><strong>Co-pharmacist (Game):</strong> ขอผมเช็กดูครับ! AI คำนวณตามน้ำหนักมาตรฐาน แต่ไม่ได้นับรวมโรคไตของคนไข้ครับ</p>
-                            <p><strong>Pharmacist (Nont):</strong> ไม่ต้องกังวลครับ! ผมจะปรับเป็นวันละ 1 เม็ด AI ให้ความเร็ว แต่มนุษย์ให้การดูแลที่แท้จริงครับ!</p>
-                            <p><strong>All Together:</strong> <em>(โค้งคำนับ)</em> ขอบคุณสำหรับการรับฟังครับ!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>สัญลักษณ์ &amp; สูตรสำคัญ:</b><br>
+          • อนุพันธ์อันดับ 1: f'(x) = dy/dx = v(t) (ความเร็ว)<br>
+          • อนุพันธ์อันดับ 2: f''(x) = d²y/dx² = a(t) (ความเร่ง)<br>
+          • อนุพันธ์อันดับ n: f⁽ⁿ⁾(x) = dⁿy/dxⁿ<br>
+          • รูปแบบทั่วไป: หาแบบรูปแบบซ้ำ (Pattern Recognition)
         </div>
-
-        <!-- PAGE 3: REHEARSAL & TTS STUDIO -->
-        <div id="view-page3" class="hidden">
-            <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-6">
-                
-                <!-- Controls Header -->
-                <div class="flex flex-wrap items-center justify-between gap-4 border-b pb-4">
-                    <div>
-                        <h2 class="text-xl font-bold text-slate-900 flex items-center">
-                            <i class="fa-solid fa-microphone-lines text-teal-600 mr-2"></i> ห้องฝึกซ้อมพูด & อ่านออกเสียง (TTS Studio)
-                        </h2>
-                        <p class="text-xs text-slate-500 mt-0.5">กดปุ่มลำโพงเพื่อฟังเสียงออกเสียงภาษาอังกฤษ หรือเลือกกรองดูเฉพาะบทพูดของตัวเองได้</p>
-                    </div>
-
-                    <!-- Speaker Selector Filter -->
-                    <div class="flex items-center space-x-2">
-                        <label class="text-xs font-semibold text-slate-600">กรองผู้พูด:</label>
-                        <select id="speakerFilter" onchange="filterSpeaker()" class="text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 bg-slate-50 font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
-                            <option value="all">แสดงบทพูดทุกคน (All)</option>
-                            <option value="Boat">Boat (โบ๊ท)</option>
-                            <option value="Nont">Nont (นนท์)</option>
-                            <option value="Game">Game (เกม)</option>
-                            <option value="Pun">Pun (ปั้น)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Speech Speed & Timer Bar -->
-                <div class="bg-slate-900 text-white p-4 rounded-xl flex flex-wrap items-center justify-between gap-4">
-                    <div class="flex items-center space-x-3">
-                        <i class="fa-solid fa-gauge-high text-teal-400"></i>
-                        <span class="text-xs font-medium">ความเร็วเสียงอ่าน:</span>
-                        <input type="range" id="ttsRate" min="0.7" max="1.2" step="0.1" value="0.9" class="w-24 accent-teal-400">
-                        <span id="rateValue" class="text-xs font-bold text-teal-400">0.9x</span>
-                    </div>
-
-                    <div class="flex items-center space-x-3">
-                        <i class="fa-solid fa-stopwatch text-amber-400"></i>
-                        <span class="text-xs font-medium">ตัวจับเวลาซ้อม (7 นาที):</span>
-                        <span id="timerDisplay" class="font-mono text-sm font-bold text-amber-400">07:00</span>
-                        <button onclick="toggleTimer()" id="timerBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2.5 py-1 rounded text-xs">เริ่มจับเวลา</button>
-                    </div>
-                </div>
-
-                <!-- Interactive Line-by-Line Cards -->
-                <div id="rehearsalContainer" class="space-y-3">
-                    <!-- Dynamic JS content generated here -->
-                </div>
-
-            </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            1. ตอบค่าตัวเลขเฉพาะ เช่น f''(2) = 18<br>
+            2. ตอบในรูปสูตรทั่วไป f⁽ⁿ⁾(x) ที่ติดในเทอมของ n
+          </p>
         </div>
+      </div>
 
-    </main>
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 วิธีการทำข้อสอบหา f⁽ⁿ⁾(x) ลัดขั้น
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>ทำดิฟไล่ลำดับ 3 ครั้งแรก:</b> หา f'(x), f''(x), และ f'''(x) ออกมาก่อน</li>
+          <li><b>สังเกตรูปแบบ (Pattern):</b> ดูเครื่องหมาย (+/-), ตัวเลขสัมประสิทธิ์, และพลังกำลังของ x</li>
+          <li><b>สร้างฟังก์ชัน n:</b> เขียนความสัมพันธ์ในรูป (-1)ⁿ, n!, หรือ 2ⁿ</li>
+          <li><b>สรุปตอบ:</b> เขียน f⁽ⁿ⁾(x) = [สูตรที่ได้] ตอบได้อย่างมั่นใจ</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        // Script lines data structure
-        const scriptLines = [
-            { speaker: 'Boat', role: 'Speaker 1', part: 'Part 1: Intro', text: 'Good morning, everyone. We are Group _____ from Section _____. Today we\'ll talk about AI vs. Humans in the Workplace, and our career is Pharmacist.' },
-            { speaker: 'Nont', role: 'Speaker 2', part: 'Part 1: Intro', text: 'Let us introduce our team. I\'m Nont, and these are Boat, Game, and Pun.' },
-            { speaker: 'Game', role: 'Speaker 3', part: 'Part 1: Intro', text: 'A pharmacist dispenses medicines and checks drug safety. It is a job for a true multitasker.' },
-            { speaker: 'Boat', role: 'Speaker 1', part: 'Part 2: Point 1 (AI)', text: 'AI can calculate drug doses much faster than humans. It works 24/7 without rest.' },
-            { speaker: 'Game', role: 'Speaker 3', part: 'Part 2: Point 1 (AI)', text: 'AI quickly checks thousands of prescriptions to prevent dangerous mistakes.' },
-            { speaker: 'Nont', role: 'Speaker 2', part: 'Part 3: Point 2 (Human)', text: 'Isn\'t human care important for sick patients? AI cannot feel empathy or emotion.' },
-            { speaker: 'Pun', role: 'Speaker 4', part: 'Part 3: Point 2 (Human)', text: 'Even when a patient is in a bad mood, a human pharmacist listens kindly.' },
-            { speaker: 'Game', role: 'Speaker 3', part: 'Part 3: Point 2 (Human)', text: 'Humans are better at reading messy doctor handwriting and handling complex health cases.' },
-            { speaker: 'Pun', role: 'Speaker 4', part: 'Part 4: Conclusion', text: 'To sum up, AI brings speed and accuracy to pharmacy.' },
-            { speaker: 'Nont', role: 'Speaker 2', part: 'Part 4: Conclusion', text: 'However, human pharmacists must take responsibility for patient safety.' },
-            { speaker: 'Boat', role: 'Speaker 1', part: 'Part 4: Conclusion', text: 'AI and humans work best together. Now, please enjoy our short role-play!' },
-            { speaker: 'Boat', role: 'AI Bot', part: 'Part 5: Role-Play', text: 'Beep boop! Prescription processed in 0.1 seconds! Next patient, please!' },
-            { speaker: 'Pun', role: 'Patient', part: 'Part 5: Role-Play', text: 'Wait! I doubted this dose. Is 3 pills a day safe for me?' },
-            { speaker: 'Game', role: 'Co-pharmacist', part: 'Part 5: Role-Play', text: 'Let me check! AI calculated by standard weight, but missed your kidney condition.' },
-            { speaker: 'Nont', role: 'Pharmacist', part: 'Part 5: Role-Play', text: 'Don\'t worry! I will adjust it to 1 pill daily. AI gives speed, but humans give real care!' },
-            { speaker: 'All', role: 'All Together', part: 'Part 5: Role-Play', text: 'Thank you for listening!' }
-        ];
+  <!-- Slide 5: Topic 3.7 Implicit Differentiation -->
+  <div class="slide-container" id="slide5" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.7 การหาอนุพันธ์ของฟังก์ชันโดยปริยาย (Implicit)
+      </h2>
+      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★☆☆</span>
+    </div>
 
-        // Tab Switcher
-        function switchTab(tabId) {
-            ['page1', 'page2', 'page3'].forEach(id => {
-                document.getElementById('view-' + id).classList.add('hidden');
-                document.getElementById('tab-' + id).className = 'px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md transition-all text-slate-300 hover:text-white';
-            });
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>สูตร/กฎทองคำ:</b><br>
+          • ดิฟเทอม x: ดิฟตามปกติ d/dx(xⁿ) = n·xⁿ⁻¹<br>
+          • ดิฟเทอม y: ดิฟแล้วต้องคูณ (dy/dx) ติดไว้เสมอ!<br>
+          • d/dx(yⁿ) = n·yⁿ⁻¹ · (dy/dx)<br>
+          • d/dx(x·y) = x·(dy/dx) + y(1) [กฎคูณ]
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            ย้ายข้างให้ฝั่งซ้ายเหลือ <b>dy/dx</b> ตัวเดียว ส่วนฝั่งขวาเป็นเศษส่วนที่ติดทั้งตัวแปร x และ y
+          </p>
+        </div>
+      </div>
 
-            document.getElementById('view-' + tabId).classList.remove('hidden');
-            document.getElementById('tab-' + tabId).className = 'px-3 py-1.5 text-xs sm:text-sm font-medium rounded-md transition-all bg-teal-600 text-white shadow';
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 ขั้นตอนการแก้โจทย์สมการปน x และ y
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>เทก d/dx ทั้งสองข้าง:</b> ใส่ d/dx กระจายเข้าไปทุกพจน์ของสมการ</li>
+          <li><b>ดิฟทีละพจน์:</b> เจอตัวแปร y ให้ดิฟปกติแล้วพ่วง dy/dx ท้ายพจน์นั้น</li>
+          <li><b>ย้ายกลุ่ม dy/dx:</b> ย้ายพจน์ที่มี dy/dx มาไว้ฝั่งซ้าย ย้ายพจน์ไม่มี dy/dx ไปฝั่งขวา</li>
+          <li><b>ดึงตัวองค์ประกอบร่วม:</b> ดึง dy/dx ออกมาแล้วเอาตัวคูณย้ายไปหารฝั่งขวา ตอบทันที</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 
-            if (tabId === 'page3') renderRehearsal();
-        }
+  <!-- Slide 6: Topic 3.8 Transcendental Functions -->
+  <div class="slide-container" id="slide6" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.8 อนุพันธ์ฟังก์ชันอดิสัย (Trig, Expo, Log)
+      </h2>
+      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★★☆</span>
+    </div>
 
-        // Render Rehearsal Cards
-        function renderRehearsal() {
-            const container = document.getElementById('rehearsalContainer');
-            const selectedSpeaker = document.getElementById('speakerFilter').value;
-            container.innerHTML = '';
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true" style="font-size:15px;">
+          <b>สูตรตระกูลอดิสัยที่ต้องท่องจำ:</b><br>
+          • d/dx(sin u) = cos u · (du/dx)<br>
+          • d/dx(cos u) = -sin u · (du/dx)<br>
+          • d/dx(eᵘ) = eᵘ · (du/dx)<br>
+          • d/dx(ln u) = (1/u) · (du/dx)
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            ตอบในรูป f'(x) โดยจัดรูปให้มุมตรีโกณหรือกำลัง e อยู่ในรูปอย่างง่ายที่สุด
+          </p>
+        </div>
+      </div>
 
-            scriptLines.forEach((item, index) => {
-                if (selectedSpeaker !== 'all' && item.speaker !== selectedSpeaker && item.speaker !== 'All') return;
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 วิธีจำและทางลัดการทำโจทย์ผสม
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>สูตรดิฟตรีโกณที่มี 'c' นำหน้า:</b> (cos, cot, cosec) ดิฟแล้วจะได้ค่า<b>ติดลบเสมอ</b></li>
+          <li><b>ดิฟ e ยกกำลังไส้ u:</b> ลอกตัวเดิมออกมาก่อนเป็น eᵘ แล้วดริฟไส้ u คูณปิดท้ายเสมอ</li>
+          <li><b>ดิฟ ln(ไส้ u):</b> เอาไส้ u ไปไว้ข้างล่าง แล้วเอาดิฟไส้ (du/dx) ไปไว้ข้างบนเป็น du/u</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 
-                const card = document.createElement('div');
-                card.className = 'p-3.5 rounded-lg border border-slate-200 bg-slate-50 flex items-start justify-between gap-3 hover:border-teal-400 transition';
-                
-                card.innerHTML = `
-                    <div class="space-y-1">
-                        <div class="flex items-center space-x-2">
-                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 text-slate-700">${item.part}</span>
-                            <span class="text-xs font-bold text-teal-700">${item.speaker} (${item.role})</span>
-                        </div>
-                        <p class="text-sm font-medium text-slate-800">${item.text}</p>
-                    </div>
-                    <button onclick="speakText('${item.text.replace(/'/g, "\\'")}')" class="bg-teal-100 hover:bg-teal-200 text-teal-800 p-2 rounded-lg transition shrink-0">
-                        <i class="fa-solid fa-volume-high"></i>
-                    </button>
-                `;
-                container.appendChild(card);
-            });
-        }
+  <!-- Slide 7: Topic 3.9 Tangent & Normal Lines -->
+  <div class="slide-container" id="slide7" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.9 สมการเส้นสัมผัสโค้ง &amp; เส้นปกติ (Tangent &amp; Normal)
+      </h2>
+      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★☆☆</span>
+    </div>
 
-        function filterSpeaker() {
-            renderRehearsal();
-        }
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>สูตรเส้นตรง &amp; ความชัน:</b><br>
+          • ความชันเส้นสัมผัส: m_tan = f'(x₀)<br>
+          • ความชันเส้นปกติ: m_nor = -1 / m_tan<br>
+          • สมการเส้นตรง: y - y₀ = m(x - x₀)
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            สมการเส้นตรงในรูปมาตรฐาน <b>Ax + By + C = 0</b> หรือรูปความชัน <b>y = mx + c</b>
+          </p>
+        </div>
+      </div>
 
-        // Text To Speech Function
-        function speakText(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US';
-                utterance.rate = parseFloat(document.getElementById('ttsRate').value);
-                window.speechSynthesis.speak(utterance);
-            } else {
-                alert('เบราว์เซอร์นี้ไม่รองรับการออกเสียงอัตโนมัติ');
-            }
-        }
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 ขั้นตอนการสร้างสมการแบบไม่หลงทาง
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>หาจุด (x₀, y₀):</b> ถ้าโจทย์ให้เฉพาะ x₀ ให้แทน x₀ ลงใน f(x) เพื่อหาค่า y₀ ออกมาก่อน</li>
+          <li><b>หาความชัน m_tan:</b> ดิฟ f(x) ได้ f'(x) แล้วแทนค่า x₀ ลงไป ได้ค่าความชัน m</li>
+          <li><b>ถ้าโจทย์ถามเส้นปกติ:</b> ปรับความชันเป็น m_nor = -1/m</li>
+          <li><b>เข้าสูตรเส้นตรง:</b> แทนจุดและ m ลงใน y - y₀ = m(x - x₀) แล้วจัดรูปตอบ</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 
-        document.getElementById('ttsRate').addEventListener('input', function() {
-            document.getElementById('rateValue').textContent = this.value + 'x';
-        });
+  <!-- Slide 8: Topic 3.10 Related Rates -->
+  <div class="slide-container" id="slide8" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.10 อัตราเกี่ยวเนื่อง (Related Rates)
+      </h2>
+      <span class="badge badge-purple" contenteditable="true">ความยาก: ★★★★☆</span>
+    </div>
 
-        // Simple Countdown Timer
-        let timerInterval = null;
-        let timeLeft = 420; // 7 minutes
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>หลักการสำคัญ:</b><br>
+          • ตัวแปรทุกตัวเปลี่ยนตามเวลา t<br>
+          • ดิฟเทียบ t ทั้งสองข้าง (d/dt)<br>
+          • ปริมาตรกรวย: V = (1/3)πr²h<br>
+          • พีทาโกรัส: x² + y² = z²
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            ค่าตัวเลขเดี่ยวๆ พร้อมหน่วย เช่น <b>dV/dt = 12π cm³/s</b> (ระวังเครื่องหมาย + เพิ่มขึ้น, - ลดลง)
+          </p>
+        </div>
+      </div>
 
-        function toggleTimer() {
-            const btn = document.getElementById('timerBtn');
-            if (timerInterval) {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                btn.textContent = 'ทำต่อ';
-                btn.className = 'bg-amber-500 text-slate-950 font-bold px-2.5 py-1 rounded text-xs';
-            } else {
-                timerInterval = setInterval(() => {
-                    if (timeLeft <= 0) {
-                        clearInterval(timerInterval);
-                        alert('หมดเวลา 7 นาทีสำหรับการนำเสนอ!');
-                        return;
-                    }
-                    timeLeft--;
-                    const mins = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-                    const secs = String(timeLeft % 60).padStart(2, '0');
-                    document.getElementById('timerDisplay').textContent = `${mins}:${secs}`;
-                }, 1000);
-                btn.textContent = 'หยุดชั่วคราว';
-                btn.className = 'bg-rose-500 text-white font-bold px-2.5 py-1 rounded text-xs';
-            }
-        }
-    </script>
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 ขั้นตอนแก้โจทย์ปัญหาอัตราเกี่ยวเนื่อง
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>วาดภาพ &amp; ตั้งตัวแปร:</b> กำหนดตัวแปรที่เปลี่ยนแปลงตามเวลา t</li>
+          <li><b>สร้างสมการเชื่อมโยง:</b> เขียนสูตรเรขาคณิตที่เชื่อมตัวแปรเหล่านั้น</li>
+          <li><b>ลดตัวแปรเหลือ 1 ตัว (ถ้าจำเป็น):</b> เช่น ใช้สามเหลี่ยมคล้ายหา r ในรูป h</li>
+          <li><b>ดิฟเทียบ t (d/dt):</b> แล้วแทนค่าตัวเลขที่โจทย์กำหนด คำนวณหาอัตราการเปลี่ยน</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 9: Topic 3.11 Extreme Values & Optimization -->
+  <div class="slide-container" id="slide9" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        3.11 ค่าสุดขีดและการประยุกต์ (Extreme Values)
+      </h2>
+      <span class="badge badge-purple" contenteditable="true">ความยาก: ★★★★☆</span>
+    </div>
+
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>เงื่อนไขตรวจสอบ:</b><br>
+          • จุดวิกฤต (Critical Point): f'(x) = 0<br>
+          • f''(c) &gt; 0 ➔ ได้จุด<b>ต่ำสุดสัมพัทธ์</b><br>
+          • f''(c) &lt; 0 ➔ ได้จุด<b>สูงสุดสัมพัทธ์</b>
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            1. จุดสูงสุด/ต่ำสุด: ตอบเป็นคู่อันดับ <b>(x, y)</b><br>
+            2. ค่าสูงสุด/ต่ำสุด: ตอบเฉพาะค่า <b>y = f(x)</b>
+          </p>
+        </div>
+      </div>
+
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 วิธีหาจุดสูงสุด/ต่ำสุดอย่างรวดเร็ว
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>จับ f'(x) = 0:</b> แก้สมการหาค่า x จะได้ค่าวิกฤต (Critical values)</li>
+          <li><b>ทดสอบด้วย f''(x):</b> นำค่า x ไปแทนใน f''(x) ดูเครื่องหมายเพื่อสรุปว่าสูงหรือต่ำ</li>
+          <li><b>ถ้ามีช่วงปิด [a, b]:</b> ต้องนำปลายช่วง a และ b ไปแทนใน f(x) เพื่อหาค่าสัมบูรณ์ด้วย</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 10: Topic 4.1 Indefinite Integration & u-Substitution -->
+  <div class="slide-container" id="slide10" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        4.1 ปริพันธ์ไม่จำกัดเขต &amp; เทคนิคเปลี่ยนตัวแปร u
+      </h2>
+      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★☆☆</span>
+    </div>
+
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>สูตรอินทิเกรตพื้นฐาน:</b><br>
+          • ∫ xⁿ dx = (xⁿ⁺¹ / (n+1)) + C [n ≠ -1]<br>
+          • ∫ (1/x) dx = ln|x| + C<br>
+          • ∫ eˣ dx = eˣ + C<br>
+          • ∫ uⁿ du = (uⁿ⁺¹ / (n+1)) + C
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            ฟังก์ชันของ x และ<b>ต้องบวกค่าคงตัว + C ต่อท้ายเสมอ!</b> (ถ้าลืม + C จะถูกหักคะแนน)
+          </p>
+        </div>
+      </div>
+
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 วิธีเลือก u เพื่อเปลี่ยนตัวแปรให้ตัดกันได้
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>มองหาตัวแปร u:</b> เลือก u จากก้อนที่อยู่ใต้วงเล็บยกกำลัง หรือก้อนที่ดิฟแล้วได้อีกพจน์</li>
+          <li><b>ดิฟหา du:</b> เช่น ให้ u = x² + 1 จะได้ du = 2x dx ➔ dx = du / (2x)</li>
+          <li><b>แทนค่าเปลี่ยน dx เป็น du:</b> ตัวแปร x จะตัดกันหมด เหลือเฉพาะตัวแปร u</li>
+          <li><b>อินทิเกรต แล้วแทน u กลับ:</b> เปลี่ยน u กลับเป็นเทอมของ x แล้วบวก + C ตอบทันที</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 11: Topic 4.2 Definite Integral & Area -->
+  <div class="slide-container" id="slide11" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
+        4.2 ปริพันธ์จำกัดเขต &amp; การหาพื้นที่ใต้โค้ง
+      </h2>
+      <span class="badge badge-purple" contenteditable="true">ความยาก: ★★★★☆</span>
+    </div>
+
+    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
+      <div style="flex:1 1 0;">
+        <div class="formula-box" contenteditable="true">
+          <b>สูตรการคำนวณ:</b><br>
+          • ∫ₐᵇ f(x) dx = [F(x)]ₐᵇ = F(b) - F(a)<br>
+          • พื้นที่ใต้โค้ง: A = ∫ₐᵇ |f(x)| dx<br>
+          • พื้นที่ระหว่างเส้นโค้ง: ∫ₐᵇ (บน - ล่าง) dx
+        </div>
+        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
+          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
+          <p style="font-size:15px; color:#475569; margin:0;">
+            1. ปริพันธ์จำกัดเขต: ตัวเลข (เป็นได้ทั้ง +, -, 0)<br>
+            2. พื้นที่ (Area): <b>ต้องเป็นจำนวนบวกเสมอ!</b> (หน่วย: ตารางหน่วย)
+          </p>
+        </div>
+      </div>
+
+      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
+        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
+          💡 เทคนิคหาพื้นที่ป้องกันการคำนวณผิด
+        </h3>
+        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
+          <li><b>หาจุดตัดแกน x (f(x) = 0):</b> ตรวจสอบว่ากราฟตัดแกน x ในช่วง [a, b] หรือไม่</li>
+          <li><b>ถ้ากราฟตัดแกน x:</b> ให้แยกช่วงอินทิเกรต แล้วใส่ค่าสัมบูรณ์ |...| ในช่วงที่อยู่ใต้แกน</li>
+          <li><b>ถ้าหาพื้นที่ระหว่าง 2 กราฟ:</b> ให้เอา (สมการกราฟบน - สมการกราฟล่าง) แล้วค่อยอินทิเกรต</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 12: Summary & Exam Tips (Dark) -->
+  <div class="slide-container" id="slide12" style="background:#0f172a; padding:64px; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+    <h2 contenteditable="true" style="font-size:40px; font-weight:700; color:#f8fafc; margin:0 0 16px 0;">
+      สรุปหัวใจสำคัญ &amp; ข้อควรระวังในห้องสอบ 🎯
+    </h2>
+    <p contenteditable="true" style="font-size:18px; color:#94a3b8; max-width:800px; margin:0 auto 40px auto; line-height:1.6;">
+      ข้อผิดพลาดที่มักทำให้โดนหักคะแนนในข้อสอบแคลคูลัสที่ต้องระวังเป็นพิเศษ
+    </p>
+
+    <div style="display:flex; gap:24px; justify-content:center;">
+      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:24px; flex:1 1 0; text-align:left;">
+        <h3 contenteditable="true" style="color:#ef4444; font-size:18px; font-weight:700; margin:0 0 8px 0;">
+          <i class="fa-solid fa-triangle-exclamation"></i> จุดผิดบ่อยในการดิฟ
+        </h3>
+        <p contenteditable="true" style="color:#cbd5e1; font-size:15px; margin:0; line-height:1.6;">
+          • ลืมดิฟไส้ในเมื่อใช้กฎลูกโซ่<br>
+          • ดิฟผลคูณผิด (ไปดิฟหน้า × ดิฟหลัง)<br>
+          • ดิฟ y ในฟังก์ชันปริยายแล้วลืมพ่วง dy/dx
+        </p>
+      </div>
+
+      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:24px; flex:1 1 0; text-align:left;">
+        <h3 contenteditable="true" style="color:#f59e0b; font-size:18px; font-weight:700; margin:0 0 8px 0;">
+          <i class="fa-solid fa-triangle-exclamation"></i> จุดผิดบ่อยในการอินทิเกรต
+        </h3>
+        <p contenteditable="true" style="color:#cbd5e1; font-size:15px; margin:0; line-height:1.6;">
+          • ลืม + C ในปริพันธ์ไม่จำกัดเขต<br>
+          • แทนค่า F(b) - F(a) ผิดเครื่องหมายลบ<br>
+          • หาพื้นที่ใต้แกน x แล้วลืมเปลี่ยนเป็นค่าบวก
+        </p>
+      </div>
+
+      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:24px; flex:1 1 0; text-align:left;">
+        <h3 contenteditable="true" style="color:#38bdf8; font-size:18px; font-weight:700; margin:0 0 8px 0;">
+          <i class="fa-solid fa-circle-check"></i> รูปแบบการตอบ
+        </h3>
+        <p contenteditable="true" style="color:#cbd5e1; font-size:15px; margin:0; line-height:1.6;">
+          • กำหนดสัญลักษณ์ f'(x), dy/dx ให้ชัดเจน<br>
+          • จัดรูปเศษส่วนและกำลังติดลบให้เรียบร้อย<br>
+          • ใส่นามหน่วยในโจทย์ประยุกต์เสมอ
+        </p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
