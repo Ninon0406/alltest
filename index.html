@@ -2,504 +2,747 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>สรุปแคลคูลัส หัวข้อ 3.5 เป็นต้นไป - สูตร เทคนิค และวิธีการตอบ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SC401201 Calculus I Master Dashboard & Final Exam Prep</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Prompt -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { margin: 0; padding: 0; font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #1e293b; }
-    .slide-container {
-      width: 1280px;
-      height: 720px;
-      margin: 0 auto 32px auto;
-      overflow: hidden;
-      box-sizing: border-box;
-      position: relative;
-      border-radius: 12px;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            prompt: ['Prompt', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
     }
-    .star-rating { color: #f59e0b; font-size: 16px; margin-left: 8px; }
-    .formula-box { background: #f8fafc; border-left: 4px solid #2563eb; padding: 12px 16px; border-radius: 6px; font-family: monospace; font-size: 16px; color: #0f172a; margin-bottom: 12px; line-height: 1.6; }
-    .step-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; flex: 1 1 0; }
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 14px; font-weight: 600; }
-    .badge-blue { background: #dbeafe; color: #1e40af; }
-    .badge-amber { background: #fef3c7; color: #92400e; }
-    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+  </script>
+  <style>
+    body { font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #f8fafc; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #1e293b; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    .latex-code { font-family: 'Courier New', Courier, monospace; }
   </style>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col md:flex-row">
 
-  <!-- Slide 1: Title Slide (Dark) -->
-  <div class="slide-container" id="slide1" style="background:#0f172a; padding:64px; display:flex; flex-direction:column; justify-content:center;">
-    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-      <span class="badge badge-amber" contenteditable="true"><i class="fa-solid fa-graduation-cap"></i> สรุปเนื้อหาแคลคูลัสขั้นสูง</span>
-      <span style="color:#94a3b8; font-size:16px;" contenteditable="true">หัวข้อ 3.5 ถึงบทสรุปสุดท้าย</span>
-    </div>
-    <h1 contenteditable="true" style="font-size:52px; font-weight:700; color:#f8fafc; margin:0 0 20px 0; line-height:1.2;">
-      คัมภีร์สรุปแคลคูลัส:<br><span style="color:#38bdf8;">การหาอนุพันธ์ &amp; ปริพันธ์</span>
-    </h1>
-    <p contenteditable="true" style="font-size:20px; color:#94a3b8; max-width:780px; margin:0 0 32px 0; line-height:1.6;">
-      รวบรวมสูตรลัด เทคนิคคิดแบบมองปุ๊บรู้ขั้นตอน วิธีการแก้อย่างเป็นระบบ พร้อมรูปแบบคำตอบที่ถูกต้อง และระดับความยากของแต่ละหัวข้อ
-    </p>
-    <div style="display:flex; gap:24px; border-top:1px solid #334155; padding-top:24px;">
-      <div>
-        <p contenteditable="true" style="color:#64748b; font-size:14px; margin:0;">ขอบเขตเนื้อหา</p>
-        <p contenteditable="true" style="color:#f1f5f9; font-size:18px; font-weight:600; margin:4px 0 0 0;">หัวข้อ 3.5 ถึง จบบทปริพันธ์</p>
-      </div>
-      <div style="width:1px; background:#334155;"></div>
-      <div>
-        <p contenteditable="true" style="color:#64748b; font-size:14px; margin:0;">เป้าหมาย</p>
-        <p contenteditable="true" style="color:#38bdf8; font-size:18px; font-weight:600; margin:4px 0 0 0;">แก้โจทย์ไว ตอบถูกรูปแบบ 100%</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 2: Topic Map & Rating (Light) -->
-  <div class="slide-container" id="slide2" style="background:#f8fafc; padding:48px 64px; display:flex; flex-direction:column;">
-    <h2 contenteditable="true" style="font-size:32px; font-weight:700; color:#0f172a; margin:0 0 8px 0;">
-      แผนที่หัวข้อเรียนและดาวความยาก (Difficulty Map)
-    </h2>
-    <p contenteditable="true" style="font-size:16px; color:#64748b; margin:0 0 28px 0;">
-      ภาพรวมหัวข้อใหญ่และหัวข้อย่อยตั้งแต่ 3.5 พร้อมระดับความยากประเมินตามการออกสอบ
-    </p>
-
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="background:#ffffff; padding:24px; border-radius:12px; border:1px solid #e2e8f0; flex:1 1 0;">
-        <h3 contenteditable="true" style="font-size:20px; color:#1e293b; margin:0 0 16px 0; border-bottom:2px solid #3b82f6; padding-bottom:8px;">
-          กลุ่ม 1: การดริฟพื้นฐาน &amp; ลูกโซ่ <span class="star-rating">★★☆☆☆</span>
-        </h3>
-        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#22c55e;"></i> <b>3.5 ดิฟพีชคณิต &amp; กฎลูกโซ่:</b> ดิฟนอก-ดิฟใน</li>
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#22c55e;"></i> <b>3.6 อนุพันธ์อันดับสูง:</b> ดิฟซ้ำหลายรอบ Find fⁿ(x)</li>
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#22c55e;"></i> <b>3.7 ฟังก์ชันโดยปริยาย:</b> เทก d/dx หา dy/dx</li>
-        </ul>
-      </div>
-
-      <div style="background:#ffffff; padding:24px; border-radius:12px; border:1px solid #e2e8f0; flex:1 1 0;">
-        <h3 contenteditable="true" style="font-size:20px; color:#1e293b; margin:0 0 16px 0; border-bottom:2px solid #f59e0b; padding-bottom:8px;">
-          กลุ่ม 2: ฟังก์ชันอดิสัย &amp; ประยุกต์ <span class="star-rating">★★★★☆</span>
-        </h3>
-        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#eab308;"></i> <b>3.8 ฟังก์ชันอดิสัย:</b> ดิฟ ตรีโกณ, eˣ, ln(x)</li>
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#eab308;"></i> <b>3.9 เส้นสัมผัส &amp; เส้นปกติ:</b> หาความชัน m = f'(x)</li>
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#ef4444;"></i> <b>3.10 อัตราเกี่ยวเนื่อง:</b> ดิฟเทียบเวลา d/dt</li>
-        </ul>
-      </div>
-
-      <div style="background:#ffffff; padding:24px; border-radius:12px; border:1px solid #e2e8f0; flex:1 1 0;">
-        <h3 contenteditable="true" style="font-size:20px; color:#1e293b; margin:0 0 16px 0; border-bottom:2px solid #8b5cf6; padding-bottom:8px;">
-          กลุ่ม 3: ค่าสุดขีด &amp; ปริพันธ์ <span class="star-rating">★★★★☆</span>
-        </h3>
-        <ul style="list-style:none; padding:0; margin:0; line-height:2;">
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#eab308;"></i> <b>3.11 ค่าสูงสุด-ต่ำสุด:</b> จุดวิกฤต f'(x)=0</li>
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#8b5cf6;"></i> <b>4.1 ปริพันธ์ไม่จำกัดเขต:</b> อินทิเกรตเปลี่ยนตัวแปร u</li>
-          <li contenteditable="true" style="font-size:16px; color:#334155;"><i class="fa-solid fa-check-circle" style="color:#8b5cf6;"></i> <b>4.2 พื้นที่ใต้โค้ง:</b> ปริพันธ์จำกัดเขต F(b)-F(a)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 3: Topic 3.5 Algebraic & Chain Rule -->
-  <div class="slide-container" id="slide3" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.5 การหาอนุพันธ์ฟังก์ชันพีชคณิต &amp; กฎลูกโซ่
-      </h2>
-      <span class="badge badge-blue" contenteditable="true">ความยาก: ★★☆☆☆</span>
-    </div>
-
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>สูตรหลักที่ต้องจำ:</b><br>
-          • d/dx(xⁿ) = n·xⁿ⁻¹<br>
-          • d/dx(uⁿ) = n·uⁿ⁻¹ · (du/dx) [กฎลูกโซ่]<br>
-          • d/dx(หน้า·หลัง) = หน้า·ดิฟหลัง + หลัง·ดิฟหน้า<br>
-          • d/dx(บน/ล่าง) = (ล่าง·ดิฟบน - บน·ดิฟล่าง) / ล่าง²
+  <!-- Sidebar Navigation -->
+  <aside class="w-full md:w-80 bg-slate-800 border-r border-slate-700 flex flex-col shrink-0">
+    <div class="p-5 border-b border-slate-700 bg-slate-900/50">
+      <div class="flex items-center gap-3">
+        <div class="bg-blue-600 p-2.5 rounded-xl text-white">
+          <i class="fa-solid fa-graduation-cap text-2xl"></i>
         </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            ให้ตอบในรูป <b>f'(x) = ...</b> หรือ <b>dy/dx = ...</b> โดยจัดรูปเศษส่วน จัดการกำลังติดลบให้อยู่ในรูปพจน์บวก หรือดึงตัวองค์ประกอบร่วมออกให้เรียบร้อยที่สุด
+        <div>
+          <h1 class="font-bold text-lg text-white leading-tight">SC401201 แคลคูลัส 1</h1>
+          <p class="text-xs text-slate-400 mt-0.5">คู่มือสอบปลายภาค &amp; คลังสูตรฉบับเต็ม</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="p-3 space-y-1 overflow-y-auto custom-scrollbar flex-1" id="nav-container">
+      <button onclick="switchTab('overview')" id="btn-overview" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors bg-blue-600 text-white">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-compass w-5 text-center"></i>ภาพรวม &amp; คลังสูตรที่ให้ในสอบ</span>
+        <i class="fa-solid fa-chevron-right text-xs"></i>
+      </button>
+
+      <div class="pt-3 pb-1 px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">เนื้อหาตามใบงาน 7 - 13</div>
+
+      <button onclick="switchTab('part1')" id="btn-part1" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-1 w-5 text-center text-blue-400"></i>ส่วนที่ 1: ดิฟพีชคณิต &amp; ตรีโกณ (ใบงาน 7)</span>
+      </button>
+
+      <button onclick="switchTab('part2')" id="btn-part2" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-2 w-5 text-center text-amber-400"></i>ส่วนที่ 2: Expo, Log &amp; Log Diff (ใบงาน 8)</span>
+      </button>
+
+      <button onclick="switchTab('part3')" id="btn-part3" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-3 w-5 text-center text-emerald-400"></i>ส่วนที่ 3: ปริยาย &amp; อันดับสูง (ใบงาน 9)</span>
+      </button>
+
+      <button onclick="switchTab('part4')" id="btn-part4" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-4 w-5 text-center text-purple-400"></i>ส่วนที่ 4: ผลต่างอนุพัทธ์ dy, dx (ใบงาน 10)</span>
+      </button>
+
+      <button onclick="switchTab('part5')" id="btn-part5" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-5 w-5 text-center text-rose-400"></i>ส่วนที่ 5: อัตราสัมพัทธ์ (ใบงาน 11)</span>
+      </button>
+
+      <button onclick="switchTab('part6')" id="btn-part6" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-6 w-5 text-center text-teal-400"></i>ส่วนที่ 6: กราฟ &amp; ค่าสุดขีด (ใบงาน 11)</span>
+      </button>
+
+      <button onclick="switchTab('part7')" id="btn-part7" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-7 w-5 text-center text-yellow-400"></i>ส่วนที่ 7: กฎของโลปีตัล (ใบงาน 12)</span>
+      </button>
+
+      <button onclick="switchTab('part8')" id="btn-part8" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/60 hover:text-white transition-colors">
+        <span class="flex items-center gap-3 text-left"><i class="fa-solid fa-8 w-5 text-center text-indigo-400"></i>ส่วนที่ 8: ปริพันธ์ (ใบงาน 13)</span>
+      </button>
+
+      <div class="pt-3 pb-1 px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">ระบบจำลองการสอบ</div>
+
+      <button onclick="switchTab('exam')" id="btn-exam" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-medium text-amber-300 hover:bg-amber-500/20 transition-colors border border-amber-500/30">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-pen-to-square w-5 text-center text-amber-400"></i>ห้องซ้อมสอบจริง (10 ข้อ)</span>
+        <span class="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded-full font-semibold">Hot</span>
+      </button>
+    </nav>
+
+    <!-- Playlist Reference Link -->
+    <div class="p-4 border-t border-slate-700 bg-slate-900/80">
+      <a href="https://youtube.com/playlist?list=PLQGNJVc2JuVCIoWiAy_3dLyKyNxLCrTjc" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-red-400 hover:text-red-300 transition-colors">
+        <i class="fa-brands fa-youtube text-lg"></i>
+        <span>เพลย์ลิสต์ YouTube คลิปสอนฉบับเต็ม</span>
+        <i class="fa-solid fa-up-right-from-square ml-auto"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 p-4 md:p-8 overflow-y-auto max-w-7xl mx-auto w-full custom-scrollbar">
+
+    <!-- TOPIC: OVERVIEW & GIVEN FORMULAS -->
+    <div id="tab-overview" class="tab-content space-y-6">
+      <!-- Header Banner -->
+      <div class="bg-gradient-to-r from-blue-900/80 via-indigo-900/80 to-slate-800 border border-blue-500/30 rounded-2xl p-6 md:p-8 relative overflow-hidden">
+        <div class="relative z-10">
+          <div class="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full border border-blue-400/30 mb-3">
+            <i class="fa-solid fa-circle-info"></i> SC401201 แคลคูลัสสำหรับวิทยาศาสตร์กายภาพ 1
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">โครงสร้างแนวข้อสอบปลายภาค &amp; สูตรที่ให้ในข้อสอบ</h2>
+          <p class="text-slate-300 text-sm md:text-base max-w-3xl leading-relaxed">
+            ข้อสอบปลายภาคมีทั้งหมด 9 หน้า (คะแนนเต็ม 88 คะแนน คิดประเมินจาก min(40, คะแนนที่ได้ / 2)) ครอบคลุมเนื้อหาใบงานที่ 7 ถึง 13 อนุญาตให้ใช้ดินสอ 2B ขึ้นไป
           </p>
         </div>
       </div>
 
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 วิธีคิดและขั้นตอนการทำแบบมองปุ๊บแก้ได้ปั๊บ
+      <!-- Given Formulas Table -->
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-3">
+          <h3 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
+            <i class="fa-solid fa-file-invoice"></i> สูตรการหาอนุพันธ์และปริพันธ์ (สูตรที่ **ให้** ในข้อสอบปลายภาค)
+          </h3>
+          <span class="text-xs text-slate-400 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-700">พิมพ์แนบมาหลังปกข้อสอบ</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+          <!-- Derivatives Formulas Given -->
+          <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700/60">
+            <h4 class="font-semibold text-blue-300 mb-3 border-b border-slate-800 pb-2">สูตรการหาอนุพันธ์ที่ให้มา (16 สูตร)</h4>
+            <div class="space-y-1.5 text-slate-300 font-mono text-xs">
+              <p>1. d/dx(sin u) = cos u (du/dx)</p>
+              <p>2. d/dx(cos u) = -sin u (du/dx)</p>
+              <p>3. d/dx(tan u) = sec² u (du/dx)</p>
+              <p>4. d/dx(sec u) = sec u tan u (du/dx)</p>
+              <p>5. d/dx(cot u) = -csc² u (du/dx)</p>
+              <p>6. d/dx(csc u) = -csc u cot u (du/dx)</p>
+              <p>7. d/dx(arcsin u) = 1/√(1-u²) (du/dx)</p>
+              <p>8. d/dx(arccos u) = -1/√(1-u²) (du/dx)</p>
+              <p>9. d/dx(arctan u) = 1/(1+u²) (du/dx)</p>
+              <p>10. d/dx(arccot u) = -1/(1+u²) (du/dx)</p>
+              <p>11. d/dx(arcsec u) = 1/(|u|√(u²-1)) (du/dx)</p>
+              <p>12. d/dx(arccsc u) = -1/(|u|√(u²-1)) (du/dx)</p>
+              <p>13. d/dx(log_a |u|) = 1/(u ln a) (du/dx)</p>
+              <p>14. d/dx(aᵘ) = aᵘ ln a (du/dx)</p>
+              <p>15. d/dx(ln|u|) = (1/u) (du/dx)</p>
+              <p>16. d/dx(eᵘ) = eᵘ (du/dx)</p>
+            </div>
+          </div>
+
+          <!-- Integrals Formulas Given -->
+          <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-700/60">
+            <h4 class="font-semibold text-indigo-300 mb-3 border-b border-slate-800 pb-2">สูตรการหาปริพันธ์ที่ให้มา (17 สูตร)</h4>
+            <div class="space-y-1.5 text-slate-300 font-mono text-xs">
+              <p>1. ∫ uⁿ du = (uⁿ⁺¹ / (n+1)) + C</p>
+              <p>2. ∫ sin u du = -cos u + C</p>
+              <p>3. ∫ cos u du = sin u + C</p>
+              <p>4. ∫ sec² u du = tan u + C</p>
+              <p>5. ∫ csc² u du = -cot u + C</p>
+              <p>6. ∫ sec u tan u du = sec u + C</p>
+              <p>7. ∫ csc u cot u du = -csc u + C</p>
+              <p>8. ∫ tan u du = -ln|cos u| + C = ln|sec u| + C</p>
+              <p>9. ∫ cot u du = ln|sin u| + C</p>
+              <p>10. ∫ sec u du = ln|sec u + tan u| + C</p>
+              <p>11. ∫ csc u du = ln|csc u - cot u| + C</p>
+              <p>12. ∫ 1/√(a²-u²) du = arcsin(u/a) + C</p>
+              <p>13. ∫ 1/(a²+u²) du = (1/a) arctan(u/a) + C</p>
+              <p>14. ∫ 1/(u√(u²-a²)) du = (1/a) arcsec(|u|/a) + C</p>
+              <p>15. ∫ eᵘ du = eᵘ + C</p>
+              <p>16. ∫ aᵘ du = (aᵘ / ln a) + C</p>
+              <p>17. ∫ (1/u) du = ln|u| + C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MUST MEMORIZE FORMULAS -->
+      <div class="bg-slate-800 border border-rose-500/30 rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-rose-400 flex items-center gap-2 mb-3">
+          <i class="fa-solid fa-triangle-exclamation"></i> สูตรพื้นฐานที่ **ไม่ให้** ในข้อสอบ (ต้องท่องจำเอง 100%)
         </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>มองรูปแบบโจทย์:</b> ถ้าเห็นกลุ่มก้อนยกกำลัง เช่น y = (3x² - 5)⁴ ให้มองทั้งก้อนเป็น u จะได้ y = u⁴</li>
-          <li><b>ดิฟชั้นนอก:</b> เอาเลขชี้กำลังลงมาคูณข้างหน้าแล้วลดกำลังลง 1 จะได้ 4(3x² - 5)³</li>
-          <li><b>ดิฟไส้ใน (ดิฟ u):</b> ดริฟก้อนข้างใน (3x² - 5) ได้ 6x แล้วเอามาคูณต่อท้าย</li>
-          <li><b>รวมพจน์ตอบ:</b> dy/dx = 4(3x² - 5)³ · (6x) = <b>24x(3x² - 5)³</b> ตอบได้เลย!</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 4: Topic 3.6 Higher Order Derivatives -->
-  <div class="slide-container" id="slide4" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.6 อนุพันธ์อันดับสูง (Higher-Order Derivatives)
-      </h2>
-      <span class="badge badge-blue" contenteditable="true">ความยาก: ★★☆☆☆</span>
-    </div>
-
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>สัญลักษณ์ &amp; สูตรสำคัญ:</b><br>
-          • อนุพันธ์อันดับ 1: f'(x) = dy/dx = v(t) (ความเร็ว)<br>
-          • อนุพันธ์อันดับ 2: f''(x) = d²y/dx² = a(t) (ความเร่ง)<br>
-          • อนุพันธ์อันดับ n: f⁽ⁿ⁾(x) = dⁿy/dxⁿ<br>
-          • รูปแบบทั่วไป: หาแบบรูปแบบซ้ำ (Pattern Recognition)
-        </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            1. ตอบค่าตัวเลขเฉพาะ เช่น f''(2) = 18<br>
-            2. ตอบในรูปสูตรทั่วไป f⁽ⁿ⁾(x) ที่ติดในเทอมของ n
-          </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="bg-rose-950/30 border border-rose-900/50 rounded-xl p-4">
+            <p class="font-semibold text-rose-300 mb-1">กฎการดิฟพื้นฐาน</p>
+            <ul class="text-xs text-slate-300 space-y-1 font-mono">
+              <li>• d/dx(c) = 0</li>
+              <li>• d/dx(xⁿ) = n·xⁿ⁻¹</li>
+              <li>• ดิฟผลคูณ: (uv)' = u v' + v u'</li>
+              <li>• ดิฟผลหาร: (u/v)' = (v u' - u v') / v²</li>
+              <li>• กฎลูกโซ่: d/dx[f(g(x))] = f'(g(x))·g'(x)</li>
+            </ul>
+          </div>
+          <div class="bg-rose-950/30 border border-rose-900/50 rounded-xl p-4">
+            <p class="font-semibold text-rose-300 mb-1">สูตรผลต่างอนุพัทธ์ &amp; โลปีตัล</p>
+            <ul class="text-xs text-slate-300 space-y-1 font-mono">
+              <li>• dx = Δx</li>
+              <li>• dy = f'(x) dx</li>
+              <li>• ค่าประมาณ: f(x+Δx) ≈ f(x) + f'(x)Δx</li>
+              <li>• รูปแบบยังไม่กำหนด: 0/0, ∞/∞</li>
+              <li>• กฎโลปีตัล: lim [f(x)/g(x)] = lim [f'(x)/g'(x)]</li>
+            </ul>
+          </div>
+          <div class="bg-rose-950/30 border border-rose-900/50 rounded-xl p-4">
+            <p class="font-semibold text-rose-300 mb-1">อัตราสัมพัทธ์ &amp; พื้นที่</p>
+            <ul class="text-xs text-slate-300 space-y-1 font-mono">
+              <li>• ปริมาตรทรงกลม V = (4/3)πr³</li>
+              <li>• ปริมาตรกรวย V = (1/3)πr²h</li>
+              <li>• พื้นที่วงกลม A = πr²</li>
+              <li>• ปริพันธ์จำกัดเขต: ∫ₐᵇ f(x)dx = F(b) - F(a)</li>
+            </ul>
+          </div>
         </div>
       </div>
-
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 วิธีการทำข้อสอบหา f⁽ⁿ⁾(x) ลัดขั้น
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>ทำดิฟไล่ลำดับ 3 ครั้งแรก:</b> หา f'(x), f''(x), และ f'''(x) ออกมาก่อน</li>
-          <li><b>สังเกตรูปแบบ (Pattern):</b> ดูเครื่องหมาย (+/-), ตัวเลขสัมประสิทธิ์, และพลังกำลังของ x</li>
-          <li><b>สร้างฟังก์ชัน n:</b> เขียนความสัมพันธ์ในรูป (-1)ⁿ, n!, หรือ 2ⁿ</li>
-          <li><b>สรุปตอบ:</b> เขียน f⁽ⁿ⁾(x) = [สูตรที่ได้] ตอบได้อย่างมั่นใจ</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 5: Topic 3.7 Implicit Differentiation -->
-  <div class="slide-container" id="slide5" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.7 การหาอนุพันธ์ของฟังก์ชันโดยปริยาย (Implicit)
-      </h2>
-      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★☆☆</span>
     </div>
 
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>สูตร/กฎทองคำ:</b><br>
-          • ดิฟเทอม x: ดิฟตามปกติ d/dx(xⁿ) = n·xⁿ⁻¹<br>
-          • ดิฟเทอม y: ดิฟแล้วต้องคูณ (dy/dx) ติดไว้เสมอ!<br>
-          • d/dx(yⁿ) = n·yⁿ⁻¹ · (dy/dx)<br>
-          • d/dx(x·y) = x·(dy/dx) + y(1) [กฎคูณ]
+    <!-- PART 1: WORKSHEET 7 -->
+    <div id="tab-part1" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full border border-blue-500/20">ส่วนที่ 1 • อ้างอิงใบงานที่ 7</span>
+            <h2 class="text-2xl font-bold text-white mt-1">การหาอนุพันธ์ของฟังก์ชันพีชคณิต &amp; ฟังก์ชันตรีโกณมิติ</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ง่าย - ปานกลาง)</span>
+          </div>
         </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            ย้ายข้างให้ฝั่งซ้ายเหลือ <b>dy/dx</b> ตัวเดียว ส่วนฝั่งขวาเป็นเศษส่วนที่ติดทั้งตัวแปร x และ y
-          </p>
+
+        <!-- Video Ref Link -->
+        <div class="mt-4 bg-slate-900/80 p-3 rounded-xl border border-slate-700/60 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2 text-slate-300">
+            <i class="fa-brands fa-youtube text-red-500 text-base"></i>
+            <span>ตรงกับคลิปในเพลย์ลิสต์: <b>หัวข้อ 3.5 ดิฟพีชคณิต &amp; กฎลูกโซ่ / ตรีโกณ</b></span>
+          </div>
+          <a href="https://youtube.com/playlist?list=PLQGNJVc2JuVCIoWiAy_3dLyKyNxLCrTjc" target="_blank" class="text-blue-400 hover:underline">เปิดดูคลิป <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-      </div>
 
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 ขั้นตอนการแก้โจทย์สมการปน x และ y
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>เทก d/dx ทั้งสองข้าง:</b> ใส่ d/dx กระจายเข้าไปทุกพจน์ของสมการ</li>
-          <li><b>ดิฟทีละพจน์:</b> เจอตัวแปร y ให้ดิฟปกติแล้วพ่วง dy/dx ท้ายพจน์นั้น</li>
-          <li><b>ย้ายกลุ่ม dy/dx:</b> ย้ายพจน์ที่มี dy/dx มาไว้ฝั่งซ้าย ย้ายพจน์ไม่มี dy/dx ไปฝั่งขวา</li>
-          <li><b>ดึงตัวองค์ประกอบร่วม:</b> ดึง dy/dx ออกมาแล้วเอาตัวคูณย้ายไปหารฝั่งขวา ตอบทันที</li>
-        </ol>
-      </div>
-    </div>
-  </div>
+        <!-- Detail Breakdown -->
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-blue-300 mb-2">💡 หลักการทำโจทย์แบบละเอียด &amp; เทคนิคคิดเร็ว</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+              เมื่อเจอโจทย์ผสม เช่น <span class="text-amber-300 font-mono">y = (4x - 3)(x² - 8x + 2) / (x - 2)</span> หรือ <span class="text-amber-300 font-mono">f(x) = (4x³ + 9x - 1)⁷</span>:
+            </p>
+            <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2 pl-2">
+              <li><b>โจทย์ฟังก์ชันประกอบ (กฎลูกโซ่):</b> ถ้าอยู่ในรูป <span class="font-mono text-cyan-300">y = [u(x)]ⁿ</span> ให้ตบเลขชี้กำลัง <span class="font-mono text-cyan-300">n</span> ลงมาข้างหน้า ลบกำลังออก 1 แล้ว<b>อย่าลืมคูณด้วยดิฟไส้ใน (du/dx)</b> เสมอ</li>
+              <li><b>โจทย์ผลหาร:</b> ใช้สูตร <span class="font-mono text-cyan-300">(ล่าง·ดิฟบน - บน·ดิฟล่าง) / ล่าง²</span> กระจายพจน์บนเศษให้เรียบร้อย</li>
+              <li><b>โจทย์ตรีโกณกำลังสูง:</b> เช่น <span class="font-mono text-cyan-300">y = cot²(5x - 4)</span> ให้มองเป็น <span class="font-mono text-cyan-300">y = [cot(5x - 4)]²</span> แล้วใช้กฎลูกโซ่ 3 ชั้น (ดิฟกำลัง ➔ ดิฟ cot ➔ ดิฟมุม)</li>
+            </ol>
+          </div>
 
-  <!-- Slide 6: Topic 3.8 Transcendental Functions -->
-  <div class="slide-container" id="slide6" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.8 อนุพันธ์ฟังก์ชันอดิสัย (Trig, Expo, Log)
-      </h2>
-      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★★☆</span>
-    </div>
+          <!-- Format of Answer -->
+          <div class="bg-blue-950/30 border border-blue-500/30 rounded-xl p-4">
+            <h4 class="font-semibold text-blue-300 text-sm mb-1"><i class="fa-solid fa-bullseye"></i> รูปแบบคำตอบที่ต้องการในข้อสอบ</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              ตอบในรูป <span class="font-mono text-amber-300">dy/dx = ...</span> หรือ <span class="font-mono text-amber-300">f'(x) = ...</span> โดยจัดรูปเศษส่วน จัดการกำลังติดลบให้อยู่ในรูปบวก และดึงตัวร่วมออกให้เรียบร้อย
+            </p>
+          </div>
 
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true" style="font-size:15px;">
-          <b>สูตรตระกูลอดิสัยที่ต้องท่องจำ:</b><br>
-          • d/dx(sin u) = cos u · (du/dx)<br>
-          • d/dx(cos u) = -sin u · (du/dx)<br>
-          • d/dx(eᵘ) = eᵘ · (du/dx)<br>
-          • d/dx(ln u) = (1/u) · (du/dx)
-        </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            ตอบในรูป f'(x) โดยจัดรูปให้มุมตรีโกณหรือกำลัง e อยู่ในรูปอย่างง่ายที่สุด
-          </p>
+          <!-- Example Problem -->
+          <div class="bg-slate-900 rounded-xl p-5 border border-slate-700">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">ตัวอย่างโจทย์แสดงวิธีทำ</span>
+              <span class="text-xs text-slate-400">ตัวอย่างแนวข้อสอบส่วนที่ 1</span>
+            </div>
+            <p class="text-sm font-semibold text-white font-mono mb-3">จงหา f'(x) เมื่อ f(x) = (4x³ + 9x - 1)⁷</p>
+            <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs text-slate-300 space-y-2 border border-slate-800">
+              <p class="text-slate-500">// ขั้นที่ 1: ให้ u = 4x³ + 9x - 1 จะได้ f(x) = u⁷</p>
+              <p><span class="text-blue-400">f'(x)</span> = 7(4x³ + 9x - 1)⁶ · d/dx(4x³ + 9x - 1)</p>
+              <p class="text-slate-500">// ขั้นที่ 2: ดิฟไส้ใน d/dx(4x³ + 9x - 1) = 12x² + 9</p>
+              <p><span class="text-blue-400">f'(x)</span> = 7(4x³ + 9x - 1)⁶ · (12x² + 9)</p>
+              <p><span class="text-emerald-400">ตอบ</span> f'(x) = 21(4x² + 3)(4x³ + 9x - 1)⁶</p>
+            </div>
+          </div>
+
+          <!-- Practice Sheet Reference -->
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <h4 class="font-bold text-slate-200 text-sm mb-2"><i class="fa-solid fa-list-check text-blue-400"></i> ข้อที่อยากให้ฝึกทำในใบงานที่ 7</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-mono">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 1.1: y = x² + 3x + 5 + (3x-8)/(2x+17)</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 1.3: y = (4x⁵ + 3x³ - 10x)²⁰</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 2.1: y = sin(3x⁵ - 6x² + 2x)</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 2.4: y = cot²(5x - 4)sin³(x² + 1)</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 วิธีจำและทางลัดการทำโจทย์ผสม
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>สูตรดิฟตรีโกณที่มี 'c' นำหน้า:</b> (cos, cot, cosec) ดิฟแล้วจะได้ค่า<b>ติดลบเสมอ</b></li>
-          <li><b>ดิฟ e ยกกำลังไส้ u:</b> ลอกตัวเดิมออกมาก่อนเป็น eᵘ แล้วดริฟไส้ u คูณปิดท้ายเสมอ</li>
-          <li><b>ดิฟ ln(ไส้ u):</b> เอาไส้ u ไปไว้ข้างล่าง แล้วเอาดิฟไส้ (du/dx) ไปไว้ข้างบนเป็น du/u</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 7: Topic 3.9 Tangent & Normal Lines -->
-  <div class="slide-container" id="slide7" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.9 สมการเส้นสัมผัสโค้ง &amp; เส้นปกติ (Tangent &amp; Normal)
-      </h2>
-      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★☆☆</span>
     </div>
 
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>สูตรเส้นตรง &amp; ความชัน:</b><br>
-          • ความชันเส้นสัมผัส: m_tan = f'(x₀)<br>
-          • ความชันเส้นปกติ: m_nor = -1 / m_tan<br>
-          • สมการเส้นตรง: y - y₀ = m(x - x₀)
+    <!-- PART 2: WORKSHEET 8 -->
+    <div id="tab-part2" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">ส่วนที่ 2 • อ้างอิงใบงานที่ 8</span>
+            <h2 class="text-2xl font-bold text-white mt-1">การหาอนุพันธ์ฟังก์ชันชี้กำลัง &amp; ลอการิทึม (Logarithmic Diff)</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ปานกลาง)</span>
+          </div>
         </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            สมการเส้นตรงในรูปมาตรฐาน <b>Ax + By + C = 0</b> หรือรูปความชัน <b>y = mx + c</b>
-          </p>
-        </div>
-      </div>
 
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 ขั้นตอนการสร้างสมการแบบไม่หลงทาง
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>หาจุด (x₀, y₀):</b> ถ้าโจทย์ให้เฉพาะ x₀ ให้แทน x₀ ลงใน f(x) เพื่อหาค่า y₀ ออกมาก่อน</li>
-          <li><b>หาความชัน m_tan:</b> ดิฟ f(x) ได้ f'(x) แล้วแทนค่า x₀ ลงไป ได้ค่าความชัน m</li>
-          <li><b>ถ้าโจทย์ถามเส้นปกติ:</b> ปรับความชันเป็น m_nor = -1/m</li>
-          <li><b>เข้าสูตรเส้นตรง:</b> แทนจุดและ m ลงใน y - y₀ = m(x - x₀) แล้วจัดรูปตอบ</li>
-        </ol>
-      </div>
-    </div>
-  </div>
+        <!-- Detail Breakdown -->
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-amber-300 mb-2">💡 เทคนิค Logarithmic Differentiation (การเทก ln)</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+              ใช้เมื่อเจอโจทย์ที่<b>ฐานติดตัวแปร x และตัวยกกำลังก็ติดตัวแปร x</b> เช่น <span class="text-amber-300 font-mono">y = xˣ</span> หรือ <span class="text-amber-300 font-mono">y = (sin x)⁽ᶜᵒˢ ˣ⁾</span>
+            </p>
+            <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2 pl-2">
+              <li><b>ขั้นตอนที่ 1:</b> เทก <span class="font-mono text-cyan-300">ln</span> ทั้งสองข้างของสมการ ➔ <span class="font-mono text-cyan-300">ln y = ln(xˣ)</span></li>
+              <li><b>ขั้นตอนที่ 2:</b> ใช้สมบัติลอการิทึมดึงกำลังมาข้างหน้า ➔ <span class="font-mono text-cyan-300">ln y = x · ln x</span></li>
+              <li><b>ขั้นตอนที่ 3:</b> หาอนุพันธ์เทียบ x ทั้งสองข้าง โดยฝั่งซ้ายได้ <span class="font-mono text-cyan-300">(1/y)(dy/dx)</span> และฝั่งขวาใช้ดิฟผลคูณ</li>
+              <li><b>ขั้นตอนที่ 4:</b> ย้าย <span class="font-mono text-cyan-300">y</span> กลับขึ้นไปคูณฝั่งขวา แล้วแทนค่า <span class="font-mono text-cyan-300">y = xˣ</span> กลับเข้าไป</li>
+            </ol>
+          </div>
 
-  <!-- Slide 8: Topic 3.10 Related Rates -->
-  <div class="slide-container" id="slide8" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.10 อัตราเกี่ยวเนื่อง (Related Rates)
-      </h2>
-      <span class="badge badge-purple" contenteditable="true">ความยาก: ★★★★☆</span>
-    </div>
-
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>หลักการสำคัญ:</b><br>
-          • ตัวแปรทุกตัวเปลี่ยนตามเวลา t<br>
-          • ดิฟเทียบ t ทั้งสองข้าง (d/dt)<br>
-          • ปริมาตรกรวย: V = (1/3)πr²h<br>
-          • พีทาโกรัส: x² + y² = z²
-        </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            ค่าตัวเลขเดี่ยวๆ พร้อมหน่วย เช่น <b>dV/dt = 12π cm³/s</b> (ระวังเครื่องหมาย + เพิ่มขึ้น, - ลดลง)
-          </p>
+          <!-- Example Problem -->
+          <div class="bg-slate-900 rounded-xl p-5 border border-slate-700">
+            <p class="text-sm font-semibold text-white font-mono mb-3">ตัวอย่าง: กำหนดให้ y = xˣ จงหา dy/dx</p>
+            <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs text-slate-300 space-y-2 border border-slate-800">
+              <p>1. ln y = ln(xˣ) ➔ ln y = x ln x</p>
+              <p>2. d/dx(ln y) = d/dx(x ln x)</p>
+              <p>3. (1/y) dy/dx = x(1/x) + (ln x)(1) = 1 + ln x</p>
+              <p>4. dy/dx = y(1 + ln x)</p>
+              <p class="text-emerald-400">ตอบ dy/dx = xˣ(1 + ln x)</p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 ขั้นตอนแก้โจทย์ปัญหาอัตราเกี่ยวเนื่อง
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>วาดภาพ &amp; ตั้งตัวแปร:</b> กำหนดตัวแปรที่เปลี่ยนแปลงตามเวลา t</li>
-          <li><b>สร้างสมการเชื่อมโยง:</b> เขียนสูตรเรขาคณิตที่เชื่อมตัวแปรเหล่านั้น</li>
-          <li><b>ลดตัวแปรเหลือ 1 ตัว (ถ้าจำเป็น):</b> เช่น ใช้สามเหลี่ยมคล้ายหา r ในรูป h</li>
-          <li><b>ดิฟเทียบ t (d/dt):</b> แล้วแทนค่าตัวเลขที่โจทย์กำหนด คำนวณหาอัตราการเปลี่ยน</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 9: Topic 3.11 Extreme Values & Optimization -->
-  <div class="slide-container" id="slide9" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        3.11 ค่าสุดขีดและการประยุกต์ (Extreme Values)
-      </h2>
-      <span class="badge badge-purple" contenteditable="true">ความยาก: ★★★★☆</span>
     </div>
 
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>เงื่อนไขตรวจสอบ:</b><br>
-          • จุดวิกฤต (Critical Point): f'(x) = 0<br>
-          • f''(c) &gt; 0 ➔ ได้จุด<b>ต่ำสุดสัมพัทธ์</b><br>
-          • f''(c) &lt; 0 ➔ ได้จุด<b>สูงสุดสัมพัทธ์</b>
+    <!-- PART 3: WORKSHEET 9 -->
+    <div id="tab-part3" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">ส่วนที่ 3 • อ้างอิงใบงานที่ 9</span>
+            <h2 class="text-2xl font-bold text-white mt-1">ฟังก์ชันโดยปริยาย (Implicit) &amp; อนุพันธ์อันดับสูง</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ปานกลาง)</span>
+          </div>
         </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            1. จุดสูงสุด/ต่ำสุด: ตอบเป็นคู่อันดับ <b>(x, y)</b><br>
-            2. ค่าสูงสุด/ต่ำสุด: ตอบเฉพาะค่า <b>y = f(x)</b>
-          </p>
-        </div>
-      </div>
 
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 วิธีหาจุดสูงสุด/ต่ำสุดอย่างรวดเร็ว
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>จับ f'(x) = 0:</b> แก้สมการหาค่า x จะได้ค่าวิกฤต (Critical values)</li>
-          <li><b>ทดสอบด้วย f''(x):</b> นำค่า x ไปแทนใน f''(x) ดูเครื่องหมายเพื่อสรุปว่าสูงหรือต่ำ</li>
-          <li><b>ถ้ามีช่วงปิด [a, b]:</b> ต้องนำปลายช่วง a และ b ไปแทนใน f(x) เพื่อหาค่าสัมบูรณ์ด้วย</li>
-        </ol>
-      </div>
-    </div>
-  </div>
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-emerald-300 mb-2">💡 กฎเหล็กฟังก์ชันโดยปริยาย (Implicit Diff)</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-3">
+              เมื่อสมการปน x และ y เช่น <span class="font-mono text-amber-300">x² + xy + y² - 1 = 0</span>:
+            </p>
+            <ul class="list-disc list-inside text-sm text-slate-300 space-y-2">
+              <li>ดิฟพจน์ <span class="font-mono text-cyan-300">x</span> ตามปกติ</li>
+              <li>ดิฟพจน์ <span class="font-mono text-cyan-300">y</span> แล้ว<b>ต้องคูณติด (dy/dx) เสมอ</b> เช่น <span class="font-mono text-cyan-300">d/dx(y²) = 2y(dy/dx)</span></li>
+              <li>พจน์คูณกัน <span class="font-mono text-cyan-300">xy</span> ต้องใช้ดิฟผลคูณ: <span class="font-mono text-cyan-300">x(dy/dx) + y(1)</span></li>
+              <li>ย้ายพจน์ที่มี <span class="font-mono text-cyan-300">dy/dx</span> ไว้ฝั่งซ้าย ดึงตัวร่วม แล้วย้ายตัวคูณไปหาร</li>
+            </ul>
+          </div>
 
-  <!-- Slide 10: Topic 4.1 Indefinite Integration & u-Substitution -->
-  <div class="slide-container" id="slide10" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        4.1 ปริพันธ์ไม่จำกัดเขต &amp; เทคนิคเปลี่ยนตัวแปร u
-      </h2>
-      <span class="badge badge-amber" contenteditable="true">ความยาก: ★★★☆☆</span>
-    </div>
-
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>สูตรอินทิเกรตพื้นฐาน:</b><br>
-          • ∫ xⁿ dx = (xⁿ⁺¹ / (n+1)) + C [n ≠ -1]<br>
-          • ∫ (1/x) dx = ln|x| + C<br>
-          • ∫ eˣ dx = eˣ + C<br>
-          • ∫ uⁿ du = (uⁿ⁺¹ / (n+1)) + C
-        </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            ฟังก์ชันของ x และ<b>ต้องบวกค่าคงตัว + C ต่อท้ายเสมอ!</b> (ถ้าลืม + C จะถูกหักคะแนน)
-          </p>
+          <!-- Practice Ref -->
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <h4 class="font-bold text-slate-200 text-sm mb-2"><i class="fa-solid fa-list-check text-emerald-400"></i> ข้อที่อยากให้ฝึกทำในใบงานที่ 9</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-mono">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 1(2): x² + xy + y² = 7</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 3: x²y + e⁽ˣ⁺ʸ⁾ + tan y = 1 ที่จุด (0,0)</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 4(3): y = e²ˣ cos x จงหา y⁽⁴⁾</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 วิธีเลือก u เพื่อเปลี่ยนตัวแปรให้ตัดกันได้
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>มองหาตัวแปร u:</b> เลือก u จากก้อนที่อยู่ใต้วงเล็บยกกำลัง หรือก้อนที่ดิฟแล้วได้อีกพจน์</li>
-          <li><b>ดิฟหา du:</b> เช่น ให้ u = x² + 1 จะได้ du = 2x dx ➔ dx = du / (2x)</li>
-          <li><b>แทนค่าเปลี่ยน dx เป็น du:</b> ตัวแปร x จะตัดกันหมด เหลือเฉพาะตัวแปร u</li>
-          <li><b>อินทิเกรต แล้วแทน u กลับ:</b> เปลี่ยน u กลับเป็นเทอมของ x แล้วบวก + C ตอบทันที</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 11: Topic 4.2 Definite Integral & Area -->
-  <div class="slide-container" id="slide11" style="background:#ffffff; padding:48px 64px; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h2 contenteditable="true" style="font-size:28px; font-weight:700; color:#0f172a; margin:0;">
-        4.2 ปริพันธ์จำกัดเขต &amp; การหาพื้นที่ใต้โค้ง
-      </h2>
-      <span class="badge badge-purple" contenteditable="true">ความยาก: ★★★★☆</span>
     </div>
 
-    <div style="display:flex; gap:24px; flex-grow:1; align-items:center;">
-      <div style="flex:1 1 0;">
-        <div class="formula-box" contenteditable="true">
-          <b>สูตรการคำนวณ:</b><br>
-          • ∫ₐᵇ f(x) dx = [F(x)]ₐᵇ = F(b) - F(a)<br>
-          • พื้นที่ใต้โค้ง: A = ∫ₐᵇ |f(x)| dx<br>
-          • พื้นที่ระหว่างเส้นโค้ง: ∫ₐᵇ (บน - ล่าง) dx
+    <!-- PART 4: WORKSHEET 10 -->
+    <div id="tab-part4" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full border border-purple-500/20">ส่วนที่ 4 • อ้างอิงใบงานที่ 10</span>
+            <h2 class="text-2xl font-bold text-white mt-1">ผลต่างอนุพัทธ์ (Differentials dy, dx) &amp; การประมาณค่า</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ปานกลาง)</span>
+          </div>
         </div>
-        <div style="background:#f1f5f9; padding:16px; border-radius:8px;" contenteditable="true">
-          <p style="font-weight:700; color:#1e293b; margin-bottom:6px;">🎯 รูปแบบคำตอบที่ต้องการ:</p>
-          <p style="font-size:15px; color:#475569; margin:0;">
-            1. ปริพันธ์จำกัดเขต: ตัวเลข (เป็นได้ทั้ง +, -, 0)<br>
-            2. พื้นที่ (Area): <b>ต้องเป็นจำนวนบวกเสมอ!</b> (หน่วย: ตารางหน่วย)
-          </p>
+
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-purple-300 mb-2">💡 สัญลักษณ์สำคัญ &amp; สูตรประมาณค่า</h3>
+            <ul class="list-disc list-inside text-sm text-slate-300 space-y-2">
+              <li><span class="font-mono text-cyan-300">dx = Δx</span> (การเปลี่ยนแปลงของ x)</li>
+              <li><span class="font-mono text-cyan-300">dy = f'(x) dx</span> (ผลต่างอนุพัทธ์ของ y)</li>
+              <li>สูตรประมาณค่า: <span class="font-mono text-amber-300">f(x + Δx) ≈ f(x) + dy = f(x) + f'(x)Δx</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900 rounded-xl p-5 border border-slate-700">
+            <p class="text-sm font-semibold text-white font-mono mb-3">ตัวอย่าง: ใช้ผลต่างอนุพัทธ์หาค่าประมาณ √98</p>
+            <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs text-slate-300 space-y-2 border border-slate-800">
+              <p>1. กำหนด f(x) = √x, เลือก x = 100 (คิดง่าย), Δx = -2 (เพราะ 100 - 2 = 98)</p>
+              <p>2. f(100) = √100 = 10</p>
+              <p>3. f'(x) = 1/(2√x) ➔ f'(100) = 1/(2·10) = 0.05</p>
+              <p>4. dy = f'(100)·Δx = (0.05)(-2) = -0.10</p>
+              <p class="text-emerald-400">ตอบ √98 ≈ 10 + (-0.10) = 9.90</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div style="flex:1.2 1 0; background:#fafafa; border:1px solid #e2e8f0; border-radius:12px; padding:20px;">
-        <h3 contenteditable="true" style="font-size:18px; font-weight:700; color:#2563eb; margin:0 0 12px 0;">
-          💡 เทคนิคหาพื้นที่ป้องกันการคำนวณผิด
-        </h3>
-        <ol style="padding-left:20px; line-height:1.7; color:#334155; font-size:15px;" contenteditable="true">
-          <li><b>หาจุดตัดแกน x (f(x) = 0):</b> ตรวจสอบว่ากราฟตัดแกน x ในช่วง [a, b] หรือไม่</li>
-          <li><b>ถ้ากราฟตัดแกน x:</b> ให้แยกช่วงอินทิเกรต แล้วใส่ค่าสัมบูรณ์ |...| ในช่วงที่อยู่ใต้แกน</li>
-          <li><b>ถ้าหาพื้นที่ระหว่าง 2 กราฟ:</b> ให้เอา (สมการกราฟบน - สมการกราฟล่าง) แล้วค่อยอินทิเกรต</li>
-        </ol>
+    <!-- PART 5: WORKSHEET 11 (RELATED RATES) -->
+    <div id="tab-part5" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-full border border-rose-500/20">ส่วนที่ 5 • อ้างอิงใบงานที่ 11</span>
+            <h2 class="text-2xl font-bold text-white mt-1">อัตราสัมพัทธ์ (Related Rates)</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ยาก)</span>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-rose-300 mb-2">💡 ขั้นตอนการแก้โจทย์อัตราสัมพัทธ์</h3>
+            <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2">
+              <li>วาดภาพรูปทรงเรขาคณิต กำหนดตัวแปรที่เปลี่ยนตามเวลา <span class="font-mono text-cyan-300">t</span></li>
+              <li>สร้างสมการความสัมพันธ์ เช่น <span class="font-mono text-cyan-300">V = (4/3)πr³</span> หรือ พีทาโกรัส <span class="font-mono text-cyan-300">x² + y² = z²</span></li>
+              <li>หาอนุพันธ์เทียบเวลา <span class="font-mono text-cyan-300">t</span> ทั้งสองข้าง (<span class="font-mono text-cyan-300">d/dt</span>)</li>
+              <li>แทนค่าอัตราเร็วที่โจทย์กำหนด คำนวณหาตัวแปรที่เหลือ</li>
+            </ol>
+          </div>
+
+          <!-- Practice Sheet Reference -->
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <h4 class="font-bold text-slate-200 text-sm mb-2"><i class="fa-solid fa-list-check text-rose-400"></i> ข้อที่อยากให้ฝึกทำในใบงานที่ 11</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-mono">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 1: เติมลมลูกโป่งทรงกลม dV/dt = 2 หา dr/dt เมื่อ r = 3</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 2: หมุนกล้องถ่ายภาพการปล่อยจรวด (อัตราการเปลี่ยนมุม dθ/dt)</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Slide 12: Summary & Exam Tips (Dark) -->
-  <div class="slide-container" id="slide12" style="background:#0f172a; padding:64px; display:flex; flex-direction:column; justify-content:center; text-align:center;">
-    <h2 contenteditable="true" style="font-size:40px; font-weight:700; color:#f8fafc; margin:0 0 16px 0;">
-      สรุปหัวใจสำคัญ &amp; ข้อควรระวังในห้องสอบ 🎯
-    </h2>
-    <p contenteditable="true" style="font-size:18px; color:#94a3b8; max-width:800px; margin:0 auto 40px auto; line-height:1.6;">
-      ข้อผิดพลาดที่มักทำให้โดนหักคะแนนในข้อสอบแคลคูลัสที่ต้องระวังเป็นพิเศษ
-    </p>
+    <!-- PART 6: WORKSHEET 11 (GRAPH & EXTREMA) -->
+    <div id="tab-part6" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded-full border border-teal-500/20">ส่วนที่ 6 • อ้างอิงใบงานที่ 11</span>
+            <h2 class="text-2xl font-bold text-white mt-1">การวิเคราะห์ลักษณะกราฟ &amp; ปัญหาค่าสุดขีด (Optimization)</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ยาก)</span>
+          </div>
+        </div>
 
-    <div style="display:flex; gap:24px; justify-content:center;">
-      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:24px; flex:1 1 0; text-align:left;">
-        <h3 contenteditable="true" style="color:#ef4444; font-size:18px; font-weight:700; margin:0 0 8px 0;">
-          <i class="fa-solid fa-triangle-exclamation"></i> จุดผิดบ่อยในการดิฟ
-        </h3>
-        <p contenteditable="true" style="color:#cbd5e1; font-size:15px; margin:0; line-height:1.6;">
-          • ลืมดิฟไส้ในเมื่อใช้กฎลูกโซ่<br>
-          • ดิฟผลคูณผิด (ไปดิฟหน้า × ดิฟหลัง)<br>
-          • ดิฟ y ในฟังก์ชันปริยายแล้วลืมพ่วง dy/dx
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-teal-300 mb-2">💡 สรุปเงื่อนไขกราฟ &amp; จุดวิกฤต</h3>
+            <ul class="list-disc list-inside text-sm text-slate-300 space-y-2">
+              <li><b>จุดวิกฤต (Critical Point):</b> แก้สมการหาค่า <span class="font-mono text-cyan-300">x</span> จาก <span class="font-mono text-cyan-300">f'(x) = 0</span> หรือหาค่าไม่ได้</li>
+              <li><b>ฟังก์ชันเพิ่ม/ลด:</b> ดูเครื่องหมายของ <span class="font-mono text-cyan-300">f'(x)</span> (<span class="text-emerald-400">+ คือ เพิ่ม</span>, <span class="text-rose-400">- คือ ลด</span>)</li>
+              <li><b>ความเว้าบน/เว้าล่าง:</b> ดูเครื่องหมายของ <span class="font-mono text-cyan-300">f''(x)</span> (<span class="text-emerald-400">+ คือ เว้าบน</span>, <span class="text-rose-400">- คือ เว้าล่าง</span>)</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <h4 class="font-bold text-slate-200 text-sm mb-2"><i class="fa-solid fa-list-check text-teal-400"></i> ข้อที่อยากให้ฝึกทำในใบงานที่ 11</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-mono">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 3: f(x) = x⁴ - 2x² + 4 หาจุดวิกฤต จุดเปลี่ยนเว้า ค่าสุดขีด</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 4: หาค่าสุดขีดของ f(x) = x / (x² + 1) บนช่วง [0, 3]</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 6: ชาวนาล้อมรั้วที่ดินสี่เหลี่ยมผืนผ้า ประหยัดค่าใช้จ่ายที่สุด</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 7: WORKSHEET 12 -->
+    <div id="tab-part7" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-yellow-400 bg-yellow-500/10 px-2.5 py-1 rounded-full border border-yellow-500/20">ส่วนที่ 7 • อ้างอิงใบงานที่ 12</span>
+            <h2 class="text-2xl font-bold text-white mt-1">กฎของโลปีตัล (L'Hospital's Rule)</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ปานกลาง)</span>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-yellow-300 mb-2">💡 ลำดับการใช้กฎของโลปีตัล</h3>
+            <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2">
+              <li><b>ต้องเช็ค Indeterminate Form (I.F.) ก่อนเสมอ:</b> เช่น <span class="font-mono text-amber-300">[0/0]</span> หรือ <span class="font-mono text-amber-300">[∞/∞]</span> (ถ้าไม่เช็คระวังโดนหักคะแนน)</li>
+              <li>ใช้กฎโลปีตัล ดิฟเศษแยก ดิฟส่วนแยก ➔ <span class="font-mono text-cyan-300">lim [f'(x) / g'(x)]</span></li>
+              <li>รูปแบบ <span class="font-mono text-cyan-300">0 · ∞</span> ให้จัดรูปเป็นเศษส่วนก่อน เช่น <span class="font-mono text-cyan-300">lim (x² ln x) = lim (ln x / (1/x²))</span> แล้วคูณดิฟโลปีตัล</li>
+            </ol>
+          </div>
+
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <h4 class="font-bold text-slate-200 text-sm mb-2"><i class="fa-solid fa-list-check text-yellow-400"></i> ข้อที่อยากให้ฝึกทำในใบงานที่ 12</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-mono">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 1: lim_{x->0} (e²ˣ - cos x) / x</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 5: lim_{x->0⁺} x² ln x</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 8: lim_{x->0} (cos x)^(1/x²)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 8: WORKSHEET 13 -->
+    <div id="tab-part8" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">ส่วนที่ 8 • อ้างอิงใบงานที่ 13</span>
+            <h2 class="text-2xl font-bold text-white mt-1">การหาปริพันธ์ไม่จำกัดเขต &amp; จำกัดเขต (u-Substitution)</h2>
+          </div>
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            <span>ความยาก:</span>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+            <span class="text-xs text-slate-400 ml-1">(ปานกลาง - ยาก)</span>
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-6">
+          <div class="bg-slate-900/60 rounded-xl p-5 border border-slate-700/50">
+            <h3 class="text-base font-semibold text-indigo-300 mb-2">💡 เทคนิคเปลี่ยนตัวแปร u (u-Substitution)</h3>
+            <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2">
+              <li>เลือกตัวแปร <span class="font-mono text-cyan-300">u</span> จากพจน์ที่ซับซ้อน หรือพจน์ใต้ก้อนยกกำลัง เช่น <span class="font-mono text-amber-300">u = x³ - 1</span></li>
+              <li>หา <span class="font-mono text-cyan-300">du = u'(x) dx</span> ➔ <span class="font-mono text-cyan-300">dx = du / u'(x)</span></li>
+              <li>แทนค่าเปลี่ยนรูปอินทิเกรตให้อยู่ในรูปตัวแปร u ทั้งหมด แล้วทำการอินทิเกรต</li>
+              <li><b>อย่าลืม:</b> ปริพันธ์ไม่จำกัดเขตต้อง <b>+ C</b> เสมอ! ส่วนปริพันธ์จำกัดเขตให้นำขอบเขตไปแทนค่า <span class="font-mono text-cyan-300">F(b) - F(a)</span></li>
+            </ol>
+          </div>
+
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <h4 class="font-bold text-slate-200 text-sm mb-2"><i class="fa-solid fa-list-check text-indigo-400"></i> ข้อที่อยากให้ฝึกทำในใบงานที่ 13</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-mono">
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 1: ∫₀¹ (x³ - 1)¹⁰ x² dx</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 2: ∫ (4x³ + 1) sin(x⁴ + x) dx</div>
+              <div class="bg-slate-900 p-2.5 rounded border border-slate-700">ข้อ 6: ∫₋₂² |x + 1| dx</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE EXAM SIMULATION TAB -->
+    <div id="tab-exam" class="tab-content space-y-6 hidden">
+      <div class="bg-slate-800 border border-amber-500/30 rounded-2xl p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-700 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">ระบบจำลองข้อสอบปลายภาค</span>
+            <h2 class="text-2xl font-bold text-white mt-1">ชุดซ้อมสอบ SC401201 (10 ข้อมาตรฐาน)</h2>
+          </div>
+          <button onclick="resetExam()" class="text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-600 transition-colors">
+            <i class="fa-solid fa-rotate-left mr-1"></i> เริ่มทำใหม่ทั้งหมด
+          </button>
+        </div>
+
+        <p class="text-xs text-slate-300 mt-3">
+          โจทย์คิดขึ้นใหม่ตามโครงสร้างแนวข้อสอบจริง 100% ลองทดใส่กระดาษ แล้วกดดูเฉลยละเอียดและขั้นตอนทำได้ทันที
         </p>
-      </div>
 
-      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:24px; flex:1 1 0; text-align:left;">
-        <h3 contenteditable="true" style="color:#f59e0b; font-size:18px; font-weight:700; margin:0 0 8px 0;">
-          <i class="fa-solid fa-triangle-exclamation"></i> จุดผิดบ่อยในการอินทิเกรต
-        </h3>
-        <p contenteditable="true" style="color:#cbd5e1; font-size:15px; margin:0; line-height:1.6;">
-          • ลืม + C ในปริพันธ์ไม่จำกัดเขต<br>
-          • แทนค่า F(b) - F(a) ผิดเครื่องหมายลบ<br>
-          • หาพื้นที่ใต้แกน x แล้วลืมเปลี่ยนเป็นค่าบวก
-        </p>
-      </div>
-
-      <div style="background:#1e293b; border:1px solid #334155; border-radius:12px; padding:24px; flex:1 1 0; text-align:left;">
-        <h3 contenteditable="true" style="color:#38bdf8; font-size:18px; font-weight:700; margin:0 0 8px 0;">
-          <i class="fa-solid fa-circle-check"></i> รูปแบบการตอบ
-        </h3>
-        <p contenteditable="true" style="color:#cbd5e1; font-size:15px; margin:0; line-height:1.6;">
-          • กำหนดสัญลักษณ์ f'(x), dy/dx ให้ชัดเจน<br>
-          • จัดรูปเศษส่วนและกำลังติดลบให้เรียบร้อย<br>
-          • ใส่นามหน่วยในโจทย์ประยุกต์เสมอ
-        </p>
+        <!-- Exam Items Container -->
+        <div class="mt-6 space-y-6" id="exam-questions-container">
+          <!-- Questions will be populated dynamically via JavaScript -->
+        </div>
       </div>
     </div>
-  </div>
 
+  </main>
+
+  <script>
+    // Tab Switching Function
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('#nav-container button').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white');
+        btn.classList.add('text-slate-300');
+      });
+
+      const activeTab = document.getElementById('tab-' + tabId);
+      const activeBtn = document.getElementById('btn-' + tabId);
+
+      if (activeTab) activeTab.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.add('bg-blue-600', 'text-white');
+        activeBtn.classList.remove('text-slate-300');
+      }
+    }
+
+    // Exam Questions Array (10 Practice Questions)
+    const examQuestions = [
+      {
+        id: 1,
+        part: "ส่วนที่ 1: ดิฟฟังก์ชันประกอบ",
+        question: "จงหา f'(x) เมื่อ f(x) = (2x⁴ + 5x² - 3)⁵",
+        hint: "ใช้กฎลูกโซ่ ตบ 5 ลงมาข้างหน้า แล้วดิฟไส้ใน 2x⁴ + 5x² - 3",
+        solution: "f'(x) = 5(2x⁴ + 5x² - 3)⁴ · d/dx(2x⁴ + 5x² - 3)\n      = 5(2x⁴ + 5x² - 3)⁴ · (8x³ + 10x)\n      = 10x(4x² + 5)(2x⁴ + 5x² - 3)⁴"
+      },
+      {
+        id: 2,
+        part: "ส่วนที่ 1: ดิฟตรีโกณผสม",
+        question: "จงหา dy/dx เมื่อ y = tan(3x²) + cos⁴(2x)",
+        hint: "ดิฟ tan(u) ได้ sec²(u)du/dx และดิฟ cos⁴(2x) มองเป็น [cos(2x)]⁴",
+        solution: "dy/dx = sec²(3x²)·(6x) + 4[cos(2x)]³·(-sin(2x))·(2)\n      = 6x sec²(3x²) - 8 cos³(2x) sin(2x)"
+      },
+      {
+        id: 3,
+        part: "ส่วนที่ 2: Logarithmic Differentiation",
+        question: "จงหา dy/dx เมื่อ y = (x² + 1)⁽ˣ⁾",
+        hint: "เทก ln ทั้งสองข้าง: ln y = x ln(x² + 1) แล้วดิฟเทียบ x ทั้งสองข้าง",
+        solution: "ln y = x ln(x² + 1)\n(1/y) dy/dx = x · [2x/(x²+1)] + ln(x²+1) · (1)\ndy/dx = y [ (2x²)/(x²+1) + ln(x²+1) ]\n      = (x² + 1)⁽ˣ⁾ [ (2x²)/(x²+1) + ln(x²+1) ]"
+      },
+      {
+        id: 4,
+        part: "ส่วนที่ 3: ฟังก์ชันโดยปริยาย (Implicit)",
+        question: "จงหา dy/dx ของสมการ x³ + x y² + y³ = 8",
+        hint: "เทก d/dx ทุกพจน์ อย่าลืมดิฟ xy² ใช้ดิฟผลคูณ และดิฟ y ติด dy/dx",
+        solution: "3x² + [x(2y dy/dx) + y²(1)] + 3y²(dy/dx) = 0\n(2xy + 3y²) dy/dx = -3x² - y²\ndy/dx = -(3x² + y²) / (2xy + 3y²)"
+      },
+      {
+        id: 5,
+        part: "ส่วนที่ 3: อนุพันธ์อันดับสูง",
+        question: "กำหนดให้ y = x e³ˣ จงหา d²y/dx² (อนุพันธ์อันดับ 2)",
+        hint: "ดิฟครั้งที่ 1 ด้วยดิฟผลคูณ แล้วนำผลลัพธ์มาดิฟผลคูณอีกครั้ง",
+        solution: "y' = x(3e³ˣ) + e³ˣ(1) = e³ˣ(3x + 1)\ny'' = e³ˣ(3) + (3x + 1)(3e³ˣ)\n   = 3e³ˣ(1 + 3x + 1) = 3e³ˣ(3x + 2) = (9x + 6)e³ˣ"
+      },
+      {
+        id: 6,
+        part: "ส่วนที่ 4: ผลต่างอนุพัทธ์ & ประมาณค่า",
+        question: "จงใช้ผลต่างอนุพัทธ์หาค่าประมาณของ ∛28 (รากที่สามของ 28)",
+        hint: "เลือก f(x) = ∛x, x = 27, Δx = 1, ใช้สูตร f(x+Δx) ≈ f(x) + f'(x)Δx",
+        solution: "f(27) = ∛27 = 3\nf'(x) = (1/3)x⁻²ᐟ³ ➔ f'(27) = (1/3)(1/9) = 1/27\ndy = (1/27)(1) = 0.037\n∛28 ≈ 3 + 0.037 = 3.037"
+      },
+      {
+        id: 7,
+        part: "ส่วนที่ 5: อัตราสัมพัทธ์",
+        question: "แผ่นโลหะวงกลมถูกขยายตัวด้วยความร้อน โดยรัศมีเพิ่มขึ้นด้วยอัตราเร็ว 0.5 ซม./วินาที จงหาอัตราการเพิ่มของพื้นที่เมื่อรัศมีเท่ากับ 10 ซม.",
+        hint: "A = πr², dA/dt = 2πr (dr/dt)",
+        solution: "dA/dt = 2πr (dr/dt)\nแทนค่า r = 10, dr/dt = 0.5\ndA/dt = 2π(10)(0.5) = 10π ตารางซม./วินาที"
+      },
+      {
+        id: 8,
+        part: "ส่วนที่ 6: จุดวิกฤต & ค่าสุดขีด",
+        question: "จงหาจุดวิกฤตทั้งหมดของ f(x) = x³ - 6x² + 9x + 2",
+        hint: "จับ f'(x) = 0 แล้วแก้สมการหาค่า x",
+        solution: "f'(x) = 3x² - 12x + 9 = 0\n3(x² - 4x + 3) = 0\n3(x - 1)(x - 3) = 0 ➔ x = 1, x = 3\nจุดวิกฤตคือ x = 1 และ x = 3"
+      },
+      {
+        id: 9,
+        part: "ส่วนที่ 7: กฎของโลปีตัล",
+        question: "จงหา lim_{x -> 0} (e³ˣ - 1 - 3x) / x²",
+        hint: "เช็ค [0/0] แล้วใช้กฎโลปีตัลดิฟเศษดิฟส่วน 2 รอบ",
+        solution: "เช็ค [0/0]\nรอบที่ 1: lim_{x->0} (3e³ˣ - 3) / (2x)  [ยังคงเป็น 0/0]\nรอบที่ 2: lim_{x->0} (9e³ˣ) / 2 = 9(1)/2 = 9/2"
+      },
+      {
+        id: 10,
+        part: "ส่วนที่ 8: ปริพันธ์ (u-Substitution)",
+        question: "จงหาค่าของ ∫ x² √(x³ + 1) dx",
+        hint: "ให้ u = x³ + 1 จะได้ du = 3x² dx ➔ x² dx = du/3",
+        solution: "ให้ u = x³ + 1 ➔ du = 3x² dx\n∫ √u (du/3) = (1/3) ∫ u¹ᐟ² du\n            = (1/3) · (2/3) u³ᐟ² + C\n            = (2/9)(x³ + 1)³ᐟ² + C"
+      }
+    ];
+
+    // Render Exam Questions
+    function renderExam() {
+      const container = document.getElementById('exam-questions-container');
+      container.innerHTML = examQuestions.map((q, idx) => `
+        <div class="bg-slate-900 rounded-xl p-5 border border-slate-700/80 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
+              ข้อที่ ${idx + 1} • ${q.part}
+            </span>
+            <button onclick="toggleSolution(${q.id})" class="text-xs bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 px-3 py-1 rounded-md transition-colors border border-blue-500/30">
+              <i class="fa-solid fa-eye mr-1"></i> ดูเฉลยและวิธีทำ
+            </button>
+          </div>
+          <p class="text-sm font-semibold text-white font-mono">${q.question}</p>
+          <p class="text-xs text-slate-400 bg-slate-950/60 p-2.5 rounded border border-slate-800">
+            <i class="fa-regular fa-lightbulb text-yellow-400 mr-1"></i> <b>คำแนะนำ:</b> ${q.hint}
+          </p>
+          <div id="solution-${q.id}" class="hidden mt-3 pt-3 border-t border-slate-800">
+            <p class="text-xs font-bold text-emerald-400 mb-1">เฉลยและขั้นตอนการทำอย่างละเอียด:</p>
+            <pre class="bg-slate-950 p-3 rounded text-xs font-mono text-slate-300 overflow-x-auto border border-slate-800">${q.solution}</pre>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleSolution(id) {
+      const el = document.getElementById(`solution-${id}`);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    function resetExam() {
+      examQuestions.forEach(q => {
+        const el = document.getElementById(`solution-${q.id}`);
+        if (el) el.classList.add('hidden');
+      });
+    }
+
+    // Initialize Page
+    window.onload = function() {
+      renderExam();
+    };
+  </script>
 </body>
 </html>
