@@ -1,33 +1,3122 @@
+ประมวลผล 6m 24s
+
+คัดลอกโค้ดทั้งหมดด้านล่างไปวางในไฟล์ index.html แล้วเปิดด้วยเบราว์เซอร์ได้เลยครับ รวม HTML, CSS และ JavaScript ในไฟล์เดียว ใช้อินเทอร์เน็ตสำหรับแสดงสูตรและเปิด YouTube
+
 <!doctype html>
 <html lang="th">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ทบทวนแคลคูลัส SC401201: 9 หน้า 38 หัวข้อย่อย สูตร ตัวอย่างทีละขั้น และซ้อมสอบ 10 ข้อ อ้างอิงแนวสอบและเพลย์ลิสต์ Algoritmatics">
-<meta name="theme-color" content="#19272a"><title>CALC / 9 — เตรียมสอบแคลคูลัส</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CALC / 9 — เตรียมสอบแคลคูลัส</title>
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+        onload="renderMath()"></script>
+
 <style>
-:root{--ink:#19272a;--text:#263b3d;--muted:#687679;--paper:#f4f3ed;--white:#fff;--line:#dfe4dc;--orange:#e96f3c;--orange-soft:#fff0e7;--green:#236851;--green-soft:#eaf4eb;--blue:#edf3f7;--radius:18px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--text);font:16px/1.8 system-ui,-apple-system,"Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif}button,input,textarea,select{font:inherit}button,a,summary{touch-action:manipulation}a{color:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e96f3c;outline-offset:4px}h1,h2,h3,h4,p{margin:0}h1{font-size:clamp(29px,3.4vw,46px);line-height:1.35;letter-spacing:-.02em;font-weight:760}h2{font-size:25px;line-height:1.5}h3{font-size:20px;line-height:1.6}h4{font-size:16px}p+p{margin-top:12px}.small{font-size:13px}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;font-size:11px;letter-spacing:.14em;font-weight:750;color:var(--green)}.skip{position:fixed;left:12px;top:-80px;z-index:100;background:#fff;padding:8px 18px}.skip:focus{top:12px}.sidebar{width:258px;position:fixed;inset:0 auto 0 0;background:var(--ink);color:#e6eeea;padding:30px 20px;display:flex;flex-direction:column;z-index:40;overflow-y:auto}.brand{font:700 32px/1 Georgia,serif;letter-spacing:-2px;text-decoration:none}.brand span{color:#ffad6b}.brand-sub{color:#a8bab7;font-size:11px;margin:12px 0 27px;letter-spacing:.07em}.nav-label{color:#98ada8;font-size:11px;letter-spacing:.08em;margin:14px 10px 8px}.chapternav{display:grid;gap:3px}.nav-item{display:flex;align-items:center;gap:12px;color:#c8d8d2;text-decoration:none;padding:10px;border-radius:8px;font-size:13px;line-height:1.6}.nav-item:hover{background:#2b3e3f;color:#fff}.nav-item.active{background:#e9f1e9;color:#1b4235;font-weight:700}.nav-num{font:500 12px/1.8 ui-monospace,monospace;color:#91aaa1}.active .nav-num{color:#35614d}.nav-item .tick{margin-left:auto;color:#6e9e8a;font-size:12px}.side-footer{margin-top:auto;padding:28px 10px 0}.side-footer progress{width:100%;height:5px;accent-color:#ed9b65}.side-footer .small{color:#a6beb4}.mobile-close{display:none}.main{margin-left:258px;min-height:100vh}.topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:18px 38px;background:rgba(244,243,237,.95);min-height:78px}.top-actions{display:flex;gap:10px;align-items:center}.crumb{font-size:12px;color:var(--muted)}.pill,.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);border-radius:9px;background:#fff;padding:8px 15px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:650;line-height:1.7}.btn:hover{border-color:#8c9c94;background:#fafbf8}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.orange{background:var(--orange);color:white;border-color:var(--orange)}.btn.quiet{background:transparent}.btn.link{border:0;background:none;padding:4px;color:var(--green)}.mobile-menu{display:none}.content{max-width:1260px;margin:auto;padding:34px 38px 54px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:35px;align-items:center;padding:5px 0 28px}.hero .subtitle{color:var(--muted);margin-top:12px;font-size:16px}.chapter-no{font:500 80px/.95 Georgia,serif;letter-spacing:-5px;color:#b6c7b8;position:relative;margin-bottom:18px}.chapter-no::after{content:'/ 09';font:12px/1.3 ui-monospace,monospace;letter-spacing:0;color:#6b8073;margin-left:16px}.hero-math{background:#e7ece2;min-height:170px;border-radius:18px;padding:24px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.hero-math .eq{font-size:18px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chip{font-size:11px;line-height:1.8;background:#e9ece6;border:1px solid #dce2d7;border-radius:30px;padding:4px 11px}.chip.orange{background:var(--orange-soft);color:#8a3f1e;border-color:#f1d7c7}.chip.green{background:var(--green-soft);color:var(--green);border-color:#c7dfcd}.stars{color:#aa6a26;letter-spacing:2px;font-size:12px;white-space:nowrap}.notice{border-left:3px solid #d4a57d;background:#fff8ef;padding:14px 18px;border-radius:0 10px 10px 0;font-size:13px;color:#795332;margin:8px 0 24px}.notice.compact{font-size:12px;margin:12px 0}.overview{background:#fff;border:1px solid var(--line);border-radius:var(--radius);display:grid;grid-template-columns:1.2fr 1fr;overflow:hidden;margin-bottom:27px}.overview>div{padding:23px 26px}.overview>div+div{border-left:1px solid var(--line);background:#fbfcf8}.overview p{font-size:14px;margin-top:8px}.topic-summary{padding:0;list-style:none;margin:12px 0 0;display:grid;gap:7px}.topic-summary button{background:none;border:0;padding:0;text-align:left;font-size:13px;color:#345d4e}.topic-summary button:hover{text-decoration:underline}.sectionline{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:23px 0 13px}.sectionline h2{font-size:18px}.topic-pills{display:flex;gap:7px;overflow-x:auto;padding:1px 0 15px;scrollbar-width:thin}.topic-pill{flex:none;white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:12px;line-height:1.7;padding:9px 13px;color:#5e6e64}.topic-pill.active{background:var(--green);color:#fff;border-color:var(--green)}.study-card{background:#fff;border:1px solid #d8dfd5;border-radius:18px;overflow:hidden;box-shadow:0 8px 25px #22372a05}.study-head{padding:23px 26px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;border-bottom:1px solid var(--line)}.study-head h2{font-size:24px;margin-top:4px}.study-head .eyebrow{font-size:10px}.slide-tabs{display:flex;overflow-x:auto;background:#f9faf6;border-bottom:1px solid var(--line);padding:0 22px;gap:17px}.slide-tab{white-space:nowrap;padding:14px 2px 12px;font-size:12px;color:#6e7f75;background:none;border:0;border-bottom:3px solid transparent}.slide-tab.active{color:var(--green);font-weight:750;border-bottom-color:var(--green)}.slidebody{padding:28px;min-height:350px}.panel-title{font-size:18px;margin-bottom:14px}.box{border-radius:12px;padding:19px 22px;border:1px solid var(--line);background:#fbfcf8;margin:14px 0}.box.green{background:var(--green-soft);border-color:#d4e5d7}.box.orange{background:var(--orange-soft);border-color:#f4dccb}.box.blue{background:var(--blue);border-color:#dce7ed}.box .label{font-size:11px;font-weight:750;letter-spacing:.06em;margin-bottom:8px;color:var(--green)}.box.orange .label{color:#965029}.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.formula-grid .box{margin:0}.formula-list{list-style:none;padding:0;margin:0}.formula-list li{padding:7px 0;border-bottom:1px solid #234b3520;overflow:auto}.formula-list li:last-child{border:0}.list{padding-left:23px;margin:10px 0}.list li{padding:5px 0}.list li::marker{color:#64927d;font-weight:700}.steps{list-style:none;padding:0;counter-reset:steps;margin:15px 0}.steps li{counter-increment:steps;display:flex;align-items:flex-start;gap:16px;padding:13px 0;border-bottom:1px solid #edf0e9}.steps li::before{content:counter(steps,decimal-leading-zero);flex:none;font:13px/1.8 ui-monospace,monospace;color:#498166;border:1px solid #d9e6da;background:#f0f6ec;border-radius:50%;width:31px;height:31px;text-align:center}.step-text{min-width:0}.exam-example{border:1px solid var(--line);border-radius:12px;padding:22px;margin:15px 0}.example-label{color:var(--muted);font-size:11px;margin-bottom:10px}.question{font-size:17px;line-height:1.9;color:#1f3e33}.answer{border-left:3px solid #528f6a;padding:12px 18px;background:#eff7ec;margin-top:16px;border-radius:0 8px 8px 0}.answer .label{font-size:10px;font-weight:700;letter-spacing:.12em;color:#386b4b;margin-bottom:5px}.tipline{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}.tipline .box{margin:0}.slide-footer{padding:15px 26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fbfcf8}.slide-footer .small{color:var(--muted)}.resource-strip{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.resource{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}.resource h3{font-size:16px}.video-list{display:grid;gap:10px;margin-top:13px}.video-row{display:flex;align-items:flex-start;gap:10px;text-decoration:none;padding:10px;background:#f5f7f2;border-radius:8px;font-size:12px;line-height:1.65}.video-row:hover{background:#e9f0e5}.play{font-size:10px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#dde8d8;color:#1a5642;flex:none}.video-meta{display:block;color:#698071;font-size:10px}.resource .video-list{max-height:270px;overflow:auto}.embed-button{border:0;background:none;color:var(--green);font-size:11px;padding:2px 8px}.video-item{display:flex;align-items:center;gap:4px}.video-item>a{flex:1}.embedded{aspect-ratio:16/9;width:100%;border:0;border-radius:10px;background:#19272a}.chapter-footer{display:flex;justify-content:space-between;gap:15px;margin-top:30px}.done-control{display:inline-flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap}.done-control input{width:17px;height:17px;accent-color:var(--green)}.math-inline{display:inline-block;max-width:100%;overflow-x:auto;vertical-align:middle;line-height:1.5;padding:3px 0}math{font-family:"STIX Two Math","Cambria Math","Latin Modern Math",serif;font-size:1.12em}math[display=block]{display:block;margin:9px auto}.eq{overflow-x:auto;padding:8px 0;max-width:100%}.eq .katex{white-space:nowrap}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px;margin:15px 0}.pagehead{margin-bottom:25px}.pagehead h1{margin:10px 0}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.search{width:100%;border:1px solid #ccd6ca;background:#fff;border-radius:9px;padding:12px 16px;outline-offset:3px}.video-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:20px}.video-table th{text-align:left;font-size:11px;color:#667b6d;font-weight:700;letter-spacing:.06em;border-bottom:2px solid #becbbd;padding:12px}.video-table td{padding:15px 12px;border-bottom:1px solid #dce3d8;vertical-align:top}.video-table a{text-decoration:none;color:#285c43}.video-table a:hover{text-decoration:underline}.video-table td:first-child{font:13px ui-monospace,monospace;color:#83957f}.tablewrap{overflow-x:auto}.tiny{font-size:11px;color:var(--muted)}.formula-sheet{display:grid;grid-template-columns:1fr 1fr;gap:20px}.formula-sheet .card{margin:0}.formula-entry{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #e2e8de;align-items:center;overflow-x:auto}.formula-entry .index{font:11px ui-monospace,monospace;color:#6c856d}.formula-entry .eq{margin:0;flex:1}.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.source-grid img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}details{margin:14px 0}summary{cursor:pointer;font-weight:650;color:var(--green);padding:10px 0}.exam-top{position:sticky;top:0;background:#f4f3edf5;backdrop-filter:blur(10px);padding:15px 0;z-index:10;border-bottom:1px solid #d9e1d4;display:flex;align-items:center;justify-content:space-between;gap:14px}.timer{font:24px/1.3 ui-monospace,monospace;letter-spacing:-1px}.exam-card{padding:27px;background:#fff;border:1px solid var(--line);border-radius:14px;margin:18px 0}.exam-header{display:flex;gap:14px;align-items:center;justify-content:space-between;margin-bottom:14px}.exam-index{font:22px Georgia,serif;color:#6e8d71}.exam-card textarea{width:100%;min-height:130px;border:1px solid #d6dfd2;border-radius:9px;background:#fcfdf9;padding:14px;resize:vertical;margin-top:18px;font-size:14px;line-height:1.8}.rubric-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:10px;padding:10px 0;font-size:13px}.score-select{padding:7px 10px;border:1px solid #becdbc;border-radius:7px;background:white;min-width:70px}.score-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}.score-metric{background:#e7eee2;border-radius:12px;padding:20px}.score-metric strong{display:block;font:38px/1.2 Georgia,serif;margin-top:8px;color:#2c593d}.disclosure{margin:14px 0;color:var(--muted);font-size:12px}.mapping-row{display:grid;grid-template-columns:50px 1fr 130px;gap:15px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);z-index:99;background:var(--ink);color:white;padding:12px 22px;border-radius:10px;font-size:13px;box-shadow:0 8px 30px #0002}.modal{position:fixed;inset:0;background:#0b151dcc;z-index:90;display:grid;place-items:center;padding:20px}.modal-card{max-width:900px;width:100%;background:#fff;border-radius:15px;padding:18px}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;gap:18px}.badge-num{font:10px ui-monospace,monospace;border:1px solid #e6dbcd;background:#fff7ec;border-radius:5px;padding:3px 6px;color:#8e5c2f}.site-footer{font-size:11px;color:#849083;border-top:1px solid #dbe2d5;padding-top:22px;margin-top:40px}.printview{display:none}.backdrop{display:none}body.modal-open{overflow:hidden}.prose{max-width:900px}.prose .card{padding:24px}.prose p{margin:8px 0}.scope-links{display:flex;gap:6px;flex-wrap:wrap}.scope-links a{font-size:11px;border:1px solid #cfdaca;border-radius:6px;padding:2px 8px;text-decoration:none}.scope-links a:hover{background:#e5eddf}
-@media(min-width:1600px){.content{padding-top:45px}.hero{grid-template-columns:1fr 260px}.hero-math{min-height:190px}}
-@media(max-width:1150px){.sidebar{width:225px;padding:25px 14px}.main{margin-left:225px}.content{padding:28px 25px}.topbar{padding:16px 25px}.hero{grid-template-columns:1fr 180px;gap:20px}.hero-math{padding:20px 13px}.formula-grid{grid-template-columns:1fr}.hero .hero-math math{font-size:1em}}
-@media(max-width:850px){.sidebar{transform:translateX(-100%);width:280px;transition:transform .2s}.sidebar.open{transform:translateX(0)}.mobile-close{display:block;position:absolute;right:15px;top:28px;color:#fff;background:none;border:1px solid #5c716d;border-radius:8px}.mobile-menu{display:inline-flex}.main{margin-left:0}.topbar{padding:13px 20px}.top-actions .optional{display:none}.content{padding:24px 20px}.hero{grid-template-columns:1fr 170px}.backdrop.show{display:block;position:fixed;inset:0;background:#1118;z-index:35}.overview{grid-template-columns:1fr}.overview>div+div{border-left:0;border-top:1px solid var(--line)}.overview>div{padding:20px 22px}.formula-sheet{grid-template-columns:1fr}.slidebody{padding:22px}.study-head{padding:22px}.tipline{grid-template-columns:1fr}}
-@media(max-width:570px){body{font-size:15px}.hero{grid-template-columns:1fr;gap:17px}.hero-math{display:none}.chapter-no{font-size:60px;margin-bottom:13px}.content{padding:22px 16px}.topbar{padding:12px 16px}.crumb{display:none}.top-actions .btn{font-size:11px;padding:7px 11px}.resource-strip{grid-template-columns:1fr}.study-head{padding:19px;flex-direction:column;gap:12px}.study-head h2{font-size:21px}.slide-tabs{padding:0 16px;gap:16px}.slidebody{padding:19px}.slide-footer{padding:13px 16px}.slide-footer .small{display:none}.slide-footer .btn{padding:7px 12px;font-size:12px}.question{font-size:16px}.box{padding:17px}.exam-example{padding:16px}.chapter-footer{align-items:stretch}.chapter-footer .btn{font-size:12px;flex:1;padding:9px}.source-grid{grid-template-columns:1fr}.score-panel{gap:8px}.score-metric{padding:15px 10px}.score-metric strong{font-size:28px}.score-metric .small{font-size:10px}.exam-top{align-items:flex-start}.exam-top .toolbar{gap:5px}.exam-top .btn{font-size:11px;padding:6px 10px}.exam-card{padding:20px}.mapping-row{grid-template-columns:35px 1fr;gap:10px}.mapping-row>div:last-child{grid-column:2}.video-table{min-width:550px}.sectionline{align-items:flex-start}.sectionline .small{font-size:10px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-@media print{body{background:white;font-size:11pt;color:#111}.sidebar,.topbar,.content,.modal,.toast,.backdrop{display:none!important}.main{margin:0}.printview{display:block}.print-chapter{break-before:page}.print-chapter:first-child{break-before:auto}.printview h1{font-size:25pt;margin:0 0 15pt}.printview h2{font-size:17pt;margin:16pt 0 8pt}.printview h3{font-size:13pt;margin:10pt 0 5pt}.printview p,.printview li{font-size:10pt;line-height:1.6}.print-topic{border-top:1pt solid #bbb;margin-top:18pt;padding-top:10pt}.printview .box{padding:10pt;margin:7pt 0;background:white}.printview .steps li{padding:7pt 0;break-inside:avoid}.printview .eq{overflow:visible}.printview a{color:#111}.printview .small{font-size:9pt}.printview .math-inline{overflow:visible}.printview .answer{break-inside:avoid} @page{margin:18mm}}
+:root{
+  --ink:#1c302b;
+  --green:#276b50;
+  --paper:#f4f4ec;
+  --line:#dce3d6;
+  --orange:#bc5e2c;
+  --muted:#6d7b71;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font:16px/1.85 system-ui,"Noto Sans Thai",Tahoma,sans-serif;
+}
+button,input,select,textarea{font:inherit}
+button,a,summary{touch-action:manipulation}
+button{cursor:pointer}
+a{color:var(--green)}
+h1,h2,h3,p{margin:0 0 12px}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.4}
+h2{font-size:24px}
+h3{font-size:19px}
+button:focus-visible,a:focus-visible,input:focus-visible,
+textarea:focus-visible,select:focus-visible,summary:focus-visible{
+  outline:3px solid #e7965c;
+  outline-offset:3px;
+}
+aside{
+  position:fixed;
+  inset:0 auto 0 0;
+  width:250px;
+  background:var(--ink);
+  color:#e6efe4;
+  overflow:auto;
+  padding:25px 18px;
+  z-index:20;
+}
+.brand{
+  font:bold 34px Georgia,serif;
+  letter-spacing:-2px;
+  color:#fff;
+  text-decoration:none;
+}
+.brand span{color:#e8ac6c}
+nav{display:grid;gap:5px;margin-top:22px}
+.nav{
+  display:block;
+  border-radius:8px;
+  padding:10px;
+  color:#cddfd2;
+  text-decoration:none;
+  font-size:13px;
+}
+.nav:hover,.nav.active{background:#e4efdf;color:#234a38}
+.nav small{opacity:.7;margin-right:9px}
+.progress{margin-top:25px;font-size:12px;color:#b5cbb8}
+progress{width:100%;accent-color:#e6ac70;height:6px}
+main{
+  margin-left:250px;
+  padding:30px 34px;
+  max-width:1500px;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:30px;
+}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn,button.tab{
+  background:#fff;
+  color:var(--ink);
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:9px 15px;
+  text-decoration:none;
+  font-size:13px;
+  line-height:1.7;
+}
+.btn:hover{background:#eef4e9}
+.btn.primary,button.tab.active{
+  background:var(--green);
+  border-color:var(--green);
+  color:white;
+}
+.btn:disabled{opacity:.4;cursor:default}
+.mobile{display:none}
+.small{font-size:13px}
+.muted{color:var(--muted)}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.1em;
+  color:var(--green);
+  font-weight:700;
+}
+.hero{padding:5px 0 20px}
+.number{font:64px Georgia,serif;color:#9aad96}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+.chip{
+  border:1px solid var(--line);
+  background:#eaf0e4;
+  padding:4px 10px;
+  border-radius:24px;
+  font-size:12px;
+}
+.stars{color:#9d6525;letter-spacing:2px;white-space:nowrap}
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:24px;
+  margin:18px 0;
+}
+.notice{
+  background:#fff5e7;
+  border-left:4px solid #d59a65;
+  padding:15px 18px;
+  margin:18px 0;
+  border-radius:0 8px 8px 0;
+  font-size:13px;
+  color:#79512d;
+}
+.box{
+  padding:18px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fafcf7;
+  margin:14px 0;
+}
+.green{background:#edf6e9;border-color:#d6e5cb}
+.orange{background:#fff0e6;border-color:#efd6be}
+.blue{background:#eef4f7}
+.label{font-size:12px;font-weight:750;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid .box{margin:0}
+.topics,.tabs{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding:5px 0 13px;
+}
+.topics button,.tabs button{flex:none;white-space:nowrap}
+.lesson-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:15px;
+  margin-bottom:16px;
+}
+.done{white-space:nowrap;font-size:12px}
+.done input{accent-color:var(--green);width:17px;height:17px}
+.slide{min-height:310px;padding:15px 0}
+.steps{padding-left:27px}
+.steps li{padding:9px 0;border-bottom:1px solid #e6ebdf}
+.steps li::marker{font-weight:700;color:var(--green)}
+.answer{
+  border-left:4px solid var(--green);
+  background:#edf6e8;
+  padding:15px 18px;
+  border-radius:0 9px 9px 0;
+  margin-top:15px;
+}
+.example{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  margin:17px 0;
+}
+.question{font-size:17px}
+.math{
+  display:inline-block;
+  max-width:100%;
+  overflow-x:auto;
+  vertical-align:middle;
+  padding:3px 0;
+}
+.katex{font-size:1.12em}
+.pager{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  border-top:1px solid var(--line);
+  padding-top:16px;
+}
+.video{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  margin:9px 0;
+  padding:13px;
+  background:#f2f6ec;
+  border-radius:9px;
+}
+.video a{flex:1;text-decoration:none;font-size:13px}
+.video small{display:block;font-size:11px;color:#6c7b67}
+.search,textarea,select{
+  border:1px solid #cdd8c5;
+  border-radius:9px;
+  padding:11px;
+  background:#fff;
+}
+.search{width:100%;margin:10px 0}
+textarea{
+  display:block;
+  width:100%;
+  min-height:140px;
+  resize:vertical;
+  margin:15px 0;
+  font-size:14px;
+  line-height:1.8;
+}
+details{margin:12px 0}
+summary{cursor:pointer;color:var(--green);font-weight:700;padding:9px 0}
+.rubric{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  border-bottom:1px solid var(--line);
+  padding:9px 0;
+  font-size:13px;
+}
+.metric{padding:16px;background:#e5efdd;border-radius:10px}
+.metric strong{font:32px Georgia,serif;display:block}
+.exam-toolbar{
+  position:sticky;
+  top:0;
+  z-index:8;
+  background:#f4f4ecf5;
+  backdrop-filter:blur(8px);
+  padding:12px 0;
+}
+.timer{font:25px monospace}
+.table{width:100%;border-collapse:collapse;font-size:13px}
+.table th,.table td{
+  text-align:left;
+  border-bottom:1px solid var(--line);
+  padding:12px;
+  vertical-align:top;
+}
+.scroll{overflow:auto}
+.modal{
+  position:fixed;
+  inset:0;
+  background:#111c;
+  display:grid;
+  place-items:center;
+  z-index:50;
+  padding:20px;
+}
+.modal>div{
+  background:#fff;
+  max-width:900px;
+  width:100%;
+  padding:18px;
+  border-radius:14px;
+}
+.modal iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  background:#172820;
+}
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:12px 20px;
+  background:var(--ink);
+  color:white;
+  border-radius:9px;
+  z-index:70;
+}
+.footer{
+  margin:35px 0 0;
+  border-top:1px solid var(--line);
+  padding-top:18px;
+  font-size:11px;
+  color:var(--muted);
+}
+#print-area{display:none}
+.overlay{display:none}
+li{margin-bottom:5px}
+
+@media(max-width:900px){
+  aside{transform:translateX(-100%);transition:.2s}
+  aside.open{transform:translateX(0)}
+  main{margin:0;padding:22px}
+  .mobile{display:inline-block}
+  .overlay.show{
+    display:block;
+    position:fixed;
+    inset:0;
+    background:#0006;
+    z-index:15;
+  }
+  .grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  body{font-size:15px}
+  main{padding:18px 14px}
+  .card{padding:18px}
+  .lesson-head{display:block}
+  .done{display:block;margin-top:12px}
+  .top .optional{display:none}
+  .btn,button.tab{padding:8px 11px;font-size:12px}
+  .hero .number{font-size:52px}
+  .example{padding:15px}
+  .pager .small{display:none}
+  .table{min-width:550px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
+@media print{
+  body{background:#fff;color:#000}
+  aside,main,.modal,.overlay,#toast{display:none!important}
+  #print-area{display:block;font-size:11pt}
+  #print-area .card{border:0;padding:0}
+  #print-area .example{break-inside:avoid}
+  #print-area h1{font-size:25pt}
+  #print-area h2{font-size:17pt}
+  .math{overflow:visible}
+  @page{margin:18mm}
+}
 </style>
 </head>
+
 <body>
-<a class="skip" href="#main-content">ข้ามไปเนื้อหา</a>
-<div class="backdrop" id="backdrop" onclick="toggleMenu(false)"></div>
-<aside class="sidebar" id="sidebar" aria-label="เมนูบทเรียน">
-<a class="brand" href="#page/1">CALC <span>/ 9</span></a><button class="mobile-close" onclick="toggleMenu(false)" aria-label="ปิดเมนู">✕</button>
-<div class="brand-sub">SC401201 · CALCULUS I</div><div class="nav-label">9 หน้าทบทวนตามแนวสอบ</div>
-<nav class="chapternav" id="chapter-nav"></nav>
-<div class="nav-label">เครื่องมือเตรียมสอบ</div><nav id="tools-nav"></nav>
-<div class="side-footer"><div class="small" id="progress-label">0 / 38 หัวข้อที่อ่านแล้ว</div><progress id="progress" value="0" max="38" aria-label="ความคืบหน้า"></progress><div class="tiny" style="color:#91aba0;margin-top:10px">บันทึกความคืบหน้าในอุปกรณ์นี้</div></div>
+<div class="overlay" id="overlay" onclick="menu(false)"></div>
+
+<aside id="sidebar">
+  <a class="brand" href="#page/1">CALC <span>/ 9</span></a>
+  <p class="small">SC401201 · แคลคูลัส 1</p>
+  <button class="btn mobile" onclick="menu(false)">ปิดเมนู</button>
+  <nav id="nav"></nav>
+  <div class="progress">
+    <div id="progress-text"></div>
+    <progress id="progress" max="38" value="0"></progress>
+    <p>บันทึกความคืบหน้าในอุปกรณ์นี้</p>
+  </div>
 </aside>
-<div class="main">
-<header class="topbar"><div class="toolbar"><button class="btn quiet mobile-menu" onclick="toggleMenu()" aria-label="เปิดเมนูบทเรียน" aria-expanded="false" id="menu-toggle">☰ เมนู</button><span class="crumb" id="crumb">เส้นทางเตรียมสอบ / หน้า 01</span></div><div class="top-actions"><a class="btn quiet optional" href="#formulas">ใบสูตร & สูตรต้องจำ</a><button class="btn" onclick="downloadHTML()">↓ ดาวน์โหลด HTML</button><a href="#exam" class="btn primary">ซ้อมสอบ ↗</a></div></header>
-<main class="content" id="main-content" tabindex="-1"></main>
-<div class="printview" id="printview"></div>
-</div><div id="overlay-root"></div><div id="toast-root" aria-live="polite"></div>
-<script id="app-data" type="application/json">{"chapters":[{"n":1,"title":"อนุพันธ์พื้นฐานและฟังก์ชันประกอบ","subtitle":"อ่านรูปโจทย์ให้ถูก แล้วเลือกกฎให้ตรง","part":1,"worksheet":7,"level":3,"goal":"หา $dy/dx$ หรือ $f\\prime(x)$ เป็นนิพจน์ที่ถูกต้อง พร้อมแสดงกฎที่ใช้ หากไม่ได้ระบุจุด ให้ตอบเป็นฟังก์ชัน ไม่ต้องแทนค่า $x$ เอง","formula":"(u^n)\\prime=nu^{n-1}u\\prime","topics":[{"id":"p1-power","title":"ผลบวก ผลต่าง และกฎยกกำลัง","level":2,"clips":[48,49],"goal":"ตอบเป็น $y\\prime$ หรือ $dy/dx$ โดยหาอนุพันธ์ครบทุกพจน์","spot":"เห็นพหุนาม ราก หรือเศษส่วนที่แปลงเป็น $x^n$ ได้ ให้จัดรูปก่อน เช่น $\\sqrt{x}=x^{1/2}$ และ $1/x^3=x^{-3}$","given":[],"memory":["$(x^n)\\prime=nx^{n-1}$; $(c)\\prime=0$","$(af+bg)\\prime=af\\prime+bg\\prime$"],"steps":["แยกพจน์ที่บวกหรือลบกัน","เปลี่ยนรากและส่วนให้เป็นเลขยกกำลัง","นำเลขชี้กำลังคูณด้านหน้า แล้วลดเลขชี้กำลังลง 1","ค่าคงที่ไม่มีตัวแปรหาอนุพันธ์ได้ 0 แล้วรวมคำตอบ"],"examples":[{"q":"หาอนุพันธ์ $y=3x^4-2\\sqrt{x}+5/x$ เมื่อ $x>0$","steps":["เขียน $y=3x^4-2x^{1/2}+5x^{-1}$","ได้ $y\\prime=3(4)x^3-2(1/2)x^{-1/2}+5(-1)x^{-2}$"],"answer":"$y\\prime=12x^3-1/\\sqrt{x}-5/x^2$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"ขีดเส้นใต้สัมประสิทธิ์กับเลขชี้กำลังคนละส่วน จะไม่เผลอเอาค่าคงที่ไปลดกำลัง","pitfall":"ห้ามลดกำลังของทุกส่วนพร้อมกันโดยไม่คูณเลขชี้กำลัง และอนุพันธ์ของค่าคงที่ไม่ใช่ค่าคงที่เดิม","practice":[],"videoNote":""},{"id":"p1-product","title":"อนุพันธ์ของผลคูณ","level":2,"clips":[48,49],"goal":"ตอบอนุพันธ์ของทั้งผลคูณ โดยต้องมีสองพจน์","spot":"เห็นสองฟังก์ชันคูณกัน เช่น $(x^2+1)(3x-2)$ ให้ตั้ง $u$ เป็นก้อนแรกและ $v$ เป็นก้อนที่สอง","given":[],"memory":["$(uv)\\prime=u\\prime v+uv\\prime$"],"steps":["ตั้ง $u,v$ และเขียน $u\\prime,v\\prime$ แยกกัน","ดิฟก้อนหน้า คูณก้อนหลังเดิม บวกก้อนหน้าเดิม คูณดิฟก้อนหลัง","จัดรูปเท่าที่จำเป็น ไม่จำเป็นต้องกระจายหากรูปเดิมชัดเจน"],"examples":[{"q":"$y=(x^2+1)(3x-2)$","steps":["$u=x^2+1,\\ u\\prime=2x,\\ v=3x-2,\\ v\\prime=3$","$y\\prime=2x(3x-2)+3(x^2+1)$"],"answer":"$y\\prime=9x^2-4x+3$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"จำว่า “ดิฟหน้า-หลังเดิม + หน้าเดิม-ดิฟหลัง”","pitfall":"$(uv)\\prime$ ไม่ใช่ $u\\prime v\\prime$","practice":[],"videoNote":""},{"id":"p1-quotient","title":"อนุพันธ์ของผลหาร","level":3,"clips":[48,49],"goal":"ตอบ $dy/dx$ พร้อมระบุจุดที่ตัวส่วนเป็นศูนย์ว่าไม่อยู่ในโดเมน","spot":"เห็นฟังก์ชันหารกันและตัดรูปไม่ได้ง่าย ให้ใช้ $u$ = ตัวเศษ และ $v$ = ตัวส่วน","given":[],"memory":["$\\left(\\frac uv\\right)\\prime=\\frac{u\\prime v-uv\\prime}{v^2},\\ v\\ne0$"],"steps":["ตั้งตัวเศษและตัวส่วนให้ชัด","หาอนุพันธ์ของตัวเศษและตัวส่วนแยกกัน","ใช้ “ล่างดิฟบน ลบบนดิฟล่าง ส่วนล่างยกกำลังสอง”","ใส่วงเล็บรอบทุกก้อน โดยเฉพาะพจน์ที่ถูกลบ"],"examples":[{"q":"$y=(x^2+1)/(x-1)$","steps":["$u\\prime=2x,\\ v\\prime=1$","$y\\prime=[2x(x-1)-(x^2+1)]/(x-1)^2$"],"answer":"$y\\prime=(x^2-2x-1)/(x-1)^2,\\ x\\ne1$","source":"ตัวอย่างแต่งเพื่อสอน"},{"q":"$y=\\dfrac{(4x-3)(x^2-8x+2)}{x-2}$","steps":["ตั้ง $N=(4x-3)(x^2-8x+2)$ แล้วใช้กฎผลคูณได้ $N\\prime=4(x^2-8x+2)+(4x-3)(2x-8)$","แทนในกฎผลหาร $y\\prime=[N\\prime(x-2)-N]/(x-2)^2$"],"answer":"$\\displaystyle y\\prime=\\frac{[4(x^2-8x+2)+(4x-3)(2x-8)](x-2)-(4x-3)(x^2-8x+2)}{(x-2)^2},\\ x\\ne2$","source":"โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 1"}],"tip":"โจทย์ซ้อนผลคูณกับผลหาร ให้หาตัวเศษเป็นงานย่อยก่อนแล้วค่อยใช้ผลหาร","pitfall":"สลับลำดับการลบแล้วเครื่องหมายจะผิดทั้งคำตอบ","practice":[],"videoNote":""},{"id":"p1-chain","title":"ฟังก์ชันประกอบและกฎลูกโซ่","level":3,"clips":[50,51],"goal":"ตอบอนุพันธ์ที่คูณอนุพันธ์ของฟังก์ชันชั้นในครบทุกชั้น","spot":"เห็นวงเล็บทั้งก้อนยกกำลัง ให้มองก้อนในเป็น $u$ และเลขชี้กำลังเป็น $n$","given":[],"memory":["$\\frac{dy}{dx}=\\frac{dy}{du}\\frac{du}{dx}$","$(u^n)\\prime=nu^{n-1}u\\prime$"],"steps":["กำหนด $u$ เป็นสิ่งที่อยู่ในวงเล็บ","ดิฟฟังก์ชันชั้นนอก โดยยังเก็บก้อนในไว้","คูณอนุพันธ์ของก้อนใน","ถ้ามีหลายชั้นให้ทำจากนอกเข้าในจนครบ"],"examples":[{"q":"$f(x)=(4x^3+9x-1)^7$","steps":["$u=4x^3+9x-1,\\ n=7,\\ u\\prime=12x^2+9$","ชั้นนอกดิฟได้ $7u^6$ แล้วคูณ $u\\prime$"],"answer":"$f\\prime(x)=7(4x^3+9x-1)^6(12x^2+9)$","source":"โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 1"}],"tip":"พูดในใจ “เจ็ดลงหน้า ลดเป็นหก คูณดิฟข้างใน”","pitfall":"ห้ามลืมตัวคูณอนุพันธ์ข้างใน แม้เป็นเพียงค่าคงที่","practice":[],"videoNote":""},{"id":"p1-trig","title":"อนุพันธ์ของตรีโกณมิติ","level":3,"clips":[52,53],"goal":"ตอบอนุพันธ์และใช้มุมหน่วยเรเดียน","spot":"เห็น $\\sin u,\\cos u,\\tan u,\\sec u,\\cot u,\\csc u$ ให้ใช้สูตรในใบสูตร แล้วคูณ $u\\prime$","given":["$(\\sin u)\\prime=\\cos u\\,u\\prime$; $(\\cos u)\\prime=-\\sin u\\,u\\prime$","$(\\tan u)\\prime=\\sec^2u\\,u\\prime$; $(\\sec u)\\prime=\\sec u\\tan u\\,u\\prime$","$(\\cot u)\\prime=-\\csc^2u\\,u\\prime$; $(\\csc u)\\prime=-\\csc u\\cot u\\,u\\prime$"],"memory":["ผลคูณ/ผลหารยังต้องใช้เมื่อมีหลายฟังก์ชัน และต้องแยก $\\sin^2x=(\\sin x)^2$ จาก $\\sin(x^2)$"],"steps":["ระบุว่าฟังก์ชันนอกคืออะไรและข้างในคืออะไร","เลือกสูตรตรีโกณมิติให้ตรง","คูณอนุพันธ์ของข้างใน และตรวจเครื่องหมายลบ"],"examples":[{"q":"$y=\\sin(x^2)$","steps":["ข้างนอกคือ $\\sin u$; ข้างใน $u=x^2$","$u\\prime=2x$ จึงคูณ $2x$"],"answer":"$y\\prime=2x\\cos(x^2)$","source":"ตัวอย่างแต่งเพื่อสอน"},{"q":"$y=\\sin^2x$","steps":["ข้างนอกคือ $u^2$; ข้างใน $u=\\sin x$","$y\\prime=2\\sin x\\cdot\\cos x$"],"answer":"$y\\prime=2\\sin x\\cos x$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"cos, cot, csc เป็นสามสูตรที่มีเครื่องหมายลบ","pitfall":"ตำแหน่งยกกำลังเปลี่ยนกฎลูกโซ่ จึงอ่านวงเล็บก่อนเสมอ","practice":[],"videoNote":""},{"id":"p1-inverse","title":"อนุพันธ์ของตรีโกณมิติผกผัน","level":3,"clips":[54,55],"goal":"ตอบอนุพันธ์ของฟังก์ชันผกผัน พร้อมเงื่อนไขที่สูตรใช้ได้","spot":"$\\arcsin u$ หรือ $\\sin^{-1}u$ ในความหมายฟังก์ชันผกผัน ไม่ใช่ $1/\\sin u$","given":["$(\\arcsin u)\\prime=\\frac{u\\prime}{\\sqrt{1-u^2}}$; $(\\arccos u)\\prime=-\\frac{u\\prime}{\\sqrt{1-u^2}}$, $|u|\u003c1$","$(\\arctan u)\\prime=\\frac{u\\prime}{1+u^2}$; $(\\operatorname{arccot}u)\\prime=-\\frac{u\\prime}{1+u^2}$","$(\\operatorname{arcsec}u)\\prime=\\frac{u\\prime}{|u|\\sqrt{u^2-1}}$; $(\\operatorname{arccsc}u)\\prime=-\\frac{u\\prime}{|u|\\sqrt{u^2-1}}$, $|u|>1$"],"memory":["จำความต่างระหว่างฟังก์ชันผกผันกับส่วนกลับ และคงเครื่องหมายค่าสัมบูรณ์ไว้"],"steps":["ระบุฟังก์ชันผกผันและก้อนใน","อ่านสูตรจากใบสูตรแล้วแทนก้อนในทั้งก้อน","คูณอนุพันธ์ก้อนในและระบุโดเมนที่อนุพันธ์มีค่า"],"examples":[{"q":"$y=\\arctan(3x)$","steps":["$u=3x,\\ u\\prime=3$","ตัวส่วนคือ $1+(3x)^2$"],"answer":"$y\\prime=3/(1+9x^2)$","source":"ตัวอย่างแต่งเพื่อสอน"},{"q":"$y=\\arcsin(2x)$","steps":["$u=2x,\\ u\\prime=2$","ใช้สูตรส่วนราก $\\sqrt{1-u^2}$"],"answer":"$y\\prime=2/\\sqrt{1-4x^2},\\ |x|\u003c1/2$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"arctan ใช้ 1 บวกกำลังสอง ส่วน arcsin ใช้รากของ 1 ลบกำลังสอง","pitfall":"อย่าตัดค่าสัมบูรณ์ในสูตร arcsec/arccsc โดยไม่รู้เครื่องหมายของก้อนใน","practice":[],"videoNote":""}]},{"n":2,"title":"เลขชี้กำลังและลอการิทึม","subtitle":"ฐานเปลี่ยน หรือเลขชี้กำลังเปลี่ยน?","part":2,"worksheet":8,"level":3,"goal":"หาอนุพันธ์ของฟังก์ชันเลขชี้กำลัง ลอการิทึม และฟังก์ชันที่ทั้งฐานและชี้กำลังเป็นตัวแปร","formula":"(\\ln|u|)\\prime=\\frac{u\\prime}{u}","topics":[{"id":"p2-exp","title":"อนุพันธ์ของฟังก์ชันเลขชี้กำลัง","level":2,"clips":[56,57,58],"goal":"ตอบ $y\\prime$ โดยคงฟังก์ชันเลขชี้กำลังไว้ และคูณอนุพันธ์ชี้กำลัง","spot":"$a^u$ มีฐาน $a$ คงที่ ส่วนเลขชี้กำลังเปลี่ยน ต่างจาก $u^n$ ที่เลขชี้กำลังคงที่","given":["$(e^u)\\prime=e^u u\\prime$","$(a^u)\\prime=a^u\\ln a\\,u\\prime$, $a>0$"],"memory":["แยกให้ออกว่าเป็นกำลังของฟังก์ชันหรือเป็นฟังก์ชันเลขชี้กำลัง"],"steps":["ระบุฐานและเลขชี้กำลัง","ถ้าฐานเป็น e คง e ยกกำลังเดิม; ถ้าเป็นฐาน a คูณ ln a เพิ่ม","คูณอนุพันธ์ของเลขชี้กำลัง"],"examples":[{"q":"$y=e^{x^2}+2^{3x}$","steps":["พจน์แรก: $e^{x^2}(2x)$","พจน์ที่สอง: $2^{3x}\\ln2(3)$"],"answer":"$y\\prime=2xe^{x^2}+3(\\ln2)2^{3x}$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"ฐาน e ไม่มี ln เพิ่ม เพราะ ln e = 1","pitfall":"อย่าใช้ $nx^{n-1}$ กับ $2^x$","practice":[],"videoNote":""},{"id":"p2-log","title":"อนุพันธ์ของลอการิทึม","level":2,"clips":[56,57,58],"goal":"ตอบอนุพันธ์ในรูปเศษส่วน และตรวจโดเมนของฟังก์ชันเดิม","spot":"$\\ln u$ ต้องมี $u>0$ แต่ $\\ln|u|$ ใช้ได้เมื่อ $u\\ne0$","given":["$(\\ln|u|)\\prime=u\\prime/u$","$(\\log_a|u|)\\prime=u\\prime/(u\\ln a)$, $a>0,\\ a\\ne1$"],"memory":["กฎลอการิทึม $\\ln(ab)=\\ln a+\\ln b$ เมื่อ $a,b>0$; ไม่มีสูตรแยก $\\ln(a+b)$"],"steps":["ให้ก้อนในเป็น u","ดิฟก้อนในไว้บน ก้อนเดิมไว้ล่าง","ถ้าไม่ใช่ฐาน e ให้มี ln ของฐานที่ตัวส่วนด้วย"],"examples":[{"q":"$y=\\ln(x^2+1)$","steps":["$u=x^2+1>0$ ทุก x","$u\\prime=2x$"],"answer":"$y\\prime=2x/(x^2+1)$","source":"ตัวอย่างแต่งเพื่อสอน"},{"q":"$y=\\log_3(2x-1)$","steps":["$u\\prime=2$","ฟังก์ชันเดิมต้องมี $2x-1>0$"],"answer":"$y\\prime=2/[(2x-1)\\ln3],\\ x>1/2$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"จำ “ดิฟใน หารของเดิม” สำหรับ ln","pitfall":"ห้ามลืม ln a สำหรับฐานที่ไม่ใช่ e","practice":[],"videoNote":""},{"id":"p2-logdiff","title":"การหาอนุพันธ์โดยใช้ลอการิทึม","level":4,"clips":[59],"goal":"ตอบ $y\\prime$ โดยแทน y เดิมกลับในบรรทัดสุดท้าย","spot":"ทั้งฐานและเลขชี้กำลังมีตัวแปร เช่น $x^x$ หรือมีผลคูณหลายก้อนยกกำลัง เหมาะกับการใส่ ln","given":["$(\\ln|y|)\\prime=y\\prime/y$"],"memory":["$\\ln(u^v)=v\\ln u$ เมื่อ $u>0$","$y=u^v\\Rightarrow y\\prime=u^v[v\\prime\\ln u+v(u\\prime/u)]$"],"steps":["ตรวจว่าฐานเป็นบวกในช่วงที่พิจารณา","ใส่ ln ทั้งสองข้างเพื่อดึงเลขชี้กำลังลงมา","ดิฟทั้งสองข้าง ใช้ผลคูณถ้าเลขชี้กำลังเป็นตัวแปร","คูณ y ทั้งสองข้างแล้วแทน y เดิมกลับ"],"examples":[{"q":"$y=x^x,\\ x>0$","steps":["$\\ln y=x\\ln x$","$y\\prime/y=\\ln x+x(1/x)=\\ln x+1$","คูณ $y=x^x$ กลับ"],"answer":"$y\\prime=x^x(\\ln x+1)$","source":"โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 2"},{"q":"$y=(x^2+1)^x$","steps":["$\\ln y=x\\ln(x^2+1)$","$y\\prime/y=\\ln(x^2+1)+2x^2/(x^2+1)$"],"answer":"$y\\prime=(x^2+1)^x[\\ln(x^2+1)+2x^2/(x^2+1)]$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"ln ช่วยย้ายเลขชี้กำลังลงมา แต่ตอนจบต้องเอา y กลับ","pitfall":"ห้ามดิฟ $x^x$ เป็น $x\\cdot x^{x-1}$ เพราะเลขชี้กำลังไม่คงที่","practice":[],"videoNote":""}]},{"n":3,"title":"อนุพันธ์โดยปริยายและอันดับสูง","subtitle":"ทุกครั้งที่ดิฟ y ต้องมองว่า y ขึ้นกับ x","part":3,"worksheet":9,"level":4,"goal":"ตอบ $dy/dx$ หรือ $d^ny/dx^n$ ตามอันดับที่โจทย์ขอ ถ้ากำหนดจุด ต้องแทนทั้ง x และ y หลังดิฟแล้ว","formula":"\\frac{d}{dx}(y^n)=ny^{n-1}y\\prime","topics":[{"id":"p3-implicit","title":"หาอนุพันธ์โดยปริยาย","level":3,"clips":[60],"goal":"แยก $y\\prime$ ไว้ข้างเดียว คำตอบมี x และ y ได้","spot":"x กับ y อยู่ปนกันและยังไม่ได้แก้ y เป็นฟังก์ชันของ x เช่น $x^2+xy+y^2=7$","given":["สูตรอนุพันธ์พื้นฐานของตรีโกณมิติ/เลขชี้กำลังเมื่อมีในสมการ"],"memory":["$\\frac{d}{dx}(xy)=y+xy\\prime$","$\\frac{d}{dx}(y^n)=ny^{n-1}y\\prime$"],"steps":["ดิฟทั้งสองข้างเทียบ x","พจน์ที่มี y ต้องคูณ y′ ตามลูกโซ่; พจน์ xy ใช้ผลคูณ","ย้ายพจน์ที่มี y′ ไว้ฝั่งเดียว","ดึง y′ เป็นตัวร่วม แล้วหารสัมประสิทธิ์ของมัน"],"examples":[{"q":"$x^2+xy+y^2=7$","steps":["$2x+y+xy\\prime+2yy\\prime=0$","$(x+2y)y\\prime=-(2x+y)$"],"answer":"$y\\prime=-(2x+y)/(x+2y)$ เมื่อ $x+2y\\ne0$","source":"ใบงาน 9 หน้า 1 ข้อ 1(2)"},{"q":"$x\\sin y+y\\cos x=2$","steps":["$\\sin y+x\\cos y\\,y\\prime+y\\prime\\cos x-y\\sin x=0$","$(x\\cos y+\\cos x)y\\prime=y\\sin x-\\sin y$"],"answer":"$y\\prime=(y\\sin x-\\sin y)/(x\\cos y+\\cos x)$ เมื่อส่วนไม่เป็นศูนย์","source":"ใบงาน 9 หน้า 1 ข้อ 1(3)"}],"tip":"ล้อมทุกพจน์ที่มี y′ แล้วค่อยย้ายข้าง จะเก็บพจน์ได้ครบ","pitfall":"อย่าแทน y เป็นค่าคงที่ก่อนดิฟ","practice":[{"page":1,"q":"1(1)–1(3)","detail":"อนุพันธ์โดยปริยาย เริ่มวงกลม แล้วเพิ่ม xy และตรีโกณมิติ"}],"videoNote":""},{"id":"p3-point","title":"อนุพันธ์โดยปริยาย ณ จุด","level":3,"clips":[60],"goal":"ตอบค่าตัวเลขของ $dy/dx$ ที่จุดกำหนด ไม่ค้างเป็นสมการทั่วไป","spot":"โจทย์ระบุ “ที่จุด (a,b)” ให้ตรวจว่าจุดนั้นอยู่บนสมการ แล้วดิฟก่อนแทนค่า","given":["$(e^u)\\prime=e^u u\\prime$; $(\\tan u)\\prime=\\sec^2u\\,u\\prime$"],"memory":["ค่าที่กำหนด ณ ขณะหนึ่งไม่ทำให้ตัวแปรนั้นเป็นค่าคงที่ตลอด"],"steps":["ตรวจจุดกับสมการเดิม","ดิฟสมการโดยเก็บ x,y เป็นตัวแปร","แทนจุดและแก้ y′; ใช้ค่าตรีโกณมิติที่แน่นอน"],"examples":[{"q":"$x\\tan y+y\\sec x=\\pi/4$ ที่ $(0,\\pi/4)$","steps":["$\\tan y+x\\sec^2y\\,y\\prime+y\\prime\\sec x+y\\sec x\\tan x=0$","แทนจุดได้ $1+0+y\\prime+0=0$"],"answer":"$y\\prime(0)=-1$","source":"ใบงาน 9 หน้า 2 ข้อ 2"},{"q":"$x^2y+e^{x+y}+\\tan y=1$ ที่ $(0,0)$","steps":["$2xy+x^2y\\prime+e^{x+y}(1+y\\prime)+\\sec^2y\\,y\\prime=0$","แทนได้ $1+2y\\prime=0$"],"answer":"$y\\prime(0)=-1/2$","source":"ใบงาน 9 หน้า 2 ข้อ 3"}],"tip":"ถ้าต้องการค่า ณ จุดอย่างเดียว แทนหลังดิฟรอบนั้นได้ทันทีเมื่อไม่ต้องดิฟต่อ","pitfall":"ดิฟ e^(x+y) ต้องคูณ (1+y′) ไม่ใช่แค่ y′","practice":[{"page":2,"q":"2–3","detail":"หาความชัน ณ จุดที่กำหนด"}],"videoNote":""},{"id":"p3-higher","title":"อนุพันธ์อันดับสูงของฟังก์ชันชัดแจ้ง","level":3,"clips":[61],"goal":"ตอบตรงอันดับ เช่น $y\\prime\\prime\\prime$ = อันดับ 3 และ $y^{(4)}$ = อันดับ 4","spot":"หาอนุพันธ์ซ้ำทีละรอบ ไม่ใช่ยกกำลังอนุพันธ์","given":["สูตร e และตรีโกณมิติที่ใช้ซ้ำในแต่ละรอบ"],"memory":["$y^{(n)}=\\frac{d}{dx}y^{(n-1)}$; ต้องใช้กฎผลคูณใหม่ในแต่ละรอบ"],"steps":["จดบรรทัด y′, y″, y‴ แยกกัน","จัดรูปหรือดึงตัวร่วมหลังแต่ละรอบเพื่อลดงาน","นับอันดับให้ครบตามที่โจทย์ขอ"],"examples":[{"q":"$y=2x^5-3x^4+4x^2-7x+1$ หา $y\\prime\\prime\\prime$","steps":["$y\\prime=10x^4-12x^3+8x-7$","$y\\prime\\prime=40x^3-36x^2+8$","$y\\prime\\prime\\prime=120x^2-72x$"],"answer":"$y\\prime\\prime\\prime=120x^2-72x$","source":"ใบงาน 9 หน้า 3 ข้อ 4(1)"},{"q":"$y=x^2e^x$ หา $y\\prime\\prime\\prime$","steps":["$y\\prime=e^x(x^2+2x)$","$y\\prime\\prime=e^x(x^2+4x+2)$","$y\\prime\\prime\\prime=e^x(x^2+6x+6)$"],"answer":"$y\\prime\\prime\\prime=e^x(x^2+6x+6)$","source":"ใบงาน 9 หน้า 3 ข้อ 4(2)"}],"tip":"สำหรับ e^x คูณพหุนาม ทุกครั้งจะได้ e^x คูณ (พหุนามเดิม + ดิฟพหุนาม)","pitfall":"y^(4) ไม่ใช่ (y′)^4","practice":[{"page":3,"q":"4(1)–4(3)","detail":"ข้อ 4(3) ขออันดับ 4 ของ $e^{2x}\\cos x$ ไม่ใช่อันดับ 3"}],"videoNote":""},{"id":"p3-higher-implicit","title":"อนุพันธ์อันดับสูงโดยปริยาย","level":4,"clips":[60,61],"goal":"ตอบอนุพันธ์อันดับที่ขอ ณ จุด พร้อมแสดงค่าระหว่างทางที่ใช้","spot":"ต้องดิฟซ้ำสมการที่มี y′ จึงมีทั้ง (y′)^2 และ y″ เกิดขึ้น","given":[],"memory":["$(yy\\prime)\\prime=(y\\prime)^2+yy\\prime\\prime$","$((y\\prime)^2)\\prime=2y\\prime y\\prime\\prime$"],"steps":["ดิฟสมการเดิมหนึ่งรอบ","ดิฟสมการอนุพันธ์ต่อก่อนแทนค่าคงที่ลงในนิพจน์ที่จะนำไปดิฟ","เมื่อได้ความสัมพันธ์ของอันดับที่ต้องการแล้ว ค่อยแทนจุดและอนุพันธ์อันดับต่ำที่คำนวณไว้"],"examples":[{"q":"$x^2+y^2=2x$ หา $d^3y/dx^3$ ที่ $(1,1)$","steps":["รอบ 1: $2x+2yy\\prime=2$ จึงได้ $y\\prime=0$ ที่จุดนี้","รอบ 2: $2+2(y\\prime)^2+2yy\\prime\\prime=0$ จึงได้ $y\\prime\\prime=-1$","รอบ 3: $6y\\prime y\\prime\\prime+2yy\\prime\\prime\\prime=0$","แทนค่า $0+2(1)y\\prime\\prime\\prime=0$"],"answer":"$\\left.d^3y/dx^3\\right|_{(1,1)}=0$","source":"ใบงาน 9 หน้า 4 ข้อ 5"}],"tip":"คำนวณค่า y′ และ y″ ณ จุดไว้ข้างกระดาษ แต่ยังเก็บสมการทั่วไปสำหรับดิฟรอบต่อไป","pitfall":"ห้ามสรุปว่า y′ ณ จุด = 0 แล้วดิฟค่าศูนย์เพื่อหา y″","practice":[{"page":4,"q":"5","detail":"อันดับ 3 โดยปริยาย ณ (1,1)"}],"videoNote":""}]},{"n":4,"title":"ผลต่างอนุพัทธ์และการประมาณค่า","subtitle":"ดิฟเพื่อประมาณค่าที่อยู่ใกล้ค่าที่คิดง่าย","part":4,"worksheet":10,"level":3,"goal":"ถ้าถาม dy ให้ตอบนิพจน์ที่มี dx; ถ้าถามค่าประมาณให้ตอบจำนวนพร้อมสัญลักษณ์ ≈ และแสดงจุดที่ใช้ประมาณ","formula":"f(a+\\Delta x)\\approx f(a)+f\\prime(a)\\Delta x","topics":[{"id":"p4-differential","title":"หาผลต่างอนุพัทธ์ dx และ dy","level":2,"clips":[62],"goal":"ตอบ $dy=f\\prime(x)dx$ หรือค่าของ dy เมื่อกำหนด x และ dx","spot":"โจทย์ใช้คำว่า “ผลต่างอนุพัทธ์” หรือให้ dx มา อย่าหยุดที่การหาอนุพันธ์อย่างเดียว","given":[],"memory":["$dx=\\Delta x$; $dy=f\\prime(x)dx$","$\\Delta y=f(x+\\Delta x)-f(x)$; โดยทั่วไป $dy\\ne\\Delta y$"],"steps":["หา f′(x) ตามกฎอนุพันธ์","คูณ dx เพื่อเปลี่ยนอนุพันธ์ให้เป็นผลต่างอนุพัทธ์","ถ้ามี x และ dx ให้แทนค่าท้ายสุด","แยกค่าประมาณ dy ออกจากผลต่างจริง Δy"],"examples":[{"q":"$y=x^3$ ที่ $x=2,\\ dx=0.01$ จงหา dy","steps":["$dy=3x^2dx$","$dy=3(2)^2(0.01)=0.12$","ผลต่างจริง $\\Delta y=2.01^3-2^3=0.120601$"],"answer":"$dy=0.12$ ซึ่งเป็นค่าประมาณของ $\\Delta y$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"อนุพันธ์คืออัตราเปลี่ยนแปลง ส่วน dy คืออัตรานั้นคูณระยะขยับ dx","pitfall":"อย่าตอบแค่ 3x² ถ้าโจทย์ถาม dy","practice":[],"videoNote":""},{"id":"p4-approx","title":"การประยุกต์ผลต่างอนุพัทธ์เพื่อประมาณค่า","level":3,"clips":[63],"goal":"ตอบค่าประมาณของสิ่งที่โจทย์ขอ พร้อมแสดง f, a และ Δx","spot":"รากหรือกำลังของจำนวนที่อยู่ใกล้จำนวนคิดง่าย เช่น √98 อยู่ใกล้ √100","given":[],"memory":["$L(x)=f(a)+f\\prime(a)(x-a)$","$f(a+\\Delta x)\\approx f(a)+f\\prime(a)\\Delta x$"],"steps":["เลือก f ให้ตรงสิ่งที่ต้องคำนวณ","เลือก a ใกล้ค่าโจทย์และหาค่า f(a) ได้ง่าย","ให้ Δx = ค่าเป้าหมาย − a พร้อมเครื่องหมาย","หา f′(a) แล้วแทนสูตรประมาณ"],"examples":[{"q":"ประมาณ $\\sqrt{98}$ โดยไม่ใช้เครื่องคิดเลข","steps":["$f(x)=\\sqrt{x},\\ a=100,\\ \\Delta x=-2$","$f(100)=10,\\ f\\prime(x)=1/(2\\sqrt{x}),\\ f\\prime(100)=1/20$","$\\sqrt{98}\\approx10+(1/20)(-2)$"],"answer":"$\\sqrt{98}\\approx9.9$","source":"โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 4"},{"q":"ประมาณ $\\sqrt[3]{27.3}$","steps":["$f(x)=x^{1/3},\\ a=27,\\ \\Delta x=0.3$","$f(27)=3,\\ f\\prime(27)=1/27$","$f(27.3)\\approx3+0.3/27$"],"answer":"$\\sqrt[3]{27.3}\\approx3.01111$","source":"ตัวอย่างแต่งเพื่อสอน"}],"tip":"a ไม่จำเป็นต้องเป็นเลขโจทย์ เลือกเลขข้าง ๆ ที่ถอดรากลงตัว","pitfall":"ใช้ ≈ แทน = และ
-... (เหลืออีก 2 MB)
+
+<main>
+  <header class="top">
+    <button class="btn mobile" id="menu-button"
+            onclick="menu()" aria-expanded="false">☰ บทเรียน</button>
+    <span class="small muted optional">CALCULUS / EXAM STUDY GUIDE</span>
+    <div class="row">
+      <a class="btn" href="#formulas">ใบสูตร</a>
+      <a class="btn primary" href="#exam">ซ้อมสอบ</a>
+    </div>
+  </header>
+  <div id="app"></div>
+</main>
+
+<div id="print-area"></div>
+<div id="modal-root"></div>
+<div id="toast" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* =========================================================
+   ส่วนข้อมูลบทเรียน
+   r`...` ช่วยให้เขียนสูตร LaTeX ด้วย \ ได้โดยไม่ต้องใส่ \\
+
+   C = เพิ่มบทเรียน
+   T = เพิ่มหัวข้อย่อย
+   E = เพิ่มตัวอย่างพร้อมวิธีทำ
+
+   T(
+     ชื่อ, ดาว, หมายเลขคลิป,
+     คำตอบที่ต้องการ, วิธีดูโจทย์,
+     สูตรที่มีให้[], สูตรที่ควรจำ[],
+     ขั้นตอน[], ตัวอย่าง[],
+     เคล็ดลับ, จุดพลาด,
+     ข้อใบงาน[], หมายเหตุคลิป
+   )
+========================================================= */
+
+const r = String.raw;
+const CH = [];
+
+function C(n,title,subtitle,part,worksheet,level,goal,formula,topics){
+  CH.push({
+    n,title,subtitle,part,worksheet,level,goal,formula,topics
+  });
+}
+
+function T(title,level,clips,goal,spot,given,memory,steps,
+           examples,tip,pitfall,practice=[],videoNote=""){
+  return {
+    title,level,clips,goal,spot,given,memory,
+    steps,examples,tip,pitfall,practice,videoNote
+  };
+}
+
+function E(q,steps,answer,source="ตัวอย่างแต่งเพื่อสอน"){
+  return {q,steps,answer,source};
+}
+
+/* ================= หน้า 1 ================= */
+
+C(
+  1,
+  "อนุพันธ์พื้นฐานและฟังก์ชันประกอบ",
+  "อ่านรูปโจทย์ให้ถูก แล้วเลือกกฎให้ตรง",
+  1,7,3,
+  r`หา $dy/dx$ หรือ $f'(x)$ เป็นนิพจน์ที่ถูกต้อง พร้อมแสดงกฎที่ใช้ หากไม่ได้ระบุจุด ให้ตอบเป็นฟังก์ชัน ไม่ต้องแทนค่า x เอง`,
+  r`(u^n)'=nu^{n-1}u'`,
+  [
+    T(
+      "ผลบวก ผลต่าง และกฎยกกำลัง",2,[48,49],
+      r`ตอบเป็น $y'$ หรือ $dy/dx$ โดยหาอนุพันธ์ครบทุกพจน์`,
+      r`เห็นพหุนาม ราก หรือเศษส่วนที่แปลงเป็น $x^n$ ได้ ให้จัดรูปก่อน เช่น $\sqrt{x}=x^{1/2}$ และ $1/x^3=x^{-3}$`,
+      [],
+      [
+        r`$(x^n)'=nx^{n-1}$ และ $(c)'=0$`,
+        r`$(af+bg)'=af'+bg'$`
+      ],
+      [
+        "แยกพจน์ที่บวกหรือลบกัน",
+        "เปลี่ยนรากและส่วนให้เป็นเลขยกกำลัง",
+        "นำเลขชี้กำลังคูณด้านหน้า แล้วลดเลขชี้กำลังลง 1",
+        "ค่าคงที่ไม่มีตัวแปรหาอนุพันธ์ได้ 0 แล้วรวมคำตอบ"
+      ],
+      [
+        E(
+          r`หาอนุพันธ์ $y=3x^4-2\sqrt{x}+5/x$ เมื่อ $x>0$`,
+          [
+            r`เขียน $y=3x^4-2x^{1/2}+5x^{-1}$`,
+            r`ได้ $y'=3(4)x^3-2(1/2)x^{-1/2}+5(-1)x^{-2}$`
+          ],
+          r`$y'=12x^3-1/\sqrt{x}-5/x^2$`
+        )
+      ],
+      "แยกสัมประสิทธิ์กับเลขชี้กำลังให้ชัด จะไม่เผลอลดกำลังผิดส่วน",
+      "ห้ามลดกำลังโดยไม่คูณเลขชี้กำลัง และอนุพันธ์ของค่าคงที่เท่ากับ 0"
+    ),
+
+    T(
+      "อนุพันธ์ของผลคูณ",2,[48,49],
+      "ตอบอนุพันธ์ของทั้งผลคูณ โดยต้องมีสองพจน์",
+      r`เห็นสองฟังก์ชันคูณกัน เช่น $(x^2+1)(3x-2)$ ให้ตั้ง u เป็นก้อนแรกและ v เป็นก้อนที่สอง`,
+      [],
+      [r`$(uv)'=u'v+uv'$`],
+      [
+        r`ตั้ง $u,v$ และเขียน $u',v'$ แยกกัน`,
+        "ดิฟก้อนหน้า คูณก้อนหลังเดิม บวกก้อนหน้าเดิม คูณดิฟก้อนหลัง",
+        "จัดรูปเท่าที่จำเป็น ไม่จำเป็นต้องกระจายหากรูปเดิมชัดเจน"
+      ],
+      [
+        E(
+          r`$y=(x^2+1)(3x-2)$`,
+          [
+            r`$u=x^2+1,\ u'=2x,\ v=3x-2,\ v'=3$`,
+            r`$y'=2x(3x-2)+3(x^2+1)$`
+          ],
+          r`$y'=9x^2-4x+3$`
+        )
+      ],
+      "จำว่า “ดิฟหน้า-หลังเดิม + หน้าเดิม-ดิฟหลัง”",
+      r`$(uv)'$ ไม่ใช่ $u'v'$`
+    ),
+
+    T(
+      "อนุพันธ์ของผลหาร",3,[48,49],
+      r`ตอบ $dy/dx$ พร้อมระบุจุดที่ตัวส่วนเป็นศูนย์ว่าไม่อยู่ในโดเมน`,
+      "เห็นฟังก์ชันหารกันและตัดรูปไม่ได้ง่าย ให้ใช้ u = ตัวเศษ และ v = ตัวส่วน",
+      [],
+      [r`$\left(\frac uv\right)'=\frac{u'v-uv'}{v^2},\quad v\ne0$`],
+      [
+        "ตั้งตัวเศษและตัวส่วนให้ชัด",
+        "หาอนุพันธ์ของตัวเศษและตัวส่วนแยกกัน",
+        "ใช้ “ล่างดิฟบน ลบบนดิฟล่าง ส่วนล่างยกกำลังสอง”",
+        "ใส่วงเล็บรอบทุกก้อน โดยเฉพาะพจน์ที่ถูกลบ"
+      ],
+      [
+        E(
+          r`$y=(x^2+1)/(x-1)$`,
+          [
+            r`$u'=2x,\ v'=1$`,
+            r`$y'=[2x(x-1)-(x^2+1)]/(x-1)^2$`
+          ],
+          r`$y'=(x^2-2x-1)/(x-1)^2,\quad x\ne1$`
+        ),
+        E(
+          r`$y=\dfrac{(4x-3)(x^2-8x+2)}{x-2}$`,
+          [
+            r`ตั้ง $N=(4x-3)(x^2-8x+2)$`,
+            r`ใช้ผลคูณได้ $N'=4(x^2-8x+2)+(4x-3)(2x-8)$`,
+            r`แทนในกฎผลหาร $y'=[N'(x-2)-N]/(x-2)^2$`
+          ],
+          r`$\displaystyle y'=\frac{[4(x^2-8x+2)+(4x-3)(2x-8)](x-2)-(4x-3)(x^2-8x+2)}{(x-2)^2},\quad x\ne2$`,
+          "โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 1"
+        )
+      ],
+      "โจทย์ซ้อนผลคูณกับผลหาร ให้หาตัวเศษเป็นงานย่อยก่อนแล้วค่อยใช้ผลหาร",
+      "สลับลำดับการลบแล้วเครื่องหมายจะผิดทั้งคำตอบ"
+    ),
+
+    T(
+      "ฟังก์ชันประกอบและกฎลูกโซ่",3,[50,51],
+      "ตอบอนุพันธ์ที่คูณอนุพันธ์ของฟังก์ชันชั้นในครบทุกชั้น",
+      "เห็นวงเล็บทั้งก้อนยกกำลัง ให้มองก้อนในเป็น u และเลขชี้กำลังเป็น n",
+      [],
+      [
+        r`$\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}$`,
+        r`$(u^n)'=nu^{n-1}u'$`
+      ],
+      [
+        "กำหนด u เป็นสิ่งที่อยู่ในวงเล็บ",
+        "ดิฟฟังก์ชันชั้นนอก โดยยังเก็บก้อนในไว้",
+        "คูณอนุพันธ์ของก้อนใน",
+        "ถ้ามีหลายชั้นให้ทำจากนอกเข้าในจนครบ"
+      ],
+      [
+        E(
+          r`$f(x)=(4x^3+9x-1)^7$`,
+          [
+            r`$u=4x^3+9x-1,\ n=7,\ u'=12x^2+9$`,
+            r`ชั้นนอกดิฟได้ $7u^6$ แล้วคูณ $u'$`
+          ],
+          r`$f'(x)=7(4x^3+9x-1)^6(12x^2+9)$`,
+          "โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 1"
+        )
+      ],
+      "พูดในใจ “เจ็ดลงหน้า ลดเป็นหก คูณดิฟข้างใน”",
+      "ห้ามลืมตัวคูณอนุพันธ์ข้างใน แม้เป็นเพียงค่าคงที่"
+    ),
+
+    T(
+      "อนุพันธ์ของตรีโกณมิติ",3,[52,53],
+      "ตอบอนุพันธ์และใช้มุมหน่วยเรเดียน",
+      r`เห็น $\sin u,\cos u,\tan u,\sec u,\cot u,\csc u$ ให้ใช้สูตรในใบสูตร แล้วคูณ $u'$`,
+      [
+        r`$(\sin u)'=\cos u\,u'$; $(\cos u)'=-\sin u\,u'$`,
+        r`$(\tan u)'=\sec^2u\,u'$; $(\sec u)'=\sec u\tan u\,u'$`,
+        r`$(\cot u)'=-\csc^2u\,u'$; $(\csc u)'=-\csc u\cot u\,u'$`
+      ],
+      [
+        r`ผลคูณ/ผลหารยังต้องใช้เมื่อมีหลายฟังก์ชัน`,
+        r`แยก $\sin^2x=(\sin x)^2$ จาก $\sin(x^2)$`
+      ],
+      [
+        "ระบุว่าฟังก์ชันนอกคืออะไรและข้างในคืออะไร",
+        "เลือกสูตรตรีโกณมิติให้ตรง",
+        "คูณอนุพันธ์ของข้างใน และตรวจเครื่องหมายลบ"
+      ],
+      [
+        E(
+          r`$y=\sin(x^2)$`,
+          [
+            r`ข้างนอกคือ $\sin u$; ข้างใน $u=x^2$`,
+            r`$u'=2x$ จึงคูณ $2x$`
+          ],
+          r`$y'=2x\cos(x^2)$`
+        ),
+        E(
+          r`$y=\sin^2x$`,
+          [
+            r`ข้างนอกคือ $u^2$; ข้างใน $u=\sin x$`,
+            r`$y'=2\sin x\cdot\cos x$`
+          ],
+          r`$y'=2\sin x\cos x$`
+        )
+      ],
+      "cos, cot, csc เป็นสามสูตรอนุพันธ์ที่มีเครื่องหมายลบ",
+      "ตำแหน่งยกกำลังเปลี่ยนกฎลูกโซ่ จึงอ่านวงเล็บก่อนเสมอ"
+    ),
+
+    T(
+      "อนุพันธ์ของตรีโกณมิติผกผัน",3,[54,55],
+      "ตอบอนุพันธ์ของฟังก์ชันผกผัน พร้อมเงื่อนไขที่สูตรใช้ได้",
+      r`$\arcsin u$ หรือ $\sin^{-1}u$ ในความหมายฟังก์ชันผกผัน ไม่ใช่ $1/\sin u$`,
+      [
+        r`$(\arcsin u)'=\frac{u'}{\sqrt{1-u^2}}$; $(\arccos u)'=-\frac{u'}{\sqrt{1-u^2}}$, $|u|<1$`,
+        r`$(\arctan u)'=\frac{u'}{1+u^2}$; $(\operatorname{arccot}u)'=-\frac{u'}{1+u^2}$`,
+        r`$(\operatorname{arcsec}u)'=\frac{u'}{|u|\sqrt{u^2-1}}$; $(\operatorname{arccsc}u)'=-\frac{u'}{|u|\sqrt{u^2-1}}$, $|u|>1$`
+      ],
+      ["จำความต่างระหว่างฟังก์ชันผกผันกับส่วนกลับ และคงค่าสัมบูรณ์ไว้"],
+      [
+        "ระบุฟังก์ชันผกผันและก้อนใน",
+        "อ่านสูตรแล้วแทนก้อนในทั้งก้อน",
+        "คูณอนุพันธ์ก้อนในและระบุโดเมนที่อนุพันธ์มีค่า"
+      ],
+      [
+        E(
+          r`$y=\arctan(3x)$`,
+          [r`$u=3x,\ u'=3$`,r`ตัวส่วนคือ $1+(3x)^2$`],
+          r`$y'=3/(1+9x^2)$`
+        ),
+        E(
+          r`$y=\arcsin(2x)$`,
+          [r`$u=2x,\ u'=2$`,r`ใช้ตัวส่วน $\sqrt{1-u^2}$`],
+          r`$y'=2/\sqrt{1-4x^2},\quad |x|<1/2$`
+        )
+      ],
+      "arctan ใช้ 1 บวกกำลังสอง ส่วน arcsin ใช้รากของ 1 ลบกำลังสอง",
+      "อย่าตัดค่าสัมบูรณ์ในสูตร arcsec/arccsc โดยไม่รู้เครื่องหมายก้อนใน"
+    )
+  ]
+);
+
+/* ================= หน้า 2 ================= */
+
+C(
+  2,
+  "เลขชี้กำลังและลอการิทึม",
+  "ฐานเปลี่ยน หรือเลขชี้กำลังเปลี่ยน?",
+  2,8,3,
+  "หาอนุพันธ์ของเลขชี้กำลัง ลอการิทึม และฟังก์ชันที่ทั้งฐานและชี้กำลังเป็นตัวแปร",
+  r`(\ln|u|)'=\frac{u'}u`,
+  [
+    T(
+      "อนุพันธ์ของฟังก์ชันเลขชี้กำลัง",2,[56,57,58],
+      "ตอบอนุพันธ์โดยคงฟังก์ชันเลขชี้กำลังไว้ แล้วคูณอนุพันธ์ชี้กำลัง",
+      r`$a^u$ มีฐาน a คงที่ แต่เลขชี้กำลังเปลี่ยน ต่างจาก $u^n$ ที่เลขชี้กำลังคงที่`,
+      [
+        r`$(e^u)'=e^uu'$`,
+        r`$(a^u)'=a^u\ln a\,u'$, $a>0$`
+      ],
+      ["แยกให้ออกว่าเป็นกำลังของฟังก์ชันหรือเป็นฟังก์ชันเลขชี้กำลัง"],
+      [
+        "ระบุฐานและเลขชี้กำลัง",
+        "ถ้าฐาน e คง e ยกกำลังเดิม; ถ้าเป็นฐาน a ให้คูณ ln a เพิ่ม",
+        "คูณอนุพันธ์ของเลขชี้กำลัง"
+      ],
+      [
+        E(
+          r`$y=e^{x^2}+2^{3x}$`,
+          [
+            r`พจน์แรก: $e^{x^2}(2x)$`,
+            r`พจน์ที่สอง: $2^{3x}\ln2(3)$`
+          ],
+          r`$y'=2xe^{x^2}+3(\ln2)2^{3x}$`
+        )
+      ],
+      "ฐาน e ไม่มี ln เพิ่ม เพราะ ln e = 1",
+      r`อย่าใช้ $nx^{n-1}$ กับ $2^x$`
+    ),
+
+    T(
+      "อนุพันธ์ของลอการิทึม",2,[56,57,58],
+      "ตอบอนุพันธ์ในรูปเศษส่วน และตรวจโดเมนของฟังก์ชันเดิม",
+      r`$\ln u$ ต้องมี $u>0$ แต่ $\ln|u|$ ใช้ได้เมื่อ $u\ne0$`,
+      [
+        r`$(\ln|u|)'=u'/u$`,
+        r`$(\log_a|u|)'=u'/(u\ln a)$, $a>0,\ a\ne1$`
+      ],
+      [
+        r`$\ln(ab)=\ln a+\ln b$ เมื่อ $a,b>0$`,
+        r`ไม่มีสูตรแยก $\ln(a+b)$ เป็นผลบวกของ ln`
+      ],
+      [
+        "ให้ก้อนในเป็น u",
+        "ดิฟก้อนในไว้บน ก้อนเดิมไว้ล่าง",
+        "ถ้าไม่ใช่ฐาน e ให้มี ln ของฐานที่ตัวส่วนด้วย"
+      ],
+      [
+        E(
+          r`$y=\ln(x^2+1)$`,
+          [r`$u=x^2+1>0$ ทุก x`,r`$u'=2x$`],
+          r`$y'=2x/(x^2+1)$`
+        ),
+        E(
+          r`$y=\log_3(2x-1)$`,
+          [r`$u'=2$`,r`ฟังก์ชันเดิมต้องมี $2x-1>0$`],
+          r`$y'=2/[(2x-1)\ln3],\quad x>1/2$`
+        )
+      ],
+      "จำ “ดิฟใน หารของเดิม” สำหรับ ln",
+      "ห้ามลืม ln a สำหรับฐานที่ไม่ใช่ e"
+    ),
+
+    T(
+      "การหาอนุพันธ์โดยใช้ลอการิทึม",4,[59],
+      "ตอบอนุพันธ์โดยแทน y เดิมกลับในบรรทัดสุดท้าย",
+      r`ทั้งฐานและเลขชี้กำลังมีตัวแปร เช่น $x^x$ หรือมีผลคูณหลายก้อนยกกำลัง เหมาะกับการใส่ ln`,
+      [r`$(\ln|y|)'=y'/y$`],
+      [
+        r`$\ln(u^v)=v\ln u$ เมื่อ $u>0$`,
+        r`$y=u^v\Rightarrow y'=u^v[v'\ln u+v(u'/u)]$`
+      ],
+      [
+        "ตรวจว่าฐานเป็นบวกในช่วงที่พิจารณา",
+        "ใส่ ln ทั้งสองข้างเพื่อดึงเลขชี้กำลังลงมา",
+        "ดิฟทั้งสองข้าง ใช้ผลคูณถ้าตัวที่คูณกันต่างเป็นฟังก์ชัน",
+        "คูณ y ทั้งสองข้างแล้วแทน y เดิมกลับ"
+      ],
+      [
+        E(
+          r`$y=x^x,\quad x>0$`,
+          [
+            r`$\ln y=x\ln x$`,
+            r`$y'/y=\ln x+x(1/x)=\ln x+1$`,
+            r`คูณ $y=x^x$ กลับ`
+          ],
+          r`$y'=x^x(\ln x+1)$`,
+          "โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 2"
+        ),
+        E(
+          r`$y=(x^2+1)^x$`,
+          [
+            r`$\ln y=x\ln(x^2+1)$`,
+            r`$y'/y=\ln(x^2+1)+2x^2/(x^2+1)$`
+          ],
+          r`$y'=(x^2+1)^x[\ln(x^2+1)+2x^2/(x^2+1)]$`
+        )
+      ],
+      "ln ช่วยย้ายเลขชี้กำลังลงมา แต่ตอนจบต้องเอา y กลับ",
+      r`ห้ามดิฟ $x^x$ เป็น $x\cdot x^{x-1}$ เพราะเลขชี้กำลังไม่คงที่`
+    )
+  ]
+);
+
+/* ================= หน้า 3 ================= */
+
+C(
+  3,
+  "อนุพันธ์โดยปริยายและอันดับสูง",
+  "ทุกครั้งที่ดิฟ y ต้องมองว่า y ขึ้นกับ x",
+  3,9,4,
+  r`ตอบ $dy/dx$ หรือ $d^ny/dx^n$ ตามอันดับที่โจทย์ขอ ถ้ากำหนดจุด ต้องแทนทั้ง x และ y หลังดิฟแล้ว`,
+  r`\frac{d}{dx}(y^n)=ny^{n-1}y'`,
+  [
+    T(
+      "หาอนุพันธ์โดยปริยาย",3,[60],
+      r`แยก $y'$ ไว้ข้างเดียว คำตอบมี x และ y ได้`,
+      r`x กับ y อยู่ปนกันและยังไม่ได้แก้ y เป็นฟังก์ชันของ x เช่น $x^2+xy+y^2=7$`,
+      ["สูตรอนุพันธ์ของตรีโกณมิติและเลขชี้กำลังที่ปรากฏในใบสูตร"],
+      [
+        r`$\frac{d}{dx}(xy)=y+xy'$`,
+        r`$\frac{d}{dx}(y^n)=ny^{n-1}y'$`
+      ],
+      [
+        "ดิฟทั้งสองข้างเทียบ x",
+        r`พจน์ที่มี y ต้องคูณ $y'$ ตามลูกโซ่; พจน์ xy ใช้ผลคูณ`,
+        r`ย้ายพจน์ที่มี $y'$ ไว้ฝั่งเดียว`,
+        r`ดึง $y'$ เป็นตัวร่วม แล้วหารสัมประสิทธิ์ของมัน`
+      ],
+      [
+        E(
+          r`$x^2+xy+y^2=7$`,
+          [
+            r`$2x+y+xy'+2yy'=0$`,
+            r`$(x+2y)y'=-(2x+y)$`
+          ],
+          r`$y'=-(2x+y)/(x+2y)$ เมื่อ $x+2y\ne0$`,
+          "ใบงาน 9 หน้า 1 ข้อ 1(2)"
+        ),
+        E(
+          r`$x\sin y+y\cos x=2$`,
+          [
+            r`$\sin y+x\cos y\,y'+y'\cos x-y\sin x=0$`,
+            r`$(x\cos y+\cos x)y'=y\sin x-\sin y$`
+          ],
+          r`$y'=(y\sin x-\sin y)/(x\cos y+\cos x)$ เมื่อส่วนไม่เป็นศูนย์`,
+          "ใบงาน 9 หน้า 1 ข้อ 1(3)"
+        )
+      ],
+      r`ล้อมทุกพจน์ที่มี $y'$ แล้วค่อยย้ายข้าง จะเก็บพจน์ได้ครบ`,
+      "อย่าแทน y เป็นค่าคงที่ก่อนดิฟ",
+      [{
+        page:1,
+        q:"1(1)–1(3)",
+        detail:"เริ่มจากวงกลม แล้วเพิ่ม xy และตรีโกณมิติ"
+      }]
+    ),
+
+    T(
+      "อนุพันธ์โดยปริยาย ณ จุด",3,[60],
+      r`ตอบค่าตัวเลขของ $dy/dx$ ที่จุดกำหนด ไม่ค้างเป็นสมการทั่วไป`,
+      "โจทย์ระบุ “ที่จุด (a,b)” ให้ตรวจว่าจุดนั้นอยู่บนสมการ แล้วดิฟก่อนแทนค่า",
+      [
+        r`$(e^u)'=e^uu'$`,
+        r`$(\tan u)'=\sec^2u\,u'$`
+      ],
+      ["ค่าที่กำหนด ณ ขณะหนึ่ง ไม่ทำให้ตัวแปรนั้นเป็นค่าคงที่ตลอด"],
+      [
+        "ตรวจจุดกับสมการเดิม",
+        "ดิฟสมการโดยเก็บ x,y เป็นตัวแปร",
+        "แทนจุดและแก้อนุพันธ์ ใช้ค่าตรีโกณมิติที่แน่นอน"
+      ],
+      [
+        E(
+          r`$x\tan y+y\sec x=\pi/4$ ที่ $(0,\pi/4)$`,
+          [
+            r`$\tan y+x\sec^2y\,y'+y'\sec x+y\sec x\tan x=0$`,
+            r`แทนจุดได้ $1+0+y'+0=0$`
+          ],
+          r`$y'(0)=-1$`,
+          "ใบงาน 9 หน้า 2 ข้อ 2"
+        ),
+        E(
+          r`$x^2y+e^{x+y}+\tan y=1$ ที่ $(0,0)$`,
+          [
+            r`$2xy+x^2y'+e^{x+y}(1+y')+\sec^2y\,y'=0$`,
+            r`แทนได้ $1+2y'=0$`
+          ],
+          r`$y'(0)=-1/2$`,
+          "ใบงาน 9 หน้า 2 ข้อ 3"
+        )
+      ],
+      "ถ้าต้องการค่า ณ จุดอย่างเดียว แทนหลังดิฟรอบนั้นได้ทันทีเมื่อไม่ต้องดิฟต่อ",
+      r`ดิฟ $e^{x+y}$ ต้องคูณ $(1+y')$ ไม่ใช่แค่ $y'$`,
+      [{page:2,q:"2–3",detail:"หาความชัน ณ จุดที่กำหนด"}]
+    ),
+
+    T(
+      "อนุพันธ์อันดับสูงของฟังก์ชันชัดแจ้ง",3,[61],
+      r`ตอบตรงอันดับ เช่น $y'''$ คืออันดับ 3 และ $y^{(4)}$ คืออันดับ 4`,
+      "หาอนุพันธ์ซ้ำทีละรอบ ไม่ใช่ยกกำลังอนุพันธ์",
+      ["สูตร e และตรีโกณมิติที่ใช้ซ้ำในแต่ละรอบ"],
+      [r`$y^{(n)}=\frac{d}{dx}y^{(n-1)}$ และต้องใช้กฎผลคูณใหม่ในแต่ละรอบ`],
+      [
+        "จดบรรทัดอนุพันธ์แต่ละอันดับแยกกัน",
+        "จัดรูปหรือดึงตัวร่วมหลังแต่ละรอบเพื่อลดงาน",
+        "นับอันดับให้ครบตามที่โจทย์ขอ"
+      ],
+      [
+        E(
+          r`$y=2x^5-3x^4+4x^2-7x+1$ หา $y'''$`,
+          [
+            r`$y'=10x^4-12x^3+8x-7$`,
+            r`$y''=40x^3-36x^2+8$`,
+            r`$y'''=120x^2-72x$`
+          ],
+          r`$y'''=120x^2-72x$`,
+          "ใบงาน 9 หน้า 3 ข้อ 4(1)"
+        ),
+        E(
+          r`$y=x^2e^x$ หา $y'''$`,
+          [
+            r`$y'=e^x(x^2+2x)$`,
+            r`$y''=e^x(x^2+4x+2)$`,
+            r`$y'''=e^x(x^2+6x+6)$`
+          ],
+          r`$y'''=e^x(x^2+6x+6)$`,
+          "ใบงาน 9 หน้า 3 ข้อ 4(2)"
+        )
+      ],
+      "สำหรับ e^x คูณพหุนาม แต่ละรอบจะได้ e^x คูณ (พหุนามเดิม + ดิฟพหุนาม)",
+      r`$y^{(4)}$ ไม่ใช่ $(y')^4$`,
+      [{
+        page:3,
+        q:"4(1)–4(3)",
+        detail:r`ข้อ 4(3) ขออันดับ 4 ของ $e^{2x}\cos x$ ไม่ใช่อันดับ 3`
+      }]
+    ),
+
+    T(
+      "อนุพันธ์อันดับสูงโดยปริยาย",4,[60,61],
+      "ตอบอนุพันธ์อันดับที่ขอ ณ จุด พร้อมแสดงค่าระหว่างทางที่ใช้",
+      r`เมื่อดิฟซ้ำสมการที่มี $y'$ จะมีทั้ง $(y')^2$ และ $y''$ เกิดขึ้น`,
+      [],
+      [
+        r`$(yy')'=(y')^2+yy''$`,
+        r`$((y')^2)'=2y'y''$`
+      ],
+      [
+        "ดิฟสมการเดิมหนึ่งรอบ",
+        "ดิฟสมการอนุพันธ์ต่อ ก่อนแทนค่าคงที่ลงในนิพจน์ที่จะนำไปดิฟ",
+        "เมื่อได้ความสัมพันธ์ของอันดับที่ต้องการแล้ว ค่อยแทนจุดและอนุพันธ์อันดับต่ำ"
+      ],
+      [
+        E(
+          r`$x^2+y^2=2x$ หา $d^3y/dx^3$ ที่ $(1,1)$`,
+          [
+            r`รอบ 1: $2x+2yy'=2$ จึงได้ $y'=0$ ที่จุดนี้`,
+            r`รอบ 2: $2+2(y')^2+2yy''=0$ จึงได้ $y''=-1$`,
+            r`รอบ 3: $6y'y''+2yy'''=0$`,
+            r`แทนค่า $0+2(1)y'''=0$`
+          ],
+          r`$\left.d^3y/dx^3\right|_{(1,1)}=0$`,
+          "ใบงาน 9 หน้า 4 ข้อ 5"
+        )
+      ],
+      "คำนวณค่าอนุพันธ์ ณ จุดไว้ข้างกระดาษ แต่เก็บสมการทั่วไปไว้ดิฟรอบต่อไป",
+      "อนุพันธ์ ณ จุดเป็น 0 ไม่ได้แปลว่าอนุพันธ์เป็นฟังก์ชันศูนย์ จึงห้ามดิฟเลข 0 เพื่อหาอันดับถัดไป",
+      [{page:4,q:"5",detail:"อันดับ 3 โดยปริยาย ณ (1,1)"}]
+    )
+  ]
+);
+
+/* ================= หน้า 4 ================= */
+
+C(
+  4,
+  "ผลต่างอนุพัทธ์และการประมาณค่า",
+  "ดิฟเพื่อประมาณค่าที่อยู่ใกล้ค่าที่คิดง่าย",
+  4,10,3,
+  r`ถ้าถาม dy ให้ตอบนิพจน์ที่มี dx ถ้าถามค่าประมาณให้ตอบจำนวนพร้อม $\approx$ และแสดงจุดที่ใช้ประมาณ`,
+  r`f(a+\Delta x)\approx f(a)+f'(a)\Delta x`,
+  [
+    T(
+      "หาผลต่างอนุพัทธ์ dx และ dy",2,[62],
+      r`ตอบ $dy=f'(x)dx$ หรือค่าของ dy เมื่อกำหนด x และ dx`,
+      "โจทย์ใช้คำว่า “ผลต่างอนุพัทธ์” หรือให้ dx มา อย่าหยุดที่การหาอนุพันธ์อย่างเดียว",
+      [],
+      [
+        r`$dx=\Delta x$ และ $dy=f'(x)dx$`,
+        r`$\Delta y=f(x+\Delta x)-f(x)$; โดยทั่วไป $dy\ne\Delta y$`
+      ],
+      [
+        "หาอนุพันธ์ f′(x)",
+        "คูณ dx เพื่อเปลี่ยนอนุพันธ์ให้เป็นผลต่างอนุพัทธ์",
+        "ถ้ามี x และ dx ให้แทนค่าท้ายสุด",
+        "แยกค่าประมาณ dy ออกจากผลต่างจริง Δy"
+      ],
+      [
+        E(
+          r`$y=x^3$ ที่ $x=2,\ dx=0.01$ จงหา dy`,
+          [
+            r`$dy=3x^2dx$`,
+            r`$dy=3(2)^2(0.01)=0.12$`,
+            r`ผลต่างจริง $\Delta y=2.01^3-2^3=0.120601$`
+          ],
+          r`$dy=0.12$ ซึ่งเป็นค่าประมาณของ $\Delta y$`
+        )
+      ],
+      "อนุพันธ์คืออัตราเปลี่ยนแปลง ส่วน dy คืออัตรานั้นคูณระยะขยับ dx",
+      "อย่าตอบแค่ 3x² ถ้าโจทย์ถาม dy"
+    ),
+
+    T(
+      "การประยุกต์ผลต่างอนุพัทธ์เพื่อประมาณค่า",3,[63],
+      "ตอบค่าประมาณ พร้อมแสดง f, a และ Δx",
+      "รากหรือกำลังของจำนวนที่ใกล้จำนวนคิดง่าย เช่น √98 อยู่ใกล้ √100",
+      [],
+      [
+        r`$L(x)=f(a)+f'(a)(x-a)$`,
+        r`$f(a+\Delta x)\approx f(a)+f'(a)\Delta x$`
+      ],
+      [
+        "เลือก f ให้ตรงสิ่งที่ต้องคำนวณ",
+        "เลือก a ใกล้ค่าโจทย์และหา f(a) ได้ง่าย",
+        "ให้ Δx = ค่าเป้าหมาย − a พร้อมเครื่องหมาย",
+        "หา f′(a) แล้วแทนสูตรประมาณ"
+      ],
+      [
+        E(
+          r`ประมาณ $\sqrt{98}$ โดยไม่ใช้เครื่องคิดเลข`,
+          [
+            r`$f(x)=\sqrt{x},\ a=100,\ \Delta x=-2$`,
+            r`$f(100)=10,\ f'(x)=1/(2\sqrt{x}),\ f'(100)=1/20$`,
+            r`$\sqrt{98}\approx10+(1/20)(-2)$`
+          ],
+          r`$\sqrt{98}\approx9.9$`,
+          "โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 4"
+        ),
+        E(
+          r`ประมาณ $\sqrt[3]{27.3}$`,
+          [
+            r`$f(x)=x^{1/3},\ a=27,\ \Delta x=0.3$`,
+            r`$f(27)=3,\ f'(27)=1/27$`,
+            r`$f(27.3)\approx3+0.3/27$`
+          ],
+          r`$\sqrt[3]{27.3}\approx3.01111$`
+        )
+      ],
+      "a ไม่จำเป็นต้องเป็นเลขโจทย์ เลือกเลขข้าง ๆ ที่ถอดรากลงตัว",
+      "ใช้ ≈ แทน = และอย่าลืมว่า Δx อาจเป็นลบ"
+    )
+  ]
+);
+
+/* ================= หน้า 5 ================= */
+
+C(
+  5,
+  "อัตราสัมพัทธ์",
+  "เชื่อมตัวแปรด้วยสมการ แล้วดิฟเทียบเวลา",
+  5,11,4,
+  "ตอบอัตราเปลี่ยนแปลงของตัวแปรที่ถาม พร้อมหน่วยต่อเวลาและความหมายของเครื่องหมาย",
+  r`\frac{d}{dt}f(x)=f'(x)\frac{dx}{dt}`,
+  [
+    T(
+      "ระยะทางและโจทย์บันได",4,[64,65,66],
+      r`ตอบ $dy/dt$ หรือ $dx/dt$ โดยมีหน่วยและทิศทาง`,
+      "มีคำว่าเคลื่อนที่ เพิ่ม ลด ต่อวินาที และตัวแปรเชื่อมกันด้วยรูปเรขาคณิต",
+      [],
+      [
+        r`$x^2+y^2=L^2$ เมื่อบันไดยาวคงที่`,
+        r`$2x\frac{dx}{dt}+2y\frac{dy}{dt}=0$`
+      ],
+      [
+        "วาดภาพคร่าว ๆ กำหนด x,y และค่าคงที่",
+        "เขียนอัตราที่รู้และอัตราที่ต้องการ",
+        "สร้างสมการก่อนใส่ค่าของตัวแปรที่เปลี่ยนตามเวลา",
+        "ดิฟเทียบ t แล้วค่อยแทนข้อมูล ณ ขณะนั้น"
+      ],
+      [
+        E(
+          "บันไดยาว 10 m ปลายล่างห่างผนัง x = 6 m และเคลื่อนออก 2 m/s หาอัตราปลายบน",
+          [
+            r`$x^2+y^2=100$ ดังนั้นขณะนั้น $y=8$`,
+            r`ดิฟได้ $2x(dx/dt)+2y(dy/dt)=0$`,
+            r`$2(6)(2)+2(8)(dy/dt)=0$`
+          ],
+          r`$dy/dt=-3/2$ m/s หรือปลายบนลดลง 1.5 m/s`
+        )
+      ],
+      "เขียนหน่วยกำกับอัตราตั้งแต่ต้น จะรู้ว่าต้องหาอะไร",
+      "อย่าแทน x=6 ลงในสมการตั้งต้นก่อนดิฟ เพราะจะทำให้ dx/dt หายไป"
+    ),
+
+    T(
+      "พื้นที่และปริมาตรที่เปลี่ยนตามเวลา",3,[64,65],
+      "ตอบอัตราของรัศมี พื้นที่ หรือปริมาตร พร้อมหน่วยที่ถูกมิติ",
+      "โจทย์ทรงกลม วงกลม หรือของไหลบอกอัตราปริมาตร แล้วถามอัตราความยาว",
+      [],
+      [
+        r`$A=\pi r^2$; $V=\frac43\pi r^3$`,
+        r`$\frac{dV}{dt}=4\pi r^2\frac{dr}{dt}$`
+      ],
+      [
+        "เลือกสูตรพื้นที่หรือปริมาตรตามรูป",
+        "ดิฟเทียบ t โดย r เป็นฟังก์ชันเวลา",
+        "แทนรัศมี ณ ขณะนั้นและอัตราที่ทราบ",
+        "แก้อัตราที่ถามและตรวจหน่วย"
+      ],
+      [
+        E(
+          r`ลูกบอลทรงกลมมี $dV/dt=12\pi$ cm³/s หา dr/dt เมื่อ r = 3 cm`,
+          [
+            r`$V=(4/3)\pi r^3$`,
+            r`$12\pi=4\pi(3)^2(dr/dt)$`,
+            r`หารทั้งสองข้างด้วย $36\pi$`
+          ],
+          r`$dr/dt=1/3$ cm/s`
+        )
+      ],
+      "dV/dt เป็นลูกบาศก์หน่วยต่อเวลา แต่ dr/dt เป็นหน่วยความยาวต่อเวลา",
+      "สูตรเรขาคณิตเหล่านี้ไม่ปรากฏในใบสูตรที่แนบ จึงควรจำไปด้วย"
+    ),
+
+    T(
+      "หลายตัวแปร: ถังกรวยและสามเหลี่ยมคล้าย",4,[64,65,66],
+      "ตอบอัตราระดับน้ำ โดยลดสมการให้เหลือตัวแปรที่ต้องการก่อนดิฟ",
+      "ทั้ง r และ h ของน้ำเปลี่ยน ให้ใช้สัดส่วนจากรูปทรงถังตัดตัวแปรหนึ่ง",
+      [],
+      [
+        r`$V=\frac13\pi r^2h$`,
+        r`$r/h=R/H$ สำหรับรูปกรวยคล้ายกัน`
+      ],
+      [
+        "แยกขนาดถังคงที่ R,H ออกจากขนาดน้ำ r,h",
+        "ใช้สามเหลี่ยมคล้ายเขียน r เป็นฟังก์ชันของ h",
+        "แทนลง V ก่อนดิฟ จะเหลือ V(h)",
+        "ดิฟเทียบ t แล้วแทนค่า ณ ขณะนั้น"
+      ],
+      [
+        E(
+          "ถังกรวยยอดลง มี R = 3 m, H = 6 m น้ำเข้า 2 m³/min หา dh/dt เมื่อ h = 2 m",
+          [
+            r`$r/h=3/6$ จึง $r=h/2$`,
+            r`$V=(1/3)\pi(h/2)^2h=\pi h^3/12$`,
+            r`$dV/dt=(\pi h^2/4)(dh/dt)$`,
+            r`$2=\pi(dh/dt)$ เมื่อ h = 2`
+          ],
+          r`$dh/dt=2/\pi$ m/min`
+        )
+      ],
+      "ตัด r ด้วยความคล้ายก่อนดิฟ มักสั้นกว่าดิฟผลคูณหลายตัว",
+      "r ของน้ำไม่ใช่รัศมีปากถังคงที่ R",
+      [],
+      "คลิปกลุ่ม 4-1 เป็นพื้นฐานอัตราสัมพัทธ์ ตัวอย่างถังกรวยนี้แต่งเพื่อฝึก ยังไม่ได้ยืนยันว่ามีโจทย์เดียวกันในคลิป"
+    )
+  ]
+);
+
+/* ================= หน้า 6 ================= */
+
+C(
+  6,
+  "วิเคราะห์ฟังก์ชันและปัญหาค่าสุดขีด",
+  "ใช้เครื่องหมายอนุพันธ์เพื่ออธิบายพฤติกรรม",
+  6,11,4,
+  "ตอบช่วงเพิ่ม–ลด จุดและค่าสูงสุด/ต่ำสุดสัมพัทธ์ ช่วงเว้า และคำตอบเชิงสถานการณ์ตามสิ่งที่โจทย์ถาม",
+  r`f'>0\Rightarrow\text{increasing},\quad f''>0\Rightarrow\text{concave up}`,
+  [
+    T(
+      "ช่วงฟังก์ชันเพิ่มและฟังก์ชันลด",3,[67,71,72,73],
+      r`ตอบเป็นช่วงของ x เช่น $(-\infty,-1)\cup(1,\infty)$ ไม่ใช่ค่า y`,
+      "โจทย์ถามฟังก์ชันเพิ่ม/ลด ให้ดูเครื่องหมาย f′ บนแต่ละช่วง",
+      [],
+      [
+        r`$f'>0$ บนช่วง ⇒ เพิ่ม; $f'<0$ บนช่วง ⇒ ลด`,
+        r`จุดวิกฤตอยู่ในโดเมนและมี $f'=0$ หรือ $f'$ ไม่มีค่า`
+      ],
+      [
+        "หาโดเมนแล้วคำนวณ f′",
+        "หาจุดที่ f′=0 หรือไม่มีค่า และจุดที่ฟังก์ชันไม่มีค่าเพื่อแบ่งช่วง",
+        "เลือกค่าทดสอบหนึ่งค่าในแต่ละช่วง",
+        "สรุปช่วงตามเครื่องหมาย"
+      ],
+      [
+        E(
+          r`$f(x)=x^3-3x$ หาช่วงเพิ่ม–ลด`,
+          [
+            r`$f'=3x^2-3=3(x-1)(x+1)$`,
+            "จุดแบ่งคือ −1,1; ทดสอบ x = −2,0,2 ได้เครื่องหมาย +,−,+"
+          ],
+          r`เพิ่มบน $(-\infty,-1)\cup(1,\infty)$; ลดบน $(-1,1)$`
+        )
+      ],
+      "ใช้ตารางเครื่องหมายเส้นเดียว แทนการคิดใหม่ทุกคำถาม",
+      "f′(c)=0 เพียงจุดเดียวไม่ได้บอกว่าช่วงนั้นเพิ่มหรือลด"
+    ),
+
+    T(
+      "ค่าสูงสุด–ต่ำสุดสัมพัทธ์",3,[68,70],
+      "แยกตำแหน่ง x ค่า f(x) และจุด (x,f(x)) ให้ครบตามโจทย์",
+      "ตรวจการเปลี่ยนเครื่องหมายของ f′ รอบจุดวิกฤต",
+      [],
+      [
+        r`$f':+\to-$ ⇒ สูงสุดสัมพัทธ์; $f':-\to+$ ⇒ ต่ำสุดสัมพัทธ์`,
+        r`ถ้า $f'(c)=0$: $f''(c)>0$ ⇒ ต่ำสุด; $f''(c)<0$ ⇒ สูงสุด`,
+        r`$f''(c)=0$ ยังสรุปไม่ได้`
+      ],
+      [
+        "หาจุดวิกฤต",
+        "ตรวจ f′ ก่อน–หลังจุด หรือใช้ f″ เมื่อเข้าเงื่อนไข",
+        "แทน x ในฟังก์ชันเดิมเพื่อหาค่า y",
+        "เขียนว่าค่าสูงสุดหรือต่ำสุดเกิดที่ใด"
+      ],
+      [
+        E(
+          r`$f(x)=x^3-3x$ หาจุดสุดขีดสัมพัทธ์`,
+          [
+            r`$f'=3(x-1)(x+1)$ มีจุดวิกฤต −1,1`,
+            "ที่ −1 เปลี่ยน + เป็น −; ที่ 1 เปลี่ยน − เป็น +",
+            r`$f(-1)=2,\ f(1)=-2$`
+          ],
+          r`สูงสุดสัมพัทธ์ที่ $(-1,2)$ ค่า 2; ต่ำสุดสัมพัทธ์ที่ $(1,-2)$ ค่า −2`
+        ),
+        E(
+          r`$f(x)=x^4$ ที่ x = 0`,
+          [
+            r`$f'=4x^3,\ f''=12x^2$ จึง $f''(0)=0$`,
+            "ใช้ f′ แทน: ซ้ายลบ ขวาบวก"
+          ],
+          "เป็นจุดต่ำสุดสัมพัทธ์ (0,0) แม้การทดสอบด้วย f″ อย่างเดียวสรุปไม่ได้"
+        )
+      ],
+      "จุดวิกฤตคือจุดที่ต้องตรวจต่อ ไม่ใช่คำตอบอัตโนมัติ",
+      "จุดที่ f′=0 อาจไม่มีค่าสุดขีด เช่น x³ ที่ศูนย์"
+    ),
+
+    T(
+      "ความเว้าและจุดเปลี่ยนเว้า",3,[69,71,72,73],
+      "ตอบช่วงเว้าขึ้น/เว้าลง และพิกัดจุดเปลี่ยนเว้าเมื่อโจทย์ถาม",
+      "ความเว้าดู f″ ไม่ใช่ f′; จุดเปลี่ยนเว้าต้องมีการเปลี่ยนความเว้าจริง",
+      [],
+      [
+        r`$f''>0$ ⇒ เว้าขึ้น; $f''<0$ ⇒ เว้าลง`,
+        "f″=0 เป็นเพียงจุดที่ต้องตรวจต่อ ต้องตรวจการเปลี่ยนเครื่องหมายและความต่อเนื่องของ f"
+      ],
+      [
+        "หา f″",
+        "หาจุดที่ f″=0 หรือไม่มีค่า และแบ่งช่วงตามโดเมน",
+        "ทดสอบเครื่องหมาย f″",
+        "ถ้าเปลี่ยนเว้าและเป็นจุดบนกราฟที่ต่อเนื่อง ให้แทนใน f เพื่อหาพิกัด"
+      ],
+      [
+        E(
+          r`$f(x)=x^3-3x$`,
+          [
+            r`$f''=6x$`,
+            "x < 0 ให้ f″ < 0; x > 0 ให้ f″ > 0",
+            "f(0)=0 และต่อเนื่องที่ 0"
+          ],
+          r`เว้าลง $(-\infty,0)$; เว้าขึ้น $(0,\infty)$; จุดเปลี่ยนเว้า $(0,0)$`
+        )
+      ],
+      "จำ “หนึ่งดูขึ้นลง สองดูความเว้า”",
+      "ศูนย์ของ f″ อาจไม่เปลี่ยนเว้า เช่น x⁴ ที่ศูนย์"
+    ),
+
+    T(
+      "ค่าสูงสุด–ต่ำสุดสัมบูรณ์บนช่วงปิด",3,[75],
+      "ตอบค่าที่มาก/น้อยที่สุดและค่า x ที่ทำให้เกิด เมื่อกำหนดช่วงปิด",
+      "มีช่วง [a,b] และฟังก์ชันต่อเนื่อง ต้องเปรียบเทียบจุดภายในกับปลายช่วง",
+      [],
+      [
+        "เปรียบเทียบ f(a), f(b) และค่า f ที่จุดวิกฤตภายในช่วง"
+      ],
+      [
+        "ตรวจความต่อเนื่องและขอบเขต",
+        "หาจุดวิกฤตภายใน (a,b)",
+        "คำนวณ f ที่ทุกจุดที่ต้องตรวจ รวมปลายช่วง",
+        "เปรียบเทียบค่าตัวเลขทั้งหมด"
+      ],
+      [
+        E(
+          r`$f(x)=x^3-3x$ บน $[-2,3]$`,
+          [
+            "จุดวิกฤตภายในคือ −1,1",
+            r`$f(-2)=-2,\ f(-1)=2,\ f(1)=-2,\ f(3)=18$`
+          ],
+          "ค่าสูงสุดสัมบูรณ์ 18 ที่ x=3; ค่าต่ำสุดสัมบูรณ์ −2 ที่ x=−2 และ 1"
+        )
+      ],
+      "ปลายช่วงอาจให้ค่ามากกว่าหรือน้อยกว่าจุดที่ f′=0 ทุกจุด",
+      "ค่าสูงสุดสัมพัทธ์ไม่จำเป็นต้องเป็นค่าสูงสุดสัมบูรณ์"
+    ),
+
+    T(
+      "โจทย์ปัญหาค่าสุดขีด",4,[75,76,77],
+      "ตอบสิ่งที่สถานการณ์ถาม เช่น ขนาดที่เหมาะสมและพื้นที่สูงสุด พร้อมหน่วยและเหตุผลว่าสุดขีดจริง",
+      "คำว่า มากที่สุด น้อยที่สุด ประหยัดที่สุด ให้แยกฟังก์ชันเป้าหมายออกจากข้อจำกัด",
+      [],
+      [
+        r`ใช้ข้อจำกัดลดเป้าหมายเป็น $F(x)$ แล้วแก้ $F'(x)=0$`,
+        "ยืนยันด้วยเครื่องหมาย F′, F″ หรือเปรียบเทียบทุกจุดที่ต้องตรวจและปลายช่วง"
+      ],
+      [
+        "กำหนดตัวแปรและหน่วย",
+        "เขียนสิ่งที่อยากให้มาก/น้อยสุดเป็นฟังก์ชันเป้าหมาย",
+        "ใช้เงื่อนไขลดให้เหลือตัวแปรเดียวและกำหนดโดเมน",
+        "หาอนุพันธ์และจุดวิกฤต",
+        "ตรวจชนิดสุดขีดและแปลคำตอบกลับเป็นภาษาของโจทย์"
+      ],
+      [
+        E(
+          "ล้อมรั้วรูปสี่เหลี่ยมผืนผ้าด้วยรั้วยาว 40 m ต้องมีด้านยาวเท่าไรจึงพื้นที่มากที่สุด",
+          [
+            r`ให้ด้าน x,y: $2x+2y=40$ จึง $y=20-x$, $0<x<20$`,
+            r`พื้นที่ $A=xy=x(20-x)=20x-x^2$`,
+            r`$A'=20-2x=0$ ⇒ x=10 และ y=10`,
+            r`$A''=-2<0$ และ A เป็นพาราโบลาคว่ำ จึงมากที่สุดในโดเมน`
+          ],
+          "ด้านละ 10 m และพื้นที่สูงสุด 100 m²"
+        )
+      ],
+      "เขียนก่อนว่าต้องการให้ปริมาณใดมากหรือน้อยที่สุด จะไม่เผลอดิฟข้อจำกัดแทน",
+      "ตอบแค่ x=10 ไม่ครบ ถ้าโจทย์ถามทั้งขนาดและพื้นที่สูงสุด"
+    )
+  ]
+);
+
+/* ================= หน้า 7 ================= */
+
+C(
+  7,
+  "ลิมิตและกฎของโลปิตาล",
+  "ตรวจรูปก่อนดิฟ และแปลงให้เป็นเศษส่วน",
+  7,12,4,
+  "ตอบค่าลิมิตหรือระบุว่าไม่มีลิมิต พร้อมแสดงรูปไม่กำหนดและขั้นที่ใช้โลปิตาล หากใช้ ln ต้องแปลงกลับก่อนตอบ",
+  r`\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}`,
+  [
+    T(
+      "รูป 0/0",3,[79],
+      "ตอบค่าลิมิตหลังตรวจว่าเป็นรูป 0/0 จริง",
+      "แทนค่าตรง ๆ แล้วทั้งเศษและส่วนเข้าใกล้ 0",
+      [],
+      [
+        r`ใช้โลปิตาลกับ $0/0$ หรือ $\infty/\infty$ ภายใต้เงื่อนไขทฤษฎีบท`,
+        r`f,g หาอนุพันธ์ได้ในช่วงใกล้จุดเป้าหมาย เว้นจุดเป้าหมายได้; $g'\ne0$ และลิมิตอัตราส่วนอนุพันธ์ต้องมีค่าหรือเป็นอนันต์ที่กำหนดได้`
+      ],
+      [
+        "พิจารณาลิมิตของเศษและส่วนก่อน",
+        "เมื่อเข้าเงื่อนไข ให้ดิฟเศษแยกกับดิฟส่วน",
+        "ประเมินลิมิตใหม่ ถ้ายังเป็นรูปไม่กำหนดจึงพิจารณาทำซ้ำ",
+        "สรุปค่าลิมิตพร้อมระบุขั้นที่ใช้โลปิตาล"
+      ],
+      [
+        E(
+          r`$\lim_{x\to0}\dfrac{e^{2x}-1}{x}$`,
+          [
+            "เศษ → 0 ส่วน → 0",
+            r`ใช้โลปิตาลได้ $\lim_{x\to0}2e^{2x}/1$`
+          ],
+          "ลิมิต = 2"
+        ),
+        E(
+          r`$\lim_{x\to0}\dfrac{1-\cos x}{x^2}$`,
+          [
+            r`รอบแรกเป็น 0/0 ⇒ $\lim\sin x/(2x)$`,
+            r`ยังเป็น 0/0 ⇒ $\lim\cos x/2$`
+          ],
+          "ลิมิต = 1/2"
+        )
+      ],
+      "เขียนรูป 0/0 หรือ ∞/∞ ก่อนใช้ทุกครั้ง จะช่วยกันการใช้ผิดรูป",
+      "ดิฟเศษกับดิฟส่วนแยกกัน ไม่ใช่ใช้กฎอนุพันธ์ผลหาร"
+    ),
+
+    T(
+      "รูป ∞/∞",3,[80],
+      "ตอบค่าลิมิต แม้เศษและส่วนต่างโตไม่จำกัด",
+      "พิจารณาพฤติกรรมเมื่อ x ไปอนันต์ แล้วตรวจว่าเป็นอนันต์หารอนันต์",
+      [],
+      ["ใช้กฎเดิมกับ ∞/∞ และตรวจรูปใหม่ก่อนทำซ้ำทุกครั้ง"],
+      [
+        "ระบุว่าทั้งเศษและส่วนโตเป็นอนันต์",
+        "ดิฟเศษและส่วนทีละรอบ",
+        "หยุดเมื่อคำนวณลิมิตได้"
+      ],
+      [
+        E(
+          r`$\lim_{x\to\infty}x^2/e^x$`,
+          [
+            r`รูป ∞/∞ ⇒ $\lim2x/e^x$`,
+            r`ยังเป็น ∞/∞ ⇒ $\lim2/e^x=0$`
+          ],
+          "ลิมิต = 0"
+        )
+      ],
+      "บางกรณีจัดรูปพหุนามง่ายกว่าใช้โลปิตาล เลือกวิธีที่สั้นและถูกเงื่อนไข",
+      "∞/∞ ไม่ได้เท่ากับ 1 โดยอัตโนมัติ"
+    ),
+
+    T(
+      "รูป 0 × ∞",4,[79,80],
+      "ตอบลิมิตหลังเปลี่ยนผลคูณเป็นอัตราส่วนที่ใช้กฎได้",
+      "ก้อนหนึ่งเข้าใกล้ศูนย์ อีกก้อนโตไม่จำกัด",
+      [],
+      [r`$fg=\frac{f}{1/g}=\frac{g}{1/f}$ เลือกรูปที่เป็น 0/0 หรือ ∞/∞ และดิฟง่าย`],
+      [
+        "เขียนหนึ่งก้อนเป็นส่วนกลับในตัวส่วน",
+        "ตรวจรูปใหม่",
+        "ใช้โลปิตาลและสรุป"
+      ],
+      [
+        E(
+          r`$\lim_{x\to0^+}x\ln x$`,
+          [
+            r`รูป $0\cdot(-\infty)$; เขียนเป็น $\ln x/(1/x)$`,
+            r`เป็น $(-\infty)/\infty$ ⇒ อัตราส่วนอนุพันธ์ $(1/x)/(-1/x^2)=-x$`
+          ],
+          "ลิมิต = 0"
+        )
+      ],
+      "เลือกให้หลังดิฟตัดกันง่าย เช่น ln x กับ 1/x",
+      "ผลคูณยังใช้โลปิตาลโดยตรงไม่ได้",
+      [],
+      "ไม่พบคลิปชื่อ 4-5-3/4-5-4 ในรายการที่ตรวจ ลิงก์นี้เป็นพื้นฐาน 4-5-1/4-5-2 สำหรับใช้หลังแปลงรูป ไม่ได้ยืนยันว่าอธิบายผลคูณโดยตรง"
+    ),
+
+    T(
+      "รูป ∞ − ∞",4,[79,80],
+      "ตอบลิมิตหลังรวมพจน์หรือคูณสังยุค",
+      "สองพจน์โตไม่จำกัด ให้ทำส่วนร่วมหรือคูณสังยุคถ้ามีราก",
+      [],
+      [r`$\sqrt A-\sqrt B=\frac{A-B}{\sqrt A+\sqrt B}$ เมื่อใช้ได้`],
+      [
+        "เลือกส่วนร่วมหรือสังยุคเพื่อตัดรูปไม่กำหนด",
+        "ยุบพจน์แล้วประเมินลิมิตอีกครั้ง",
+        "ใช้โลปิตาลเฉพาะเมื่อรูปใหม่เข้าเงื่อนไขจริง"
+      ],
+      [
+        E(
+          r`$\lim_{x\to\infty}(\sqrt{x^2+x}-x)$`,
+          [
+            r`คูณสังยุคได้ $x/(\sqrt{x^2+x}+x)$`,
+            r`เมื่อ x>0 หารเศษและส่วนด้วย x ได้ $1/(\sqrt{1+1/x}+1)$`
+          ],
+          "ลิมิต = 1/2 โดยไม่จำเป็นต้องใช้โลปิตาล"
+        )
+      ],
+      "จัดรูปแล้วอาจจบได้ทันที ไม่ต้องฝืนใช้โลปิตาลทุกข้อ",
+      "อย่าดิฟสองพจน์ในผลต่างตรง ๆ แล้วถือว่าเป็นลิมิตเดิม",
+      [],
+      "ไม่มีคลิปชื่อ ∞−∞ โดยตรงในรายการที่ตรวจ ใช้ 4-5-1/4-5-2 ประกอบหลังแปลงรูป"
+    ),
+
+    T(
+      "รูป 0⁰",4,[81,82],
+      "ตอบลิมิตของ y หลังหา ln y แล้วแปลงกลับด้วย e",
+      "ฐานเข้าใกล้ 0 ทางด้านบวก และเลขชี้กำลังเข้าใกล้ 0",
+      [],
+      [
+        r`ถ้า $y=u^v>0$ ให้ $\ln y=v\ln u$`,
+        r`ถ้า $\ln y\to L$ แล้ว $y\to e^L$`
+      ],
+      [
+        "กำหนด y เป็นนิพจน์ยกกำลัง",
+        "ใส่ ln เพื่อดึงชี้กำลังลง",
+        "หาลิมิตของ ln y ด้วยการแปลงรูปและโลปิตาลถ้าใช้ได้",
+        "ตอบ e ยกกำลังผลที่ได้"
+      ],
+      [
+        E(
+          r`$\lim_{x\to0^+}x^x$`,
+          [
+            r`$\ln y=x\ln x=\ln x/(1/x)$`,
+            r`โลปิตาลให้ $\lim(-x)=0$`,
+            r`จึง $\ln y\to0$ และ $y\to e^0$`
+          ],
+          "ลิมิต = 1"
+        )
+      ],
+      "โจทย์ยกกำลังมักง่ายขึ้นเมื่อหาลิมิตของ ln",
+      "0⁰ เป็นรูปไม่กำหนดในการหาลิมิต ไม่ใช่แทนค่าแล้วตอบ 1 เสมอ"
+    ),
+
+    T(
+      "รูป 1^∞",4,[81,82],
+      "ตอบ e ยกกำลังลิมิตของลอการิทึม",
+      "ฐานเข้าใกล้ 1 และขนาดของชี้กำลังโตไม่จำกัด",
+      [],
+      [r`$\ln(u^v)=v\ln u$ เมื่อ $u>0$`],
+      [
+        "ตั้ง y แล้วใส่ ln",
+        "เขียนผลคูณเป็นอัตราส่วนที่เข้าเงื่อนไข",
+        "คำนวณลิมิต ln y",
+        "ยก e เพื่อกลับเป็น y"
+      ],
+      [
+        E(
+          r`$\lim_{x\to0}(1+3x)^{1/x}$`,
+          [
+            r`ฐานบวกเมื่อ x ใกล้ 0; $\ln y=\ln(1+3x)/x$`,
+            r`รูป 0/0 ⇒ $\lim[3/(1+3x)]=3$`
+          ],
+          r`ลิมิต = $e^3$`
+        )
+      ],
+      "เลขที่ได้หลังโลปิตาลเป็นลิมิตของ ln y ยังไม่ใช่คำตอบสุดท้าย",
+      "อย่าหยุดตอบ 3 ในตัวอย่างนี้"
+    ),
+
+    T(
+      "รูป ∞⁰",4,[81,82],
+      "ตอบลิมิตของนิพจน์ยกกำลัง โดยตรวจฐานบวกและลิมิต ln y",
+      "ฐานโตเป็นบวกไม่จำกัดและชี้กำลังเข้าใกล้ศูนย์",
+      [],
+      [r`$\ln y=v\ln u$ และแปลงกลับ $y\to e^L$`],
+      [
+        "ตั้ง y และใส่ ln",
+        "จัด ln y ให้เป็นเศษส่วน",
+        "หาลิมิตตามเงื่อนไขโลปิตาล",
+        "แปลงกลับเป็นลิมิตของ y"
+      ],
+      [
+        E(
+          r`$\lim_{x\to\infty}x^{1/x}$`,
+          [
+            r`$\ln y=(\ln x)/x$`,
+            r`รูป ∞/∞ ⇒ $\lim(1/x)/1=0$`
+          ],
+          r`ลิมิต = $e^0=1$`
+        )
+      ],
+      "สามรูป 0⁰, 1^∞, ∞⁰ ใช้โครงเดียวกัน: ln → หาลิมิต → exp",
+      "รูปไม่กำหนดอาจให้คำตอบต่างกัน ต้องทำกระบวนการจริง"
+    )
+  ]
+);
+
+/* ================= หน้า 8 ================= */
+
+C(
+  8,
+  "ปริพันธ์ไม่จำกัดเขต",
+  "มองหาอนุพันธ์ย้อนกลับ และจับคู่ du",
+  8,13,3,
+  r`ตอบเป็นตระกูลปฏิยานุพันธ์ $F(x)+C$ พร้อมตรวจด้วยการหาอนุพันธ์ย้อนกลับ`,
+  r`\int u^n\,du=\frac{u^{n+1}}{n+1}+C`,
+  [
+    T(
+      "ปริพันธ์พื้นฐานและกฎยกกำลัง",2,[83],
+      "ตอบฟังก์ชันปฏิยานุพันธ์พร้อม +C",
+      "จัดรากและส่วนเป็น x^n ก่อนเพิ่มเลขชี้กำลัง",
+      [
+        r`$\int u^n\,du=\frac{u^{n+1}}{n+1}+C$, $n\ne-1$`,
+        r`$\int du/u=\ln|u|+C$`
+      ],
+      ["ปริพันธ์ของผลบวกแยกพจน์ได้ และค่าคงที่ดึงออกได้"],
+      [
+        "แปลงเป็นรูปยกกำลัง",
+        "เพิ่มเลขชี้กำลัง 1 แล้วหารด้วยเลขชี้กำลังใหม่",
+        "กรณี n=−1 เปลี่ยนไปใช้ ln",
+        "รวมและเติม +C ตัวเดียว"
+      ],
+      [
+        E(
+          r`$\int(3x^2-4x+2)\,dx$`,
+          [
+            r`อินทิเกรตทีละพจน์: $3x^3/3-4x^2/2+2x$`,
+            "เติมค่าคงที่รวม C"
+          ],
+          r`$x^3-2x^2+2x+C$`
+        )
+      ],
+      "ดิฟคำตอบกลับ ถ้าได้โจทย์เดิมจึงตรวจผ่าน",
+      "สูตรยกกำลังใช้ไม่ได้เมื่อ n=−1 เพราะจะหารศูนย์"
+    ),
+
+    T(
+      "การแทนค่า u",3,[84],
+      "ตอบกลับเป็นฟังก์ชันของ x พร้อม +C หลังแทน u",
+      r`มีฟังก์ชันชั้นในและอนุพันธ์ของมันอยู่ใกล้ ๆ เช่น $2x(x^2+1)^5$`,
+      [],
+      [
+        r`ให้ $u=g(x)$ แล้ว $du=g'(x)dx$`,
+        r`$\int f(g(x))g'(x)dx=\int f(u)du$`
+      ],
+      [
+        "เลือกก้อนในเป็น u",
+        "หา du และจัดให้เข้าคู่ส่วนที่เหลือ รวมทั้ง dx",
+        "เปลี่ยนทุกส่วนเป็น u ห้ามมี x ปน",
+        "อินทิเกรตแล้วแทน u กลับ"
+      ],
+      [
+        E(
+          r`$\int(x-1)^{99}\,dx$`,
+          [
+            r`$u=x-1,\ du=dx$`,
+            r`$\int u^{99}du=u^{100}/100+C$`
+          ],
+          r`$(x-1)^{100}/100+C$`,
+          "โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 8"
+        ),
+        E(
+          r`$\int2x(x^2+1)^5\,dx$`,
+          [
+            r`$u=x^2+1,\ du=2x\,dx$`,
+            r`$\int u^5du=u^6/6+C$`
+          ],
+          r`$(x^2+1)^6/6+C$`
+        )
+      ],
+      "มองก้อนในเป็น u แล้วมองส่วนที่เหลือว่าเป็น du ได้หรือยัง",
+      "ห้ามเปลี่ยนแค่ก้อนในแล้วทิ้ง dx เดิมโดยไม่ปรับตัวคูณ"
+    ),
+
+    T(
+      "ปริพันธ์ของตรีโกณมิติ",3,[85],
+      "ตอบปฏิยานุพันธ์พร้อม +C และปรับตัวคูณจากก้อนใน",
+      "จับรูปให้ตรงสูตร sin, cos, sec², csc², sec tan หรือ csc cot",
+      [
+        r`$\int\sin u\,du=-\cos u+C$; $\int\cos u\,du=\sin u+C$`,
+        r`$\int\sec^2u\,du=\tan u+C$; $\int\csc^2u\,du=-\cot u+C$`,
+        r`$\int\sec u\tan u\,du=\sec u+C$; $\int\csc u\cot u\,du=-\csc u+C$`
+      ],
+      [r`เมื่อ $u=ax+b$ จะมี $dx=du/a$ จึงต้องหาร a`],
+      [
+        "ระบุก้อนใน u",
+        "ตรวจว่ามีอนุพันธ์ก้อนในคูณอยู่หรือไม่",
+        "ปรับสัมประสิทธิ์ให้เป็น du แล้วใช้สูตร",
+        "แทนกลับและดิฟตรวจ"
+      ],
+      [
+        E(
+          r`$\int\cos(3x)\,dx$`,
+          [
+            r`$u=3x,\ du=3dx$ จึง $dx=du/3$`,
+            r`ได้ $(1/3)\int\cos u\,du$`
+          ],
+          r`$\frac13\sin(3x)+C$`
+        ),
+        E(
+          r`$\int x\sec^2(x^2)\,dx$`,
+          [
+            r`$u=x^2,\ du=2x\,dx$`,
+            r`ได้ $(1/2)\int\sec^2u\,du$`
+          ],
+          r`$\frac12\tan(x^2)+C$`
+        )
+      ],
+      "ดิฟกลับแล้วได้ตัวคูณเกิน มักเกิดจากลืมหารตัวคูณของก้อนใน",
+      "อย่าสลับเครื่องหมายของปริพันธ์ sin และ csc²"
+    ),
+
+    T(
+      "ปริพันธ์ที่ให้ตรีโกณมิติผกผัน",3,[86],
+      "ตอบ arcsin/arctan/arcsec ตามรูปส่วนและเติม +C",
+      r`ดูความต่างระหว่าง $a^2+u^2$, $\sqrt{a^2-u^2}$ และ $u\sqrt{u^2-a^2}$`,
+      [
+        r`$\int\frac{du}{\sqrt{a^2-u^2}}=\arcsin(u/a)+C$`,
+        r`$\int\frac{du}{a^2+u^2}=\frac1a\arctan(u/a)+C$`,
+        r`$\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\operatorname{arcsec}|u/a|+C$, $a>0$`
+      ],
+      [
+        "อ่าน a จาก a² อย่าเอา a² ไปแทน a",
+        "หากมีการเลื่อนหรือคูณตัวแปร ให้ทำ u-substitution ก่อน"
+      ],
+      [
+        "เทียบตัวส่วนกับสามแม่แบบ",
+        "หา a ซึ่งเป็นรากที่สองของค่าคงที่บวก",
+        "แทนสูตรพร้อมสัมประสิทธิ์และ +C",
+        "ตรวจโดเมนของตัวส่วนและราก"
+      ],
+      [
+        E(
+          r`$\int dx/(x^2+9)$`,
+          [r`$a^2=9$ จึง a=3 ไม่ใช่ 9`,"เทียบสูตร arctan"],
+          r`$\frac13\arctan(x/3)+C$`
+        ),
+        E(
+          r`$\int dx/\sqrt{4-x^2}$`,
+          ["a=2 และรูปส่วนตรงสูตร arcsin"],
+          r`$\arcsin(x/2)+C$ บน $|x|<2$`
+        )
+      ],
+      "รากของ a²−u² → arcsin; บวกกำลังสองไม่มีราก → arctan",
+      "อย่าลืม 1/a หน้าสูตร arctan และ arcsec"
+    ),
+
+    T(
+      "ปริพันธ์ของเลขชี้กำลังและลอการิทึม",3,[87],
+      "ตอบฟังก์ชันเลขชี้กำลังหรือ ln พร้อม +C",
+      "หากเศษเป็นอนุพันธ์ของส่วน ให้ลอง ln ของส่วน",
+      [
+        r`$\int e^u du=e^u+C$`,
+        r`$\int a^u du=a^u/\ln a+C$, $a>0,\ a\ne1$`,
+        r`$\int du/u=\ln|u|+C$`
+      ],
+      [
+        r`$\int g'(x)/g(x)\,dx=\ln|g(x)|+C$ บนช่วงที่ $g\ne0$`
+      ],
+      [
+        "ระบุว่าเป็นเลขชี้กำลังหรือเศษส่วนแบบดิฟส่วน",
+        "เลือก u และจับคู่ du",
+        "ใช้สูตรพร้อมค่าคงที่ที่ดึงออก",
+        "แทนกลับและเช็กค่าสัมบูรณ์"
+      ],
+      [
+        E(
+          r`$\int e^x/(e^x+4)\,dx$`,
+          [
+            r`$u=e^x+4,\ du=e^xdx$`,
+            r`ได้ $\int du/u=\ln|u|+C$`,
+            r`$e^x+4>0$ จึงตัดค่าสัมบูรณ์ได้`
+          ],
+          r`$\ln(e^x+4)+C$`
+        ),
+        E(
+          r`$\int2^{3x}\,dx$`,
+          [
+            r`$u=3x,\ dx=du/3$`,
+            r`ได้ $(1/3)2^u/\ln2+C$`
+          ],
+          r`$2^{3x}/(3\ln2)+C$`
+        )
+      ],
+      "ดิฟส่วนดู ถ้าเหมือนเศษหรือห่างกันแค่ค่าคงที่ มักใช้ ln ได้",
+      "1/u อินทิเกรตเป็น ln|u| ไม่ใช่กฎยกกำลังทั่วไป"
+    )
+  ]
+);
+
+/* ================= หน้า 9 ================= */
+
+C(
+  9,
+  "ปริพันธ์จำกัดเขต",
+  "คำตอบเป็นค่าแน่นอน: ปลายบนลบปลายล่าง",
+  8,13,3,
+  "ตอบค่าปริพันธ์เป็นจำนวนหรือนิพจน์ค่าคงที่โดยไม่เติม +C และไม่เปลี่ยนเป็นพื้นที่บวกเอง",
+  r`\int_a^bf(x)\,dx=F(b)-F(a)`,
+  [
+    T(
+      "ทฤษฎีบทมูลฐานและการแทนขอบเขต",2,[88],
+      "ตอบค่าปริพันธ์โดยแสดง F(b)−F(a)",
+      "สัญลักษณ์ปริพันธ์มีขอบเขตล่าง a และบน b",
+      [],
+      [
+        r`ถ้า f ต่อเนื่องบน [a,b] และ $F'=f$ แล้ว $\int_a^bf(x)dx=F(b)-F(a)$`
+      ],
+      [
+        "หาปฏิยานุพันธ์ F",
+        "เขียน [F(x)] จาก a ถึง b",
+        "แทนขอบเขตบน แล้วลบค่าที่ขอบเขตล่างทั้งก้อน",
+        "ยุบเป็นค่าคงที่ ไม่ใส่ +C"
+      ],
+      [
+        E(
+          r`$\int_0^2(3x^2-2x)\,dx$`,
+          [
+            r`$F(x)=x^3-x^2$`,
+            r`$[x^3-x^2]_0^2=(8-4)-(0-0)$`
+          ],
+          "ค่าปริพันธ์ = 4"
+        )
+      ],
+      "ใส่วงเล็บเมื่อแทนปลายล่าง เพื่อไม่ให้เครื่องหมายลบตกหล่น",
+      "ค่าคงที่ C หักล้างกันในการลบ จึงไม่ต้องใส่ในคำตอบ"
+    ),
+
+    T(
+      "ปริพันธ์จำกัดเขตด้วยการแทนค่า",3,[84,87,88],
+      "ตอบค่าปริพันธ์โดยเปลี่ยนขอบเขตให้ตรงตัวแปร หรือแทนกลับ x ก่อนใช้ขอบเขตเดิม",
+      "มีขอบเขตพร้อมฟังก์ชันประกอบ เช่นเศษเป็นอนุพันธ์ของส่วน",
+      [],
+      [
+        r`$\int_a^b f(g(x))g'(x)dx=\int_{g(a)}^{g(b)}f(u)du$ เมื่อเข้าเงื่อนไขการแทนค่า`
+      ],
+      [
+        "ตั้ง u และหา du",
+        "คำนวณ u ที่ขอบเขตล่างและขอบเขตบน",
+        "อินทิเกรตในตัวแปร u แล้วใช้ขอบเขต u",
+        "หากแทนกลับเป็น x ให้ใช้ขอบเขต x เดิม อย่าปนกัน"
+      ],
+      [
+        E(
+          r`$\int_{\ln3}^{\ln5}\dfrac{e^x}{e^x+4}\,dx$`,
+          [
+            r`$u=e^x+4,\ du=e^xdx$`,
+            r`เมื่อ $x=\ln3$, u=7; เมื่อ $x=\ln5$, u=9`,
+            r`$\int_7^9du/u=[\ln u]_7^9=\ln9-\ln7$`
+          ],
+          r`$\ln(9/7)$`,
+          "โจทย์ตัวอย่างในแนวข้อสอบ ส่วนที่ 8"
+        ),
+        E(
+          r`$\int_0^1 2x(x^2+1)^2\,dx$`,
+          [
+            r`$u=x^2+1,\ du=2x\,dx$`,
+            "ขอบเขตเปลี่ยนจาก x=0 เป็น u=1 และ x=1 เป็น u=2",
+            r`$\int_1^2u^2du=[u^3/3]_1^2$`
+          ],
+          r`$7/3$`
+        )
+      ],
+      "เปลี่ยนขอบเขตไปพร้อม u จะไม่ต้องแทนกลับ x",
+      "อย่าใช้ ln3 ถึง ln5 กับนิพจน์ที่อินทิเกรตเป็น u แล้ว"
+    ),
+
+    T(
+      "สมบัติและเครื่องหมายของปริพันธ์จำกัดเขต",2,[88],
+      "ตอบค่าปริพันธ์ตามเครื่องหมาย ไม่บังคับคำตอบเป็นบวก",
+      "ขอบเขตกลับด้าน หรือฟังก์ชันติดลบบนช่วง อาจได้ปริพันธ์เป็นลบ",
+      [],
+      [
+        r`$\int_a^a f=0$; $\int_b^a f=-\int_a^b f$`,
+        r`$\int_a^b f+\int_b^c f=\int_a^c f$ เมื่ออินทิเกรตได้`
+      ],
+      [
+        "ตรวจลำดับขอบเขต",
+        "ใช้สมบัติหากช่วยให้สั้นลง หรือหาปฏิยานุพันธ์ตามปกติ",
+        "ตรวจความสมเหตุสมผลของเครื่องหมาย"
+      ],
+      [
+        E(
+          r`$\int_1^0 2x\,dx$`,
+          [
+            r`$[x^2]_1^0=0-1$`,
+            "หรือกลับขอบเขตแล้วเติมเครื่องหมายลบ"
+          ],
+          "ค่าปริพันธ์ = −1"
+        )
+      ],
+      "ปริพันธ์จำกัดเขตเป็นค่ามีเครื่องหมาย ต่างจากโจทย์หาพื้นที่",
+      "แนวสอบระบุไม่ออกการประยุกต์ปริพันธ์หาพื้นที่ จึงไม่รวมโจทย์พื้นที่เป็นบทหลัก"
+    )
+  ]
+);
+
+CH.forEach(c=>{
+  c.topics.forEach((t,i)=>{
+    t.id="page-"+c.n+"-topic-"+(i+1);
+  });
+});
+
+/* =========================================================
+   รายการคลิปจริงจากเพลย์ลิสต์
+   ลำดับ 48–88 รวม 41 คลิป
+========================================================= */
+
+const PLAYLIST_ID="PLQGNJVc2JuVCIoWiAy_3dLyKyNxLCrTjc";
+const PLAYLIST="https://www.youtube.com/playlist?list="+PLAYLIST_ID;
+
+const V=[
+  [48,"qVHxvmOKa-8","3-4, 3-5 อนุพันธ์ ตอน ความต่อเนื่องและอนุพันธ์ + การหาอนุพันธ์พื้นฐาน"],
+  [49,"yAmxqfB5yjA","3-5-2 อนุพันธ์ ตอน การหาอนุพันธ์พื้นฐาน (ตัวอย่างเพิ่มเติม)"],
+  [50,"FaPRg13WHGo","3-6-1 อนุพันธ์ ตอน กฎลูกโซ่ (การหาอนุพันธ์ฟังก์ชันประกอบ) ตอน 1"],
+  [51,"qUN-InCPzZI","3-6-2 อนุพันธ์ ตอน กฎลูกโซ่ (การหาอนุพันธ์ฟังก์ชันประกอบ) ตอน 2"],
+  [52,"MoN7T1a4K0U","3-7-1 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติ 1"],
+  [53,"7Tu1sHBrb_c","3-7-2 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติ 2"],
+  [54,"M30k9VUQIv8","3-8-1 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติผกผัน 1"],
+  [55,"O1BthwZ8Wjc","3-8-2 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติผกผัน 2"],
+  [56,"3CgY3xS6USc","3-9-1 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันเลขชี้กำลังและฟังก์ชันลอการิทึม 1"],
+  [57,"KLIrvBv3Vtg","3-9-2 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันเลขชี้กำลังและฟังก์ชันลอการิทึม 2"],
+  [58,"Rq-eOUqyByQ","3-9-3 อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันเลขชี้กำลังและฟังก์ชันลอการิทึม 3"],
+  [59,"Hd0gJb6pgyI","3-10 อนุพันธ์ ตอน การหาอนุพันธ์โดยใช้ลอการิทึม"],
+  [60,"e7aDTxN_AnY","3-11 อนุพันธ์ ตอน การหาอนุพันธ์ของฟังก์ชันโดยปริยาย"],
+  [61,"M5yTfKcpUEk","3-12 อนุพันธ์ ตอน การหาอนุพันธ์อันดับสูง"],
+  [62,"k_ZuCi_ivSw","3-13 อนุพันธ์ ตอน ผลต่างอนุพัทธ์"],
+  [63,"ot8ktbfYs50","4-6 การประยุกต์ของผลต่างอนุพัทธ์ (สอนต่อจาก 3.13 เพื่อความต่อเนื่องของเนื้อหา)"],
+  [64,"4jmJddFgp-8","4-1-1 อัตราสัมพัทธ์ ตอน 1"],
+  [65,"a8hSP2ywj5I","4-1-2 อัตราสัมพัทธ์ ตอน 2"],
+  [66,"OFK0EcL1Ekc","4-1-3 อัตราสัมพัทธ์ ตอน 3"],
+  [67,"Fug2CtMmLcQ","4-2-1 การวาดกราฟ ตอน 1 แนะนำ+ฟังก์ชันเพิ่มและฟังก์ชันลด"],
+  [68,"AVs0uPxvvJ8","4-2-2 การวาดกราฟ ตอน 2 จุดสูงสุดและต่ำสุดของฟังก์ชัน"],
+  [69,"8ukT5r7giu4","4-2-3 การวาดกราฟ ตอน 3 อนุพันธ์อันดับสองและความเว้าของฟังก์ชัน"],
+  [70,"1WMyLohB-Zk","4-2-4 การวาดกราฟ ตอน 4 การตรวจสอบค่าสูงสุดและต่ำสุดสัมพัทธ์ด้วยอนุพันธ์อันดับสอง"],
+  [71,"ycH_Uz3_7Q8","4-2-5 การวาดกราฟ ตอน 5 ตัวอย่างการวาดกราฟที่ 1"],
+  [72,"BusnFSeBVOU","4-2-6 การวาดกราฟ ตอน 6 ตัวอย่างการวาดกราฟที่ 2"],
+  [73,"wAYyUaPeskg","4-2-7 การวาดกราฟ ตอน 7 ตัวอย่างการวาดกราฟที่ 3"],
+  [74,"6qob9IAq9ww","4-2-8 การวาดกราฟ ตอน 8 เส้นกำกับ"],
+  [75,"aQ-zcN6wJ8o","4-3-1 ปัญหาค่าสุดขีด ตอน 1"],
+  [76,"i8Gk8tjMw8Q","4-3-2 ปัญหาค่าสุดขีด ตอน 2"],
+  [77,"c-YE-ZPBEOk","4-3-3 ปัญหาค่าสุดขีด ตอน 3"],
+  [78,"W_VeP6I9pUQ","4-4 ทฤษฎีบทของโรลล์และทฤษฎีบทค่าเฉลี่ย"],
+  [79,"8iBaVV0VS6Q","4-5-1 กฏของโลปิตาล ตอน 1 (รูปแบบ 0/0)"],
+  [80,"B-1IoDX_DhU","4-5-2 กฏของโลปิตาล ตอน 2 (รูปแบบ infinity/infinity)"],
+  [81,"6_6GCQT53cc","4-5-5 กฏของโลปิตาล ตอน 5 (รูปแบบเกี่ยวกับการยกกำลัง)"],
+  [82,"Lnnm0nd1ei0","4-5-6 กฏของโลปิตาล ตอน 6 (รูปแบบเกี่ยวกับการยกกำลัง ตอนจบ)"],
+  [83,"1dSCcW8GWY4","5-1-1 แนะนำปริพันธ์ และ ปริพันธ์ของ x ยกกำลัง n"],
+  [84,"a-UBO5e4cbI","5-1-2 แนะนำเทคนิคการแทนค่าเพื่อหาปริพันธ์"],
+  [85,"HzWoDbfQYi0","5-1-3 ปริพันธ์ของฟังก์ชันตรีโกณมิติ"],
+  [86,"0EZc9RwWOCo","5-1-4 ปริพันธ์ของฟังก์ชันตรีโกณมิติผกผัน"],
+  [87,"82zYUM4WjIk","5-1-5 ปริพันธ์ของฟังก์ชันชี้กำลังและลอการิทึม"],
+  [88,"v9atMVzlMdU","5-2 ปริพันธ์จำกัดเขต"]
+].map(([index,id,title])=>({
+  index,
+  id,
+  title:"แคลคูลัส 1 บท "+title,
+  section:index===48?"3-4, 3-5":title.match(/^[0-9-]+/)[0],
+  url:"https://www.youtube.com/watch?v="+id+"&list="+PLAYLIST_ID
+}));
+
+/* ================= ใบสูตร ================= */
+
+const F={
+  derivatives:[
+    r`\frac{d}{dx}\sin u=\cos u\,u'`,
+    r`\frac{d}{dx}\cos u=-\sin u\,u'`,
+    r`\frac{d}{dx}\tan u=\sec^2u\,u'`,
+    r`\frac{d}{dx}\sec u=\sec u\tan u\,u'`,
+    r`\frac{d}{dx}\cot u=-\csc^2u\,u'`,
+    r`\frac{d}{dx}\csc u=-\csc u\cot u\,u'`,
+    r`\frac{d}{dx}\arcsin u=\frac{u'}{\sqrt{1-u^2}}\quad(|u|<1)`,
+    r`\frac{d}{dx}\arccos u=-\frac{u'}{\sqrt{1-u^2}}\quad(|u|<1)`,
+    r`\frac{d}{dx}\arctan u=\frac{u'}{1+u^2}`,
+    r`\frac{d}{dx}\operatorname{arccot}u=-\frac{u'}{1+u^2}`,
+    r`\frac{d}{dx}\operatorname{arcsec}u=\frac{u'}{|u|\sqrt{u^2-1}}\quad(|u|>1)`,
+    r`\frac{d}{dx}\operatorname{arccsc}u=-\frac{u'}{|u|\sqrt{u^2-1}}\quad(|u|>1)`,
+    r`\frac{d}{dx}\log_a|u|=\frac{u'}{u\ln a}\quad(a>0,a\ne1,u\ne0)`,
+    r`\frac{d}{dx}a^u=a^u\ln a\,u'\quad(a>0)`,
+    r`\frac{d}{dx}\ln|u|=\frac{u'}u\quad(u\ne0)`,
+    r`\frac{d}{dx}e^u=e^uu'`
+  ],
+  integrals:[
+    r`\int u^n du=\frac{u^{n+1}}{n+1}+C\quad(n\ne-1)`,
+    r`\int\sin u\,du=-\cos u+C`,
+    r`\int\cos u\,du=\sin u+C`,
+    r`\int\sec^2u\,du=\tan u+C`,
+    r`\int\csc^2u\,du=-\cot u+C`,
+    r`\int\sec u\tan u\,du=\sec u+C`,
+    r`\int\csc u\cot u\,du=-\csc u+C`,
+    r`\int\tan u\,du=-\ln|\cos u|+C`,
+    r`\int\cot u\,du=\ln|\sin u|+C`,
+    r`\int\sec u\,du=\ln|\sec u+\tan u|+C`,
+    r`\int\csc u\,du=\ln|\csc u-\cot u|+C`,
+    r`\int\frac{du}{\sqrt{a^2-u^2}}=\arcsin\frac ua+C\quad(a>0)`,
+    r`\int\frac{du}{a^2+u^2}=\frac1a\arctan\frac ua+C\quad(a>0)`,
+    r`\int\frac{du}{u\sqrt{u^2-a^2}}=\frac1a\operatorname{arcsec}\left|\frac ua\right|+C\quad(a>0)`,
+    r`\int e^u du=e^u+C`,
+    r`\int a^u du=\frac{a^u}{\ln a}+C\quad(a>0,a\ne1)`,
+    r`\int\frac1u du=\ln|u|+C`
+  ],
+  memory:[
+    ["กฎพื้นฐาน",r`$(c)'=0,\ (x^n)'=nx^{n-1},\ (af+bg)'=af'+bg'$`],
+    ["ผลคูณ",r`$(uv)'=u'v+uv'$`],
+    ["ผลหาร",r`$(u/v)'=(u'v-uv')/v^2$`],
+    ["ลูกโซ่",r`$(f(g(x)))'=f'(g(x))g'(x)$`],
+    ["ผลต่างอนุพัทธ์",r`$dy=f'(x)dx,\ dx=\Delta x$`],
+    ["ประมาณค่า",r`$f(a+h)\approx f(a)+f'(a)h$`],
+    ["อัตราสัมพัทธ์",r`$\frac d{dt}f(x)=f'(x)\frac{dx}{dt}$`],
+    ["โลปิตาล",r`สำหรับรูป 0/0 หรือ ∞/∞ ตามเงื่อนไข: $\lim f/g=\lim f'/g'$`],
+    ["จำกัดเขต",r`$\int_a^b f(x)dx=F(b)-F(a)$ เมื่อเข้าเงื่อนไข FTC`],
+    ["เรขาคณิต",r`$A_{\rm circle}=\pi r^2,\ V_{\rm sphere}=4\pi r^3/3,\ V_{\rm cone}=\pi r^2h/3$`]
+  ]
+};
+
+/* ================= เนื้อหาเสริม ================= */
+
+const EXTRA=[
+  {
+    title:"การเขียนกราฟจากข้อมูลอนุพันธ์",
+    level:4,
+    clips:[71,72,73],
+    status:"แนวสอบส่วน 6 ระบุไม่ออกการเขียนกราฟ แต่การวิเคราะห์เพิ่ม–ลดและความเว้ายังออก",
+    goal:"วาดกราฟให้สอดคล้องกับจุดตัดแกน ช่วงเพิ่ม–ลด และความเว้า",
+    formula:r`$f'$ ดูเพิ่ม–ลด; $f''$ ดูความเว้า`,
+    steps:[
+      "หาโดเมน จุดตัดแกน และข้อมูลอนุพันธ์",
+      "ทำตารางเครื่องหมายและคำนวณพิกัดสำคัญ",
+      "วางจุดแล้วลากเส้นให้สอดคล้องกับพฤติกรรมทุกช่วง"
+    ],
+    example:r`สำหรับ $f=x^3-3x$: จุดตัดแกน x คือ $-\sqrt3,0,\sqrt3$; สูงสุด $(-1,2)$ ต่ำสุด $(1,-2)$ และเปลี่ยนเว้า $(0,0)$`,
+    tip:"หาค่าพิกัดจากฟังก์ชันเดิม ไม่ใช่จาก f′",
+    practice:"ใช้ข้อมูลในหน้าเว็บ 6 ฝึกอธิบายก่อนวาด ไม่กำหนดเลขข้อใบงานเพิ่มเติม"
+  },
+  {
+    title:"เส้นกำกับ (asymptotes)",
+    level:3,
+    clips:[74],
+    status:"แนวสอบส่วน 6 ระบุไม่ออกการหาสมการเส้นกำกับ",
+    goal:"ตอบสมการเส้นตรง เช่น x=a หรือ y=L",
+    formula:r`แนวดิ่ง: $\lim_{x\to a^\pm}f(x)=\pm\infty$; แนวนอน: $\lim_{x\to\pm\infty}f(x)=L$`,
+    steps:[
+      "ตรวจโดเมนและลิมิตใกล้จุดที่ส่วนเป็นศูนย์",
+      "หาลิมิตที่บวกและลบอนันต์แยกกัน",
+      "สำหรับเส้นกำกับเอียง ใช้การหารพหุนาม หรือหา m=lim f(x)/x และ b=lim(f(x)−mx) เมื่อค่ามีอยู่"
+    ],
+    example:r`$f(x)=2x/(x-1)=2+2/(x-1)$ มีเส้นกำกับดิ่ง $x=1$ และแนวนอน $y=2$`,
+    tip:"ส่วนเป็นศูนย์อาจเป็นรูที่ขจัดได้ ต้องตรวจลิมิตก่อนเรียกว่าเส้นกำกับ",
+    practice:"เก็บเป็นเนื้อหาเสริมตามเพลย์ลิสต์ ไม่เพิ่มเป็นข้อสอบหลัก"
+  },
+  {
+    title:"ทฤษฎีบทของโรลล์และทฤษฎีบทค่าเฉลี่ย",
+    level:3,
+    clips:[78],
+    status:"มีในเพลย์ลิสต์ 4-4 แต่ไม่ได้ระบุเป็นหัวข้อในแนวสอบ 8 ส่วนที่แนบ",
+    goal:"หาค่า c ภายใน (a,b) ที่ตรงเงื่อนไขทฤษฎีบท",
+    formula:r`Rolle: $f'(c)=0$; MVT: $f'(c)=\frac{f(b)-f(a)}{b-a}$`,
+    steps:[
+      "ตรวจว่า f ต่อเนื่องบน [a,b] และหาอนุพันธ์ได้บน (a,b)",
+      "ถ้าใช้ Rolle ต้องมี f(a)=f(b) เพิ่มด้วย",
+      "แก้สมการ f′(c) ตามทฤษฎีบท และเก็บเฉพาะ c ที่อยู่ภายในช่วง"
+    ],
+    example:r`$f(x)=x^2$ บน $[1,3]$ ผ่านเงื่อนไข MVT: $2c=(9-1)/(3-1)=4$ จึง $c=2\in(1,3)$`,
+    tip:"MVT บอกว่ามีอย่างน้อยหนึ่ง c ไม่ได้บอกว่ามีเพียงหนึ่งเสมอ",
+    practice:"ยังไม่มีการอ้างเลขข้อใบงานในหัวข้อนี้"
+  }
+];
+
+/* ================= ซ้อมสอบ 10 ข้อ ================= */
+
+const EX=[
+  {
+    n:1,title:"ผลคูณซ้อนผลหาร",points:8,page:1,
+    q:r`หา $dy/dx$ เมื่อ $y=\dfrac{(2x-1)(x^2+1)}{x+1}$`,
+    answer:r`$y'=\dfrac{4x^3+5x^2-2x+3}{(x+1)^2},\quad x\ne-1$`,
+    steps:[
+      r`ให้ $N=(2x-1)(x^2+1)$ จึง $N'=2(x^2+1)+2x(2x-1)=6x^2-2x+2$`,
+      r`$y'=[N'(x+1)-N]/(x+1)^2$`,
+      r`กระจายเศษได้ $4x^3+5x^2-2x+3$`
+    ],
+    rubric:[
+      ["หา N′ ด้วยผลคูณถูก",3],
+      ["ตั้งกฎผลหารถูก",3],
+      ["จัดรูปและโดเมนถูก",2]
+    ]
+  },
+  {
+    n:2,title:"ลูกโซ่และตรีโกณมิติผกผัน",points:8,page:1,
+    q:r`หาอนุพันธ์ $y=\sin(2x^2)+\arctan(2x)$`,
+    answer:r`$y'=4x\cos(2x^2)+\dfrac2{1+4x^2}$`,
+    steps:[
+      r`พจน์แรกใช้ $(\sin u)'=\cos u\,u'$ กับ $u=2x^2$`,
+      r`พจน์ที่สองใช้ $u'/(1+u^2)$ กับ $u=2x$`,
+      "รวมอนุพันธ์สองพจน์"
+    ],
+    rubric:[
+      ["ดิฟ sin(2x²) พร้อมลูกโซ่ถูก",4],
+      ["ดิฟ arctan(2x) ถูก",4]
+    ]
+  },
+  {
+    n:3,title:"ฐานและเลขชี้กำลังเป็นตัวแปร",points:8,page:2,
+    q:r`หาอนุพันธ์ $y=(x+2)^x$ เมื่อ $x>-2$`,
+    answer:r`$y'=(x+2)^x[\ln(x+2)+x/(x+2)]$`,
+    steps:[
+      r`$\ln y=x\ln(x+2)$`,
+      r`$y'/y=\ln(x+2)+x/(x+2)$`,
+      r`คูณ y และแทน $(x+2)^x$ กลับ`
+    ],
+    rubric:[
+      ["ใช้ ln ดึงชี้กำลัง",2],
+      ["ดิฟโดยผลคูณถูก",4],
+      ["แทน y กลับ",2]
+    ]
+  },
+  {
+    n:4,title:"ปริยายและอนุพันธ์อันดับสอง",points:8,page:3,
+    q:r`จาก $x^2+xy+y^2=3$ จงหา $y'$ และ $y''$ ที่ $(1,1)$`,
+    answer:r`$y'=-1,\quad y''=-2/3$`,
+    steps:[
+      r`$2x+y+xy'+2yy'=0$ แทน (1,1) ได้ $3+3y'=0$`,
+      r`ดิฟสมการทั่วไปต่อ: $2+2y'+2(y')^2+(x+2y)y''=0$`,
+      r`แทน $y'=-1$ และจุด ได้ $2+3y''=0$`
+    ],
+    rubric:[
+      ["สมการอนุพันธ์รอบแรกและ y′ ถูก",3],
+      ["ดิฟรอบสองครบผลคูณและลูกโซ่",3],
+      ["แทนค่าได้ y″ ถูก",2]
+    ]
+  },
+  {
+    n:5,title:"ประมาณค่าด้วยผลต่างอนุพัทธ์",points:8,page:4,
+    q:r`ใช้ผลต่างอนุพัทธ์ประมาณค่า $\sqrt{50}$ โดยเลือกจุดใกล้เคียงที่เหมาะสม`,
+    answer:r`$\sqrt{50}\approx7+1/14=99/14\approx7.07143$`,
+    steps:[
+      r`$f(x)=\sqrt{x},\ a=49,\ \Delta x=1$`,
+      r`$f(49)=7,\ f'(49)=1/14$`,
+      r`แทน $f(a)+f'(a)\Delta x$`
+    ],
+    rubric:[
+      ["เลือก f,a,Δx เหมาะสม",3],
+      ["หาอนุพันธ์และแทนสูตรถูก",3],
+      ["ได้ค่าประมาณและใช้ ≈",2]
+    ]
+  },
+  {
+    n:6,title:"อัตราสัมพัทธ์ของบันได",points:10,page:5,
+    q:"บันไดยาว 13 m ปลายล่างเคลื่อนออกจากผนัง 3 m/s ขณะปลายล่างห่างผนัง 5 m ปลายบนเคลื่อนที่ด้วยอัตราเท่าไร?",
+    answer:r`$dy/dt=-5/4$ m/s หรือปลายบนลดลง 1.25 m/s`,
+    steps:[
+      r`$x^2+y^2=169$ จึง $y=12$ เมื่อ x=5`,
+      r`ดิฟเทียบ t: $2x(dx/dt)+2y(dy/dt)=0$`,
+      r`$2(5)(3)+2(12)(dy/dt)=0$ จึง $dy/dt=-30/24$`
+    ],
+    rubric:[
+      ["ตั้งสมการและหา y",3],
+      ["ดิฟเทียบ t ถูก",3],
+      ["แก้ค่าอัตราถูก",2],
+      ["อธิบายเครื่องหมายและหน่วย",2]
+    ]
+  },
+  {
+    n:7,title:"เพิ่ม–ลด สุดขีด และความเว้า",points:10,page:6,
+    q:r`ให้ $f(x)=x^3-6x^2+9x$ จงหาช่วงเพิ่ม–ลด จุดสุดขีดสัมพัทธ์ ช่วงเว้า และจุดเปลี่ยนเว้า`,
+    answer:r`เพิ่ม $(-\infty,1)\cup(3,\infty)$; ลด $(1,3)$; สูงสุด $(1,4)$; ต่ำสุด $(3,0)$; เว้าลง $(-\infty,2)$; เว้าขึ้น $(2,\infty)$; เปลี่ยนเว้า $(2,2)$`,
+    steps:[
+      r`$f'=3(x-1)(x-3)$ มีเครื่องหมาย +,−,+`,
+      "ที่ x=1 เป็นสูงสุดและ f(1)=4; ที่ x=3 เป็นต่ำสุดและ f(3)=0",
+      r`$f''=6x-12$ ลบเมื่อ x<2 และบวกเมื่อ x>2`,
+      "ที่ x=2 ความเว้าเปลี่ยน และ f(2)=2"
+    ],
+    rubric:[
+      ["อนุพันธ์และช่วงเพิ่ม–ลด",3],
+      ["จุดสุดขีดและชนิด",3],
+      ["ช่วงเว้าและจุดเปลี่ยนเว้า",4]
+    ]
+  },
+  {
+    n:8,title:"ปัญหาพื้นที่มากที่สุด",points:10,page:6,
+    q:"มีรั้ว 60 m ใช้ล้อมแปลงรูปสี่เหลี่ยมผืนผ้า 3 ด้าน โดยอีกด้านติดแม่น้ำไม่ต้องล้อม จงหาขนาดและพื้นที่สูงสุด",
+    answer:"ด้านตั้งฉากแม่น้ำด้านละ 15 m ด้านขนานแม่น้ำ 30 m พื้นที่สูงสุด 450 m²",
+    steps:[
+      r`ให้ x เป็นด้านตั้งฉากแม่น้ำ และ y เป็นด้านขนาน: $2x+y=60$`,
+      r`$A=x(60-2x)=60x-2x^2$, $0<x<30$`,
+      r`$A'=60-4x=0$ ⇒ x=15, y=30`,
+      r`$A''=-4<0$ และกราฟ A คว่ำ จึงได้ค่าสูงสุด`
+    ],
+    rubric:[
+      ["ข้อจำกัดและโดเมน",3],
+      ["เป้าหมายและจุดวิกฤต",3],
+      ["ตรวจว่าสูงสุด",2],
+      ["ขนาด พื้นที่ และหน่วย",2]
+    ]
+  },
+  {
+    n:9,title:"โลปิตาลสองรูป",points:8,page:7,
+    q:r`หา (ก) $\lim_{x\to0}(e^{3x}-1)/x$ และ (ข) $\lim_{x\to0}(1+2x)^{1/x}$`,
+    answer:r`(ก) 3; (ข) $e^2$`,
+    steps:[
+      r`(ก) รูป 0/0 ใช้โลปิตาลได้ $\lim3e^{3x}=3$`,
+      r`(ข) ให้ y เป็นนิพจน์ แล้ว $\ln y=\ln(1+2x)/x$`,
+      r`รูป 0/0 ⇒ $\ln y\to2$ จึง $y\to e^2$`
+    ],
+    rubric:[
+      ["ข้อ (ก) ตรวจรูปและหาค่าถูก",3],
+      ["ข้อ (ข) ใช้ ln และโลปิตาล",3],
+      ["แปลงกลับได้ e²",2]
+    ]
+  },
+  {
+    n:10,title:"ปริพันธ์ทั้งสองชนิด",points:10,page:9,
+    q:r`หา (ก) $\int4x(x^2+2)^3dx$ และ (ข) $\int_0^{\ln2}\dfrac{e^x}{e^x+3}\,dx$`,
+    answer:r`(ก) $\frac12(x^2+2)^4+C$; (ข) $\ln(5/4)$`,
+    steps:[
+      r`(ก) $u=x^2+2$, $du=2xdx$ จึงได้ $2\int u^3du=u^4/2+C$`,
+      r`(ข) $u=e^x+3$, $du=e^xdx$; ขอบเขต u เป็น 4 ถึง 5`,
+      r`$\int_4^5du/u=\ln5-\ln4=\ln(5/4)$`
+    ],
+    rubric:[
+      ["ข้อ (ก) จับ du และสัมประสิทธิ์",3],
+      ["ข้อ (ก) คำตอบพร้อม C",2],
+      ["ข้อ (ข) เปลี่ยนขอบเขตถูก",2],
+      ["ข้อ (ข) คำตอบถูก ไม่เติม C",3]
+    ]
+  }
+];
+
+/* =========================================================
+   ส่วนการทำงานของเว็บ
+========================================================= */
+
+const KEY="calc-nine-copy-v1";
+const tabs=["เข้าใจโจทย์","สูตรที่ใช้","วิธีทำ","ตัวอย่าง","คลิป & ใบงาน"];
+
+let state={
+  done:{},
+  notes:{},
+  scores:{},
+  remaining:5400,
+  end:null
+};
+
+let page=1;
+let topic=0;
+let slide=0;
+let toastTimer;
+let previousFocus;
+
+try{
+  const old=JSON.parse(localStorage.getItem(KEY)||"{}");
+  state={...state,...old};
+  for(const k of ["done","notes","scores"]){
+    if(!state[k]||typeof state[k]!=="object")state[k]={};
+  }
+}catch(e){}
+
+const $=id=>document.getElementById(id);
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g,c=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[c]));
+}
+
+function m(s){
+  return String(s)
+    .split(/(\$[^$]+\$)/g)
+    .map(x=>
+      x.startsWith("$")&&x.endsWith("$")
+        ?'<span class="math">'+esc(x.slice(1,-1))+"</span>"
+        :esc(x)
+    ).join("");
+}
+
+function renderMath(){
+  if(!window.katex)return;
+  document.querySelectorAll(".math:not([data-rendered])").forEach(el=>{
+    katex.render(el.textContent,el,{
+      throwOnError:false,
+      trust:false,
+      strict:"ignore"
+    });
+    el.dataset.rendered="1";
+  });
+}
+
+function stars(n){
+  return `<span class="stars" aria-label="ความยาก ${n} จาก 5">
+    ${"★".repeat(n)}${"☆".repeat(5-n)}
+  </span>`;
+}
+
+function save(){
+  try{
+    localStorage.setItem(KEY,JSON.stringify(state));
+  }catch(e){
+    notify("เบราว์เซอร์นี้ไม่อนุญาตให้บันทึกอัตโนมัติ");
+  }
+}
+
+function notify(s){
+  $("toast").innerHTML='<div class="toast">'+esc(s)+"</div>";
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>$("toast").innerHTML="",3000);
+}
+
+function menu(force){
+  const open=typeof force==="boolean"
+    ?force
+    :!$("sidebar").classList.contains("open");
+
+  $("sidebar").classList.toggle("open",open);
+  $("overlay").classList.toggle("show",open);
+  $("menu-button").setAttribute("aria-expanded",String(open));
+}
+
+function list(a){
+  return '<ol class="steps">'+
+    a.map(x=>"<li>"+m(x)+"</li>").join("")+
+    "</ol>";
+}
+
+function nav(){
+  const count=CH.flatMap(c=>c.topics)
+    .filter(t=>state.done[t.id]).length;
+
+  $("nav").innerHTML=
+    CH.map(c=>`
+      <a class="nav ${page===c.n?"active":""}" href="#page/${c.n}">
+        <small>${String(c.n).padStart(2,"0")}</small>
+        ${esc(c.title)}
+      </a>
+    `).join("")+
+    [
+      ["exam","✎ ซ้อมสอบ 10 ข้อ"],
+      ["formulas","ƒ ใบสูตร & สูตรต้องจำ"],
+      ["videos","▷ คลิปทั้งหมด"],
+      ["sources","↗ ขอบเขตและแหล่งข้อมูล"]
+    ].map(([k,t])=>`
+      <a class="nav ${page===k?"active":""}" href="#${k}">${t}</a>
+    `).join("");
+
+  $("progress-text").textContent=`${count} / 38 หัวข้อที่อ่านแล้ว`;
+  $("progress").value=count;
+}
+
+function mark(id,value){
+  state.done[id]=value;
+  save();
+  nav();
+}
+
+function footer(){
+  return `
+    <div class="footer">
+      CALC / 9 · ดาวเป็นระดับความยากสำหรับวางแผนอ่าน
+      ไม่ใช่คะแนนของอาจารย์<br>
+      เลขหน้า 1–9 เป็นหน้าเว็บที่จัดจากแนวสอบ 8 ส่วน ·
+      YouTube และการแสดงสูตรสวยงามต้องใช้อินเทอร์เน็ต
+    </div>
+  `;
+}
+
+function videos(ids){
+  return ids.map(i=>{
+    const v=V.find(x=>x.index===i);
+    return `
+      <div class="video">
+        <a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">
+          ▶ ${esc(v.title)}
+          <small>ลำดับ ${v.index} · หัวข้อ ${esc(v.section)}</small>
+        </a>
+        <button class="btn" onclick="openVideo(${i})">เล่น</button>
+      </div>
+    `;
+  }).join("");
+}
+
+function worksheet(c,t){
+  if(c.worksheet===9&&t.practice.length){
+    return `
+      <div class="box green">
+        <div class="label">ตรวจจากต้นฉบับใบงาน 9 แล้ว</div>
+        ${t.practice.map(p=>`
+          <p>
+            <strong>หน้า ${p.page} ข้อ ${esc(p.q)}</strong><br>
+            ${m(p.detail)}
+          </p>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  return `
+    <div class="box orange">
+      <div class="label">ใบงาน ${c.worksheet} · ยังรอต้นฉบับ</div>
+      <p>
+        แนวสอบเชื่อมเรื่องนี้กับใบงาน ${c.worksheet}
+        แต่ยังไม่มีไฟล์ให้ตรวจ จึงยังระบุเลขหน้าและเลขข้อไม่ได้
+        ตัวอย่างในเว็บไม่ใช่เลขข้อที่สมมติขึ้นจากใบงาน
+      </p>
+    </div>
+  `;
+}
+
+function example(e,i){
+  return `
+    <article class="example">
+      <div class="small muted">
+        ตัวอย่าง ${i+1} · ${esc(e.source)}
+      </div>
+      <div class="question">${m(e.q)}</div>
+      ${list(e.steps)}
+      <div class="answer">
+        <div class="label">คำตอบที่ต้องการ</div>
+        ${m(e.answer)}
+      </div>
+    </article>
+  `;
+}
+
+function formulas(t){
+  return `
+    <div class="grid">
+      <div class="box green">
+        <div class="label">มีในใบสูตรที่แนบ</div>
+        ${
+          t.given.length
+            ?t.given.map(x=>"<p>"+m(x)+"</p>").join("")
+            :"<p>กฎหลักของหัวข้อนี้ไม่ปรากฏในรายการใบสูตร ใช้สูตรพื้นฐานที่แจกประกอบตามโจทย์</p>"
+        }
+      </div>
+      <div class="box orange">
+        <div class="label">ไม่พบในรายการใบสูตร · ควรจำ</div>
+        ${t.memory.map(x=>"<p>"+m(x)+"</p>").join("")}
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:15px">
+      เทียบกับรายการสูตรในภาพที่แนบ
+      ไม่ได้ยืนยันว่าจะไม่มีสูตรเพิ่มเติมในตัวโจทย์จริง
+    </p>
+  `;
+}
+
+function slideContent(c,t,k){
+  if(k===0){
+    return `
+      <h3>โจทย์ต้องการอะไร?</h3>
+      <div class="box green">
+        <div class="label">วิธีเขียนคำตอบ</div>${m(t.goal)}
+      </div>
+      <div class="box">
+        <div class="label">วิธีสังเกตโจทย์</div>${m(t.spot)}
+      </div>
+      <div class="grid">
+        <div class="box blue">
+          <div class="label">เคล็ดลับ</div>${m(t.tip)}
+        </div>
+        <div class="box orange">
+          <div class="label">จุดที่ต้องระวัง</div>${m(t.pitfall)}
+        </div>
+      </div>
+    `;
+  }
+
+  if(k===1)return formulas(t);
+
+  if(k===2){
+    return `
+      <h3>ทำทีละขั้น</h3>
+      ${list(t.steps)}
+      <div class="box green">
+        <div class="label">จำวิธีสั้น ๆ</div>${m(t.tip)}
+      </div>
+      <div class="box orange">${m(t.pitfall)}</div>
+    `;
+  }
+
+  if(k===3)return t.examples.map(example).join("");
+
+  return `
+    <h3>คลิปที่เกี่ยวข้อง</h3>
+    ${videos(t.clips)}
+    ${t.videoNote?'<div class="notice">'+esc(t.videoNote)+"</div>":""}
+    <p class="small muted">
+      จับคู่จากชื่อคลิปและภาพตัวอย่างที่ตรวจได้
+      ยังไม่ได้ตรวจบทพูดครบทุกคลิป
+    </p>
+    <h3>ไปทำใบงานข้อไหน?</h3>
+    ${worksheet(c,t)}
+  `;
+}
+
+function selectTopic(i){
+  topic=i;
+  slide=0;
+  lesson();
+}
+
+function selectSlide(i){
+  slide=Math.max(0,Math.min(4,i));
+
+  const c=CH[page-1];
+  const t=c.topics[topic];
+
+  $("tabs").innerHTML=tabs.map((x,j)=>`
+    <button class="tab ${slide===j?"active":""}"
+            aria-pressed="${slide===j}"
+            onclick="selectSlide(${j})">
+      ${j+1}. ${x}
+    </button>
+  `).join("");
+
+  $("slide").innerHTML=slideContent(c,t,slide);
+
+  $("pager").innerHTML=`
+    <button class="btn"
+            onclick="selectSlide(${slide-1})"
+            ${slide===0?"disabled":""}>← ย้อนกลับ</button>
+    <span class="small">${slide+1} / 5</span>
+    ${
+      slide<4
+        ?`<button class="btn primary" onclick="selectSlide(${slide+1})">
+            ${tabs[slide+1]} →
+          </button>`
+        :`<button class="btn primary" onclick="nextTopic()">
+            ${page===9&&topic===c.topics.length-1?"ไปซ้อมสอบ":"หัวข้อถัดไป"} →
+          </button>`
+    }
+  `;
+
+  renderMath();
+}
+
+function nextTopic(){
+  if(topic<CH[page-1].topics.length-1){
+    selectTopic(topic+1);
+  }else{
+    location.hash=page<9?"page/"+(page+1):"exam";
+  }
+}
+
+function lesson(){
+  const c=CH[page-1];
+  const t=c.topics[topic];
+
+  $("topics").innerHTML=c.topics.map((x,i)=>`
+    <button class="tab ${i===topic?"active":""}"
+            onclick="selectTopic(${i})">
+      ${i+1}. ${esc(x.title)}
+    </button>
+  `).join("");
+
+  $("lesson-head").innerHTML=`
+    <div>
+      <div class="eyebrow">หัวข้อย่อย ${page}.${topic+1}</div>
+      <h2>${esc(t.title)}</h2>
+      ${stars(t.level)}
+    </div>
+    <label class="done">
+      <input type="checkbox"
+             ${state.done[t.id]?"checked":""}
+             onchange="mark('${t.id}',this.checked)">
+      อ่านแล้ว
+    </label>
+  `;
+
+  $("resources").innerHTML=`
+    <div class="card">
+      <h3>คลิปประจำหัวข้อ</h3>
+      ${videos(t.clips)}
+    </div>
+    <div class="card">
+      <h3>ฝึกต่อในใบงาน ${c.worksheet}</h3>
+      ${worksheet(c,t)}
+    </div>
+  `;
+
+  selectSlide(slide);
+}
+
+function chapter(n){
+  const c=CH[n-1];
+
+  $("app").innerHTML=`
+    <div class="hero">
+      <div class="number">
+        ${String(n).padStart(2,"0")}
+        <span class="small">/ 09</span>
+      </div>
+      <h1>${esc(c.title)}</h1>
+      <p class="muted">${esc(c.subtitle)}</p>
+      <div class="chips">
+        <span class="chip">แนวสอบส่วน ${c.part}</span>
+        <span class="chip">ใบงาน ${c.worksheet}</span>
+        <span class="chip">${c.topics.length} หัวข้อ</span>
+        <span class="chip">${stars(c.level)}</span>
+      </div>
+    </div>
+
+    ${
+      n===1
+        ?`<div class="notice">
+            แนวสอบระบุข้อสอบ 9 หน้า แต่แบ่งเนื้อหาเป็น 8 ส่วน
+            เว็บนี้จึงแยกปริพันธ์เป็นหน้า 8–9
+            ไม่ใช่การยืนยันหัวข้อบนข้อสอบจริงแต่ละหน้า
+          </div>`
+        :""
+    }
+
+    ${
+      n===8||n===9
+        ?`<div class="notice">
+            หน้าเว็บ 8 และ 9 อยู่ในแนวสอบส่วนที่ 8 เดียวกัน
+            แนวสอบระบุไม่ออกการประยุกต์ปริพันธ์หาพื้นที่
+          </div>`
+        :""
+    }
+
+    <div class="card">
+      <div class="eyebrow">เป้าหมายบทเรียน</div>
+      <p>${m(c.goal)}</p>
+      <div class="box green">${m("$"+c.formula+"$")}</div>
+      <button class="btn" onclick="printChapter(${n})">
+        พิมพ์ / บันทึกบทนี้เป็น PDF
+      </button>
+    </div>
+
+    <div class="topics" id="topics"></div>
+
+    <section class="card">
+      <div class="lesson-head" id="lesson-head"></div>
+      <div class="tabs" id="tabs"></div>
+      <div class="slide" id="slide"></div>
+      <div class="pager" id="pager"></div>
+    </section>
+
+    <div class="grid" id="resources"></div>
+
+    <div class="row" style="justify-content:space-between">
+      <a class="btn" href="${n>1?"#page/"+(n-1):"#sources"}">
+        ← ${n>1?"หน้า "+(n-1):"ขอบเขตสอบ"}
+      </a>
+      <a class="btn primary" href="${n<9?"#page/"+(n+1):"#exam"}">
+        ${n<9?"หน้า "+(n+1):"ไปซ้อมสอบ"} →
+      </a>
+    </div>
+    ${footer()}
+  `;
+
+  lesson();
+}
+
+function formulaPage(){
+  $("app").innerHTML=`
+    <div class="eyebrow">FORMULA COMPANION</div>
+    <h1>ใบสูตร & สูตรที่ควรจำ</h1>
+    <div class="notice">
+      สีเขียวคือรายการที่ปรากฏในใบสูตรแนบ
+      สีส้มคือกฎที่ไม่พบในรายการและควรจำ
+      เงื่อนไขโดเมนต้องตรวจตามโจทย์ด้วย
+    </div>
+
+    <div class="grid">
+      ${
+        [
+          ["derivatives","16 สูตรอนุพันธ์"],
+          ["integrals","17 สูตรปริพันธ์"]
+        ].map(([k,title])=>`
+          <section class="card green">
+            <h2>${title}</h2>
+            <ol>
+              ${F[k].map(f=>"<li>"+m("$"+f+"$")+"</li>").join("")}
+            </ol>
+          </section>
+        `).join("")
+      }
+    </div>
+
+    <section class="card orange">
+      <h2>ควรจำเพิ่มเติม</h2>
+      ${F.memory.map(([title,f])=>`
+        <div class="box">
+          <strong>${esc(title)}</strong>
+          <p>${m(f)}</p>
+        </div>
+      `).join("")}
+    </section>
+
+    ${footer()}
+  `;
+}
+
+function mapping(v){
+  return CH.filter(c=>c.topics.some(t=>t.clips.includes(v.index)));
+}
+
+function videoPage(){
+  $("app").innerHTML=`
+    <h1>คลิปตั้งแต่ 3.5 ถึงบทสุดท้าย</h1>
+    <p>41 คลิป ลำดับ 48–88 ในเพลย์ลิสต์ Algoritmatics</p>
+    <a class="btn primary" href="${PLAYLIST}"
+       target="_blank" rel="noopener noreferrer">
+      เปิดเพลย์ลิสต์ ↗
+    </a>
+
+    <div class="notice">
+      ตรวจรายชื่อ ลำดับ และ URL จริงแล้ว
+      แต่ยังไม่ได้ตรวจบทพูดครบทุกคลิป
+      ไม่พบคลิปชื่อ 4-5-3 และ 4-5-4 ในรายการที่เข้าถึงได้
+    </div>
+
+    <input class="search"
+           aria-label="ค้นคลิป"
+           placeholder="ค้นเรื่องหรือเลขหัวข้อ เช่น 3-11"
+           oninput="filterVideos(this.value)">
+
+    <div id="video-results"></div>
+
+    <h2>เนื้อหาเสริมในเพลย์ลิสต์</h2>
+    ${EXTRA.map(x=>`
+      <section class="card">
+        <h3>${esc(x.title)} ${stars(x.level)}</h3>
+        <div class="notice">${esc(x.status)}</div>
+        <p><strong>คำตอบที่ต้องการ:</strong> ${m(x.goal)}</p>
+        <div class="box green">${m(x.formula)}</div>
+        ${list(x.steps)}
+        <div class="answer">${m(x.example)}</div>
+        <p><strong>เคล็ดลับ:</strong> ${esc(x.tip)}</p>
+        <p class="small muted">${esc(x.practice)}</p>
+        ${videos(x.clips)}
+      </section>
+    `).join("")}
+    ${footer()}
+  `;
+
+  filterVideos("");
+}
+
+function filterVideos(q){
+  q=q.toLowerCase().trim();
+
+  const found=V.filter(v=>
+    (v.title+" "+v.index+" "+v.section).toLowerCase().includes(q)
+  );
+
+  $("video-results").innerHTML=
+    `<p class="small muted">พบ ${found.length} / 41 คลิป</p>`+
+    found.map(v=>{
+      const chapters=mapping(v);
+      const w=[...new Set(chapters.map(c=>c.worksheet))];
+
+      let noteText;
+      if(v.index===74){
+        noteText="เส้นกำกับ: แนวสอบระบุไม่ออก";
+      }else if(v.index===78){
+        noteText="Rolle/MVT: ไม่ได้ระบุในแนวสอบ";
+      }else{
+        noteText="ใบงาน "+w.join(", ")+
+          (w.includes(9)
+            ?" — ดูเลขหน้าและข้อในบท 3"
+            :" — ยังยืนยันเลขหน้า/ข้อไม่ได้");
+      }
+
+      return `
+        <div class="card">
+          ${videos([v.index])}
+          <div class="row">
+            ${chapters.map(c=>`
+              <a class="btn" href="#page/${c.n}">หน้าเว็บ ${c.n}</a>
+            `).join("")}
+          </div>
+          <p class="small muted">${esc(noteText)}</p>
+        </div>
+      `;
+    }).join("");
+}
+
+function sourcesPage(){
+  $("app").innerHTML=`
+    <h1>ขอบเขตและแหล่งข้อมูล</h1>
+
+    <section class="card">
+      <h2>8 ส่วนในแนวสอบ → 9 หน้าเว็บ</h2>
+      <p>
+        ข้อสอบจริงระบุ 9 หน้า ไม่รวมปก คะแนนเต็ม 88
+        และคิดคะแนนด้วย min(40, คะแนนที่ได้/2)
+        เอกสารไม่ได้จับคู่หัวข้อกับเลขหน้าข้อสอบจริง
+      </p>
+      <div class="scroll">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>หน้าเว็บ</th><th>เรื่อง</th>
+              <th>ส่วนแนวสอบ</th><th>ใบงาน</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${CH.map(c=>`
+              <tr>
+                <td>${c.n}</td>
+                <td><a href="#page/${c.n}">${esc(c.title)}</a></td>
+                <td>${c.part}</td>
+                <td>${c.worksheet}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>สถานะการตรวจข้อมูล</h2>
+      <ul>
+        <li>ตรวจภาพแนวสอบครบ 4 หน้า และรายการสูตรที่ให้</li>
+        <li>มีต้นฉบับใบงาน 9 ฉบับ 1/69 ครบ 4 หน้า จึงยืนยันเลขข้อได้</li>
+        <li>ยังไม่มีต้นฉบับใบงาน 7, 8, 10, 11, 12, 13 จึงไม่เดาเลขหน้า/ข้อ</li>
+        <li>
+          จับคู่คลิปจากชื่อในเพลย์ลิสต์และภาพตัวอย่างที่อ่านได้
+          ยังไม่ได้ตรวจบทพูดครบทั้ง 41 คลิป
+        </li>
+        <li>
+          ไม่พบซอร์สเว็บเดิมที่เข้าถึงได้
+          เวอร์ชันนี้สร้างตามคุณสมบัติที่ขอ
+        </li>
+        <li>
+          โค้ดฉบับข้อความไม่ฝังไฟล์ PDF และรูปแนวสอบต้นฉบับไว้ใน HTML
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>ใบงาน 9 ที่ตรวจแล้ว</h2>
+      <ul>
+        <li>หน้า 1 ข้อ 1(1)–1(3): ปริยาย — คลิป 3-11</li>
+        <li>หน้า 2 ข้อ 2–3: ปริยาย ณ จุด — คลิป 3-11</li>
+        <li>หน้า 3 ข้อ 4(1)–4(2): อันดับ 3 — คลิป 3-12</li>
+        <li>หน้า 3 ข้อ 4(3): อันดับ 4 ของ e^(2x) cos x — คลิป 3-12</li>
+        <li>หน้า 4 ข้อ 5: อันดับ 3 โดยปริยาย ณ (1,1) — คลิป 3-11 และ 3-12</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>สิ่งที่แนวสอบระบุไม่ออก</h2>
+      <ul>
+        <li>
+          การเขียนกราฟและหาสมการเส้นกำกับ
+          แต่การวิเคราะห์เพิ่ม–ลด สุดขีด และความเว้ายังออก
+        </li>
+        <li>การประยุกต์ปริพันธ์หาพื้นที่ใต้กราฟและระหว่างกราฟ</li>
+      </ul>
+      <p>
+        Rolle/MVT อยู่ในเพลย์ลิสต์แต่ไม่ได้ระบุเป็นหัวข้อในแนวสอบ
+        จึงเก็บในส่วนเสริม
+      </p>
+      <p>
+        ดาวความยาก เวลา 90 นาที และคะแนนย่อยในซ้อมสอบ
+        เป็นการออกแบบสำหรับฝึก ไม่ใช่ข้อมูลหรือเกณฑ์ย่อยจากอาจารย์
+      </p>
+    </section>
+
+    ${footer()}
+  `;
+}
+
+function examPage(){
+  $("app").innerHTML=`
+    <h1>ซ้อมสอบ 10 ข้อ</h1>
+    <p>โจทย์แต่งใหม่ · 88 คะแนนสำหรับฝึก · เวลาแนะนำ 90 นาที</p>
+
+    <div class="notice">
+      เขียนวิธีทำก่อนเปิดเฉลย แล้วประเมินตนเองตามเกณฑ์
+      ระบบไม่ตัดสินความสมมูลของสมการอัตโนมัติ
+      ชุดเดียวไม่ได้ครอบคลุมทุกหัวข้อย่อย
+    </div>
+
+    <div class="exam-toolbar row">
+      <span class="timer" id="timer"></span>
+      <button class="btn primary" id="timer-button"
+              onclick="toggleTimer()"></button>
+      <button class="btn" onclick="resetTimer()">ตั้งเวลาใหม่</button>
+      <button class="btn" onclick="printExam()">พิมพ์โจทย์</button>
+    </div>
+
+    <div class="row">
+      <div class="metric">
+        คะแนนประเมิน<strong id="total"></strong>
+      </div>
+      <div class="metric">
+        คะแนนแปลง<strong id="scaled"></strong>
+      </div>
+      <div class="metric">
+        ประเมินแล้ว<strong id="graded"></strong>
+      </div>
+    </div>
+
+    ${EX.map(e=>`
+      <article class="card">
+        <div class="row" style="justify-content:space-between">
+          <h3>${e.n}. ${esc(e.title)}</h3>
+          <span class="chip">${e.points} คะแนน</span>
+        </div>
+
+        <div class="question">${m(e.q)}</div>
+
+        <label class="small" for="note-${e.n}">
+          วิธีทำ / คำตอบที่จดไว้
+        </label>
+        <textarea
+          id="note-${e.n}"
+          oninput="note(${e.n},this.value)"
+          placeholder="เขียนวิธีทำ หรือทำบนกระดาษแล้วจดคำตอบไว้ที่นี่"
+        >${esc(state.notes[e.n]||"")}</textarea>
+
+        <details>
+          <summary>เปิดเฉลยและเกณฑ์ให้คะแนน</summary>
+          ${list(e.steps)}
+          <div class="answer">${m(e.answer)}</div>
+
+          ${e.rubric.map(([s,p])=>`
+            <div class="rubric">
+              <span>${esc(s)}</span><span>${p} คะแนน</span>
+            </div>
+          `).join("")}
+
+          <div class="row" style="margin-top:15px">
+            <label for="score-${e.n}">คะแนนที่ให้ตนเอง</label>
+            <select id="score-${e.n}"
+                    onchange="score(${e.n},this.value)">
+              <option value="">ยังไม่ประเมิน</option>
+              ${
+                Array.from({length:e.points+1},(_,i)=>`
+                  <option value="${i}"
+                    ${
+                      state.scores[e.n]!==undefined&&
+                      Number(state.scores[e.n])===i
+                        ?"selected":""
+                    }>
+                    ${i} / ${e.points}
+                  </option>
+                `).join("")
+              }
+            </select>
+            <a class="btn" href="#page/${e.page}">
+              ทบทวนหน้า ${e.page}
+            </a>
+          </div>
+        </details>
+      </article>
+    `).join("")}
+
+    <button class="btn primary" onclick="exportAnswers()">
+      ดาวน์โหลดคำตอบที่จดไว้
+    </button>
+
+    ${footer()}
+  `;
+
+  updateScore();
+  updateTimer();
+}
+
+function note(n,v){
+  state.notes[n]=v;
+  save();
+}
+
+function score(n,v){
+  if(v===""){
+    delete state.scores[n];
+  }else{
+    state.scores[n]=Number(v);
+  }
+  save();
+  updateScore();
+}
+
+function updateScore(){
+  const graded=EX.filter(e=>state.scores[e.n]!==undefined);
+  const total=graded.reduce(
+    (a,e)=>a+Math.max(0,Math.min(e.points,Number(state.scores[e.n])||0)),
+    0
+  );
+
+  if($("total")){
+    $("total").textContent=total+" / 88";
+    $("scaled").textContent=Math.min(40,total/2)+" / 40";
+    $("graded").textContent=graded.length+" / 10";
+  }
+}
+
+function remaining(){
+  return state.end
+    ?Math.max(0,Math.ceil((state.end-Date.now())/1000))
+    :state.remaining;
+}
+
+function updateTimer(){
+  const left=remaining();
+
+  if(state.end&&left===0){
+    state.end=null;
+    state.remaining=0;
+    save();
+    notify("หมดเวลาซ้อมแล้ว ตรวจคำตอบได้เลย");
+  }
+
+  if($("timer")){
+    $("timer").textContent=
+      String(Math.floor(left/60)).padStart(2,"0")+":"+
+      String(left%60).padStart(2,"0");
+
+    $("timer-button").textContent=
+      state.end?"พักเวลา":"เริ่ม / ต่อเวลา";
+  }
+}
+
+function toggleTimer(){
+  if(state.end){
+    state.remaining=remaining();
+    state.end=null;
+  }else{
+    if(state.remaining<=0)state.remaining=5400;
+    state.end=Date.now()+state.remaining*1000;
+  }
+
+  save();
+  updateTimer();
+}
+
+function resetTimer(){
+  state.end=null;
+  state.remaining=5400;
+  save();
+  updateTimer();
+  notify("ตั้งเวลาใหม่แล้ว คำตอบเดิมยังอยู่");
+}
+
+setInterval(updateTimer,1000);
+
+function exportAnswers(){
+  const text=[
+    "CALC / 9 — คำตอบซ้อมสอบ",
+    "",
+    ...EX.flatMap(e=>[
+      "ข้อ "+e.n+" "+e.title,
+      e.q,
+      state.notes[e.n]||"(ยังไม่ได้จดคำตอบ)",
+      "คะแนน: "+(state.scores[e.n]??"ยังไม่ประเมิน")+" / "+e.points,
+      ""
+    ])
+  ].join("\n");
+
+  const url=URL.createObjectURL(
+    new Blob([text],{type:"text/plain;charset=utf-8"})
+  );
+
+  const a=document.createElement("a");
+  a.href=url;
+  a.download="calculus-answers.txt";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  setTimeout(()=>URL.revokeObjectURL(url),10000);
+}
+
+function openVideo(i){
+  const v=V.find(x=>x.index===i);
+  if(!v)return;
+
+  previousFocus=document.activeElement;
+
+  $("modal-root").innerHTML=`
+    <div class="modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="video-title"
+         onclick="if(event.target===this)closeVideo()">
+      <div>
+        <div class="row" style="justify-content:space-between">
+          <h3 id="video-title">${esc(v.title)}</h3>
+          <button class="btn" id="close-video"
+                  onclick="closeVideo()">ปิด ✕</button>
+        </div>
+
+        <iframe
+          title="${esc(v.title)}"
+          src="https://www.youtube-nocookie.com/embed/${v.id}"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+
+        <p class="small">
+          หากเล่นในเว็บไม่ได้
+          <a href="${esc(v.url)}" target="_blank"
+             rel="noopener noreferrer">เปิดบน YouTube ↗</a>
+        </p>
+      </div>
+    </div>
+  `;
+
+  $("close-video").focus();
+}
+
+function closeVideo(){
+  $("modal-root").innerHTML="";
+  previousFocus?.focus();
+  previousFocus=null;
+}
+
+function printChapter(n){
+  const c=CH[n-1];
+
+  $("print-area").innerHTML=`
+    <h1>${n}. ${esc(c.title)}</h1>
+    <p>
+      หน้าเว็บ ${n} · แนวสอบส่วน ${c.part} · ใบงาน ${c.worksheet}
+    </p>
+    <p>${m(c.goal)}</p>
+
+    ${c.topics.map((t,i)=>`
+      <section class="card">
+        <h2>${n}.${i+1} ${esc(t.title)} ${stars(t.level)}</h2>
+        <p>${m(t.goal)}</p>
+        <p>${m(t.spot)}</p>
+
+        ${formulas(t)}
+        ${list(t.steps)}
+        ${t.examples.map(example).join("")}
+
+        <p><strong>เคล็ดลับ:</strong> ${m(t.tip)}</p>
+        <p><strong>ระวัง:</strong> ${m(t.pitfall)}</p>
+
+        ${worksheet(c,t)}
+
+        ${t.clips.map(k=>{
+          const v=V.find(v=>v.index===k);
+          return '<p class="small">'+esc(v.title)+
+            " — https://youtu.be/"+v.id+"</p>";
+        }).join("")}
+      </section>
+    `).join("")}
+  `;
+
+  renderMath();
+  window.print();
+}
+
+function printExam(){
+  $("print-area").innerHTML=`
+    <h1>ซ้อมสอบ 10 ข้อ</h1>
+    <p>โจทย์แต่งใหม่ 88 คะแนน เวลาแนะนำ 90 นาที</p>
+    ${EX.map(e=>`
+      <section style="min-height:220px;break-inside:avoid">
+        <h2>ข้อ ${e.n} (${e.points} คะแนน)</h2>
+        <p>${m(e.q)}</p>
+      </section>
+    `).join("")}
+  `;
+
+  renderMath();
+  window.print();
+}
+
+function route(){
+  closeVideo();
+  menu(false);
+
+  const h=location.hash.replace(/^#/,"").split("/");
+
+  if(!h[0]||h[0]==="page"){
+    page=Math.min(9,Math.max(1,Math.floor(Number(h[1])||1)));
+    topic=0;
+    slide=0;
+    chapter(page);
+  }else if(["exam","videos","formulas","sources"].includes(h[0])){
+    page=h[0];
+    ({
+      exam:examPage,
+      videos:videoPage,
+      formulas:formulaPage,
+      sources:sourcesPage
+    })[page]();
+  }else{
+    page=1;
+    topic=0;
+    slide=0;
+    chapter(1);
+  }
+
+  nav();
+  renderMath();
+  window.scrollTo(0,0);
+
+  document.title="CALC / 9 — "+
+    (
+      typeof page==="number"
+        ?CH[page-1].title
+        :{
+          exam:"ซ้อมสอบ",
+          videos:"คลิปทั้งหมด",
+          formulas:"ใบสูตร",
+          sources:"ขอบเขตสอบ"
+        }[page]
+    );
+}
+
+window.addEventListener("hashchange",route);
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){
+    closeVideo();
+    menu(false);
+  }
+
+  if(e.key==="Tab"&&document.querySelector(".modal")){
+    const items=[
+      ...document.querySelector(".modal")
+        .querySelectorAll("button,a,iframe")
+    ];
+    const first=items[0];
+    const last=items[items.length-1];
+
+    if(e.shiftKey&&document.activeElement===first){
+      e.preventDefault();
+      last.focus();
+    }else if(!e.shiftKey&&document.activeElement===last){
+      e.preventDefault();
+      first.focus();
+    }
+  }
+});
+
+route();
+</script>
+</body>
+</html>
