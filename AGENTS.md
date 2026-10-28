@@ -1,0 +1,11 @@
+# Development rules
+
+Use the existing checkout: cloud tasks are already isolated. Do not create worktrees unless requested. Work one runnable milestone at a time. Do not publish, spend money, or perform destructive repository operations without approval.
+
+Keep all new player-facing text in Thai. Preserve existing gameplay and compatible saves; never substitute fake actions or count duplicate content. Use Vite, vanilla ES modules, seeded deterministic randomness, LocalStorage versioned schemas, Vitest and Playwright. Keep APIs/backends optional and assets local. Use domain modules when implementing mechanics; do not create stubs that pretend those mechanics work.
+
+Run `npm test`, `npm run build`, `npm run test:e2e` after meaningful gameplay changes and `npm run content` after story changes. Use installed Chromium (`CHROMIUM_PATH` override supported). Test the production preview. Never describe skipped checks as passing. Check valid scene destinations, meaningful action effects and save compatibility. Avoid unsafe HTML insertion for user-controlled or saved strings.
+
+Update README.md, GAME_DESIGN.md, ROADMAP.md, CONTENT_MANIFEST.md and CHANGELOG.md as relevant for each completed milestone. The content script measures authored graph entries, not a claim that all are reachable or meaningfully unique. Required totals in the design are future targets until verified. Do not silently change established rules (including original age jumps) while refactoring.
+
+Milestone 2: generateBirth(seed) and immutable birth records are generator version 1; retain reproducibility when evolving generation. Save schema 2 accepts legacy unversioned/version-1 characters without rerolling them. Never reveal potential/lifespan/hidden ability identities in the Birth Record until discovery mechanics exist. Do not confuse generated parents with the target of 100 authored important NPCs. Random births must retain an accessible ending route; the traversal test exercises every available branch for 100 seeds.

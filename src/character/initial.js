@@ -1,0 +1,22 @@
+export const initialCharacter = {
+            name: "อาร์เธอร์",
+            race: "มนุษย์",
+            family: "ชาวนาผู้ยากจน",
+            career: "เด็กทารก (อายุ 0-1 ปี)",
+            age: 0,
+            day: 1,
+            season: "ใบไม้ผลิ",
+            location: "หมู่บ้านรุ่งอรุณ",
+            weather: "แจ่มใส",
+            hp: 100, maxHp: 100,
+            stamina: 100, maxStamina: 100,
+            mana: 50, maxMana: 50,
+            hunger: 100, thirst: 100,
+            stats: { str: 10, dex: 10, con: 10, int: 12, wis: 10, per: 10, luk: 10, cha: 10 },
+            gold: 25,
+            reputation: 0,
+            traits: ["จิตวิญญาณข้ามภพ"],
+            childhoodMemory: { curiosity: 0, caution: 0, ambition: 0, kindness: 0 },
+            unlockedEndings: [],
+            currentSceneId: "scene_birth_0"
+        };
