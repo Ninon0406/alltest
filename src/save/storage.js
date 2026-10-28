@@ -1,3 +1,4 @@
+import { validAppearance } from '../character/appearance.js';
 import { initialCharacter } from '../character/initial.js';
 import { Scenes } from '../data/scenes.js';
 import { generateBirth } from '../character/rebirth.js';
@@ -17,6 +18,7 @@ export function decodeSave(raw) {
     }
   }
   if (state.birth !== undefined && canonical(state.birth) !== canonical(generateBirth(state.birth?.seed).birth)) throw new Error('Invalid birth record');
+  if (state.appearance !== undefined && !validAppearance(state.appearance)) throw new Error('Invalid appearance');
   return state;
 }
 export function readSave(storage) { const raw = storage.getItem('reborn_save'); return raw ? decodeSave(raw) : null; }

@@ -1,9 +1,11 @@
+import { portrait } from './avatar/portrait.js';
 import { rarities, talents } from '../data/birth.js';
 const statLabels = {str:'พละกำลัง',dex:'ความคล่อง',con:'ความอึด',int:'สติปัญญา',wis:'ความเข้าใจ',per:'การสังเกต',luk:'โชค',cha:'เสน่ห์'};
 export function renderBirthRecord(panel, state) {
   const heading=document.createElement('h2'); heading.textContent='บันทึกกำเนิด'; panel.append(heading);
   const picture=document.createElement('img'); picture.src= new URL('../../public/art/cradle.svg', import.meta.url).href;
   picture.alt='เปลทารกใต้แสงดาว'; picture.className='birth-art'; panel.append(picture);
+  const avatar=document.createElement('div'); avatar.className='record-portrait'; avatar.innerHTML=portrait(state); panel.append(avatar);
   const birth=state.birth;
   if (!birth) { const note=document.createElement('p'); note.textContent='ชีวิตจากบันทึกเดิม ไม่มีข้อมูลกำเนิดย้อนหลัง ตัวละครและความคืบหน้ายังคงเดิม'; panel.append(note); return; }
   const lines=[`ชื่อแรกเกิด: ${birth.initial.name}`,`เผ่า: ${birth.initial.race}`,`ฐานะกำเนิด: ${rarities.find(r=>r.id===birth.rarity).label}`,

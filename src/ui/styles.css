@@ -403,3 +403,32 @@ header { background-image: linear-gradient(90deg,#17171ef5,#17171eaa),url('/art/
 .rebirth-screen h2 { color:var(--accent-gold); }
 .rebirth-screen button { margin:20px 0; min-height:48px; }
 #birthStatus { color: #ffcf87; }
+/* Shared illustrated fantasy surfaces */
+:root { --bg-main:#090f1b; --bg-panel:#111c2deF; --bg-card:#1b2a41; --border-color:#536079; --accent-gold:#d9b773; --text-main:#e3e8ee; --text-muted:#aab6c9; }
+body { background:linear-gradient(#070d19b0,#070d19f5),url('/art/moon-village.png') center top / cover fixed; }
+header { background:#0b1424e8; padding:18px 28px; border-bottom:1px solid #b89a5a80; box-shadow:0 8px 40px #0005; }
+header h1 { font-family:serif; letter-spacing:1.5px; }
+.main-nav { background:#0c1525dc; border-color:#d9b77350; }
+button { border-radius:6px; min-height:42px; transition:background .2s, border-color .2s, transform .2s; }
+button:hover:not(:disabled) { transform:translateY(-1px); }
+.container { height:auto; min-height:calc(100vh - 160px); background:#0b1320b8; }
+.sidebar { background:#0d1728dd; border-right:1px solid #b89a5a60; width:320px; }
+.panel-box,.scene-text-box,.choice-card { border-color:#c0a47640; background:linear-gradient(140deg,#1b2b40ef,#101a2bef); box-shadow:0 10px 20px #0002; border-radius:8px; }
+.panel-box { padding:16px; }
+.char-header { flex-direction:column; align-items:center; text-align:center; }
+.char-avatar { width:100%; max-width:220px; height:auto; background:transparent; border:0; border-radius:0; }
+.character-portrait { display:block; width:100%; height:auto; }
+.char-info h4 { color:#edd6a0; font-size:1.3rem; margin-top:12px; }
+.record-portrait { width:220px; margin:20px auto; }
+.scene-banner { background:linear-gradient(0deg,#081225c9,#08122510),url('/art/moon-village.png') center 48% / cover; border:1px solid #c6a26090; min-height:230px; position:relative; }
+.scene-caption { position:absolute; left:24px; bottom:18px; font-family:serif; font-size:1.3rem; color:#f0dfb5; text-shadow:0 2px 6px black; }
+.choice-card { padding:20px; border-left:3px solid #bd995a; }
+.choice-card:hover:not(:disabled) { background:linear-gradient(110deg,#2d3e56,#1e2c40); color:var(--text-main); box-shadow:0 0 22px #d6ad5d18; }
+.choice-title { color:#edcf8c; }
+.shell-panel { border:1px solid #c6a26080; padding:32px; border-radius:12px; background:linear-gradient(145deg,#1a2a40f5,#0c1629f5); box-shadow:0 20px 70px #0008; }
+.rebirth-screen { max-width:760px; margin:50px auto; padding-top:210px; background:linear-gradient(0deg,#0c1629 45%,#0c162930),url('/art/moon-village.png') center top / cover; }
+.rebirth-screen h2 { font-size:2rem; font-family:serif; }
+.rebirth-screen .birth-art { max-width:280px; border:1px solid #b2945d80; }
+.rebirth-screen .primary { padding:14px 36px; background:linear-gradient(#e0c386,#b08b4f); color:#171a21; font-weight:bold; box-shadow:0 4px 20px #d8b76c30; }
+.progress-bar { border-radius:3px; border:1px solid #ffffff20; background:#060e1b; }
+@media(max-width:768px) { .sidebar { width:100%; } .char-header { flex-direction:row; text-align:left; gap:16px; } .char-avatar { width:110px; flex-shrink:0; } .scene-banner { min-height:180px; } .rebirth-screen { margin:20px auto; padding:150px 20px 24px; } .shell-panel { padding:20px; } header { padding:14px; } body { background-attachment:scroll; } }

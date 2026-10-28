@@ -1,3 +1,4 @@
+import { portrait } from './avatar/portrait.js';
 const escapeText = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 import { GameState, replaceState } from '../engine/state.js';
 import { Scenes } from '../data/scenes.js';
@@ -10,6 +11,7 @@ export const Game = {
             },
 
             render() {
+                document.getElementById("charAvatar").innerHTML = portrait(GameState);
                 document.getElementById("displayName").innerText = GameState.name;
                 document.getElementById("displayRace").innerText = `เผ่า: ${GameState.race}`;
                 document.getElementById("displayCareer").innerText = `อาชีพ: ${GameState.career}`;
@@ -51,7 +53,7 @@ export const Game = {
                 const container = document.getElementById("sceneContainer");
 
                 let html = `
-                    <div class="scene-banner">${scene.banner || "🗺️"}</div>
+                    <div class="scene-banner"><span class="scene-caption">เส้นทางแห่งโชคชะตา</span></div>
                     <div class="scene-text-box">
                         <h3 style="color: var(--accent-gold); margin-bottom: 10px;">${scene.title}</h3>
                         <p>${scene.text}</p>

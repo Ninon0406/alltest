@@ -4,7 +4,7 @@ on:
     branches: [main]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 concurrency:
@@ -12,6 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, '[site-build]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,8 +22,20 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - run: npx playwright install --with-deps chromium
       - run: npm run build
+      - run: npm run test:e2e
       - run: npm run content
+      - name: Refresh static files for main branch Pages compatibility
+        run: |
+          node scripts/stage-site.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets art .nojekyll
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh compiled Pages site [site-build]"
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -39,3 +52,19 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Verify live CSS and gameplay
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          for attempt in 1 2 3 4; do
+            node scripts/verify-production.mjs "$SITE_URL" && exit 0
+            sleep 15
+          done
+          exit 1

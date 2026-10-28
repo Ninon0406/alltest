@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REBORN: พงศาวดารผู้เกิดใหม่</title>
+
+</head>
+<body>
+
+    <header>
+        <h1>REBORN: พงศาวดารผู้เกิดใหม่</h1>
+        <div class="header-btns">
+            <button onclick="Game.openCodex()">สารานุกรม</button>
+            <button onclick="Game.openEndings()">ฉากจบที่ปลดล็อก</button>
+            <button onclick="Game.saveGame()">บันทึกเกม</button>
+            <button onclick="Game.restartGame()">เริ่มใหม่</button>
+        </div>
+    </header>
+
+    <nav aria-label="เมนูหลัก" class="main-nav">
+<button data-view="game" aria-current="page">เส้นทางชีวิต</button>
+<button data-view="record">บันทึกตัวละคร</button>
+<button data-view="guide">คู่มือโลก</button>
+</nav>
+<section id="shellPanel" class="shell-panel" hidden></section>
+<div class="container" id="gameView">
+        <!-- Left Dashboard -->
+        <div class="sidebar">
+            <div class="panel-box">
+                <div class="char-header">
+                    <div class="char-avatar" id="charAvatar"></div>
+                    <div class="char-info">
+                        <h4 id="displayName">อาร์เธอร์</h4>
+                        <p id="displayRace">เผ่า: มนุษย์</p>
+                        <p id="displayCareer">อาชีพ: เด็กทารก</p>
+                    </div>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: 5px;">
+                    <span id="displayAge">อายุ: 0 ปี</span>
+                    <span id="displayGold">💰 25 G</span>
+                </div>
+            </div>
+
+            <!-- Vital Bars -->
+            <div class="panel-box">
+                <h3>สถานะร่างกาย</h3>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>พลังชีวิต</span><span id="txtHp">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-hp" id="barHp" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>ความอึด</span><span id="txtStamina">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-stamina" id="barStamina" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>พลังเวท</span><span id="txtMana">50/50</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-mana" id="barMana" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>ความหิว</span><span id="txtHunger">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-hunger" id="barHunger" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>ความกระหาย</span><span id="txtThirst">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-thirst" id="barThirst" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <!-- Core Attributes -->
+            <div class="panel-box">
+                <h3>ค่าคุณลักษณะหลัก</h3>
+                <div class="stats-grid">
+                    <div class="stat-item"><span>พละกำลัง (STR)</span><strong id="statStr">10</strong></div>
+                    <div class="stat-item"><span>ความคล่อง (DEX)</span><strong id="statDex">10</strong></div>
+                    <div class="stat-item"><span>ความอึด (CON)</span><strong id="statCon">10</strong></div>
+                    <div class="stat-item"><span>สติปัญญา (INT)</span><strong id="statInt">12</strong></div>
+                    <div class="stat-item"><span>ความเข้าใจ (WIS)</span><strong id="statWis">10</strong></div>
+                    <div class="stat-item"><span>การสังเกต (PER)</span><strong id="statPer">10</strong></div>
+                    <div class="stat-item"><span>โชค (LUK)</span><strong id="statLuk">10</strong></div>
+                    <div class="stat-item"><span>เสน่ห์ (CHA)</span><strong id="statCha">10</strong></div>
+                </div>
+            </div>
+
+            <!-- Traits & Memory -->
+            <div class="panel-box">
+                <h3>ความทรงจำวัยเด็ก & ลักษณะ</h3>
+                <div id="traitsList" style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 6px;">
+                    - จิตวิญญาณข้ามภพ
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted);" id="txtMemorySummary">ความอยากรู้: 0 | ความรอบคอบ: 0</p>
+            </div>
+        </div>
+
+        <!-- Right Main Area -->
+        <div class="main-content">
+            <div class="world-status-bar">
+                <div class="world-status-item">วัน: <span id="lblDay">1</span></div>
+                <div class="world-status-item">ฤดูกาล: <span id="lblSeason">ใบไม้ผลิ</span></div>
+                <div class="world-status-item">สถานที่: <span id="lblLocation">ห้องนอนเก่าในหมู่บ้านชนบท</span></div>
+                <div class="world-status-item">สภาพอากาศ: <span id="lblWeather">แจ่มใส</span></div>
+            </div>
+
+            <div class="scene-container" id="sceneContainer">
+                <!-- Dynamic Content Rendered Here -->
+            </div>
+
+            <div class="log-box" id="logBox">
+                <div class="log-entry">ยินดีต้อนรับสู่ REBORN: พงศาวดารผู้เกิดใหม่ เริ่มต้นบันทึกชีวิตของคุณ...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modalOverlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="ข้อมูลโลก" id="modalContent" tabindex="-1"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+import { createAppearance } from './appearance.js';
 import { initialCharacter } from './initial.js';
 import { seededRandom } from '../engine/random.js';
 import { names, rarities, races, households, histories, homelands, talents, hiddenAbilities } from '../data/birth.js';
@@ -31,5 +32,6 @@ export function generateBirth(seed) {
     hiddenAbility:weightedPick(random, hiddenAbilities).id,
     initial:{name:state.name,race:state.race,family:state.family,location:state.location,gold:state.gold,stats:{...state.stats},maxHp:state.maxHp,maxMana:state.maxMana,maxStamina:state.maxStamina},
   };
+  state.appearance = createAppearance(state);
   return state;
 }

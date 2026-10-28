@@ -74,3 +74,15 @@ test('replacing an unreadable save requires confirmation', async ({page}) => {
   await expect(page.getByRole('heading',{name:'บันทึกกำเนิด'})).toBeVisible();
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(2);
 });
+test('portrait retains face identity after aging and career changes', async ({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
+ await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+ const eyes=await page.locator('#charAvatar [data-layer="eyes"]').evaluate(node=>node.outerHTML);
+ await page.evaluate(()=>{const save=JSON.parse(localStorage.getItem('reborn_save'));save.state.age=65;save.state.career='นักเวท';save.state.stats.int=20;localStorage.setItem('reborn_save',JSON.stringify(save));});
+ await page.reload();
+ expect(await page.locator('#charAvatar [data-layer="eyes"]').evaluate(node=>node.outerHTML)).toBe(eyes);
+ await expect(page.locator('#charAvatar [data-layer="weapon"] path')).toHaveCount(2);
+ await expect(page.locator('#charAvatar [data-layer="aura"] circle')).toHaveCount(1);
+ const svg=await page.locator('#charAvatar svg').evaluate(node=>new XMLSerializer().serializeToString(node));
+ expect(await page.evaluate(svg=>new DOMParser().parseFromString(svg,'image/svg+xml').querySelector('parsererror')===null,svg)).toBe(true);
+});

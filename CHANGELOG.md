@@ -1,5 +1,9 @@
 # Changelog
 
+## Illustrated UI and publication repair — 2026-10-28
+
+Diagnosed live unstyled HTML: Pages legacy source main:/ was serving Vite source rather than the build. Preserved source shell as app.html and added compiled publication staging for that source, plus production browser verification. Changing Pages source through the integration returned 403, so no setting change is claimed. Added original AI-generated moonlit village art, responsive navy/gold surfaces and deterministic layered SVG portraits; saved face identity remains stable across aging, career changes and reloads. No story records or ending counts were inflated. Full life systems and expanded directive targets remain outstanding.
+
 ## Publication configuration — 2026-10-28
 
 Added GitHub Actions to test, build and deploy the production bundle from main to GitHub Pages. Public publication was authorized by the user; successful deployment must be verified separately from pushing code.
