@@ -32,6 +32,6 @@ Release evidence: source commit 333ab7b serves the expected compiled bundle on G
 - [x] Desktop/mobile age/time controls, family/location/journal/history; optional autoplay stops at decisions, menus, hidden page, reload and failed save.
 - [x] Schema 5 validation and exact pre-v5 backup; older birth/appearance/progression/chapters/endings preserved; detailed mode remains optional.
 - [x] New planner earns all 20 advanced paths, plus the retained 40 detailed career simulations. 50 unit / 36 browser cases, content audit, build/stage and preview verification.
-- [ ] Public v0.5.0 verification (complete only after expected bundle and real browser checks on the published URL).
+- [x] Public v0.5.0 verification: source `8733de6`, expected `app-B3-RqJPU.js` / `app-BIIXxJqj.css` observed; both public scripts passed all four layout widths and genuine annual birth-to-career at 1366/360.
 
 Mortality, ascension, NPC relationships and equipment are not completed by this slice. The annual report list caps at 200, but full long-life history retention still needs work.

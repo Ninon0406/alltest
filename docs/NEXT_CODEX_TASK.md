@@ -56,4 +56,4 @@ No owned equipment, combat/dungeons, full skill trees, authored NPC/mentorship/r
 
 ## Publication evidence
 
-Previous runtime 333ab7b (0.4.0) was publicly verified. Local 0.5.0 verification is complete; record its source commit, expected public bundle and post-deploy browser results here only after actual publication. See CHANGELOG.md for subsequent release evidence.
+Runtime source commit `8733de6` (0.5.0) was pushed to main. GitHub Pages branch deployment completed successfully; public HTML serves `app-B3-RqJPU.js` and `app-BIIXxJqj.css`. Both public verification scripts passed: CSS/assets/annual plan/save reload/chronicle/map/career at 1920/1366/768/360, and actual paced birth-to-12, rare crossroads, one-approach ceremony, profession salary/practice/reload/story at 1366/360. These observed scenarios reported no runtime/request errors. The custom Actions workflow runs additional independent CI/deployment checks; its status is separate from this verified public result.
