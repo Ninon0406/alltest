@@ -1,36 +1,40 @@
-# Continue REBORN after 0.3.0 (Ultimate Directive v3)
+# Continue REBORN after 0.4.0 — Ultimate Directive v3
 
-Read AGENTS.md, docs/REBORN_CODEX_ULTIMATE_DIRECTIVE.md, docs/IMPLEMENTATION_CHECKLIST.md, and the actual current HEAD. Do not recreate the previous implementation or change Pages settings by guessing.
+Read AGENTS.md, ROADMAP.md, docs/REBORN_CODEX_ULTIMATE_DIRECTIVE.md and current HEAD first. Continue the existing game; do not recreate the completed calendar, ceremony or career screens.
 
-## Completed working slice
+## Current playable checkpoint
 
-- P0: replaced 30-click aging and direct age writes with a 360-day calendar; fixed legacy hardcoded age-12 title, overflowing resources, stale trait UI and status/log synchronization. Existing build/stage publication remains intact.
-- P1 core: generator-v2 equal 20 archetypes; uniform birthplace draw conditional on archetype; generator-v1 births remain reproducible. Calendar-backed infancy through age 12, pages, flags, 38 authored annual/household/activity events, 76 choices, birthday chronicles, journal, and preserved legacy chapters.
-- Save schema 3: retains v0/v1/v2 identity/progression and immutable birth record; backs up exact raw save before migration, rejects bad data, repairs projections from authoritative time. Failed writes do not commit actions. Old characters can pause/resume their legacy chapter and enter annual life without resetting stats. Download current/pre-migration saves in the character record. Gallery retained on restart.
-- P3 foundation: 20 connected actual locations across 5 regions, map pan/zoom/current/birth pins/fog, route quotes, age gates, travel time/cost/stamina, slower free walking, local work/rest/study, safe free recovery at every node, stamina gates, bread buy/eat/sell, transaction ledger, replay guards.
+- Existing P0/P1: equal 20-archetype births with frozen generator-v1/v2 compatibility, 360-day calendar, age-appropriate infancy/childhood, annual journal/chronicles, working optional legacy arcs and six endings, persistent layered portrait identity.
+- P2 core: actual seven-stage local awakening at age 12+; deterministic archived 20-family result breakdown; pause/resume at saved venue; legacy chapters pause an unfinished ceremony; no auto-awakening imported adults.
+- 20 actual base families: eligibility/weighted readiness, only eligible choice buttons, searchable codex, free practice, fatigue/focus/recovery and diminishing repetition rewards, wages and ledger, per-family XP/mastery and persistent switching.
+- 60 original career episodes: three/family, age minima 12/13/16. Precision choices improve training, community choices improve wages; both change distinct attributes and XP. One real earned advanced path/family requires age 18+, XP 120, mastery 60, higher attribute and all three episodes. Permanent capacity bonus is once/family; salary and training bonuses require the active promoted family.
+- Schema 4 adds progression and validates it. Exact raw pre-upgrade `reborn_save_backup_before_v4` is retained; `...before_v3` remains untouched. Current and both backup versions are downloadable in the character record. Birth, appearance, time, active life, old chapters, inventory and endings are preserved.
+- P3 foundation retained: 20 connected functional locations in 5 regions, route quotes/costs/time/stamina/age gates, discovery/zoom/pan/birth/current pins, free slower walking and safe rest at every node; public study/work; bread buy/eat/sell and real ledger.
 
-## Precise next task: P2 awakening and meaningful adult progression
+## Precise next slice — P3 inventory/equipment and contextual travel
 
-1. Add data-driven 20 base career families with coefficient/threshold prerequisites. Implement the awakening preparation → gathering → measurement → result → explanation chain at age ~12. Base it on existing stats/memories/archetype/training; do not let the user freely choose results or imply the legacy class selector already implements awakening.
-2. Use `dispatch` / `storyToken` / pure cloned state and commit-before-replace workflow. Apply time with `advanceTime`; never write `age`, `day` or `season` independently. Add schema migrations for new training/mastery/awakening fields.
-3. Expose only eligible careers and recommended reasons, keep a free ordinary job path. Add actual training with diminishing rewards and recovery. Tie initial adult events to results; extend annual authored stories beyond age 11.
-4. Add 2–4 context-specific family/region event groups per archetype. Current archetype hooks are context notes, not 40–80 authored branches. P1 full narrative variation is therefore unfinished.
-5. Expand P3 with conditional travel encounters and real inventories/equipment. Current services only trade bread, offer free shared shelter/study and supervised work; no weapons, housing rental, crafting, price simulation or businesses yet.
+1. Add versioned original item data with IDs, tags, capacity, stack/equipment slots, actual stat modifiers and ownership. Start with a small coherent set serving all career groups instead of padding item counts. Preserve existing bread quantities and all progression. Add schema 5 only with a safe migration/backup if required.
+2. Add atomic shops (before/after gold, town availability/prices, sell below buy where appropriate), equip/unequip and item effects. Keep base stats separate from derived equipment modifiers; do not mutate/accumulate bonuses on re-equip or reroll portraits. Earned career promotion capacity gains are permanent training, not equipment.
+3. Add contextual route encounters tied to edge/location/day/visited/career. Keep opt-out, flee/noncombat and ordinary travel valid. Never teleport, silently skip childhood guarantee events or consume money/time twice. Use revision tokens and clone/reduce/save/commit.
+4. Connect actual equipment slots to existing portrait weapon/accessory layers; do not show weapons the character does not own. Current role clothing is cosmetic; there is no implemented equipment ownership yet.
+5. Add initial travel/market career events that differ by region; richer family-origin branching (2–4 groups/archetype) remains unfinished. Important NPC mentor profiles/relationships are a subsequent slice, not the generic helpers in current narrative.
 
-## Important invariants / files
+## Files and invariants
 
-- `src/engine/time.js`: absoluteDay/birthAbsoluteDay authoritative. `age`, `day`, `season` are compatibility projections. Chronicle opens only on actual birthday crossing. Old import starts with its stored age plus old day offset; no fabricated historical annual entries.
-- `src/data/events/childhood.js`, `src/engine/life.js`: 10 infant clusters (20 authored choices); 2 core events/year ages 1–11, one seeded household interruption/year, daily interval to birthday. Fresh first 10 years guarantee random interruptions; external activities cannot bypass birthday interruption. This guarantee is prospective, not fabricated for imported older lives.
-- Preserve generator 1 tables in `src/data/birth.js` and `generateBirthV1`. Generator 2 archetypes/pool are frozen; `src/data/birth-origin-v2.json` is an immutable generation snapshot, not extra world content. Create generator 3 for altered pools, archetypes or starting-money rules. Do not invalidate saved records when adding map nodes.
-- `src/world/locations.js`: actual canonical map graph. Birth pool does not define additional map nodes. No teleport, no paid route if money insufficient, walking remains a fallback.
-- `src/save/storage.js`: preserve `reborn_save_backup_before_v3`; never overwrite it on another load. Unknown/corrupt saves remain until product confirmation. Export backup before rollback to the pre-v3 release.
-- `app.html` + `src/` are source. Run build, then `node scripts/stage-site.mjs`; root index/assets/art are generated, retain old hashed assets. Pages source remains legacy main:/; integration changing it returned 403 previously.
+- `src/progression/engine.js`: readiness = current development ×85% + archived measurement ×15%; current stats may improve, saved outcome cannot reroll. Free ordinary farmer path after ceremony plus community work before ceremony prevent money/low-stat soft locks.
+- `src/progression/awakening.js`: result version 1 measured once; venue retained across pause/travel; stage index persisted. `state.progression.awakening.step` 0–7; result exists from step 4 onward. Avoid changing archived result schema or coefficient interpretation without versioning.
+- `src/data/careers.js` and `src/data/events/careers.js`: stable 20 IDs and 20 advanced IDs; 3 genuinely different dilemmas each. Records retain XP/mastery/arcStep/perks/advanced status across switches. Do not grant multiple capacity bonuses or reset an earned advanced rank.
+- `src/engine/time.js`: absoluteDay/birthAbsoluteDay authoritative; `age/day/season` are projections. All actions use advanceTime. No fabricated historical chronicles for imports. Boundary tests preserve random childhood interruptions even after outside activities.
+- Birth generator 1 tables (`birth.js`) and generator 2 archetypes / `birth-origin-v2.json` are frozen. New world nodes must not reroll old birthplace records. Use a new generator version for new birth pools.
+- `src/engine/actions.js`: pure cloned dispatch, revision token. `Game.perform` saves successfully before replacing live state and returns success/failure for navigation. New actions must participate in this guard.
+- `src/save/storage.js` and `src/progression/validate.js`: validate references and numeric limits. Do not overwrite previous raw backups. Older releases cannot read schema 4; export all current/newer data before rollback.
+- `app.html` + `src/` are source. Root index/assets/art are generated main:/ Pages compatibility outputs. Build then `node scripts/stage-site.mjs`; retain old published hashed assets. Do not change Pages source by guessing or bypass a 403.
 
-## Known limitations / not a full release
+## Known limits / not a full release
 
-No real awakening, 20-career gameplay, skill tree, active-play timer, lifespan enforcement, extension, ascension, equipment, combat, dungeons, authored important NPC profiles or 100 endings. At 12+, daily activities/map/services continue and the optional preserved story arcs lead to the original six endings. Old major war narrative is opt-in, not forced in the new life loop. Birth catalog has 120 names, 8 histories, 4 talents; do not inflate counts. Portrait is the prior layered SVG foundation, not complete equipment/curse/transform rendering. Detailed 3-column desktop layout, richer region artwork, import UI, archived long-life histories and full performance caps remain future work.
+Only 20 of the target ≥80 advanced/hybrid paths exist. Skill progression is a basic-to-master ladder, not a full combat skill tree. No owned equipment, combat, dungeons, important authored NPC profiles, mentorship system, party/romance, crafting/business simulation, lifespan enforcement/extension, active-play timer, ascension or new endings. Natural lifespan/hidden potential/rare hidden ability identities remain stored but undisclosed. Long-life history capping, import UI, regional art and full 3-column polish remain pending. New default life is relaxed; legacy war arcs are optional.
 
-## Validation and continuation commands
+## Validation / evidence
 
 ```sh
 npm ci
@@ -39,8 +43,11 @@ npm run content
 npm run build
 node scripts/stage-site.mjs
 npm run test:e2e
-npm run preview -- --port 4184
-node scripts/verify-production.mjs http://127.0.0.1:4184/
+npm run preview -- --port 4185
+node scripts/verify-production.mjs http://127.0.0.1:4185/
+node scripts/verify-progression.mjs http://127.0.0.1:4185/
 ```
 
-Local baseline: 28 unit tests (including 100,000 equal-origin draws; 100 annual lives; 100 legacy branch traversals), 20 desktop/mobile E2E cases; content audit separately traverses 100 annual paths and 100 legacy births. Re-run after changes and report real outcomes. Verifier checks 1920/1366/768/360 widths. After an authorized push, verify the live URL rather than claiming success from workflow status alone.
+Current baseline: 40 Vitest cases, 28 desktop/mobile browser cases. Unit tests retain the 100,000-origin distribution audit and now simulate all 20 families under both story policies from actual infancy through awakening to earned age-18+ promotion, salary and save reload (40 completed paths, zero failed assertions). Content audit independently covers 100 legacy births, 100 annual childhood paths and 40 career paths. `verify-progression.mjs` also drives real browser clicks from fresh birth to 12/ceremony/work/training/reload; it does not inject age or unlock outcomes. Basic verifier checks 1920/1366/768/360 widths; full progression browser verification uses 1366/360. After an authorized push, verify the actual public site, not just workflow success.
+
+Authored/reachable union at checkpoint: 120/120 scene-event records, 239/239 meaningful narrative choices, 6/6 endings; 20 base careers, 20 earned advanced paths, 20 functional locations, 120 names, 0 authored important NPCs and 0 functional dungeons. Do not count service/training/UI buttons as extra narrative choices.

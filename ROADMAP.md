@@ -13,7 +13,7 @@
 - [ ] 11. Automated playthroughs and comprehensive content validation.
 - [ ] 12. Release hardening and GitHub Pages deployment configuration.
 
-Milestones 1–2 are complete. Fresh games use weighted random births and a permanent Birth Record. Existing characters and saves are retained. The legacy narrative still uses age jumps and finite endings; annual progression is Milestone 3. One peaceful crisis retreat keeps low-stat births playable. Publication is authorized by the current directive. Pages serves main:/; compiled compatibility files are staged there while Actions also deploys dist.
+Current release is 0.4.0. Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
 
 ## Current priority stages (2026-10-28)
 
@@ -29,3 +29,11 @@ Milestones 1–2 are complete. Fresh games use weighted random births and a perm
 - P3 foundation implemented early as requested: 20 functional graph locations, map controls/discovery, route costs/age gates, free walking fallback, local services/inventory/ledger. Travel encounters, price evolution, equipment, businesses and 150-location scope remain undone.
 - P2 is next: real awakening and eligible career/training progression. Existing legacy class choices are not a substitute for this system.
 - Remaining P4–P8/full-release targets are tracked precisely in docs/NEXT_CODEX_TASK.md. Original historical milestone list above is superseded where time/birth specifications conflict.
+
+## 0.4.0 checkpoint — 2026-10-29
+
+- P2 core completed: seven-stage deterministic awakening with pause/resume/venue, eligible-only careers and searchable codex, 20 actual base families, free training with fatigue/focus/diminishing rewards, jobs/ledger/mastery, 60 career story episodes and one earned advanced path per family.
+- Save schema 4 adds per-family progression and archived awakening without resetting existing life, calendar, appearance, gallery or birth. Both pre-v3 and pre-v4 backups remain available.
+- Simulated 40 complete career paths (20 families × two story policies) from real infancy through awakening to age 18 and promotion. New mechanics have boundary/regression/E2E checks.
+- Still incomplete: richer regional/family stories, at least 60 more advanced/hybrid paths, actual equipment/combat skills, NPC mentors/relationships, travel encounters, crafting/businesses, lifespan/ascension and full-release counts.
+- Next slice: P3 inventory/equipment and contextual travel encounters using existing graph, economy and career IDs. See docs/NEXT_CODEX_TASK.md for exact invariants and acceptance criteria.

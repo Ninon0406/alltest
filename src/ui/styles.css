@@ -469,3 +469,7 @@ summary { cursor:pointer; color:#edcd88; }
  .sidebar.expanded .panel-box { display:block; }
  .sidebar.expanded .panel-box:nth-child(2) .stat-bar-container { display:block; }
 }
+.career-card { background:#132338; border:1px solid #a88d5970; padding:18px; border-radius:8px; margin:14px 0; }
+.career-card h4 { color:#edcf8c; font-size:1.15rem; }
+.career-card button { margin-top:8px; }
+.career-codex input { width:100%; min-height:44px; color:#f2e9d8; background:#0c1828; border:1px solid #ac945b; padding:10px; font-size:1rem; }

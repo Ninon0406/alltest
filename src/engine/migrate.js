@@ -1,8 +1,10 @@
+import { createProgression } from '../progression/state.js';
 import { normalize } from './time.js';
 import { locations, homeLocation } from '../world/locations.js';
 export function upgradeState(input,{fresh=false}={}) {
  const state=structuredClone(input);
  if(!state.time)state.time={birthAbsoluteDay:0,absoluteDay:Math.max(0,Math.floor(state.age))*360+Math.max(0,Math.floor(state.day)-1)%360,lifespanYears:state.birth?.lifespan??90};
+ state.progression??=createProgression();
  state.chronicle??=[];state.journal??=[];state.morale??=100;
  state.life??={mode:fresh?'annual':'legacy',completed:[],randomYears:[],page:0,revision:0};
  state.world??={currentLocationId:state.birth?.locationId??homeLocation(state.location),visited:[],ledger:[],inventory:{}};

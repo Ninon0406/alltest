@@ -1,3 +1,4 @@
+import { renderCareer } from './ui/career-view.js';
 import { renderMap } from './ui/map-view.js';
 import { renderJournal } from './ui/life-view.js';
 import './ui/styles.css';
@@ -43,13 +44,14 @@ document.querySelectorAll('[data-view]').forEach(button => button.addEventListen
     renderBirthRecord(panel, GameState);
     const download=(name,text)=>{const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));const anchor=document.createElement('a');anchor.href=url;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
     const exportButton=document.createElement('button');exportButton.textContent='ดาวน์โหลดเซฟปัจจุบัน';exportButton.onclick=()=>download('reborn-save.json',localStorage.getItem('reborn_save'));panel.append(exportButton);
-    const backup=localStorage.getItem('reborn_save_backup_before_v3');
-    if(backup){const button=document.createElement('button');button.textContent='ดาวน์โหลดเซฟก่อนอัปเกรด';button.onclick=()=>download('reborn-before-v3.json',backup);panel.append(button);}
+    for(const version of [4,3]){const backup=localStorage.getItem(`reborn_save_backup_before_v${version}`);if(backup){const button=document.createElement('button');button.textContent=`ดาวน์โหลดเซฟก่อนรุ่น ${version}`;button.onclick=()=>download(`reborn-before-v${version}.json`,backup);panel.append(button);}}
 
     const title = document.createElement('h2'); title.textContent = 'บันทึกตัวละคร'; panel.append(title);
     for (const text of [`ชื่อ: ${GameState.name}`, `เผ่า: ${GameState.race}`, `ครอบครัว: ${GameState.family}`, `อาชีพ: ${GameState.career}`, `อายุ: ${GameState.age} ปี`, `เงิน: ${GameState.gold} เหรียญ`, `ลักษณะ: ${GameState.traits.join(' • ')}`]) {
       const line = document.createElement('p'); line.textContent = text; panel.append(line);
     }
+  } else if(view==='career') {
+    renderCareer(panel,GameState,action=>{const done=Game.perform(action);if(done&&action.type==='beginAwakening')document.querySelector('[data-view="game"]').click();});
   } else if(view==='map') {
     renderMap(panel,GameState,action=>Game.perform(action),()=>button.click());
   } else if(view==='chronicle') {

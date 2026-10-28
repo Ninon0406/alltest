@@ -1,3 +1,4 @@
+import { getCareer } from '../data/careers.js';
 import { locations,routes } from '../world/locations.js';
 import { revealedLocations,findRoute } from '../world/travel.js';
 import { services,availableServices } from '../world/economy.js';
@@ -36,5 +37,5 @@ export function renderMap(parent,state,perform,refresh){
  if(selected!==current.id){paragraph(parent,quote?`${quote.path.map(id=>locations[id].name).join(' → ')} • ${quote.days} วัน • ${quote.gold} เหรียญ`:'ยังไม่มีเส้นทางที่เปิดให้เดินทางได้ตามวัย');if(quote){actionButton(parent,'เดินทางตามเส้นทางนี้',{type:'travel',destination:selected,token},perform);if(quote.gold>0){const walking=findRoute(state,selected,'walk');actionButton(parent,`เดินเท้าพร้อมผู้ร่วมทาง • ${walking.days} วัน • ฟรี`,{type:'travel',destination:selected,method:'walk',token},perform);}}}
  paragraph(parent,`บริการ ณ ${current.name}`,'h3');
  for(const id of availableServices(state)){const s=services[id];actionButton(parent,`${s.label} • ${s.gold>=0?'+':''}${s.gold} เหรียญ • ${s.days} วัน\n${s.description} • อายุ ${s.minAge} ปีขึ้นไป`,{type:'service',serviceId:id,token},perform);}
- paragraph(parent,'บัญชีรายรับรายจ่ายล่าสุด','h3');for(const e of state.world.ledger.slice(-12).reverse())paragraph(parent,`${e.day} • ${locations[e.location].name} • ${services[e.source]?.label??(e.source==='legacy'?'รายรับรายจ่ายเส้นทางเดิม':'ค่าเดินทาง')} • ${e.amount>=0?'+':''}${e.amount} เหรียญ`);
+ paragraph(parent,'บัญชีรายรับรายจ่ายล่าสุด','h3');for(const e of state.world.ledger.slice(-12).reverse())paragraph(parent,`${e.day} • ${locations[e.location].name} • ${services[e.source]?.label??(e.source.startsWith('career:')?`งาน${getCareer(e.source.slice(7))?.label??'อาชีพ'}`:e.source==='legacy'?'รายรับรายจ่ายเส้นทางเดิม':'ค่าเดินทาง')} • ${e.amount>=0?'+':''}${e.amount} เหรียญ`);
 }

@@ -18,6 +18,7 @@ export function guardExternalTime(state,days){
  if(state.life.mode==='annual' && age<12 && state.time.absoluteDay+days>=state.time.birthAbsoluteDay+(age+1)*360)throw Error('อ่านเรื่องราวประจำปีให้จบก่อนเดินทางข้ามวันเกิด');
 }
 export function travel(state,destination,method='caravan'){
+ const a=state.progression?.awakening;if(a&&a.step>0&&a.step<7&&!a.paused)throw Error('กรุณาทำพิธีให้จบหรือพักพิธีก่อนออกเดินทาง');
  if(!revealedLocations(state).has(destination))throw Error('ยังไม่รู้จักเส้นทางนี้');
  const route=findRoute(state,destination,method);if(!route)throw Error('เส้นทางยังไม่เปิดตามวัย เด็กอายุต่ำกว่า 4 ปีอยู่กับครอบครัว ส่วนข้ามภูมิภาคเปิดเมื่ออายุ 12 ปี');
  if(state.gold<route.gold)throw Error('เงินไม่พอสำหรับเส้นทางนี้');

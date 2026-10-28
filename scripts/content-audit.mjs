@@ -1,3 +1,7 @@
+import { awakeningEvents } from '../src/data/events/awakening.js';
+import { careerEvents } from '../src/data/events/careers.js';
+import { careers } from '../src/data/careers.js';
+import { simulateCareer } from './progression-simulation.mjs';
 import { Scenes } from '../src/data/scenes.js';
 import { allLifeEvents } from '../src/data/events/childhood.js';
 import { GameState,replaceState } from '../src/engine/state.js';
@@ -25,8 +29,10 @@ export function auditContent(){
    if(++steps>100)throw Error('Annual dead end');
   }
  }
- const authoredChoiceIds=[...Object.values(Scenes).flatMap(s=>(s.choices??[]).map(c=>c.id)),...allLifeEvents.flatMap(e=>e.choices.map(c=>c.id))];
- const eventIds=[...Object.keys(Scenes),...allLifeEvents.map(e=>e.id)];
+ for(const c of careers)for(const policy of [0,1]){const result=simulateCareer(c,{policy});for(const id of result.seen.events)events.add(id);for(const id of result.seen.choices)lifeChoices.add(id);}
+ const allEvents=[...allLifeEvents,...awakeningEvents,...careerEvents];
+ const authoredChoiceIds=[...Object.values(Scenes).flatMap(s=>(s.choices??[]).map(c=>c.id)),...allEvents.flatMap(e=>e.choices.map(c=>c.id))];
+ const eventIds=[...Object.keys(Scenes),...allEvents.map(e=>e.id)];
  if(new Set(authoredChoiceIds).size!==authoredChoiceIds.length||new Set(eventIds).size!==eventIds.length)throw Error('Duplicate authored IDs');
- return {authored:{legacyScenes:Object.keys(Scenes).length,annualEvents:allLifeEvents.length,totalScenesEvents:eventIds.length,choices:authoredChoiceIds.length,endings:Object.values(Scenes).filter(s=>s.isEnding).length},reachable:{legacyScenes:reachedScenes.size,legacyChoices:reachedChoices.size,annualEvents:events.size,annualChoices:lifeChoices.size,endings:endings.size},simulation:{legacyBirths:100,annualPlaythroughs:100,annualTargetAge:12}};
+ return {authored:{legacyScenes:Object.keys(Scenes).length,annualEvents:allEvents.length,totalScenesEvents:eventIds.length,choices:authoredChoiceIds.length,endings:Object.values(Scenes).filter(s=>s.isEnding).length},reachable:{legacyScenes:reachedScenes.size,legacyChoices:reachedChoices.size,annualEvents:events.size,annualChoices:lifeChoices.size,endings:endings.size},simulation:{legacyBirths:100,annualPlaythroughs:100,annualTargetAge:12,careerPlaythroughs:40,careerTargetAge:18,baseCareers:careers.length,advancedCareers:careers.length}};
 }

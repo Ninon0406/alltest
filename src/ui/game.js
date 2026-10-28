@@ -18,8 +18,8 @@ export const Game = {
 
             notify(message) { document.getElementById('gameNotice').textContent=message; },
             perform(action) {
-                try { const next=dispatch(GameState,action);writeSave(localStorage,next);replaceState(next);this.notify('บันทึกความคืบหน้าแล้ว');this.render(); }
-                catch(error) { this.notify(['QuotaExceededError','SecurityError'].includes(error.name)?'บันทึกไม่ได้ กรุณาตรวจพื้นที่เก็บข้อมูล ความคืบหน้าเดิมยังอยู่':error.message); }
+                try { const next=dispatch(GameState,action);writeSave(localStorage,next);replaceState(next);this.notify('บันทึกความคืบหน้าแล้ว');this.render();return true; }
+                catch(error) { this.notify(['QuotaExceededError','SecurityError'].includes(error.name)?'บันทึกไม่ได้ กรุณาตรวจพื้นที่เก็บข้อมูล ความคืบหน้าเดิมยังอยู่':error.message);return false; }
             },
             render() {
                 if(!GameState.time)replaceState(upgradeState(GameState));
@@ -29,6 +29,8 @@ export const Game = {
 
                 document.getElementById('traitsList').textContent=GameState.traits.join(' • ');
                 document.getElementById('lblYear').textContent=calendar(GameState).worldYear;
+                document.getElementById('txtFatigue').textContent=`${GameState.progression.fatigue}/100`;
+                document.getElementById('txtFocus').textContent=`${GameState.progression.focus}/100`;
                 document.getElementById('txtMorale').textContent=`${GameState.morale}/100`;
 
                 document.getElementById("charAvatar").innerHTML = portrait(GameState);
@@ -136,7 +138,7 @@ export const Game = {
                 if(!choice || !canChoose(GameState,choice) || token!==storyToken(GameState))return;
                 const previous=GameState,next=structuredClone(GameState);
                 try {
-                    replaceState(next);choice.effect?.();
+                    replaceState(next);choice.effect?.();if(choice.id.startsWith('c_path_'))next.progression.activeCareerId=null;
                     const days=this.legacyDays(choice);
                     const goldDelta=next.gold-previous.gold;
                     if(goldDelta)next.world.ledger.push({day:next.time.absoluteDay,location:next.world.currentLocationId,source:'legacy',amount:goldDelta});

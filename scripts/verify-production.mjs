@@ -24,7 +24,9 @@ try {
   await page.getByRole('button',{name:'แผนที่และบริการ',exact:true}).click();await page.locator('.world-map').waitFor();
   if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Map overflow');
   await page.screenshot({path:`/tmp/reborn-map-${width}.png`,fullPage:true});
-  console.log(`PASS ${url} width ${width}: CSS, images, JS, birth, portrait, choice, reload, chronicle, map`);
+  await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();await page.getByRole('heading',{name:'อาชีพและการฝึก',exact:true}).waitFor();
+  if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Career overflow');
+  console.log(`PASS ${url} width ${width}: CSS, images, JS, birth, portrait, choice, reload, chronicle, map, career screen`);
   await page.close();
  }
 } finally {await browser.close();}

@@ -1,3 +1,4 @@
+import { recoverProgression } from '../progression/engine.js';
 import { locations } from './locations.js';
 import { calendar, advanceTime, recordAction } from '../engine/time.js';
 import { guardExternalTime } from './travel.js';
@@ -20,7 +21,7 @@ export function useService(state,id){
  if(id==='food'&&(state.world.inventory.bread??0)>=20)throw Error('กระเป๋าเต็มแล้ว');
  guardExternalTime(state,config.days);
  state.gold+=config.gold;
- if(id==='rest'){state.stamina+=20;state.morale+=5;}
+ if(id==='rest'){state.stamina+=20;state.morale+=5;state.mana+=15;recoverProgression(state,25);}
  if(id==='study'){state.stats.int++;state.world.studied??=[];state.world.studied.push(key);state.stamina-=5;}
  if(id==='work')state.stamina-=10;
  if(id==='food')state.world.inventory.bread=(state.world.inventory.bread??0)+1;

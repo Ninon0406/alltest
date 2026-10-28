@@ -78,7 +78,7 @@ test('replacing an unreadable save requires confirmation', async ({page}) => {
   expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe('broken');
   page.once('dialog',dialog=>dialog.accept()); await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
   await expect(page.getByRole('heading',{name:'บันทึกกำเนิด'})).toBeVisible();
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(3);
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(4);
 });
 test('portrait retains face identity after aging and career changes', async ({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();

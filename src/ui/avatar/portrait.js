@@ -2,7 +2,9 @@ import { ensureAppearance } from '../../character/appearance.js';
 export function portrait(state) {
  const a=ensureAppearance(state),skin=['#edc3a2','#c88f6e','#9b624d','#754737','#e2d3bf'][a.skin],hair=['#322b3e','#704132','#b7a681','#d9dfe7','#1d2439','#af7044'][a.hairColor],eyes=['#81c8c5','#c5a04d','#9fb1df','#9563c0','#677b45'][a.eyes];
  const old=state.age>=60,adult=state.age>=18,child=state.age>=6,mage=/เวท/.test(state.career),warrior=/ดาบ|รบ/.test(state.career),merchant=/พ่อค้า/.test(state.career),legend=mage && state.stats.int>=18;
- const cloth=mage?'#3f3d72':warrior?'#586474':merchant?'#525044':'#324e58',accent=legend?'#f4cd75':'#b69d65';
+ const active=state.progression?.activeCareerId,promoted=active&&state.progression.records[active]?.advanced;
+ const costume={mage:'#3f3d72',healer:'#d3cab2',sword:'#435875',warrior:'#697078',archer:'#4e6744',summoner:'#76638b',alchemist:'#665d72',smith:'#7b5144',merchant:'#846335',scholar:'#475678',shadow:'#303047',adventurer:'#41675d',mercenary:'#6b6261',diplomat:'#69536e',farmer:'#45633f',sailor:'#3b637b',inventor:'#735a43',musician:'#78557a',beastkeeper:'#567356',spirit:'#426971'};
+ const cloth=costume[active]??(mage?'#3f3d72':warrior?'#586474':merchant?'#525044':'#324e58'),accent=(legend||promoted)?'#f4cd75':'#b69d65';
  const y=child?0:10,scale=adult?1:child?.94:.83;
  const hairShapes=[`M65 91Q60 26 108 35Q157 30 159 92L140 66L132 83L119 57L105 74L84 61Z`,`M63 130Q46 46 97 35Q166 20 162 143L144 133L144 78L116 56L83 80L82 136Z`,`M64 96Q52 46 102 32Q156 28 157 91L132 68L96 79L86 67Z`,`M63 99L60 55L80 60L88 30L109 48L131 30L139 57L161 50L154 100L129 69L99 80L84 68Z`][a.hair];
  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 280" role="img" aria-label="ภาพตัวละครตามวัยและอาชีพ" class="character-portrait">
@@ -16,7 +18,7 @@ export function portrait(state) {
  <g data-layer="hair" fill="${old?'#b8b4b1':hair}" stroke="#171c2c" stroke-width="2">${hairShapes.replace(/M/, '<path d="M') }"/><path d="M76 68Q93 43 123 45M87 67Q110 49 133 56" fill="none" stroke="#ffffff" stroke-opacity=".15"/></g>
  <g data-layer="race">${state.race==='พรายพฤกษา'?`<path d="M72 103L48 83L67 124M148 103L172 83L153 124" fill="${skin}" stroke="#8b6b66"/>`:state.race==='สายเลือดดารา'?'<path d="M110 80l4 6-4 6-4-6z" fill="#d3d8ff"/>':state.race==='ชนศิลา'?'<path d="M83 130l5 6m49-6l-5 6" stroke="#b4a18b" stroke-width="3"/>':''}</g>
  <g data-layer="clothing"><path d="M90 177L109 200L128 177M109 200V280" fill="none" stroke="${accent}" stroke-width="3"/><circle cx="110" cy="207" r="5" fill="${accent}"/>${warrior?'<path d="M53 192l27-10 14 42-36 8zM167 192l-27-10-14 42 36 8z" fill="#87909d" stroke="#c6bd98" stroke-width="2"/>':''}</g>
- <g data-layer="weapon">${mage?`<path d="M165 278L158 157" stroke="#8d7252" stroke-width="7"/><path d="M158 141l12 15-11 17-12-17z" fill="${legend?'#ffe29a':'#91d4e0'}" stroke="${accent}" stroke-width="2"/>`:warrior?'<path d="M60 278V194l6-20 6 20v84" fill="#a9bfce" stroke="#283548"/><path d="M48 251h36" stroke="#d4b579" stroke-width="6"/>':''}</g>
+ <g data-layer="weapon">${active==='archer'?'<path d="M165 170Q200 220 165 277M165 170L165 277" fill="none" stroke="#c1a06b" stroke-width="3"/>':mage?`<path d="M165 278L158 157" stroke="#8d7252" stroke-width="7"/><path d="M158 141l12 15-11 17-12-17z" fill="${legend?'#ffe29a':'#91d4e0'}" stroke="${accent}" stroke-width="2"/>`:warrior?'<path d="M60 278V194l6-20 6 20v84" fill="#a9bfce" stroke="#283548"/><path d="M48 251h36" stroke="#d4b579" stroke-width="6"/>':''}</g>
  <g data-layer="aura">${legend?'<circle cx="110" cy="120" r="94" fill="none" stroke="#edca76" stroke-dasharray="2 12" stroke-width="2"/><path d="M26 150l8-30m151-20l8 30" stroke="#edca76" stroke-width="2"/>':''}</g></g>
  <path d="M5 5h210v270H5z" fill="none" stroke="#ad915e" stroke-width="2"/></svg>`;
 }

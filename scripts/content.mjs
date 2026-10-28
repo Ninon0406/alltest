@@ -1,5 +1,6 @@
 import { names,races,histories,talents,hiddenAbilities } from '../src/data/birth.js';
 import { archetypes } from '../src/data/archetypes.js';
 import { locations,routes } from '../src/world/locations.js';
+import { careers } from '../src/data/careers.js';
 import { auditContent } from './content-audit.mjs';
-console.log(JSON.stringify({...auditContent(),birth:{names:new Set(names).size,equalArchetypes:archetypes.length,races:races.length,histories:histories.length,talents:talents.length,hiddenAbilities:hiddenAbilities.filter(a=>a.id!=='none').length},world:{functionalLocations:Object.keys(locations).length,regions:new Set(Object.values(locations).map(l=>l.parent)).size,routeEdges:routes.length,authoredImportantNPCs:0,functionalDungeons:0}},null,2));
+console.log(JSON.stringify({...auditContent(),progression:{baseCareerFamilies:careers.length,playableAdvancedPaths:careers.length,awakeningStages:7,careerStoryEpisodes:60},birth:{names:new Set(names).size,equalArchetypes:archetypes.length,races:races.length,histories:histories.length,talents:talents.length,hiddenAbilities:hiddenAbilities.filter(a=>a.id!=='none').length},world:{functionalLocations:Object.keys(locations).length,regions:new Set(Object.values(locations).map(l=>l.parent)).size,routeEdges:routes.length,authoredImportantNPCs:0,functionalDungeons:0}},null,2));

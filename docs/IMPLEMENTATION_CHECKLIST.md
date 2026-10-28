@@ -9,3 +9,14 @@
 - [x] Vitest and Playwright, production build/staging, static and public verification, content manifest, continuation file.
 
 Remaining full P1 regional variation plus P2–P8 and 150-location/full-content targets remain future work. Do not mark them complete for this slice.
+
+# 0.4.0 — P2 core acceptance
+
+- [x] Seven-stage awakening; deterministic archived results, visible score explanation, pause/resume/actual venue, no premature or repeated measurement.
+- [x] 20 base families with eligibility/scoring/jobs/skills and a free ordinary route; only eligible choice buttons; searchable codex explains missing requirements.
+- [x] Real training/fatigue/focus/diminishing rewards/recovery, income ledger and persistent per-family progress.
+- [x] Three distinct story dilemmas/family; outcomes change earnings/training; 20 playable earned higher paths with age/stat/XP/mastery/story requirements.
+- [x] Schema-4 validation, pre-v4 and pre-v3 backups, no rerolled or auto-awakened older lives, legacy chapter compatibility.
+- [ ] Final Vitest/content/build/stage/E2E and local/public browser verification, docs, safe commit/push.
+
+This is the core P2 slice; full equipment/mentor/skill-tree/God-path systems and the target 80 advanced/hybrid paths are not complete.

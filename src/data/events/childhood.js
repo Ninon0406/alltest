@@ -47,7 +47,7 @@ export const randomEvents=[
 // These safe household interruptions can occur in infancy too. They recur no more than once per year.
 for(const item of randomEvents){item.minAge=0;item.maxAge=11;item.durationDays=1;item.category='random';}
 export const allLifeEvents=[...infantEvents,...childhoodEvents,...randomEvents];
-export const dailyEvent={id:'daily.life',minAge:1,maxAge:9999,title:'เส้นทางที่ค่อย ๆ เติบโต',pages:['คุณมีอายุ {player.age} ปีแล้ว ชีวิตในเอลินดราไม่ได้บังคับให้เลือกสงคราม คุณเรียนรู้ พักผ่อน ทำงาน หรือสำรวจแผนที่ได้ ส่วนพิธีปลุกพลังและอาชีพขั้นใหม่จะเปิดในระบบระยะถัดไป'],durationDays:30,category:'activity',choices:[
+export const dailyEvent={id:'daily.life',minAge:1,maxAge:9999,title:'เส้นทางที่ค่อย ๆ เติบโต',pages:['คุณมีอายุ {player.age} ปีแล้ว ชีวิตในเอลินดราไม่ได้บังคับให้เลือกสงคราม คุณเรียนรู้ พักผ่อน ทำงาน หรือสำรวจแผนที่ได้ คุณเลือกประกอบอาชีพ ฝึกความถนัด หรือพักฟื้นได้ที่หน้าจออาชีพและการฝึก การทำงานใช้เวลาและความอึดจริง'],durationDays:30,category:'activity',choices:[
  {id:'daily.review',label:'ทบทวนบันทึกและช่วยงานเล็ก ๆ',effects:[{type:'memory',key:'curiosity',amount:1},{type:'morale',amount:3}]},
  {id:'daily.rest',label:'พักกับคนที่ไว้ใจและฟื้นแรง',effects:[{type:'recover',amount:20},{type:'memory',key:'kindness',amount:1}]},
 ]};

@@ -16,9 +16,10 @@ export function renderLife(parent,state,perform){
  const choices=document.createElement('div');choices.className='choices-container';parent.append(choices);
  if(page<event.pages.length-1)actionButton(choices,'อ่านต่อ',{type:'readNext',token},perform).className='primary';
  else for(const choice of event.choices){
-  const effects=choice.effects.filter(e=>e.type!=='flag').map(e=>e.type==='stat'?`+${e.amount} ${statNames[e.key]}`:e.type==='memory'?'+ความทรงจำวัยเด็ก':e.type==='recover'?'ฟื้นแรง 20':'ขวัญกำลังใจ +3');
+  const effects=choice.effects.filter(e=>e.type!=='flag').map(e=>e.type==='stat'?`+${e.amount} ${statNames[e.key]}`:e.type==='memory'?'+ความทรงจำวัยเด็ก':e.type==='recover'?'ฟื้นแรง 20':e.type==='careerXp'?`+${e.amount} ประสบการณ์อาชีพ`:e.type==='careerPerk'?(e.key==='trainingBonus'?'+ประสิทธิภาพการฝึกถาวร':'+รายได้ต่องานถาวร'):'ขวัญกำลังใจ +3');
   const button=actionButton(choices,`${choice.label}\n${effects.join(' • ')} • +${choiceDays(state,event)} วัน`,{type:'lifeChoice',choiceId:choice.id,token},perform);button.className='choice-card';
  }
+ if(c.ageYears>=12&&state.progression.awakening.step<7&&!state.progression.awakening.paused)actionButton(parent,'พักพิธีไว้ก่อน',{type:'pauseAwakening',token},perform);
  if(c.ageYears>=12)actionButton(parent,'เลือกเส้นทางจากเรื่องราวเดิม',{type:'legacyArc',token},perform);
 }
 export function renderJournal(parent,state){
