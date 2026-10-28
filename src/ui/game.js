@@ -1,3 +1,9 @@
+import { readGallery, storeGallery } from '../save/gallery.js';
+import { upgradeState } from '../engine/migrate.js';
+import { calendar, advanceTime, recordAction, normalize } from '../engine/time.js';
+import { dispatch } from '../engine/actions.js';
+import { renderLife } from './life-view.js';
+import { storyToken, textTokens } from '../engine/life.js';
 import { portrait } from './avatar/portrait.js';
 const escapeText = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 import { GameState, replaceState } from '../engine/state.js';
@@ -10,7 +16,21 @@ export const Game = {
                 this.render();
             },
 
+            notify(message) { document.getElementById('gameNotice').textContent=message; },
+            perform(action) {
+                try { const next=dispatch(GameState,action);writeSave(localStorage,next);replaceState(next);this.notify('บันทึกความคืบหน้าแล้ว');this.render(); }
+                catch(error) { this.notify(['QuotaExceededError','SecurityError'].includes(error.name)?'บันทึกไม่ได้ กรุณาตรวจพื้นที่เก็บข้อมูล ความคืบหน้าเดิมยังอยู่':error.message); }
+            },
             render() {
+                if(!GameState.time)replaceState(upgradeState(GameState));
+                normalize(GameState);
+                const log=document.getElementById('logBox');log.replaceChildren();
+                for(const entry of GameState.journal.slice(-3).reverse()){const item=document.createElement('p');item.textContent=`อายุ ${entry.age} ปี • ${entry.title}`;log.append(item);}
+
+                document.getElementById('traitsList').textContent=GameState.traits.join(' • ');
+                document.getElementById('lblYear').textContent=calendar(GameState).worldYear;
+                document.getElementById('txtMorale').textContent=`${GameState.morale}/100`;
+
                 document.getElementById("charAvatar").innerHTML = portrait(GameState);
                 document.getElementById("displayName").innerText = GameState.name;
                 document.getElementById("displayRace").innerText = `เผ่า: ${GameState.race}`;
@@ -40,23 +60,27 @@ export const Game = {
                 document.getElementById("txtMemorySummary").innerText = `อยากรู้: ${GameState.childhoodMemory.curiosity} | รอบคอบ: ${GameState.childhoodMemory.caution}`;
 
                 this.renderScene(GameState.currentSceneId);
+                this.onChange?.();
             },
 
             updateBar(name, val, max) {
                 const pct = Math.max(0, Math.min(100, (val / max) * 100));
                 document.getElementById(`txt${name}`).innerText = `${Math.floor(val)}/${max}`;
-                document.getElementById(`bar${name}`).style.width = `${pct}%`;
+                const bar=document.getElementById(`bar${name}`);bar.style.width=`${pct}%`;
+                bar.parentElement.setAttribute('role','progressbar');bar.parentElement.setAttribute('aria-label',({Hp:'พลังชีวิต',Stamina:'ความอึด',Mana:'พลังเวท',Hunger:'อาหารคงเหลือ',Thirst:'น้ำคงเหลือ'})[name]);bar.parentElement.setAttribute('aria-valuemin','0');bar.parentElement.setAttribute('aria-valuemax',String(max));bar.parentElement.setAttribute('aria-valuenow',String(Math.floor(val)));
             },
 
             renderScene(sceneId) {
+                if(GameState.life.mode==='annual') {renderLife(document.getElementById('sceneContainer'),GameState,action=>this.perform(action));return;}
+
                 const scene = Scenes[sceneId] || Scenes["scene_birth_0"];
                 const container = document.getElementById("sceneContainer");
 
                 let html = `
                     <div class="scene-banner"><span class="scene-caption">เส้นทางแห่งโชคชะตา</span></div>
                     <div class="scene-text-box">
-                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">${scene.title}</h3>
-                        <p>${scene.text}</p>
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">${escapeText(textTokens(scene.title,GameState))}</h3>
+                        <p>${escapeText(textTokens(scene.text,GameState))}</p>
                     </div>
                     <div class="choices-container">
                 `;
@@ -88,9 +112,9 @@ export const Game = {
                         }
 
                         html += `
-                            <button type="button" class="choice-card ${canPass ? '' : 'disabled'}" ${canPass ? '' : 'disabled'} ${canPass ? `onclick="Game.choose('${choice.id}')"` : ''}>
+                            <button type="button" class="choice-card ${canPass ? '' : 'disabled'}" ${canPass ? '' : 'disabled'} ${canPass ? `onclick="Game.choose('${choice.id}', '${storyToken(GameState)}')"` : ''}>
                                 <div class="choice-title">${choice.title}</div>
-                                <div class="choice-desc">${choice.desc}${reqText ? `<span style="color: var(--danger);">${reqText}</span>` : ''}</div>
+                                <div class="choice-desc">${choice.desc} • +${this.legacyDays(choice)} วัน${reqText ? `<span style="color: var(--danger);">${reqText}</span>` : ''}</div>
                             </button>
                         `;
                     });
@@ -98,26 +122,28 @@ export const Game = {
 
                 html += `</div>`;
                 container.innerHTML = html;
+                if(!scene.isEnding){const button=document.createElement('button');button.textContent='ใช้ชีวิตรายปีต่อโดยเก็บบทเดิมไว้';const token=storyToken(GameState);button.onclick=()=>this.perform({type:'dailyLife',token});container.append(button);}
             },
 
-            choose(id) {
-                const choice = Scenes[GameState.currentSceneId]?.choices?.find(item => item.id === id);
-                if (!choice || !canChoose(GameState, choice)) return;
-                this.makeChoice(choice.next, choice.effect);
+            legacyDays(choice) {
+                if(choice.id.startsWith('c_child_'))return Math.max(1,6*360-(GameState.time.absoluteDay-GameState.time.birthAbsoluteDay));
+                if(choice.id.startsWith('c_path_'))return Math.max(1,12*360-(GameState.time.absoluteDay-GameState.time.birthAbsoluteDay));
+                if(choice.id==='c_end_peasant')return Math.max(1,60*360-(GameState.time.absoluteDay-GameState.time.birthAbsoluteDay));
+                return 1;
             },
-
-            makeChoice(nextSceneId, effectFn) {
-                if (!Scenes[nextSceneId]) throw new Error('ไม่พบฉากปลายทาง');
-                if (effectFn && typeof effectFn === 'function') {
-                    effectFn();
-                }
-                GameState.day++;
-                if (GameState.day % 30 === 0) GameState.age++;
-
-                GameState.currentSceneId = nextSceneId;
-                this.addLog(`การตัดสินใจส่งผลต่อเส้นทางชีวิต (อายุ ${GameState.age} ปี)`);
-                this.saveGame(true);
-                this.render();
+            choose(id,token) {
+                const choice=Scenes[GameState.currentSceneId]?.choices?.find(item=>item.id===id);
+                if(!choice || !canChoose(GameState,choice) || token!==storyToken(GameState))return;
+                const previous=GameState,next=structuredClone(GameState);
+                try {
+                    replaceState(next);choice.effect?.();
+                    const days=this.legacyDays(choice);
+                    const goldDelta=next.gold-previous.gold;
+                    if(goldDelta)next.world.ledger.push({day:next.time.absoluteDay,location:next.world.currentLocationId,source:'legacy',amount:goldDelta});
+                    recordAction(next,choice.title,days,{goldDelta});
+                    advanceTime(next,days);next.currentSceneId=choice.next;next.life.revision++;
+                    writeSave(localStorage,next);this.render();this.notify('บันทึกความคืบหน้าแล้ว');
+                } catch(error){replaceState(previous);this.notify(error.message);}
             },
 
             addLog(text) {
@@ -129,7 +155,7 @@ export const Game = {
             },
 
             saveGame(isAuto = false) {
-                writeSave(localStorage, GameState);
+                try { writeSave(localStorage, GameState); } catch { this.notify('บันทึกไม่ได้ กรุณาตรวจพื้นที่เก็บข้อมูล'); return; }
                 if (!isAuto) {
                     alert("บันทึกเกมเรียบร้อยแล้ว!");
                 }
@@ -142,6 +168,7 @@ export const Game = {
 
             restartGame() {
                 if (confirm("คุณต้องการเริ่มชีวิตใหม่ทั้งหมดใช่หรือไม่?")) {
+                    try { storeGallery(localStorage,GameState.unlockedEndings); } catch { this.notify('เก็บฉากจบไม่ได้ จึงยังไม่ลบชีวิตเดิม'); return; }
                     localStorage.removeItem("reborn_save");
                     location.reload();
                 }
@@ -169,11 +196,12 @@ export const Game = {
             openEndings() {
                 const modal = document.getElementById("modalOverlay");
                 const content = document.getElementById("modalContent");
-                let endingsHtml = GameState.unlockedEndings.length > 0 ? GameState.unlockedEndings.map(e => `<li>${escapeText(e)}</li>`).join('') : "<li>ยังไม่มีฉากจบที่ปลดล็อก</li>";
+                const gallery=[...new Set([...readGallery(localStorage),...GameState.unlockedEndings])];
+                let endingsHtml = gallery.length > 0 ? gallery.map(e => `<li>${escapeText(e)}</li>`).join('') : "<li>ยังไม่มีฉากจบที่ปลดล็อก</li>";
 
                 content.innerHTML = `
                     <div class="modal-header">
-                        <h2>แกลเลอรีฉากจบที่ปลดล็อก (${GameState.unlockedEndings.length}/${Object.values(Scenes).filter(scene => scene.isEnding).length})</h2>
+                        <h2>แกลเลอรีฉากจบที่ปลดล็อก (${gallery.length}/${Object.values(Scenes).filter(scene => scene.isEnding).length})</h2>
                         <button onclick="Game.closeModal()">ปิด</button>
                     </div>
                     <div class="modal-body">

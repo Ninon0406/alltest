@@ -1,26 +1,25 @@
-# Implemented content
+# Verified implemented content — 0.3.0
 
-Measured with `npm run content`:
+Run `npm run content` for authored records and deterministic reachable counts.
 
-| Item | Actual |
-| --- | ---: |
-| Authored scenes | 15 |
-| Authored choice records | 29 |
-| Authored endings | 6 |
-| Distinct Thai name entries | 120 |
-| Weighted birth rarities | 4 |
-| Weighted races | 4 |
-| Household occupations | 12 |
-| Household histories | 8 |
-| Homelands | 6 |
-| Resource-affecting talents | 4 |
-| Rare hidden ability identities | 3 |
-| Original local pixel illustrations | 2 |
-| Original AI landscape illustrations | 1 |
-| Layered procedural SVG portrait renderer | 1 |
+| Content | Authored | Reachable in audit |
+| --- | ---: | ---: |
+| Preserved legacy scenes | 15 | 15 |
+| Annual/household/activity event records | 38 | 38 |
+| Total scene/event records | 53 | 53 |
+| Legacy choice records | 29 | 29 |
+| Annual choice records | 76 | 76 |
+| Total meaningful choice records | 105 | 105 |
+| Original endings | 6 | 6 |
+| Actual functional locations | 20 | 20 via age-12 route search |
+| Regions / bidirectional route edges | 5 / 20 | 5 / 20 |
+| Equal-probability birth archetypes | 20 | 20 in 100,000-roll audit |
+| Authored important NPC profiles / functional dungeons | 0 / 0 | 0 / 0 |
 
-The original 15 scenes, 28 choices and 6 endings remain; one new crisis retreat choice makes weaker births playable. Counts describe authored records, not claims that all endings are reachable for every character. The original fixed character remains for save compatibility, alongside seeded procedural births. Parent names and occupations are rolled, not authored important NPC profiles. Generated combinations do not count as additional authored choices or story scenes.
+Annual records comprise 10 infant clusters (20 choices), 22 age-specific childhood events, 5 seeded household interruptions and 1 repeatable daily activity event. No UI, map control, service button or procedural combination is counted as an extra story choice. Repeated use of an activity/event is not counted again. Reachability is union coverage across deterministic paths, not a claim every choice or ending is available to every life.
 
-Three hidden ability identities plus a no-ability outcome are generated and saved. Awakening effects, mortality/longevity mechanics, power-path/career catalogs, important NPC profiles, inventory, combat, dungeons and annual chronicles remain unimplemented. Targets of 90 power paths, 60 careers, 100 important NPCs, 50 endings and long-term 500 meaningful choices remain unfulfilled. The minimum 100-name target is satisfied.
+`content-audit.mjs` explores legacy branches over 100 births and plays 100 annual paths (50 seeds × 2 choice policies) to age 12. Unit tests separately verify 100 complete annual lives without soft locks, age/event bounds and ten random interruptions before age 10. Birth audit measures 100,000 origin-layer draws with a fixed RNG: each archetype target 5% ±0.3 percentage points; each eligible birthplace conditional on archetype target 1/N ±3.5 points. All tolerances are assertions, not claimed exact equal frequencies.
 
-Current directive raises the name target to 500 and adds targets of 50 family backgrounds, 50 lineages and 50 origin characteristics. These expanded targets are not yet met. SVG portrait variants and copied publication assets are not counted as additional authored illustrations or NPCs. No gameplay content counts changed in this stage.
+Other real content: 120 distinct Thai names, 4 races, 8 household histories, 4 resource-affecting talents, 3 saved hidden ability identities (no awakening effects yet), 2 local pixel illustrations, 1 original AI landscape and the existing layered SVG renderer. Frozen birth-location snapshots and copied publication assets do not add content counts.
+
+Remaining full-release targets from Ultimate Directive v3: ≥350 scene/events, ≥500 choices, ≥100 endings, ≥100 authored important NPCs, ≥20 functional career families and ≥80 higher paths, ≥150 locations and ≥40 dungeons. No full-release completion is claimed.

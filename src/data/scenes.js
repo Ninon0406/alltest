@@ -12,23 +12,23 @@ export const Scenes = {
                 ]
             },
             "scene_childhood_hub": {
-                title: "วัยเยาว์แห่งการเติบโต (อายุ 1-11 ปี)",
+                title: "วัยเยาว์แห่งการเติบโต — อายุ {player.age} ปี",
                 banner: "🏡",
                 text: "เวลาผ่านไป ร่างกายของคุณเริ่มเติบโตขึ้นตามลำดับ คุณได้เรียนรู้ภาษาและวิถีชีวิตผ่านการทำกิจกรรมประจำวัน ความทรงจำวัยเด็กเริ่มหล่อหลอมตัวตนและทักษะติดตัวของคุณ",
                 choices: [
-                    { id: "c_child_read", title: "แอบอ่านตำราและเรียนรู้หนังสือเก่า", desc: "อาศัยความทรงจำเดิมศึกษาตัวอักษรและเวทมนตร์พื้นฐาน", req: { int: 11 }, effect: () => { GameState.stats.int += 2; GameState.childhoodMemory.curiosity += 3; GameState.age = 6; }, next: "scene_childhood_hub_2" },
-                    { id: "c_child_work", title: "ช่วยครอบครัวทำงานและฝึกร่างกาย", desc: "ช่วยแบกฟืน ตักน้ำ และออกกำลังกายกลางแจ้ง", req: { str: 9 }, effect: () => { GameState.stats.str += 2; GameState.stats.con += 2; GameState.age = 6; }, next: "scene_childhood_hub_2" },
-                    { id: "c_child_explore", title: "แอบออกไปสำรวจป่ารอบหมู่บ้าน", desc: "เรียนรู้พืชสมุนไพรและหลบหนีสัตว์ป่าตัวเล็ก", req: { per: 9 }, effect: () => { GameState.stats.dex += 2; GameState.gold += 10; GameState.age = 6; }, next: "scene_childhood_hub_2" },
-                    { id: "c_child_social", title: "ผูกมิตรกับเด็กในหมู่บ้านและชาวบ้าน", desc: "สร้างเครือข่ายความสัมพันธ์และเรียนรู้ข่าวสาร", req: { cha: 9 }, effect: () => { GameState.stats.cha += 2; GameState.reputation += 5; GameState.age = 6; }, next: "scene_childhood_hub_2" }
+                    { id: "c_child_read", title: "แอบอ่านตำราและเรียนรู้หนังสือเก่า", desc: "อาศัยความทรงจำเดิมศึกษาตัวอักษรและเวทมนตร์พื้นฐาน", req: { int: 11 }, effect: () => { GameState.stats.int += 2; GameState.childhoodMemory.curiosity += 3; }, next: "scene_childhood_hub_2" },
+                    { id: "c_child_work", title: "ช่วยครอบครัวทำงานและฝึกร่างกาย", desc: "ช่วยแบกฟืน ตักน้ำ และออกกำลังกายกลางแจ้ง", req: { str: 9 }, effect: () => { GameState.stats.str += 2; GameState.stats.con += 2; }, next: "scene_childhood_hub_2" },
+                    { id: "c_child_explore", title: "แอบออกไปสำรวจป่ารอบหมู่บ้าน", desc: "เรียนรู้พืชสมุนไพรและหลบหนีสัตว์ป่าตัวเล็ก", req: { per: 9 }, effect: () => { GameState.stats.dex += 2; GameState.gold += 10; }, next: "scene_childhood_hub_2" },
+                    { id: "c_child_social", title: "ผูกมิตรกับเด็กในหมู่บ้านและชาวบ้าน", desc: "สร้างเครือข่ายความสัมพันธ์และเรียนรู้ข่าวสาร", req: { cha: 9 }, effect: () => { GameState.stats.cha += 2; GameState.reputation += 5; }, next: "scene_childhood_hub_2" }
                 ]
             },
             "scene_childhood_hub_2": {
-                title: "พิธีเติบโตและเข้าสู่วัย 12 ปี",
+                title: "เตรียมเส้นทางชีวิต — อายุ {player.age} ปี",
                 banner: "🌟",
-                text: "ในที่สุดคุณก็มีอายุครบ 12 ปีเต็ม วันนี้เป็นวันสำคัญ—พิธีปลุกพลังประจำปี ณ ลานกลางหมู่บ้าน ศิลาโบราณส่องประกายตอบสนองต่อจิตวิญญาณของคุณ ระบบวิเคราะห์ศักยภาพประเมินเส้นทางที่เหมาะสมที่สุดจากพฤติกรรมในวัยเด็กของคุณ!",
+                text: "คุณมีอายุ {player.age} ปี อยู่ที่ {location.name} ผู้ดูแลชวนทบทวนสิ่งที่เคยฝึกและเส้นทางในเรื่องราวเดิม หากยังไม่ถึง 12 ปี การเตรียมตัวจะใช้เวลาจนถึงวัยนั้นตามจำนวนวันที่แสดงใต้ตัวเลือก พิธีปลุกพลังแบบประเมินเฉพาะตัวจะเพิ่มในระบบระยะถัดไป",
                 choices: [
                     { id: "c_path_mage", title: "เลือกเส้นทาง 'นักเวทวิเคราะห์'", desc: "เพราะคุณหมกมุ่นกับตำราและมีความตั้งใจสูง", req: { int: 13 }, effect: () => { GameState.career = "นักเวทฝึกหัด"; GameState.maxMana += 60; }, next: "scene_path_mage_hub" },
-                    { id: "c_path_sword", title: "เลือกเส้นทาง 'นักดาบ / นักรบ'", desc: "เพราะคุณฝึกฝนร่างกายและช่วยงานหนักมาตลอด", req: { str: 11 }, effect: () => { GameState.career = "นักดาบฝึกหัด"; GameState.maxHp += 60; GameState.hp = 160; }, next: "scene_path_sword_hub" },
+                    { id: "c_path_sword", title: "เลือกเส้นทาง 'นักดาบ / นักรบ'", desc: "เพราะคุณฝึกฝนร่างกายและช่วยงานหนักมาตลอด", req: { str: 11 }, effect: () => { GameState.career = "นักดาบฝึกหัด"; GameState.maxHp += 60; GameState.hp = GameState.maxHp; }, next: "scene_path_sword_hub" },
                     { id: "c_path_merchant", title: "เลือกเส้นทาง 'พ่อค้า / เจรจา'", desc: "เพราะคุณเข้าใจคุณค่าของเงินและการคบค้าสมาคม", req: { cha: 11 }, effect: () => { GameState.career = "พ่อค้าฝึกหัด"; GameState.gold += 250; }, next: "scene_path_merchant_hub" },
                     { id: "c_path_peasant", title: "เลือกเส้นทาง 'ชาวบ้านสันโดษ / ช่างฝีมือ'", desc: "ไม่สนใจสงครามโลก เลือกใช้ชีวิตสงบสุขและสร้างฐานะตนเอง", effect: () => { GameState.career = "ช่างฝีมืออิสระ"; GameState.stats.con += 4; }, next: "scene_path_peasant_hub" }
                 ]
@@ -97,7 +97,7 @@ export const Scenes = {
                     { id: "c_crisis_merchant_king", title: "ผูกขาดเสบียงและสร้างอาณาจักรการค้าช่วงสงคราม", desc: "ทำกำไรมหาศาลจากภาวะวิกฤตและขึ้นเป็นราชาการค้า", req: { gold: 1000 }, effect: () => {}, next: "ending_merchant_king" }
                 ]
             },
-            // --- ENDINGS (10 Distinct Endings) ---
+            // --- Preserved legacy endings ---
             "ending_peasant_life": {
                 title: "ฉากจบ: สามัญชนผู้มีความสุข",
                 banner: "🌅",

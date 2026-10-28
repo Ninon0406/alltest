@@ -1,9 +1,14 @@
+import { generateBirth } from '../../src/character/rebirth.js';
+import { advanceTime } from '../../src/engine/time.js';
 import { test, expect } from '@playwright/test';
 import { initialCharacter } from '../../src/character/initial.js';
 test('play, save, restore and navigate', async ({page}) => {
   const errors=[]; page.on('pageerror',e=>errors.push(e.message));
-  await page.addInitScript(state => { if (!localStorage.getItem('reborn_save')) localStorage.setItem('reborn_save', JSON.stringify({version:1,state})); }, initialCharacter);
+  await page.addInitScript(state => { if (!localStorage.getItem('reborn_save')) localStorage.setItem('reborn_save', JSON.stringify({version:1,state})); }, {...structuredClone(initialCharacter),hp:180,mana:70,traits:[...initialCharacter.traits,'ลักษณะทดสอบ']});
   await page.goto('/');
+  await expect(page.locator('#txtHp')).toHaveText('100/100');
+  await expect(page.locator('#txtMana')).toHaveText('50/50');
+  await expect(page.locator('#traitsList')).toContainText('ลักษณะทดสอบ');
   await expect(page.locator('.choice-card')).toHaveCount(4);
   await page.locator('.choice-card').first().click();
   await expect(page.locator('#lblDay')).toHaveText('2');
@@ -43,10 +48,11 @@ test('random birth is committed once, has a permanent record and remains playabl
   expect(await page.locator('#shellPanel').innerText()).not.toContain(`อายุขัย: ${birth.lifespan}`);
   const image=page.locator('#shellPanel img'); expect(await image.evaluate(img=>img.complete && img.naturalWidth>0)).toBe(true);
   await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
-  await expect(page.locator('.choice-card')).toHaveCount(4);
+  await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
+  await expect(page.locator('.choice-card')).toHaveCount(2);
   await page.locator('.choice-card').first().click();
-  await expect(page.locator('#statInt')).toHaveText(String(birth.initial.stats.int+1));
-  await page.reload();await expect(page.locator('#lblDay')).toHaveText('2');
+  await expect(page.locator('#statWis')).toHaveText(String(birth.initial.stats.wis+1));
+  await page.reload();await expect(page.locator('#lblDay')).toHaveText('37');
   expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.birth)).toEqual(birth);
   await page.getByRole('button',{name:'บันทึกตัวละคร',exact:true}).click();
   await expect(page.locator('#shellPanel')).toContainText(`สติปัญญาแรกเกิด: ${birth.initial.stats.int}`);
@@ -72,17 +78,69 @@ test('replacing an unreadable save requires confirmation', async ({page}) => {
   expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe('broken');
   page.once('dialog',dialog=>dialog.accept()); await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
   await expect(page.getByRole('heading',{name:'บันทึกกำเนิด'})).toBeVisible();
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(2);
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(3);
 });
 test('portrait retains face identity after aging and career changes', async ({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
  const eyes=await page.locator('#charAvatar [data-layer="eyes"]').evaluate(node=>node.outerHTML);
- await page.evaluate(()=>{const save=JSON.parse(localStorage.getItem('reborn_save'));save.state.age=65;save.state.career='นักเวท';save.state.stats.int=20;localStorage.setItem('reborn_save',JSON.stringify(save));});
+ await page.evaluate(()=>{const save=JSON.parse(localStorage.getItem('reborn_save'));save.state.time.absoluteDay=save.state.time.birthAbsoluteDay+65*360;save.state.career='นักเวท';save.state.stats.int=20;localStorage.setItem('reborn_save',JSON.stringify(save));});
  await page.reload();
  expect(await page.locator('#charAvatar [data-layer="eyes"]').evaluate(node=>node.outerHTML)).toBe(eyes);
  await expect(page.locator('#charAvatar [data-layer="weapon"] path')).toHaveCount(2);
  await expect(page.locator('#charAvatar [data-layer="aura"] circle')).toHaveCount(1);
  const svg=await page.locator('#charAvatar svg').evaluate(node=>new XMLSerializer().serializeToString(node));
  expect(await page.evaluate(svg=>new DOMParser().parseFromString(svg,'image/svg+xml').querySelector('parsererror')===null,svg)).toBe(true);
+});
+test('annual story reaches twelve with consistent status and birthday chronicles',async({page})=>{
+ test.setTimeout(90000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+ let age=0,actions=0;
+ while(age<12){
+  const more=page.getByRole('button',{name:'อ่านต่อ',exact:true});if(await more.count())await more.click();
+  await page.locator('.choice-card').first().click();
+  const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);age=state.age;actions++;
+  expect(state.age).toBe(Math.floor((state.time.absoluteDay-state.time.birthAbsoluteDay)/360));
+  await expect(page.locator('#displayAge')).toHaveText(`อายุ: ${age} ปี`);
+  if(actions>65)throw Error('story stalled');
+ }
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);
+ expect(saved.journal.filter(e=>e.age===0&&e.eventId?.startsWith('infant.'))).toHaveLength(10);
+ expect(saved.life.randomYears.filter(a=>a<10)).toHaveLength(10);
+ await page.getByRole('button',{name:'บันทึกชีวิตรายปี',exact:true}).click();await expect(page.locator('#shellPanel details')).toHaveCount(12);
+ await page.reload();await expect(page.locator('#displayAge')).toHaveText('อายุ: 12 ปี');
+ expect(errors).toEqual([]);
+});
+test('map travel and local economy update gold, days and inventory once',async({page})=>{
+ let fixture;for(let seed=0;seed<1000;seed++){const s=generateBirth(seed);if(s.birth.locationId==='dawn'){fixture=s;break;}}
+ advanceTime(fixture,8*360);fixture.gold=20;
+ await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:3,state}));},fixture);
+ await page.goto('/');await page.getByRole('button',{name:'แผนที่และบริการ',exact:true}).click();
+ await page.getByRole('combobox',{name:'เลือกสถานที่ที่รู้จัก'}).selectOption('market');
+ await page.getByRole('button',{name:'เดินทางตามเส้นทางนี้',exact:true}).click();
+ await expect(page.locator('#lblLocation')).toHaveText('ตลาดใบหม่อน');await expect(page.locator('#lblDay')).toHaveText('2');
+ const buy=page.getByRole('button',{name:/ซื้อขนมปัง/});
+ await buy.evaluate(button=>{button.click();button.click();});
+ const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);
+ expect(state.gold).toBe(18);expect(state.world.inventory.bread).toBe(1);expect(state.world.ledger).toHaveLength(2);
+ await page.getByRole('button',{name:/ขายขนมปังคืน/}).click();await expect(page.locator('#displayGold')).toContainText('19');
+ await page.reload();await expect(page.locator('#lblLocation')).toHaveText('ตลาดใบหม่อน');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+test('storage failure rolls back an in-progress story transaction',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+ const before=await page.evaluate(()=>localStorage.getItem('reborn_save'));
+ await page.evaluate(()=>{Storage.prototype.setItem=()=>{throw new DOMException('full','QuotaExceededError');};});
+ await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
+ await expect(page.locator('#gameNotice')).toContainText('บันทึกไม่ได้');
+ await expect(page.getByRole('button',{name:'อ่านต่อ',exact:true})).toBeVisible();
+ expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe(before);
+});
+test('legacy age jumps become explicit elapsed days and never show a false age title',async({page})=>{
+ await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:2,state}));},initialCharacter);
+ await page.goto('/');await page.locator('.choice-card').first().click();await page.locator('.choice-card').first().click();
+ await expect(page.locator('#displayAge')).toHaveText('อายุ: 6 ปี');await expect(page.locator('#sceneContainer h3')).toContainText('อายุ 6 ปี');
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.time.absoluteDay)).toBe(2160);
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save_backup_before_v3')).state.age)).toBe(0);
+ await page.reload();await expect(page.locator('#displayAge')).toHaveText('อายุ: 6 ปี');
 });

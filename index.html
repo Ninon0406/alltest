@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REBORN: พงศาวดารผู้เกิดใหม่</title>
 
-  <script type="module" crossorigin src="./assets/app-xEhXKdp5.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/app-Cy9H7oIL.css">
+  <script type="module" crossorigin src="./assets/app-BqZ3ODlY.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/app-BgfVg7z0.css">
 </head>
 <body>
 
@@ -23,8 +23,11 @@
     <nav aria-label="เมนูหลัก" class="main-nav">
 <button data-view="game" aria-current="page">เส้นทางชีวิต</button>
 <button data-view="record">บันทึกตัวละคร</button>
+<button data-view="chronicle">บันทึกชีวิตรายปี</button>
+<button data-view="map">แผนที่และบริการ</button>
 <button data-view="guide">คู่มือโลก</button>
 </nav>
+<p id="gameNotice" role="status" aria-live="polite"></p>
 <section id="shellPanel" class="shell-panel" hidden></section>
 <div class="container" id="gameView">
         <!-- Left Dashboard -->
@@ -46,25 +49,25 @@
 
             <!-- Vital Bars -->
             <div class="panel-box">
-                <h3>สถานะร่างกาย</h3>
+                <button id="toggleStats" type="button" aria-expanded="false">เปิดค่าสถานะโดยละเอียด</button><h3>สถานะร่างกาย</h3><p title="กำลังใจในการเรียนรู้และใช้ชีวิต">ขวัญกำลังใจ: <span id="txtMorale">100/100</span></p>
                 <div class="stat-bar-container">
-                    <div class="stat-label"><span>พลังชีวิต</span><span id="txtHp">100/100</span></div>
+                    <div class="stat-label"><span>พลังชีวิต</span><span id="txtHp" title="พลังชีวิตที่ยังเหลือ">100/100</span></div>
                     <div class="progress-bar"><div class="progress-fill fill-hp" id="barHp" style="width: 100%;"></div></div>
                 </div>
                 <div class="stat-bar-container">
-                    <div class="stat-label"><span>ความอึด</span><span id="txtStamina">100/100</span></div>
+                    <div class="stat-label"><span>ความอึด</span><span id="txtStamina" title="ความอึดสำหรับงานและการเดินทาง พักเพื่อฟื้น">100/100</span></div>
                     <div class="progress-bar"><div class="progress-fill fill-stamina" id="barStamina" style="width: 100%;"></div></div>
                 </div>
                 <div class="stat-bar-container">
-                    <div class="stat-label"><span>พลังเวท</span><span id="txtMana">50/50</span></div>
+                    <div class="stat-label"><span>พลังเวท</span><span id="txtMana" title="พลังเวทที่พร้อมใช้งาน">50/50</span></div>
                     <div class="progress-bar"><div class="progress-fill fill-mana" id="barMana" style="width: 100%;"></div></div>
                 </div>
                 <div class="stat-bar-container">
-                    <div class="stat-label"><span>ความหิว</span><span id="txtHunger">100/100</span></div>
+                    <div class="stat-label"><span>อาหารคงเหลือ</span><span id="txtHunger" title="อาหารในร่างกาย ค่ายิ่งสูงยิ่งอิ่ม">100/100</span></div>
                     <div class="progress-bar"><div class="progress-fill fill-hunger" id="barHunger" style="width: 100%;"></div></div>
                 </div>
                 <div class="stat-bar-container">
-                    <div class="stat-label"><span>ความกระหาย</span><span id="txtThirst">100/100</span></div>
+                    <div class="stat-label"><span>น้ำคงเหลือ</span><span id="txtThirst" title="น้ำในร่างกาย ค่ายิ่งสูงยิ่งชุ่มชื้น">100/100</span></div>
                     <div class="progress-bar"><div class="progress-fill fill-thirst" id="barThirst" style="width: 100%;"></div></div>
                 </div>
             </div>
@@ -97,7 +100,7 @@
         <!-- Right Main Area -->
         <div class="main-content">
             <div class="world-status-bar">
-                <div class="world-status-item">วัน: <span id="lblDay">1</span></div>
+                <div class="world-status-item">ปีโลก: <span id="lblYear">1001</span> • วันที่: <span id="lblDay">1</span></div>
                 <div class="world-status-item">ฤดูกาล: <span id="lblSeason">ใบไม้ผลิ</span></div>
                 <div class="world-status-item">สถานที่: <span id="lblLocation">ห้องนอนเก่าในหมู่บ้านชนบท</span></div>
                 <div class="world-status-item">สภาพอากาศ: <span id="lblWeather">แจ่มใส</span></div>

@@ -1,3 +1,4 @@
+import { archetypes } from '../data/archetypes.js';
 import { portrait } from './avatar/portrait.js';
 import { rarities, talents } from '../data/birth.js';
 const statLabels = {str:'พละกำลัง',dex:'ความคล่อง',con:'ความอึด',int:'สติปัญญา',wis:'ความเข้าใจ',per:'การสังเกต',luk:'โชค',cha:'เสน่ห์'};
@@ -8,7 +9,8 @@ export function renderBirthRecord(panel, state) {
   const avatar=document.createElement('div'); avatar.className='record-portrait'; avatar.innerHTML=portrait(state); panel.append(avatar);
   const birth=state.birth;
   if (!birth) { const note=document.createElement('p'); note.textContent='ชีวิตจากบันทึกเดิม ไม่มีข้อมูลกำเนิดย้อนหลัง ตัวละครและความคืบหน้ายังคงเดิม'; panel.append(note); return; }
-  const lines=[`ชื่อแรกเกิด: ${birth.initial.name}`,`เผ่า: ${birth.initial.race}`,`ฐานะกำเนิด: ${rarities.find(r=>r.id===birth.rarity).label}`,
+  if(birth.generatorVersion===2){const note=document.createElement('p');note.textContent='ต้นแบบกำเนิด 20 แบบมีโอกาสเท่ากันแบบละ 5% จากนั้นสุ่มสถานที่อย่างเท่าเทียมภายในชุดที่เหมาะกับต้นแบบนั้น ไม่สุ่มชีวิตเดิมซ้ำเมื่อโหลดเซฟ';panel.append(note);}
+  const lines=[`ชื่อแรกเกิด: ${birth.initial.name}`,`เผ่า: ${birth.initial.race}`,`ฐานะกำเนิด: ${birth.archetypeId?archetypes.find(a=>a.id===birth.archetypeId).label:rarities.find(r=>r.id===birth.rarity).label}`,
     `ครอบครัว: ${birth.initial.family}`,`บ้านเกิด: ${birth.initial.location}`,`มารดา: ${birth.parents.mother} • ${birth.parents.motherOccupation}`,
     `บิดา: ${birth.parents.father} • ${birth.parents.fatherOccupation}`,`เรื่องราวครัวเรือน: ${birth.history}`,
     `ทรัพย์สินตั้งต้น: ${birth.initial.gold} เหรียญ`,`พรสวรรค์: ${talents.find(t=>t.id===birth.talent).label}`,

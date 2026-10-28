@@ -1,0 +1,142 @@
+[
+  {
+    "id": "dawn",
+    "name": "หมู่บ้านรุ่งอรุณ",
+    "tags": [
+      "rural"
+    ]
+  },
+  {
+    "id": "market",
+    "name": "ตลาดใบหม่อน",
+    "tags": [
+      "market"
+    ]
+  },
+  {
+    "id": "school",
+    "name": "โรงเรียนใต้ต้นไทร",
+    "tags": [
+      "school"
+    ]
+  },
+  {
+    "id": "grove",
+    "name": "สวนรากแก้ว",
+    "tags": [
+      "rural"
+    ]
+  },
+  {
+    "id": "capital",
+    "name": "เมืองสะพานอำพัน",
+    "tags": [
+      "capital"
+    ]
+  },
+  {
+    "id": "mist",
+    "name": "ชุมชนผาหมอก",
+    "tags": [
+      "rural"
+    ]
+  },
+  {
+    "id": "forge",
+    "name": "โรงตีเหล็กกังหัน",
+    "tags": [
+      "forge"
+    ]
+  },
+  {
+    "id": "mine",
+    "name": "ลานหินประกาย",
+    "tags": [
+      "mine"
+    ]
+  },
+  {
+    "id": "pass",
+    "name": "ช่องเขาระฆัง",
+    "tags": [
+      "road"
+    ]
+  },
+  {
+    "id": "starfall",
+    "name": "หุบเขาดาวตก",
+    "tags": [
+      "rural"
+    ]
+  },
+  {
+    "id": "library",
+    "name": "หอสมุดคลื่นแสง",
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "observatory",
+    "name": "ลานดูดาวอรุณ",
+    "tags": [
+      "school"
+    ]
+  },
+  {
+    "id": "herb",
+    "name": "เรือนยาน้ำค้าง",
+    "tags": [
+      "herb"
+    ]
+  },
+  {
+    "id": "roots",
+    "name": "หมู่บ้านรากแก้ว",
+    "tags": [
+      "rural"
+    ]
+  },
+  {
+    "id": "forest",
+    "name": "ป่าเฟิร์นเงิน",
+    "tags": [
+      "forest"
+    ]
+  },
+  {
+    "id": "ruins",
+    "name": "ลานหอเก่า",
+    "tags": [
+      "ruins"
+    ]
+  },
+  {
+    "id": "moonport",
+    "name": "ท่าเรือแสงจันทร์",
+    "tags": [
+      "port"
+    ]
+  },
+  {
+    "id": "fishmarket",
+    "name": "ตลาดปลาคราม",
+    "tags": [
+      "market"
+    ]
+  },
+  {
+    "id": "lighthouse",
+    "name": "ประภาคารลมใต้",
+    "tags": [
+      "port"
+    ]
+  },
+  {
+    "id": "dock",
+    "name": "อู่เรือใบแก้ว",
+    "tags": [
+      "port"
+    ]
+  }
+]

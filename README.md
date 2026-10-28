@@ -39,3 +39,13 @@ Generation uses Mulberry32 and a cryptographically supplied 32-bit seed. Develop
 ## Publication source compatibility
 
 The actual Pages source is currently main:/ (legacy), and the integration cannot change repository Pages settings. Edit `app.html`, not the generated root `index.html`. After `npm run build`, run `node scripts/stage-site.mjs` to stage the compiled index, assets and illustrations into main's publication directory. The workflow refreshes those files automatically and deploys dist. Browser checks verify loaded styling and gameplay after deployment: `node scripts/verify-production.mjs <url>`. This catches the previous raw-source publication failure, which a successful deploy alone did not detect.
+
+## 0.3.0 life simulation and save upgrade
+
+Fresh lives now use 20 equally likely archetypes and a 360-day calendar. Read each event page, then choose an action with a visible time/effect cost. Infancy and childhood continue through age 12, after which daily life, local work/services and optional original story arcs remain playable. Real awakening and the expanded career system are the next slice.
+
+Use **บันทึกชีวิตรายปี** for birthdays/journal, **แผนที่และบริการ** for discovered routes, purchases/rest/study/jobs. Local travel opens at 4, inter-region travel at 12. Walking is slower but free. Mobile status details expand with their button.
+
+Old saves keep characters and chapters; migration stores exact raw backup at `reborn_save_backup_before_v3`. The Birth Record lets users download current and pre-upgrade JSON. Back up before reverting to an older game release: schema 3 cannot be read by the old release. On rollback, restore the downloaded old JSON to LocalStorage only after exporting the newer save; never reset a save automatically. Import UI remains future work. Ending gallery now survives restart.
+
+Run `npm run content` for actual authored/reachable counts; see docs/NEXT_CODEX_TASK.md for continuation and known limits. This is a working development checkpoint, not the full game described by the directive.

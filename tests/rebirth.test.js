@@ -1,5 +1,6 @@
+import { upgradeState } from '../src/engine/migrate.js';
 import { it, expect } from 'vitest';
-import { generateBirth, weightedPick } from '../src/character/rebirth.js';
+import { generateBirthV1 as generateBirth, weightedPick } from '../src/character/rebirth.js';
 import { names, rarities, races, households, histories, talents } from '../src/data/birth.js';
 import { initialCharacter } from '../src/character/initial.js';
 import { decodeSave, writeSave } from '../src/save/storage.js';
@@ -41,9 +42,9 @@ it('round trips hidden data and immutable birth snapshots while preserving old s
   const state=generateBirth(321), birth=structuredClone(state.birth);
   state.stats.int+=4;state.gold+=100;state.age=6;
   let raw;writeSave({setItem:(_,value)=>{raw=value;}},state);
-  expect(decodeSave(raw)).toEqual(state); expect(decodeSave(raw).birth).toEqual(birth);
-  expect(decodeSave(JSON.stringify({version:1,state:initialCharacter}))).toEqual(initialCharacter);
-  expect(decodeSave(JSON.stringify(initialCharacter))).toEqual(initialCharacter);
+  expect(decodeSave(raw)).toEqual(upgradeState(state)); expect(decodeSave(raw).birth).toEqual(birth);
+  expect(decodeSave(JSON.stringify({version:1,state:initialCharacter}))).toEqual(upgradeState(initialCharacter));
+  expect(decodeSave(JSON.stringify(initialCharacter))).toEqual(upgradeState(initialCharacter));
   const invalid=structuredClone(state);invalid.birth.parents.mother='<bad>';
   expect(()=>decodeSave(JSON.stringify({version:2,state:invalid}))).toThrow();
   expect(()=>generateBirth(-1)).toThrow();

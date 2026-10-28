@@ -1,3 +1,5 @@
+import { renderMap } from './ui/map-view.js';
+import { renderJournal } from './ui/life-view.js';
 import './ui/styles.css';
 import { Game } from './ui/game.js';
 import { GameState, replaceState } from './engine/state.js';
@@ -28,21 +30,34 @@ else {
   });
 }
 const panel = document.querySelector('#shellPanel');
+let activeView='game';
+Game.onChange=()=>{if(activeView!=='game')document.querySelector(`[data-view="${activeView}"]`).click();};
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-view]').forEach(item => item.removeAttribute('aria-current'));
   button.setAttribute('aria-current', 'page');
-  const view = button.dataset.view;
+  const view = button.dataset.view; activeView=view;
   document.querySelector('#gameView').hidden = view !== 'game';
   panel.hidden = view === 'game';
   panel.replaceChildren();
   if (view === 'record') {
     renderBirthRecord(panel, GameState);
+    const download=(name,text)=>{const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));const anchor=document.createElement('a');anchor.href=url;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+    const exportButton=document.createElement('button');exportButton.textContent='ดาวน์โหลดเซฟปัจจุบัน';exportButton.onclick=()=>download('reborn-save.json',localStorage.getItem('reborn_save'));panel.append(exportButton);
+    const backup=localStorage.getItem('reborn_save_backup_before_v3');
+    if(backup){const button=document.createElement('button');button.textContent='ดาวน์โหลดเซฟก่อนอัปเกรด';button.onclick=()=>download('reborn-before-v3.json',backup);panel.append(button);}
+
     const title = document.createElement('h2'); title.textContent = 'บันทึกตัวละคร'; panel.append(title);
     for (const text of [`ชื่อ: ${GameState.name}`, `เผ่า: ${GameState.race}`, `ครอบครัว: ${GameState.family}`, `อาชีพ: ${GameState.career}`, `อายุ: ${GameState.age} ปี`, `เงิน: ${GameState.gold} เหรียญ`, `ลักษณะ: ${GameState.traits.join(' • ')}`]) {
       const line = document.createElement('p'); line.textContent = text; panel.append(line);
     }
+  } else if(view==='map') {
+    renderMap(panel,GameState,action=>Game.perform(action),()=>button.click());
+  } else if(view==='chronicle') {
+    renderJournal(panel,GameState);
   } else if (view === 'guide') {
-    panel.innerHTML = '<h2>คู่มือโลก</h2><p>เลือกการกระทำเพื่อกำหนดเส้นทางชีวิต คุณลักษณะและเงินมีผลต่อทางเลือกที่เปิดให้ใช้ แต่ละการตัดสินใจจะบันทึกความคืบหน้าอัตโนมัติในเบราว์เซอร์นี้</p><p>เปิดสารานุกรมเพื่ออ่านสถานะสายพลัง และดูฉากจบที่ปลดล็อกจากเมนูด้านบน การเริ่มใหม่จะลบบันทึกชีวิตปัจจุบันหลังยืนยัน</p><p>ชีวิตใหม่ได้รับกำเนิดแบบสุ่มและบันทึกกำเนิดถาวร เรื่องราวยังใช้เหตุการณ์เดิม การจำลองรายปีจะเพิ่มในระยะถัดไป</p>';
+    panel.innerHTML = '<h2>คู่มือโลก</h2><p>เลือกการกระทำเพื่อกำหนดเส้นทางชีวิต คุณลักษณะและเงินมีผลต่อทางเลือกที่เปิดให้ใช้ แต่ละการตัดสินใจจะบันทึกความคืบหน้าอัตโนมัติในเบราว์เซอร์นี้</p><p>เปิดสารานุกรมเพื่ออ่านสถานะสายพลัง และดูฉากจบที่ปลดล็อกจากเมนูด้านบน การเริ่มใหม่จะลบบันทึกชีวิตปัจจุบันหลังยืนยัน</p><p>ชีวิตใหม่ได้รับกำเนิดแบบสุ่มและบันทึกกำเนิดถาวร เรื่องราวยังใช้เหตุการณ์เดิม เวลาใช้ปฏิทิน 360 วันต่อปี เลือกอ่านต่อให้จบแต่ละเรื่องก่อนตัดสินใจ ดูผลรายปีได้ในบันทึกชีวิต และดูเส้นทางที่เดินทางได้จริงในแผนที่</p>';
   }
 }));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') Game.closeModal(); });
+
+document.getElementById('toggleStats').onclick=event=>{const sidebar=document.querySelector('.sidebar');const expanded=sidebar.classList.toggle('expanded');event.target.setAttribute('aria-expanded',String(expanded));event.target.textContent=expanded?'ย่อค่าสถานะ':'เปิดค่าสถานะโดยละเอียด';};

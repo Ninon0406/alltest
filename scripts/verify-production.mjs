@@ -4,7 +4,7 @@ const url=process.argv[2] || 'http://127.0.0.1:4173/';
 const executablePath=process.env.CHROMIUM_PATH || (existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined);
 const browser=await chromium.launch({executablePath,args:['--no-sandbox']});
 try {
- for(const width of [1440,390]) {
+ for(const width of [1920,1366,768,360]) {
   const page=await browser.newPage({viewport:{width,height:900}}), failures=[];
   page.on('pageerror',error=>failures.push(error.message));
   page.on('requestfailed',request=>failures.push(request.url()));
@@ -14,12 +14,17 @@ try {
   const style=await page.evaluate(()=>({background:getComputedStyle(document.body).backgroundImage,color:getComputedStyle(document.body).color,overflow:document.documentElement.scrollWidth>innerWidth,css:[...document.styleSheets].length}));
   if(!style.css || style.background==='none' || style.overflow)throw Error('Missing styling or overflow: '+JSON.stringify(style));
   await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('heading',{name:'บันทึกกำเนิด',exact:true}).waitFor();
-  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.locator('.choice-card').first().click();
-  await page.reload();await page.waitForFunction(()=>document.querySelector('#lblDay').textContent==='2');
+  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();await page.locator('.choice-card').first().click();
+  await page.reload();await page.waitForFunction(()=>document.querySelector('#lblDay').textContent==='37');
   if(await page.locator('#charAvatar svg').count()!==1)throw Error('Portrait missing');
   if(failures.length)throw Error(failures.join('\n'));
   await page.screenshot({path:`/tmp/reborn-${width}.png`,fullPage:true});
-  console.log(`PASS ${url} width ${width}: CSS, images, JS, birth, portrait, choice, reload`);
+  await page.getByRole('button',{name:'บันทึกชีวิตรายปี',exact:true}).click();
+  await page.getByRole('heading',{name:'บันทึกชีวิตและพงศาวดารรายปี',exact:true}).waitFor();
+  await page.getByRole('button',{name:'แผนที่และบริการ',exact:true}).click();await page.locator('.world-map').waitFor();
+  if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Map overflow');
+  await page.screenshot({path:`/tmp/reborn-map-${width}.png`,fullPage:true});
+  console.log(`PASS ${url} width ${width}: CSS, images, JS, birth, portrait, choice, reload, chronicle, map`);
   await page.close();
  }
 } finally {await browser.close();}

@@ -1,3 +1,4 @@
+import { advanceTime } from '../src/engine/time.js';
 import { it, expect } from 'vitest';
 import { generateBirth } from '../src/character/rebirth.js';
 import { portrait } from '../src/ui/avatar/portrait.js';
@@ -10,7 +11,7 @@ it('has stable, valid identity for births and legacy characters',()=>{
 });
 it('changes age and career layers without rerolling identity and preserves it through saves',()=>{
  const state=generateBirth(9), identity=structuredClone(state.appearance), baby=portrait(state);
- state.age=65;state.career='นักเวท';state.stats.int=20;
+ advanceTime(state,65*360);state.career='นักเวท';state.stats.int=20;
  expect(portrait(state)).not.toEqual(baby);expect(state.appearance).toEqual(identity);expect(portrait(state)).toContain('data-layer="aura"');
  let raw;writeSave({setItem:(_,value)=>{raw=value;}},state);expect(portrait(decodeSave(raw))).toBe(portrait(state));
 });

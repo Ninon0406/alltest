@@ -1,5 +1,5 @@
-import { Scenes } from '../src/data/scenes.js';
-import { names, rarities, races, households, histories, homelands, talents, hiddenAbilities } from '../src/data/birth.js';
-const scenes=Object.values(Scenes);
-console.log(JSON.stringify({scenes:scenes.length,choices:scenes.reduce((n,s)=>n+(s.choices?.length??0),0),endings:scenes.filter(s=>s.isEnding).length,
-  names:new Set(names).size,birthRarities:rarities.length,races:races.length,households:households.length,householdHistories:histories.length,homelands:homelands.length,talents:talents.length,rareHiddenAbilities:hiddenAbilities.filter(a=>a.id!=='none').length},null,2));
+import { names,races,histories,talents,hiddenAbilities } from '../src/data/birth.js';
+import { archetypes } from '../src/data/archetypes.js';
+import { locations,routes } from '../src/world/locations.js';
+import { auditContent } from './content-audit.mjs';
+console.log(JSON.stringify({...auditContent(),birth:{names:new Set(names).size,equalArchetypes:archetypes.length,races:races.length,histories:histories.length,talents:talents.length,hiddenAbilities:hiddenAbilities.filter(a=>a.id!=='none').length},world:{functionalLocations:Object.keys(locations).length,regions:new Set(Object.values(locations).map(l=>l.parent)).size,routeEdges:routes.length,authoredImportantNPCs:0,functionalDungeons:0}},null,2));

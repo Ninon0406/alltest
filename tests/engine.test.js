@@ -1,3 +1,4 @@
+import { upgradeState } from '../src/engine/migrate.js';
 import { describe, it, expect } from 'vitest';
 import { initialCharacter } from '../src/character/initial.js';
 import { Scenes } from '../src/data/scenes.js';
@@ -22,11 +23,11 @@ describe('existing story graph', () => {
 describe('save compatibility', () => {
   it('round trips versioned state without losing fields', () => {
     let raw; writeSave({setItem: (_, value) => {raw = value;}}, initialCharacter);
-    expect(JSON.parse(raw).version).toBe(2); expect(decodeSave(raw)).toEqual(initialCharacter);
+    expect(JSON.parse(raw).version).toBe(3); expect(decodeSave(raw)).toEqual(upgradeState(initialCharacter));
   });
-  it('loads legacy unversioned saves', () => expect(decodeSave(JSON.stringify(initialCharacter))).toEqual(initialCharacter));
+  it('loads legacy unversioned saves', () => expect(decodeSave(JSON.stringify(initialCharacter))).toEqual(upgradeState(initialCharacter)));
   it('rejects invalid and future saves', () => {
-    for (const value of ['{', '{}', JSON.stringify({version: 3}), JSON.stringify({...initialCharacter, stats: {}}), JSON.stringify({...initialCharacter, currentSceneId:'missing'})]) expect(() => decodeSave(value)).toThrow();
+    for (const value of ['{', '{}', JSON.stringify({version: 4}), JSON.stringify({...initialCharacter, stats: {}}), JSON.stringify({...initialCharacter, currentSceneId:'missing'})]) expect(() => decodeSave(value)).toThrow();
   });
 });
 it('repeats random sequences for a fixed seed', () => {
