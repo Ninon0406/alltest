@@ -7,7 +7,7 @@ Read AGENTS.md, docs/REBORN_CODEX_ULTIMATE_DIRECTIVE.md, docs/IMPLEMENTATION_CHE
 - P0: replaced 30-click aging and direct age writes with a 360-day calendar; fixed legacy hardcoded age-12 title, overflowing resources, stale trait UI and status/log synchronization. Existing build/stage publication remains intact.
 - P1 core: generator-v2 equal 20 archetypes; uniform birthplace draw conditional on archetype; generator-v1 births remain reproducible. Calendar-backed infancy through age 12, pages, flags, 38 authored annual/household/activity events, 76 choices, birthday chronicles, journal, and preserved legacy chapters.
 - Save schema 3: retains v0/v1/v2 identity/progression and immutable birth record; backs up exact raw save before migration, rejects bad data, repairs projections from authoritative time. Failed writes do not commit actions. Old characters can pause/resume their legacy chapter and enter annual life without resetting stats. Download current/pre-migration saves in the character record. Gallery retained on restart.
-- P3 foundation: 20 connected actual locations across 5 regions, map pan/zoom/current/birth pins/fog, route quotes, age gates, travel time/cost/stamina, slower free walking, local work/rest/study, bread buy/eat/sell, transaction ledger, replay guards.
+- P3 foundation: 20 connected actual locations across 5 regions, map pan/zoom/current/birth pins/fog, route quotes, age gates, travel time/cost/stamina, slower free walking, local work/rest/study, safe free recovery at every node, stamina gates, bread buy/eat/sell, transaction ledger, replay guards.
 
 ## Precise next task: P2 awakening and meaningful adult progression
 
@@ -43,4 +43,4 @@ npm run preview -- --port 4184
 node scripts/verify-production.mjs http://127.0.0.1:4184/
 ```
 
-Local baseline: 27 unit tests (including 100,000 equal-origin draws; 100 annual lives; 100 legacy branch traversals), 20 desktop/mobile E2E cases; content audit separately traverses 100 annual paths and 100 legacy births. Re-run after changes and report real outcomes. Verifier checks 1920/1366/768/360 widths. After an authorized push, verify the live URL rather than claiming success from workflow status alone.
+Local baseline: 28 unit tests (including 100,000 equal-origin draws; 100 annual lives; 100 legacy branch traversals), 20 desktop/mobile E2E cases; content audit separately traverses 100 annual paths and 100 legacy births. Re-run after changes and report real outcomes. Verifier checks 1920/1366/768/360 widths. After an authorized push, verify the live URL rather than claiming success from workflow status alone.

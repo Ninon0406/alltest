@@ -38,3 +38,9 @@ it('offers a slower free walking route to avoid trapping a penniless traveler',(
  expect(()=>dispatch(state,{type:'travel',destination:'library',token:storyToken(state)})).toThrow();
  const before=state.time.absoluteDay;state=dispatch(state,{type:'travel',destination:'library',method:'walk',token:storyToken(state)});expect(state.gold).toBe(0);expect(state.time.absoluteDay-before).toBe(4);
 });
+it('rejects exhausted journeys atomically and allows free recovery at every location',()=>{
+ let state=generateBirth(5);advanceTime(state,12*360);state.world.currentLocationId='library';state.world.visited=['library'];state.stamina=0;state.gold=0;const before=structuredClone(state);
+ expect(()=>dispatch(state,{type:'travel',destination:'starfall',method:'walk',token:storyToken(state)})).toThrow(/ความอึด/);expect(state).toEqual(before);
+ state=dispatch(state,{type:'service',serviceId:'rest',token:storyToken(state)});expect(state.stamina).toBe(20);state=dispatch(state,{type:'travel',destination:'starfall',method:'walk',token:storyToken(state)});expect(state.world.currentLocationId).toBe('starfall');
+ const baby=generateBirth(8);expect(()=>dispatch(baby,{type:'service',serviceId:'rest',token:storyToken(baby)})).toThrow();
+});

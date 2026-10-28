@@ -2,14 +2,14 @@ import { locations } from './locations.js';
 import { calendar, advanceTime, recordAction } from '../engine/time.js';
 import { guardExternalTime } from './travel.js';
 export const services={
- rest:{label:'พักในศาลาชุมชน',days:1,gold:0,minAge:0,description:'ฟื้นความอึด 20 และขวัญกำลังใจ 5'},
+ rest:{label:'พักในพื้นที่ปลอดภัย',days:1,gold:0,minAge:4,description:'ฟื้นความอึด 20 และขวัญกำลังใจ 5'},
  study:{label:'อ่านตำราสาธารณะ',days:7,gold:0,minAge:4,description:'สติปัญญา +1 ครั้งเดียวต่อสถานที่ต่อปี'},
  work:{label:'ช่วยงานชุมชน',days:1,gold:4,minAge:8,description:'รับ 4 เหรียญ ใช้ความอึด 10; งานเบาที่มีผู้ดูแล'},
  food:{label:'ซื้อขนมปัง',days:1,gold:-2,minAge:4,description:'ขนมปัง +1 ชิ้น เก็บในกระเป๋า'},
  eat:{label:'กินขนมปังที่มี',days:1,gold:0,minAge:4,description:'ใช้ขนมปัง 1 ชิ้น ฟื้นอาหาร 25'},
  sell:{label:'ขายขนมปังคืน',days:1,gold:1,minAge:4,description:'ขาย 1 ชิ้น ได้ 1 เหรียญ; ไม่มีการซื้อขายทำกำไรวน'},
 };
-export function availableServices(state){return [...locations[state.world.currentLocationId].services,...(state.world.inventory.bread?['eat',...(locations[state.world.currentLocationId].services.includes('food')?['sell']:[])]:[])];}
+export function availableServices(state){return [...new Set([...locations[state.world.currentLocationId].services,'rest']),...(state.world.inventory.bread?['eat',...(locations[state.world.currentLocationId].services.includes('food')?['sell']:[])]:[])];}
 export function useService(state,id){
  const config=services[id],year=calendar(state).ageYears;
  if(!config||!availableServices(state).includes(id)||year<config.minAge)throw Error('ยังใช้บริการนี้ไม่ได้ตามวัยหรือสถานที่');

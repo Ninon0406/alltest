@@ -1,8 +1,8 @@
 # Roadmap
 
 - [x] 1. Vite project, modular shell, Thai navigation, responsive layout, local artwork, unit/browser tests.
-- [x] 2. Weighted deterministic rebirth and detailed Birth Record.
-- [ ] 3. Annual life simulation, childhood events and chronicle.
+- [x] 2. Versioned deterministic rebirth and Birth Record (equal archetypes now; weighted generator 1 retained for saves).
+- [x] 3. Childhood annual life, aging and chronicle through 12; adult extensions remain in later slices.
 - [ ] 4. Narrative conditions, flags and delayed consequences.
 - [ ] 5. Attributes, power paths, professions and training.
 - [ ] 6. Survival, economy, inventory and crafting.

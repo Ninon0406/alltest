@@ -21,6 +21,7 @@ export function travel(state,destination,method='caravan'){
  if(!revealedLocations(state).has(destination))throw Error('ยังไม่รู้จักเส้นทางนี้');
  const route=findRoute(state,destination,method);if(!route)throw Error('เส้นทางยังไม่เปิดตามวัย เด็กอายุต่ำกว่า 4 ปีอยู่กับครอบครัว ส่วนข้ามภูมิภาคเปิดเมื่ออายุ 12 ปี');
  if(state.gold<route.gold)throw Error('เงินไม่พอสำหรับเส้นทางนี้');
+ if(state.stamina<route.days*2)throw Error('ความอึดไม่พอสำหรับเส้นทางนี้ กรุณาพักในพื้นที่ปลอดภัยก่อน');
  guardExternalTime(state,route.days);
  state.gold-=route.gold;state.stamina=Math.max(0,state.stamina-route.days*2);
  state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:'travel',amount:-route.gold});
