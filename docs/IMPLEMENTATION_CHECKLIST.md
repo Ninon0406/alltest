@@ -17,6 +17,8 @@ Remaining full P1 regional variation plus P2–P8 and 150-location/full-content 
 - [x] Real training/fatigue/focus/diminishing rewards/recovery, income ledger and persistent per-family progress.
 - [x] Three distinct story dilemmas/family; outcomes change earnings/training; 20 playable earned higher paths with age/stat/XP/mastery/story requirements.
 - [x] Schema-4 validation, pre-v4 and pre-v3 backups, no rerolled or auto-awakened older lives, legacy chapter compatibility.
-- [ ] Final Vitest/content/build/stage/E2E and local/public browser verification, docs, safe commit/push.
+- [x] Final Vitest/content/build/stage/E2E and local/public browser verification, docs, safe commit/push.
 
 This is the core P2 slice; full equipment/mentor/skill-tree/God-path systems and the target 80 advanced/hybrid paths are not complete.
+
+Release evidence: source commit 333ab7b serves the expected compiled bundle on GitHub Pages. Public Chromium checks passed at four layout widths, plus actual birth-to-12/awakening/career/work/train/reload at 1366/360. Local suites: 40 unit and 28 E2E cases, all passed.
