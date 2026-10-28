@@ -1,259 +1,843 @@
 <!DOCTYPE html>
-<html lang="th"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SC401201 แคลคูลัส 1 – เตรียมสอบปลายภาค</title>
-<style>
-:root{--bg:#f7f7fb;--card:#fff;--tx:#1d1d2b;--mut:#666a80;--ac:#4f46e5;--ac2:#e0e7ff;--ok:#0f766e;--wr:#b45309;--bd:#e3e3ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14141c;--card:#1e1e2a;--tx:#ececf5;--mut:#9a9db5;--ac:#8b85ff;--ac2:#2a2a4a;--ok:#5eead4;--wr:#fbbf24;--bd:#32324a}}
-*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 "Sarabun","Noto Sans Thai",system-ui,sans-serif}
-header{padding:14px 16px;background:var(--ac);color:#fff}header h1{margin:0;font-size:18px}header p{margin:2px 0 0;font-size:13px;opacity:.9}
-nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--bd);display:flex;gap:6px;overflow-x:auto;padding:8px 10px;z-index:5}
-nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:6px 14px;font:inherit;font-size:14px}
-nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
-main{max-width:820px;margin:0 auto;padding:14px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin:0 0 14px}
-h2{margin:0 0 6px;font-size:20px}h3{margin:0 0 6px;font-size:17px}h4{margin:12px 0 4px;font-size:14px;color:var(--ac)}
-.st{color:#f59e0b;letter-spacing:1px}.tag{display:inline-block;background:var(--ac2);color:var(--ac);border-radius:6px;padding:1px 8px;font-size:12px;margin:2px 4px 2px 0}
-.mut{color:var(--mut);font-size:14px}
-ul,ol{margin:4px 0;padding-left:22px}.tip{border-left:4px solid var(--wr);padding:4px 10px;margin:8px 0;background:var(--bg)}
-.ex{border-left:4px solid var(--ok);padding:4px 10px;margin:8px 0;background:var(--bg)}
-.clip{border:1px solid var(--bd);border-radius:10px;padding:8px 10px;margin:6px 0;background:var(--bg)}
-.clip button{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:8px;padding:2px 10px;font:inherit;font-size:13px}
-a{color:var(--ac)}details{margin:6px 0}summary{cursor:pointer;color:var(--ac);font-weight:600}
-.cols{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:640px){.cols{grid-template-columns:1fr 1fr}}
-</style></head><body>
-<header><h1>SC401201 แคลคูลัสสำหรับวิทยาศาสตร์กายภาพ 1</h1><p>เตรียมสอบปลายภาค 1/2569 · ตามแนวข้อสอบ ส่วนที่ 1–8 + ซ้อมสอบ + รวมคลิป</p></header>
-<nav id="nav"></nav><main id="app"></main>
-<script>
-const PL="https://www.youtube.com/playlist?list=PLQGNJVc2JuVCIoWiAy_3dLyKyNxLCrTjc";
-/* คลิปในเพลย์ลิสต์ "แคลคูลัส 1" ช่อง Algoritmatics : [เลขบทที่แสดง, ชื่อคลิป, ความยาว] */
-const C={
-"3-4":["3-4, 3-5","อนุพันธ์ ตอน ความต่อเนื่องและอนุพันธ์ + การหาอนุพันธ์พื้นฐาน","24:52"],
-"3-5-2":["3-5-2","อนุพันธ์ ตอน การหาอนุพันธ์พื้นฐาน (ตัวอย่างเพิ่มเติม)","14:12"],
-"3-6-1":["3-6-1","อนุพันธ์ ตอน กฎลูกโซ่ (การหาอนุพันธ์ฟังก์ชันประกอบ) ตอน 1","18:00"],
-"3-6-2":["3-6-2","อนุพันธ์ ตอน กฎลูกโซ่ (การหาอนุพันธ์ฟังก์ชันประกอบ) ตอน 2","13:09"],
-"3-7-1":["3-7-1","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติ 1","16:59"],
-"3-7-2":["3-7-2","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติ 2","10:51"],
-"3-8-1":["3-8-1","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติผกผัน 1","11:04"],
-"3-8-2":["3-8-2","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันตรีโกณมิติผกผัน 2","11:04"],
-"3-9-1":["3-9-1","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันเลขชี้กำลังและฟังก์ชันลอการิทึม 1","12:03"],
-"3-9-2":["3-9-2","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันเลขชี้กำลังและฟังก์ชันลอการิทึม 2","14:30"],
-"3-9-3":["3-9-3","อนุพันธ์ ตอน อนุพันธ์ของฟังก์ชันเลขชี้กำลังและฟังก์ชันลอการิทึม 3","17:23"],
-"3-10":["3-10","อนุพันธ์ ตอน การหาอนุพันธ์โดยใช้ลอการิทึม","22:38"],
-"3-11":["3-11","อนุพันธ์ ตอน การหาอนุพันธ์ของฟังก์ชันโดยปริยาย","18:05"],
-"3-12":["3-12","อนุพันธ์ ตอน การหาอนุพันธ์อันดับสูง","19:21"],
-"3-13":["3-13","อนุพันธ์ ตอน ผลต่างอนุพัทธ์","20:09"],
-"4-6":["4-6","การประยุกต์ของผลต่างอนุพัทธ์ (สอนต่อจาก 3.13 เพื่อความต่อเนื่องของเนื้อหา)","19:05"],
-"4-1-1":["4-1-1","อัตราสัมพัทธ์ ตอน 1","12:48"],
-"4-1-2":["4-1-2","อัตราสัมพัทธ์ ตอน 2","16:47"],
-"4-1-3":["4-1-3","อัตราสัมพัทธ์ ตอน 3","10:31"],
-"4-2-1":["4-2-1","การวาดกราฟ ตอน 1 แนะนำ+ฟังก์ชันเพิ่มและฟังก์ชันลด","15:46"],
-"4-2-2":["4-2-2","การวาดกราฟ ตอน 2 จุดสูงสุดและต่ำสุดของฟังก์ชัน","26:52"],
-"4-2-3":["4-2-3","การวาดกราฟ ตอน 3 อนุพันธ์อันดับสองและความเว้าของฟังก์ชัน","17:56"],
-"4-2-4":["4-2-4","การวาดกราฟ ตอน 4 การตรวจสอบค่าสูงสุดและต่ำสุดสัมพัทธ์ด้วยอนุพันธ์อันดับสอง","18:38"],
-"4-2-5":["4-2-5","การวาดกราฟ ตอน 5 ตัวอย่างการวาดกราฟที่ 1","18:01"],
-"4-2-6":["4-2-6","การวาดกราฟ ตอน 6 ตัวอย่างการวาดกราฟที่ 2","18:07"],
-"4-2-7":["4-2-7","การวาดกราฟ ตอน 7 ตัวอย่างการวาดกราฟที่ 3","12:30"],
-"4-2-8":["4-2-8","การวาดกราฟ ตอน 8 เส้นกำกับ","18:21"],
-"4-3-1":["4-3-1","ปัญหาค่าสุดขีด ตอน 1","25:22"],
-"4-3-2":["4-3-2","ปัญหาค่าสุดขีด ตอน 2","14:20"],
-"4-3-3":["4-3-3","ปัญหาค่าสุดขีด ตอน 3","6:51"],
-"4-4":["4-4","ทฤษฎีบทของโรลล์และทฤษฎีบทค่าเฉลี่ย (ไม่อยู่ในแนวข้อสอบ)","16:00"],
-"4-5-1":["4-5-1","กฎของโลปิตาล ตอน 1 (รูปแบบ 0/0)","18:04"],
-"4-5-2":["4-5-2","กฎของโลปิตาล ตอน 2 (รูปแบบ infinity/infinity)","14:15"],
-"4-5-5":["4-5-5","กฎของโลปิตาล ตอน 5 (รูปแบบเกี่ยวกับการยกกำลัง)","18:40"],
-"4-5-6":["4-5-6","กฎของโลปิตาล ตอน 6 (รูปแบบเกี่ยวกับการยกกำลัง ตอนจบ)","10:03"],
-"5-1-1":["5-1-1","แนะนำปริพันธ์ และ ปริพันธ์ของ x ยกกำลัง n","17:01"],
-"5-1-2":["5-1-2","แนะนำเทคนิคการแทนค่าเพื่อหาปริพันธ์","8:24"],
-"5-1-3":["5-1-3","ปริพันธ์ของฟังก์ชันตรีโกณมิติ","6:17"],
-"5-1-4":["5-1-4","ปริพันธ์ของฟังก์ชันตรีโกณมิติผกผัน","9:49"],
-"5-1-5":["5-1-5","ปริพันธ์ของฟังก์ชันชี้กำลังและลอการิทึม","24:59"],
-"5-2":["5-2","ปริพันธ์จำกัดเขต","28:57"]};
-/* หัวข้อย่อย → คลิปที่ใช้ */
-const CM={
-"1.1":["3-4","3-5-2"],"1.2":["3-6-1","3-6-2"],"1.3":["3-7-1","3-7-2"],"1.4":["3-8-1","3-8-2"],
-"2.1":["3-9-1","3-9-2","3-9-3"],"2.2":["3-10"],
-"3.1":["3-11"],"3.2":["3-12"],
-"4.1":["3-13"],"4.2":["4-6"],
-"5.1":["4-1-1","4-1-2","4-1-3"],
-"6.1":["4-2-1","4-2-2","4-2-3","4-2-4","4-2-5","4-2-6","4-2-7","4-2-8"],"6.2":["4-3-1"],"6.3":["4-3-2","4-3-3"],
-"7.1":["4-5-1","4-5-2"],"7.2":["4-5-2"],"7.3":["4-5-5","4-5-6"],
-"8.1":["5-1-1","5-1-2","5-1-3","5-1-4","5-1-5"],"8.2":["5-2"]};
-const NOTE={"7.2":"ในภาพที่ส่งมาไม่เห็นบท 4-5-3 และ 4-5-4 (น่าจะเป็น 0·∞ และ ∞−∞) ลองหาในเพลย์ลิสต์ ถ้าไม่มีให้ใช้ 4-5-2 เป็นพื้นฐาน",
-"3.2":"ข้อ 4(1)–(3) ของใบงาน 9 เป็นอนุพันธ์พื้นฐาน ดูเพิ่มที่ 3-5-2 และ 3-6-1/3-6-2 ได้",
-"6.3":"ข้อ 5 (กรวย) ลองดูตัวอย่างทรงกระบอกใน 4-3-2 เป็นแนวทางเดียวกัน",
-"8.1":"ข้อ 4 (∫dx/√(−2x−x²)) ใช้เทคนิคจัดรูปกำลังสองสมบูรณ์เหมือนตัวอย่างใน 5-1-5 แล้วเข้าสูตร arcsin ใน 5-1-4"};
-const GIVEN_D=["sin u→cos u·u'","cos u→−sin u·u'","tan u→sec²u·u'","sec u→sec u tan u·u'","cot u→−csc²u·u'","csc u→−csc u cot u·u'","arcsin u→u'/√(1−u²)","arccos u→−u'/√(1−u²)","arctan u→u'/(1+u²)","arccot u→−u'/(1+u²)","arcsec u→u'/(|u|√(u²−1))","arccsc u→−u'/(|u|√(u²−1))","log_a|u|→u'/(u ln a)","a^u→a^u ln a·u'","ln|u|→u'/u","e^u→e^u·u'"];
-const GIVEN_I=["∫uⁿdu=uⁿ⁺¹/(n+1)+C (n≠−1)","∫sin u=−cos u+C","∫cos u=sin u+C","∫sec²u=tan u+C","∫csc²u=−cot u+C","∫sec u tan u=sec u+C","∫csc u cot u=−csc u+C","∫tan u=−ln|cos u|+C","∫cot u=ln|sin u|+C","∫sec u=ln|sec u+tan u|+C","∫csc u=ln|csc u−cot u|+C","∫du/√(a²−u²)=arcsin(u/a)+C","∫du/(a²+u²)=(1/a)arctan(u/a)+C","∫du/(u√(u²−a²))=(1/a)arcsec|u/a|+C","∫eᵘdu=eᵘ+C","∫aᵘdu=aᵘ/ln a+C","∫du/u=ln|u|+C"];
-const S=[
-{t:"อนุพันธ์ของฟังก์ชันพีชคณิต ประกอบ และตรีโกณ/ตรีโกณผกผัน",ws:"ใบงาน 7",st:3,
- know:["(u±v)'=u'±v'","(uv)'=u'v+uv'","(u/v)'=(u'v−uv')/v²","Chain: d/dx f(g(x))=f'(g)·g'","(xⁿ)'=n xⁿ⁻¹","1/xⁿ=x⁻ⁿ, √x=x^½ (ต้องแปลงก่อนหา)"],
- memo:["sin²+cos²=1","1+tan²=sec²","sin2x=2sin x cos x","cos2x=cos²−sin²","tan=sin/cos, cot=cos/sin","cot=1/tan, sec=1/cos, csc=1/sin"],
- subs:[
- {id:"1.1",t:"ผลบวก ผลคูณ ผลหาร",st:2,ws:"ใบงาน 7 ข้อ 1.1, 1.2, 1.5",
-  ans:"ตอบเป็น dy/dx = นิพจน์ในรูป x (ไม่ต้องรวมให้สวยก็ได้ แต่ต้องถูกกฎ)",
-  steps:["มองโครงสร้างนอกสุดก่อน: ถ้าเป็น (ตัว)×(ตัว) → กฎผลคูณ, ถ้าเป็น ตัว/ตัว → กฎผลหาร","เขียน u, v และหา u', v' แยกไว้ก่อน","แทนเข้าสูตร: คูณ = u'v+uv' / หาร = (u'v−uv')/v²","ถ้าติดเศษส่วนง่าย ๆ เช่น 1/(x−8) ให้เขียนเป็น (x−8)⁻¹ แล้วใช้ chain"],
-  tip:"ผลหารจำ 'ล่างคูณอนุพันธ์บน ลบ บนคูณอนุพันธ์ล่าง ทั้งหมดหารล่างกำลังสอง' อย่าสลับลำดับ ลบ",
-  ex:["y=x²(3x+1)","u=x², v=3x+1 → y'=2x(3x+1)+x²·3 = 9x²+2x"]},
- {id:"1.2",t:"ฟังก์ชันประกอบ (กฎลูกโซ่)",st:2,ws:"ใบงาน 7 ข้อ 1.3, 1.4, 1.5",
-  ans:"ตอบเป็น (กำลัง)×(ข้างใน)^(กำลัง−1)×(อนุพันธ์ข้างใน)",
-  steps:["มอง (ข้างใน) เป็น u แล้ว n คือกำลัง","ได้ y=uⁿ → y'=n uⁿ⁻¹·u'","หา u' แล้วคูณท้าย"],
-  tip:"ลืม u' เป็นข้อผิดที่เจอบ่อยที่สุด ทุกครั้งที่ข้างในไม่ใช่แค่ x ต้องคูณอนุพันธ์ข้างในเสมอ",
-  ex:["y=(4x⁵+3x³−10x)²⁰","y'=20(4x⁵+3x³−10x)¹⁹·(20x⁴+9x²−10)"]},
- {id:"1.3",t:"ฟังก์ชันตรีโกณมิติ",st:3,ws:"ใบงาน 7 ข้อ 2.1–2.6",
-  ans:"ตอบเป็นนิพจน์ตรีโกณ × อนุพันธ์ข้างใน; ข้อ 2.4, 2.5 มี sin³, cos⁸ ต้องใช้ chain ซ้อน",
-  steps:["sin²(5x)=(sin 5x)² → มองเป็น uⁿ ก่อน แล้วค่อยหาอนุพันธ์ของ sin 5x","ผลคูณ/ผลหาร ใช้กฎเดิม แล้วหาอนุพันธ์ตรีโกณแต่ละตัวพร้อมคูณข้างใน","ก่อนหา ให้ลองลดรูปด้วยเอกลักษณ์ได้ไหม (ข้อ 2.6)"],
-  tip:"2.6: (tan+cot)/(tan−cot) = (sin²+cos²)/(sin²−cos²) = −1/cos2x = −sec2x แล้วหาอนุพันธ์ = −2 sec2x tan2x ง่ายกว่าใช้กฎผลหารมาก",
-  ex:["y=sin(3x⁵−6x²+2x)","y'=cos(3x⁵−6x²+2x)·(15x⁴−12x+2)"]},
- {id:"1.4",t:"ฟังก์ชันตรีโกณมิติผกผัน",st:4,ws:"ใบงาน 7 ข้อ 3.1–3.6",
-  ans:"ตอบในรูปรากที่ (√(1−u²)) หรือ |u|√(u²−1) ตามสูตร × u'",
-  steps:["เลือกสูตร arcsin/arccos/arctan/arcsec/arccsc/arccot ที่ตรงกับตัวนอกสุด","แทน u = ข้างใน ในสูตร แล้วคูณ u'","ถ้ามี tan(arcsin u) ให้สร้างสามเหลี่ยมมุมฉาก: tan(arcsin u)=u/√(1−u²) แล้วหาอนุพันธ์ หรือ chain ตรง ๆ"],
-  tip:"arccos, arccot, arccsc มีเครื่องหมายลบนำหน้า (ตัว 'co' ติดลบ) ตรวจเครื่องหมายก่อนตอบทุกครั้ง",
-  ex:["y=arccos(x²+3)","u=x²+3, u'=2x → y'=−2x/√(1−(x²+3)²)"]}]},
-{t:"ฟังก์ชันชี้กำลัง ลอการิทึม และการหาอนุพันธ์โดยใช้ลอการิทึม",ws:"ใบงาน 8",st:3,
- know:["d/dx aᵘ = aᵘ ln a·u'","d/dx eᵘ = eᵘ·u'","d/dx log_a|u| = u'/(u ln a)","d/dx ln|u| = u'/u"],
- memo:["ln(xy)=ln x+ln y","ln(x/y)=ln x−ln y","ln xᶜ=c ln x","eˡⁿˣ=x, ln eˣ=x","log_a x=ln x/ln a","log_a a=1, log_a 1=0"],
- subs:[
- {id:"2.1",t:"สมบัติลอการิทึม + สูตรอนุพันธ์ชี้กำลัง/ลอการิทึม",st:2,ws:"ใบงาน 8 ข้อ 1, 2, 3.1–3.4",
-  ans:"ตอบเป็น dy/dx; ถ้าลดรูปได้ ให้ลดก่อนหา",
-  steps:["ดูก่อนว่าลดรูปด้วยสมบัติ log ได้ไหม (เช่น e^{ln(…)} = …)","แยกทีละพจน์ แล้วใช้สูตรตามฐาน (a หรือ e)","ฐานไม่ใช่ e อย่าลืมหาร ln a หรือคูณ ln a"],
-  tip:"ข้อ 3.2: e^{ln(x²−4x+5)} = x²−4x+5 ทันที ไม่ต้องใช้ chain ให้ยาก",
-  ex:["y=log₃(2x²−5x+4)","y'=(4x−5)/((2x²−5x+4) ln 3)"]},
- {id:"2.2",t:"อนุพันธ์โดยใช้ลอการิทึม (logarithmic differentiation)",st:4,ws:"ใบงาน 8 ข้อ 4.1–4.4",
-  ans:"ตอบ y' = y × (อนุพันธ์ของ ln y) โดยแทน y กลับเป็นนิพจน์เดิม",
-  steps:["ใช้เมื่อ ตัวแปรอยู่ทั้งฐานและเลขชี้กำลัง (xˣ) หรือมีผลคูณ/หาร/ราก ซ้อนยาวมาก","ใส่ ln ทั้งสองข้าง แล้วกระจายด้วยสมบัติ log","หาอนุพันธ์ทั้งสองข้าง (ซ้าย = y'/y)","คูณ y กลับ แล้วแทน y เป็นนิพจน์เดิม"],
-  tip:"ราก ³√(…) = (…)^{1/3} → ln ได้ (1/3)ln(…)",
-  ex:["y=xˣ","ln y=x ln x → y'/y=ln x+1 → y'=xˣ(ln x+1)"]}]},
-{t:"การหาอนุพันธ์โดยปริยายและอนุพันธ์อันดับสูง",ws:"ใบงาน 9",st:3,
- know:["หา d/dx ทั้งสองข้าง โดยเจอ y ให้คูณ y' (dy/dx)","y²→2y·y', xy→y+xy', sin y→cos y·y'","อนุพันธ์อันดับ 2: หาอนุพันธ์ของ y' อีกครั้ง"],
- memo:["แยกกลุ่ม y' ไว้ข้างเดียว แล้วหาร","ถ้าโจทย์ให้จุด ให้แทนจุดหลังหา y' แล้ว (หรือก่อน ถ้าง่ายกว่า)"],
- subs:[
- {id:"3.1",t:"หา dy/dx โดยปริยาย",st:3,ws:"ใบงาน 9 ข้อ 1(1)–(3), 2, 3",
-  ans:"ตอบ dy/dx เป็นนิพจน์ x และ y (หรือเป็นตัวเลขถ้าโจทย์ให้จุด)",
-  steps:["หาอนุพันธ์ทั้งสองข้างเทียบ x","พจน์ที่มี y ให้ติด y' ท้าย; พจน์ผลคูณ x·y ใช้กฎผลคูณ","ย้ายพจน์ที่มี y' ไปซ้าย ที่เหลือไปขวา แล้วดึง y' ออกมาหาร","ถ้ามีจุด แทน x, y ลงไป"],
-  tip:"ข้อ 2: x tan y + y sec x = π/4 ที่ (0,π/4): ได้ tan y + x sec²y·y' + y' sec x + y sec x tan x = 0 แทนจุด → 1 + y' = 0 → y' = −1",
-  ex:["x²+xy+y²=7","2x+y+xy'+2yy'=0 → y'=−(2x+y)/(x+2y)"]},
- {id:"3.2",t:"อนุพันธ์อันดับสูง",st:3,ws:"ใบงาน 9 ข้อ 4(1)–(3), 5",
-  ans:"ตอบ y'', y''' หรือ y⁽⁴⁾ เป็นนิพจน์ หรือค่าที่จุด",
-  steps:["หาอนุพันธ์ทีละอันดับ เขียนผลแต่ละอันดับไว้","ข้อ 4(2) x²eˣ ใช้กฎผลคูณซ้ำทุกอันดับ (หา pattern ได้: (x²+2x)eˣ, (x²+4x+2)eˣ, (x²+6x+6)eˣ)","ข้อ 5 โดยปริยาย: หา y' แล้ว y'' ให้แทน y' กลับ"],
-  tip:"ข้อ 5: x²+y²=2x → y'=(1−x)/y ; y²+(1−x)²=1 ทำให้ y''=−1/y³ ; y'''=3y⁻⁴y' ที่ (1,1) y'=0 → d³y/dx³ = 0",
-  ex:["y=2x⁵−3x⁴+4x²−7x+1","y'''=120x²−72x"]}]},
-{t:"ผลต่างอนุพัทธ์และการประยุกต์",ws:"ใบงาน 10",st:2,
- know:["dx=Δx, dy=f'(x)dx","f(x+Δx)≈f(x)+f'(x)Δx","Δy=f(x+Δx)−f(x) (ค่าจริง)","error=|Δy−dy|"],
- memo:["เลือก x ที่ถอดรากหรือยกกำลังได้ลงตัว","Δx เล็กและบวก/ลบได้"],
- subs:[
- {id:"4.1",t:"หา dy และเปรียบเทียบ Δy กับ dy",st:2,ws:"ใบงาน 10 ข้อ 1, 2, 3",
-  ans:"ตอบ dy = (…)dx ; ข้อ 3 ตอบ Δx, Δy, dy และ |Δy−dy|",
-  steps:["หา f'(x) (ข้อ 2 ใช้โดยปริยาย)","dy=f'(x)dx","ข้อ 3: Δx=2.02−2=0.02, Δy=f(2.02)−f(2), dy=f'(2)(0.02)=(3·4−2)(0.02)=0.2"],
-  tip:"ข้อ 3: Δy=5.202408−5=0.202408, dy=0.2 → |Δy−dy|=0.002408",
-  ex:["ข้อ 2: x²eʸ+y²=5","2xeʸdx+x²eʸdy+2y dy=0 → dy=−2xeʸ/(x²eʸ+2y) dx"]},
- {id:"4.2",t:"ประมาณค่าด้วยผลต่างอนุพัทธ์",st:2,ws:"ใบงาน 10 ข้อ 4.1, 4.2 (ข้อ 4)",
-  ans:"ต้องระบุ f, x, Δx ก่อน แล้วตอบค่าประมาณเป็นเลข",
-  steps:["ตั้ง f(x) ตามโจทย์ (เช่น √x)","เลือก x ใกล้ค่าที่ต้องการแล้วคำนวณง่าย","หา f'(x) ใช้ f(x+Δx)≈f(x)+f'(x)Δx"],
-  tip:"ต้องเขียนว่าเลือก x=…, Δx=… ตามหมายเหตุในใบงาน",
-  ex:["ประมาณ √98","f=√x, x=100, Δx=−2: √98≈10+(1/20)(−2)=9.9"]}]},
-{t:"อัตราสัมพัทธ์",ws:"ใบงาน 11 (ข้อ 1, 2)",st:3,
- know:["เขียนสมการเชื่อมตัวแปร แล้วหา d/dt ทั้งสองข้าง","V=(4/3)πr³, A=πr²","tanθ=ตรงข้าม/ชิด, Pythagoras"],
- memo:["แทนค่าที่ 'ขณะนั้น' หลังหา d/dt เท่านั้น"],
- subs:[
- {id:"5.1",t:"โจทย์อัตราสัมพัทธ์",st:3,ws:"ใบงาน 11 ข้อ 1 (ลูกโป่ง), ข้อ 2 (กล้อง-จรวด)",
-  ans:"ตอบเป็นตัวเลข + หน่วย (เช่น ซม./วินาที, เรเดียน/วินาที) และบอกเพิ่มหรือลด",
-  steps:["วาดรูป ตั้งชื่อตัวแปรที่เปลี่ยนตามเวลา","เขียนสมการที่ไม่ใส่ตัวเลขที่ 'เปลี่ยน'","หา d/dt (chain)","แทนค่าขณะนั้นแล้วแก้หาอัตรา"],
-  tip:"ข้อ 1: dV/dt=4πr²dr/dt → 2=4π(9)dr/dt → dr/dt=1/(18π) ซม./วินาที ข้อ 2: tanθ=y/5000 → sec²θ·θ'=y'/5000; y=1000 → sec²θ=26/25 → θ'=(600/5000)(25/26)=3/26 เรเดียน/วินาที",
-  ex:["ลูกโป่ง V เพิ่ม 2 ซม³/วิ หา dr/dt ที่ r=3","dr/dt=1/(18π) ≈ 0.0177 ซม./วินาที"]}]},
-{t:"การวิเคราะห์กราฟและปัญหาค่าสุดขีด",ws:"ใบงาน 11 (ข้อ 3–6)",st:4,
- know:["f'>0 เพิ่ม, f'<0 ลด","f''>0 เว้าบน, f''<0 เว้าล่าง","จุดวิกฤต: f'=0 หรือ f' ไม่นิยาม","ทดสอบอนุพันธ์อันดับสอง: f''(c)>0→ต่ำสุด, <0→สูงสุด","ช่วงปิด: เทียบค่าที่จุดวิกฤตกับปลายช่วง"],
- memo:["ปริมาตรกรวย V=⅓πr²h, ผิวข้างกรวย πrs, s=√(r²+h²)","เมื่อยกกำลังสองแล้ว min ตำแหน่งเดิม (ถ้าไม่ติดลบ)"],
- subs:[
- {id:"6.1",t:"วิเคราะห์กราฟ จุดวิกฤต จุดเปลี่ยนเว้า",st:4,ws:"ใบงาน 11 ข้อ 3",
-  ans:"ตอบ: จุดวิกฤต, ช่วงเพิ่ม/ลด, ช่วงเว้าบน/ล่าง, จุดเปลี่ยนเว้า, สูงสุด/ต่ำสุดสัมพัทธ์ (ครบทุกหัวข้อ)",
-  steps:["หา f' แก้ f'=0 ได้จุดวิกฤต","ตารางเครื่องหมาย f' ตามช่วง","หา f'' แก้ f''=0 ได้จุดเปลี่ยนเว้า แล้วทำตารางเครื่องหมาย f''","สรุปค่า f ที่จุดสำคัญ"],
-  tip:"ข้อ 3: f=x⁴−2x²+4: f'=4x(x²−1) → x=0,±1 ; f''=12x²−4 → x=±1/√3 ; เพิ่มใน (−1,0),(1,∞) ลดใน (−∞,−1),(0,1) ; ต่ำสุดที่ ±1 (=3), สูงสุดที่ 0 (=4)",
-  ex:["f=x³−3x²","f'=3x(x−2): สูงสุดที่ x=0 (0), ต่ำสุดที่ x=2 (−4), จุดเปลี่ยนเว้าที่ x=1"]},
- {id:"6.2",t:"ค่าสุดขีดบนช่วงปิด",st:3,ws:"ใบงาน 11 ข้อ 4",
-  ans:"ตอบค่าสูงสุดสัมบูรณ์และต่ำสุดสัมบูรณ์พร้อมตำแหน่ง x",
-  steps:["หาจุดวิกฤตในช่วง","คำนวณ f ที่จุดวิกฤตและปลายช่วงทุกจุด","ค่ามากสุด/น้อยสุด คือคำตอบ"],
-  tip:"ข้อ 4 (ถ้า f=x/(x²+1)): f'=(1−x²)/(x²+1)² ; x=1 ; f(0)=0, f(1)=1/2, f(3)=3/10 → สูงสุด 1/2 ที่ x=1, ต่ำสุด 0 ที่ x=0",
-  ex:["f=x²−4x บน [0,3]","จุดวิกฤต x=2; f(0)=0,f(2)=−4,f(3)=−3 → max 0, min −4"]},
- {id:"6.3",t:"โจทย์ปัญหาค่าสุดขีด",st:5,ws:"ใบงาน 11 ข้อ 5 (กรวย), ข้อ 6 (รั้ว)",
-  ans:"ตอบขนาดที่ทำให้ min/max พร้อมหน่วย และค่า min/max ถ้าถาม",
-  steps:["วาดรูป ตั้งตัวแปร","เขียนฟังก์ชันเป้าหมาย","ใช้เงื่อนไขกำจัดตัวแปรให้เหลือตัวเดียว","หา f'=0 และตรวจด้วย f'' หรือเครื่องหมาย f'"],
-  tip:"ข้อ 5: h=108/r², S²=π²(r⁴+11664/r²) → r⁶=5832 → r=3√2 นิ้ว, h=6 นิ้ว ข้อ 6 (สมมติ N-S ยาว y, E-W ยาว x): C=30y+120x, xy=10000 → x=50, y=200 ฟุต, C=12,000 บาท",
-  ex:["ลวด 40 ม. ล้อมสี่เหลี่ยมให้พื้นที่มากสุด","x+y=20, A=x(20−x) → x=10 → 10×10, A=100 ตร.ม."]}]},
-{t:"กฎของโลปิตัล",ws:"ใบงาน 12",st:4,
- know:["ถ้า 0/0 หรือ ∞/∞ : lim f/g = lim f'/g' (ทำซ้ำได้)","ต้องตรวจรูปแบบก่อนใช้ทุกครั้ง"],
- memo:["0·∞ → เขียนเป็นเศษส่วน","∞−∞ → รวมเศษส่วน","0⁰, ∞⁰, 1^∞ → ใส่ ln: L=e^{lim ln(…)}"],
- subs:[
- {id:"7.1",t:"0/0 และ ∞/∞",st:2,ws:"ใบงาน 12 ข้อ 1, 2, 3, 4",
-  ans:"ตอบค่าลิมิต (ตัวเลข หรือ ∞) พร้อมเขียนว่ารูปแบบคืออะไรก่อนใช้กฎ",
-  steps:["แทนค่า ตรวจรูปแบบ","หา f' และ g' แยกกัน (ห้ามใช้กฎผลหาร)","ถ้ายัง 0/0 หรือ ∞/∞ ทำซ้ำ"],
-  tip:"ข้อ 1: (2e^{2x}+sin x)/1→2 ; ข้อ 2: (sec²x−1)/3x²=tan²x/3x²→1/3 ; ข้อ 3: ได้ x cos x/sin x→1 ; ข้อ 4: 5ˣ/x⁴→∞ (เลขชี้กำลังโตกว่า)",
-  ex:["lim (eˣ−1)/x เมื่อ x→0","0/0 → eˣ/1 → 1"]},
- {id:"7.2",t:"0·∞ และ ∞−∞",st:3,ws:"ใบงาน 12 ข้อ 5, 6",
-  ans:"ตอบค่าลิมิต; ต้องแสดงการแปลงเป็นเศษส่วนก่อน",
-  steps:["0·∞: เอาตัวหนึ่งไปไว้ส่วน เช่น x²ln x = ln x/x⁻²","∞−∞: รวมเป็นเศษส่วนเดียว","ตรวจ 0/0 หรือ ∞/∞ แล้วใช้กฎ"],
-  tip:"ข้อ 5: (1/x)/(−2x⁻³)=−x²/2→0 ; ข้อ 6: (ln x−x+1)/((x−1)ln x) → ผ่านโลปิตัล 2 รอบ → −1/2",
-  ex:["lim x ln x เมื่อ x→0⁺","ln x/(1/x) → (1/x)/(−1/x²) = −x → 0"]},
- {id:"7.3",t:"0⁰, ∞⁰, 1^∞",st:4,ws:"ใบงาน 12 ข้อ 7, 8",
-  ans:"ตอบ e^{ค่า ln L} และต้องเขียน ln y = … ก่อน",
-  steps:["ให้ y = f^g","ln y = g ln f → ได้ 0·∞ หรือ 0/0","หาลิมิตของ ln y = L","ตอบ e^L"],
-  tip:"ข้อ 7: ln y=sin x ln x=ln x/csc x→0 ⇒ ตอบ 1 ; ข้อ 8: ln y=ln cos x/x²→−1/2 ⇒ ตอบ e^{−1/2}",
-  ex:["lim (1+2/x)ˣ เมื่อ x→∞","ln y=x ln(1+2/x) → 2 → ตอบ e²"]}]},
-{t:"อินทิกรัล (ไม่จำกัดเขตและจำกัดเขต)",ws:"ใบงาน 13",st:3,
- know:["ตารางอินทิกรัลให้ในข้อสอบ","จำกัดเขต: เปลี่ยนขอบเขต u ตาม x","|f| ต้องแตกช่วงที่ f เปลี่ยนเครื่องหมาย"],
- memo:["ตั้ง u = ตัวข้างใน แล้วดูว่า du ตรงกับที่เหลือไหม","ปรับค่าคงที่ (×k/k) ให้ตรง du","ท้ายอินทิกรัลไม่จำกัดเขตต้องมี +C"],
- subs:[
- {id:"8.1",t:"อินทิกรัลไม่จำกัดเขต (การแทนค่า)",st:3,ws:"ใบงาน 13 ข้อ 2, 3, 4, 5",
-  ans:"ตอบเป็นฟังก์ชัน + C (เขียน u กลับเป็น x)",
-  steps:["หาตัวที่อนุพันธ์ของมันอยู่ในโจทย์ → u","คำนวณ du","เปลี่ยนเป็น ∫ …du แล้วใช้ตาราง","แทน u กลับ"],
-  tip:"ข้อ 2: u=x⁴+x → −cos(x⁴+x)+C ; ข้อ 3: u=e^{x²}+5 → ln(e^{x²}+5)+C ; ข้อ 4: −2x−x²=1−(x+1)² → arcsin(x+1)+C ; ข้อ 5: ตัวหาร = (eˣ+1)²+1 → arctan(eˣ+1)+C",
-  ex:["∫ 2x/(x²+1) dx","u=x²+1 → ln(x²+1)+C"]},
- {id:"8.2",t:"อินทิกรัลจำกัดเขต และค่าสัมบูรณ์",st:3,ws:"ใบงาน 13 ข้อ 1, 6, 7",
-  ans:"ตอบเป็นตัวเลข (ถ้ามี ln ให้ตอบ ln ได้เลย)",
-  steps:["เปลี่ยนขอบเขตตาม u (หรือแทนกลับ x)","|g|: หา g=0 แบ่งช่วง แล้วใส่เครื่องหมาย","คำนวณและลบขอบเขตบน−ล่าง"],
-  tip:"ข้อ 1: u=x³−1 ขอบ −1→0 → (1/3)·(1/11)=1/33 ; ข้อ 6: แบ่งที่ −1 → 1/2+9/2=5 ; ข้อ 7: แบ่งที่ 2 → 2+1/2=5/2",
-  ex:["∫_{ln3}^{ln5} eˣ/(eˣ+4) dx","u=eˣ+4 → ln(9)−ln(7)=ln(9/7)"]}]}
-];
-S.forEach(s=>s.subs.forEach(b=>{b.cl=CM[b.id]||[]}));
-const PR=[
-["y=(2x+1)⁵ sin 3x หา y'","y'=10(2x+1)⁴ sin3x+3(2x+1)⁵ cos3x"],
-["y=x^{ln x} หา y'","ln y=(ln x)² → y'=2x^{ln x−1} ln x"],
-["x³+y³=6xy หา dy/dx","y'=(2y−x²)/(y²−2x)"],
-["ใช้ผลต่างอนุพัทธ์ประมาณ ³√28","x=27,Δx=1: 3+1/27≈3.037"],
-["บันได 5 ม. ปลายล่างไถลออก 0.5 ม./วิ ที่ฐานห่างผนัง 3 ม. ปลายบนลดด้วยอัตราเท่าใด","x²+y²=25, y=4 → y'=−3/8 ม./วิ"],
-["f(x)=x³−3x² บน [−1,3] หาค่าสูงสุด/ต่ำสุด","f(−1)=−4,f(0)=0,f(2)=−4,f(3)=0 → max 0 (x=0,3), min −4 (x=−1,2)"],
-["ลวด 40 ม. ล้อมสี่เหลี่ยมพื้นที่มากสุด","10×10 ม., A=100 ตร.ม."],
-["lim_{x→0} (1−cos x)/x²","0/0 → sin x/2x → 1/2"],
-["lim_{x→∞} (1+2/x)ˣ","1^∞ → e²"],
-["∫₀¹ 2x(x²+1)³ dx","u=x²+1: [u⁴/4] จาก 1 ถึง 2 = 15/4"]];
-const st=n=>"★".repeat(n)+"☆".repeat(5-n);
-const L=a=>"<ul>"+a.map(x=>"<li>"+x+"</li>").join("")+"</ul>";
-const ttl=k=>"แคลคูลัส 1 บท "+C[k][0]+" "+C[k][1];
-const srch=k=>"https://www.youtube.com/results?search_query="+encodeURIComponent("Algoritmatics "+ttl(k));
-const clipRow=k=>`<div class="clip"><b>บท ${C[k][0]}</b> ${C[k][1]} <span class="mut">(${C[k][2]} นาที)</span><br><a href="${srch(k)}" target="_blank" rel="noopener">▶ ค้นหาคลิปนี้บน YouTube</a> · <button data-c="${k}">คัดลอกชื่อ</button></div>`;
-function clips(b){
- const n=NOTE[b.id]?`<div class="mut">${NOTE[b.id]}</div>`:"";
- return `<h4>คลิปสอนที่ตรงหัวข้อ (ดูตามลำดับ)</h4>${b.cl.map(clipRow).join("")}${n}<div class="mut">หรือเปิด <a href="${PL}" target="_blank" rel="noopener">เพลย์ลิสต์</a> แล้วกดแว่นขยายมุมขวาบน วางชื่อที่คัดลอกไว้</div>`}
-function allClips(){
- const use={};S.forEach((s,i)=>s.subs.forEach(b=>b.cl.forEach(k=>{(use[k]=use[k]||[]).push(`${b.id} (${b.ws})`)})));
- return `<div class="card"><h2>รวมคลิปทั้งหมด (เรียงตามเพลย์ลิสต์)</h2><p class="mut">บอกว่าแต่ละคลิปช่วยทำหัวข้อไหน/ใบงานข้อไหน</p></div>`+Object.keys(C).map(k=>`<div class="card">${clipRow(k)}<div class="mut">${use[k]?"ช่วยทำ: "+use[k].join(" · "):"ไม่อยู่ในแนวข้อสอบ"}</div></div>`).join("")}
-function page(i){
- if(i==9)return allClips();
- if(i==8){return `<div class="card"><h2>หน้า 9 · ซ้อมสอบ (โจทย์ใหม่ 10 ข้อ)</h2><p class="mut">ลองทำก่อนแล้วค่อยกดดูเฉลย</p></div>`+PR.map((p,k)=>`<div class="card"><b>ข้อ ${k+1}.</b> ${p[0]}<details><summary>ดูเฉลย</summary><div class="ex">${p[1]}</div></details></div>`).join("")}
- const s=S[i];
- return `<div class="card"><h2>หน้า ${i+1} · ${s.t}</h2><span class="tag">${s.ws}</span> <span class="st">${st(s.st)}</span> <span class="mut">ความยากรวม</span>
- <div class="cols"><div><h4>สูตรที่ต้องรู้/ใช้บ่อย</h4>${L(s.know)}</div><div><h4>สูตรที่ไม่ให้ในข้อสอบ (ต้องจำ)</h4>${L(s.memo)}</div></div>
- <details><summary>สูตรที่ให้ในข้อสอบ</summary><div class="mut">อนุพันธ์</div>${L(GIVEN_D)}<div class="mut">อินทิกรัล</div>${L(GIVEN_I)}</details></div>`+
- s.subs.map(b=>`<div class="card"><h3>${b.id} ${b.t}</h3><span class="st">${st(b.st)}</span> <span class="tag">${b.ws}</span>
- ${clips(b)}<h4>คำตอบที่ต้องการ / วิธีตอบ</h4><div>${b.ans}</div><h4>วิธีทำ</h4><ol>${b.steps.map(x=>"<li>"+x+"</li>").join("")}</ol>
- <div class="tip"><b>เคล็ดลับ/เฉลยข้อในใบงาน:</b> ${b.tip}</div><div class="ex"><b>ตัวอย่าง:</b> ${b.ex[0]}<br>${b.ex[1]}</div>
- <h4>ลองทำ</h4><div>${b.ws}</div></div>`).join("")}
-const nav=document.getElementById("nav"),app=document.getElementById("app");
-const names=[...S.map((s,i)=>"หน้า "+(i+1)),"หน้า 9 ซ้อมสอบ","รวมคลิป"];
-function go(i){nav.innerHTML=names.map((n,k)=>`<button class="${k==i?"on":""}" data-k="${k}">${n}</button>`).join("");app.innerHTML=page(i);window.scrollTo(0,0);try{history.replaceState(null,"","#"+i)}catch(e){}}
-nav.onclick=e=>{const k=e.target.dataset.k;if(k!==undefined)go(+k)};
-app.onclick=e=>{const k=e.target.dataset.c;if(!k)return;const t=ttl(k),b=e.target;
- try{navigator.clipboard.writeText(t).then(()=>{b.textContent="คัดลอกแล้ว ✓"},()=>{prompt("คัดลอกชื่อคลิป",t)})}catch(x){prompt("คัดลอกชื่อคลิป",t)}};
-go(Math.min(9,Math.max(0,parseInt(location.hash.slice(1))||0)));
-</script></body></html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REBORN: พงศาวดารผู้เกิดใหม่ — Isekai Survival RPG</title>
+    <style>
+        :root {
+            --bg-main: #121214;
+            --bg-panel: #1a1a1e;
+            --bg-card: #222228;
+            --border-color: #33333d;
+            --accent-gold: #f0a500;
+            --accent-gold-hover: #ffb81c;
+            --text-main: #e0e0e6;
+            --text-muted: #9999a6;
+            --danger: #e63946;
+            --success: #2a9d8f;
+            --info: #457b9d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--bg-panel);
+            border-bottom: 2px solid var(--border-color);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(240, 165, 0, 0.3);
+        }
+
+        .header-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: var(--accent-gold);
+            color: #000;
+            border-color: var(--accent-gold);
+        }
+
+        button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        button.primary {
+            background-color: var(--accent-gold);
+            color: #000;
+            font-weight: bold;
+        }
+
+        button.primary:hover {
+            background-color: var(--accent-gold-hover);
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 55px);
+            max-width: 1600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Left Dashboard */
+        .sidebar {
+            width: 340px;
+            background-color: var(--bg-panel);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .panel-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .panel-box h3 {
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4px;
+        }
+
+        .char-avatar {
+            width: 80px;
+            height: 80px;
+            background: #2a2a35;
+            border: 2px solid var(--accent-gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .char-header {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .char-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .char-info h4 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .stat-bar-container {
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 2px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-main);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .fill-hp { background-color: var(--danger); }
+        .fill-stamina { background-color: #f77f00; }
+        .fill-mana { background-color: #4361ee; }
+        .fill-hunger { background-color: #70e000; }
+        .fill-thirst { background-color: #00b4d8; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            font-size: 0.82rem;
+        }
+
+        .stat-item {
+            background: var(--bg-main);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Right Main Gameplay Area */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-main);
+            overflow: hidden;
+        }
+
+        .world-status-bar {
+            background-color: var(--bg-panel);
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .world-status-item span {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .scene-container {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .scene-banner {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #1f1f28, #2a2a38);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .scene-text-box {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .choices-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .choice-card {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 14px 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .choice-card:hover:not(.disabled) {
+            border-color: var(--accent-gold);
+            background-color: var(--bg-card);
+            transform: translateX(4px);
+        }
+
+        .choice-card.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background-color: #161619;
+        }
+
+        .choice-title {
+            font-weight: bold;
+            color: var(--accent-gold);
+            font-size: 1rem;
+        }
+
+        .choice-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Log / History Panel */
+        .log-box {
+            background-color: var(--bg-panel);
+            border-top: 1px solid var(--border-color);
+            padding: 10px 20px;
+            max-height: 120px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .log-entry {
+            border-left: 2px solid var(--accent-gold);
+            padding-left: 8px;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .modal-header h2 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .sidebar {
+                width: 100%;
+                max-height: 250px;
+            }
+            .scene-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>REBORN: พงศาวดารผู้เกิดใหม่</h1>
+        <div class="header-btns">
+            <button onclick="Game.openCodex()">สารานุกรม</button>
+            <button onclick="Game.openEndings()">ฉากจบที่ปลดล็อก</button>
+            <button onclick="Game.saveGame()">บันทึกเกม</button>
+            <button onclick="Game.restartGame()">เริ่มใหม่</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Left Dashboard -->
+        <div class="sidebar">
+            <div class="panel-box">
+                <div class="char-header">
+                    <div class="char-avatar" id="charAvatar">👶</div>
+                    <div class="char-info">
+                        <h4 id="displayName">อาร์เธอร์</h4>
+                        <p id="displayRace">เผ่า: มนุษย์</p>
+                        <p id="displayCareer">อาชีพ: เด็กทารก</p>
+                    </div>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); display: flex; justify-content: space-between; margin-top: 5px;">
+                    <span id="displayAge">อายุ: 0 ปี</span>
+                    <span id="displayGold">💰 25 G</span>
+                </div>
+            </div>
+
+            <!-- Vital Bars -->
+            <div class="panel-box">
+                <h3>สถานะร่างกาย</h3>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>HP (พลังชีวิต)</span><span id="txtHp">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-hp" id="barHp" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>Stamina (ความอึด)</span><span id="txtStamina">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-stamina" id="barStamina" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>Mana (พลังเวท)</span><span id="txtMana">50/50</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-mana" id="barMana" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>ความหิว</span><span id="txtHunger">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-hunger" id="barHunger" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-bar-container">
+                    <div class="stat-label"><span>ความกระหาย</span><span id="txtThirst">100/100</span></div>
+                    <div class="progress-bar"><div class="progress-fill fill-thirst" id="barThirst" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <!-- Core Attributes -->
+            <div class="panel-box">
+                <h3>ค่าคุณลักษณะหลัก</h3>
+                <div class="stats-grid">
+                    <div class="stat-item"><span>พละกำลัง (STR)</span><strong id="statStr">10</strong></div>
+                    <div class="stat-item"><span>ความคล่อง (DEX)</span><strong id="statDex">10</strong></div>
+                    <div class="stat-item"><span>ความอึด (CON)</span><strong id="statCon">10</strong></div>
+                    <div class="stat-item"><span>สติปัญญา (INT)</span><strong id="statInt">12</strong></div>
+                    <div class="stat-item"><span>ความเข้าใจ (WIS)</span><strong id="statWis">10</strong></div>
+                    <div class="stat-item"><span>การสังเกต (PER)</span><strong id="statPer">10</strong></div>
+                    <div class="stat-item"><span>โชค (LUK)</span><strong id="statLuk">10</strong></div>
+                    <div class="stat-item"><span>เสน่ห์ (CHA)</span><strong id="statCha">10</strong></div>
+                </div>
+            </div>
+
+            <!-- Traits & Memory -->
+            <div class="panel-box">
+                <h3>ความทรงจำวัยเด็ก & ลักษณะ</h3>
+                <div id="traitsList" style="font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 6px;">
+                    - จิตวิญญาณข้ามภพ
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted);" id="txtMemorySummary">ความอยากรู้: 0 | ความรอบคอบ: 0</p>
+            </div>
+        </div>
+
+        <!-- Right Main Area -->
+        <div class="main-content">
+            <div class="world-status-bar">
+                <div class="world-status-item">วัน: <span id="lblDay">1</span></div>
+                <div class="world-status-item">ฤดูกาล: <span id="lblSeason">ใบไม้ผลิ</span></div>
+                <div class="world-status-item">สถานที่: <span id="lblLocation">ห้องนอนเก่าในหมู่บ้านชนบท</span></div>
+                <div class="world-status-item">สภาพอากาศ: <span id="lblWeather">แจ่มใส</span></div>
+            </div>
+
+            <div class="scene-container" id="sceneContainer">
+                <!-- Dynamic Content Rendered Here -->
+            </div>
+
+            <div class="log-box" id="logBox">
+                <div class="log-entry">ยินดีต้อนรับสู่ REBORN: พงศาวดารผู้เกิดใหม่ เริ่มต้นบันทึกชีวิตของคุณ...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modalOverlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <script>
+        let GameState = {
+            name: "อาร์เธอร์",
+            race: "มนุษย์",
+            family: "ชาวนาผู้ยากจน",
+            career: "เด็กทารก (อายุ 0-1 ปี)",
+            age: 0,
+            day: 1,
+            season: "ใบไม้ผลิ",
+            location: "หมู่บ้านรุ่งอรุณ",
+            weather: "แจ่มใส",
+            hp: 100, maxHp: 100,
+            stamina: 100, maxStamina: 100,
+            mana: 50, maxMana: 50,
+            hunger: 100, thirst: 100,
+            stats: { str: 10, dex: 10, con: 10, int: 12, wis: 10, per: 10, luk: 10, cha: 10 },
+            gold: 25,
+            reputation: 0,
+            traits: ["จิตวิญญาณข้ามภพ"],
+            childhoodMemory: { curiosity: 0, caution: 0, ambition: 0, kindness: 0 },
+            unlockedEndings: [],
+            currentSceneId: "scene_birth_0"
+        };
+
+        const Scenes = {
+            "scene_birth_0": {
+                title: "บทที่ 1: การเกิดใหม่และการตื่นรู้",
+                banner: "👶",
+                text: "เสียงลมลอดผ่านรอยแยกของหน้าต่างไม้ คุณลืมตาขึ้นช้า ๆ กลิ่นดินชื้นและฟืนที่กำลังมอดลอยอยู่ในอากาศ สิ่งแรกที่คุณสัมผัสได้คือความรู้สึกแปลกประหลาดของการมีชีวิตอีกครั้ง ฝ่ามือของคุณเล็กเกินกว่าจะจับอะไรได้มั่นคง ภาษาที่ได้ยินฟังดูไม่คุ้นเคย แต่กลับมีบางส่วนที่คุณเริ่มเข้าใจอย่างน่าประหลาด ในความทรงจำมีโลกอีกใบหนึ่ง... ตอนนี้คุณอยู่ที่นี่ และทุกการตัดสินใจจะกำหนดอนาคต",
+                choices: [
+                    { id: "c_birth_1", title: "สำรวจสิ่งแปลกปลอมข้างเตียง", desc: "พยายามใช้ประสาทสัมผัสวิเคราะห์สิ่งแวดล้อมรอบตัว", effect: () => { GameState.childhoodMemory.curiosity += 2; GameState.stats.int += 1; }, next: "scene_childhood_hub" },
+                    { id: "c_birth_2", title: "พยายามสื่อสารและส่งเสียงเรียกครอบครัว", desc: "ทดลองเปล่งเสียงเพื่อทำความเข้าใจกล่องเสียงของร่างใหม่", effect: () => { GameState.childhoodMemory.kindness += 1; GameState.stats.cha += 1; }, next: "scene_childhood_hub" },
+                    { id: "c_birth_3", title: "ทดลองควบคุมพลังงานในร่างกายเงียบ ๆ", desc: "ตรวจสอบกระแสมานาหรือพลังจิตที่หลงเหลือจากภพก่อน", effect: () => { GameState.childhoodMemory.ambition += 2; GameState.mana += 10; }, next: "scene_childhood_hub" },
+                    { id: "c_birth_4", title: "ทำตัวเป็นเด็กทารกปกติและพักผ่อน", desc: "เก็บสะสมแรงกายและไม่ให้ผู้ใหญ่ผิดสังเกต", effect: () => { GameState.childhoodMemory.caution += 2; GameState.hp += 10; }, next: "scene_childhood_hub" }
+                ]
+            },
+            "scene_childhood_hub": {
+                title: "วัยเยาว์แห่งการเติบโต (อายุ 1-11 ปี)",
+                banner: "🏡",
+                text: "เวลาผ่านไป ร่างกายของคุณเริ่มเติบโตขึ้นตามลำดับ คุณได้เรียนรู้ภาษาและวิถีชีวิตผ่านการทำกิจกรรมประจำวัน ความทรงจำวัยเด็กเริ่มหล่อหลอมตัวตนและทักษะติดตัวของคุณ",
+                choices: [
+                    { id: "c_child_read", title: "แอบอ่านตำราและเรียนรู้หนังสือเก่า", desc: "อาศัยความทรงจำเดิมศึกษาตัวอักษรและเวทมนตร์พื้นฐาน", req: { int: 11 }, effect: () => { GameState.stats.int += 2; GameState.childhoodMemory.curiosity += 3; GameState.age = 6; }, next: "scene_childhood_hub_2" },
+                    { id: "c_child_work", title: "ช่วยครอบครัวทำงานและฝึกร่างกาย", desc: "ช่วยแบกฟืน ตักน้ำ และออกกำลังกายกลางแจ้ง", req: { str: 9 }, effect: () => { GameState.stats.str += 2; GameState.stats.con += 2; GameState.age = 6; }, next: "scene_childhood_hub_2" },
+                    { id: "c_child_explore", title: "แอบออกไปสำรวจป่ารอบหมู่บ้าน", desc: "เรียนรู้พืชสมุนไพรและหลบหนีสัตว์ป่าตัวเล็ก", req: { per: 9 }, effect: () => { GameState.stats.dex += 2; GameState.gold += 10; GameState.age = 6; }, next: "scene_childhood_hub_2" },
+                    { id: "c_child_social", title: "ผูกมิตรกับเด็กในหมู่บ้านและชาวบ้าน", desc: "สร้างเครือข่ายความสัมพันธ์และเรียนรู้ข่าวสาร", req: { cha: 9 }, effect: () => { GameState.stats.cha += 2; GameState.reputation += 5; GameState.age = 6; }, next: "scene_childhood_hub_2" }
+                ]
+            },
+            "scene_childhood_hub_2": {
+                title: "พิธีเติบโตและเข้าสู่วัย 12 ปี",
+                banner: "🌟",
+                text: "ในที่สุดคุณก็มีอายุครบ 12 ปีเต็ม วันนี้เป็นวันสำคัญ—พิธีปลุกพลังประจำปี ณ ลานกลางหมู่บ้าน ศิลาโบราณส่องประกายตอบสนองต่อจิตวิญญาณของคุณ ระบบวิเคราะห์ศักยภาพประเมินเส้นทางที่เหมาะสมที่สุดจากพฤติกรรมในวัยเด็กของคุณ!",
+                choices: [
+                    { id: "c_path_mage", title: "เลือกเส้นทาง 'นักเวทวิเคราะห์'", desc: "เพราะคุณหมกมุ่นกับตำราและมีความตั้งใจสูง", req: { int: 13 }, effect: () => { GameState.career = "นักเวทฝึกหัด"; GameState.maxMana += 60; }, next: "scene_path_mage_hub" },
+                    { id: "c_path_sword", title: "เลือกเส้นทาง 'นักดาบ / นักรบ'", desc: "เพราะคุณฝึกฝนร่างกายและช่วยงานหนักมาตลอด", req: { str: 11 }, effect: () => { GameState.career = "นักดาบฝึกหัด"; GameState.maxHp += 60; GameState.hp = 160; }, next: "scene_path_sword_hub" },
+                    { id: "c_path_merchant", title: "เลือกเส้นทาง 'พ่อค้า / เจรจา'", desc: "เพราะคุณเข้าใจคุณค่าของเงินและการคบค้าสมาคม", req: { cha: 11 }, effect: () => { GameState.career = "พ่อค้าฝึกหัด"; GameState.gold += 250; }, next: "scene_path_merchant_hub" },
+                    { id: "c_path_peasant", title: "เลือกเส้นทาง 'ชาวบ้านสันโดษ / ช่างฝีมือ'", desc: "ไม่สนใจสงครามโลก เลือกใช้ชีวิตสงบสุขและสร้างฐานะตนเอง", effect: () => { GameState.career = "ช่างฝีมืออิสระ"; GameState.stats.con += 4; }, next: "scene_path_peasant_hub" }
+                ]
+            },
+            // --- MAGE PATH ---
+            "scene_path_mage_hub": {
+                title: "หอคอยเวทมนตร์และเส้นทางแห่งปัญญา",
+                banner: "🔮",
+                text: "ในฐานะนักเวทฝึกหัด คุณได้เข้าศึกษาในหอคอยเวทมนตร์หรือเป็นลูกศิษย์ของจอมเวทอิสระ โลกแห่งมานาและอักขระโบราณเปิดกว้างขึ้น คุณจะเลือกมุ่งเน้นการวิจัยเวทธาตุ โบราณคดี หรือเวทมนตร์ต้องห้ามเพื่อไขความลับ?",
+                choices: [
+                    { id: "c_mage_research", title: "วิจัยเวทมนตร์ธาตุและมิติขั้นสูง", desc: "ใช้สติปัญญาถอดรหัสตำราโบราณเพื่อสร้างเวทโจมตีรุนแรง", effect: () => { GameState.stats.int += 5; GameState.reputation += 10; }, next: "scene_world_crisis" },
+                    { id: "c_mage_combat", title: "ผสานเวทมนตร์เข้ากับการต่อสู้ (Battlemage)", desc: "ฝึกฝนการร่ายเวทพร้อมเคลื่อนที่ประจันบาน", effect: () => { GameState.stats.str += 3; GameState.stats.dex += 3; }, next: "scene_world_crisis" },
+                    { id: "c_mage_forbidden", title: "แอบศึกษาเวทมนตร์วิญญาณและคำสาปมืด", desc: "ค้นหาความลับของการเกิดใหม่และการข้ามมิติ", effect: () => { GameState.traits.push("ผู้รู้ความลับเกิดใหม่"); GameState.stats.wis += 5; }, next: "scene_world_crisis" }
+                ]
+            },
+            // --- SWORD PATH ---
+            "scene_path_sword_hub": {
+                title: "วิถีแห่งดาบและสนามรบ",
+                banner: "⚔️",
+                text: "คุณก้าวเข้าสู่กิลด์นักผจญภัยหรือกองทัพอาณาจักร ดาบในมือคือคำตอบของทุกปัญหา การฝึกฝนอย่างหนักทำให้คุณแข็งแกร่งขึ้น ทว่าภัยคุกคามจากดันเจี้ยนและสงครามกำลังคืบคลานเข้ามา",
+                choices: [
+                    { id: "c_sword_adventurer", title: "รับภารกิจล่ามอนสเตอร์และสำรวจดันเจี้ยน", desc: "สะสมประสบการณ์และชื่อเสียงในฐานะนักผจญภัยแถวหน้า", effect: () => { GameState.stats.str += 4; GameState.gold += 200; }, next: "scene_world_crisis" },
+                    { id: "c_sword_knight", title: "เข้าร่วมกองอัศวินพิทักษ์อาณาจักร", desc: "ไต่อันดับยศทหารและปกป้องประชาชนจากอสูรภัยพิบัติ", effect: () => { GameState.stats.con += 4; GameState.reputation += 25; }, next: "scene_world_crisis" },
+                    { id: "c_sword_solo", title: "ฝึกฝนเป็นนักดาบอิสระผู้โดดเดี่ยว", desc: "แสวงหาคู่ประลองที่แข็งแกร่งที่สุดในทวีป", effect: () => { GameState.stats.dex += 5; }, next: "scene_world_crisis" }
+                ]
+            },
+            // --- MERCHANT PATH ---
+            "scene_path_merchant_hub": {
+                title: "เส้นทางพ่อค้ามหาเศรษฐีและการค้าโลก",
+                banner: "💰",
+                text: "เงินทองและเส้นทางการค้าคืออำนาจที่แท้จริง คุณเริ่มต้นกิจการเล็กๆ จนขยายเครือข่ายการค้าข้ามอาณาจักร การเจรจาและการลงทุนทำให้คุณกุมชะตากรรมของเมืองทั้งเมืองไว้ในมือ",
+                choices: [
+                    { id: "c_merc_empire", title: "ขยายอาณาจักรการค้าและลงทุนในเหมืองแร่", desc: "สร้างรายได้มหาศาลและจ้างกองกำลังคุ้มกันส่วนตัว", effect: () => { GameState.gold += 1500; GameState.stats.cha += 4; }, next: "scene_world_crisis" },
+                    { id: "c_merc_politics", title: "ใช้อิทธิพลทางการเงินแทรกแซงการเมือง", desc: "สนับสนุนขุนนางและควบคุมนโยบายของอาณาจักร", effect: () => { GameState.reputation += 40; GameState.stats.int += 3; }, next: "scene_world_crisis" }
+                ]
+            },
+            // --- PEASANT / ORDINARY PATH ---
+            "scene_path_peasant_hub": {
+                title: "วิถีชีวิตสามัญชนผู้มีความสุข",
+                banner: "🌾",
+                text: "คุณปฏิเสธชื่อเสียง เงินทอง และการต่อสู้ เลือกใช้ชีวิตอย่างสงบสุขในหมู่บ้านชนบท ปลูกพืชเวทมนตร์ เปิดโรงเตี๊ยมเล็กๆ หรือดูแลครอบครัว ท่ามกลางความวุ่นวายของโลกภายนอก ชีวิตของคุณเต็มไปด้วยความอบอุ่น",
+                choices: [
+                    { id: "c_peasant_farm", title: "พัฒนาสวนเกษตรเวทมนตร์และใช้ชีวิตสันโดษ", desc: "เพาะปลูกสมุนไพรหายาก ค้าขายกับชาวบ้านอย่างเรียบง่าย", effect: () => { GameState.gold += 400; GameState.stats.con += 5; }, next: "scene_ordinary_life_loop" },
+                    { id: "c_peasant_tavern", title: "เปิดโรงเตี๊ยมและต้อนรับนักเดินทาง", desc: "รับฟังเรื่องเล่าจากนักผจญภัยทั่วสารทิศ ใช้ชีวิตอย่างมีความสุข", effect: () => { GameState.stats.cha += 4; GameState.reputation += 20; }, next: "scene_ordinary_life_loop" }
+                ]
+            },
+            "scene_ordinary_life_loop": {
+                title: "ความสงบสุขแห่งสามัญชน",
+                banner: "🏡",
+                text: "ปีแล้วปีเล่าผ่านไป คุณได้สร้างครอบครัวที่อบอุ่น บ้านหลังน้อย และกิจการที่มั่นคง แม้ภายนอกโลกจะเกิดสงครามหรือประตูมิติเปิดออก แต่คุณเลือกที่จะปกป้องคนที่รักและใช้ชีวิตจนถึงวัยชราอย่างสงบ",
+                choices: [
+                    { id: "c_end_peasant", title: "ใช้ชีวิตบั้นปลายอย่างมีความสุขและส่งต่อมรดก", desc: "ปิดฉากชีวิตสามัญชนผู้ยิ่งใหญ่ในความทรงจำของผู้คน", effect: () => {}, next: "ending_peasant_life" }
+                ]
+            },
+            // --- WORLD CRISIS & ENDGAME SCENES ---
+            "scene_world_crisis": {
+                title: "วิกฤตประตูมิติและมหาสงคราม",
+                banner: "⚡",
+                text: "รอยแยกมิติขนาดมหึมาปรากฏขึ้นบนท้องฟ้า ทวีปสั่นสะเทือน กองทัพอสูรและราชาปีศาจทะลักออกมาจากซากโบราณสถาน อาณาจักรตกอยู่ในภาวะวิกฤตขั้นสูงสุด ทุกคนต่างมองหาผู้กอบกู้ หรือโอกาสในการสร้างตำนานของตนเอง",
+                choices: [
+                    { id: "c_crisis_hero", title: "ลุกขึ้นสู้ในฐานะ 'ผู้กล้า' ปิดผนึกประตูมิติ", desc: "รวบรวมพรรคพวกและเข้าห้ำหั่นกับราชาปีศาจเพื่อช่วยโลก", req: { str: 15 }, effect: () => {}, next: "ending_hero_saved_world" },
+                    { id: "c_crisis_lord", title: "ยึดครองพลังแห่งความมืดและสถาปนาเป็น 'จอมมาร'", desc: "สยบกองทัพอสูรและปกครองทวีปด้วยอำนาจเบ็ดเสร็จ", req: { int: 16 }, effect: () => {}, next: "ending_demon_lord" },
+                    { id: "c_crisis_emperor", title: "รวบรวมกำลังพลขึ้นเป็น 'ราชาผู้รวมทวีป'", desc: "นำทัพมนุษย์และเผ่าพันธุ์ต่างๆ เอาชนะสงครามการเมือง", req: { cha: 15 }, effect: () => {}, next: "ending_emperor" },
+                    { id: "c_crisis_inventor", title: "ประดิษฐ์อาวุธเวทเทคโนโลยีขั้นสูงปิดรอยแยก", desc: "ใช้ความรู้ทางวิทยาศาสตร์และเวทมนตร์สร้างปาฏิหาริย์", req: { int: 18 }, effect: () => {}, next: "ending_inventor_genius" },
+                    { id: "c_crisis_merchant_king", title: "ผูกขาดเสบียงและสร้างอาณาจักรการค้าช่วงสงคราม", desc: "ทำกำไรมหาศาลจากภาวะวิกฤตและขึ้นเป็นราชาการค้า", req: { gold: 1000 }, effect: () => {}, next: "ending_merchant_king" }
+                ]
+            },
+            // --- ENDINGS (10 Distinct Endings) ---
+            "ending_peasant_life": {
+                title: "ฉากจบ: สามัญชนผู้มีความสุข (Ordinary Peaceful Life)",
+                banner: "🌅",
+                text: "คุณใช้ชีวิตอย่างเรียบง่ายจนถึงวัยชรา ท่ามกลางลูกหลานและมิตรสหาย แม้ไม่ได้กอบกู้โลกหรือมีชื่อเสียงในพงศาวดาร แต่ความสุขและความอบอุ่นที่คุณสร้างขึ้นคือสิ่งที่มีค่าที่สุดในการเกิดใหม่ครั้งนี้",
+                isEnding: true, endingId: "end_peasant"
+            },
+            "ending_hero_saved_world": {
+                title: "ฉากจบ: ผู้กล้าผู้กอบกู้โลก (Legendary Hero)",
+                banner: "👑",
+                text: "ด้วยความกล้าหาญและพลังอันไร้เทียมทาน คุณสามารถปิดผนึกรอยแยกมิติและสังหารราชาปีศาจลงได้ ชื่อของคุณถูกจารึกไว้ในพงศาวดารแห่งโลกใหม่ในฐานะ 'ผู้กล้าในตำนาน' ผู้ช่วยชีวิตมวลมนุษยชาติ",
+                isEnding: true, endingId: "end_hero"
+            },
+            "ending_demon_lord": {
+                title: "ฉากจบ: จอมมารผู้ครอบครองทวีป (Supreme Demon Lord)",
+                banner: "😈",
+                text: "คุณปฏิเสธที่จะเป็นวีรบุรุษของมนุษย์ และเลือกใช้พลังความมืดสยบทั้งเผ่าพันธุ์มนุษย์และปีศาจ บัลลังก์แห่งความมืดถูกสร้างขึ้นด้วยมือคุณ กลายเป็น 'จอมมาร' ผู้ปกครองทวีปด้วยความยำเกรง",
+                isEnding: true, endingId: "end_demons"
+            },
+            "ending_emperor": {
+                title: "ฉากจบ: จักรพรรดิผู้รวมทวีป (Unified Emperor)",
+                banner: "🏰",
+                text: "ด้วยกลยุทธ์การเมือง การทูต และกองกำลังที่แข็งแกร่ง คุณสามารถยุติสงครามร้อยปีและหลอมรวมอาณาจักรทั้งหมดให้เป็นหนึ่งเดียว สถาปนาจักรวรรดิอันเกรียงไกรที่ไร้ผู้ต้าน",
+                isEnding: true, endingId: "end_emperor"
+            },
+            "ending_inventor_genius": {
+                title: "ฉากจบ: นักประดิษฐ์ผู้เปลี่ยนอารยธรรม (Master Inventor)",
+                banner: "⚙️",
+                text: "คุณผสมผสานเวทมนตร์และวิทยาศาสตร์จากโลกเดิม สร้างสรรค์เครื่องจักรเวทและเทคโนโลยีพลิกโฉมหน้าประวัติศาสตร์ มนุษยชาติก้าวเข้าสู่ยุคสมัยใหม่ด้วยมันสมองและสองมือของคุณ",
+                isEnding: true, endingId: "end_inventor"
+            },
+            "ending_merchant_king": {
+                title: "ฉากจบ: ราชาแห่งการค้าผู้กุมเศรษฐกิจ (Merchant King)",
+                banner: "🪙",
+                text: "ในยามที่โลกเผชิญวิกฤต คุณใช้เครือข่ายการค้าเข้าควบคุมเสบียงและการเงินทั้งหมด จนกลายเป็นผู้ทรงอิทธิพลที่แท้จริงเหนือราชบัลลังก์และสนามรบ",
+                isEnding: true, endingId: "end_merchant"
+            }
+        };
+
+        const Game = {
+            init() {
+                this.loadGame(true);
+                this.render();
+            },
+
+            render() {
+                document.getElementById("displayName").innerText = GameState.name;
+                document.getElementById("displayRace").innerText = `เผ่า: ${GameState.race}`;
+                document.getElementById("displayCareer").innerText = `อาชีพ: ${GameState.career}`;
+                document.getElementById("displayAge").innerText = `อายุ: ${GameState.age} ปี`;
+                document.getElementById("displayGold").innerText = `💰 ${GameState.gold} G`;
+
+                this.updateBar("Hp", GameState.hp, GameState.maxHp);
+                this.updateBar("Stamina", GameState.stamina, GameState.maxStamina);
+                this.updateBar("Mana", GameState.mana, GameState.maxMana);
+                this.updateBar("Hunger", GameState.hunger, 100);
+                this.updateBar("Thirst", GameState.thirst, 100);
+
+                document.getElementById("statStr").innerText = GameState.stats.str;
+                document.getElementById("statDex").innerText = GameState.stats.dex;
+                document.getElementById("statCon").innerText = GameState.stats.con;
+                document.getElementById("statInt").innerText = GameState.stats.int;
+                document.getElementById("statWis").innerText = GameState.stats.wis;
+                document.getElementById("statPer").innerText = GameState.stats.per;
+                document.getElementById("statLuk").innerText = GameState.stats.luk;
+                document.getElementById("statCha").innerText = GameState.stats.cha;
+
+                document.getElementById("lblDay").innerText = GameState.day;
+                document.getElementById("lblSeason").innerText = GameState.season;
+                document.getElementById("lblLocation").innerText = GameState.location;
+                document.getElementById("lblWeather").innerText = GameState.weather;
+                document.getElementById("txtMemorySummary").innerText = `อยากรู้: ${GameState.childhoodMemory.curiosity} | รอบคอบ: ${GameState.childhoodMemory.caution}`;
+
+                this.renderScene(GameState.currentSceneId);
+            },
+
+            updateBar(name, val, max) {
+                const pct = Math.max(0, Math.min(100, (val / max) * 100));
+                document.getElementById(`txt${name}`).innerText = `${Math.floor(val)}/${max}`;
+                document.getElementById(`bar${name}`).style.width = `${pct}%`;
+            },
+
+            renderScene(sceneId) {
+                const scene = Scenes[sceneId] || Scenes["scene_birth_0"];
+                const container = document.getElementById("sceneContainer");
+
+                let html = `
+                    <div class="scene-banner">${scene.banner || "🗺️"}</div>
+                    <div class="scene-text-box">
+                        <h3 style="color: var(--accent-gold); margin-bottom: 10px;">${scene.title}</h3>
+                        <p>${scene.text}</p>
+                    </div>
+                    <div class="choices-container">
+                `;
+
+                if (scene.isEnding) {
+                    if (!GameState.unlockedEndings.includes(scene.endingId)) {
+                        GameState.unlockedEndings.push(scene.endingId);
+                        this.saveGame(true);
+                    }
+                    html += `
+                        <button class="primary" onclick="Game.restartGame()" style="padding: 15px; font-size: 1.1rem;">เริ่มต้นชีวิตใหม่ (New Game+)</button>
+                    `;
+                } else {
+                    scene.choices.forEach(choice => {
+                        let canPass = true;
+                        let reqText = "";
+                        if (choice.req) {
+                            for (let stat in choice.req) {
+                                if (stat === 'gold') {
+                                    if (GameState.gold < choice.req.gold) {
+                                        canPass = false;
+                                        reqText += ` [ต้องการเงิน >= ${choice.req.gold} G]`;
+                                    }
+                                } else if (GameState.stats[stat] < choice.req[stat]) {
+                                    canPass = false;
+                                    reqText += ` [ต้องการ ${stat.toUpperCase()} >= ${choice.req[stat]}]`;
+                                }
+                            }
+                        }
+
+                        html += `
+                            <div class="choice-card ${canPass ? '' : 'disabled'}" ${canPass ? `onclick="Game.makeChoice('${choice.next}', ${choice.effect ? choice.effect.toString() : null})"` : ''}>
+                                <div class="choice-title">${choice.title}</div>
+                                <div class="choice-desc">${choice.desc}${reqText ? `<span style="color: var(--danger);">${reqText}</span>` : ''}</div>
+                            </div>
+                        `;
+                    });
+                }
+
+                html += `</div>`;
+                container.innerHTML = html;
+            },
+
+            makeChoice(nextSceneId, effectFn) {
+                if (effectFn && typeof effectFn === 'function') {
+                    effectFn();
+                }
+                GameState.day++;
+                if (GameState.day % 30 === 0) GameState.age++;
+
+                GameState.currentSceneId = nextSceneId;
+                this.addLog(`การตัดสินใจส่งผลต่อเส้นทางชีวิต (อายุ ${GameState.age} ปี)`);
+                this.saveGame(true);
+                this.render();
+            },
+
+            addLog(text) {
+                const logBox = document.getElementById("logBox");
+                const entry = document.createElement("div");
+                entry.className = "log-entry";
+                entry.innerText = `[วันที่ ${GameState.day}] ${text}`;
+                logBox.prepend(entry);
+            },
+
+            saveGame(isAuto = false) {
+                localStorage.setItem("reborn_save", JSON.stringify(GameState));
+                if (!isAuto) {
+                    alert("บันทึกเกมเรียบร้อยแล้ว!");
+                }
+            },
+
+            loadGame(silent = false) {
+                const saved = localStorage.getItem("reborn_save");
+                if (saved) {
+                    try {
+                        GameState = JSON.parse(saved);
+                        if (!silent) alert("โหลดข้อมูลเกมสำเร็จ!");
+                    } catch(e) {
+                        console.error("Save load error", e);
+                    }
+                }
+            },
+
+            restartGame() {
+                if (confirm("คุณต้องการเริ่มชีวิตใหม่ทั้งหมดใช่หรือไม่?")) {
+                    localStorage.removeItem("reborn_save");
+                    location.reload();
+                }
+            },
+
+            openCodex() {
+                const modal = document.getElementById("modalOverlay");
+                const content = document.getElementById("modalContent");
+                content.innerHTML = `
+                    <div class="modal-header">
+                        <h2>สารานุกรมโลกและสายพลัง</h2>
+                        <button onclick="Game.closeModal()">ปิด</button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>ระบบสายพลัง:</strong> ครอบคลุมเวทมนตร์ธาตุ เวทขั้นสูง สายการต่อสู้ สายสนับสนุน และศาสตร์โบราณ</p>
+                        <p><strong>ระบบอาชีพ:</strong> นักผจญภัย ขุนนาง พ่อค้า ช่างฝีมือ อัศวิน และสามัญชนผู้สันโดษ</p>
+                        <p><strong>สถานะปัจจุบัน:</strong> ${GameState.race} | อาชีพ: ${GameState.career} | อายุ: ${GameState.age} ปี</p>
+                    </div>
+                `;
+                modal.style.display = "flex";
+            },
+
+            openEndings() {
+                const modal = document.getElementById("modalOverlay");
+                const content = document.getElementById("modalContent");
+                let endingsHtml = GameState.unlockedEndings.length > 0 ? GameState.unlockedEndings.map(e => `<li>${e}</li>`).join('') : "<li>ยังไม่มีฉากจบที่ปลดล็อก</li>";
+
+                content.innerHTML = `
+                    <div class="modal-header">
+                        <h2>แกลเลอรีฉากจบที่ปลดล็อก (${GameState.unlockedEndings.length}/10+)</h2>
+                        <button onclick="Game.closeModal()">ปิด</button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>${endingsHtml}</ul>
+                    </div>
+                `;
+                modal.style.display = "flex";
+            },
+
+            closeModal() {
+                document.getElementById("modalOverlay").style.display = "none";
+            }
+        };
+
+        window.onload = () => Game.init();
+    </script>
+</body>
+</html>
