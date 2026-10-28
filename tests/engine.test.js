@@ -23,11 +23,11 @@ describe('existing story graph', () => {
 describe('save compatibility', () => {
   it('round trips versioned state without losing fields', () => {
     let raw; writeSave({setItem: (_, value) => {raw = value;}}, initialCharacter);
-    expect(JSON.parse(raw).version).toBe(4); expect(decodeSave(raw)).toEqual(upgradeState(initialCharacter));
+    expect(JSON.parse(raw).version).toBe(5); expect(decodeSave(raw)).toEqual(upgradeState(initialCharacter));
   });
   it('loads legacy unversioned saves', () => expect(decodeSave(JSON.stringify(initialCharacter))).toEqual(upgradeState(initialCharacter)));
   it('rejects invalid and future saves', () => {
-    for (const value of ['{', '{}', JSON.stringify({version: 5}), JSON.stringify({...initialCharacter, stats: {}}), JSON.stringify({...initialCharacter, currentSceneId:'missing'})]) expect(() => decodeSave(value)).toThrow();
+    for (const value of ['{', '{}', JSON.stringify({version: 6}), JSON.stringify({...initialCharacter, stats: {}}), JSON.stringify({...initialCharacter, currentSceneId:'missing'})]) expect(() => decodeSave(value)).toThrow();
   });
 });
 it('repeats random sequences for a fixed seed', () => {

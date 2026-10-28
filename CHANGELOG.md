@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 — 2026-10-29 — annual focuses and rare crossroads
+
+Replaced the default frequent two-choice reader with persistent annual focuses, real resource-aware yearly simulation, 1/2/5-year steps and seek-next-decision. Retained every old detailed event/chapter as optional reading. Added six original life crossroads with five outcomes each, four-strategy career decisions with two-year spacing/postponement, and a one-approach resolution of the existing seven-stage ceremony without rerolling archived results. Added an age/time toolbar, optional 1/2/4/8× autoplay with safe stop conditions, family/location panels, compact annual journal/results/ledger and actual 100-cell history. Kept local fantasy art and portraits. Schema 5 safely preserves births/progression/old scenes and exact raw pre-v5/v4/v3 backups.
+
+Local validation: 50 Vitest cases (including all 20 annual-planner promotions in addition to 40 retained detailed career paths), 36 desktop/mobile browser cases, content audit and production build/staging. Content union: 126/126 scene-event records, 269/269 authored choices and 6/6 endings; annual controls and generic consultation/postponement buttons are not counted as extra authored narratives. Preview verification covers 1920/1366/768/360 plus genuine paced birth-to-12/ceremony/career/reload at 1366/360. Public verification is recorded separately after push.
+
 ## Illustrated UI and publication repair — 2026-10-28
 
 Diagnosed live unstyled HTML: Pages legacy source main:/ was serving Vite source rather than the build. Preserved source shell as app.html and added compiled publication staging for that source, plus production browser verification. Changing Pages source through the integration returned 403, so no setting change is claimed. Added original AI-generated moonlit village art, responsive navy/gold surfaces and deterministic layered SVG portraits; saved face identity remains stable across aging, career changes and reloads. No story records or ending counts were inflated. Full life systems and expanded directive targets remain outstanding.

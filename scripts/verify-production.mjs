@@ -14,10 +14,11 @@ try {
   const style=await page.evaluate(()=>({background:getComputedStyle(document.body).backgroundImage,color:getComputedStyle(document.body).color,overflow:document.documentElement.scrollWidth>innerWidth,css:[...document.styleSheets].length}));
   if(!style.css || style.background==='none' || style.overflow)throw Error('Missing styling or overflow: '+JSON.stringify(style));
   await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('heading',{name:'บันทึกกำเนิด',exact:true}).waitFor();
-  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();await page.locator('.choice-card').first().click();
-  await page.reload();await page.waitForFunction(()=>document.querySelector('#lblDay').textContent==='37');
+  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();
+  await page.reload();await page.waitForFunction(()=>document.querySelector('#displayAge').textContent==='อายุ: 1 ปี');
   if(await page.locator('#charAvatar svg').count()!==1)throw Error('Portrait missing');
   if(failures.length)throw Error(failures.join('\n'));
+  await page.evaluate(()=>scrollTo(0,0));
   await page.screenshot({path:`/tmp/reborn-${width}.png`,fullPage:true});
   await page.getByRole('button',{name:'บันทึกชีวิตรายปี',exact:true}).click();
   await page.getByRole('heading',{name:'บันทึกชีวิตและพงศาวดารรายปี',exact:true}).waitFor();
@@ -26,7 +27,7 @@ try {
   await page.screenshot({path:`/tmp/reborn-map-${width}.png`,fullPage:true});
   await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();await page.getByRole('heading',{name:'อาชีพและการฝึก',exact:true}).waitFor();
   if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Career overflow');
-  console.log(`PASS ${url} width ${width}: CSS, images, JS, birth, portrait, choice, reload, chronicle, map, career screen`);
+  console.log(`PASS ${url} width ${width}: CSS, images, JS, birth, portrait, annual plan, reload, chronicle, map, career screen`);
   await page.close();
  }
 } finally {await browser.close();}

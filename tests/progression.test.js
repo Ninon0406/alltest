@@ -54,7 +54,7 @@ it('has fatigue limits, declining repeat training rewards and real recovery',()=
  s=takeAction(s,{type:'trainingRest'});expect(s.progression.fatigue).toBe(40);expect(s.stamina).toBeLessThanOrEqual(s.maxStamina);s=takeAction(s,{type:'train',stat:'wis'});expect(s.stats.wis).toBeGreaterThan(before.birth.initial.stats.wis);
 });
 it('respects birthday interruptions for pre-awakening training',()=>{
- const s=generateBirth(1);advanceTime(s,8*360+359);expect(()=>takeAction(s,{type:'train',stat:'int'})).toThrow(/วันเกิด/);
+ const s=generateBirth(1);advanceTime(s,8*360+359);s.yearly.view='detailed';expect(()=>takeAction(s,{type:'train',stat:'int'})).toThrow(/วันเกิด/);
 });
 it('rejects malformed progression and retains exact pre-v4 save backups',()=>{
  const state=generateBirth(2);delete state.progression;const raw=JSON.stringify({version:3,state}),values=new Map([['reborn_save',raw],['reborn_save_backup_before_v3','original']]);

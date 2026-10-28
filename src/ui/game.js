@@ -1,3 +1,4 @@
+import { renderYearly,stopYearlyAuto } from './yearly-view.js';
 import { readGallery, storeGallery } from '../save/gallery.js';
 import { upgradeState } from '../engine/migrate.js';
 import { calendar, advanceTime, recordAction, normalize } from '../engine/time.js';
@@ -24,6 +25,7 @@ export const Game = {
             render() {
                 if(!GameState.time)replaceState(upgradeState(GameState));
                 normalize(GameState);
+                document.body.classList.toggle('yearly-mode',GameState.yearly.view==='yearly');
                 const log=document.getElementById('logBox');log.replaceChildren();
                 for(const entry of GameState.journal.slice(-3).reverse()){const item=document.createElement('p');item.textContent=`อายุ ${entry.age} ปี • ${entry.title}`;log.append(item);}
 
@@ -73,6 +75,8 @@ export const Game = {
             },
 
             renderScene(sceneId) {
+                if(GameState.yearly.view==='yearly'){renderYearly(document.getElementById('sceneContainer'),GameState,action=>this.perform(action),()=>this.render());return;}
+                stopYearlyAuto();
                 if(GameState.life.mode==='annual') {renderLife(document.getElementById('sceneContainer'),GameState,action=>this.perform(action));return;}
 
                 const scene = Scenes[sceneId] || Scenes["scene_birth_0"];

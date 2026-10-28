@@ -15,7 +15,7 @@ export function findRoute(state,destination,method='caravan'){
 export function revealedLocations(state){return new Set(state.world.visited.flatMap(id=>[id,...locations[id].neighbors]));}
 export function guardExternalTime(state,days){
  const age=calendar(state).ageYears;
- if(state.life.mode==='annual' && age<12 && state.time.absoluteDay+days>=state.time.birthAbsoluteDay+(age+1)*360)throw Error('อ่านเรื่องราวประจำปีให้จบก่อนเดินทางข้ามวันเกิด');
+ if(state.yearly?.view!=='yearly' && state.life.mode==='annual' && age<12 && state.time.absoluteDay+days>=state.time.birthAbsoluteDay+(age+1)*360)throw Error('อ่านเรื่องราวประจำปีให้จบก่อนเดินทางข้ามวันเกิด');
 }
 export function travel(state,destination,method='caravan'){
  const a=state.progression?.awakening;if(a&&a.step>0&&a.step<7&&!a.paused)throw Error('กรุณาทำพิธีให้จบหรือพักพิธีก่อนออกเดินทาง');

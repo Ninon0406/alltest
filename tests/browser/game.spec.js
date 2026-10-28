@@ -6,6 +6,7 @@ test('play, save, restore and navigate', async ({page}) => {
   const errors=[]; page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(state => { if (!localStorage.getItem('reborn_save')) localStorage.setItem('reborn_save', JSON.stringify({version:1,state})); }, {...structuredClone(initialCharacter),hp:180,mana:70,traits:[...initialCharacter.traits,'ลักษณะทดสอบ']});
   await page.goto('/');
+  await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
   await expect(page.locator('#txtHp')).toHaveText('100/100');
   await expect(page.locator('#txtMana')).toHaveText('50/50');
   await expect(page.locator('#traitsList')).toContainText('ลักษณะทดสอบ');
@@ -48,6 +49,7 @@ test('random birth is committed once, has a permanent record and remains playabl
   expect(await page.locator('#shellPanel').innerText()).not.toContain(`อายุขัย: ${birth.lifespan}`);
   const image=page.locator('#shellPanel img'); expect(await image.evaluate(img=>img.complete && img.naturalWidth>0)).toBe(true);
   await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+  await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
   await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
   await expect(page.locator('.choice-card')).toHaveCount(2);
   await page.locator('.choice-card').first().click();
@@ -78,7 +80,7 @@ test('replacing an unreadable save requires confirmation', async ({page}) => {
   expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe('broken');
   page.once('dialog',dialog=>dialog.accept()); await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
   await expect(page.getByRole('heading',{name:'บันทึกกำเนิด'})).toBeVisible();
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(4);
+  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(5);
 });
 test('portrait retains face identity after aging and career changes', async ({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
@@ -94,7 +96,7 @@ test('portrait retains face identity after aging and career changes', async ({pa
 });
 test('annual story reaches twelve with consistent status and birthday chronicles',async({page})=>{
  test.setTimeout(90000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+ await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
  let age=0,actions=0;
  while(age<12){
   const more=page.getByRole('button',{name:'อ่านต่อ',exact:true});if(await more.count())await more.click();
@@ -129,6 +131,7 @@ test('map travel and local economy update gold, days and inventory once',async({
 });
 test('storage failure rolls back an in-progress story transaction',async({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+ await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
  const before=await page.evaluate(()=>localStorage.getItem('reborn_save'));
  await page.evaluate(()=>{Storage.prototype.setItem=()=>{throw new DOMException('full','QuotaExceededError');};});
  await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
@@ -138,7 +141,7 @@ test('storage failure rolls back an in-progress story transaction',async({page})
 });
 test('legacy age jumps become explicit elapsed days and never show a false age title',async({page})=>{
  await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:2,state}));},initialCharacter);
- await page.goto('/');await page.locator('.choice-card').first().click();await page.locator('.choice-card').first().click();
+ await page.goto('/');await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();await page.locator('.choice-card').first().click();await page.locator('.choice-card').first().click();
  await expect(page.locator('#displayAge')).toHaveText('อายุ: 6 ปี');await expect(page.locator('#sceneContainer h3')).toContainText('อายุ 6 ปี');
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.time.absoluteDay)).toBe(2160);
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save_backup_before_v3')).state.age)).toBe(0);

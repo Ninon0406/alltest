@@ -3,7 +3,7 @@ import { generateBirth } from '../../src/character/rebirth.js';
 import { advanceTime } from '../../src/engine/time.js';
 import { simulateCareer } from '../../scripts/progression-simulation.mjs';
 import { getCareer } from '../../src/data/careers.js';
-async function loadAtAge(page,age=12){const state=generateBirth(8);advanceTime(state,age*360);delete state.progression;await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:3,state}));},state);await page.goto('/');return state;}
+async function loadAtAge(page,age=12){const state=generateBirth(8);advanceTime(state,age*360);delete state.progression;await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:3,state}));},state);await page.goto('/');await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();return state;}
 const saved=page=>page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);
 test('complete awakening, select an eligible career, work, train and retain everything on reload',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));const fixture=await loadAtAge(page);

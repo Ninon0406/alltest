@@ -1,3 +1,4 @@
+import { stopYearlyAuto } from './ui/yearly-view.js';
 import { renderCareer } from './ui/career-view.js';
 import { renderMap } from './ui/map-view.js';
 import { renderJournal } from './ui/life-view.js';
@@ -34,6 +35,7 @@ const panel = document.querySelector('#shellPanel');
 let activeView='game';
 Game.onChange=()=>{if(activeView!=='game')document.querySelector(`[data-view="${activeView}"]`).click();};
 document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
+  if(button.dataset.view!=='game')stopYearlyAuto();
   document.querySelectorAll('[data-view]').forEach(item => item.removeAttribute('aria-current'));
   button.setAttribute('aria-current', 'page');
   const view = button.dataset.view; activeView=view;
@@ -44,7 +46,7 @@ document.querySelectorAll('[data-view]').forEach(button => button.addEventListen
     renderBirthRecord(panel, GameState);
     const download=(name,text)=>{const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));const anchor=document.createElement('a');anchor.href=url;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
     const exportButton=document.createElement('button');exportButton.textContent='ดาวน์โหลดเซฟปัจจุบัน';exportButton.onclick=()=>download('reborn-save.json',localStorage.getItem('reborn_save'));panel.append(exportButton);
-    for(const version of [4,3]){const backup=localStorage.getItem(`reborn_save_backup_before_v${version}`);if(backup){const button=document.createElement('button');button.textContent=`ดาวน์โหลดเซฟก่อนรุ่น ${version}`;button.onclick=()=>download(`reborn-before-v${version}.json`,backup);panel.append(button);}}
+    for(const version of [5,4,3]){const backup=localStorage.getItem(`reborn_save_backup_before_v${version}`);if(backup){const button=document.createElement('button');button.textContent=`ดาวน์โหลดเซฟก่อนรุ่น ${version}`;button.onclick=()=>download(`reborn-before-v${version}.json`,backup);panel.append(button);}}
 
     const title = document.createElement('h2'); title.textContent = 'บันทึกตัวละคร'; panel.append(title);
     for (const text of [`ชื่อ: ${GameState.name}`, `เผ่า: ${GameState.race}`, `ครอบครัว: ${GameState.family}`, `อาชีพ: ${GameState.career}`, `อายุ: ${GameState.age} ปี`, `เงิน: ${GameState.gold} เหรียญ`, `ลักษณะ: ${GameState.traits.join(' • ')}`]) {
@@ -57,7 +59,7 @@ document.querySelectorAll('[data-view]').forEach(button => button.addEventListen
   } else if(view==='chronicle') {
     renderJournal(panel,GameState);
   } else if (view === 'guide') {
-    panel.innerHTML = '<h2>คู่มือโลก</h2><p>เลือกการกระทำเพื่อกำหนดเส้นทางชีวิต คุณลักษณะและเงินมีผลต่อทางเลือกที่เปิดให้ใช้ แต่ละการตัดสินใจจะบันทึกความคืบหน้าอัตโนมัติในเบราว์เซอร์นี้</p><p>เปิดสารานุกรมเพื่ออ่านสถานะสายพลัง และดูฉากจบที่ปลดล็อกจากเมนูด้านบน การเริ่มใหม่จะลบบันทึกชีวิตปัจจุบันหลังยืนยัน</p><p>ชีวิตใหม่ได้รับกำเนิดแบบสุ่มและบันทึกกำเนิดถาวร เรื่องราวยังใช้เหตุการณ์เดิม เวลาใช้ปฏิทิน 360 วันต่อปี เลือกอ่านต่อให้จบแต่ละเรื่องก่อนตัดสินใจ ดูผลรายปีได้ในบันทึกชีวิต และดูเส้นทางที่เดินทางได้จริงในแผนที่</p>';
+    panel.innerHTML = '<h2>คู่มือโลก</h2><p>เลือกแนวชีวิตประจำปีแล้วใช้ชีวิตต่อครั้งละ 1, 2 หรือ 5 ปี แผนจะใช้ต่อจนกว่าคุณเปลี่ยน เรื่องทั่วไปสะสมในบันทึก ส่วนเรื่องสำคัญจะหยุดรอการตัดสินใจหลายตัวเลือก คุณเปิดอ่านเรื่องแบบละเอียดเองได้</p><p>เปิดเล่นอัตโนมัติและเลือกความเร็วได้จากเส้นทางชีวิต ระบบหยุดเมื่อพบเรื่องสำคัญ เปลี่ยนเมนู ซ่อนหน้าเว็บ หรือบันทึกไม่ได้ เมื่อปิดเกมเวลาจะไม่เดินต่อ</p><p>ชีวิตใหม่ได้รับกำเนิดแบบสุ่มและมีบันทึกกำเนิดถาวร ปฏิทินมี 360 วันต่อปี การฝึก ทำงาน พัก และเดินทางใช้เวลาและพลังจริง เปิดอาชีพและการฝึกหลังพร้อมเข้าพิธีเมื่ออายุ 12 ปี ดูสรุปในบันทึกชีวิตและเส้นทางในแผนที่</p><p>ความคืบหน้าบันทึกในเบราว์เซอร์นี้ ดาวน์โหลดเซฟและสำเนาก่อนอัปเกรดได้จากบันทึกตัวละคร การเริ่มใหม่จะขอยืนยันก่อนลบชีวิตปัจจุบันและยังเก็บฉากจบที่ปลดล็อกไว้</p>';
   }
 }));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') Game.closeModal(); });

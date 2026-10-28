@@ -52,6 +52,8 @@ Ensure compatibility with GitHub Pages, including correct base-path configuratio
 - No manual character-stat selection
 
 ### Life simulation
+
+Current pacing override: see the 0.5.0 section below. Opening-year choice counts in historical directives describe preserved optional content, not mandatory clicks.
 - Start from birth
 - Annual progression
 - Age-appropriate childhood events
@@ -272,3 +274,13 @@ Practice uses 7 days, 15 stamina, +20 fatigue and -12 focus, with base XP 8 decl
 Each family has three unique authored dilemmas (age minima 12/13/16). Precision choices improve training, community choices improve salary; both grow different attributes and family XP. Per-family progression survives switching. One promotion/family requires 18 years, 120 XP, 60 mastery, higher primary attribute and the three completed episodes. It permanently raises one resource capacity once; active promoted work/training gets profile bonuses. This is a first linear skill ladder, not the target 80 advanced/hybrid branches, combat ability tree, authored mentor network or God paths.
 
 Schema 4 validates all progression references and preserves immutable birth generation, appearance, existing chapter, calendar, history, inventory and endings. Exact pre-v4 raw backup is retained without overwriting pre-v3 backup. Do not change generation-v1/v2 tables when expanding other game systems.
+
+## Current authoritative pacing — 0.5.0 (2026-10-29)
+
+The latest user request overrides the mandatory frequent two-choice format. Default play uses a persistent annual focus: balanced growth, play, family, rest, age-4 study/exploration and age-8 practice/work. Choose once and continue 1/2/5 years, or seek the next decision within ten years. Plans stop before a due major decision; birth-to-12 now has crossroads at ages 6, 10 and 12. Six original life crossroads (6/10/20/28/40/60) offer five actual outcomes each. Career dilemmas are spaced at ages 13/15/17 or later with at least two years between them; four strategies include two original outcomes, a real mentoring-style consultation effect (no authored NPC system claimed), or postponement for two years. At most one non-ceremony decision occurs per age. An age-12 ceremony approach resolves the remaining real seven stages once, preserves any archived score/venue and can be postponed.
+
+The planner selects ordinary existing childhood responses using the chosen focus and labels them automatic in the journal. No pretend player decisions are recorded. It spends only remaining calendar days on real practice, wages, travel or recovery; fatigued workers/practitioners rest, community workers walk toward a usable job, exploration follows actual discovered routes. A partial year simulates only its remaining days. Repeated new routine logs and ledger transactions are compacted into honest annual summaries; previous manual history and story entries are retained. History cells show actual chronicles and explicitly do not predict lifespan. Reports retain the most recent 200 summaries; full journal/chronicle retention still needs long-life hardening.
+
+The annual dashboard uses the existing navy/gold identity and local landscape/portraits, with age/time controls, focus cards, latest journal, real saved family details, location and a rolling 100-year grid. Optional autoplay runs one simulated year every 8/4/2/1 seconds at 1/2/4/8×; it stops for decisions, hidden page, another menu, reload and failed save. It is off by default and never advances time offline. Ordinary travel/services retain their calendar costs; detailed-reader birthday guards remain unchanged.
+
+Schema 5 adds the validated annual plan/checkpoints/reports without resetting birth, time, chapters, progression or inventories. Exact pre-v5 raw input and existing pre-v4/pre-v3 backups remain downloadable. Old detailed narratives and all six endings remain available through optional reading. No natural mortality/extension/ascension is implemented by this pacing change. Reference scope and access limits are recorded in docs/PACING_REFERENCE.md.

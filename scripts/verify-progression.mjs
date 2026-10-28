@@ -9,8 +9,9 @@ try{
   const state=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);
   let count=0;
   while((await state()).age<12||(await state()).progression.awakening.step<7){
-   if(await page.getByRole('button',{name:'อ่านต่อ',exact:true}).count())await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
-   await page.locator('.choice-card').first().click();if(++count>100)throw Error('Progression stalled');
+   if(await page.locator('.major-option').count())await page.locator('.major-option').first().click();
+   else await page.getByRole('button',{name:'ใช้ชีวิตต่อ 5 ปี',exact:true}).click();
+   if(++count>20)throw Error('Yearly progression stalled');
   }
   const result=(await state()).progression.awakening.result;
   await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();await page.getByRole('button',{name:'เลือกอาชีพ ผู้ดูแลธรรมชาติ',exact:true}).click();
@@ -18,10 +19,10 @@ try{
   await page.getByRole('button',{name:/^ดูแลสวนและแบ่งผลผลิต/}).click();if((await state()).gold!==before+8)throw Error('Career salary failed');
   await page.getByRole('button',{name:'เริ่มฝึกฟรี',exact:true}).click();await page.reload();
   if(JSON.stringify((await state()).progression.awakening.result)!==JSON.stringify(result))throw Error('Awakening changed on reload');
-  await page.locator('.choice-card').first().click();await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();
+  await page.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();await page.locator('.major-option').first().click();await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();
   if((await state()).progression.records.farmer.arcStep!==1)throw Error('Career story failed');
   if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Career overflow');
   if(errors.length)throw Error(errors.join('\n'));
-  await page.screenshot({path:`/tmp/reborn-career-${width}.png`});console.log(`PASS ${url} ${width}: genuine birth-to-12 story, seven-stage awakening, career, salary, training, reload, career episode`);await page.close();
+  await page.screenshot({path:`/tmp/reborn-career-${width}.png`});console.log(`PASS ${url} ${width}: paced birth-to-12 plan, rare milestones, one-decision awakening, career, salary, training, reload, career episode`);await page.close();
  }
 }finally{await browser.close();}

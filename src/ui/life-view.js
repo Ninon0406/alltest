@@ -6,6 +6,7 @@ export function paragraph(parent,text,tag='p'){const node=document.createElement
 export function actionButton(parent,label,action,perform){const button=document.createElement('button');button.type='button';button.textContent=label;button.onclick=()=>perform(action);parent.append(button);return button;}
 export function renderLife(parent,state,perform){
  parent.replaceChildren();const event=currentEvent(state),token=storyToken(state),page=Math.min(state.life.page,event.pages.length-1),c=calendar(state);
+ actionButton(parent,'กลับหน้าชีวิตรายปี',{type:'setPacing',view:'yearly',token},perform);
  const banner=document.createElement('div');banner.className='scene-banner';parent.append(banner);
  paragraph(banner,`เอลินดรา • อายุ ${c.ageYears} ปี • ปี ${c.worldYear}`,'span').className='scene-caption';
  const story=document.createElement('article');story.className='scene-text-box';parent.append(story);

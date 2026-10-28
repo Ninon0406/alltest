@@ -14,7 +14,7 @@ export function readyToTrain(state){
  return state;
 }
 export function simulateCareer(career,{seed=8,policy=0,stopBeforePromotion=false}={}){
- let state=generateBirth(seed),steps=0;const seen={events:new Set(),choices:new Set()};
+ let state=takeAction(generateBirth(seed),{type:'setPacing',view:'detailed'}),steps=0;const seen={events:new Set(),choices:new Set()};
  while(state.age<12){state=takeChoice(state,policy,seen);if(++steps>100)throw Error('Childhood stalled');}
  while(state.progression.awakening.step<7)state=takeChoice(state,policy,seen);
  while(missingRequirements(state,career).length){

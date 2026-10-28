@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-The development server binds loopback. Saves use browser LocalStorage (`reborn_save`); unversioned and version-1/2/3 saves keep their original characters and migrate to version 4 on the next save. Invalid/future saves remain intact; replacing one requires confirmation at the rebirth screen. Restart requires confirmation and clears the active life while retaining the ending gallery and pre-upgrade backups.
+The development server binds loopback. Saves use browser LocalStorage (`reborn_save`); unversioned and version-1/2/3/4 saves keep their original characters and migrate to version 5 on the next save. Invalid/future saves remain intact; replacing one requires confirmation at the rebirth screen. Restart requires confirmation and clears the active life while retaining the ending gallery and pre-upgrade backups.
 
 ## Validation
 
@@ -59,3 +59,11 @@ Open **อาชีพและการฝึก** for the result explanation, 
 Schema 4 adds `progression` without rerolling births or granting imported characters an unearned awakening. Exact raw pre-upgrade data is retained at `reborn_save_backup_before_v4`; the previous `...before_v3` backup remains untouched and both can be downloaded from the record. Export the newest save before rollback: older releases cannot read schema 4. Import UI is still pending.
 
 Validation: `npm test`, `npm run content`, build/stage and `npm run test:e2e`. After starting the preview, `node scripts/verify-progression.mjs <url>` plays genuinely from birth to 12, then ceremony/career/work/training/save reload on desktop/mobile without injecting age into the browser. The public deployment workflow runs this check as well as basic asset/layout checks. This release is not a complete combat/immortality/full-content game.
+
+## 0.5.0 annual life controls
+
+Default **เส้นทางชีวิต** now asks what to focus on this year. Choose an age-appropriate focus once, then **ใช้ชีวิตต่อ 1/2/5 ปี** or seek the next important decision (at most ten years). Ordinary scenes accumulate automatically in the journal. Plans stop at important 4–5-option crossroads; career dilemmas have two-year spacing and a postpone option. The age-12 awakening can run its actual remaining stages with one selected approach. **อ่านเรื่องแบบละเอียด (ทางเลือก)** retains the existing reader; original chapters/endings remain optional.
+
+**เล่นอัตโนมัติ** defaults off. Speed 1/2/4/8× means one year every 8/4/2/1 seconds while that screen is active. Decisions, another menu, hidden tab, reload or failed save stop it. Closing the game does not age the character. Training, rest, wages and walking still use actual calendar/resources; yearly results and compact ledger totals show what happened. Family data comes from the saved birth record; the life grid shows recorded years, not a lifespan forecast.
+
+Schema 5 preserves all previous progression and keeps an exact `reborn_save_backup_before_v5`, plus existing pre-v4/v3 backups. Download backups from **บันทึกตัวละคร** before rolling back to an older release. Reference screenshots guided interaction, not copied text/art/data; direct website/video access was unavailable in this environment (see docs/PACING_REFERENCE.md). Content counts and remaining systems are in CONTENT_MANIFEST.md and docs/NEXT_CODEX_TASK.md.

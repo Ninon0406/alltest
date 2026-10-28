@@ -473,3 +473,34 @@ summary { cursor:pointer; color:#edcd88; }
 .career-card h4 { color:#edcf8c; font-size:1.15rem; }
 .career-card button { margin-top:8px; }
 .career-codex input { width:100%; min-height:44px; color:#f2e9d8; background:#0c1828; border:1px solid #ac945b; padding:10px; font-size:1rem; }
+.year-toolbar { padding:16px; background:#101d30; border:1px solid #b7955960; margin-bottom:16px; border-radius:10px; }
+.year-age { font-size:2.4rem; color:#f1cf88; }
+.year-controls,.year-next { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.year-controls button[aria-pressed=true],.year-focus[aria-pressed=true] { background:#59462b; color:#ffe7ad; border-color:#e0bd74; }
+.year-clock { height:4px; background:#26384c; overflow:hidden; }
+.year-clock div { height:100%; width:0; background:#d4ae61; }
+@keyframes year-tick { to {width:100%} }
+.year-layout { display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:18px; }
+.year-layout > * {min-width:0;}
+.year-card { border:1px solid #b7955955; background:linear-gradient(145deg,#1b2c42ed,#111e32f5); padding:18px; border-radius:10px; margin-bottom:16px; }
+.year-card h3,.year-card h2 { color:#edd29a; margin-bottom:10px; }
+.year-card p { margin:8px 0; line-height:1.8; }
+.year-landscape {margin-bottom:16px; min-height:200px;}
+.year-focus-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.year-focus,.major-option {text-align:left;white-space:pre-line;line-height:1.65;padding:14px;}
+.year-focus:hover:not(:disabled),.major-option:hover:not(:disabled) {background:#2a3b52;color:#fff0ce;border-color:#e0bd74;}
+.major-option {display:block;width:100%;margin-top:10px;border-left:3px solid #d7b466;}
+.year-journal-row {display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;border-bottom:1px solid #a88d5930;padding:10px 0;}
+.year-journal-row strong {color:#d9b975;}
+.life-grid {display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;margin:12px 0;}
+.life-cell {display:block;aspect-ratio:1;background:#25364a;border:1px solid #365069;border-radius:2px;min-height:0;padding:0;}
+.life-cell.past {background:#826a42;}.life-cell.current {border:2px solid #f8d793;}.life-cell.future {opacity:.4;}
+@media(min-width:1600px){.container{max-width:1880px;}.year-layout{grid-template-columns:minmax(0,1fr) 285px;}}
+@media(max-width:1150px){.year-layout{grid-template-columns:minmax(0,1fr);}.year-layout>aside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}}
+@media(max-width:600px){.year-focus-grid{grid-template-columns:1fr;}.year-layout>aside{display:block;}.year-controls button{padding:8px;}.year-card{padding:14px;}.year-age{font-size:2rem;}}
+@media(prefers-reduced-motion:reduce){.year-clock div{animation:none!important;}}
+.yearly-mode .main-content,.yearly-mode .scene-container { overflow:visible; }
+.yearly-mode .scene-container { max-width:none; margin:0; padding:20px; gap:16px; }
+.year-toolbar { position:sticky; top:0; z-index:3; box-shadow:0 8px 24px #0006; }
+.year-toolbar > p { margin:0; }
+@media(max-width:600px){.yearly-mode .scene-container{padding:12px;}.year-controls{gap:4px;}.year-controls button{padding:6px;}.year-toolbar{padding:12px;}.year-toolbar small{font-size:.8rem;}}

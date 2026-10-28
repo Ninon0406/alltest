@@ -13,14 +13,14 @@
 - [ ] 11. Automated playthroughs and comprehensive content validation.
 - [ ] 12. Release hardening and GitHub Pages deployment configuration.
 
-Current release is 0.4.0. Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
+Current release is 0.5.0. Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
 
 ## Current priority stages (2026-10-28)
 
 - Implemented: production diagnosis (legacy Pages served raw source), compiled main:/ compatibility publication, browser-based post-deploy checks.
 - Implemented foundation: illustrated navy/gold surfaces with original local AI landscape; layered SVG portraits with persistent seeded face/hair/eyes/skin, race features, age appearance, career clothing/weapons and mage aura.
 - Still incomplete: all 20 requested screens, detailed portrait anatomy, equipment/scar/curse/transformation layers, 500 names and expanded lineage/origin data, full annual life simulation, RPG systems, NPC content and target endings. No fake screens have been added.
-- Next: Milestone 3 life engine and annual chronicle, beginning with age-appropriate infancy choices and explicit migration of legacy age jumps. Continue portrait/equipment integration as those systems become real.
+- Current continuation: annual life/calendar and P2 core are implemented; the next system slice is owned inventory/equipment and contextual travel, as specified below.
 
 ## Ultimate Directive v3 checkpoint — 0.3.0
 
@@ -37,3 +37,14 @@ Current release is 0.4.0. Equal birth archetypes, annual childhood, seven-stage 
 - Simulated 40 complete career paths (20 families × two story policies) from real infancy through awakening to age 18 and promotion. New mechanics have boundary/regression/E2E checks.
 - Still incomplete: richer regional/family stories, at least 60 more advanced/hybrid paths, actual equipment/combat skills, NPC mentors/relationships, travel encounters, crafting/businesses, lifespan/ascension and full-release counts.
 - Next slice: P3 inventory/equipment and contextual travel encounters using existing graph, economy and career IDs. See docs/NEXT_CODEX_TASK.md for exact invariants and acceptance criteria.
+
+## 0.5.0 checkpoint — user-requested annual pacing
+
+- [x] Persistent age-appropriate annual focus with actual work/practice/rest/travel and 1/2/5-year plans; seek-next-decision stops within ten years.
+- [x] Minor childhood scenes become automatic logged life events; old detailed reading stays optional. Six original five-option life crossroads and spaced four-option career dilemmas replace mandatory two-choice interruptions.
+- [x] One selected approach completes the actual remaining awakening stages without rerolling measured outcomes.
+- [x] Readable desktop/mobile annual dashboard: time controls, optional pause/speed autoplay, family, journal, location and actual life-history cells. No offline aging or fake peers/statistics.
+- [x] Schema 5 / exact pre-v5 backup, guarded atomic writes, preserved old chapters/careers/births. All 20 advanced paths remain earned and reachable through the new planner.
+- [x] Local tests/build/content and production-preview browser verification. Public release evidence is recorded separately after deployment.
+- Remaining: adult regional/family variation, stronger long-life retention, natural mortality/extension, equipment/combat/NPC/God paths and the full directive content targets.
+- Next: P3 owned inventory/equipment and contextual travel. Do not redo the completed pacing/time/ceremony foundation; read docs/NEXT_CODEX_TASK.md.
