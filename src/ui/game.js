@@ -1,5 +1,8 @@
 import { renderYearly,stopYearlyAuto } from './yearly-view.js';
-import { readGallery, storeGallery } from '../save/gallery.js';
+import { readGallery } from '../save/gallery.js';
+import { archiveCompleted,readArchive,completedSummary } from '../save/archive.js';
+import { createRun,ActivePlayClock } from '../engine/run.js';
+import { legacyDays } from '../engine/legacy.js';
 import { upgradeState } from '../engine/migrate.js';
 import { calendar, advanceTime, recordAction, normalize } from '../engine/time.js';
 import { dispatch } from '../engine/actions.js';
@@ -10,19 +13,45 @@ const escapeText = value => String(value).replace(/[&<>"']/g, char => ({'&':'&am
 import { GameState, replaceState } from '../engine/state.js';
 import { Scenes } from '../data/scenes.js';
 import { canChoose } from '../engine/choices.js';
-import { readSave, writeSave } from '../save/storage.js';
 export const Game = {
-            init() {
-                this.loadGame(true);
-                this.render();
+            active:false,
+            clock:new ActivePlayClock(),
+            get snapshot(){return this.active?structuredClone(GameState):null;},
+            startRun(){
+                stopYearlyAuto();
+                const seed=crypto.getRandomValues(new Uint32Array(1))[0];
+                replaceState(createRun(seed,{id:crypto.randomUUID(),startedAt:new Date().toISOString()}));
+                this.active=true;this.summary=null;this.archiveStatus=null;this.clock.start(performance.now());
             },
-
-            notify(message) { document.getElementById('gameNotice').textContent=message; },
-            perform(action) {
-                try { const next=dispatch(GameState,action);writeSave(localStorage,next);replaceState(next);this.notify('บันทึกความคืบหน้าแล้ว');this.render();return true; }
-                catch(error) { this.notify(['QuotaExceededError','SecurityError'].includes(error.name)?'บันทึกไม่ได้ กรุณาตรวจพื้นที่เก็บข้อมูล ความคืบหน้าเดิมยังอยู่':error.message);return false; }
+            notify(message){document.getElementById('gameNotice').textContent=message;},
+            perform(action){
+                if(!this.active)return false;
+                try{
+                    const next=dispatch(GameState,action);
+                    next.run.activeMs=this.clock.sample(performance.now());
+                    replaceState(next);this.notify('');
+                    if(next.run.status==='ended'){
+                        stopYearlyAuto();this.clock.pause(performance.now());
+                        this.summary=completedSummary(next,new Date().toISOString());this.archiveStatus='pending';
+                        this.render();this.archiveEnding();
+                    }else this.render();
+                    return true;
+                }catch(error){this.notify(error.message);return false;}
+            },
+            archiveEnding(){
+                const summary=this.summary;if(!summary)return;
+                this.archiveStatus='pending';
+                const write=()=>archiveCompleted(localStorage,summary);
+                const task=globalThis.navigator?.locks?navigator.locks.request('reborn-finished-lives',write):Promise.resolve().then(write);
+                return task.then(()=>{if(this.summary===summary){this.archiveStatus='success';this.render();}}).catch(()=>{if(this.summary===summary){this.archiveStatus='failed';this.render();}});
+            },
+            downloadSummary(){
+                if(!this.summary)return;
+                const url=URL.createObjectURL(new Blob([JSON.stringify(this.summary,null,2)],{type:'application/json'}));
+                const a=document.createElement('a');a.href=url;a.download='reborn-finished-life.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
             },
             render() {
+                if(!this.active)return;
                 if(!GameState.time)replaceState(upgradeState(GameState));
                 normalize(GameState);
                 document.body.classList.toggle('yearly-mode',GameState.yearly.view==='yearly');
@@ -75,9 +104,9 @@ export const Game = {
             },
 
             renderScene(sceneId) {
-                if(GameState.yearly.view==='yearly'){renderYearly(document.getElementById('sceneContainer'),GameState,action=>this.perform(action),()=>this.render());return;}
+                if(!Scenes[sceneId]?.isEnding&&GameState.yearly.view==='yearly'){renderYearly(document.getElementById('sceneContainer'),GameState,action=>this.perform(action),()=>this.render());return;}
                 stopYearlyAuto();
-                if(GameState.life.mode==='annual') {renderLife(document.getElementById('sceneContainer'),GameState,action=>this.perform(action));return;}
+                if(!Scenes[sceneId]?.isEnding&&GameState.life.mode==='annual') {renderLife(document.getElementById('sceneContainer'),GameState,action=>this.perform(action));return;}
 
                 const scene = Scenes[sceneId] || Scenes["scene_birth_0"];
                 const container = document.getElementById("sceneContainer");
@@ -92,10 +121,6 @@ export const Game = {
                 `;
 
                 if (scene.isEnding) {
-                    if (!GameState.unlockedEndings.includes(scene.endingId)) {
-                        GameState.unlockedEndings.push(scene.endingId);
-                        this.saveGame(true);
-                    }
                     html += `
                         <button class="primary" onclick="Game.restartGame()" style="padding: 15px; font-size: 1.1rem;">เริ่มต้นชีวิตใหม่ </button>
                     `;
@@ -128,59 +153,25 @@ export const Game = {
 
                 html += `</div>`;
                 container.innerHTML = html;
+                if(scene.isEnding){
+                    const summary=document.createElement('section');summary.className='scene-text-box terminal-summary';
+                    const text=document.createElement('p');text.textContent=`${GameState.name} • อายุ ${GameState.age} ปี • ${GameState.career} • ระดับพลัง ${GameState.power?.level??1}/100 • ${GameState.gold} เหรียญ • เวลาเล่นที่มีส่วนร่วม ${Math.floor(GameState.run.activeMs/1000)} วินาที`;summary.append(text);
+                    const status=document.createElement('p');status.setAttribute('role','status');status.textContent=this.archiveStatus==='success'?'เก็บสรุปชีวิตที่จบแล้วในประวัติเรียบร้อย':this.archiveStatus==='failed'?'เก็บประวัติไม่ได้ ดาวน์โหลดสรุปชีวิตนี้ไว้ได้':'กำลังเก็บสรุปชีวิตที่จบแล้ว';summary.append(status);
+                    if(this.archiveStatus==='failed'){const retry=document.createElement('button');retry.textContent='ลองเก็บประวัติอีกครั้ง';retry.onclick=()=>this.archiveEnding();summary.append(retry);}
+                    const download=document.createElement('button');download.textContent='ดาวน์โหลดสรุปชีวิตที่จบแล้ว';download.onclick=()=>this.downloadSummary();summary.append(download);container.append(summary);
+                }
                 if(!scene.isEnding){const button=document.createElement('button');button.textContent='ใช้ชีวิตรายปีต่อโดยเก็บบทเดิมไว้';const token=storyToken(GameState);button.onclick=()=>this.perform({type:'dailyLife',token});container.append(button);}
             },
 
-            legacyDays(choice) {
-                if(choice.id.startsWith('c_child_'))return Math.max(1,6*360-(GameState.time.absoluteDay-GameState.time.birthAbsoluteDay));
-                if(choice.id.startsWith('c_path_'))return Math.max(1,12*360-(GameState.time.absoluteDay-GameState.time.birthAbsoluteDay));
-                if(choice.id==='c_end_peasant')return Math.max(1,60*360-(GameState.time.absoluteDay-GameState.time.birthAbsoluteDay));
-                return 1;
+            legacyDays(choice){return legacyDays(GameState,choice);},
+            choose(id,token){return this.perform({type:'legacyChoice',choiceId:id,token});},
+            restartGame(){
+                if(this.active&&GameState.run.status!=='ended'&&!confirm('ยุติชีวิตนี้และกลับหน้าเกิดใหม่หรือไม่? ชีวิตที่ยังไม่จบจะไม่เก็บในประวัติ'))return;
+                this.abandon();this.onRestart?.();
             },
-            choose(id,token) {
-                const choice=Scenes[GameState.currentSceneId]?.choices?.find(item=>item.id===id);
-                if(!choice || !canChoose(GameState,choice) || token!==storyToken(GameState))return;
-                const previous=GameState,next=structuredClone(GameState);
-                try {
-                    replaceState(next);choice.effect?.();if(choice.id.startsWith('c_path_'))next.progression.activeCareerId=null;
-                    const days=this.legacyDays(choice);
-                    const goldDelta=next.gold-previous.gold;
-                    if(goldDelta)next.world.ledger.push({day:next.time.absoluteDay,location:next.world.currentLocationId,source:'legacy',amount:goldDelta});
-                    recordAction(next,choice.title,days,{goldDelta});
-                    advanceTime(next,days);next.currentSceneId=choice.next;next.life.revision++;
-                    writeSave(localStorage,next);this.render();this.notify('บันทึกความคืบหน้าแล้ว');
-                } catch(error){replaceState(previous);this.notify(error.message);}
-            },
-
-            addLog(text) {
-                const logBox = document.getElementById("logBox");
-                const entry = document.createElement("div");
-                entry.className = "log-entry";
-                entry.innerText = `[วันที่ ${GameState.day}] ${text}`;
-                logBox.prepend(entry);
-            },
-
-            saveGame(isAuto = false) {
-                try { writeSave(localStorage, GameState); } catch { this.notify('บันทึกไม่ได้ กรุณาตรวจพื้นที่เก็บข้อมูล'); return; }
-                if (!isAuto) {
-                    alert("บันทึกเกมเรียบร้อยแล้ว!");
-                }
-            },
-
-            loadGame(silent = false) {
-                try { const saved = readSave(localStorage); if (saved) replaceState(saved); }
-                catch { this.addLog("ไม่สามารถอ่านบันทึกได้ เริ่มจากข้อมูลปัจจุบันโดยเก็บบันทึกเดิมไว้"); }
-            },
-
-            restartGame() {
-                if (confirm("คุณต้องการเริ่มชีวิตใหม่ทั้งหมดใช่หรือไม่?")) {
-                    try { storeGallery(localStorage,GameState.unlockedEndings); } catch { this.notify('เก็บฉากจบไม่ได้ จึงยังไม่ลบชีวิตเดิม'); return; }
-                    localStorage.removeItem("reborn_save");
-                    location.reload();
-                }
-            },
-
+            abandon(){stopYearlyAuto();this.clock.pause(performance.now());this.active=false;this.summary=null;this.archiveStatus=null;},
             openCodex() {
+                stopYearlyAuto();
                 const modal = document.getElementById("modalOverlay");
                 const content = document.getElementById("modalContent");
                 content.innerHTML = `
@@ -200,25 +191,21 @@ export const Game = {
             },
 
             openEndings() {
+                stopYearlyAuto();
                 const modal = document.getElementById("modalOverlay");
                 const content = document.getElementById("modalContent");
-                const gallery=[...new Set([...readGallery(localStorage),...GameState.unlockedEndings])];
-                let endingsHtml = gallery.length > 0 ? gallery.map(e => `<li>${escapeText(e)}</li>`).join('') : "<li>ยังไม่มีฉากจบที่ปลดล็อก</li>";
+                let records=[],error='';try{records=readArchive(localStorage);}catch(e){error=e.message;}
+                const legacy=readGallery(localStorage);
+                content.innerHTML=`<div class="modal-header"><h2>ประวัติชีวิตที่จบแล้ว (${records.length})</h2><button onclick="Game.closeModal()">ปิด</button></div><div class="modal-body"><p>เก็บเฉพาะสรุป 100 ชีวิตล่าสุด เปิดอ่านได้โดยไม่มีการเล่นต่อ</p>${error?'<p>'+escapeText(error)+'</p>':''}${records.length?records.toReversed().map(r=>`<details><summary>${escapeText(r.name)} • ${r.age} ปี • ${escapeText(r.title)}</summary><p>${escapeText(r.career)} • ระดับพลัง ${r.powerLevel}/100 • ${r.gold} เหรียญ</p><p>${escapeText(r.epilogue)}</p></details>`).join(''):'<p>ยังไม่มีชีวิตที่จบแล้วในประวัติ</p>'}<button onclick="Game.downloadHistory()">ดาวน์โหลดประวัติชีวิตทั้งหมด</button>${legacy.length?'<details><summary>ฉากจบจากรุ่นก่อน ('+legacy.length+')</summary><p>'+legacy.map(escapeText).join(' • ')+'</p></details>':''}</div>`;
 
-                content.innerHTML = `
-                    <div class="modal-header">
-                        <h2>แกลเลอรีฉากจบที่ปลดล็อก (${gallery.length}/${Object.values(Scenes).filter(scene => scene.isEnding).length})</h2>
-                        <button onclick="Game.closeModal()">ปิด</button>
-                    </div>
-                    <div class="modal-body">
-                        <ul>${endingsHtml}</ul>
-                    </div>
-                `;
                 this.modalTrigger = document.activeElement;
                 modal.style.display = "flex";
                 content.focus();
             },
 
+            downloadHistory(){
+                try{const records=readArchive(localStorage),url=URL.createObjectURL(new Blob([JSON.stringify({version:1,lives:records},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='reborn-finished-lives.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(error){this.notify(error.message);}
+            },
             closeModal() {
                 document.getElementById("modalOverlay").style.display = "none";
                 this.modalTrigger?.focus();

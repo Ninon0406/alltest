@@ -13,7 +13,7 @@
 - [ ] 11. Automated playthroughs and comprehensive content validation.
 - [ ] 12. Release hardening and GitHub Pages deployment configuration.
 
-Current release is 0.5.0. Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
+Current release is 0.6.0 (V6 Phase A). Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
 
 ## Current priority stages (2026-10-28)
 
@@ -48,3 +48,15 @@ Current release is 0.5.0. Equal birth archetypes, annual childhood, seven-stage 
 - [x] Local tests/build/content and production-preview browser verification. Public release evidence is recorded separately after deployment.
 - Remaining: adult regional/family variation, stronger long-life retention, natural mortality/extension, equipment/combat/NPC/God paths and the full directive content targets.
 - Next: P3 owned inventory/equipment and contextual travel. Do not redo the completed pacing/time/ceremony foundation; read docs/NEXT_CODEX_TASK.md.
+
+## V6 delivery phases — highest current order
+
+- [x] A: One Life memory-only run; pure original chapter actions; terminal-only bounded idempotent archive; legacy keys ignored/preserved; independent tabs, refresh/BFCache lifecycle, real engagement timing.
+- [ ] B: compact readable responsive UI, age/power hero, in-page accessible map/training/shop/bag/details dialogs. This is the next priority before original P3 equipment.
+- [ ] C: inherited version-2 8/16-bit full-body appearance, at least 20 real variants/group and distinct 20-location tile scenes.
+- [ ] D: owned equipment, real inventory/shop/encounters; existing bread and graph stay functional.
+- [ ] E: earned power 1–99, gated 100, graded aura/breakthrough systems.
+- [ ] F: earned lifespan extension, long projects and ≥1000-year routes.
+- [ ] G/H: original narrative/NPC/ending expansion and full release hardening.
+
+Phase A retains all 126 authored events/scenes, 269 choices, six endings and existing career/map mechanics. Save compatibility now means historical reproducibility only; runtime resume is intentionally removed by explicit user override.

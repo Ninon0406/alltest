@@ -55,7 +55,7 @@ it('keeps every reachable branch playable for 100 random births', () => {
     const scene=Scenes[state.currentSceneId]; if(scene.isEnding)return;
     const available=scene.choices.filter(c=>canChoose(state,c)); expect(available.length).toBeGreaterThan(0);
     for(const choice of available) {
-      replaceState(structuredClone(state)); choice.effect?.(); GameState.day++;GameState.currentSceneId=choice.next;
+      replaceState(structuredClone(state)); choice.effect?.(GameState); GameState.day++;GameState.currentSceneId=choice.next;
       visit(structuredClone(GameState),depth+1);
     }
   }

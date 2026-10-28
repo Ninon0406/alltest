@@ -25,12 +25,12 @@ export function renderLife(parent,state,perform){
 }
 export function renderJournal(parent,state){
  paragraph(parent,'บันทึกชีวิตและพงศาวดารรายปี','h2');
- paragraph(parent,`ปฏิทิน 360 วันต่อปี • ผ่านวันเกิดแล้ว ${state.chronicle.length} ครั้งที่มีบันทึกหลังอัปเกรด`);
+ paragraph(parent,`ปฏิทิน 360 วันต่อปี • ผ่านวันเกิดแล้ว ${state.chronicle.length} ครั้งในชีวิตนี้`);
  for(const year of [...state.chronicle].reverse()){
   const details=document.createElement('details');parent.append(details);paragraph(details,`อายุ ${year.age} → ${year.age+1} ปี • ${year.actions.length} การตัดสินใจ`,'summary');
   for(const entry of year.actions)paragraph(details,entry.title);
  }
  paragraph(parent,'เหตุการณ์ล่าสุด','h3');
  for(const entry of state.journal.slice(-40).reverse())paragraph(parent,`อายุ ${entry.age} ปี • ${entry.location} • ${entry.title} (+${entry.days} วัน)`);
- if(!state.journal.length)paragraph(parent,'ยังไม่มีการตัดสินใจที่บันทึกหลังอัปเกรด ข้อมูลเดิมยังคงอยู่ในเซฟสำรอง');
+ if(!state.journal.length)paragraph(parent,'ยังไม่มีเหตุการณ์ในชีวิตนี้');
 }

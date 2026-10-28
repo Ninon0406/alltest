@@ -15,7 +15,7 @@ export function renderCareer(parent,state,perform){
   if(state.age>=12){actionButton(parent,a.paused?'กลับเข้าพิธีที่พักไว้':'เข้าสู่พิธีต่อ',{type:'beginAwakening',token},perform);if(!a.paused)actionButton(parent,'พักพิธีไว้ก่อน',{type:'pauseAwakening',token},perform);}
  }
  if(a.result){
-  paragraph(parent,`ผลการปลุกพลัง: ${a.result.tier}`,'h3');paragraph(parent,`แนวที่ตอบสนองเด่น: ${getCareer(a.result.topId).label} • ผลนี้ถูกเก็บถาวร ไม่สุ่มซ้ำเมื่อโหลด`);
+  paragraph(parent,`ผลการปลุกพลัง: ${a.result.tier}`,'h3');paragraph(parent,`แนวที่ตอบสนองเด่น: ${getCareer(a.result.topId).label} • ผลนี้คงเดิมตลอดชีวิตที่กำลังเล่น`);
   const result=document.createElement('details');parent.append(result);paragraph(result,'รายละเอียดคะแนนทั้ง 20 สาย','summary');
   for(const profile of careers){const r=a.result.scores[profile.id];paragraph(result,`${profile.label}: ${r.score.toFixed(2)} = คุณลักษณะ ${r.statPart.toFixed(2)} + วัยเด็ก ${r.memoryPart.toFixed(2)} + การฝึก ${r.trainingPart.toFixed(2)} + ภูมิหลัง ${r.background} + ความแปรผัน ${r.variation.toFixed(2)}`);}
  }

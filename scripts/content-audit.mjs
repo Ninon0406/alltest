@@ -19,7 +19,7 @@ export function auditContent(){
   const scene=Scenes[state.currentSceneId];if(!scene)throw Error('Missing scene');reachedScenes.add(state.currentSceneId);
   if(scene.isEnding){endings.add(scene.endingId);return;}
   const choices=scene.choices.filter(c=>canChoose(state,c));if(!choices.length)throw Error('Legacy dead end');
-  for(const choice of choices){if(!Scenes[choice.next])throw Error('Invalid next');reachedChoices.add(choice.id);replaceState(structuredClone(state));choice.effect?.();GameState.currentSceneId=choice.next;visit(structuredClone(GameState),depth+1);}
+  for(const choice of choices){if(!Scenes[choice.next])throw Error('Invalid next');reachedChoices.add(choice.id);replaceState(structuredClone(state));choice.effect?.(GameState);GameState.currentSceneId=choice.next;visit(structuredClone(GameState),depth+1);}
  }
  try{for(let seed=0;seed<100;seed++)visit(generateBirthV1(seed));}finally{replaceState(original);}
  for(let seed=0;seed<50;seed++)for(let option=0;option<2;option++){

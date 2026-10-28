@@ -18,7 +18,7 @@ export function currentEvent(state) {
  const next=pool.find(e=>!completed.includes(`${age}:${e.id}`));if(next)return next;
  return {...dailyEvent,title:age<12?'วันธรรมดาก่อนวันเกิด':dailyEvent.title,pages:age<12?['ช่วงนี้คุณมีเวลาทบทวนเรื่องที่ได้เรียนรู้ ครอบครัวยังคอยดูแลและให้เวลาพัก ความเปลี่ยนแปลงเล็กน้อยไม่ต้องรีบร้อนเสมอไป']:dailyEvent.pages,durationDays:age<12?360-(state.time.absoluteDay-state.time.birthAbsoluteDay)%360:30};
 }
-export function storyToken(state){return `${state.life.revision}:${state.time.absoluteDay}`;}
+export function storyToken(state){return `${state.run?.id??'historical'}:${state.life.revision}:${state.time.absoluteDay}`;}
 export function choiceDays(state,event=currentEvent(state)){
  const age=calendar(state).ageYears,remaining=360-(state.time.absoluteDay-state.time.birthAbsoluteDay)%360;
  const reserve=age<12&&event.category!=='random'&&!state.life.randomYears.includes(age)?1:0;

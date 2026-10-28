@@ -1,149 +1,38 @@
-import { generateBirth } from '../../src/character/rebirth.js';
-import { advanceTime } from '../../src/engine/time.js';
-import { test, expect } from '@playwright/test';
-import { initialCharacter } from '../../src/character/initial.js';
-test('play, save, restore and navigate', async ({page}) => {
-  const errors=[]; page.on('pageerror',e=>errors.push(e.message));
-  await page.addInitScript(state => { if (!localStorage.getItem('reborn_save')) localStorage.setItem('reborn_save', JSON.stringify({version:1,state})); }, {...structuredClone(initialCharacter),hp:180,mana:70,traits:[...initialCharacter.traits,'ลักษณะทดสอบ']});
-  await page.goto('/');
-  await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
-  await expect(page.locator('#txtHp')).toHaveText('100/100');
-  await expect(page.locator('#txtMana')).toHaveText('50/50');
-  await expect(page.locator('#traitsList')).toContainText('ลักษณะทดสอบ');
-  await expect(page.locator('.choice-card')).toHaveCount(4);
-  await page.locator('.choice-card').first().click();
-  await expect(page.locator('#lblDay')).toHaveText('2');
-  await expect(page.locator('#statInt')).toHaveText('13');
-  await page.reload();
-  await expect(page.locator('#lblDay')).toHaveText('2');
-  await expect(page.locator('#statInt')).toHaveText('13');
-  await page.getByRole('button',{name:'บันทึกตัวละคร',exact:true}).click();
-  await expect(page.locator('#shellPanel')).toContainText('อาร์เธอร์');
-  await page.getByRole('button',{name:'คู่มือโลก',exact:true}).click();
-  await expect(page.locator('#shellPanel')).toContainText('อัตโนมัติ');
-  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
-  await expect(page.locator('#sceneContainer')).toBeVisible();
-  await page.getByRole('button',{name:'สารานุกรม',exact:true}).click();
-  await expect(page.getByRole('dialog')).toBeVisible();
-  await page.keyboard.press('Escape');
-  await expect(page.getByRole('dialog')).toBeHidden();
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  expect(errors).toEqual([]);
+import {test,expect} from '@playwright/test';
+import {start,snapshot,finishPeacefully} from './helpers.js';
+const key='reborn_finished_lives_v1';
+test('active life never writes storage and in-page panels preserve its exact identity and resources',async({page})=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.addInitScript(()=>{window.runWrites=[];Storage.prototype.setItem=function(k){window.runWrites.push(k);throw new DOMException('blocked','SecurityError');};});
+ await start(page);const initial=await snapshot(page);
+ for(const name of ['บันทึกตัวละคร','บันทึกชีวิตรายปี','อาชีพและการฝึก','แผนที่และบริการ','คู่มือโลก']){await page.getByRole('button',{name,exact:true}).click();expect(await snapshot(page)).toEqual(initial);}
+ await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();expect((await snapshot(page)).age).toBe(1);
+ expect(await page.evaluate(()=>window.runWrites)).toEqual([]);expect(errors).toEqual([]);
 });
-test('corrupt save recovers without destroying it', async ({page}) => {
-  await page.addInitScript(()=>localStorage.setItem('reborn_save','broken'));
-  await page.goto('/'); await expect(page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'})).toBeVisible();
-  expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe('broken');
+test('ignores legacy active saves without reading, changing or removing them; refresh starts unstarted rebirth',async({page})=>{
+ await page.addInitScript(()=>{localStorage.setItem('reborn_save','legacy-life');localStorage.setItem('reborn_save_backup_before_v5','legacy-backup');localStorage.setItem('reborn_ending_gallery','["end_hero"]');const original=Storage.prototype.getItem;Storage.prototype.getItem=function(k){if(k.startsWith('reborn_save'))throw Error('Active save must not be read');return original.call(this,k);};});
+ await start(page);const old=await snapshot(page);await page.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();await page.reload();await expect(page.locator('#birthScreen')).toBeVisible();expect(await snapshot(page)).toBeNull();
+ await expect(page.getByRole('button',{name:/บันทึกเกม|โหลดเกม|ดาวน์โหลดเซฟ/})).toHaveCount(0);await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่',exact:true}).click();expect((await snapshot(page)).run.id).not.toBe(old.run.id);
+ await page.getByRole('button',{name:'ประวัติชีวิต',exact:true}).click();await expect(page.getByRole('dialog')).toContainText('ฉากจบจากรุ่นก่อน');
+ expect(await page.evaluate(()=>Object.fromEntries(Object.entries(localStorage)))).toEqual({reborn_save:'legacy-life',reborn_save_backup_before_v5:'legacy-backup',reborn_ending_gallery:'["end_hero"]'});
 });
-test('random birth is committed once, has a permanent record and remains playable', async ({page}) => {
-  const errors=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('/');
-  await expect(page.getByRole('heading',{name:'ประตูแห่งการเกิดใหม่'})).toBeVisible();
-  await expect(page.locator('#gameView')).toBeHidden();
-  await expect(page.locator('input, select')).toHaveCount(0);
-  await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
-  await expect(page.getByRole('heading',{name:'บันทึกกำเนิด'})).toBeVisible();
-  await expect(page.locator('#shellPanel')).toContainText('มารดา:');
-  const birth=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.birth);
-  await expect(page.locator('#shellPanel')).toContainText(birth.initial.name);
-  expect(await page.locator('#shellPanel').innerText()).not.toContain(`อายุขัย: ${birth.lifespan}`);
-  const image=page.locator('#shellPanel img'); expect(await image.evaluate(img=>img.complete && img.naturalWidth>0)).toBe(true);
-  await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
-  await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
-  await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
-  await expect(page.locator('.choice-card')).toHaveCount(2);
-  await page.locator('.choice-card').first().click();
-  await expect(page.locator('#statWis')).toHaveText(String(birth.initial.stats.wis+1));
-  await page.reload();await expect(page.locator('#lblDay')).toHaveText('37');
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.birth)).toEqual(birth);
-  await page.getByRole('button',{name:'บันทึกตัวละคร',exact:true}).click();
-  await expect(page.locator('#shellPanel')).toContainText(`สติปัญญาแรกเกิด: ${birth.initial.stats.int}`);
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  page.once('dialog',dialog=>dialog.dismiss());await page.getByRole('button',{name:'เริ่มใหม่',exact:true}).click();
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.birth)).toEqual(birth);
-  page.once('dialog',dialog=>dialog.accept());await page.getByRole('button',{name:'เริ่มใหม่',exact:true}).click();
-  await expect(page.getByRole('heading',{name:'ประตูแห่งการเกิดใหม่'})).toBeVisible();
-  expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBeNull();
-  expect(errors).toEqual([]);
+test('a second tab has an independent run while unfinished exit creates no archive',async({page,context})=>{
+ await start(page);const first=await snapshot(page),other=await context.newPage();await start(other);expect((await snapshot(other)).run.id).not.toBe(first.run.id);
+ await other.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();expect((await snapshot(page)).age).toBe(0);
+ await page.getByRole('button',{name:'เริ่มใหม่',exact:true}).click();await expect(page.locator('#birthScreen')).toBeVisible();expect(await page.evaluate(k=>localStorage.getItem(k),key)).toBeNull();await other.close();
 });
-test('storage failure prevents an unrecorded birth', async ({page}) => {
-  await page.addInitScript(()=>{ Storage.prototype.setItem = () => { throw new DOMException('full','QuotaExceededError'); }; });
-  await page.goto('/'); await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
-  await expect(page.locator('#birthStatus')).toContainText('บันทึกไม่ได้');
-  await expect(page.locator('#gameView')).toBeHidden();
-  expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBeNull();
+test('an actual terminal life archives once, reload preserves summary without a resume path',async({page})=>{
+ await page.addInitScript(()=>{const original=Storage.prototype.setItem;window.writes=[];Storage.prototype.setItem=function(k,v){window.writes.push(k);return original.call(this,k,v);};});
+ await start(page);await finishPeacefully(page);await expect(page.locator('.terminal-summary')).toContainText('เก็บสรุปชีวิตที่จบแล้วในประวัติเรียบร้อย');
+ const state=await snapshot(page),archive=await page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key);expect(archive.lives).toHaveLength(1);expect(archive.lives[0].runId).toBe(state.run.id);expect(archive.lives[0].age).toBe(60);expect(archive.lives[0]).not.toHaveProperty('state');
+ await page.evaluate(()=>Game.render());expect(await page.evaluate(()=>window.writes)).toEqual([key]);await page.reload();await expect(page.locator('#birthScreen')).toBeVisible();await page.getByRole('button',{name:'ประวัติชีวิต',exact:true}).click();await expect(page.getByRole('dialog')).toContainText(state.name);await expect(page.getByRole('dialog').getByRole('button',{name:/^(เล่นต่อ|โหลดเกม|กู้คืนชีวิต)$/})).toHaveCount(0);
 });
-test('replacing an unreadable save requires confirmation', async ({page}) => {
-  await page.addInitScript(()=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save','broken');});
-  await page.goto('/');
-  page.once('dialog',dialog=>dialog.dismiss()); await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
-  expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe('broken');
-  page.once('dialog',dialog=>dialog.accept()); await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
-  await expect(page.getByRole('heading',{name:'บันทึกกำเนิด'})).toBeVisible();
-  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).version)).toBe(5);
+test('archive failure leaves terminal life readable and offers a real summary download',async({page})=>{
+ await page.addInitScript(()=>{Storage.prototype.setItem=()=>{throw new DOMException('full','QuotaExceededError');};});await start(page);await finishPeacefully(page);await expect(page.locator('.terminal-summary')).toContainText('เก็บประวัติไม่ได้');
+ const downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'ดาวน์โหลดสรุปชีวิตที่จบแล้ว',exact:true}).click();expect((await downloaded).suggestedFilename()).toBe('reborn-finished-life.json');expect((await snapshot(page)).run.status).toBe('ended');
 });
-test('portrait retains face identity after aging and career changes', async ({page})=>{
- await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
- await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
- const eyes=await page.locator('#charAvatar [data-layer="eyes"]').evaluate(node=>node.outerHTML);
- await page.evaluate(()=>{const save=JSON.parse(localStorage.getItem('reborn_save'));save.state.time.absoluteDay=save.state.time.birthAbsoluteDay+65*360;save.state.career='นักเวท';save.state.stats.int=20;localStorage.setItem('reborn_save',JSON.stringify(save));});
- await page.reload();
- expect(await page.locator('#charAvatar [data-layer="eyes"]').evaluate(node=>node.outerHTML)).toBe(eyes);
- await expect(page.locator('#charAvatar [data-layer="weapon"] path')).toHaveCount(2);
- await expect(page.locator('#charAvatar [data-layer="aura"] circle')).toHaveCount(1);
- const svg=await page.locator('#charAvatar svg').evaluate(node=>new XMLSerializer().serializeToString(node));
- expect(await page.evaluate(svg=>new DOMParser().parseFromString(svg,'image/svg+xml').querySelector('parsererror')===null,svg)).toBe(true);
-});
-test('annual story reaches twelve with consistent status and birthday chronicles',async({page})=>{
- test.setTimeout(90000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
- let age=0,actions=0;
- while(age<12){
-  const more=page.getByRole('button',{name:'อ่านต่อ',exact:true});if(await more.count())await more.click();
-  await page.locator('.choice-card').first().click();
-  const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);age=state.age;actions++;
-  expect(state.age).toBe(Math.floor((state.time.absoluteDay-state.time.birthAbsoluteDay)/360));
-  await expect(page.locator('#displayAge')).toHaveText(`อายุ: ${age} ปี`);
-  if(actions>65)throw Error('story stalled');
- }
- const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);
- expect(saved.journal.filter(e=>e.age===0&&e.eventId?.startsWith('infant.'))).toHaveLength(10);
- expect(saved.life.randomYears.filter(a=>a<10)).toHaveLength(10);
- await page.getByRole('button',{name:'บันทึกชีวิตรายปี',exact:true}).click();await expect(page.locator('#shellPanel details')).toHaveCount(12);
- await page.reload();await expect(page.locator('#displayAge')).toHaveText('อายุ: 12 ปี');
- expect(errors).toEqual([]);
-});
-test('map travel and local economy update gold, days and inventory once',async({page})=>{
- let fixture;for(let seed=0;seed<1000;seed++){const s=generateBirth(seed);if(s.birth.locationId==='dawn'){fixture=s;break;}}
- advanceTime(fixture,8*360);fixture.gold=20;
- await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:3,state}));},fixture);
- await page.goto('/');await page.getByRole('button',{name:'แผนที่และบริการ',exact:true}).click();
- await page.getByRole('combobox',{name:'เลือกสถานที่ที่รู้จัก'}).selectOption('market');
- await page.getByRole('button',{name:'เดินทางตามเส้นทางนี้',exact:true}).click();
- await expect(page.locator('#lblLocation')).toHaveText('ตลาดใบหม่อน');await expect(page.locator('#lblDay')).toHaveText('2');
- const buy=page.getByRole('button',{name:/ซื้อขนมปัง/});
- await buy.evaluate(button=>{button.click();button.click();});
- const state=await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state);
- expect(state.gold).toBe(18);expect(state.world.inventory.bread).toBe(1);expect(state.world.ledger).toHaveLength(2);
- await page.getByRole('button',{name:/ขายขนมปังคืน/}).click();await expect(page.locator('#displayGold')).toContainText('19');
- await page.reload();await expect(page.locator('#lblLocation')).toHaveText('ตลาดใบหม่อน');
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-});
-test('storage failure rolls back an in-progress story transaction',async({page})=>{
- await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
- await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();
- const before=await page.evaluate(()=>localStorage.getItem('reborn_save'));
- await page.evaluate(()=>{Storage.prototype.setItem=()=>{throw new DOMException('full','QuotaExceededError');};});
- await page.getByRole('button',{name:'อ่านต่อ',exact:true}).click();
- await expect(page.locator('#gameNotice')).toContainText('บันทึกไม่ได้');
- await expect(page.getByRole('button',{name:'อ่านต่อ',exact:true})).toBeVisible();
- expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBe(before);
-});
-test('legacy age jumps become explicit elapsed days and never show a false age title',async({page})=>{
- await page.addInitScript(state=>{if(!localStorage.getItem('reborn_save'))localStorage.setItem('reborn_save',JSON.stringify({version:2,state}));},initialCharacter);
- await page.goto('/');await page.getByRole('button',{name:'อ่านเรื่องแบบละเอียด (ทางเลือก)',exact:true}).click();await page.locator('.choice-card').first().click();await page.locator('.choice-card').first().click();
- await expect(page.locator('#displayAge')).toHaveText('อายุ: 6 ปี');await expect(page.locator('#sceneContainer h3')).toContainText('อายุ 6 ปี');
- expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save')).state.time.absoluteDay)).toBe(2160);
- expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_save_backup_before_v3')).state.age)).toBe(0);
- await page.reload();await expect(page.locator('#displayAge')).toHaveText('อายุ: 6 ปี');
+test('back navigation and BFCache pageshow do not revive an abandoned life',async({page})=>{
+ await start(page);const before=await snapshot(page);await page.goto('about:blank');await page.goBack();await expect(page.locator('#birthScreen')).toBeVisible();expect(await snapshot(page)).toBeNull();
+ await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่',exact:true}).click();expect((await snapshot(page)).run.id).not.toBe(before.run.id);
+ await page.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})));await expect(page.locator('#birthScreen')).toBeVisible();expect(await snapshot(page)).toBeNull();expect(await page.evaluate(()=>localStorage.length)).toBe(0);
 });

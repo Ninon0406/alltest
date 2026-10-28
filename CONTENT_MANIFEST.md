@@ -1,4 +1,4 @@
-# Verified implemented content — 0.5.0
+# Verified implemented content — 0.6.0
 
 Run `npm run content` for actual authored records and deterministic union reachability.
 
@@ -26,3 +26,5 @@ Other retained content: 120 distinct Thai names, 20 equally likely birth archety
 Not a full release: targets ≥350 events, ≥500 choices, ≥100 endings, ≥100 authored NPCs, ≥80 advanced/hybrid paths, ≥150 locations and ≥40 dungeons are not met. Equipment, combat, mentor/relationship systems, lifespan/ascension and region-specific content expansion remain outstanding.
 
 Default pacing now chooses ordinary childhood responses automatically from the selected focus and labels those entries automatic. Authored counts include this preserved optional content, not 269 mandatory user prompts in one life. The six new life crossroads have genuinely authored situations; service controls and reuse of old narrative data do not inflate counts.
+
+V6 Phase A changes run persistence, not authored counts. The six existing genuine terminal endings now produce a one-time concise history record; archive copies do not count as new endings. Runtime ignores active saves, while offline historical generation/migration validators remain tested. Pixel-v2 variants, power progression and owned equipment are not implemented by Phase A.

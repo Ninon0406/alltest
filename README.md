@@ -2,6 +2,12 @@
 
 Thai browser narrative RPG. The existing Vite / vanilla ES module game now includes equal-archetype rebirth, annual childhood, awakening and playable career progression. No backend, API keys, or runtime image services are needed.
 
+## Current One Life policy (0.6.0 / V6)
+
+Active play is held only in this tab's memory. Refresh/close returns to the rebirth screen; click to start a fresh independent life. In-page panels retain the run. There is no active save/load/backup/export UI. Old save keys are left untouched and ignored, not migrated into play. All historical save instructions below describe older releases only.
+
+Only genuine completed-life summaries persist at `reborn_finished_lives_v1` (100 latest, exportable, no resume). Old ending gallery IDs remain inspectable. If storage is blocked, gameplay still works; a finished summary can be downloaded when archive storage fails. Unfinished exit creates no archive. Native close warnings and mobile memory retention are not guaranteed.
+
 ## Development
 
 Use Node.js 22.12+ (validated on 24.19) and npm. From this checkout:

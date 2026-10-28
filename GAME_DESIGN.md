@@ -1,5 +1,7 @@
 # CODEX MASTER DIRECTIVE — REBORN GAME
 
+**Current override (V6 / 0.6.0):** docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md is authoritative where this historical specification conflicts. One Life One Run replaces every active-save/resume requirement below.
+
 You are the autonomous lead developer of REBORN: Chronicles of a Thousand Destinies.
 
 Your job is to build a complete, playable, polished Thai-language fantasy isekai survival life-simulation RPG website in this GitHub repository.
@@ -284,3 +286,11 @@ The planner selects ordinary existing childhood responses using the chosen focus
 The annual dashboard uses the existing navy/gold identity and local landscape/portraits, with age/time controls, focus cards, latest journal, real saved family details, location and a rolling 100-year grid. Optional autoplay runs one simulated year every 8/4/2/1 seconds at 1/2/4/8×; it stops for decisions, hidden page, another menu, reload and failed save. It is off by default and never advances time offline. Ordinary travel/services retain their calendar costs; detailed-reader birthday guards remain unchanged.
 
 Schema 5 adds the validated annual plan/checkpoints/reports without resetting birth, time, chapters, progression or inventories. Exact pre-v5 raw input and existing pre-v4/pre-v3 backups remain downloadable. Old detailed narratives and all six endings remain available through optional reading. No natural mortality/extension/ascension is implemented by this pacing change. Reference scope and access limits are recorded in docs/PACING_REFERENCE.md.
+
+## 0.6.0 — Phase A One Life One Run
+
+The live character, birth RNG, world and story are memory-only. Birth waits for an explicit click; reload/new tab never restores a life. In-page navigation preserves the live run. Old save/backups remain untouched and are never read by runtime. Legacy ending gallery remains readable without writing it. Existing offline historical validators remain for reproducibility tests, not runtime restoration.
+
+All ordinary and original chapter choices use the pure dispatcher and run-scoped revision token. Failed validation leaves state unchanged; success commits in memory. Ending closes the run against further gameplay actions. Only an actual authored terminal transition creates a compact summary (no RNG, active state, calendar, inventory, flags or resumable history). Archive writes use a browser lock where supported and deduplicate by runId. Retain at most 100 summaries and allow JSON export; archive errors retain the terminal screen and offer summary download/retry. Unfinished refresh/exit never creates an ending.
+
+Real engagement timing counts visible intervals within 15 seconds of a trusted interaction; idle/autoplay-only waiting is excluded. Native unload warning is best effort; pagehide abandons memory and persisted pageshow returns to rebirth, not a revived run. Mobile tab eviction cannot preserve a life. Natural mortality, power-level progression, deity conditions and appearance-v2 inheritance are later phases, not implemented by this policy migration. Power in this checkpoint starts at 1; an old career promotion is not a power rank.

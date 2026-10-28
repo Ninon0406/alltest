@@ -35,3 +35,13 @@ Release evidence: source commit 333ab7b serves the expected compiled bundle on G
 - [x] Public v0.5.0 verification: source `8733de6`, expected `app-B3-RqJPU.js` / `app-BIIXxJqj.css` observed; both public scripts passed all four layout widths and genuine annual birth-to-career at 1366/360.
 
 Mortality, ascension, NPC relationships and equipment are not completed by this slice. The annual report list caps at 200, but full long-life history retention still needs work.
+
+# V6 Phase A — current policy overrides historical save checks
+
+- [x] Pure cloned in-memory actions including original chapters; run-scoped stale-action guard and terminal lock.
+- [x] No runtime active-save reads/writes/exports; untouched legacy keys; independent fresh tabs/reloads.
+- [x] Genuine ending summaries only, bounded/idempotent archive, failure download/retry, legacy gallery read-only.
+- [x] Visible interaction-window timing, native best-effort warning, pagehide abandonment and BFCache guard.
+- [x] Local 56 unit / 22 browser cases, content/build/staging and three preview verifiers.
+- [ ] Public Phase A verification after authorized push.
+- [ ] Phase B compact dashboard and accessible in-page overlays.

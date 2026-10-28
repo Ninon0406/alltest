@@ -6,10 +6,13 @@ import { upgradeState } from './migrate.js';
 import { currentEvent, applyLifeChoice, storyToken } from './life.js';
 import { travel } from '../world/travel.js';
 import { useService } from '../world/economy.js';
+import { chooseLegacy } from './legacy.js';
 export function dispatch(input,action){
+ if(input.run?.status==='ended')throw Error('ชีวิตนี้จบแล้ว เริ่มชีวิตใหม่เพื่อเล่นต่อ');
  if(action.token!==storyToken(input))throw Error('รายการนี้เปลี่ยนไปแล้ว กรุณาเลือกจากหน้าปัจจุบัน');
  const state=upgradeState(input);
- if(action.type==='setPacing'){
+ if(action.type==='legacyChoice')chooseLegacy(state,action.choiceId);
+ else if(action.type==='setPacing'){
   if(!['yearly','detailed'].includes(action.view))throw Error('มุมมองไม่ถูกต้อง');state.yearly.view=action.view;
  }else if(action.type==='yearFocus'){
   if(!availableYearActivities(state).some(a=>a.id===action.focus))throw Error('กิจกรรมยังไม่เหมาะกับวัย');if(action.stat!==undefined&&!statKeys.includes(action.stat))throw Error('หัวข้อฝึกไม่ถูกต้อง');state.yearly.focus=action.focus;if(action.stat)state.yearly.stat=action.stat;

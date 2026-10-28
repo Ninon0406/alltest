@@ -1,5 +1,7 @@
 # Development rules
 
+**Highest current policy: V6 `docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md` overrides all historical active-save instructions below.** Runtime lives exist only in memory. Never read/restore/write/delete `reborn_save` or its backups in gameplay; leave old keys untouched. Only genuine terminal summaries persist under `reborn_finished_lives_v1`, idempotent by runId, at most 100 entries. Old gallery is read-only. Refresh/new tab starts unstarted rebirth. No save/load/export-active-run UI. Clone/validate/revision-token then commit in memory; persistence failure cannot block play. Phase A is implemented; Phase B compact accessible dashboard/overlays is next. Never claim the later pixel/power/equipment phases are complete.
+
 Use the existing checkout: cloud tasks are already isolated. Do not create worktrees unless requested. Work one runnable milestone at a time. Do not publish, spend money, or perform destructive repository operations without approval.
 
 Keep all new player-facing text in Thai. Preserve existing gameplay and compatible saves; never substitute fake actions or count duplicate content. Use Vite, vanilla ES modules, seeded deterministic randomness, LocalStorage versioned schemas, Vitest and Playwright. Keep APIs/backends optional and assets local. Use domain modules when implementing mechanics; do not create stubs that pretend those mechanics work.

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 — 2026-10-29 — V6 Phase A
+
+Replaced active-save/resume with memory-only independent runs and explicit rebirth after refresh. Left old save/backups untouched and legacy ending gallery read-only. Converted original chapter effects to pure state-argument functions and the shared dispatcher, with run-scoped stale tokens and terminal action guards. Added genuine terminal-only compact archive, one entry/run, 100-record cap, Web Locks when available, completed-history export and summary download/retry on archive error. Added visible interaction-window timing and page lifecycle guards. Content and working birth/ceremony/career/map mechanics are retained. No pixel-v2, power progression or lifespan completion is claimed.
+
+Validation: 56 unit cases; browser acceptance replaces resume fixtures with real clicked runs, no-write/blocked-storage, independent tabs, reload/BFCache, actual ending archive and download failure cases. All 22 desktop/mobile browser cases passed; production build/content and all three preview verification scripts passed. Public evidence is a separate post-deploy check.
+
 ## 0.5.0 — 2026-10-29 — annual focuses and rare crossroads
 
 Replaced the default frequent two-choice reader with persistent annual focuses, real resource-aware yearly simulation, 1/2/5-year steps and seek-next-decision. Retained every old detailed event/chapter as optional reading. Added six original life crossroads with five outcomes each, four-strategy career decisions with two-year spacing/postponement, and a one-approach resolution of the existing seven-stage ceremony without rerolling archived results. Added an age/time toolbar, optional 1/2/4/8× autoplay with safe stop conditions, family/location panels, compact annual journal/results/ledger and actual 100-cell history. Kept local fantasy art and portraits. Schema 5 safely preserves births/progression/old scenes and exact raw pre-v5/v4/v3 backups.
