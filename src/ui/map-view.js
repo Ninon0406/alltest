@@ -1,16 +1,18 @@
+import {locationArt} from './scene.js';
 import { getCareer } from '../data/careers.js';
 import { locations,routes } from '../world/locations.js';
 import { revealedLocations,findRoute } from '../world/travel.js';
 import { services,availableServices } from '../world/economy.js';
 import { storyToken } from '../engine/life.js';
 import { paragraph,actionButton } from './life-view.js';
-let selected=null,zoom=1,offsetX=0,offsetY=0;
+let selected=null,zoom=1,offsetX=0,offsetY=0,lastRun=null;
 const ns='http://www.w3.org/2000/svg';
 export function renderMap(parent,state,perform,refresh){
+ if(lastRun!==state.run?.id){lastRun=state.run?.id;selected=null;zoom=1;offsetX=0;offsetY=0;}
  const token=storyToken(state),current=locations[state.world.currentLocationId],revealed=revealedLocations(state);
  if(!selected||!revealed.has(selected))selected=current.id;
  paragraph(parent,'แผนที่เอลินดรา','h2');paragraph(parent,`${current.parent} › ${current.name} • เงิน ${state.gold} เหรียญ • ขนมปัง ${state.world.inventory.bread??0}/20`);
- paragraph(parent,'จุดสีทองคือที่อยู่ปัจจุบัน กรอบข้าวหลามตัดคือจุดกำเนิด เส้นสีทองคือเส้นทางที่รู้จัก จุดที่ยังไม่เคยเยือนแสดงด้วยวงกลมโปร่ง เด็ก 4–11 ปีเดินทางในภูมิภาคกับผู้ดูแล ข้ามภูมิภาคได้เมื่ออายุ 12 ปี');
+ const help=document.createElement('details');parent.append(help);paragraph(help,'วิธีอ่านแผนที่และข้อจำกัดตามวัย','summary');paragraph(help,'จุดสีทองคือที่อยู่ปัจจุบัน กรอบข้าวหลามตัดคือจุดกำเนิด เส้นสีทองคือเส้นทางที่รู้จัก จุดที่ยังไม่เคยเยือนแสดงด้วยวงกลมโปร่ง เด็ก 4–11 ปีเดินทางในภูมิภาคกับผู้ดูแล ข้ามภูมิภาคได้เมื่ออายุ 12 ปี');
  const controls=document.createElement('div');controls.className='map-controls';parent.append(controls);
  const adjust=(label,fn)=>{const b=document.createElement('button');b.textContent=label;b.onclick=()=>{fn();refresh();};controls.append(b);};
  adjust('ตำแหน่งของฉัน',()=>{selected=current.id;zoom=1;offsetX=0;offsetY=0;});
@@ -32,7 +34,7 @@ export function renderMap(parent,state,perform,refresh){
   const label=document.createElementNS(ns,'text');label.setAttribute('x',loc.x>540?loc.x-15:loc.x+15);label.setAttribute('text-anchor',loc.x>540?'end':'start');label.setAttribute('y',loc.y+5);label.setAttribute('fill','#f3ead7');label.setAttribute('font-size','11');label.textContent=loc.name;g.append(label);
  }
  const select=document.createElement('select');select.setAttribute('aria-label','เลือกสถานที่ที่รู้จัก');for(const id of revealed){const option=document.createElement('option');option.value=id;option.textContent=locations[id].name;select.append(option);}select.value=selected;select.onchange=()=>{selected=select.value;refresh();};parent.append(select);
- const destination=locations[selected];paragraph(parent,destination.name,'h3');paragraph(parent,destination.description);
+ const destination=locations[selected];const preview=document.createElement('div');preview.className='map-preview';preview.innerHTML=locationArt(destination);parent.append(preview);paragraph(parent,destination.name,'h3');paragraph(parent,destination.description);
  const quote=findRoute(state,selected);
  if(selected!==current.id){paragraph(parent,quote?`${quote.path.map(id=>locations[id].name).join(' → ')} • ${quote.days} วัน • ${quote.gold} เหรียญ`:'ยังไม่มีเส้นทางที่เปิดให้เดินทางได้ตามวัย');if(quote){actionButton(parent,'เดินทางตามเส้นทางนี้',{type:'travel',destination:selected,token},perform);if(quote.gold>0){const walking=findRoute(state,selected,'walk');actionButton(parent,`เดินเท้าพร้อมผู้ร่วมทาง • ${walking.days} วัน • ฟรี`,{type:'travel',destination:selected,method:'walk',token},perform);}}}
  paragraph(parent,`บริการ ณ ${current.name}`,'h3');

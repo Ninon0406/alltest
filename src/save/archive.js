@@ -2,7 +2,7 @@ import { Scenes } from '../data/scenes.js';
 export const ARCHIVE_KEY='reborn_finished_lives_v1',ARCHIVE_LIMIT=100;
 const endings=new Set(Object.values(Scenes).filter(s=>s.isEnding).map(s=>s.endingId));
 const cut=(value,max=300)=>String(value??'').slice(0,max);
-const valid=r=>r&&typeof r.runId==='string'&&endings.has(r.endingId)&&typeof r.name==='string'&&typeof r.epilogue==='string'&&Number.isSafeInteger(r.age)&&r.age>=0&&Number.isSafeInteger(r.powerLevel)&&r.powerLevel>=1&&r.powerLevel<=100&&Number.isFinite(r.activePlayMs)&&r.activePlayMs>=0&&Array.isArray(r.events)&&r.events.length<=12;
+const valid=r=>r&&typeof r.runId==='string'&&endings.has(r.endingId)&&typeof r.name==='string'&&typeof r.epilogue==='string'&&r.epilogue.length<=1200&&Number.isFinite(Date.parse(r.startedAt))&&Number.isFinite(Date.parse(r.finishedAt))&&Number.isSafeInteger(r.age)&&r.age>=0&&Number.isSafeInteger(r.powerLevel)&&r.powerLevel>=1&&r.powerLevel<=100&&Number.isFinite(r.activePlayMs)&&r.activePlayMs>=0&&Array.isArray(r.events)&&r.events.length<=12;
 export function completedSummary(state,finishedAt){
  const scene=Scenes[state.currentSceneId];
  if(state.run?.status!=='ended'||!scene?.isEnding||state.run.endingId!==scene.endingId)throw Error('ชีวิตนี้ยังไม่ถึงฉากจบ');

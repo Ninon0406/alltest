@@ -1,10 +1,10 @@
 import {test,expect} from '@playwright/test';
-import {start,snapshot,reachAge,awaken} from './helpers.js';
+import {start,snapshot,reachAge,awaken,openOverlay,closeOverlay} from './helpers.js';
 test('real infancy-to-awakening career work and practice work in memory with blocked storage',async({page})=>{
  await page.addInitScript(()=>{Storage.prototype.setItem=()=>{throw new DOMException('blocked','SecurityError');};});await start(page);const birth=(await snapshot(page)).birth;await awaken(page);const measured=(await snapshot(page)).progression.awakening.result;
- await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();await page.getByRole('button',{name:'เลือกอาชีพ ผู้ดูแลธรรมชาติ',exact:true}).click();const before=await snapshot(page);
+ await openOverlay(page,'อาชีพและการฝึก');await page.getByRole('button',{name:'เลือกอาชีพ ผู้ดูแลธรรมชาติ',exact:true}).click();const before=await snapshot(page);
  await page.getByRole('button',{name:/^ดูแลสวนและแบ่งผลผลิต/}).click();expect((await snapshot(page)).gold).toBe(before.gold+8);await page.getByRole('button',{name:'เริ่มฝึกฟรี',exact:true}).click();expect((await snapshot(page)).progression.practice.wis).toBeGreaterThan(0);
- await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();expect((await snapshot(page)).progression.awakening.result).toEqual(measured);expect((await snapshot(page)).birth).toEqual(birth);expect(await page.evaluate(()=>localStorage.length)).toBe(0);
+ await closeOverlay(page);expect((await snapshot(page)).progression.awakening.result).toEqual(measured);expect((await snapshot(page)).birth).toEqual(birth);expect(await page.evaluate(()=>localStorage.length)).toBe(0);
 });
 test('actual map routes update the same run exactly once',async({page})=>{
  await start(page);await reachAge(page,12);await page.locator('.major-option').last().click();await page.getByRole('button',{name:'แผนที่และบริการ',exact:true}).click();

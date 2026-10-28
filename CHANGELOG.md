@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.0 — 2026-10-29 — V6 Phase B compact UI
+
+Replaced long stacked cards with a viewport dashboard: prominent age/initial Lv1, compact vitals, three time-step buttons and a focus picker, original pixel actor in contextual tile scenes, desktop summary dock and five-control mobile navigation. Map/career/training/real bread shop/bag/work/record/journal/options and rare decisions now share one native dialog with explicit Tab wrap, ESC, close/focus return, background locking, pause-on-open and inline errors. Added session-only text sizing and reduced effects; journal reads one actual year at a time. Existing 20 locations get distinct procedural compositions/previews. Appearance-v1 identity and all original mechanics remain; inherited v2/20-variant catalogs, equipment and earned power 1–100 remain incomplete.
+
+Validation: 60 unit cases, 37 browser cases including seven viewport widths, content audit/build/staging and three preview verifiers. Public release evidence is recorded after deployment. Phase A source a201167 was already served with app-BGfqNplA.js and passed the four-width basic check, genuine birth-to-career check at 1366/360 and terminal-only archive/independent-tab verification.
+
 ## 0.6.0 — 2026-10-29 — V6 Phase A
 
 Replaced active-save/resume with memory-only independent runs and explicit rebirth after refresh. Left old save/backups untouched and legacy ending gallery read-only. Converted original chapter effects to pure state-argument functions and the shared dispatcher, with run-scoped stale tokens and terminal action guards. Added genuine terminal-only compact archive, one entry/run, 100-record cap, Web Locks when available, completed-history export and summary download/retry on archive error. Added visible interaction-window timing and page lifecycle guards. Content and working birth/ceremony/career/map mechanics are retained. No pixel-v2, power progression or lifespan completion is claimed.

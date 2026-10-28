@@ -17,7 +17,7 @@ try{
   await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();await page.getByRole('button',{name:'เลือกอาชีพ ผู้ดูแลธรรมชาติ',exact:true}).click();
   const before=(await state()).gold;
   await page.getByRole('button',{name:/^ดูแลสวนและแบ่งผลผลิต/}).click();if((await state()).gold!==before+8)throw Error('Career salary failed');
-  await page.getByRole('button',{name:'เริ่มฝึกฟรี',exact:true}).click();await page.getByRole('button',{name:'เส้นทางชีวิต',exact:true}).click();
+  await page.getByRole('button',{name:'เริ่มฝึกฟรี',exact:true}).click();await page.keyboard.press('Escape');
   if(JSON.stringify((await state()).progression.awakening.result)!==JSON.stringify(result))throw Error('Awakening changed in the same run');
   await page.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();await page.locator('.major-option').first().click();await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();
   if((await state()).progression.records.farmer.arcStep!==1)throw Error('Career story failed');

@@ -11,7 +11,7 @@ try{
  if((await other.evaluate(()=>Game.snapshot)).run.id===first.run.id)throw Error('Tabs share run identity');
  while((await page.evaluate(()=>Game.snapshot)).age<12){if(await page.locator('.major-option').count())await page.locator('.major-option').first().click();else await page.getByRole('button',{name:'ใช้ชีวิตต่อ 5 ปี',exact:true}).click();}
  if((await page.evaluate(()=>window.archiveWrites)).length)throw Error('Active run persisted');
- await page.getByRole('button',{name:'เปิดเรื่องราวเส้นทางเดิม',exact:true}).click();
+ await page.keyboard.press('Escape');await page.getByText('อ่านเรื่องราวและเส้นทางเพิ่มเติม',{exact:true}).click();await page.getByRole('button',{name:'เปิดเรื่องราวเส้นทางเดิม',exact:true}).click();
  for(const name of [/เลือกเส้นทาง 'ชาวบ้านสันโดษ/,/พัฒนาสวนเกษตรเวทมนตร์/,/ใช้ชีวิตบั้นปลายอย่างมีความสุข/])await page.getByRole('button',{name}).click();
  await page.waitForFunction(()=>document.querySelector('.terminal-summary')?.textContent.includes('เก็บสรุปชีวิตที่จบแล้วในประวัติเรียบร้อย'));
  await page.evaluate(()=>Game.render());const result=await page.evaluate(()=>({writes:window.archiveWrites,lives:JSON.parse(localStorage.getItem('reborn_finished_lives_v1')).lives,old:localStorage.getItem('reborn_save')}));

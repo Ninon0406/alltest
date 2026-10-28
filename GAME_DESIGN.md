@@ -1,6 +1,6 @@
 # CODEX MASTER DIRECTIVE — REBORN GAME
 
-**Current override (V6 / 0.6.0):** docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md is authoritative where this historical specification conflicts. One Life One Run replaces every active-save/resume requirement below.
+**Current override (V6 / 0.7.0):** docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md is authoritative where this historical specification conflicts. One Life One Run replaces every active-save/resume requirement below.
 
 You are the autonomous lead developer of REBORN: Chronicles of a Thousand Destinies.
 
@@ -294,3 +294,13 @@ The live character, birth RNG, world and story are memory-only. Birth waits for 
 All ordinary and original chapter choices use the pure dispatcher and run-scoped revision token. Failed validation leaves state unchanged; success commits in memory. Ending closes the run against further gameplay actions. Only an actual authored terminal transition creates a compact summary (no RNG, active state, calendar, inventory, flags or resumable history). Archive writes use a browser lock where supported and deduplicate by runId. Retain at most 100 summaries and allow JSON export; archive errors retain the terminal screen and offer summary download/retry. Unfinished refresh/exit never creates an ending.
 
 Real engagement timing counts visible intervals within 15 seconds of a trusted interaction; idle/autoplay-only waiting is excluded. Native unload warning is best effort; pagehide abandons memory and persisted pageshow returns to rebirth, not a revived run. Mobile tab eviction cannot preserve a life. Natural mortality, power-level progression, deity conditions and appearance-v2 inheritance are later phases, not implemented by this policy migration. Power in this checkpoint starts at 1; an old career promotion is not a power rank.
+
+## 0.7.0 — Phase B compact single-surface UI
+
+The active dashboard occupies the viewport. Age and initial power rank sit above small time controls; character vitals/details are compact on desktop and open as a sheet on narrow screens. Main scene contains the actual appearance-v1-based pixel actor and a seeded original tile composition for the current one of 20 map locations. The main focus card has three time buttons and one focus-picker button; the old 100-cell grid and tall routine log are absent from default view. Desktop dock shows the latest real summary/journal/family; mobile uses five bottom navigation controls and overflow.
+
+`panels.js` owns one native dialog with explicit Tab wrapping, ESC, close, opener-focus return, background inert/scroll locking and retained modal scroll during real actions. Map, training/career, bag/bread shop, work, record, journal, options and rare major decisions stay in this document. Manual dismissal of a decision permits inspection elsewhere but cannot advance time; action validation still gates the crossroad. All panels pause automatic time, never resume it implicitly and never reset runId/resources. Options are memory-only and offer 100/112/125% text and reduced motion. Errors are also announced inside the modal.
+
+The location renderer supplies 20 distinct procedural compositions/5 region palettes and map previews; the small full-body sprite uses existing v1 identity and age/race variation without invented owned weapons. This is partial visual preparation for C, not inherited appearance-v2 or its ≥20/group catalogs. `power.level=1` is a real initial run field; there is no XP curve, breakthrough or deity mechanic yet. A profession skill level is explicitly labelled separate from power. Natural lifespan, long projects and mortal conclusions remain Phase F.
+
+The journal modal selects an actual recorded year and renders a bounded set of entries instead of thousands of history nodes. The underlying full long-life in-memory retention is still unfinished. All old narrative/awakening/career/map/economy data is retained. Content buttons and procedural scene views do not increase authored narrative counts.

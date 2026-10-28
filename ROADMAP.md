@@ -13,7 +13,7 @@
 - [ ] 11. Automated playthroughs and comprehensive content validation.
 - [ ] 12. Release hardening and GitHub Pages deployment configuration.
 
-Current release is 0.6.0 (V6 Phase A). Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
+Current release is 0.7.0 (V6 Phases A/B). Equal birth archetypes, annual childhood, seven-stage awakening, 20 base families with work/training and 20 advanced paths are playable. Existing saves/legacy chapters remain intact. Pages serves compiled main:/ compatibility files as well as the Actions dist deployment.
 
 ## Current priority stages (2026-10-28)
 
@@ -52,11 +52,13 @@ Current release is 0.6.0 (V6 Phase A). Equal birth archetypes, annual childhood,
 ## V6 delivery phases — highest current order
 
 - [x] A: One Life memory-only run; pure original chapter actions; terminal-only bounded idempotent archive; legacy keys ignored/preserved; independent tabs, refresh/BFCache lifecycle, real engagement timing.
-- [ ] B: compact readable responsive UI, age/power hero, in-page accessible map/training/shop/bag/details dialogs. This is the next priority before original P3 equipment.
-- [ ] C: inherited version-2 8/16-bit full-body appearance, at least 20 real variants/group and distinct 20-location tile scenes.
+- [x] B: compact responsive age/initial-power dashboard, in-page accessible map/training/shop/bag/details dialogs, rare decision modals, keyboard/ESC/focus/scroll controls, seven-width verification.
+- [ ] C: next — inherited version-2 appearance and at least 20 real variants/group. Initial full-body v1 pixel actor and 20 distinct procedural tile scenes already exist; extend them rather than rebuild.
 - [ ] D: owned equipment, real inventory/shop/encounters; existing bread and graph stay functional.
 - [ ] E: earned power 1–99, gated 100, graded aura/breakthrough systems.
 - [ ] F: earned lifespan extension, long projects and ≥1000-year routes.
 - [ ] G/H: original narrative/NPC/ending expansion and full release hardening.
 
 Phase A retains all 126 authored events/scenes, 269 choices, six endings and existing career/map mechanics. Save compatibility now means historical reproducibility only; runtime resume is intentionally removed by explicit user override.
+
+0.7.0 validation: 60 unit and 37 browser cases passed, including 320/360/390/768/1024/1366/1920 layouts. Build/content and three preview verifiers passed. Phase A source a201167 was already published and all three public checks passed; Phase B public evidence is recorded after actual release verification. Full equipment/power/lifespan/God systems remain future phases.

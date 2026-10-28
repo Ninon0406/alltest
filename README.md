@@ -1,75 +1,43 @@
-# REBORN: พงศาวดารผู้เกิดใหม่
+# REBORN · หนึ่งชีวิตในเอลินดรา
 
-Thai browser narrative RPG. The existing Vite / vanilla ES module game now includes equal-archetype rebirth, annual childhood, awakening and playable career progression. No backend, API keys, or runtime image services are needed.
+Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.7.0 completes V6 Phases A/B and adds the initial pixel-scene foundation.
 
-## Current One Life policy (0.6.0 / V6)
+Play: https://ninon0406.github.io/alltest/
 
-Active play is held only in this tab's memory. Refresh/close returns to the rebirth screen; click to start a fresh independent life. In-page panels retain the run. There is no active save/load/backup/export UI. Old save keys are left untouched and ignored, not migrated into play. All historical save instructions below describe older releases only.
+## One Life One Run
 
-Only genuine completed-life summaries persist at `reborn_finished_lives_v1` (100 latest, exportable, no resume). Old ending gallery IDs remain inspectable. If storage is blocked, gameplay still works; a finished summary can be downloaded when archive storage fails. Unfinished exit creates no archive. Native close warnings and mobile memory retention are not guaranteed.
+The live run exists only in the current tab's JS memory. Refresh/close returns to an unstarted rebirth screen; click to roll a fresh life. A new tab has an independent run. In-page map, training, bag, shop, character and journal dialogs preserve that life. There is no save/load/backup/import/export-active-run UI or offline aging. Native exit warning is best effort; mobile browsers can discard memory.
 
-## Development
+Only a genuinely completed authored ending produces a compact summary in `reborn_finished_lives_v1` (100 latest, one per runId, exportable, no resume). If archive storage fails, the finished summary remains downloadable/retryable. Unfinished refresh/exit never creates a death or ending. Existing `reborn_save` and backups are untouched and ignored, and `reborn_ending_gallery` is readable legacy history only. Old validators remain for offline historical tests, not active restoration.
 
-Use Node.js 22.12+ (validated on 24.19) and npm. From this checkout:
+## Play and current scope
+
+The age/power header stays above the scene. Choose an annual focus and advance 1/2/5 years or seek a meaningful crossroad. Minor stories accumulate automatically; rare decisions open 4–5-option dialogs and hold time. Autoplay is optional, 1/2/4/8×, and stops on decisions, hidden tab, any overlay or rejected action. Details live in one accessible modal surface with ESC, keyboard focus handling and session-only font/motion options.
+
+Original pixel figures now stand in 20 distinct procedural location backdrops. Appearance still uses the existing v1 identity; parental inheritance and ≥20 actual variants per requested group remain Phase C. Real owned equipment is Phase D. Power displays its initial Lv1; earned 1–100 progression/breakthroughs and lifespan/God routes remain Phases E/F. No empty future-system buttons are exposed. Existing equal births, 360-day calendar, seven actual awakening stages, 20 base/20 higher careers, rare annual stories, 20 connected map nodes, walking/rest/bread economy and all six original endings remain functional. See CONTENT_MANIFEST.md for actual counts.
+
+## Development and validation
+
+Node 22.12+ (CI Node 24), npm, installed Chromium.
 
 ```sh
 npm ci
 npm run dev
-```
-
-The development server binds loopback. Saves use browser LocalStorage (`reborn_save`); unversioned and version-1/2/3/4 saves keep their original characters and migrate to version 5 on the next save. Invalid/future saves remain intact; replacing one requires confirmation at the rebirth screen. Restart requires confirmation and clears the active life while retaining the ending gallery and pre-upgrade backups.
-
-## Validation
-
-```sh
 npm test
-npm run build
-npm run test:e2e
 npm run content
+npm run build
+node scripts/stage-site.mjs
+npm run test:e2e
+npm run preview -- --port 4185
+node scripts/verify-production.mjs http://127.0.0.1:4185/
+node scripts/verify-progression.mjs http://127.0.0.1:4185/
+node scripts/verify-one-life.mjs http://127.0.0.1:4185/
 ```
 
-Browser tests run the production preview on port 4173. They use `/usr/bin/chromium`; override `CHROMIUM_PATH` for another Chromium executable. If Chromium is absent, install it through your supported OS package manager or use `npx playwright install chromium` and set `CHROMIUM_PATH` to its executable. Cloud socket restrictions may require the supported elevated execution flow.
+Playwright uses `/usr/bin/chromium` or `CHROMIUM_PATH`; production preview test port 4173. Desktop/mobile scenarios plus a separate seven-width project test overlays, real transactions, no active persistence, independent tabs, lifecycle, genuine terminal archive and storage failure downloads. Unit tests retain the 100,000-origin audit, 40 detailed career paths and 20 annual-planner promotions.
 
-## GitHub Pages
+## Publication
 
-`npm run build` emits `dist/`. Vite uses `base: './'` so assets work beneath `/alltest/` as well as a domain root. The `.github/workflows/pages.yml` workflow tests and builds `main`, uploads `dist` and deploys it using GitHub Pages. The deployment requests automatic Pages enablement; repository permissions or organization policy may require selecting **Settings → Pages → Source → GitHub Actions** first. Deployment status is shown in the repository Actions tab. Avoid history-based routing without a Pages fallback.
+Source: `app.html`, `src/`, `public/art`. Root `index.html`, `assets/`, `art/` are generated compatibility outputs for existing Pages `main:/`. Build then stage-site; retain prior published hashes for cached HTML. Do not hand-edit generated HTML. `.github/workflows/pages.yml` tests/builds and deploys, then runs all three public verifiers. A successful push alone is not evidence of working public CSS/gameplay. Vite uses relative `./` paths for `/alltest/`. No backend, paid API or external runtime art service is required.
 
-## Architecture and scope
-
-`src/engine`: state, requirements and seeded randomness; `src/character`: character defaults and deterministic rebirth generator; `src/data`: story graph; `src/save`: versioned storage and validation; `src/ui`: rendering and styles. `src/main.js` initializes the shell and navigation. `public/art` contains original local pixel artwork. World, combat, inventory and relationship modules will be introduced alongside their working mechanics rather than empty placeholders.
-
-See ROADMAP.md and CONTENT_MANIFEST.md for verified scope. Fresh games open a dedicated rebirth screen with no stat or seed controls. One click rolls and saves a life before revealing its Birth Record. The immutable record retains original attributes while the character develops. Talents immediately increase one resource maximum. Hidden potential, rare ability identities and race-based natural lifespan are saved but hidden from the interface; basic awakening is now implemented; hidden ability discovery and lifespan enforcement remain future systems. Childhood annual simulation and career stories are playable.
-
-Generation uses Mulberry32 and a cryptographically supplied 32-bit seed. Developer tests can call `generateBirth(seed)` for exact reproduction; UI users cannot select circumstances. Fresh generator-2 lives use 20 equal archetypes; weighted generator 1 is preserved only for old birth records. Race, individual attributes and talent use separate random draws. Rare birth does not guarantee high attributes. Save files are local, readable game data, not secure secret storage.
-
-## Publication source compatibility
-
-The actual Pages source is currently main:/ (legacy), and the integration cannot change repository Pages settings. Edit `app.html`, not the generated root `index.html`. After `npm run build`, run `node scripts/stage-site.mjs` to stage the compiled index, assets and illustrations into main's publication directory. The workflow refreshes those files automatically and deploys dist. Browser checks verify loaded styling and gameplay after deployment: `node scripts/verify-production.mjs <url>`. This catches the previous raw-source publication failure, which a successful deploy alone did not detect.
-
-## 0.3.0 life simulation and save upgrade
-
-Fresh lives now use 20 equally likely archetypes and a 360-day calendar. Read each event page, then choose an action with a visible time/effect cost. Infancy and childhood continue through age 12, after which daily life, local work/services and optional original story arcs remain playable. The following release adds real awakening and career progression.
-
-Use **บันทึกชีวิตรายปี** for birthdays/journal, **แผนที่และบริการ** for discovered routes, purchases/rest/study/jobs. Local travel opens at 4, inter-region travel at 12. Walking is slower but free. Mobile status details expand with their button.
-
-Old saves keep characters and chapters; migration stores exact raw backup at `reborn_save_backup_before_v3`. The Birth Record lets users download current and pre-upgrade JSON. Back up before reverting to an older game release: schema 3 cannot be read by the old release. On rollback, restore the downloaded old JSON to LocalStorage only after exporting the newer save; never reset a save automatically. Import UI remains future work. Ending gallery now survives restart.
-
-Run `npm run content` for actual authored/reachable counts; see docs/NEXT_CODEX_TASK.md for continuation and known limits. This is a working development checkpoint, not the full game described by the directive.
-
-## 0.4.0 awakening and career progression
-
-At age 12, **เส้นทางชีวิต** opens the seven-stage community awakening ceremony. It is free, can be paused, and records a permanent result after measurement. Return to its original venue to resume after travel. The result uses weighted visible attributes, childhood memories, basic training, contextual archetype affinity and a fixed sub-one-point seeded variation. It does not reveal hidden powers or lifespan.
-
-Open **อาชีพและการฝึก** for the result explanation, currently eligible careers, free basic practice (age 8+), recovery, profession work and promotions. Career readiness weights current development 85% and measured affinity 15%. Twenty base families have distinct profiles/jobs and three original story episodes, available from ages 12/13/16. One advanced path per family requires age 18, XP 120, mastery 60, a higher primary attribute and all three episodes. Work pays real ledger entries; learning uses days/stamina/fatigue/focus. Repeated practice has diminishing rewards within each 30-day window. All families have a route through free practice/recovery, including penniless characters. Switching preserves each family's XP, story perks and earned promotion.
-
-Schema 4 adds `progression` without rerolling births or granting imported characters an unearned awakening. Exact raw pre-upgrade data is retained at `reborn_save_backup_before_v4`; the previous `...before_v3` backup remains untouched and both can be downloaded from the record. Export the newest save before rollback: older releases cannot read schema 4. Import UI is still pending.
-
-Validation: `npm test`, `npm run content`, build/stage and `npm run test:e2e`. After starting the preview, `node scripts/verify-progression.mjs <url>` plays genuinely from birth to 12, then ceremony/career/work/training/save reload on desktop/mobile without injecting age into the browser. The public deployment workflow runs this check as well as basic asset/layout checks. This release is not a complete combat/immortality/full-content game.
-
-## 0.5.0 annual life controls
-
-Default **เส้นทางชีวิต** now asks what to focus on this year. Choose an age-appropriate focus once, then **ใช้ชีวิตต่อ 1/2/5 ปี** or seek the next important decision (at most ten years). Ordinary scenes accumulate automatically in the journal. Plans stop at important 4–5-option crossroads; career dilemmas have two-year spacing and a postpone option. The age-12 awakening can run its actual remaining stages with one selected approach. **อ่านเรื่องแบบละเอียด (ทางเลือก)** retains the existing reader; original chapters/endings remain optional.
-
-**เล่นอัตโนมัติ** defaults off. Speed 1/2/4/8× means one year every 8/4/2/1 seconds while that screen is active. Decisions, another menu, hidden tab, reload or failed save stop it. Closing the game does not age the character. Training, rest, wages and walking still use actual calendar/resources; yearly results and compact ledger totals show what happened. Family data comes from the saved birth record; the life grid shows recorded years, not a lifespan forecast.
-
-Schema 5 preserves all previous progression and keeps an exact `reborn_save_backup_before_v5`, plus existing pre-v4/v3 backups. Download backups from **บันทึกตัวละคร** before rolling back to an older release. Reference screenshots guided interaction, not copied text/art/data; direct website/video access was unavailable in this environment (see docs/PACING_REFERENCE.md). Content counts and remaining systems are in CONTENT_MANIFEST.md and docs/NEXT_CODEX_TASK.md.
+Read docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md and docs/NEXT_CODEX_TASK.md before continuation. Full pixel inheritance, equipment, power/mortality, combat/NPC/long-life content targets are unfinished.

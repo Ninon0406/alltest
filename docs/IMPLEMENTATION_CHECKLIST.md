@@ -43,5 +43,16 @@ Mortality, ascension, NPC relationships and equipment are not completed by this 
 - [x] Genuine ending summaries only, bounded/idempotent archive, failure download/retry, legacy gallery read-only.
 - [x] Visible interaction-window timing, native best-effort warning, pagehide abandonment and BFCache guard.
 - [x] Local 56 unit / 22 browser cases, content/build/staging and three preview verifiers.
-- [ ] Public Phase A verification after authorized push.
-- [ ] Phase B compact dashboard and accessible in-page overlays.
+- [x] Public Phase A: a201167 / app-BGfqNplA.js observed; all three public verifiers passed, custom CI succeeded.
+- [x] Phase B compact dashboard and accessible in-page overlays.
+
+# V6 Phase B — acceptance
+
+- [x] Always-visible age/initial power, readable compact vitals, original small pixel actor and actual-location scene, 3 main time buttons/focus picker, no default 100-cell grid.
+- [x] One native modal surface for existing functional map/career/train/bag/bread shop/work/record/journal/options and meaningful 4–5-option decisions.
+- [x] ESC/close/focus return/explicit Tab wrap/background lock, stable run/resources through overlays, pause autoplay, visible modal errors, text sizing/reduced effects without persistent settings.
+- [x] 20 distinct procedural scene compositions and initial v1 pixel body. Not full inherited appearance C.
+- [x] Local 60 unit / 37 browser cases, seven layout sizes, actual shop/bag transactions, production build/content and preview verification.
+- [ ] Public Phase B verification after push.
+- [ ] C: inherited version-2 appearance and real ≥20 variants/group.
+- [ ] D/E/F: owned equipment, earned power/breakthroughs, lifespan/long projects/deity route.

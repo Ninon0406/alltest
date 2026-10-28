@@ -3,6 +3,8 @@ import { readGallery } from '../save/gallery.js';
 import { archiveCompleted,readArchive,completedSummary } from '../save/archive.js';
 import { createRun,ActivePlayClock } from '../engine/run.js';
 import { legacyDays } from '../engine/legacy.js';
+import { closePanel } from './panels.js';
+import {renderScene as renderSetting} from './scene.js';
 import { upgradeState } from '../engine/migrate.js';
 import { calendar, advanceTime, recordAction, normalize } from '../engine/time.js';
 import { dispatch } from '../engine/actions.js';
@@ -18,12 +20,13 @@ export const Game = {
             clock:new ActivePlayClock(),
             get snapshot(){return this.active?structuredClone(GameState):null;},
             startRun(){
+                if(this.active)return;
                 stopYearlyAuto();
                 const seed=crypto.getRandomValues(new Uint32Array(1))[0];
                 replaceState(createRun(seed,{id:crypto.randomUUID(),startedAt:new Date().toISOString()}));
                 this.active=true;this.summary=null;this.archiveStatus=null;this.clock.start(performance.now());
             },
-            notify(message){document.getElementById('gameNotice').textContent=message;},
+            notify(message){document.getElementById('gameNotice').textContent=message;if(document.getElementById('modalOverlay').open){let note=document.getElementById('panelNotice');if(!note){note=document.createElement('p');note.id='panelNotice';note.setAttribute('role','alert');document.getElementById('modalContent').prepend(note);}note.textContent=message;}},
             perform(action){
                 if(!this.active)return false;
                 try{
@@ -54,6 +57,8 @@ export const Game = {
                 if(!this.active)return;
                 if(!GameState.time)replaceState(upgradeState(GameState));
                 normalize(GameState);
+                document.body.classList.add('playing');
+                document.getElementById('quickVitals').textContent=`ชีวิต ${GameState.hp}/${GameState.maxHp} · แรง ${GameState.stamina}/${GameState.maxStamina} · มานา ${GameState.mana}/${GameState.maxMana}`;
                 document.body.classList.toggle('yearly-mode',GameState.yearly.view==='yearly');
                 const log=document.getElementById('logBox');log.replaceChildren();
                 for(const entry of GameState.journal.slice(-3).reverse()){const item=document.createElement('p');item.textContent=`อายุ ${entry.age} ปี • ${entry.title}`;log.append(item);}
@@ -68,8 +73,10 @@ export const Game = {
                 document.getElementById("displayName").innerText = GameState.name;
                 document.getElementById("displayRace").innerText = `เผ่า: ${GameState.race}`;
                 document.getElementById("displayCareer").innerText = `อาชีพ: ${GameState.career}`;
-                document.getElementById("displayAge").innerText = `อายุ: ${GameState.age} ปี`;
-                document.getElementById("displayGold").innerText = `💰 ${GameState.gold} G`;
+                document.getElementById('displayAge').textContent=GameState.age<1?`อายุ ${Math.floor((GameState.time.absoluteDay-GameState.time.birthAbsoluteDay)/30)} เดือน`:`อายุ ${GameState.age} ปี`;
+                document.getElementById('displayPower').textContent=`Lv. ${GameState.power?.level??1} / 100`;
+                document.getElementById('timeControls').replaceChildren();
+                document.getElementById('displayGold').textContent=`${GameState.gold} เหรียญ`;
 
                 this.updateBar("Hp", GameState.hp, GameState.maxHp);
                 this.updateBar("Stamina", GameState.stamina, GameState.maxStamina);
@@ -152,7 +159,7 @@ export const Game = {
                 }
 
                 html += `</div>`;
-                container.innerHTML = html;
+                container.innerHTML = html;const setting=document.createElement("div");renderSetting(setting,GameState);container.prepend(setting);
                 if(scene.isEnding){
                     const summary=document.createElement('section');summary.className='scene-text-box terminal-summary';
                     const text=document.createElement('p');text.textContent=`${GameState.name} • อายุ ${GameState.age} ปี • ${GameState.career} • ระดับพลัง ${GameState.power?.level??1}/100 • ${GameState.gold} เหรียญ • เวลาเล่นที่มีส่วนร่วม ${Math.floor(GameState.run.activeMs/1000)} วินาที`;summary.append(text);
@@ -170,44 +177,10 @@ export const Game = {
                 this.abandon();this.onRestart?.();
             },
             abandon(){stopYearlyAuto();this.clock.pause(performance.now());this.active=false;this.summary=null;this.archiveStatus=null;},
-            openCodex() {
-                stopYearlyAuto();
-                const modal = document.getElementById("modalOverlay");
-                const content = document.getElementById("modalContent");
-                content.innerHTML = `
-                    <div class="modal-header">
-                        <h2>สารานุกรมโลกและสายพลัง</h2>
-                        <button onclick="Game.closeModal()">ปิด</button>
-                    </div>
-                    <div class="modal-body">
-                        <p><strong>ระบบสายพลัง:</strong> ครอบคลุมเวทมนตร์ธาตุ เวทขั้นสูง สายการต่อสู้ สายสนับสนุน และศาสตร์โบราณ</p>
-                        <p><strong>ระบบอาชีพ:</strong> นักผจญภัย ขุนนาง พ่อค้า ช่างฝีมือ อัศวิน และสามัญชนผู้สันโดษ</p>
-                        <p><strong>สถานะปัจจุบัน:</strong> ${escapeText(GameState.race)} | อาชีพ: ${escapeText(GameState.career)} | อายุ: ${GameState.age} ปี</p>
-                    </div>
-                `;
-                this.modalTrigger = document.activeElement;
-                modal.style.display = "flex";
-                content.focus();
-            },
-
-            openEndings() {
-                stopYearlyAuto();
-                const modal = document.getElementById("modalOverlay");
-                const content = document.getElementById("modalContent");
-                let records=[],error='';try{records=readArchive(localStorage);}catch(e){error=e.message;}
-                const legacy=readGallery(localStorage);
-                content.innerHTML=`<div class="modal-header"><h2>ประวัติชีวิตที่จบแล้ว (${records.length})</h2><button onclick="Game.closeModal()">ปิด</button></div><div class="modal-body"><p>เก็บเฉพาะสรุป 100 ชีวิตล่าสุด เปิดอ่านได้โดยไม่มีการเล่นต่อ</p>${error?'<p>'+escapeText(error)+'</p>':''}${records.length?records.toReversed().map(r=>`<details><summary>${escapeText(r.name)} • ${r.age} ปี • ${escapeText(r.title)}</summary><p>${escapeText(r.career)} • ระดับพลัง ${r.powerLevel}/100 • ${r.gold} เหรียญ</p><p>${escapeText(r.epilogue)}</p></details>`).join(''):'<p>ยังไม่มีชีวิตที่จบแล้วในประวัติ</p>'}<button onclick="Game.downloadHistory()">ดาวน์โหลดประวัติชีวิตทั้งหมด</button>${legacy.length?'<details><summary>ฉากจบจากรุ่นก่อน ('+legacy.length+')</summary><p>'+legacy.map(escapeText).join(' • ')+'</p></details>':''}</div>`;
-
-                this.modalTrigger = document.activeElement;
-                modal.style.display = "flex";
-                content.focus();
-            },
-
+            openCodex(){this.openPanel?.('career');},
+            openEndings(){this.openPanel?.('archive');},
             downloadHistory(){
                 try{const records=readArchive(localStorage),url=URL.createObjectURL(new Blob([JSON.stringify({version:1,lives:records},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='reborn-finished-lives.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch(error){this.notify(error.message);}
             },
-            closeModal() {
-                document.getElementById("modalOverlay").style.display = "none";
-                this.modalTrigger?.focus();
-            }
+            closeModal(){closePanel();}
         };

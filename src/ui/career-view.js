@@ -21,7 +21,7 @@ export function renderCareer(parent,state,perform){
  }
  if(c){
   const r=p.records[c.id],job=jobQuote(state);
-  paragraph(parent,`${state.career} • ${rankLabel(r)}`,'h3');paragraph(parent,`${c.skill}: ประสบการณ์ ${r.xp} • ความชำนาญ ${r.mastery}/100 • ระดับ ${1+Math.floor(r.xp/40)} • เรื่องอาชีพ ${r.arcStep}/3 ตอน`);
+  paragraph(parent,`${state.career} • ${rankLabel(r)}`,'h3');paragraph(parent,`${c.skill}: ประสบการณ์ ${r.xp} • ความชำนาญ ${r.mastery}/100 • ระดับทักษะ ${1+Math.floor(r.xp/40)} • เรื่องอาชีพ ${r.arcStep}/3 ตอน`);
   paragraph(parent,`ผลจากเรื่องราว: ฝึกได้เพิ่ม ${r.trainingBonus} ประสบการณ์/ครั้ง • รายได้เพิ่ม ${r.payBonus} เหรียญ/งาน`);
   actionButton(parent,`${c.job}\nรับ ${job.gold} เหรียญ • +${job.xp} ประสบการณ์ • ${job.days} วัน • ใช้ความอึด ${job.stamina}`,{type:'careerJob',token},perform);
   const missing=promotionMissing(state,c);
@@ -35,7 +35,7 @@ export function renderCareer(parent,state,perform){
   actionButton(parent,'พักฟื้น 2 วัน • ฟรี • ฟื้นแรง สมาธิ และลดความเหนื่อยล้า',{type:'trainingRest',token},perform);
   paragraph(parent,`ความก้าวหน้าหัวข้อ: ${statKeys.map(stat=>`${statNames[stat]} ${p.practice[stat]??0}`).join(' • ')}`);
  }
- const eligible=eligibleCareers(state).filter(profile=>profile.id!==p.activeCareerId);
+ const eligible=eligibleCareers(state).filter(profile=>profile.id!==p.activeCareerId).sort((a,b)=>readiness(state,b)-readiness(state,a));
  paragraph(parent,'อาชีพที่พร้อมเลือก','h3');paragraph(parent,'คะแนนแนะนำผสมความพร้อมปัจจุบัน 85% กับผลพิธีเดิม 15% ฝึกเพิ่มเพื่อเปิดทางอื่นได้โดยไม่ต้องสุ่มผลใหม่');
  if(!eligible.length)paragraph(parent,a.step<7?'ผ่านพิธีให้ครบก่อนเลือกอาชีพ ความก้าวหน้าเดิมยังอยู่':'กำลังประกอบอาชีพที่เข้าเงื่อนไขอยู่ ฝึกเพิ่มเพื่อเปิดทางใหม่ได้');
  for(const profile of eligible){

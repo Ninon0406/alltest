@@ -1,7 +1,7 @@
 import { generateBirth } from '../character/rebirth.js';
 export function createRun(seed,{id,startedAt}){
  if(typeof id!=='string'||!id||!Number.isFinite(Date.parse(startedAt)))throw Error('Invalid run identity');
- const state=generateBirth(seed);state.run={id,startedAt,status:'active',activeMs:0};
+ const state=generateBirth(seed);state.power={version:1,level:1};state.run={id,startedAt,status:'active',activeMs:0};
  return state;
 }
 // Only visible time within 15 seconds of a real interaction counts as engagement.
