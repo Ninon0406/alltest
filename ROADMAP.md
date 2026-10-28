@@ -61,4 +61,4 @@ Current release is 0.7.0 (V6 Phases A/B). Equal birth archetypes, annual childho
 
 Phase A retains all 126 authored events/scenes, 269 choices, six endings and existing career/map mechanics. Save compatibility now means historical reproducibility only; runtime resume is intentionally removed by explicit user override.
 
-0.7.0 validation: 60 unit and 37 browser cases passed, including 320/360/390/768/1024/1366/1920 layouts. Build/content and three preview verifiers passed. Phase A source a201167 was already published and all three public checks passed; Phase B public evidence is recorded after actual release verification. Full equipment/power/lifespan/God systems remain future phases.
+0.7.0 validation: 60 unit and 37 browser cases passed, including 320/360/390/768/1024/1366/1920 layouts. Build/content and three preview verifiers passed. Phase A source a201167 was already published and all three public checks passed; Phase B source 010d5d5 is published; all three public verifiers passed (seven widths plus actual career and terminal/archive runs). Full equipment/power/lifespan/God systems remain future phases.

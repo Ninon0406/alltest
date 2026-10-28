@@ -53,6 +53,6 @@ Mortality, ascension, NPC relationships and equipment are not completed by this 
 - [x] ESC/close/focus return/explicit Tab wrap/background lock, stable run/resources through overlays, pause autoplay, visible modal errors, text sizing/reduced effects without persistent settings.
 - [x] 20 distinct procedural scene compositions and initial v1 pixel body. Not full inherited appearance C.
 - [x] Local 60 unit / 37 browser cases, seven layout sizes, actual shop/bag transactions, production build/content and preview verification.
-- [ ] Public Phase B verification after push.
+- [x] Public Phase B: 010d5d5; expected app-Csdyuu1D.js / app-Dlvd7EQ2.css observed; all three public verifiers passed, including all seven widths and actual career/terminal/archive runs.
 - [ ] C: inherited version-2 appearance and real ≥20 variants/group.
 - [ ] D/E/F: owned equipment, earned power/breakthroughs, lifespan/long projects/deity route.
