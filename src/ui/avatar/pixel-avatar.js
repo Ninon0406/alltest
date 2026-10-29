@@ -3,6 +3,7 @@ import {validInheritedAppearance} from '../../character/inheritance.js';
 import {validWardrobe} from '../../character/wardrobe.js';
 import {tintFilter} from './pixel-parts.js';
 import {wornEquipment} from '../../character/equipment-stats.js';
+import {powerAura} from './power-aura.js';
 const base=()=>import.meta.env?.BASE_URL??'/';
 export const spriteAsset=path=>`${base()}${path}`;
 const support=id=>`assets/sprites/characters/${id}.png`;
@@ -34,5 +35,5 @@ export function pixelAvatar(state,{role='child',context='scene',headOnly=false,p
  if(old)layers+='<path d="M22 32h4M38 32h4M29 35h6" stroke="#614f48" stroke-width="1" opacity=".5"/>';
  const scale=baby?1:age<3?.68:age<12?.82:age<18?.94:1,transform=headOnly?'':baby?'translate(0 8)':`translate(${32*(1-scale)} ${77*(1-scale)}) scale(${scale})`;
  const label=adult?`ภาพ${role==='mother'?'มารดา':'บิดา'}`:`ตัวละคร${stage}`;
- return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${headOnly?'8 0 48 44':'0 0 64 80'}" shape-rendering="crispEdges" role="img" aria-label="${label}" class="${headOnly?'family-portrait':portrait?'character-portrait':'pixel-sprite'}" data-appearance-version="2" data-age-stage="${stage}" data-role="${role}"><defs>${tintFilter(skin,skinColors[genes.skin])}${tintFilter(hair,hairTone)}</defs>${!headOnly?'<ellipse cx="32" cy="77" rx="20" ry="2" fill="#07111d55"/>':''}<g transform="${transform}">${layers}</g></svg>`;
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${headOnly?'8 0 48 44':'0 0 64 80'}" shape-rendering="crispEdges" role="img" aria-label="${label}" class="${headOnly?'family-portrait':portrait?'character-portrait':'pixel-sprite'}" data-appearance-version="2" data-age-stage="${stage}" data-role="${role}"><defs>${tintFilter(skin,skinColors[genes.skin])}${tintFilter(hair,hairTone)}</defs>${!headOnly?'<ellipse cx="32" cy="77" rx="20" ry="2" fill="#07111d55"/>':''}${!headOnly&&!adult?powerAura(state):''}<g transform="${transform}">${layers}</g></svg>`;
 }

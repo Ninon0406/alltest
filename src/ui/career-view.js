@@ -5,6 +5,7 @@ import { storyToken } from '../engine/life.js';
 import {isV7} from '../engine/development.js';
 import {ageLabel} from '../engine/time.js';
 import {effectiveCapacities} from '../character/equipment-stats.js';
+import {renderPower} from './power-view.js';
 let selectedStat='wis',search='',lastCareer=null;
 const rankLabel=r=>r.advanced?'ขั้นชำนาญ':'พื้นฐาน';
 export function renderCareer(parent,state,perform){
@@ -13,6 +14,7 @@ export function renderCareer(parent,state,perform){
  paragraph(parent,'อาชีพและการฝึก','h2');
  if(isV7(state)&&state.age<3){paragraph(parent,`อายุ ${ageLabel(state)} · ผู้ดูแลจัดการพัก อาหาร และการเล่นที่ปลอดภัย เรื่องอาชีพยังไม่เปิดในวัยนี้`);return;}
  paragraph(parent,`อายุ ${state.age} ปี • เงิน ${state.gold} เหรียญ • ความอึด ${state.stamina}/${effectiveCapacities(state).maxStamina} • เหนื่อยล้า ${p.fatigue}/100 • สมาธิ ${p.focus}/100`);
+ renderPower(parent,state,perform);
  if(a.step<7){
   paragraph(parent,state.age<12?'พิธีแห่งเส้นชีพจรเปิดเมื่ออายุครบ 12 ปี การฝึกพื้นฐานเปิดตั้งแต่อายุ 8 ปี':`พิธีแห่งเส้นชีพจร: ผ่านแล้ว ${a.step}/7 ช่วง • ไม่มีค่าเข้าร่วม`);
   if(a.venue)paragraph(parent,`สถานที่พิธี: ${a.venue.name}`);

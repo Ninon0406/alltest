@@ -11,8 +11,10 @@ import { locations } from '../world/locations.js';
 import { revealedLocations,findRoute,travel } from '../world/travel.js';
 import {isV7,resolveDevelopment} from './development.js';
 import {pendingDecision,nextDecisionDay} from './decisions.js';
+import {powerTrainingMissing} from '../progression/power-model.js';
+import {trainPower,resolvePower} from '../progression/power.js';
 export {pendingDecision,nextDecisionDay} from './decisions.js';
-export function availableYearActivities(state){return yearlyActivities.filter(a=>a.id==='care'?isV7(state)&&calendar(state).ageMonths<36:(!isV7(state)||calendar(state).ageMonths>=36)&&state.age>=a.minAge&&(!isV7(state)||a.id!=='study'||state.age>=6));}
+export function availableYearActivities(state){return yearlyActivities.filter(a=>a.id==='cultivate'?!powerTrainingMissing(state).length:a.id==='care'?isV7(state)&&calendar(state).ageMonths<36:(!isV7(state)||calendar(state).ageMonths>=36)&&state.age>=a.minAge&&(!isV7(state)||a.id!=='study'||state.age>=6));}
 function preference(state,choices){
  const focus=yearlyActivities.find(a=>a.id===state.yearly.focus),stats=focus.id==='train'?[state.yearly.stat]:focus.stats;
  return choices.toSorted((a,b)=>score(b)-score(a))[0];
@@ -21,6 +23,7 @@ function preference(state,choices){
 export function resolveMajor(state,decisionId,choiceId){
  const d=pendingDecision(state);if(!d||d.id!==decisionId||!d.choices.some(c=>c.id===choiceId))throw Error('การตัดสินใจนี้เปลี่ยนไปแล้ว');
  const age=state.age;
+ if(d.kind==='power')return resolvePower(state,choiceId);
  if(d.kind==='development')return resolveDevelopment(state,d,d.choices.find(c=>c.id===choiceId));
  if(d.kind==='awakening'){
   const a=state.progression.awakening;
@@ -114,8 +117,13 @@ function runV7Month(state,end){
  if(state.yearly.focus==='care'&&calendar(state).ageMonths>=36)state.yearly.focus='balanced';
  const focus=yearlyActivities.find(a=>a.id===state.yearly.focus);
  const counts={stories:0,training:0,work:0,rest:0,travel:0,pastime:0};
- while(state.time.absoluteDay<end){
+ while(state.time.absoluteDay<end&&!pendingDecision(state)){
   const left=end-state.time.absoluteDay;
+  if(focus.id==='cultivate'&&left>=7){
+   const q=trainingQuote(state);
+   if(state.stamina<q.stamina||state.progression.fatigue>=80||state.progression.focus<20||state.morale<20){rest(state,Math.min(2,left));counts.rest++;continue;}
+   trainPower(state);counts.training++;continue;
+  }
   if(focus.id==='care'){
    recordAction(state,'ผู้ดูแลจัดอาหาร การพัก และการเล่นตามวัย',left);advanceTime(state,left);counts.rest++;continue;
   }
@@ -140,6 +148,7 @@ function runV7Month(state,end){
    recordAction(state,focus.id==='explore'?'สังเกตสิ่งแวดล้อมใกล้ที่พักโดยไม่ย้ายเมือง':`${focus.label}ตามวัย`,left);advanceTime(state,left);counts.pastime++;
   }
  }
+ end=state.time.absoluteDay;
  const report={age,focusId:focus.id,startDay:start,endDay:end,days:end-start,goldDelta:state.gold-oldGold,statDeltas:Object.fromEntries(Object.keys(oldStats).map(k=>[k,state.stats[k]-oldStats[k]]).filter(([,v])=>v!==0)),counts,location:state.location};
  const totals=new Map();for(const e of state.world.ledger.splice(ledgerStart)){const key=e.source+'|'+e.location,old=totals.get(key)??{...e,amount:0,transactions:0};old.amount+=e.amount;old.transactions++;totals.set(key,old);}state.world.ledger.push(...totals.values());
  state.journal.splice(journalStart);state.journal.push({id:state.journal.length+1,day:start,age,ageMonths:Math.floor((start-state.time.birthAbsoluteDay)/30),title:`ช่วงที่ผ่านมา — ${focus.label}`,days:end-start,location:state.location,annualReport:report,goldDelta:report.goldDelta});

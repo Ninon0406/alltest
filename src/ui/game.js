@@ -18,6 +18,7 @@ import { canChoose } from '../engine/choices.js';
 import {isV7} from '../engine/development.js';
 import {nextDecisionDay} from '../engine/decisions.js';
 import {effectiveStats,effectiveCapacities} from '../character/equipment-stats.js';
+import {powerTitle} from '../progression/power-model.js';
 export const Game = {
             active:false,
             clock:new ActivePlayClock(),
@@ -79,6 +80,8 @@ export const Game = {
                 document.getElementById("displayCareer").innerText = `อาชีพ: ${GameState.career}`;
                 document.getElementById('displayAge').textContent=`อายุ ${ageLabel(GameState)}`;
                 document.getElementById('displayPower').textContent=`Lv. ${GameState.power?.level??1} / 100`;
+                document.getElementById('displayPower').title=powerTitle(GameState);
+                document.getElementById('displayRealm').textContent=powerTitle(GameState);
                 document.getElementById('timeControls').replaceChildren();
                 document.getElementById('displayGold').textContent=`${GameState.gold} เหรียญ`;
 

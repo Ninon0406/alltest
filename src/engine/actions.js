@@ -12,10 +12,13 @@ import {guardDecisionTime,pendingDecision} from './decisions.js';
 import {isV7} from './development.js';
 import {dress} from '../character/wardrobe.js';
 import {buyEquipment,sellEquipment,equipEquipment} from '../character/equipment.js';
+import {trainPower,resumePower} from '../progression/power.js';
+import {hasPower} from '../progression/power-model.js';
 export function dispatch(input,action){
  if(input.run?.status==='ended')throw Error('ชีวิตนี้จบแล้ว เริ่มชีวิตใหม่เพื่อเล่นต่อ');
  if(action.token!==storyToken(input))throw Error('รายการนี้เปลี่ยนไปแล้ว กรุณาเลือกจากหน้าปัจจุบัน');
  const state=upgradeState(input);
+ if(state.power?.version===2&&!hasPower(state))throw Error('ข้อมูลพลังไม่ถูกต้อง');
  if(isV7(state)&&pendingDecision(state)&&!['majorChoice','readNext','setPacing','dailyLife','yearFocus','pauseAwakening','beginAwakening','dress','equipEquipment'].includes(action.type))throw Error('มีการตัดสินใจสำคัญรออยู่ กรุณาตัดสินใจก่อนทำกิจกรรม');
  if(action.type==='legacyChoice'){
   const choice=Scenes[state.currentSceneId]?.choices?.find(c=>c.id===action.choiceId);if(choice)guardDecisionTime(state,legacyDays(state,choice));chooseLegacy(state,action.choiceId);
@@ -36,6 +39,8 @@ export function dispatch(input,action){
  else if(action.type==='pauseAwakening'){const a=state.progression.awakening;if(state.age<12||a.step>=7||a.paused)throw Error('ไม่มีพิธีที่กำลังดำเนินอยู่');a.paused=true;state.life.page=0;}
  else if(action.type==='chooseCareer')selectCareer(state,action.careerId);
  else if(action.type==='train')train(state,action.stat);
+ else if(action.type==='trainPower')trainPower(state);
+ else if(action.type==='resumePower')resumePower(state);
  else if(action.type==='trainingRest')restFromTraining(state);
  else if(action.type==='careerJob')workCareer(state);
  else if(action.type==='promoteCareer')promote(state);
@@ -52,5 +57,6 @@ export function dispatch(input,action){
  else if(action.type==='legacyArc'&&state.age>=12){state.yearly.view='detailed';if(state.progression.awakening.step<7)state.progression.awakening.paused=true;state.life.mode='legacy';state.currentSceneId=state.life.legacySceneId??'scene_childhood_hub_2';}
  else if(action.type==='dailyLife'){state.yearly.view='yearly';state.life.legacySceneId=state.currentSceneId;state.life.mode='annual';state.life.page=0;}
  else throw Error('ทำรายการนี้ไม่ได้');
+ if(state.power?.version===2&&!hasPower(state))throw Error('ข้อมูลพลังไม่ถูกต้อง');
  state.life.revision++;return state;
 }

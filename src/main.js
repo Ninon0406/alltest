@@ -20,6 +20,7 @@ import {ageLabel} from './engine/time.js';
 import {renderWardrobe} from './ui/wardrobe-view.js';
 import {renderEquipment,renderEquipmentShop,renderEquipmentStatus} from './ui/equipment-view.js';
 import {effectiveStats,effectiveCapacities,workStaminaCost} from './character/equipment-stats.js';
+import {powerTitle} from './progression/power-model.js';
 window.Game=Game;initPanels();
 let dismissedDecision=null,manualOpening=false,textScale=100,reduced=false;
 const decisionKey=()=>{const d=Game.active&&GameState.run.status==='active'?pendingDecision(GameState):null;return d?`${GameState.run.id}:${d.id}:${d.stage??''}:${GameState.time.absoluteDay}`:null;};
@@ -58,7 +59,7 @@ function renderShop(parent){
  renderEquipmentShop(parent,GameState,a=>Game.perform(a));
 }
 function renderStatus(parent){
- paragraph(parent,`${GameState.name} · อายุ ${ageLabel(GameState)} · ${GameState.career}`);paragraph(parent,`ระดับพลัง ${GameState.power?.level??1}/100 · ผู้เริ่มรับรู้พลัง`);
+ paragraph(parent,`${GameState.name} · อายุ ${ageLabel(GameState)} · ${GameState.career}`);paragraph(parent,`ระดับพลัง ${GameState.power?.level??1}/100 · ${powerTitle(GameState)}`);
  const stats=effectiveStats(GameState),caps=effectiveCapacities(GameState),grid=document.createElement('div');grid.className='stats-grid';parent.append(grid);for(const [id,label]of Object.entries(statNames))paragraph(grid,`${label} ${stats[id]}${stats[id]!==GameState.stats[id]?` (พื้นฐาน ${GameState.stats[id]} + อุปกรณ์ ${stats[id]-GameState.stats[id]})`:''}`);
  renderEquipmentStatus(parent,GameState);
  paragraph(parent,`พลังชีวิต ${GameState.hp}/${caps.maxHp} · ความอึด ${GameState.stamina}/${caps.maxStamina} · มานา ${GameState.mana}/${caps.maxMana}`);paragraph(parent,`อาหาร ${GameState.hunger}/100 · น้ำ ${GameState.thirst}/100 · เหนื่อยล้า ${GameState.progression.fatigue}/100 · สมาธิ ${GameState.progression.focus}/100 · ขวัญกำลังใจ ${GameState.morale}/100`);paragraph(parent,GameState.traits.join(' · '));panelButton(parent,'บันทึกตัวละคร','record');

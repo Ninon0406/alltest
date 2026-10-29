@@ -48,7 +48,7 @@ export function trainingQuote(state,stat=state.yearly.stat){
  const equipmentBonus=equipmentModifiers(state).practice[stat]??0;
  return {days:7,stamina:15,fatigue:20,focus:12,learningBonus,equipmentBonus,xp:base+affinityBonus+(r?.trainingBonus??0)+(r?.advanced?c.advanced.trainingBonus:0)+learningBonus+equipmentBonus};
 }
-export function train(state,stat){
+export function train(state,stat,powerRecord=null){
  if(state.age<8)throw Error('ฝึกพื้นฐานได้เมื่ออายุ 8 ปี');
  if(!statKeys.includes(stat))throw Error('หัวข้อฝึกไม่ถูกต้อง');
  const q=trainingQuote(state,stat),p=state.progression;
@@ -59,7 +59,7 @@ export function train(state,stat){
  const oldLevel=Math.floor((p.practice[stat]-q.xp)/20),newLevel=Math.floor(p.practice[stat]/20);state.stats[stat]+=newLevel-oldLevel;
  const c=currentCareer(state);if(c&&(stat===c.primary||stat===c.secondary))earnCareerXp(state,c.id,q.xp);
  state.stamina-=q.stamina;p.fatigue+=q.fatigue;p.focus-=q.focus;
- recordAction(state,'ฝึกพื้นฐานตามความถนัด',q.days,{stat,skillXp:q.xp,statGain:newLevel-oldLevel,careerId:c?.id??null});advanceTime(state,q.days);
+ recordAction(state,powerRecord?'ฝึกประสานพลังผ่านงานที่ถนัด':'ฝึกพื้นฐานตามความถนัด',q.days,{stat,skillXp:q.xp,statGain:newLevel-oldLevel,careerId:c?.id??null,...powerRecord});advanceTime(state,q.days);
 }
 export function jobQuote(state){const c=currentCareer(state);if(!c)return null;const r=state.progression.records[c.id];return {days:7,stamina:workStaminaCost(state,15),fatigue:12,gold:c.wage+(r.payBonus??0)+(r.advanced?c.advanced.payBonus:0)+(state.story?.wageBonus??0),xp:6};}
 export function workCareer(state){

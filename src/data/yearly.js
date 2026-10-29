@@ -6,6 +6,7 @@ export const yearlyActivities=[
  {id:'rest',label:'ดูแลสุขภาพและพัก',minAge:0,stats:['con'],memory:['caution'],description:'จัดเวลาพัก ฟื้นพลังและลดความเหนื่อยล้า'},
  {id:'study',label:'เรียนรู้และอ่านตำรา',minAge:4,stats:['int','wis'],memory:['curiosity'],description:'เรียนพื้นฐานกับผู้ดูแล ตั้งแต่วัยอ่านเบื้องต้นจนถึงการฝึกที่ตรวจวัดได้'},
  {id:'train',label:'ฝึกความถนัด',minAge:8,stats:['str','dex','con','int','wis','per','luk','cha'],memory:['ambition'],description:'ฝึกฟรีพร้อมจัดเวลาพักอัตโนมัติ ใช้ความอึดและสมาธิจริง'},
+ {id:'cultivate',label:'ฝึกประสานพลัง',minAge:12,stats:['wis'],memory:['ambition'],description:'ฝึกผ่านงานอาชีพที่ถนัดครั้งละ 7 วัน พร้อมพักจริง หยุดรอคุณก่อนรับรองขอบเขตแรก'},
  {id:'work',label:'ทำงานและเก็บเงิน',minAge:8,stats:['con','cha'],memory:['caution','kindness'],description:'ทำงานชุมชนหรืองานอาชีพที่เลือก รับเงินจริงลงบัญชี'},
  {id:'explore',label:'สำรวจโลกใกล้ตัว',minAge:4,stats:['per','wis'],memory:['curiosity'],description:'สังเกตภูมิทัศน์และสิ่งใกล้ที่พัก เลือกการย้ายเมืองผ่านการเดินทาง'},
 ];

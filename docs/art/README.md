@@ -15,3 +15,7 @@ Fifteen other interior PNGs are original procedural geometry from `src/ui/interi
 ## Equipment artwork (0.13.0)
 
 Six new original procedural 64×80 transparent PNGs in `public/assets/sprites/garments/` are drawn by `src/ui/avatar/equipment-parts.js` and baked deliberately with `scripts/generate-equipment-assets.mjs`. They are authored pixel geometry, not AI output. Their manifest records byte and decoded-RGBA hashes, dimensions, ownership IDs, slots, source, license and the shared [32,77] body anchor. Source/staged copies do not add artwork counts. Runtime draws these layers only for actually owned/equipped items, over the unchanged inherited identity/family garments. `scripts/verify-equipment-assets.mjs` rejects missing/corrupt/duplicate/nontransparent files.
+
+## First-realm aura (0.14.0)
+
+`src/ui/avatar/power-aura.js` contains two original static procedural SVG stages for genuinely earned levels 5 and 10. Rings and sparse pixel marks share the existing body/ground anchor and palette. They are excluded from infant/parent reference portraits and never grant equipment or mutate state. These are two rendered SVG effect designs, not two new PNGs or the full set of higher-realm effects; existing image manifests/counts are unchanged. Reduced-motion users see the same static artwork.

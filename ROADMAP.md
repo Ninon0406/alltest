@@ -1,6 +1,6 @@
 # Roadmap — V7 current checkpoint
 
-V7 supersedes conflicting stages below. Current 0.13.0 adds the first actual owned equipment/shops/modifier slice, retaining V7-5 interiors, V7-4 characters/wardrobe and the first 30-fork early-life cluster.
+V7 supersedes conflicting stages below. Current 0.14.0 adds the earned first power realm (1–10), manual certification, actual first-tier titles/auras, retaining V7-5 interiors, V7-4 characters/wardrobe and the first 30-fork early-life cluster.
 
 - [x] V7-1 audit/precedence and canonical source pack.
 - [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
@@ -8,10 +8,11 @@ V7 supersedes conflicting stages below. Current 0.13.0 adds the first actual own
 - [ ] V7-3 full expansion to ≥100 coherent runnable forks; the first cluster does not satisfy this target.
 - [x] V7-4 published/verified: deterministic parental inheritance, nine groups × 20 visible variants, 183 PNG parts, growing body/gray hair, family portraits and owned casual clothes. Historical v1 births/identity remain. Full CI, preview and actual public scripts passed.
 - [x] V7-5 interior slice: 16 real PNGs (15 procedural regional rooms + one original AI Starfall hall), exact 20-node bindings, pure care/story/venue selection, matching fallback and manual ceremony/travel regression checks. No extra locations or visits are inferred from room art.
-- [ ] V7-5 remainder: new places/room types and power-aware route encounters/rewards. Twenty outdoor PNGs, read-only map and actual main-page route choices remain working. Owned gear/modifiers now exist; implement earned power and an actual encounter model before advertising survival probabilities.
-- [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.
+- [ ] V7-5 remainder: new places/room types and power-aware route encounters/rewards. Twenty outdoor PNGs, read-only map and actual main-page route choices remain working. Owned gear/modifiers and earned first-realm power now exist; implement a real calibrated encounter model before advertising survival probabilities.
+- [x] V7-6 first power slice: explicit free seven-day practice / monthly cultivation, independent diminishing XP, exact manual certification stop, actual level-five job perk and twenty first-tier titles with two procedural aura milestones.
+- [ ] V7-6 remainder: graded affinity, power 11–99, further career titles/auras/breakthroughs and gated deity level 100. Up to eight actually eligible recommendations remain working.
 - [x] V7-7 equipment foundation: six real items / three slots / eight canonical shops, atomic payment/half-price returns, derived stats/capacities, actual timed practice/job effects, ownership-only PNG sprite layers and memory-only lifecycle.
-- [ ] V7-7/8 remainder: advanced gear/loot, economy/NPC/combat, earned power/lifespan and deity gates.
+- [ ] V7-7/8 remainder: advanced gear/loot, economy/NPC/combat, higher power/lifespan and deity gates.
 - [ ] V7-9/10 full authored counts, balance and hardening.
 
 See `docs/NEXT_CODEX_TASK.md` for exact remaining work and validation. Historical checkpoints follow.

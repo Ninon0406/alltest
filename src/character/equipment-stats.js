@@ -1,4 +1,5 @@
 import {equipmentById,equipmentSlots,equipmentCapacity} from '../data/equipment.js';
+import {powerWorkBonus} from '../progression/power-model.js';
 
 export function createEquipment(){return {version:1,owned:[],equipped:Object.fromEntries(Object.keys(equipmentSlots).map(slot=>[slot,null]))};}
 export function validEquipment(e){
@@ -20,4 +21,4 @@ export function equipmentModifiers(state){
 export function effectiveStats(state){const bonus=equipmentModifiers(state).stats;return Object.fromEntries(Object.entries(state.stats).map(([key,value])=>[key,value+(bonus[key]??0)]));}
 // maxHp/maxMana/maxStamina remain earned base capacities. Never write bonuses into them.
 export function effectiveCapacities(state){const bonus=equipmentModifiers(state).capacities;return Object.fromEntries(['maxHp','maxMana','maxStamina'].map(key=>[key,state[key]+(bonus[key]??0)]));}
-export function workStaminaCost(state,base){return Math.max(1,base-equipmentModifiers(state).workStamina);}
+export function workStaminaCost(state,base){return Math.max(1,base-equipmentModifiers(state).workStamina-powerWorkBonus(state));}

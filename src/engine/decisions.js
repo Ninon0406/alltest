@@ -3,6 +3,7 @@ import {careerEvents} from '../data/events/careers.js';
 import {awakeningEvents} from '../data/events/awakening.js';
 import {calendar} from './time.js';
 import {isV7,developmentDecision,nextDevelopmentDay} from './development.js';
+import {powerDecision} from '../progression/power-model.js';
 function careerDue(state,event){return Math.max([13,15,17][event.stage],state.yearly.cooldowns[event.id]??0,(state.yearly.lastCareerAge??-10)+2);}
 export function pendingDecision(state){
  const development=developmentDecision(state);if(development&&development.month<144)return development;
@@ -17,6 +18,7 @@ export function pendingDecision(state){
    {id:'later',label:'พักพิธีไว้ก่อน',description:'ใช้ชีวิตด้านอื่นแล้วกลับมาเมื่อพร้อม'},
   ]};
  }
+ const power=powerDecision(state);if(power)return power;
  if(y.lastMajorAge===age)return development;
  const careerId=state.progression.activeCareerId,record=state.progression.records[careerId];
  if(careerId&&record.arcStep<3){
