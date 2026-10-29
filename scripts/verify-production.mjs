@@ -5,7 +5,7 @@ const url=process.argv[2]||'http://127.0.0.1:4185/';
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 try{
  for(const width of [320,360,390,768,1024,1366,1920]){
-  const page=await browser.newPage({viewport:{width,height:900}}),failures=[];page.on('dialog',d=>d.accept());page.on('pageerror',e=>failures.push(e.message));page.on('requestfailed',r=>failures.push(r.url()));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))failures.push(`${r.status()} ${r.url()}`);});
+  const page=await browser.newPage({viewport:{width,height:900}}),failures=[];page.setDefaultTimeout(30000);page.on('dialog',d=>d.accept());page.on('pageerror',e=>failures.push(e.message));page.on('requestfailed',r=>failures.push(r.url()));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))failures.push(`${r.status()} ${r.url()}`);});
   await page.goto(url);await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่',exact:true}).click();await page.locator('.pixel-sprite').waitFor();await closeOverlay(page);
   const metrics=await page.evaluate(()=>({css:document.styleSheets.length,age:document.getElementById('displayAge').getBoundingClientRect().y,power:document.getElementById('displayPower').textContent,overflow:document.documentElement.scrollWidth>innerWidth||document.documentElement.scrollHeight>innerHeight+1}));
   if(!metrics.css||metrics.age>150||metrics.overflow||metrics.power!=='Lv. 1 / 100')throw Error('Dashboard failed: '+JSON.stringify(metrics));

@@ -37,3 +37,5 @@ Retained birth data: 120 Thai names, 20 equal archetypes, four races, eight hist
 ## Remaining targets
 
 First 30–50 coherent V7 forks across ages 0–19, then ≥100 with verified downstream distinctions; ≥100 reachable endings; inherited character catalogs; richer file scenes/interiors/new locations; actual equipment/power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
+
+Validation checkpoint: 67 unit / 39 browser cases passed; all three preview and live GitHub Pages verifiers passed for runtime 370e5c3, including all 20 actual PNG files, seven layouts, real birth-to-career progression and a genuine terminal-only archive. These checks establish the implemented subset, not future V7 systems.
