@@ -28,13 +28,13 @@ The first coherent V7 early-life cluster now has **30 runnable forks / 90 author
 
 ## Current work
 
-School/story implementation is complete and local checks passed. Public release verification remains below. No half-built gameplay feature is intentionally left behind.
+School/story implementation is complete; local and public browser checks passed. The full GitHub workflow failed at Playwright; diagnostics/fix are still in progress below. Do not describe that CI run as passing. No half-built gameplay feature is intentionally left behind.
 
 ## Next task — V7-4 inherited appearance
 
 The first 30-fork slice is complete; do not reimplement infancy, time controls, teen funding or school stories. Full ≥100-fork expansion is still required after the visual/progression foundations.
 
-1. Inspect `src/character/appearance.js`, `src/avatar/sprite.js`, birth generator 1/2, `docs/v7/06_ASSET_SEED_MANIFEST.json`, the world bible and appearance tests. Design a separately versioned new-run appearance initializer with stable parent/child DNA, retaining frozen historical birth generation and old appearance-v1 identity. Never reroll a live character or alter frozen origin/name/race tables.
+1. Inspect `src/character/appearance.js`, `src/ui/avatar/sprite.js`, `src/ui/avatar/portrait.js`, birth generator 1/2, `docs/v7/06_ASSET_SEED_MANIFEST.json`, the world bible and appearance tests. Design a separately versioned new-run appearance initializer with stable parent/child DNA, retaining frozen historical birth generation and old appearance-v1 identity. Never reroll a live character or alter frozen origin/name/race tables.
 2. Create real visible geometry/atlases for ≥20 variants per requested group; render both parents and child at aligned anchors with deterministic inheritance and small independent variation. Generated files need dimensions/hash/alpha/registration validation and actual distinct rendered silhouettes, not labels or color-only claims. Owned gear is not yet implemented; do not pretend career cosmetics are owned items.
 3. Test deterministic inheritance, stable rerenders and all seven viewport widths, build/stage and verify preview/live. Continue with owned equipment before showing held gear, then earned power/title/aura and long-life systems. Keep narrative expansion traceable to the existing source pack.
 
@@ -42,7 +42,7 @@ The first 30-fork slice is complete; do not reimplement infancy, time controls, 
 
 New: `src/data/events/school.js`, `tests/school-story.test.js`, `tests/browser/school.spec.js`.
 
-Updated: `src/engine/development.js` (chronological union, specific requirement hints), `src/data/events/teen.js` (childhood callbacks), `scripts/verify-progression.mjs` (real school-chain check), `tests/development.test.js` (actual new boundary without an injected age jump), `tests/teen-story.test.js` (current authored scope), package version, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/USER_DIRECTIVE_V7/CHANGELOG, this file and generated publication outputs.
+Updated: `src/engine/development.js` (chronological union, specific requirement hints), `src/data/events/teen.js` (childhood callbacks), `scripts/verify-progression.mjs` (real school-chain check), `tests/development.test.js` (actual new boundary without an injected age jump), `tests/teen-story.test.js` (current authored scope), package version, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/USER_DIRECTIVE_V7/CHANGELOG, this file and generated publication outputs. Follow-up: `playwright.config.js` enables GitHub failure annotations in CI so actual test failures are readable through check-run metadata.
 
 ## Limitations / remaining systems
 
@@ -66,4 +66,4 @@ Actual totals: **156 scenes/events, 359 authored choices, six reachable endings*
 
 Base: `5e029449551496f958d922b98ecbd8ee94dbe473`. Prior runtime `78a10b5` and verification `beb2896` were publicly verified with all three scripts; final full CI [40838430108](https://github.com/Ninon0406/alltest/actions/runs/40838430108) passed.
 
-This round's runtime commit/publication: pending. Local staged bundle is `assets/app-DcD8zOM7.js` / `assets/app-jJszjJhO.css`. Do not call the new runtime published until Pages and actual public behavior are confirmed. Preserve old hashes. Source: app.html/src/public; root index/assets/art are generated main:/ compatibility outputs. Do not change Pages settings.
+Runtime: `433546dac69e5c97a22ea96345a114c473751fd0`. Branch Pages [40843895952](https://github.com/Ninon0406/alltest/actions/runs/40843895952) succeeded. Public HTML serves `assets/app-DcD8zOM7.js` / `assets/app-jJszjJhO.css`; all three public scripts passed (seven widths, actual school/ceremony/career/teen play to 20 at 1366/360, terminal-only history). Full workflow [40843896275](https://github.com/Ninon0406/alltest/actions/runs/40843896275) failed at Playwright, so its later content/artifact/deploy steps were skipped. Runner logs redirect to a network-denied host; existing API annotations only say exit code 1. Adding the GitHub reporter exposes the actual failed case/stack in allowed check-run metadata without bypassing network policy. Fix/recheck the actual failure before finalizing. Preserve old hashes. Source: app.html/src/public; root index/assets/art are generated main:/ compatibility outputs. Do not change Pages settings.
