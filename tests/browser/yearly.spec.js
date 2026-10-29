@@ -17,6 +17,6 @@ test('stale action and rejected childhood work preserve the in-memory state atom
  await decide(page);await page.getByRole('button',{name:'เติบโตต่อ 1 เดือน',exact:true}).evaluate(b=>{b.click();b.click();});expect((await snapshot(page)).time.absoluteDay).toBe(30);await reachAge(page,8);expect((await snapshot(page)).age).toBe(8);expect(await page.evaluate(()=>localStorage.length)).toBe(0);
 });
 test('local scene PNG loads and a ritual click completes one actual stage',async({page})=>{
- await start(page);await expect(page.locator('.play-scene .location-image')).toBeVisible();expect(await page.locator('.play-scene .location-image').evaluate(img=>img.complete&&img.naturalWidth===320)).toBe(true);
+ await start(page);await expect(page.locator('.play-scene .location-image')).toBeVisible();await expect.poll(()=>page.locator('.play-scene .location-image').evaluate(img=>({width:img.naturalWidth,height:img.naturalHeight}))).toEqual({width:320,height:160});
  await reachAge(page,12,{settleAtTarget:false});expect((await snapshot(page)).progression.awakening.step).toBe(0);await decide(page);expect((await snapshot(page)).progression.awakening.step).toBe(1);await expect(page.getByRole('dialog')).toContainText('2/7');
 });

@@ -10,7 +10,9 @@ try{
   const metrics=await page.evaluate(()=>({css:document.styleSheets.length,age:document.getElementById('displayAge').getBoundingClientRect().y,power:document.getElementById('displayPower').textContent,overflow:document.documentElement.scrollWidth>innerWidth||document.documentElement.scrollHeight>innerHeight+1}));
   if(!metrics.css||metrics.age>150||metrics.overflow||metrics.power!=='Lv. 1 / 100')throw Error('Dashboard failed: '+JSON.stringify(metrics));
   await oneMonth(page);const state=await page.evaluate(()=>Game.snapshot);if(state.age!==0||state.time.absoluteDay!==30)throw Error('Month calendar failed');if(await page.locator('#calendarProgress').getAttribute('aria-valuenow')!=='30')throw Error('Progress is detached from calendar');
-  const image=await page.locator('.play-scene .location-image').evaluate(img=>({loaded:img.complete&&img.naturalWidth===320,src:img.currentSrc}));if(!image.loaded||!image.src.includes('/assets/scenes/'))throw Error('Local PNG did not load');
+  // A fresh render can finish before its image request; verify the decoded file, not network speed.
+  await page.waitForFunction(()=>{const img=document.querySelector('.play-scene .location-image');return img?.complete&&img.naturalWidth>0;},null,{timeout:30000});
+  const image=await page.locator('.play-scene .location-image').evaluate(img=>({width:img.naturalWidth,height:img.naturalHeight,src:img.currentSrc}));if(image.width!==320||image.height!==160||!image.src.includes('/assets/scenes/'))throw Error('Invalid local PNG: '+JSON.stringify(image));
   if(width===320){const files=await page.evaluate(async()=>{const manifest=await(await fetch(new URL('assets/scenes/manifest.json',location.href))).json();for(const entry of manifest.images){const img=new Image();img.src=new URL('assets/scenes/'+entry.file,location.href);await img.decode();if(img.naturalWidth!==320||img.naturalHeight!==160)throw Error('Invalid scene image');}return manifest.images.length;});if(files!==20)throw Error('Missing published PNGs');}
   await page.screenshot({path:`/tmp/reborn-ui-${width}.png`});
   for(const name of ['แผนที่และบริการ','อาชีพและการฝึก','กระเป๋า','บันทึกชีวิตรายปี']){
