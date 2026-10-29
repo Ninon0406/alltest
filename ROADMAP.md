@@ -1,11 +1,12 @@
 # Roadmap — V7 current checkpoint
 
-V7 supersedes conflicting stages below. Current 0.9.0 retains V7-1/2 and completes the teen education/support chain, bringing V7-3 to 21 real forks.
+V7 supersedes conflicting stages below. Current 0.10.0 retains V7-1/2 and completes the first 30-fork early-life cluster, with supervised childhood, school preparation and teen callbacks.
 
 - [x] V7-1 audit/precedence and canonical source pack.
 - [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
-- [ ] V7-3 30–50 full early-life forks first, then ≥100: 21 forks/63 choices currently verified, including tuition, school/family support, actual training/wage consequences and eligibility. Nine more coherent childhood/regional forks are next.
-- [ ] V7-4 inherited visible appearance catalogs: v1 actor remains.
+- [x] V7-3 first playable cluster: 30 forks/90 choices across ages 0–19, with actual requirements and delayed consequences; nine school forks complete the first 30.
+- [ ] V7-3 full expansion to ≥100 coherent runnable forks; the first cluster does not satisfy this target.
+- [ ] V7-4 next: inherited visible appearance catalogs, real 20+ variants/group and parent resemblance; v1 actor remains.
 - [ ] V7-5 art/journeys: twenty real PNGs for current twenty nodes, read-only map/main-page route choices done; interiors/new places/power-aware encounters remain.
 - [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.
 - [ ] V7-7/8 owned gear, economy/NPC/combat, earned lifespan and deity gates.

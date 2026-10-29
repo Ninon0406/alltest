@@ -17,7 +17,7 @@ export const teenEvents=[
   c('community','เรียนฟรีกับชุมชนและช่วยจัดตำรา','ช่วยงานเท่าที่ไหว มีคนช่วยทบทวนการสังเกต',[flag('free_learning'),learn('per'),bond('community')]),
  ]},
  {id:'teen.lessons',sourceId:'life_evt_054',month:162,maxMonth:228,title:'ห้องเรียนที่ไม่ถามฐานะ',text:'ครูอาสาใน{location.name}เปิดห้องเรียนให้ผู้ที่มีเวลาต่างกัน แม้ยังพักพิธีไว้ก็เข้าร่วมได้ วันนี้เป็นการเลือกแนวทางเรียน ไม่ใช่การฝึกจนชำนาญทันที',choices:[
-  c('basics','ขอแนวฝึกพื้นฐานจากครู','ครูช่วยทบทวนความเข้าใจ เพิ่มประสบการณ์ฝึก 1 ต่อครั้ง',[flag('lesson_basics'),learn('wis')]),
+  c('basics','ขอแนวฝึกพื้นฐานจากครู','ครูช่วยทบทวนความเข้าใจเพิ่ม 1 ต่อครั้ง บันทึกก่อนพิธีช่วยต่อยอดคำแนะนำได้อีก 1 ภายในเพดานเดิม',[flag('lesson_basics'),learn('wis'),when('ready_diary',learn('wis'))]),
   c('organize','อาสาจัดสื่อการเรียนและรายการยืม','ได้แนวฝึกการสังเกตจากงานจัดสื่อ',[flag('lesson_steward'),learn('per'),when('library_order',bond('community',2))]),
   c('invite','ชวนคนที่ขาดทุนมาลงชื่อด้วยกัน','เรียนวิธีสื่อสารกับคนหลายวัยและสร้างความไว้ใจ',[flag('lesson_host'),learn('cha'),bond('community',2)]),
  ]},
@@ -32,14 +32,14 @@ export const teenEvents=[
   c('talk','บอกขีดจำกัดแล้ววางแผนกับผู้ใหญ่','ไม่เสียเงิน ครอบครัวตกลงช่องทางติดต่อเมื่อใครต้องการพัก',[flag('family_boundaries'),bond('caregivers',2),memory('caution')]),
  ]},
  {id:'teen.exhibition',sourceId:'life_evt_059',month:188,maxMonth:252,title:'พื้นที่แสดงงานที่ไม่บังคับแข่ง',text:'งานชุมชนใน{location.name}เปิดรับทั้งผู้แสดง ผู้ช่วย และผู้มาชม คุณไม่ต้องอวดวิชาที่ไม่เคยฝึก และการเป็นผู้ชมก็เป็นทางเลือกที่มีคุณค่า',choices:[
-  c('show','นำสมุดฝึกที่ลงมือทำจริงไปขอคำแนะนำ','ต้องเคยฝึกฟรีอย่างน้อยหนึ่งครั้ง ได้แนวทางฝึกความคล่องเพิ่ม',[flag('shown_practice'),learn('dex'),when('trial_student',bond('community',2))],{requirements:{practiced:true}}),
+  c('show','นำสมุดฝึกที่ลงมือทำจริงไปขอคำแนะนำ','ต้องเคยฝึกจริง ได้แนวฝึกความคล่องเพิ่ม และต่อยอดงานที่เคยแสดงในวัยเรียนได้ภายในเพดานเดิม',[flag('shown_practice'),learn('dex'),when('child_shown_practice',learn('dex')),when('trial_student',bond('community',2))],{requirements:{practiced:true}}),
   c('host','ช่วยต้อนรับและจัดพื้นที่กับผู้ใหญ่','เพิ่มความไว้ใจและแนวทางฝึกการสื่อสาร',[flag('exhibition_host'),bond('community',2),learn('cha')]),
   c('observe','เป็นผู้ชมและจดสิ่งที่ยังไม่เข้าใจ','ได้คำถามกลับไปทบทวน ไม่ได้อ้างว่าเรียนวิชาใหม่สำเร็จแล้ว',[flag('exhibition_notes'),learn('int'),memory('curiosity')]),
  ]},
  {id:'teen.invitation',sourceId:'life_evt_063',month:198,maxMonth:300,title:'คำชวนที่ยังไม่ต้องออกเดินทาง',text:'นักเดินทางแวะเล่าเรื่องเส้นทางรอบ{location.name} คุณเลือกเตรียมตัวหรืออยู่ต่อได้ วันนี้ไม่มีการเคลื่อนย้ายตำแหน่ง การเดินทางจริงยังต้องเลือกจุดหมายและจ่ายค่าเส้นทางจากหน้าชีวิต',choices:[
-  c('route','ขอช่วยอ่านแผนที่และจุดพัก','ได้แนวฝึกการสังเกต ภาพแผนที่วัยเด็กช่วยให้คุยกันคล่องขึ้น',[flag('route_prepared'),learn('per'),when('river_map',bond('community',2)),when('purse_route',memory('curiosity',2))]),
-  c('escort','ถามผู้คุ้มกันถึงการขอความช่วยเหลือ','ได้แนวฝึกความอึด และจำว่าต้องพักเมื่อใด',[flag('escort_advice'),learn('con'),memory('caution')]),
-  c('stay','อยู่กับชุมชนและฝึกต่อก่อน','ไม่เสียเงินหรือย้ายเมือง เพิ่มความผูกพันกับผู้ดูแล',[flag('stayed_to_prepare'),bond('caregivers',2),learn('wis')]),
+  c('route','ขอช่วยอ่านแผนที่และจุดพัก','ได้แนวฝึกการสังเกต ความรู้จุดพักที่เคยถามคาราวานช่วยต่อยอดอีก 1 ภายในเพดานเดิม',[flag('route_prepared'),learn('per'),when('caravan_map',learn('per')),when('river_map',bond('community',2)),when('purse_route',memory('curiosity',2))]),
+  c('escort','ถามผู้คุ้มกันถึงการขอความช่วยเหลือ','ได้แนวฝึกความอึด งานที่เคยช่วยช่างต่อยอดคำแนะนำได้อีก 1 ภายในเพดานเดิม',[flag('escort_advice'),learn('con'),when('workshop_helper',learn('con')),memory('caution')]),
+  c('stay','อยู่กับชุมชนและฝึกต่อก่อน','ไม่เสียเงินหรือย้ายเมือง ประสบการณ์ดูต้นไม้โตช้าช่วยทบทวนความเข้าใจเพิ่มภายในเพดานเดิม',[flag('stayed_to_prepare'),bond('caregivers',2),learn('wis'),when('seeds_patient',learn('wis'))]),
  ]},
  {id:'teen.direction',sourceId:'life_evt_064',month:206,maxMonth:360,title:'เรียนต่อ ฝึกงาน หรือค่อยเก็บทุน',text:'คุณเริ่มเห็นจังหวะชีวิตที่เหมาะกับตน การเลือกครั้งนี้เพิ่มแนวทางสนับสนุนการฝึกหรือรายได้ ไม่เลือกอาชีพแทนคุณและไม่ข้ามเวลาหนึ่งปีโดยพลการ',choices:[
   c('study','เรียนต่อโดยใช้พื้นฐานที่เตรียมไว้','ต้องเคยลงทะเบียนหรือมีสิทธิ์ทุน ได้คำแนะนำฝึกสติปัญญาเพิ่ม',[flag('study_direction'),learn('int'),when('exhibition_notes',learn('wis'))],{requirements:{anyFlags:['school_enrolled','scholarship_offer']}}),
@@ -53,13 +53,13 @@ export const teenEvents=[
  ]},
  {id:'teen.family',sourceId:'life_evt_066',month:222,maxMonth:360,title:'ข่าวถึงบ้านจากที่ที่คุณอยู่',text:'ไม่ว่าคุณยังอยู่ใกล้บ้านหรือเลือกเดินทางไปแล้ว คนในบ้านอยากฟังชีวิตช่วงนี้ คุณติดต่อจาก{location.name}ได้โดยไม่ถูกย้ายกลับบ้านอัตโนมัติ หากจะไปเยี่ยมจริงให้เลือกเส้นทางเดินทางเมื่อพร้อม',choices:[
   c('plans','คุยเรื่องแผนของบ้านและถามว่าช่วยอะไรได้','ครอบครัวที่เคยจัดงบหรือได้รับความช่วยเหลือพร้อมเปิดใจมากขึ้น',[flag('family_plans'),bond('caregivers'),when('family_budget',bond('caregivers',2)),when('family_contribution',bond('caregivers',2))]),
-  c('stories','เล่าประสบการณ์และรับฟังเรื่องเล็ก ๆ ของบ้าน','บทสนทนาและเรื่องเล่าวัยเด็กกลายเป็นสิ่งเชื่อมโยง',[flag('family_stories'),bond('caregivers'),when('river_story',memory('kindness',2)),when('shared_song',bond('caregivers',2))]),
+  c('stories','เล่าประสบการณ์และรับฟังเรื่องเล็ก ๆ ของบ้าน','บทสนทนา เพลง และภาพส่งเพื่อนในวัยเด็กกลายเป็นสิ่งเชื่อมโยง',[flag('family_stories'),bond('caregivers'),when('farewell_album',bond('caregivers')),when('river_story',memory('kindness',2)),when('shared_song',bond('caregivers',2))]),
   c('rest','บอกว่าเหนื่อยและนัดเวลาติดต่อที่สบายใจ','ขอบเขตที่เคยคุยไว้ช่วยให้ขอพักโดยไม่รู้สึกผิด',[flag('family_rest'),bond('caregivers'),when('family_boundaries',bond('caregivers',2)),memory('caution')]),
  ]},
  {id:'teen.letter',sourceId:null,month:228,maxMonth:239,title:'จดหมายที่ไม่ตัดสินแทนเพื่อน',text:'เพื่อนจากชุมชนขอความเห็นเรื่องการเรียนกับงาน คุณไม่จำเป็นต้องรู้คำตอบทั้งหมด เลือกช่วยด้วยประสบการณ์จริงหรือพาไปหาคนที่พร้อมรับฟังได้',choices:[
-  c('study','แบ่งวิธีเตรียมเรียนและสิ่งที่ยังยาก','ต้องเคยเลือกเรียนต่อ จดหมายกลายเป็นคู่มือที่ทบทวนร่วมกันได้',[flag('shared_study_method'),bond('community',2),learn('int')],{requirements:{allFlags:['study_direction']}}),
-  c('listen','ฟังเป้าหมายของเพื่อนก่อนแนะนำทางเลือก','ไม่บังคับให้เลือกเหมือนคุณ เสริมการสื่อสารอย่างรอบคอบ',[flag('listened_to_friend'),bond('community',2),learn('cha')]),
-  c('connect','ชวนคุยกับครูอาสาในเวลาที่สะดวก','ประสบการณ์ช่วยห้องเรียนทำให้เพื่อนกล้าขอความช่วยเหลือ',[flag('connected_teacher'),bond('community'),when('lesson_host',bond('community',2)),learn('wis')]),
+  c('study','แบ่งวิธีเตรียมเรียนและสิ่งที่ยังยาก','ต้องเคยเลือกเรียนต่อ ประสบการณ์ติดต่อเพื่อนที่ย้ายบ้านช่วยต่อยอดคำแนะนำฝึกสติปัญญา',[flag('shared_study_method'),bond('community',2),learn('int'),when('penpal_address',learn('int'))],{requirements:{allFlags:['study_direction']}}),
+  c('listen','ฟังเป้าหมายของเพื่อนก่อนแนะนำทางเลือก','ไม่บังคับให้เลือกเหมือนคุณ วิธีฟังกติกาในวัยเรียนช่วยต่อยอดคำแนะนำการสื่อสาร',[flag('listened_to_friend'),bond('community',2),learn('cha'),when('patient_listener',learn('cha'))]),
+  c('connect','ชวนคุยกับครูอาสาในเวลาที่สะดวก','การช่วยห้องเรียนหรือจัดวงส่งเพื่อนทำให้เพื่อนกล้าขอความช่วยเหลือ',[flag('connected_teacher'),bond('community'),when('farewell_host',bond('community')),when('lesson_host',bond('community',2)),learn('wis')]),
  ]},
  {id:'teen.review',sourceId:null,month:234,maxMonth:239,title:'สิ่งที่อยากพกไปสู่วัยผู้ใหญ่',text:'ก่อนอายุยี่สิบ คุณทบทวนสิ่งที่เลือกไว้ ชีวิตยังเปลี่ยนทิศได้ ทุนหรือคำแนะนำไม่ใช่อำนาจวิเศษ แต่ช่วยให้การฝึกและการทำงานจริงครั้งต่อไปค่อย ๆ ดีขึ้น',choices:[
   c('craft','ดูแลวิธีฝึกให้ยั่งยืนก่อนรีบรับงานเพิ่ม','ประสบการณ์ฝึกงานหรือแสดงงานช่วยต่อยอดการฝึกความคล่อง',[flag('adult_craft_plan'),learn('con'),when('craft_direction',learn('dex')),when('shown_practice',bond('community'))]),

@@ -1,6 +1,6 @@
 # REBORN · หนึ่งชีวิตในเอลินดรา
 
-Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.9.0 adds the complete teen education/support story chain to the V7 infant/time correction, continuing the V6 memory-only dashboard.
+Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.10.0 completes the first 30-fork V7 early-life cluster with supervised childhood, school preparation and callbacks into the teen education/support chain.
 
 Play: https://ninon0406.github.io/alltest/
 
@@ -12,9 +12,9 @@ Only a genuinely completed authored ending produces a compact summary in `reborn
 
 ## Play and current scope
 
-The age/power header stays above the scene. Until three, age is shown in months and routines stay under caregiver supervision. Twenty-one V7 childhood/teen forks offer 63 actual choices, with early memories/relationships changing later outcomes and eligibility. Later choose an age-appropriate focus and advance 1/2/5 years or seek a decision. Seven awakening stages are chosen individually. Autoplay is optional, fixed 30-day ticks at 1/2/4/8/16×; actual calendar progress stops on decisions, hidden tabs, overlays and rejected actions.
+The age/power header stays above the scene. Until three, age is shown in months and routines stay under caregiver supervision. Thirty V7 childhood/teen forks offer 90 actual choices, with early memories/relationships changing later outcomes and eligibility. Later choose an age-appropriate focus and advance 1/2/5 years or seek a decision. Seven awakening stages are chosen individually. Autoplay is optional, fixed 30-day ticks at 1/2/4/8/16×; actual calendar progress stops on decisions, hidden tabs, overlays and rejected actions.
 
-Scholarship/enrollment choices charge the actual wallet, with free alternatives. School/mentor/family choices carry into later gates, training support and wages; support grants no immediate XP or income. Event eligibility and expiry share the time scheduler, so delaying the ceremony cannot block free learning. Expandable outcome receipts and selected-stat training quotes show the actual effects.
+Scholarship/enrollment choices charge the actual wallet, with free alternatives. School/mentor/family choices carry into later gates, training support and wages; support grants no immediate XP or income. Event eligibility and expiry share the time scheduler, so delaying the ceremony cannot block free learning. Expandable outcome receipts and selected-stat training quotes show the actual effects. Nine new school forks at months 48/60/84/90/108/114/126/132/138 connect seed play, craft, friendships and ceremony preparation. Showing a practice record requires actual training; reviewing a diary requires an earned record. Free alternatives always remain. Ages 4–11 have at most two major childhood decisions per year.
 
 The map is a position/information viewer. Choose journeys from the main scene: caravan, free walking or staying, with real days/money/stamina/ledger. Career panels recommend up to eight eligible paths; other eligible paths remain in the codex. All dialogs keep one live run and support keyboard/ESC and session-only font/motion options.
 

@@ -1,6 +1,6 @@
 import {it,expect} from 'vitest';
 import {createRun} from '../src/engine/run.js';
-import {calendar,advanceTime,ageLabel} from '../src/engine/time.js';
+import {calendar,ageLabel} from '../src/engine/time.js';
 import {pendingDecision,nextDecisionDay} from '../src/engine/decisions.js';
 import {availableYearActivities} from '../src/engine/yearly.js';
 import {act,simulateV7} from '../scripts/v7-simulation.mjs';
@@ -21,8 +21,8 @@ it('stops all timed external actions at an exact trigger and rejects pending or 
  let s=choose(fresh());s=act(s,{type:'advanceDays',days:89});expect(nextDecisionDay(s)).toBe(90);expect(calendar(s).dayInYear).toBe(89);
  s=act(s,{type:'advanceDays',days:30});expect(s.time.absoluteDay).toBe(90);const before=structuredClone(s);
  for(const action of [{type:'advanceDays',days:30},{type:'advanceYears',years:5},{type:'lifeChoice',choiceId:'infant.lullaby.1'},{type:'train',stat:'wis'},{type:'service',serviceId:'rest'},{type:'careerJob'},{type:'legacyArc'},{type:'journeyChoice',destination:'market',method:'walk'}]){expect(()=>act(s,action)).toThrow();expect(s).toEqual(before);}
- let older=simulateV7(8,{targetAge:8}).state;while(pendingDecision(older))older=choose(older);advanceTime(older,10*360-older.time.absoluteDay-3);const stable=structuredClone(older);
- expect(()=>act(older,{type:'train',stat:'wis'})).toThrow(/ข้ามเหตุการณ์/);expect(older).toEqual(stable);older=act(older,{type:'advanceDays',days:30});expect(older.time.absoluteDay).toBe(3600);expect(pendingDecision(older).id).toBe('dev.project');
+ let older=simulateV7(8,{targetAge:8}).state;while(pendingDecision(older))older=choose(older);const boundary=nextDecisionDay(older);older=act(older,{type:'advanceDays',days:boundary-older.time.absoluteDay-3});const stable=structuredClone(older);
+ expect(()=>act(older,{type:'train',stat:'wis'})).toThrow(/ข้ามเหตุการณ์/);expect(older).toEqual(stable);older=act(older,{type:'advanceDays',days:30});expect(older.time.absoluteDay).toBe(boundary);expect(pendingDecision(older).id).toBe('child.caravan');
 });
 it('gives the same real results for month ticks and seeking, without credit for unplayed full years',()=>{
  const start=choose(fresh());const sought=act(start,{type:'advanceDays',days:90});let ticked=start;for(let i=0;i<3;i++)ticked=act(ticked,{type:'advanceDays',days:30});

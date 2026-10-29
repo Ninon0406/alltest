@@ -1,6 +1,7 @@
 import {developmentEvents} from '../data/events/development.js';
 import {teenEvents} from '../data/events/teen.js';
-export const storyEvents=[...developmentEvents,...teenEvents];
+import {schoolEvents} from '../data/events/school.js';
+export const storyEvents=[...developmentEvents,...schoolEvents,...teenEvents].sort((a,b)=>a.month-b.month);
 import {calendar,recordAction,normalize} from './time.js';
 export const isV7=state=>state.story?.version===7;
 export const createStory=()=>({version:7,completed:[],flags:{},relationships:{caregivers:0,community:0}});
@@ -19,7 +20,7 @@ export function developmentDecision(state){
  const month=calendar(state).ageMonths;
  const event=eligibleEvents(state).find(e=>month>=e.month);
  return event?{...event,kind:'development',severity:'major',choices:event.choices.map(c=>{
-  const cost=storyGoldCost(state,c),reason=c.requires?.some(key=>!state.story.flags[key])?'ต้องเคยช่วยคืนถุงเงินให้เจ้าของ':!meetsStoryRequirements(state,c.requirements)?'ต้องมีประสบการณ์หรือเลือกเส้นทางก่อนหน้าตามคำอธิบาย':state.gold<cost?'เงินไม่พอ ยังมีทางเลือกที่ไม่เสียเงิน':'';
+  const cost=storyGoldCost(state,c),reason=c.requires?.some(key=>!state.story.flags[key])?'ต้องเคยช่วยคืนถุงเงินให้เจ้าของ':!meetsStoryRequirements(state,c.requirements)?c.requirementHint??'ต้องมีประสบการณ์หรือเลือกเส้นทางก่อนหน้าตามคำอธิบาย':state.gold<cost?'เงินไม่พอ ยังมีทางเลือกที่ไม่เสียเงิน':'';
   return {...c,costGold:cost,disabled:!!reason,unavailable:reason,description:c.description+(c.cost?` · จ่าย ${cost} เหรียญจริง`:'')};
  })}:null;
 }

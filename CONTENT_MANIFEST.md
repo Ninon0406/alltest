@@ -1,4 +1,4 @@
-# Verified implemented content — 0.9.0 / V7 subset
+# Verified implemented content — 0.10.0 / V7 subset
 
 Run `npm run content` for authored records, deterministic union reachability and actual file validation. Counts include retained historical optional content; they are not a claim of 100 completed V7 forks or mandatory prompts in one run.
 
@@ -9,9 +9,9 @@ Run `npm run content` for authored records, deterministic union reachability and
 | Awakening stages / authored responses | 7 / 14 | 7 / 14 |
 | Career story episodes / responses | 60 / 120 | 60 / 120 |
 | Rare original life crossroads / responses | 6 / 30 | 6 / 30 |
-| Executable V7 childhood/teen forks / responses | 21 / 63 | 21 / 63 |
-| All non-legacy event records / responses | 132 / 303 | 132 / 303 |
-| Total scenes/events / authored choices | 147 / 332 | 147 / 332 |
+| Executable V7 childhood/teen forks / responses | 30 / 90 | 30 / 90 |
+| All non-legacy event records / responses | 141 / 330 | 141 / 330 |
+| Total scenes/events / authored choices | 156 / 359 | 156 / 359 |
 | Genuine endings | 6 | 6 |
 | Playable base / earned advanced career families | 20 / 20 | 20 / 20 |
 | Functional map locations / regions / route edges | 20 / 5 / 20 | 20 / 5 / 20 |
@@ -22,11 +22,13 @@ The retained nine childhood V7 nodes occur at months 0, 3, 6, 12, 24, 36, 72, 96
 
 The existing 60 career episodes remain three dilemmas per career with actual stat/XP/training-versus-wage effects. New V7 lives choose each of the seven ritual stages manually; postponement is an operational action, not an extra authored fork. Focuses, calendar ticks, generic consultation/defer, travel controls, recommendations and repeated work/training are not additional narrative records.
 
-Twelve teen forks at months 145/150/162/174/182/188/198/206/214/222/228/234 add 36 choices. Ten adapt briefs 050/051/054/052/061/059/063/064/065/066; letter/reflection follow-ups are original. Scholarships change a real 12-coin enrollment to four, with free alternatives. Other choices unlock later options, per-stat training support (max +3 XP per actual training action), career networking (max +3 coins per actual job), and family/community consequences. Decisions themselves grant no training XP, stat/power level or unearned salary. Total adapted briefs: 18; original V7 follow-ups: three.
+Twelve teen forks at months 145/150/162/174/182/188/198/206/214/222/228/234 add 36 choices. Ten adapt briefs 050/051/054/052/061/059/063/064/065/066; letter/reflection follow-ups are original. Scholarships change a real 12-coin enrollment to four, with free alternatives. Other choices unlock later options, per-stat training support (max +3 XP per actual training action), career networking (max +3 coins per actual job), and family/community consequences. Decisions themselves grant no training XP, stat/power level or unearned salary. Total adapted briefs including the school cluster: 27; original V7 follow-ups: three.
+
+Nine school forks / 27 choices adapt briefs `029/034/037/038/040/036/041/048/049`, at months 48/60/84/90/108/114/126/132/138. They connect supervised seeds/toys, fair rules, cooled craft demonstrations, caravan news, a friend moving away, actual-practice exhibition and manual ceremony preparation. Earlier choices alter later memory/bonds, record eligibility and capped support for real timed practice. Caravan maps, craft work, farewell pictures/letters and listening return in teen choices. No automatic travel, money, gear, power or instant XP is awarded. Two or fewer major childhood prompts occur in each year from four through eleven.
 
 ## Audit coverage
 
-100 legacy births with feasible branch traversal; 100 historical detailed childhood runs; 40 complete career runs (20 × two story policies); five annual-planner policies beyond age 60; 100 new V7 seeded lives through age 20 and the full manual ceremony. All 21 V7 forks / 63 choices are exercised across the three V7 policies, including the conditional branch. Full-playthrough clocks progress through actual actions, not injected ages. Union reachability spans different runs, including the retained optional/historical reader; not every old vignette appears in the new V7 main flow.
+100 legacy births with feasible branch traversal; 100 historical detailed childhood runs; 40 complete career runs (20 × two story policies); five annual-planner policies beyond age 60; 100 new V7 seeded lives through age 20 and the full manual ceremony. All 30 V7 forks / 90 choices are exercised across the three V7 policies, including the conditional branch. Full-playthrough clocks progress through actual actions, not injected ages. Union reachability spans different runs, including the retained optional/historical reader; not every old vignette appears in the new V7 main flow.
 
 ## Art and authoring pack
 
@@ -38,8 +40,10 @@ Retained birth data: 120 Thai names, 20 equal archetypes, four races, eight hist
 
 ## Remaining targets
 
-First 30–50 coherent V7 forks across ages 0–19, then ≥100 with verified downstream distinctions; ≥100 reachable endings; inherited character catalogs; richer file scenes/interiors/new locations; actual equipment/power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
+The first 30-fork cluster across ages 0–19 is complete. Remaining: ≥100 with verified downstream distinctions; ≥100 reachable endings; inherited character catalogs; richer file scenes/interiors/new locations; actual equipment/power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
 
 Historical 0.8.0 validation: 67 unit / 39 browser cases passed; all three preview and live GitHub Pages verifiers passed for runtime 370e5c3, including all 20 actual PNG files, seven layouts, real birth-to-career progression and a genuine terminal-only archive. These checks establish the implemented subset, not future V7 systems.
 
-Current 0.9.0 validation: 74 unit / 43 browser cases passed, plus content/build/staging/PNG checks and all three preview/live production verifiers. Public source `78a10b5` serves `app-jMSiVLl5.js` / `app-jJszjJhO.css`; both Pages workflows succeeded. Live checks include all 20 decoded files, seven layouts, genuine birth-to-20 teen education/payment/support and terminal-only history. Image assertions now wait for network loading before validating dimensions. See `docs/NEXT_CODEX_TASK.md` for exact evidence and remaining work.
+Historical 0.9.0 validation: 74 unit / 43 browser cases passed, plus content/build/staging/PNG checks and all three preview/live production verifiers. Public source `78a10b5` serves `app-jMSiVLl5.js` / `app-jJszjJhO.css`; both Pages workflows succeeded. Live checks include all 20 decoded files, seven layouts, genuine birth-to-20 teen education/payment/support and terminal-only history. Image assertions now wait for network loading before validating dimensions. See `docs/NEXT_CODEX_TASK.md` for exact evidence and remaining work.
+
+Current 0.10.0 local validation: 80 unit / 47 browser cases passed, with zero skipped; content/build/staging/PNG audit and all three preview verifiers passed. Coverage includes all nine school forks, real practice/record gates, mixed childhood-to-teen callbacks, capped guidance on actual timed training, all seven layouts, real birth-to-20 progression and authentic terminal-only history. Public verification is recorded separately after deployment.

@@ -51,7 +51,7 @@ it('expires unmet application windows without blocking routine life and never te
  for(let i=0;i<50&&s.age<20;i++){s=pendingDecision(s)?choose(s):act(s,{type:'advanceYears',years:5});}
  expect(s.age).toBeGreaterThanOrEqual(20);expect(s.story.completed).not.toContain('teen.application');expect(s.story.completed).not.toContain('teen.funding');expect(s.world.currentLocationId).toBe(location);
 });
-it('reaches every one of the 21 forks and 63 authored choices through real deterministic actions',()=>{
+it('reaches all authored V7 forks and choices through real deterministic actions',()=>{
  const events=new Set(),choices=new Set();for(let policy=0;policy<3;policy++){const r=simulateV7(8,{targetAge:20,policy,ceremony:true,practiceAtEight:true});for(const id of r.events)events.add(id);for(const id of r.choices)choices.add(id);expect(r.state.story.wageBonus??0).toBeLessThanOrEqual(3);expect(Object.values(r.state.story.learning).every(x=>x<=3)).toBe(true);}
  for(const e of storyEvents){expect(events.has(e.id),e.id).toBe(true);for(const c of e.choices)expect(choices.has(c.id),c.id).toBe(true);}
 });
