@@ -17,7 +17,7 @@ Started by fast-forwarding the existing isolated checkout to actual origin/main 
 
 ## Current work / latest verification
 
-Implementation is complete and fully verified locally. Publication and independent actual Pages verification are the remaining release steps recorded below. No partial mechanic stub is left.
+This round is complete and fully verified locally, independently on actual Pages, and by the full remote CI build/deploy/live workflow. No current code work or partial mechanic stub is left. Start the next earned-power milestone below.
 
 Confirmed: npm ci; **104/104 Vitest cases** across fifteen files; npm run content; npm run build; node scripts/stage-site.mjs; source/staged character/interior/equipment validators; all **180 complete character composition fixtures** visibly distinct; **59/59 Playwright cases**, zero skipped, including desktop/mobile and seven viewport widths. The new equipment case also earns a real farmer promotion through timed focus/decisions and proves its permanent capacity survives gear removal.
 
@@ -53,4 +53,8 @@ Updated: .gitignore (intermediate work), run/action/time/monthly planner, econom
 
 ## Commit / publication
 
-Base: `12d41ed`. Prior release 0.12.0 runtime `dc94d89` and full CI [40886662148](https://github.com/Ninon0406/alltest/actions/runs/40886662148) were confirmed in the prior continuation record. Current runtime commit/publication are pending final verification in this draft; record exact SHA, workflow result and independent actual URL checks before ending. Never mark all V7 complete.
+Base: `12d41ed`. Runtime **`8ed7362d4ce29aa206dd6f8db4d71f7ae8391c18`** is pushed normally to main. This isolated checkout uses local branch `work`, so the actual fast-forward push is `git push origin HEAD:main`, after checking origin/main ancestry.
+
+Branch Pages [40937025537](https://github.com/Ninon0406/alltest/actions/runs/40937025537) succeeded. Actual public HTML at https://ninon0406.github.io/alltest/ serves **`assets/app-rp9I9wkb.js` / `assets/app-mtsUBFr5.css`**. All FOUR independently run public scripts passed: seven widths and all required image hashes/decodes; real birth-to-twenty school/ritual/career/wardrobe/teen flow; independent tabs, genuine age-sixty ending and exactly one terminal-only summary; new actual gear purchase/equip/practice/work/resale/rebirth at **1366 / 320 / 360**. No production errors or active writes were observed.
+
+Full test/composition/build/deploy/live workflow [40937025638](https://github.com/Ninon0406/alltest/actions/runs/40937025638) **completed successfully** (both build and deploy). Downloaded build-job logs confirm **104 unit cases and 59 browser cases passed**, browser suite 3.3 minutes, zero skipped tests. Content audit, complete character compositions, staged gear/interior validation, artifact upload, deployment and the combined FOUR live checks all succeeded. Committed source and generated asset hashes were unchanged by CI, so no replacement compiled commit was needed. This final documentation-only verification record uses `[site-build]`; see git log -1 for its exact hash. Never mark all V7 complete.
