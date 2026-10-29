@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "images": [
+    {
+      "id": "arvenia-home",
+      "region": "อาร์เวเนีย",
+      "kind": "home",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "arvenia-home.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "28fb5e5e6b659efceedc69282eb45aaa3e6ede30a01ffc4df6d58e896a59a506",
+      "pixelSha256": "3355924525d79094a2a09e84d0f3cff6f2d6dbdc6e4f7e3f4afebdad50beebe2",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "arvenia-classroom",
+      "region": "อาร์เวเนีย",
+      "kind": "classroom",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "arvenia-classroom.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "ad521e2b70c09167f2df5564e6e26fcb729060cd9c356034b65bf7ffb1afd69d",
+      "pixelSha256": "43808cf8818a0e6f1019d7ecd024f16336dc53df381cbeb51f55e0bfb2943084",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "arvenia-ceremony",
+      "region": "อาร์เวเนีย",
+      "kind": "ceremony",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "arvenia-ceremony.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "df52e0bfefe58d646a78037805fe7c449b37a7453c3d66aace86c165f7dc3690",
+      "pixelSha256": "5532fd0b428ba0d016b69067af9ab99625108cab2bfdea8e532a50fd1a74e12d",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "valdor-home",
+      "region": "วัลดอร์",
+      "kind": "home",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "valdor-home.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "58bd23de581fbea61525dcbc3d29f61239bf76fb9b09993e97c98de396e308b1",
+      "pixelSha256": "b5d89f4dc4749782a54bfe685dee1bca2963a844b368433ac5b61db15eef1f63",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "valdor-classroom",
+      "region": "วัลดอร์",
+      "kind": "classroom",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "valdor-classroom.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "c220a15071382f286f4134a1ccdf4b9589e374ffbc46e11b3e03e70b5a4e9fe3",
+      "pixelSha256": "72b6fb902d19d820f2b73c7c6faac3a879823439153892bec64bad59737fa7bb",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "valdor-ceremony",
+      "region": "วัลดอร์",
+      "kind": "ceremony",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "valdor-ceremony.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "0778234335c8329ad9e8d3bea062948b8bb280f1c91697c5f996b95e0afbb4be",
+      "pixelSha256": "192de26aa33ee0d6c350fd5d571e27da289fa832d3c0116e68bd3f45bb7e05b5",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "celestia-home",
+      "region": "เซเลสเทีย",
+      "kind": "home",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "celestia-home.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "6ddf22f414a26597f1a9f65f038f7796865280597ec842667c14fcda97576e99",
+      "pixelSha256": "0ba0387782e24007981575a99078616646358190a474266ecc8c81c73db6cb92",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "celestia-classroom",
+      "region": "เซเลสเทีย",
+      "kind": "classroom",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "celestia-classroom.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "e88df3330be59b6b753e252297d6549f597573e0cddb24f088f1667188d79538",
+      "pixelSha256": "91442e1bf7b8341cbef6694ddfd93dba561b78fb92c951f9d71f25f43470bd47",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "celestia-ceremony",
+      "region": "เซเลสเทีย",
+      "kind": "ceremony",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "celestia-ceremony.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "7e9a3ac88765220cbdc566c74107727ee5a45f8070fbe7084961b13a8afcb620",
+      "pixelSha256": "eb79d0abe0384ce89402fdb7d513692591cb0ad0eb02dba4d2e4fbe19e55e3c1",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "nightveil-home",
+      "region": "ไนท์เวียร์",
+      "kind": "home",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "nightveil-home.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "99ab58e51fd797d6f85087b73a0c692318ed5e1e12090c315d2657ea50d7e0d1",
+      "pixelSha256": "789aeeaaac1b3dc3908192c9642bcf3b46349c5f69e55dece7723940d7a1dbce",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "nightveil-classroom",
+      "region": "ไนท์เวียร์",
+      "kind": "classroom",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "nightveil-classroom.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "47960e9ca18ffa0f68de17feb21e945b34b6abb8cc8a2697fea72549e9b64b9e",
+      "pixelSha256": "725191fa7b819b708cb7fc7dd7495752223ccac1ab5f0e3dd3cce04fc36fb338",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "nightveil-ceremony",
+      "region": "ไนท์เวียร์",
+      "kind": "ceremony",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "nightveil-ceremony.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "730a5ff7644d47fd292d1c3809e900922688b4f870b1e2f7014a90051052bf48",
+      "pixelSha256": "4b65ffb10ef33ed6827fd9cc94902e32f09990efe75ade65d879d848ceccea40",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "aquelon-home",
+      "region": "อาเคลอน",
+      "kind": "home",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "aquelon-home.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "476d8d07aaf5b8a5784faa48f24513ed420574b92fdd6665a202c0cca1ac54dd",
+      "pixelSha256": "c0b86e922801893ce68b35bb1b2c34115335e0a89ceec103e0de933b637d7898",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "aquelon-classroom",
+      "region": "อาเคลอน",
+      "kind": "classroom",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "aquelon-classroom.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "eee243ad76eb1b3f8f01a171010eb82a63316d7d330ae5dbbea7f239aee7ec64",
+      "pixelSha256": "c751afe4b5e8c333c7d48fa0017e37e6ff4cf98ccced0e1ce8d707902ab43ac1",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "aquelon-ceremony",
+      "region": "อาเคลอน",
+      "kind": "ceremony",
+      "source": "Original procedural pixel art, src/ui/interior-art.js",
+      "file": "aquelon-ceremony.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "87e03f9a7cc205bbecbab1430d0724e298497d449fc8756e27deb4c7c7a0f1de",
+      "pixelSha256": "fa14ac5a8c7d87a5eccfb724e270b21e62ef14cc7f4b3209e3a8d90da288e80d",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "starfall-ceremony",
+      "region": "เซเลสเทีย",
+      "kind": "ceremony",
+      "source": "Original AI-generated Starfall hall, 2026-10-29",
+      "sourcePath": "docs/art/starfall-hall-source.png",
+      "sourceSha256": "8faef829c0f787ca0d843d0668b5ef9ee1f7329618097770cf04b2961fe81c74",
+      "file": "starfall-ceremony.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "f6f010acd6d95dfcbea46e0aecfc2d32e7dec72e187f21d5ae62edb4e8f6b02b",
+      "pixelSha256": "e49224750eb2c44ab2d780eb0fa538c7b9845fb691a9712dc8668f68c8f5fe66",
+      "license": "Original project artwork"
+    }
+  ],
+  "bindings": {
+    "dawn": {
+      "home": "arvenia-home",
+      "classroom": "arvenia-classroom",
+      "ceremony": "arvenia-ceremony"
+    },
+    "market": {
+      "home": "arvenia-home",
+      "classroom": "arvenia-classroom",
+      "ceremony": "arvenia-ceremony"
+    },
+    "school": {
+      "home": "arvenia-home",
+      "classroom": "arvenia-classroom",
+      "ceremony": "arvenia-ceremony"
+    },
+    "grove": {
+      "home": "arvenia-home",
+      "classroom": "arvenia-classroom",
+      "ceremony": "arvenia-ceremony"
+    },
+    "capital": {
+      "home": "arvenia-home",
+      "classroom": "arvenia-classroom",
+      "ceremony": "arvenia-ceremony"
+    },
+    "mist": {
+      "home": "valdor-home",
+      "classroom": "valdor-classroom",
+      "ceremony": "valdor-ceremony"
+    },
+    "forge": {
+      "home": "valdor-home",
+      "classroom": "valdor-classroom",
+      "ceremony": "valdor-ceremony"
+    },
+    "mine": {
+      "home": "valdor-home",
+      "classroom": "valdor-classroom",
+      "ceremony": "valdor-ceremony"
+    },
+    "pass": {
+      "home": "valdor-home",
+      "classroom": "valdor-classroom",
+      "ceremony": "valdor-ceremony"
+    },
+    "starfall": {
+      "home": "celestia-home",
+      "classroom": "celestia-classroom",
+      "ceremony": "starfall-ceremony"
+    },
+    "library": {
+      "home": "celestia-home",
+      "classroom": "celestia-classroom",
+      "ceremony": "celestia-ceremony"
+    },
+    "observatory": {
+      "home": "celestia-home",
+      "classroom": "celestia-classroom",
+      "ceremony": "celestia-ceremony"
+    },
+    "herb": {
+      "home": "celestia-home",
+      "classroom": "celestia-classroom",
+      "ceremony": "celestia-ceremony"
+    },
+    "roots": {
+      "home": "nightveil-home",
+      "classroom": "nightveil-classroom",
+      "ceremony": "nightveil-ceremony"
+    },
+    "forest": {
+      "home": "nightveil-home",
+      "classroom": "nightveil-classroom",
+      "ceremony": "nightveil-ceremony"
+    },
+    "ruins": {
+      "home": "nightveil-home",
+      "classroom": "nightveil-classroom",
+      "ceremony": "nightveil-ceremony"
+    },
+    "moonport": {
+      "home": "aquelon-home",
+      "classroom": "aquelon-classroom",
+      "ceremony": "aquelon-ceremony"
+    },
+    "fishmarket": {
+      "home": "aquelon-home",
+      "classroom": "aquelon-classroom",
+      "ceremony": "aquelon-ceremony"
+    },
+    "lighthouse": {
+      "home": "aquelon-home",
+      "classroom": "aquelon-classroom",
+      "ceremony": "aquelon-ceremony"
+    },
+    "dock": {
+      "home": "aquelon-home",
+      "classroom": "aquelon-classroom",
+      "ceremony": "aquelon-ceremony"
+    }
+  }
+}

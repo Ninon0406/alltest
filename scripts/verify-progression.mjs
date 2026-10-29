@@ -9,7 +9,10 @@ try{
  for(const width of [1366,360]){
   const page=await browser.newPage({viewport:{width,height:900}}),errors=[];page.setDefaultTimeout(30000);page.on('dialog',d=>d.accept());page.on('pageerror',e=>errors.push(e.message));page.on('requestfailed',r=>errors.push(r.url()));
   await page.goto(url);await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่'}).click();
-  await reachAge(page,12);
+  await reachAge(page,6,{settleAtTarget:false});if(await page.locator('.play-scene').getAttribute('data-context')!=='classroom')throw Error('School room failed');
+  await reachAge(page,12,{settleAtTarget:false});if(await page.locator('.play-scene').getAttribute('data-context')!=='ceremony')throw Error('Ceremony room failed');
+  const ritualNode=(await page.evaluate(()=>Game.snapshot)).world.currentLocationId;if(await page.locator('.play-scene').getAttribute('data-location-id')!==ritualNode)throw Error('Room relocated ritual');
+  await reachAge(page,12);if(await page.locator('.play-scene').getAttribute('data-context')!=='outdoor')throw Error('Room did not close after ceremony');
   const state=()=>page.evaluate(()=>Game.snapshot);
   const childhood=await state();if(!schoolEvents.every(e=>childhood.story.completed.includes(e.id)))throw Error('School preparation chain failed');
   const result=(await state()).progression.awakening.result;
@@ -26,6 +29,6 @@ try{
   if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Career overflow');
   await page.keyboard.press('Escape');await reachAge(page,20);const teen=await state();if(!['teen.application','teen.funding','teen.review'].every(id=>teen.story.completed.includes(id))||!teen.story.flags.school_enrolled||!teen.world.ledger.some(e=>e.source==='story:teen.funding'&&e.amount===-4)||!Object.values(teen.story.learning??{}).some(n=>n>0))throw Error('Teen story progression failed');if(JSON.stringify(teen.progression.awakening.result)!==JSON.stringify(result))throw Error('Story rerolled ceremony');
   if(errors.length)throw Error(errors.join('\n'));
-  await page.screenshot({path:`/tmp/reborn-career-${width}.png`});console.log(`PASS ${url} ${width}: real childhood/ceremony/career/job/training through age 20, owned clothing with stable inherited identity and zero time/stat cost, teen support`);await page.close();
+  await page.screenshot({path:`/tmp/reborn-career-${width}.png`});console.log(`PASS ${url} ${width}: real classroom/ceremony/outdoor context and childhood/career/job/training through age 20, owned clothing with stable inherited identity and zero time/stat cost, teen support`);await page.close();
  }
 }finally{await browser.close();}

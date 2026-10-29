@@ -1,4 +1,4 @@
-# Verified implemented content — 0.11.0 / V7 subset
+# Verified implemented content — 0.12.0 / V7 subset
 
 Run `npm run content` for authored records, deterministic union reachability and actual file validation. Counts include retained historical optional content; they are not a claim of 100 completed V7 forks or mandatory prompts in one run.
 
@@ -16,7 +16,9 @@ Run `npm run content` for authored records, deterministic union reachability and
 | Playable base / earned advanced career families | 20 / 20 | 20 / 20 |
 | Functional map locations / regions / route edges | 20 / 5 / 20 | 20 / 5 / 20 |
 | Important authored NPC profiles / functional dungeons | 0 / 0 | 0 / 0 |
-| Actual local location PNGs / distinct file pixel hashes | 20 / 20 | 20 / 20 |
+| Actual local outdoor location PNGs / distinct file pixel hashes | 20 / 20 | 20 / 20 |
+| Interior PNGs / distinct decoded pixel hashes | 16 / 16 | 16 / 16 |
+| Canonical nodes with three room bindings (shared art) | 20 (60 references) | 20 (60 references) |
 | Character catalog groups / variants per group | 9 / 20 | 9 / 20 |
 | Actual transparent character PNGs (catalog + support) | 180 + 3 | 180 + 3 |
 | Owned basic garment designs / reachable via births | 80 | 80 |
@@ -40,6 +42,12 @@ Nine school forks / 27 choices adapt briefs `029/034/037/038/040/036/041/048/049
 
 The family-room background is one original AI-generated artwork: source `docs/art/family-room-source.png`, compressed runtime `public/art/family-room.webp`, both preserved and hashed. They are two formats of one artwork. New runs inherit at least four of five traits from actual mother/father profiles; one small variation can occur, independently of stats/race/wealth. Cohort tests cover 1,000 seeded families and all 80 casual garment designs through actual birth ownership. Parent profiles are visual records, not additional authored important NPCs.
 
+## Interior art and actual context
+
+Sixteen additional original 320×160 interior PNGs: fifteen procedural house/classroom/ceremony rooms across five distinct regional styles, plus one AI-generated Starfall ceremony hall. The AI source PNG and its nearest-resampled runtime PNG are one artwork. The manifest contains byte and decoded-RGBA hashes, full opacity, dimensions, provenance/license and 60 room references on the existing 20 canonical nodes. All sixteen files are distinct and used; source and staged copies do not count twice. `scripts/verify-interior-assets.mjs` checks mappings, source provenance, pixels and all thirty authored story-context decisions. Normal builds/play use local committed files. No new location, authored story, NPC or ending is counted.
+
+A pure selector shows homes during actual care before 36 months and explicitly indoor stories, classrooms during actual library/rules/lesson decisions, and ceremony halls only during an active ritual at its real venue. Resolving/pausing/finishing leaves the room; explicit travel remains the only movement action. Other conversations and the optional historical reader keep outside views. Map previews keep outdoor landmarks. Missing room files use the matching procedural regional fallback. These image contexts are not new enter/exit actions or visited-location records.
+
 ## Art and authoring pack
 
 Twenty original committed PNG files (320×160) now correspond one-to-one to the existing canonical locations, baked from `src/ui/scene-art.js`. `public/assets/scenes/manifest.json` binds ID/path/size/SHA-256; `scripts/verify-assets.mjs` rejects missing, duplicate or corrupt scene files. Scene and map preview render these files locally under the Pages base path, with a procedural fallback. Generated publication copies do not count twice. Other retained art: two pixel SVG illustrations, one original AI environment and v1 layered portrait/full-body renderers.
@@ -50,7 +58,7 @@ Retained birth data: 120 Thai names, 20 equal archetypes, four races, eight hist
 
 ## Remaining targets
 
-The first 30-fork cluster across ages 0–19 is complete. Remaining: ≥100 with verified downstream distinctions; ≥100 reachable endings; richer file scenes/interiors/new locations; combat equipment/shops/modifiers and power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
+The first 30-fork cluster across ages 0–19 is complete. Remaining: ≥100 with verified downstream distinctions; ≥100 reachable endings; more places/room types; power-aware journeys; combat equipment/shops/modifiers and power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
 
 Historical 0.8.0 validation: 67 unit / 39 browser cases passed; all three preview and live GitHub Pages verifiers passed for runtime 370e5c3, including all 20 actual PNG files, seven layouts, real birth-to-career progression and a genuine terminal-only archive. These checks establish the implemented subset, not future V7 systems.
 
@@ -58,4 +66,6 @@ Historical 0.9.0 validation: 74 unit / 43 browser cases passed, plus content/bui
 
 Historical 0.10.0 validation: 80 unit / 47 browser cases passed, with zero skipped; content/build/staging/PNG audit and all three preview/live verifiers passed. Coverage includes all nine school forks, real practice/record gates, mixed childhood-to-teen callbacks, capped guidance on actual timed training, all seven layouts, real birth-to-20 progression and authentic terminal-only history. Runtime `433546d` serves `app-DcD8zOM7.js` / `app-jJszjJhO.css`. Final CI follow-up `9a06fff` passed the full test/build/deploy/live workflow [40845239881](https://github.com/Ninon0406/alltest/actions/runs/40845239881). The constrained-CPU full-lifetime cases also passed after a scoped test-budget fix; see NEXT_CODEX_TASK for the initial CI failure and exact evidence.
 
-Current 0.11.0 validation: 88 unit / 51 browser cases (zero skipped), the 1,000-family cohort, source/staged PNG/transparency/anchor/hash checks and 180 complete composite variants passed. Content/build/staging and all three preview/live scripts passed, including all 183 decoded character parts, seven family layouts, real school/ceremony/career/wardrobe/teen progression and terminal-only history. Published runtime `a38c1ba` serves `app-Bp4m3zB2.js` / `app-BGZLPjBY.css`. Full CI [40881537802](https://github.com/Ninon0406/alltest/actions/runs/40881537802) and branch Pages succeeded. All story/location/NPC/ending counts remain unchanged.
+Historical 0.11.0 validation: 88 unit / 51 browser cases (zero skipped), the 1,000-family cohort, source/staged PNG/transparency/anchor/hash checks and 180 complete composite variants passed. Content/build/staging and all three preview/live scripts passed, including all 183 decoded character parts, seven family layouts, real school/ceremony/career/wardrobe/teen progression and terminal-only history. Published runtime `a38c1ba` serves `app-Bp4m3zB2.js` / `app-BGZLPjBY.css`. Full CI [40881537802](https://github.com/Ninon0406/alltest/actions/runs/40881537802) and branch Pages succeeded. All story/location/NPC/ending counts remain unchanged.
+
+Current 0.12.0 local validation: 94 unit / 57 browser cases passed (zero skipped), content/build/staging, source/staged interior audit and all 180 complete character compositions passed. Scene tests cover actual care/classroom/ceremony, pause/walk/return without reroll or fictitious location, zero-cost map inspection and missing-file fallback. Production/publication evidence will be recorded in docs/NEXT_CODEX_TASK.md after verification. Story counts remain 156 events / 359 choices / six endings, including 30 V7 forks / 90 choices; 20 outdoor PNGs and 183 character PNGs remain unchanged.

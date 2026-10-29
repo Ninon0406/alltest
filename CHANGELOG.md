@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.12.0 — 2026-10-29 — actual regional interiors and ceremony context
+
+Added sixteen actual local 320×160 interior PNGs: fifteen original procedural regional homes/classrooms/ceremony rooms, plus one original AI Starfall hall with preserved source/provenance. A pure GameState selector uses actual infant care, explicitly indoor pending stories and the active ceremony venue; resolved/paused rituals and ambiguous conversations return outdoors. All twenty canonical nodes have exact bindings; the map keeps its original outside landmarks. Room rendering adds no time, movement, money, visit or invented equipment. Matching procedural fallback handles missing files. Existing One Life, inherited identities/wardrobe, manual choices, seven-stage measurement, careers and travel remain. No authored content counts or world node IDs changed. Full V7-5 encounters/new places and later gear/power/lifespan targets remain incomplete.
+
+Local validation: 94 unit / 57 browser cases passed, zero skipped; content/build/staging and source/staged PNG/pixel/provenance audits passed. The complete 180-character composition audit passed. Production/publication evidence follows in docs/NEXT_CODEX_TASK.md after actual verification.
+
 ## 0.11.0 — 2026-10-29 — inherited pixel characters and family wardrobe
 
 New memory-only runs receive separately versioned appearance-v2: five traits from actual parental profiles, at most one small variation, stable identity across age/career/render, infant wrapping and growing proportions. Added 180 distinct catalog PNG parts across nine groups, three age/body PNGs, full composition/pixel/alpha/hash audits, family portraits/origin descriptions and one original AI family-room background (PNG source + runtime WebP). Five actual family-gift garments support ownership-checked zero-time dressing after age three, with real sprite updates and no stat or power reward. Terminal summaries preserve compact inherited identity/worn items only. Frozen birth generators and v1 identity/rendering remain; all story/map/career/One Life systems stay. No new stories, authored NPCs or location nodes are counted. Full combat gear/shops/modifiers, power and long-life systems remain incomplete. Final validation/publication evidence is in docs/NEXT_CODEX_TASK.md.

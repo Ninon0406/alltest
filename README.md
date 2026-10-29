@@ -1,6 +1,6 @@
 # REBORN · หนึ่งชีวิตในเอลินดรา
 
-Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.11.0 adds inherited pixel characters, parent portraits and an owned casual wardrobe to the first 30-fork V7 early-life cluster.
+Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.12.0 adds actual house, classroom and ceremony interiors to the existing V7 life simulation, inherited pixel characters and owned casual wardrobe.
 
 Play: https://ninon0406.github.io/alltest/
 
@@ -24,6 +24,8 @@ Five family-gift garments (two tops, pants, shoes and hat) are actually owned. F
 
 Twenty location-specific PNG backdrops remain generated from local tile compositions. Run `node scripts/verify-assets.mjs` to check mapping/dimensions/hashes; regenerate deliberately with `node scripts/generate-scene-assets.mjs` using installed Chromium. No hosted image service runs in gameplay. One original AI family-room background is stored with its PNG source and compressed runtime WebP; character parts are authored procedurally, not AI-generated. Combat gear/shops/modifiers, power growth, lifespan/deity paths, full fork/ending targets and combat remain incomplete. Existing equal births, 360-day calendar, 20 base/20 higher careers, twenty map nodes and six original endings remain; see CONTENT_MANIFEST.md for honest playable versus draft counts.
 
+Sixteen additional 320×160 interior PNGs show three room types across five regional styles and one original AI Starfall ceremony hall. Actual infant care, explicitly indoor pending stories and a ceremony at its real venue select the room. Resolving a story or pausing/finishing the ceremony returns outdoors; walking still updates the same canonical node, days, wallet and stamina. Room rendering changes none of those values. All 20 nodes have room bindings (60 references to 16 images, not 60 new places/artworks); map previews keep outdoor landmarks. Ambiguous conversations stay outdoors. Missing images use the corresponding procedural room fallback. The AI original and runtime derivative are preserved with provenance; normal builds need no image API.
+
 ## Development and validation
 
 Node 22.12+ (CI Node 24), npm, installed Chromium.
@@ -42,6 +44,8 @@ node scripts/verify-progression.mjs http://127.0.0.1:4185/
 node scripts/verify-one-life.mjs http://127.0.0.1:4185/
 node scripts/verify-character-assets.mjs
 node scripts/verify-character-composition.mjs
+node scripts/verify-interior-assets.mjs
+node scripts/verify-interior-assets.mjs .
 ```
 
 Playwright uses `/usr/bin/chromium` or `CHROMIUM_PATH`; production preview test port 4173. Desktop/mobile scenarios plus a separate seven-width project test overlays, real transactions, no active persistence, independent tabs, lifecycle, genuine terminal archive and storage failure downloads. Unit tests retain the 100,000-origin audit, 40 detailed career paths and 20 annual-planner promotions.
@@ -50,4 +54,4 @@ Playwright uses `/usr/bin/chromium` or `CHROMIUM_PATH`; production preview test 
 
 Source: `app.html`, `src/`, `public/`. Root `index.html`, `assets/`, `art/` are generated compatibility outputs for existing Pages `main:/`. Build then stage-site; retain prior published hashes for cached HTML. Do not hand-edit generated HTML. `.github/workflows/pages.yml` tests/builds and deploys, then runs all three public verifiers. A successful push alone is not evidence of working public CSS/gameplay. Vite uses relative `./` paths for `/alltest/`. No backend, paid API or external runtime art service is required.
 
-Read docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md, docs/USER_DIRECTIVE_V7.md and docs/NEXT_CODEX_TASK.md before continuation. Interior/place art and modeled journeys, combat equipment, power/mortality, combat/NPC/long-life content targets are unfinished.
+Read docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md, docs/USER_DIRECTIVE_V7.md and docs/NEXT_CODEX_TASK.md before continuation. More places/room types, modeled risky journeys, combat equipment, power/mortality, combat/NPC/long-life content targets are unfinished.

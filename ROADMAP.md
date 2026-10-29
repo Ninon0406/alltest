@@ -1,13 +1,14 @@
 # Roadmap — V7 current checkpoint
 
-V7 supersedes conflicting stages below. Current 0.11.0 implements V7-4 inherited file-backed pixel characters and an ownership-backed basic wardrobe, retaining the first 30-fork early-life cluster.
+V7 supersedes conflicting stages below. Current 0.12.0 adds real house/classroom/ceremony art selected from actual place/story context, retaining V7-4 characters/wardrobe and the first 30-fork early-life cluster.
 
 - [x] V7-1 audit/precedence and canonical source pack.
 - [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
 - [x] V7-3 first playable cluster: 30 forks/90 choices across ages 0–19, with actual requirements and delayed consequences; nine school forks complete the first 30.
 - [ ] V7-3 full expansion to ≥100 coherent runnable forks; the first cluster does not satisfy this target.
 - [x] V7-4 published/verified: deterministic parental inheritance, nine groups × 20 visible variants, 183 PNG parts, growing body/gray hair, family portraits and owned casual clothes. Historical v1 births/identity remain. Full CI, preview and actual public scripts passed.
-- [ ] V7-5 art/journeys: twenty real PNGs for current twenty nodes, read-only map/main-page route choices done; interiors/new places/power-aware encounters remain.
+- [x] V7-5 interior slice: 16 real PNGs (15 procedural regional rooms + one original AI Starfall hall), exact 20-node bindings, pure care/story/venue selection, matching fallback and manual ceremony/travel regression checks. No extra locations or visits are inferred from room art.
+- [ ] V7-5 remainder: new places/room types and power-aware route encounters/rewards. Twenty outdoor PNGs, read-only map and actual main-page route choices remain working. Implement owned combat gear/modifiers and earned power before advertising encounter survival probabilities.
 - [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.
 - [ ] V7-7/8 combat gear/modifiers/shops beyond the five owned basic garments, economy/NPC/combat, earned lifespan and deity gates.
 - [ ] V7-9/10 full authored counts, balance and hardening.
