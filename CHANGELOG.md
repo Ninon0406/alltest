@@ -4,7 +4,7 @@
 
 Added sixteen actual local 320×160 interior PNGs: fifteen original procedural regional homes/classrooms/ceremony rooms, plus one original AI Starfall hall with preserved source/provenance. A pure GameState selector uses actual infant care, explicitly indoor pending stories and the active ceremony venue; resolved/paused rituals and ambiguous conversations return outdoors. All twenty canonical nodes have exact bindings; the map keeps its original outside landmarks. Room rendering adds no time, movement, money, visit or invented equipment. Matching procedural fallback handles missing files. Existing One Life, inherited identities/wardrobe, manual choices, seven-stage measurement, careers and travel remain. No authored content counts or world node IDs changed. Full V7-5 encounters/new places and later gear/power/lifespan targets remain incomplete.
 
-Local validation: 94 unit / 57 browser cases passed, zero skipped; content/build/staging and source/staged PNG/pixel/provenance audits passed. The complete 180-character composition audit passed. Production/publication evidence follows in docs/NEXT_CODEX_TASK.md after actual verification.
+Validation: 94 unit / 57 browser cases passed, zero skipped; content/build/staging and source/staged PNG/pixel/provenance audits passed. The complete 180-character composition audit and all three preview/public scripts passed. Runtime `dc94d89` serves `app-DBrAbMLw.js` / `app-DtLojNI8.css`; branch Pages 40886659722 and full test/build/deploy/live workflow 40886662148 succeeded. See docs/NEXT_CODEX_TASK.md for exact evidence and remaining work.
 
 ## 0.11.0 — 2026-10-29 — inherited pixel characters and family wardrobe
 

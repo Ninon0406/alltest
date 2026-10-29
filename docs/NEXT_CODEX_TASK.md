@@ -16,11 +16,11 @@ V7-5 interior slice implemented this round:
 
 ## Work in progress / latest local verification
 
-Implementation is complete and playable locally. Publication evidence is recorded below after deployment; do not claim a public release until its tests/HTML actually confirm it. No partial gameplay stub is left.
+Implementation is complete and playable locally and on actual Pages. All three independent public verification scripts and the full CI test/build/deploy/live workflow passed; exact evidence is recorded below. No partial gameplay stub is left.
 
 Confirmed: `npm ci`; **94/94 Vitest cases** across fourteen files; `npm run content`; `npm run build`; `node scripts/stage-site.mjs`; source and staged-root interior validation; staged character validation; all **180 complete character composition fixtures** visibly distinct; **57/57 Playwright cases**, zero skipped, desktop/mobile plus seven viewport widths. Existing scene/character audits are included in content validation. New tests cover pure no-write context, actual school resolution, seven ritual stages/pause/venue travel/return, real walking costs, actual Starfall binding and missing-file fallback.
 
-All three Production Preview scripts passed at `http://127.0.0.1:4185/`: seven widths, actual local assets and family portraits, exact month/progress/overlay behavior, birth-to-20 school/ceremony/career/jobs/training/wardrobe/tuition and genuine age-60 ending with one terminal-only archive. The 360×900 home screen was visually inspected with no overflow; classroom/ceremony checks use real action-driven age progression. An initial preview invocation mistakenly used `/alltest/` on a root-only Vite preview, so JS could not load; correcting the test URL made the full scripts pass. The public Pages URL correctly retains `/alltest/`.
+All three Production Preview scripts passed at `http://127.0.0.1:4185/`: seven widths, actual local assets and family portraits, exact month/progress/overlay behavior, birth-to-20 school/ceremony/career/jobs/training/wardrobe/tuition and genuine age-60 ending with one terminal-only archive. The 360×900 home, classroom and ceremony screens were visually inspected with no overflow; classroom/ceremony checks use real action-driven age progression. An initial preview invocation mistakenly used `/alltest/` on a root-only Vite preview, so JS could not load; correcting the test URL made the full scripts pass. The public Pages URL correctly retains `/alltest/`.
 
 Required final checks for future changes: npm test; npm run content; npm run build; node scripts/stage-site.mjs; npm run test:e2e; source/staged interior and character validators; character composition audit; all three production scripts on preview then actual Pages. Heavy suites run sequentially. Keep the existing 90-second genuine full-lifetime browser budgets; no retries/skips or injected gameplay ages. CI now also validates staged interior files after staging.
 
@@ -44,7 +44,7 @@ Do not repeat V7-4 or these three room types. V7-5's remaining encounter/risk wo
 
 V7-5: additional room types/new places and actual route encounters/rewards. Later: full ≥100 coherent forks/≥100 reachable endings; combat equipment/modifiers/shops; graded affinity/power/title/aura/breakthroughs; actual combat/dungeons; businesses/crafting; important NPCs/companions/relationships; mortality/lifespan extension/eras/≥1000-year deity routes. Shared regional rooms do not distinguish every family's wealth or weather/daylight; those systems are not simulated here. Detailed optional reader stays outside rather than guessing venues. Parent portraits remain fixed birth-reference profiles; no parent NPC aging/lifespan is implied.
 
-No known unresolved regression in completed local tests. Physical iOS/PWA/native unload behavior remains outside guaranteed Chromium coverage. Public/CI status is recorded separately below, without treating push success as deployment proof.
+No known unresolved regression in completed local, CI or independently run public tests. Physical iOS/PWA/native unload behavior remains outside guaranteed Chromium coverage. Public/CI status is recorded separately below, without treating push success as deployment proof.
 
 ## Files changed this round
 
@@ -56,4 +56,6 @@ Updated: scene renderer/styles, content/production/progression scripts, package/
 
 Base `88490704651b73b62e3b7d70e589bf36a119c2ad`. Prior 0.11.0 full test/composition/build/deploy/live workflow [40881537802](https://github.com/Ninon0406/alltest/actions/runs/40881537802) passed.
 
-0.12.0 source work is pending its implementation commit and publication verification. Build currently stages `assets/app-DBrAbMLw.js` / `assets/app-DtLojNI8.css`. After committing, push normally without force; verify branch Pages and full workflow, fetch actual public HTML, then run all three public scripts. Record confirmed commit/run URLs here in a documentation-only follow-up. Never mark all V7 complete.
+0.12.0 runtime commit: `dc94d89e40fa9a2517183e6538e6089b9b5eb2f0`, pushed normally to main. Branch Pages [40886659722](https://github.com/Ninon0406/alltest/actions/runs/40886659722) succeeded. Actual public HTML fetched from https://ninon0406.github.io/alltest/ serves `assets/app-DBrAbMLw.js` / `assets/app-DtLojNI8.css`. All three independent public scripts passed: seven responsive widths and complete room/character hash/decoding checks; actual birth-to-20 classroom/ritual/career/wardrobe/teen progression; independent tabs, authentic age-60 ending, one terminal summary and no resume.
+
+Full test/composition/build/deploy/live workflow [40886662148](https://github.com/Ninon0406/alltest/actions/runs/40886662148) completed successfully (build and deploy). Its GitHub browser annotation confirms 57 passed in 3.0 minutes. Committed source and generated PNGs were unchanged by CI; no replacement compiled commit was needed. This final documentation-only verification record uses `[site-build]`; see `git log -1` for its exact hash. Keep old hashes and main:/ Pages settings. Start the next equipment milestone above; never mark all V7 complete.
