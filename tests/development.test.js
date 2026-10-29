@@ -42,7 +42,7 @@ it('keeps all seven ritual steps manual, archives the measured result once and r
  expect(s.progression.awakening.result).toEqual(measured);expect(s.journal.filter(e=>e.eventId?.startsWith('awakening.'))).toHaveLength(7);expect(s.journal.filter(e=>e.eventId?.startsWith('awakening.')).every(e=>!e.automatic)).toBe(true);
 });
 it('moves only through an explicit journey choice, with exact time, stamina and ledger costs',()=>{
- let s=simulateV7(8,{targetAge:12,ceremony:true}).state;s=act(s,{type:'yearFocus',focus:'explore'});const current=s.world.currentLocationId;s=act(s,{type:'advanceDays',days:30});expect(s.world.currentLocationId).toBe(current);
+ let s=simulateV7(8,{targetAge:12,ceremony:true}).state;s=act(s,{type:'yearFocus',focus:'explore'});const current=s.world.currentLocationId;s=act(s,{type:'advanceDays',days:30});expect(s.world.currentLocationId).toBe(current);if(pendingDecision(s))s=choose(s);
  const destination=[...revealedLocations(s)].find(id=>findRoute(s,id,'walk')),route=findRoute(s,destination,'walk'),before=structuredClone(s);
  expect(()=>act(s,{type:'travel',destination})).toThrow(/หน้าหลัก/);
  s=act(s,{type:'journeyChoice',destination,method:'stay'});expect(s.time).toEqual(before.time);expect(s.world).toEqual(before.world);

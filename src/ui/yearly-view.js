@@ -11,9 +11,17 @@ export function stopYearlyAuto(){auto=false;clearTimeout(timer);timer=null;}
 export function isYearlyAuto(){return auto;}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopYearlyAuto();else refreshActive?.();});
 function card(parent,title){const node=document.createElement('section');node.className='year-card';parent.append(node);if(title)paragraph(node,title,'h3');return node;}
+function renderOutcome(parent,state){
+ const result=state.story?.lastOutcome;if(!result)return;
+ const details=document.createElement('details');details.className='story-outcome';parent.append(details);paragraph(details,`ผลเรื่องต่อเนื่อง · ${result.title}`,'summary');
+ const months=Math.floor((result.day-state.time.birthAbsoluteDay)/30);paragraph(details,`อายุขณะตัดสินใจ ${months<36?months+' เดือน':Math.floor(months/12)+' ปี'}`,'small');paragraph(details,result.choice);paragraph(details,result.text);
+ if(result.goldDelta)paragraph(details,`เงินเปลี่ยน ${result.goldDelta} เหรียญ`);
+ for(const e of result.effects){if(e.op==='learning')paragraph(details,`${statNames[e.key]}: ประสบการณ์เมื่อฝึกจริงเพิ่ม ${e.amount} ต่อครั้ง`);else if(e.op==='wage')paragraph(details,`ค่าจ้างเมื่อลงมือทำงานอาชีพเพิ่ม ${e.amount} เหรียญต่องาน`);}
+}
 export function renderDecision(parent,state,perform){
  const decision=pendingDecision(state);if(!decision)return;
  paragraph(parent,`อายุ ${ageLabel(state)} · ${decision.title}`,'h3');
+ renderOutcome(parent,state);
  const text=textTokens(decision.text,state),parts=text.split('\n\n');paragraph(parent,parts[0]);if(parts.length>1){const more=document.createElement('details');parent.append(more);paragraph(more,'อ่านเพิ่มเติม','summary');paragraph(more,parts.slice(1).join('\n\n'));}
  for(const c of decision.choices){const description=c.disabled?c.unavailable:c.description??`${statNames[c.stat]} +1 · ความทรงจำ +2${c.gold?' · +'+c.gold+' เหรียญ':''}`;const button=actionButton(parent,`${c.label}\n${description}`,{type:'majorChoice',decisionId:decision.id,choiceId:c.id,token:storyToken(state)},perform);button.className='major-option';button.disabled=!!c.disabled;}
  paragraph(parent,'ปิดหน้าต่างเพื่อดูข้อมูลอื่นได้ เวลาจะรอจนกว่าคุณตัดสินใจ','small');
@@ -47,5 +55,6 @@ export function renderYearly(parent,state,perform,refresh){
  const last=state.yearly.reports.at(-1);if(last){const r=card(dock,'ช่วงที่ผ่านมา');paragraph(r,`${last.days} วันที่ผ่านจริง · เงิน ${last.goldDelta>=0?'+':''}${last.goldDelta} เหรียญ`);paragraph(r,`ฝึก ${last.counts.training} · งาน ${last.counts.work} · เดินทาง ${last.counts.travel}`,'small');const more=document.createElement('details');r.append(more);paragraph(more,'คุณลักษณะที่เปลี่ยน','summary');paragraph(more,Object.entries(last.statDeltas).map(([k,v])=>`${statNames[k]} ${v>=0?'+':''}${v}`).join(' · ')||'คุณลักษณะคงเดิม');}
  const journal=card(dock,'บันทึกล่าสุด'),recent=state.journal.filter(e=>e.annualReport||e.majorDecision||!e.automatic).slice(-3).reverse();for(const e of recent){const p=paragraph(journal,`${e.ageMonths!=null&&e.ageMonths<36?e.ageMonths+' เดือน':e.age+' ปี'} · ${e.title}`);p.className='journal-line';}if(!recent.length)paragraph(journal,'เลือกแนวชีวิตแล้วค่อย ๆ เติบโต เรื่องราวจะเริ่มสะสมที่นี่');panelButton(journal,'บันทึกชีวิตรายปี','chronicle');
  const family=card(dock,'คนที่บ้าน');paragraph(family,state.family);if(state.birth)paragraph(family,`${state.birth.parents.mother} · ${state.birth.parents.father}`);if(state.story)paragraph(family,`ความผูกพันกับผู้ดูแล ${state.story.relationships.caregivers} · ความไว้ใจในชุมชน ${state.story.relationships.community}`,'small');panelButton(family,'ครอบครัวและกำเนิด','record');
+ renderOutcome(center,state);
  if(auto&&!decision&&!document.hidden)timer=setTimeout(()=>{timer=null;if(!auto||document.hidden||document.querySelector('dialog[open]'))return;if(!perform({type:'advanceDays',days:30,token})){stopYearlyAuto();refresh();}},800/speed);
 }

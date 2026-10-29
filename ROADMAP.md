@@ -1,10 +1,10 @@
 # Roadmap — V7 current checkpoint
 
-V7 supersedes conflicting stages below. Current 0.8.0 completes V7-1/2 and the first nine-fork V7-3 slice.
+V7 supersedes conflicting stages below. Current 0.9.0 retains V7-1/2 and completes the teen education/support chain, bringing V7-3 to 21 real forks.
 
 - [x] V7-1 audit/precedence and canonical source pack.
 - [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
-- [ ] V7-3 30–50 full early-life forks first, then ≥100: nine forks/27 choices currently verified, including delayed effects and a conditional role. Teen support chain is next.
+- [ ] V7-3 30–50 full early-life forks first, then ≥100: 21 forks/63 choices currently verified, including tuition, school/family support, actual training/wage consequences and eligibility. Nine more coherent childhood/regional forks are next.
 - [ ] V7-4 inherited visible appearance catalogs: v1 actor remains.
 - [ ] V7-5 art/journeys: twenty real PNGs for current twenty nodes, read-only map/main-page route choices done; interiors/new places/power-aware encounters remain.
 - [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.

@@ -32,8 +32,9 @@ export function renderCareer(parent,state,perform){
  }
  paragraph(parent,'ฝึกพื้นฐานฟรี','h3');
  if(state.age>=8){
-  const select=document.createElement('select');select.setAttribute('aria-label','หัวข้อฝึกพื้นฐาน');for(const stat of statKeys){const option=document.createElement('option');option.value=stat;option.textContent=statNames[stat];select.append(option);}select.value=selectedStat;select.onchange=()=>{selectedStat=select.value;};parent.append(select);
-  const q=trainingQuote(state);paragraph(parent,`ฝึก ${q.days} วัน • ใช้ความอึด ${q.stamina} • เหนื่อยล้า +${q.fatigue} • สมาธิ -${q.focus} • ได้ ${q.xp} ประสบการณ์หัวข้อฝึก • ทุก 20 ประสบการณ์เพิ่มคุณลักษณะ 1 จุด ผลตอบแทนลดลงเมื่อฝึกถี่ในรอบ 30 วัน`);
+  const select=document.createElement('select');select.setAttribute('aria-label','หัวข้อฝึกพื้นฐาน');for(const stat of statKeys){const option=document.createElement('option');option.value=stat;option.textContent=statNames[stat];select.append(option);}select.value=selectedStat;select.onchange=()=>{selectedStat=select.value;updateQuote();};parent.append(select);
+  const quoteText=paragraph(parent,'');quoteText.className='training-quote';const updateQuote=()=>{const q=trainingQuote(state,selectedStat);quoteText.textContent=`ฝึก ${q.days} วัน • ใช้ความอึด ${q.stamina} • เหนื่อยล้า +${q.fatigue} • สมาธิ -${q.focus} • ได้ ${q.xp} ประสบการณ์ (รวมคำแนะนำ +${q.learningBonus}) • ทุก 20 ประสบการณ์เพิ่มคุณลักษณะ 1 จุด ผลตอบแทนลดลงเมื่อฝึกถี่ในรอบ 30 วัน`;};updateQuote();
+  if(state.story?.learning)paragraph(parent,`คำแนะนำสะสม (สูงสุด 3 ต่อวิชา): ${Object.entries(state.story.learning).map(([stat,n])=>`${statNames[stat]} +${n}`).join(' · ')}`,'small');
   const b=document.createElement('button');b.textContent='เริ่มฝึกฟรี';b.onclick=()=>perform({type:'train',stat:selectedStat,token});parent.append(b);
   actionButton(parent,'พักฟื้น 2 วัน • ฟรี • ฟื้นแรง สมาธิ และลดความเหนื่อยล้า',{type:'trainingRest',token},perform);
   paragraph(parent,`ความก้าวหน้าหัวข้อ: ${statKeys.map(stat=>`${statNames[stat]} ${p.practice[stat]??0}`).join(' • ')}`);

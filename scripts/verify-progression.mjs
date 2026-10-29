@@ -15,10 +15,11 @@ try{
   await page.getByRole('button',{name:/^ดูแลสวนและแบ่งผลผลิต/}).click();if((await state()).gold!==before+8)throw Error('Career salary failed');
   await page.getByRole('button',{name:'เริ่มฝึกฟรี',exact:true}).click();await page.keyboard.press('Escape');
   if(JSON.stringify((await state()).progression.awakening.result)!==JSON.stringify(result))throw Error('Awakening changed in the same run');
-  await page.getByRole('button',{name:'ใช้ชีวิตต่อ 1 ปี',exact:true}).click();await page.locator('.major-option').first().click();await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();
+  await reachAge(page,13);await page.getByRole('button',{name:'อาชีพและการฝึก',exact:true}).click();
   if((await state()).progression.records.farmer.arcStep!==1)throw Error('Career story failed');
   if(!await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))throw Error('Career overflow');
+  await page.keyboard.press('Escape');await reachAge(page,20);const teen=await state();if(!['teen.application','teen.funding','teen.review'].every(id=>teen.story.completed.includes(id))||!teen.story.flags.school_enrolled||!teen.world.ledger.some(e=>e.source==='story:teen.funding'&&e.amount===-4)||!Object.values(teen.story.learning??{}).some(n=>n>0))throw Error('Teen story progression failed');if(JSON.stringify(teen.progression.awakening.result)!==JSON.stringify(result))throw Error('Story rerolled ceremony');
   if(errors.length)throw Error(errors.join('\n'));
-  await page.screenshot({path:`/tmp/reborn-career-${width}.png`});console.log(`PASS ${url} ${width}: paced birth-to-12 plan, rare milestones, seven manual awakening steps, career, salary, training, in-memory continuity, career episode`);await page.close();
+  await page.screenshot({path:`/tmp/reborn-career-${width}.png`});console.log(`PASS ${url} ${width}: paced birth-to-12 plan, rare milestones, seven manual awakening steps, career, salary, training, in-memory continuity, career episode, teen education/support through age 20`);await page.close();
  }
 }finally{await browser.close();}

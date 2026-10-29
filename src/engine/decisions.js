@@ -5,7 +5,7 @@ import {calendar} from './time.js';
 import {isV7,developmentDecision,nextDevelopmentDay} from './development.js';
 function careerDue(state,event){return Math.max([13,15,17][event.stage],state.yearly.cooldowns[event.id]??0,(state.yearly.lastCareerAge??-10)+2);}
 export function pendingDecision(state){
- const development=developmentDecision(state);if(development)return development;
+ const development=developmentDecision(state);if(development&&development.month<144)return development;
  const y=state.yearly,a=state.progression.awakening,age=calendar(state).ageYears;
  if(age>=12&&a.step<7&&!a.paused){
   if(isV7(state)){const e=awakeningEvents[a.step];return {id:'turn.awakening',stage:a.step,kind:'awakening',title:`พิธีแห่งเส้นชีพจร · ${a.step+1}/7 · ${e.title}`,text:e.pages.join('\n\n'),choices:[...e.choices.map(c=>({...c,description:'เลือกขั้นตอนนี้ด้วยตนเอง · ใช้เวลา 1 วัน'})),{id:'later',label:'พักพิธีไว้ก่อน',description:'เก็บขั้นตอนและผลที่วัดแล้ว กลับมาเมื่อพร้อม'}]};}
@@ -17,14 +17,14 @@ export function pendingDecision(state){
    {id:'later',label:'พักพิธีไว้ก่อน',description:'ใช้ชีวิตด้านอื่นแล้วกลับมาเมื่อพร้อม'},
   ]};
  }
- if(y.lastMajorAge===age)return null;
+ if(y.lastMajorAge===age)return development;
  const careerId=state.progression.activeCareerId,record=state.progression.records[careerId];
  if(careerId&&record.arcStep<3){
   const e=careerEvents.find(e=>e.careerId===careerId&&e.stage===record.arcStep);
   if(age>=careerDue(state,e))return {id:e.id,kind:'career',title:e.title,text:e.pages.join('\n\n'),event:e,choices:[...e.choices.map(c=>({id:c.id,label:c.label,description:'พัฒนาคุณลักษณะ ความชำนาญ และผลถาวรตามเรื่องอาชีพ'})),{id:'consult',label:'ปรึกษาผู้มีประสบการณ์แล้วค่อยลงมือ',description:'เรียนรู้จากคำแนะนำ ได้ความชำนาญและประสิทธิภาพการฝึก'},{id:'later',label:'เก็บเรื่องนี้ไว้ทบทวนอีกสองปี',description:'ใช้ชีวิตด้านอื่นต่อได้'}]};
  }
  const e=lifeMilestones.find(e=>age>=e.minAge&&age<=e.maxAge&&!y.completed.includes(e.id));
- return e?{...e,kind:'life'}:null;
+ return e?{...e,kind:'life'}:development;
 }
 // Absolute calendar boundary, shared by the planner and every external timed action.
 export function nextDecisionDay(state){

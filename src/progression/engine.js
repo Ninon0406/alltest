@@ -38,17 +38,18 @@ export function restFromTraining(state){
  guardExternalTime(state,2);recoverProgression(state,40);state.stamina+=35;state.mana+=20;state.hp+=10;state.morale+=6;
  recordAction(state,'พักฟื้นจากการฝึก',2);advanceTime(state,2);
 }
-export function trainingQuote(state){
+export function trainingQuote(state,stat=state.yearly.stat){
  const p=state.progression,window=Math.floor(state.time.absoluteDay/30),count=p.trainingWindow===window?p.trainingCount:0;
  const c=currentCareer(state),r=c?p.records[c.id]:null;
  const base=Math.max(3,8-Math.floor(count/2));
  const affinityBonus=c&&state.progression.awakening.result?.scores[c.id]?.score>=21?1:0;
- return {days:7,stamina:15,fatigue:20,focus:12,xp:base+affinityBonus+(r?.trainingBonus??0)+(r?.advanced?c.advanced.trainingBonus:0)};
+ const learningBonus=state.story?.learning?.[stat]??0;
+ return {days:7,stamina:15,fatigue:20,focus:12,learningBonus,xp:base+affinityBonus+(r?.trainingBonus??0)+(r?.advanced?c.advanced.trainingBonus:0)+learningBonus};
 }
 export function train(state,stat){
  if(state.age<8)throw Error('ฝึกพื้นฐานได้เมื่ออายุ 8 ปี');
  if(!statKeys.includes(stat))throw Error('หัวข้อฝึกไม่ถูกต้อง');
- const q=trainingQuote(state),p=state.progression;
+ const q=trainingQuote(state,stat),p=state.progression;
  if(state.stamina<q.stamina||p.fatigue>=80||p.focus<20||state.morale<20)throw Error('ร่างกายหรือสมาธิยังไม่พร้อม กรุณาพักฟื้นก่อน');
  guardExternalTime(state,q.days);
  const window=Math.floor(state.time.absoluteDay/30);if(p.trainingWindow!==window){p.trainingWindow=window;p.trainingCount=0;}p.trainingCount++;
@@ -58,7 +59,7 @@ export function train(state,stat){
  state.stamina-=q.stamina;p.fatigue+=q.fatigue;p.focus-=q.focus;
  recordAction(state,'ฝึกพื้นฐานตามความถนัด',q.days,{stat,skillXp:q.xp,statGain:newLevel-oldLevel,careerId:c?.id??null});advanceTime(state,q.days);
 }
-export function jobQuote(state){const c=currentCareer(state);if(!c)return null;const r=state.progression.records[c.id];return {days:7,stamina:15,fatigue:12,gold:c.wage+(r.payBonus??0)+(r.advanced?c.advanced.payBonus:0),xp:6};}
+export function jobQuote(state){const c=currentCareer(state);if(!c)return null;const r=state.progression.records[c.id];return {days:7,stamina:15,fatigue:12,gold:c.wage+(r.payBonus??0)+(r.advanced?c.advanced.payBonus:0)+(state.story?.wageBonus??0),xp:6};}
 export function workCareer(state){
  const c=currentCareer(state);if(!c||state.age<12||state.progression.awakening.step<7)throw Error('ผ่านพิธีและเลือกอาชีพก่อนรับงานประจำ');
  const p=state.progression,q=jobQuote(state);
