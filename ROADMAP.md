@@ -6,7 +6,7 @@ V7 supersedes conflicting stages below. Current 0.11.0 implements V7-4 inherited
 - [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
 - [x] V7-3 first playable cluster: 30 forks/90 choices across ages 0–19, with actual requirements and delayed consequences; nine school forks complete the first 30.
 - [ ] V7-3 full expansion to ≥100 coherent runnable forks; the first cluster does not satisfy this target.
-- [ ] V7-4 implemented, final release verification pending: deterministic parental inheritance, nine groups × 20 visible variants, 183 PNG parts, growing body/gray hair, family portraits and owned casual clothes. Historical v1 births/identity remain.
+- [x] V7-4 published/verified: deterministic parental inheritance, nine groups × 20 visible variants, 183 PNG parts, growing body/gray hair, family portraits and owned casual clothes. Historical v1 births/identity remain. Full CI, preview and actual public scripts passed.
 - [ ] V7-5 art/journeys: twenty real PNGs for current twenty nodes, read-only map/main-page route choices done; interiors/new places/power-aware encounters remain.
 - [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.
 - [ ] V7-7/8 combat gear/modifiers/shops beyond the five owned basic garments, economy/NPC/combat, earned lifespan and deity gates.

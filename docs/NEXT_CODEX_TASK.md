@@ -17,11 +17,11 @@ V7-4 implementation this round:
 
 ## Current work / tests
 
-Implemented and locally integrated; finish the final full browser/preview/live/CI checks below before marking V7-4 released. No intentional incomplete gameplay stub is left.
+V7-4 is complete, published and verified locally and on actual Pages. Full CI passed test/build/composition/staging/deploy/live checks. No incomplete gameplay stub is left; start V7-5 below.
 
 Confirmed: `npm ci`; 88/88 Vitest cases; `npm run content`; `npm run build`; `node scripts/stage-site.mjs`; source/staged character asset validation; the complete 180-fixture composition audit; full 51/51 Playwright cases (zero skipped). Unit coverage includes 1,000 deterministic families, bounded real donor inheritance, coverage of all twenty trait values and all eighty casual clothing designs, frozen birth parity, actual timed progression, atomic invalid/unowned dressing, wrapped infant/hat state and terminal-only archived identity.
 
-All three production-preview scripts passed: seven responsive widths, 20 existing scene PNGs and all 183 character PNG hashes/decodes plus the family background, actual family portraits, overlays/month/progress/no resume; birth-to-20 manual school/ceremony/career/job/training/tuition, zero-cost owned clothes with unchanged genes/stats/time; independent tabs, zero active writes, genuine age-60 ending, one archived inherited identity and no seed/resume. Family and main-screen screenshots were visually reviewed at 360×900; no overflow. Actual public/CI evidence is pending below.
+All three production-preview and actual public-site scripts passed: seven responsive widths, 20 existing scene PNGs and all 183 character PNG hashes/decodes plus the family background, actual family portraits, overlays/month/progress/no resume; birth-to-20 manual school/ceremony/career/job/training/tuition, zero-cost owned clothes with unchanged genes/stats/time; independent tabs, zero active writes, genuine age-60 ending, one archived inherited identity and no seed/resume. Family and main-screen screenshots were visually reviewed at 360×900; no overflow. Final full CI passed; the GitHub Playwright annotation explicitly reports 51 passed.
 
 Early pixel probes found duplicate face/eye designs, then another face pair while standardizing eye registration. These were corrected with actual eyebrow/chin/eyelid/iris geometry; both PNG-level and complete-composition checks now pass twenty distinct outputs in each group. Do not substitute metadata/name hashes for rendered pixels.
 
@@ -45,9 +45,9 @@ After this release is verified, do not redo V7-4 or the first 30-fork cluster.
 
 ## Remaining / limits
 
-Full ≥100-fork/≥100-ending expansion; richer interiors/new places; actual route encounters/combat/dungeons; graded affinity/title/aura/power growth; combat gear/shops/modifiers; crafting/businesses; important NPCs/companions; mortality/extension/eras/≥1000-year deity gates remain incomplete. Power is still honestly level 1, separate from practice/career XP. Family profiles are appearance records, not a full NPC relationship/lifespan model.
+Full ≥100-fork/≥100-ending expansion; richer interiors/new places; actual route encounters/combat/dungeons; graded affinity/title/aura/power growth; combat gear/shops/modifiers; crafting/businesses; important NPCs/companions; mortality/extension/eras/≥1000-year deity gates remain incomplete. Power is still honestly level 1, separate from practice/career XP. Parent portraits are fixed adult birth-reference appearance profiles; parent aging/current NPC status and a full NPC relationship/lifespan model are not simulated by this phase.
 
-No known unresolved regression in completed local checks. Full browser, public production evidence and physical iOS/PWA/native unload behavior must not be assumed from local build success.
+No known unresolved regression in completed local, CI and public checks. Physical iOS/PWA/native unload behavior remains outside guaranteed Chromium coverage.
 
 ## Files changed
 
@@ -59,4 +59,4 @@ Updated: run/actions/appearance, v1 sprite/portrait delegation, birth record/pan
 
 Base `8f31f85b00f8f6247b62593da4da371db66f1b11`. Prior final full CI [40845239881](https://github.com/Ninon0406/alltest/actions/runs/40845239881) passed for 0.10.0.
 
-0.11.0 runtime commit/publication not yet recorded. Current local bundle: `assets/app-Bp4m3zB2.js` / `assets/app-BGZLPjBY.css`. Do not call it published until actual Pages HTML and public verifiers confirm it. Final source/CI/branch deployment evidence belongs here after release.
+0.11.0 runtime commit: `a38c1bad92c8fdfb5035f7bc52f2c0aa049288bb`. Branch Pages [40881537540](https://github.com/Ninon0406/alltest/actions/runs/40881537540) and full test/composition/build/deploy/live workflow [40881537802](https://github.com/Ninon0406/alltest/actions/runs/40881537802) both completed successfully. Actual public HTML independently fetched from https://ninon0406.github.io/alltest/ serves `assets/app-Bp4m3zB2.js` / `assets/app-BGZLPjBY.css`; all three public scripts passed. Source and committed PNGs were unchanged by CI. The final documentation-only verification record uses `[site-build]`; see `git log -1` for its exact hash. Preserve the old published hashes and current main:/ Pages configuration.
