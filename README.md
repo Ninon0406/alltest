@@ -1,6 +1,6 @@
 # REBORN · หนึ่งชีวิตในเอลินดรา
 
-Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.7.0 completes V6 Phases A/B and adds the initial pixel-scene foundation.
+Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.8.0 completes the V7 infant/time correction and a first coherent story slice, continuing the V6 memory-only dashboard.
 
 Play: https://ninon0406.github.io/alltest/
 
@@ -12,9 +12,11 @@ Only a genuinely completed authored ending produces a compact summary in `reborn
 
 ## Play and current scope
 
-The age/power header stays above the scene. Choose an annual focus and advance 1/2/5 years or seek a meaningful crossroad. Minor stories accumulate automatically; rare decisions open 4–5-option dialogs and hold time. Autoplay is optional, 1/2/4/8×, and stops on decisions, hidden tab, any overlay or rejected action. Details live in one accessible modal surface with ESC, keyboard focus handling and session-only font/motion options.
+The age/power header stays above the scene. Until three, age is shown in months and routines stay under caregiver supervision. Nine V7 developmental/school forks offer 27 actual choices, with early memories/relationships changing later outcomes and eligibility. Later choose an age-appropriate focus and advance 1/2/5 years or seek a decision. Seven awakening stages are chosen individually. Autoplay is optional, fixed 30-day ticks at 1/2/4/8/16×; actual calendar progress stops on decisions, hidden tabs, overlays and rejected actions.
 
-Original pixel figures now stand in 20 distinct procedural location backdrops. Appearance still uses the existing v1 identity; parental inheritance and ≥20 actual variants per requested group remain Phase C. Real owned equipment is Phase D. Power displays its initial Lv1; earned 1–100 progression/breakthroughs and lifespan/God routes remain Phases E/F. No empty future-system buttons are exposed. Existing equal births, 360-day calendar, seven actual awakening stages, 20 base/20 higher careers, rare annual stories, 20 connected map nodes, walking/rest/bread economy and all six original endings remain functional. See CONTENT_MANIFEST.md for actual counts.
+The map is a position/information viewer. Choose journeys from the main scene: caravan, free walking or staying, with real days/money/stamina/ledger. Career panels recommend up to eight eligible paths; other eligible paths remain in the codex. All dialogs keep one live run and support keyboard/ESC and session-only font/motion options.
+
+Original v1 pixel actors stand in 20 location-specific PNG backdrops generated from local tile compositions. Run `node scripts/verify-assets.mjs` to check mapping/dimensions/hashes; regenerate deliberately with `node scripts/generate-scene-assets.mjs` using installed Chromium. No hosted image service runs in gameplay. Parent inheritance/variant catalogs, owned gear, power growth, lifespan/deity paths, full fork/ending targets and combat remain incomplete. Existing equal births, 360-day calendar, 20 base/20 higher careers, twenty map nodes and six original endings remain; see CONTENT_MANIFEST.md for honest playable versus draft counts.
 
 ## Development and validation
 
@@ -38,6 +40,6 @@ Playwright uses `/usr/bin/chromium` or `CHROMIUM_PATH`; production preview test 
 
 ## Publication
 
-Source: `app.html`, `src/`, `public/art`. Root `index.html`, `assets/`, `art/` are generated compatibility outputs for existing Pages `main:/`. Build then stage-site; retain prior published hashes for cached HTML. Do not hand-edit generated HTML. `.github/workflows/pages.yml` tests/builds and deploys, then runs all three public verifiers. A successful push alone is not evidence of working public CSS/gameplay. Vite uses relative `./` paths for `/alltest/`. No backend, paid API or external runtime art service is required.
+Source: `app.html`, `src/`, `public/`. Root `index.html`, `assets/`, `art/` are generated compatibility outputs for existing Pages `main:/`. Build then stage-site; retain prior published hashes for cached HTML. Do not hand-edit generated HTML. `.github/workflows/pages.yml` tests/builds and deploys, then runs all three public verifiers. A successful push alone is not evidence of working public CSS/gameplay. Vite uses relative `./` paths for `/alltest/`. No backend, paid API or external runtime art service is required.
 
-Read docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md and docs/NEXT_CODEX_TASK.md before continuation. Full pixel inheritance, equipment, power/mortality, combat/NPC/long-life content targets are unfinished.
+Read docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md, docs/USER_DIRECTIVE_V7.md and docs/NEXT_CODEX_TASK.md before continuation. Full pixel inheritance, equipment, power/mortality, combat/NPC/long-life content targets are unfinished.

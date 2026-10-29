@@ -1,5 +1,6 @@
 import { locations, routes } from './locations.js';
 import { calendar, advanceTime, recordAction } from '../engine/time.js';
+import {guardDecisionTime} from '../engine/decisions.js';
 export function findRoute(state,destination,method='caravan'){
  if(!['caravan','walk'].includes(method))return null;
  const start=state.world.currentLocationId;if(!locations[destination] || start===destination)return null;
@@ -14,6 +15,7 @@ export function findRoute(state,destination,method='caravan'){
 }
 export function revealedLocations(state){return new Set(state.world.visited.flatMap(id=>[id,...locations[id].neighbors]));}
 export function guardExternalTime(state,days){
+ guardDecisionTime(state,days);
  const age=calendar(state).ageYears;
  if(state.yearly?.view!=='yearly' && state.life.mode==='annual' && age<12 && state.time.absoluteDay+days>=state.time.birthAbsoluteDay+(age+1)*360)throw Error('อ่านเรื่องราวประจำปีให้จบก่อนเดินทางข้ามวันเกิด');
 }

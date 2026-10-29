@@ -1,34 +1,39 @@
-# Verified implemented content — 0.7.0
+# Verified implemented content — 0.8.0 / V7 subset
 
-Run `npm run content` for actual authored records and deterministic union reachability.
+Run `npm run content` for authored records, deterministic union reachability and actual file validation. Counts include retained historical optional content; they are not a claim of 100 completed V7 forks or mandatory prompts in one run.
 
 | Content | Authored | Reachable in audit |
 | --- | ---: | ---: |
 | Preserved legacy scenes / choices | 15 / 29 | 15 / 29 |
-| Childhood/household/daily event records | 38 | 38 |
-| Awakening stages / choices | 7 / 14 | 7 / 14 |
-| Career story episodes / choices | 60 / 120 | 60 / 120 |
-| New rare life crossroads / choices | 6 / 30 | 6 / 30 |
-| All annual event records / choices | 111 / 240 | 111 / 240 |
-| Total scenes/events / meaningful choices | 126 / 269 | 126 / 269 |
-| Endings | 6 | 6 |
-| Playable base career families | 20 | 20 |
-| Playable earned advanced paths | 20 | 20 |
+| Retained childhood/household/daily records | 38 | 38 |
+| Awakening stages / authored responses | 7 / 14 | 7 / 14 |
+| Career story episodes / responses | 60 / 120 | 60 / 120 |
+| Rare original life crossroads / responses | 6 / 30 | 6 / 30 |
+| New executable V7 developmental/school forks / responses | 9 / 27 | 9 / 27 |
+| All non-legacy event records / responses | 120 / 267 | 120 / 267 |
+| Total scenes/events / authored choices | 135 / 296 | 135 / 296 |
+| Genuine endings | 6 | 6 |
+| Playable base / earned advanced career families | 20 / 20 | 20 / 20 |
 | Functional map locations / regions / route edges | 20 / 5 / 20 | 20 / 5 / 20 |
 | Important authored NPC profiles / functional dungeons | 0 / 0 | 0 / 0 |
+| Actual local location PNGs / distinct file pixel hashes | 20 / 20 | 20 / 20 |
 
-Counted additions are genuinely authored situations, not repeated use or character-name permutations. The 60 career episodes are three different dilemmas per family, with detailed-reader age minima 12/13/16; default yearly pacing uses 13/15/17 or later and two-year spacing. Each option changes attributes, XP, saved story flags and a permanent training-versus-salary perk. The eight annual focuses, autoplay/time controls, generic career consultation/postponement, profession selection, training, work, map controls and promotion UI actions are functional but are not counted again as authored narrative choices.
+The nine V7 nodes occur at months 0, 3, 6, 12, 24, 36, 72, 96 and 120. Eight adapt source briefs `001/008/011/016/019/027/039/045`; the community-library follow-up is original. Each has three real choices. Early comfort/voice, sharing, river questions and library work influence later memory/relationship effects; returning the purse opens the distinct trust role at ten. These effects feed the existing memory/awakening calculations or actual relationship/gate state. Relationships are a small caregiver/community foundation, not 100 authored important NPCs.
 
-Audit coverage: 100 legacy births with feasible branch traversal, 100 retained detailed childhood playthroughs to age 12, and 40 actual career playthroughs (20 families × two story policies) from infancy through ceremony, eligibility/practice/work, three episodes and an earned promotion at 18+. Five annual-planner policies also advance from birth beyond age 60 to cover all 30 new authored outcomes. Unit tests separately earn all 20 advanced promotions through annual planning. No injected game clock is used for these complete playthroughs. Union reachability does not mean every choice/path appears in one life. Unit and browser tests separately exercise save migrations, fatigue/currency/age boundaries and production rendering.
+The existing 60 career episodes remain three dilemmas per career with actual stat/XP/training-versus-wage effects. New V7 lives choose each of the seven ritual stages manually; postponement is an operational action, not an extra authored fork. Focuses, calendar ticks, generic consultation/defer, travel controls, recommendations and repeated work/training are not additional narrative records.
 
-Other retained content: 120 distinct Thai names, 20 equally likely birth archetypes, 4 races, 8 household histories, 4 resource talents and 3 saved rare hidden identities (no hidden-power awakening yet). Original local assets remain 2 pixel illustrations, 1 AI environment and the layered SVG renderer. Career costumes extend that renderer; they are not counted as additional authored illustrations. Birth snapshots and copied publication assets do not increase location/content counts.
+## Audit coverage
 
-Not a full release: targets ≥350 events, ≥500 choices, ≥100 endings, ≥100 authored NPCs, ≥80 advanced/hybrid paths, ≥150 locations and ≥40 dungeons are not met. Equipment, combat, mentor/relationship systems, lifespan/ascension and region-specific content expansion remain outstanding.
+100 legacy births with feasible branch traversal; 100 historical detailed childhood runs; 40 complete career runs (20 × two story policies); five annual-planner policies beyond age 60; 100 new V7 seeded lives through age 12 and the full manual ceremony. All nine new forks / 27 choices are exercised across the three V7 policies, including the conditional branch. Full-playthrough clocks progress through actual actions, not injected ages. Union reachability spans different runs, including the retained optional/historical reader; not every old vignette appears in the new V7 main flow.
 
-Default pacing now chooses ordinary childhood responses automatically from the selected focus and labels those entries automatic. Authored counts include this preserved optional content, not 269 mandatory user prompts in one life. The six new life crossroads have genuinely authored situations; service controls and reuse of old narrative data do not inflate counts.
+## Art and authoring pack
 
-V6 Phase A changes run persistence, not authored counts. The six existing genuine terminal endings now produce a one-time concise history record; archive copies do not count as new endings. Runtime ignores active saves, while offline historical generation/migration validators remain tested. Pixel-v2 variants, power progression and owned equipment are not implemented by Phase A.
+Twenty original committed PNG files (320×160) now correspond one-to-one to the existing canonical locations, baked from `src/ui/scene-art.js`. `public/assets/scenes/manifest.json` binds ID/path/size/SHA-256; `scripts/verify-assets.mjs` rejects missing, duplicate or corrupt scene files. Scene and map preview render these files locally under the Pages base path, with a procedural fallback. Generated publication copies do not count twice. Other retained art: two pixel SVG illustrations, one original AI environment and v1 layered portrait/full-body renderers.
 
-0.7.0 visual/UI scope: one original small full-body pixel renderer using appearance-v1 and 20 distinct procedural map-location compositions in five regional palettes, also used in map previews. A unit check excludes text labels before counting distinct compositions. These are rendered views, not 20 additional raster illustrations, authored events or new functional locations. Existing v1 identity catalogs are retained; parental inheritance and the V6 ≥20/group appearance/clothing targets are not met. Actual owned equipment remains 0; bread is the one real stackable inventory item. Power progression is not implemented beyond the initial level-1 field/display.
+V7 JSON drafts are **not playable counts**: 150 draft locations (different IDs/no graph/service migration), 100 important-NPC drafts, 120 career-fork briefs, 123 life briefs, 200 tier titles (10 per career), 150 scene prompts, 20 interior prompts, 180 character-design entries. They lack executable effects/conditions/pixel geometry. Source target paths and labels are not generated assets or reachable endings.
 
-Local tests: 60 unit and 37 browser cases (including seven separate viewport cases); narrative counts remain 126/269/6. No tests for unimplemented inherited appearance, owned equipment or God progression are represented as passing.
+Retained birth data: 120 Thai names, 20 equal archetypes, four races, eight histories, four resource talents and three rare hidden identities. Frozen generator 1/2 tables are unchanged. Current sprite still uses appearance-v1: no inherited parent catalogs / ≥20 visible variants per group. Bread remains the one owned stackable item; no actual equipped weapons/armor. Power level is honestly 1, separate from career XP.
+
+## Remaining targets
+
+First 30–50 coherent V7 forks across ages 0–19, then ≥100 with verified downstream distinctions; ≥100 reachable endings; inherited character catalogs; richer file scenes/interiors/new locations; actual equipment/power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.

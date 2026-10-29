@@ -1,6 +1,6 @@
 # CODEX MASTER DIRECTIVE — REBORN GAME
 
-**Current override (V6 / 0.7.0):** docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md is authoritative where this historical specification conflicts. One Life One Run replaces every active-save/resume requirement below.
+**Current override (V7 / 0.8.0):** `docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md` and `docs/USER_DIRECTIVE_V7.md` supersede conflicting historical text. One Life remains memory-only. Infancy is care-based, choices are manual at precise calendar boundaries, and travel is chosen from the main scene. New V7 runs complete the actual seven ceremony stages manually; old condensed pacing remains for offline historical tests only. Nine new forks with real delayed consequences are implemented; ≥100 forks/endings, owned equipment, inherited appearance, power growth and longevity are future targets.
 
 You are the autonomous lead developer of REBORN: Chronicles of a Thousand Destinies.
 

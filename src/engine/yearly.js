@@ -1,5 +1,4 @@
-import { yearlyActivities,lifeMilestones } from '../data/yearly.js';
-import { careerEvents } from '../data/events/careers.js';
+import { yearlyActivities } from '../data/yearly.js';
 import { careers } from '../data/careers.js';
 import { infantEvents,childhoodEvents } from '../data/events/childhood.js';
 import { currentEvent,applyLifeChoice } from './life.js';
@@ -9,26 +8,10 @@ import { careerRecord } from '../progression/state.js';
 import { useService,availableServices } from '../world/economy.js';
 import { locations } from '../world/locations.js';
 import { revealedLocations,findRoute,travel } from '../world/travel.js';
-export function availableYearActivities(state){return yearlyActivities.filter(a=>state.age>=a.minAge);}
-export function pendingDecision(state){
- const y=state.yearly,a=state.progression.awakening,age=calendar(state).ageYears;
- if(age>=12&&a.step<7&&!a.paused)return {id:'turn.awakening',kind:'awakening',title:'พิธีแห่งเส้นชีพจร',text:'เลือกแนวทางเข้าร่วมพิธีเพียงครั้งเดียว ระบบจะดำเนินขั้นตอนที่เหลือและเก็บผลเดิมถ้ามีการวัดไปแล้ว คุณพักเรื่องนี้ไว้ก่อนได้',choices:[
-  {id:'curious',label:'เข้าร่วมด้วยความใฝ่รู้',description:'เน้นการสังเกตและทบทวนสมุด'},
-  {id:'careful',label:'เข้าร่วมอย่างรอบคอบ',description:'ค่อย ๆ ทำความเข้าใจขั้นตอนและขีดจำกัด'},
-  {id:'community',label:'ให้กำลังใจผู้ร่วมพิธี',description:'เน้นการฟังและช่วยคนรอบตัว'},
-  {id:'determined',label:'ตั้งใจค้นหาเส้นทางของตน',description:'เน้นเป้าหมายและการพัฒนาต่อ'},
-  {id:'later',label:'พักพิธีไว้ก่อน',description:'ใช้ชีวิตหรือทำงานต่อได้ กลับมาทำเมื่อพร้อม'},
- ]};
- if(y.lastMajorAge===age)return null;
- const careerId=state.progression.activeCareerId,record=state.progression.records[careerId];
- if(careerId&&record.arcStep<3){
-  const e=careerEvents.find(e=>e.careerId===careerId&&e.stage===record.arcStep);
-  const due=Math.max([13,15,17][record.arcStep],y.cooldowns[e.id]??0,(y.lastCareerAge??-10)+2);
-  if(age>=due)return {id:e.id,kind:'career',title:e.title,text:e.pages.join('\n\n'),event:e,choices:[...e.choices.map(c=>({id:c.id,label:c.label,description:'พัฒนาคุณลักษณะ ความชำนาญ และผลถาวรตามเรื่องอาชีพ'})),{id:'consult',label:'ปรึกษาผู้มีประสบการณ์แล้วค่อยลงมือ',description:'เรียนรู้จากคำแนะนำ ได้ความชำนาญและประสิทธิภาพการฝึก'},{id:'later',label:'เก็บเรื่องนี้ไว้ทบทวนอีกสองปี',description:'ไม่เสียความก้าวหน้า ใช้ชีวิตด้านอื่นต่อได้'}]};
- }
- const e=lifeMilestones.find(e=>age>=e.minAge&&age<=e.maxAge&&!y.completed.includes(e.id));
- return e?{...e,kind:'life'}:null;
-}
+import {isV7,resolveDevelopment} from './development.js';
+import {pendingDecision,nextDecisionDay} from './decisions.js';
+export {pendingDecision,nextDecisionDay} from './decisions.js';
+export function availableYearActivities(state){return yearlyActivities.filter(a=>a.id==='care'?isV7(state)&&calendar(state).ageMonths<36:(!isV7(state)||calendar(state).ageMonths>=36)&&state.age>=a.minAge&&(!isV7(state)||a.id!=='study'||state.age>=6));}
 function preference(state,choices){
  const focus=yearlyActivities.find(a=>a.id===state.yearly.focus),stats=focus.id==='train'?[state.yearly.stat]:focus.stats;
  return choices.toSorted((a,b)=>score(b)-score(a))[0];
@@ -37,14 +20,16 @@ function preference(state,choices){
 export function resolveMajor(state,decisionId,choiceId){
  const d=pendingDecision(state);if(!d||d.id!==decisionId||!d.choices.some(c=>c.id===choiceId))throw Error('การตัดสินใจนี้เปลี่ยนไปแล้ว');
  const age=state.age;
+ if(d.kind==='development')return resolveDevelopment(state,d,d.choices.find(c=>c.id===choiceId));
  if(d.kind==='awakening'){
   const a=state.progression.awakening;
   if(choiceId==='later'){a.paused=true;state.life.page=0;recordAction(state,'พักพิธีไว้ก่อน',0,{majorDecision:d.id});}
   else{
    if(a.venue&&a.venue.locationId!==state.world.currentLocationId)throw Error('กรุณากลับสถานที่พิธีเดิม หรือพักพิธีไว้ก่อนแล้วเดินทางกลับ');
    state.life.mode='annual';
-   while(a.step<7){const e=currentEvent(state);state.life.page=e.pages.length-1;const index=choiceId==='careful'?1:choiceId==='community'?(a.step===2||a.step===4||a.step===6?0:1):choiceId==='determined'?(a.step>=5?1:0):0;applyLifeChoice(state,e.choices[index].id);state.journal.at(-1).automatic=true;}
-   state.yearly.completed.push(d.id);recordAction(state,'ผ่านพิธีแห่งเส้นชีพจรและบันทึกผลแล้ว',0,{majorDecision:d.id});
+   if(isV7(state)){const e=currentEvent(state);state.life.page=e.pages.length-1;applyLifeChoice(state,choiceId);state.journal.at(-1).majorDecision=d.id;}
+   else while(a.step<7){const e=currentEvent(state);state.life.page=e.pages.length-1;const index=choiceId==='careful'?1:choiceId==='community'?(a.step===2||a.step===4||a.step===6?0:1):choiceId==='determined'?(a.step>=5?1:0):0;applyLifeChoice(state,e.choices[index].id);state.journal.at(-1).automatic=true;}
+   if(a.step===7){state.yearly.completed.push(d.id);recordAction(state,'ผ่านพิธีแห่งเส้นชีพจรและบันทึกผลแล้ว',0,{majorDecision:d.id});}
   }
  }else if(d.kind==='career'){
   const e=d.event,r=careerRecord(state,e.careerId);
@@ -116,7 +101,70 @@ export function advanceYears(state,years){
  if(state.yearly.view!=='yearly')throw Error('เปิดมุมมองรายปีก่อน');
  if(!availableYearActivities(state).some(a=>a.id===state.yearly.focus))throw Error('กิจกรรมนี้ยังไม่เหมาะกับวัย');
  if(pendingDecision(state))throw Error('มีการตัดสินใจสำคัญรออยู่ กรุณาตัดสินใจก่อนผ่านปี');
+ if(isV7(state))return advanceDays(state,state.time.birthAbsoluteDay+(state.age+years)*360-state.time.absoluteDay);
  if(state.life.mode==='legacy'){state.life.legacySceneId=state.currentSceneId;state.life.mode='annual';}
  for(let i=0;i<years;i++){if(pendingDecision(state))break;runOneYear(state);}
+ return normalize(state);
+}
+// V7 routines never choose a story response or move the player to another location.
+// Fixed calendar-month slices keep 30-day autoplay and manual seeking equivalent.
+function runV7Month(state,end){
+ const start=state.time.absoluteDay,age=state.age,oldGold=state.gold,oldStats={...state.stats},journalStart=state.journal.length,ledgerStart=state.world.ledger.length;
+ if(state.yearly.focus==='care'&&calendar(state).ageMonths>=36)state.yearly.focus='balanced';
+ const focus=yearlyActivities.find(a=>a.id===state.yearly.focus);
+ const counts={stories:0,training:0,work:0,rest:0,travel:0,pastime:0};
+ while(state.time.absoluteDay<end){
+  const left=end-state.time.absoluteDay;
+  if(focus.id==='care'){
+   recordAction(state,'ผู้ดูแลจัดอาหาร การพัก และการเล่นตามวัย',left);advanceTime(state,left);counts.rest++;continue;
+  }
+  if((focus.id==='train'||focus.id==='study')&&state.age>=8&&left>=7){
+   const q=trainingQuote(state);
+   if(state.stamina<q.stamina||state.progression.fatigue>=80||state.progression.focus<20||state.morale<20){rest(state,Math.min(2,left));counts.rest++;continue;}
+   train(state,focus.id==='train'?state.yearly.stat:'int');counts.training++;continue;
+  }
+  if(focus.id==='work'&&state.age>=8){
+   const professional=!!state.progression.activeCareerId,days=professional?7:1;
+   if(left>=days&&(professional||availableServices(state).includes('work'))){
+    if(state.stamina<(professional?15:10)||professional&&state.progression.fatigue>=85){rest(state,Math.min(2,left));counts.rest++;continue;}
+    if(professional)workCareer(state);else useService(state,'work');counts.work++;continue;
+   }
+  }
+  if(focus.id==='rest'){rest(state,left);counts.rest++;}
+  else{
+   // Scale routine credit by real calendar days, preventing one-day reward farming.
+   state.yearly.routineDays=(state.yearly.routineDays??0)+left;
+   const credits=Math.floor(state.yearly.routineDays/30);state.yearly.routineDays%=30;
+   if(credits){state.childhoodMemory[focus.memory[0]]+=credits;state.morale+=3*credits;recoverProgression(state,20*credits);state.stamina+=20*credits;}
+   recordAction(state,focus.id==='explore'?'สังเกตสิ่งแวดล้อมใกล้ที่พักโดยไม่ย้ายเมือง':`${focus.label}ตามวัย`,left);advanceTime(state,left);counts.pastime++;
+  }
+ }
+ const report={age,focusId:focus.id,startDay:start,endDay:end,days:end-start,goldDelta:state.gold-oldGold,statDeltas:Object.fromEntries(Object.keys(oldStats).map(k=>[k,state.stats[k]-oldStats[k]]).filter(([,v])=>v!==0)),counts,location:state.location};
+ const totals=new Map();for(const e of state.world.ledger.splice(ledgerStart)){const key=e.source+'|'+e.location,old=totals.get(key)??{...e,amount:0,transactions:0};old.amount+=e.amount;old.transactions++;totals.set(key,old);}state.world.ledger.push(...totals.values());
+ state.journal.splice(journalStart);state.journal.push({id:state.journal.length+1,day:start,age,ageMonths:Math.floor((start-state.time.birthAbsoluteDay)/30),title:`ช่วงที่ผ่านมา — ${focus.label}`,days:end-start,location:state.location,annualReport:report,goldDelta:report.goldDelta});
+ // Merge adjacent same-focus months in the same life year, including autoplay ticks.
+ const previous=state.yearly.reports.at(-1);
+ if(previous&&previous.age===age&&previous.focusId===focus.id&&previous.endDay===start&&previous.location===state.location){
+  previous.endDay=end;previous.days+=report.days;previous.goldDelta+=report.goldDelta;
+  for(const [key,value]of Object.entries(report.counts))previous.counts[key]+=value;
+  for(const [key,value]of Object.entries(report.statDeltas))previous.statDeltas[key]=(previous.statDeltas[key]??0)+value;
+ }else state.yearly.reports.push(report);
+ if(state.yearly.reports.length>200)state.yearly.reports.shift();
+ const closed=state.chronicle.find(c=>c.age===age);if(closed)closed.actions=state.journal.filter(e=>e.day>=state.time.birthAbsoluteDay+age*360&&e.day<end).map(e=>({...e}));
+ if(state.yearly.focus==='care'&&calendar(state).ageMonths>=36)state.yearly.focus='balanced';state.life.page=0;
+}
+export function advanceDays(state,days){
+ if(!isV7(state)||!Number.isSafeInteger(days)||days<1||days>3600)throw Error('ระยะเวลาต้องอยู่ระหว่าง 1 ถึง 3,600 วัน');
+ if(state.yearly.view!=='yearly')throw Error('เปิดมุมมองรายปีก่อน');
+ if(pendingDecision(state))throw Error('มีการตัดสินใจสำคัญรออยู่ กรุณาตัดสินใจก่อนใช้เวลา');
+ if(!availableYearActivities(state).some(a=>a.id===state.yearly.focus))throw Error('กิจกรรมนี้ยังไม่เหมาะกับวัย');
+ if(state.life.mode==='legacy'){state.life.legacySceneId=state.currentSceneId;state.life.mode='annual';}
+ const target=state.time.absoluteDay+days;
+ while(state.time.absoluteDay<target&&!pendingDecision(state)){
+  const lived=state.time.absoluteDay-state.time.birthAbsoluteDay,nextMonth=state.time.birthAbsoluteDay+(Math.floor(lived/30)+1)*30;
+  const end=Math.min(target,nextMonth,nextDecisionDay(state));
+  if(end<=state.time.absoluteDay)break;
+  runV7Month(state,end);
+ }
  return normalize(state);
 }

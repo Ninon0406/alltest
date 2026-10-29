@@ -25,6 +25,7 @@ export function selectCareer(state,id){
  const c=getCareer(id);if(!c)throw Error('ไม่พบอาชีพ');
  if(missingRequirements(state,c).length)throw Error('ยังไม่เข้าเงื่อนไขอาชีพนี้');
  if(state.progression.activeCareerId===id)throw Error('กำลังประกอบอาชีพนี้อยู่แล้ว');
+ guardExternalTime(state,7);
  state.progression.legacyCareer??=state.career;
  careerRecord(state,id);state.progression.activeCareerId=id;
  recordAction(state,`เริ่มเส้นทาง${c.label}`,7,{careerId:id});advanceTime(state,7);state.life.page=0;
@@ -62,6 +63,7 @@ export function workCareer(state){
  const c=currentCareer(state);if(!c||state.age<12||state.progression.awakening.step<7)throw Error('ผ่านพิธีและเลือกอาชีพก่อนรับงานประจำ');
  const p=state.progression,q=jobQuote(state);
  if(state.stamina<q.stamina||p.fatigue>=85)throw Error('เหนื่อยเกินไป กรุณาพักก่อนทำงาน');
+ guardExternalTime(state,q.days);
  state.gold+=q.gold;state.stamina-=q.stamina;p.fatigue+=q.fatigue;earnCareerXp(state,c.id,q.xp);
  state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:`career:${c.id}`,amount:q.gold});
  recordAction(state,c.job,q.days,{careerId:c.id,goldDelta:q.gold,skillXp:q.xp});advanceTime(state,q.days);
@@ -69,6 +71,7 @@ export function workCareer(state){
 export function promote(state){
  const c=currentCareer(state);if(!c)throw Error('ยังไม่ได้เลือกอาชีพ');const r=state.progression.records[c.id];
  if(r.advanced||promotionMissing(state,c).length)throw Error('ยังเลื่อนขั้นไม่ได้ หรือได้รับขั้นนี้แล้ว');
+ guardExternalTime(state,7);
  r.advanced=true;state[c.advanced.resource]+=c.advanced.resourceBonus;
  const current={maxHp:'hp',maxMana:'mana',maxStamina:'stamina'}[c.advanced.resource];state[current]+=c.advanced.resourceBonus;
  recordAction(state,`ได้รับขั้น${c.advanced.label}`,7,{careerId:c.id});advanceTime(state,7);normalize(state);

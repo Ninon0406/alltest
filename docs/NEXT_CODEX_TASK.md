@@ -1,35 +1,45 @@
-# Continue REBORN — V6 / 0.7.0 Phase A/B complete
+# Continue REBORN — V7 / 0.8.0
 
-Read AGENTS.md, docs/REBORN_CODEX_UI_PIXEL_ONE_LIFE_DIRECTIVE.md, ROADMAP.md and actual HEAD. Continue the existing game; do not rebuild the calendar/birth/ceremony/careers/map/UI and never restore active saves.
+Read `AGENTS.md`, `docs/USER_DIRECTIVE_V7.md`, `docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md`, the V7 JSONs, and current HEAD. Continue the existing game. V7 supersedes conflicting V6 phases; never restart the project or restore active saves.
 
-## Current checkpoint
+## Completed this round
 
-- A: independent memory-only live run, explicit new birth after refresh, run-scoped revision-token pure dispatcher including legacy choices, terminal action guard, no runtime active-save access. Old save/backups untouched; old gallery read-only.
-- Only genuine authored terminal transition archives once by runId in `reborn_finished_lives_v1`, ≤100 compact summaries, no active state/RNG/calendar/flags/inventory snapshot. Web Locks serialize where available; failures keep downloadable/retryable summary. Unfinished exit/refresh never fakes a death.
-- `engine/run.js` clock counts visible 15-second windows after trusted interaction; hidden/idle/autoplay waiting excluded. Native unload warning is best effort; pagehide abandons memory and persisted pageshow returns to rebirth. No offline aging.
-- B: viewport dashboard with top age/initial power and time controls, compact vitals, focus picker + 1/2/5-year buttons, seek-next-decision, rare 4–5-option modal, small pixel scene/actor, desktop results dock and five-button mobile footer. All real map/career/train/work/bread shop/bag/record/journal/options stay in one document.
-- `ui/panels.js`: one native dialog, explicit Tab wrap, ESC/close, robust opener focus return, inert background/scroll lock, retained modal scroll, cleanup preventing stale close events. Any panel stops autoplay. Failed action displays a notice inside the active modal and leaves state unchanged. Session-only 100/112/125% text + reduced effects; no settings storage.
-- Initial visual foundation: `ui/avatar/sprite.js` renders a full small pixel body from existing appearance-v1 and age/race. `ui/scene.js` renders 20 distinct procedural compositions/5 regional palettes and map previews. This is NOT completed C: no inherited parent appearances or ≥20 actual variants/group. No owned weapons are invented in the new scene sprite. Existing role portrait clothing remains cosmetic.
-- `state.power={version:1,level:1}` is an initial display field only. No power XP, breakthroughs, rank-growth/aura ladder or deity prerequisites are implemented yet. Career skill levels/XP are separate. Do not claim power 1–100 is playable.
+- V7-1: reconciled actual HEAD/history with the supplied pack, archived the canonical V7 documents unchanged under `docs/v7/`, and separated authoring drafts from executable content.
+- V7-2: care-only months 0–35; age in months until three; realistic newborn/sensory/supervised-play choices at exact month thresholds; no infant career/stat/income/travel grind. Reading focus/service starts at six for new V7 lives.
+- Shared absolute-day decision boundary and manual priority: 1/2/5-year and seek plans stop exactly at a pending milestone; all external timed actions, services, careers and legacy jumps respect the same boundary. Fixed 30-day autoplay, 1/2/4/8/16× intervals, actual calendar progress with accessible day counts. Hidden tabs/panels still pause and never age offline.
+- Initial V7-3 subset: nine real forks / 27 choices, eight traced to V7 briefs plus one original follow-up, through age ten. Real memory, caregiver/community relationships, flags and delayed effects; a gated community role unlocks only after returning the purse. Three policies reach every new choice; 100 seeded V7 births are audited through all seven ceremony stages.
+- Seven-stage ritual now requires an actual choice at each stage for V7 runs; pause/resume, venue and once-only deterministic measurement remain. Offline historical condensed simulation remains reproducible.
+- Partial V7-5/6: read-only map, main-page travel choices (caravan/walk/stay), actual route costs/stamina/time/ledger; no silent routine relocation. Up to eight eligible recommendations, with other valid careers available in the codex.
+- Twenty original local scene PNGs, all canonical locations, 320×160, manifest/hash/dimension validation, real production image loading and fallback. No new world IDs or graph rewrite.
+- Preserved One Life, terminal-only archive, frozen births, all 20 base/20 advanced careers, existing six endings and 20-node graph. Optional original reader/chapters remain, with explicit feedback when a jump would cross important decisions.
 
-## Next incomplete phase — C inherited appearance v2
+## Work in progress / next incomplete milestone
 
-1. Add a new versioned appearance generator outside frozen birth generator 1/2 tables. Keep v1 reproduction for historical tests and compact old archive appearances. New runs can generate deterministic parent feature records and child crossover/mutation from run birth seed; no reroll during render/navigation/time. Do not add active save schema 6/migration: active lives are not persisted.
-2. Implement at least 20 actually different rendered hair shapes/colors/skin swatches/eyes/facial features and starter upper-body/pants/footwear variants. Catalog IDs alone do not count. Respect all four existing races and meaningful parent resemblance; no skin/race value hierarchy or sex stereotypes. Write seeded distribution/stability/parent-inheritance/layer/age tests.
-3. Extend `ui/avatar/sprite.js` with explicit back-aura/hair/body/face/pants/shoes/shirt/armor/head/accessories/held/front-aura order, stable identity through infant/child/youth/adult/mature/elder stages. Use real ownership before showing held equipment. If starter outfit ownership is introduced as a prerequisite, create actual small catalog/state; full shops/modifiers/equipment are D, do not pretend cosmetic layers are equipped items.
-4. Reuse the existing 20 location tile descriptors/compositions and `renderScene`/map previews; improve contextual landmarks/season/weather and sprite anchor/scale rather than replacing the graph or making a universal backdrop. Keep 320px and reduced-motion performance.
-5. Extend `save/archive.js` summary's compact appearance identifiers carefully to represent the final v2 figure without persisting the RNG/full parent/birth/current state. Keep old completed records readable and exact terminal idempotency. Do not delete legacy save keys.
-6. Complete tests/build/content/stage/screenshots; update this file with next precise slice; publish only within existing authorization/controls and verify actual public page.
+V7-3 narrative infrastructure is usable, but the first 30–50-fork age 0–19 milestone is incomplete (nine implemented). Next implement the coherent teen education/support/training chain, not another redesign of infancy/time/UI.
 
-Then D is actual owned inventory/equipment/gold/modifiers/route encounters (preserve bread); E earned 1–99, validated ≥1000-year/trial-gated 100 and graded effects; F lifespan/breakthrough/long projects, then G story/NPC/ending expansion. Do not skip their gates or represent targets as done.
+1. Port `life_evt_050` scholarship (after real completed awakening), `051` tuition/support, `054` free community lessons, `063` preparation/invitation, `064` study versus work, `066` family contact; inspect exact JSON age windows first. Use current canonical location and existing currency/XP/calendar. Keep zero-money routes, actual requirements/follow-ups and two distinct delayed consequences per fork.
+2. Extend `src/data/events/development.js` and `src/engine/development.js` or a dedicated story module. Preserve the nine existing flags/relationships. Add real selectable stages with safe/manual choice boundaries; do not import draft hints as fake outcomes or count repeated focuses as new branches.
+3. Add seeded path/gate/consequence coverage and genuine browser playthroughs. Then continue V7-4 inherited appearance without changing frozen birth generator tables; current sprite is appearance-v1.
 
-## Retained gameplay invariants
+## Files changed
 
-Frozen generators 1/2, 20 equal new archetypes, authoritative 360-day calendar; only `advanceTime` mutates elapsed game time. Seven actual deterministic awakening stages/venue/measurement archived once per run; old optional reader and chapters/six endings. Twenty base/20 earned advanced careers, 60 original episodes, per-family XP/mastery/perks/earned capacity gains persist through in-run switching. Free farmer/practice/rest/work paths prevent low-money locks. Annual focuses use actual training/work/recovery/graph travel and stop at important decisions; routine journal/ledger summaries are truthful. Full long-life retention remains pending. Twenty connected locations/5 regions/20 edges retain costs/stamina/age gates/walking/discovery/bread services and real ledger.
+New: `src/data/events/development.js`, `src/engine/development.js`, `src/engine/decisions.js`, `src/ui/journey-view.js`, `src/ui/scene-art.js`, `public/assets/scenes/` (20 PNGs + manifest), `scripts/v7-simulation.mjs`, `scripts/generate-scene-assets.mjs`, `scripts/verify-assets.mjs`, `tests/development.test.js`, `docs/USER_DIRECTIVE_V7.md`, full `docs/v7/` pack.
 
-`Game.snapshot` is a detached diagnostic observation, not a public state injector or restore API. Historical `save/storage.js` validators remain offline only. Pure dispatch -> validated clone -> memory commit; archive failure cannot block active gameplay. No persistent active state in any storage/API/URL/cookie.
+Updated: engine run/time/yearly/actions, progression timing guards, world travel/economy, main/dashboard/reader/career/map/scene UI, browser helpers/scenarios, run/pixel tests, content audit, all three production verifiers, package version, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/CHANGELOG and generated publication files.
 
-## Validation/evidence
+## Remaining systems / known limits
+
+- No inherited parent appearances, 20 actual visible variants/group, real owned gear, earned power levels or rank/aura ladder. Power remains Lv1; career XP is separate.
+- No modeled travel encounters/risk by power, combat/dungeons, businesses/crafting, authored important NPC profiles/parties, natural mortality/extension, eras, ≥1000-year deity prerequisites or new ending families.
+- Nine executable V7 forks are below 30–50 / ≥100 targets. Whole-library historical count is not a claim of V7 unique branching completeness. Childhood fork choices cost zero days (reactions/conversations); routines alone advance elapsed months.
+- Current map graph remains 20 locations/5 regions/20 edges. Pack's 150 draft locations lack compatible route/service/age data; do not replace canonical IDs or frozen home pools.
+- Twenty actual scene PNGs are baked existing compositions, not 150 new locations or inherited sprite parts. Richer contextual landmarks/interiors remain incomplete.
+- Safe routine work stays at the actual location. If no community work is offered, it performs a safe pastime instead of auto-travel; use main-page journey choices to move.
+- Native unload warnings/mobile discard are best effort. Chromium viewport tests do not establish physical iOS/PWA support.
+
+## Tests and publication checkpoint
+
+Commands required:
 
 ```sh
 npm ci
@@ -38,20 +48,13 @@ npm run content
 npm run build
 node scripts/stage-site.mjs
 npm run test:e2e
+node scripts/verify-assets.mjs
 npm run preview -- --port 4185
 node scripts/verify-production.mjs http://127.0.0.1:4185/
 node scripts/verify-progression.mjs http://127.0.0.1:4185/
 node scripts/verify-one-life.mjs http://127.0.0.1:4185/
 ```
 
-Current local suites: 60 unit / 37 browser cases, zero skipped. Unit tests retain the 100,000-origin audit, 40 detailed career paths and 20 annual-planner promotions. Browser tests use real clicked progression (no injected age or active-save fixtures): no-write/blocked storage, independent tabs, old keys ignored, refresh/back/BFCache event guard, authentic ending summary once, failure download, actual shop/bag transactions, modal keyboard/focus/errors, pause/hidden/reduced effects and seven 320/360/390/768/1024/1366/1920 layouts. These are Chromium viewport tests, not physical iOS/PWA validation. Native warning/discard behavior cannot be guaranteed.
+Latest local evidence (2026-10-29): 67/67 unit tests, 39/39 browser cases (zero skipped), content audit, production build/staging and source/staged PNG validation pass. All three production-preview scripts passed: seven viewport widths plus real month/progress/20-file loading and overlays; real birth-to-12/seven manual ritual stages/career wages/training/story at 1366/360; independent tabs/zero active writes/authentic age-60 terminal transition/exactly one summary/reload without resume. Concurrent heavy unit/content/browser execution caused two historical simulation timeouts once; rerunning the required commands sequentially passed. Browser automation was updated for explicit infant/ritual decisions and a paused test clock; final full suite passed twice. No unresolved regression was observed in these scenarios. Counts: 135 scenes/events, 296 authored choices, six endings; nine V7 forks / 27 reachable choices; 20 unique local scene PNGs; 20 base/20 advanced careers, 120 names, 0 important NPC profiles, 0 dungeons.
 
-Three preview scripts passed: seven-width assets/age/level/scene/overlays/no-resume, actual birth-to-12/ceremony/career/job/practice/story at 1366/360, and independent-tab/no-write/real ending/one summary/reload. Phase A a201167 was published and all three earlier public checks plus CI passed. Source `010d5d5` (0.7.0) is published at https://ninon0406.github.io/alltest/; public HTML serves `app-Csdyuu1D.js` and `app-Dlvd7EQ2.css`. Branch Pages deployment succeeded. All three public browser verifiers passed: 320/360/390/768/1024/1366/1920 CSS/JS/age/level/pixel scene/annual calendar/in-page map/career/bag/journal/no-resume; genuine birth-to-12/awakening/job/practice/career-story at 1366/360; independent tabs, zero active writes, a genuine peaceful ending, exactly one compact archive entry and reload without resume. No runtime/request errors were observed in these scenarios.
-
-Authored/reachable union stays 126 scenes/events, 269 choices, six endings; 20 base/20 higher careers; 20 locations/5 regions/20 edges; 120 names; 0 important authored NPC profiles, 0 functional dungeons. Procedural views/UI/archive copies do not inflate authored story/ending counts.
-
-Publication source is app.html + src/ + public/art. Root index/assets/art are generated for existing main:/ Pages; build/stage and keep all previously published hashes. Pages settings change was denied historically; do not guess or claim a source switch. Verify expected compiled JS/CSS and actual gameplay on https://ninon0406.github.io/alltest/ after authorized push.
-
-## Remaining limitations
-
-No inherited v2/20-variant appearance catalogs, owned/equipped gear, power growth, natural mortality/extension, full skill trees, combat/dungeons, authored important NPC/party/relationships, crafting/businesses, ≥1000-year deity route or new endings. Base sprite/tile foundation and clean UI are not the completed full directive. Leave the next run playable and document the exact continuation.
+Base commit: `e8af5f8`. Release source is the next commit after this base; public verification is still pending until the authorized push/deployment. Only claim publication after an authorized push/deployment and live checks. Publication URL: https://ninon0406.github.io/alltest/ . Source is `app.html`, `src/`, `public/`; build/stage `index.html`, `assets/`, `art/` for existing main:/ Pages. Retain prior published hashed files; do not change Pages settings.

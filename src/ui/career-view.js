@@ -2,12 +2,15 @@ import { careers,getCareer,statKeys } from '../data/careers.js';
 import { eligibleCareers,readiness,missingRequirements,promotionMissing,currentCareer,trainingQuote,jobQuote } from '../progression/engine.js';
 import { paragraph,actionButton,statNames } from './life-view.js';
 import { storyToken } from '../engine/life.js';
+import {isV7} from '../engine/development.js';
+import {ageLabel} from '../engine/time.js';
 let selectedStat='wis',search='',lastCareer=null;
 const rankLabel=r=>r.advanced?'ขั้นชำนาญ':'พื้นฐาน';
 export function renderCareer(parent,state,perform){
  if(state.progression.activeCareerId!==lastCareer){lastCareer=state.progression.activeCareerId;selectedStat=currentCareer(state)?.primary??'wis';}
  const p=state.progression,a=p.awakening,c=currentCareer(state),token=storyToken(state);
  paragraph(parent,'อาชีพและการฝึก','h2');
+ if(isV7(state)&&state.age<3){paragraph(parent,`อายุ ${ageLabel(state)} · ผู้ดูแลจัดการพัก อาหาร และการเล่นที่ปลอดภัย เรื่องอาชีพยังไม่เปิดในวัยนี้`);return;}
  paragraph(parent,`อายุ ${state.age} ปี • เงิน ${state.gold} เหรียญ • ความอึด ${state.stamina}/${state.maxStamina} • เหนื่อยล้า ${p.fatigue}/100 • สมาธิ ${p.focus}/100`);
  if(a.step<7){
   paragraph(parent,state.age<12?'พิธีแห่งเส้นชีพจรเปิดเมื่ออายุครบ 12 ปี การฝึกพื้นฐานเปิดตั้งแต่อายุ 8 ปี':`พิธีแห่งเส้นชีพจร: ผ่านแล้ว ${a.step}/7 ช่วง • ไม่มีค่าเข้าร่วม`);
@@ -36,9 +39,11 @@ export function renderCareer(parent,state,perform){
   paragraph(parent,`ความก้าวหน้าหัวข้อ: ${statKeys.map(stat=>`${statNames[stat]} ${p.practice[stat]??0}`).join(' • ')}`);
  }
  const eligible=eligibleCareers(state).filter(profile=>profile.id!==p.activeCareerId).sort((a,b)=>readiness(state,b)-readiness(state,a));
+ const recommended=isV7(state)?eligible.slice(0,8):eligible;
  paragraph(parent,'อาชีพที่พร้อมเลือก','h3');paragraph(parent,'คะแนนแนะนำผสมความพร้อมปัจจุบัน 85% กับผลพิธีเดิม 15% ฝึกเพิ่มเพื่อเปิดทางอื่นได้โดยไม่ต้องสุ่มผลใหม่');
  if(!eligible.length)paragraph(parent,a.step<7?'ผ่านพิธีให้ครบก่อนเลือกอาชีพ ความก้าวหน้าเดิมยังอยู่':'กำลังประกอบอาชีพที่เข้าเงื่อนไขอยู่ ฝึกเพิ่มเพื่อเปิดทางใหม่ได้');
- for(const profile of eligible){
+ if(isV7(state)&&a.step===7)paragraph(parent,`แนะนำ ${recommended.length} สายที่เข้าเงื่อนไขสูงสุดจาก 20 สายหลัก · ทางอื่นที่พร้อมเลือกอยู่ในสารานุกรม`,'small');
+ for(const profile of recommended){
   const card=document.createElement('section');card.className='career-card';parent.append(card);
   paragraph(card,profile.label,'h4');paragraph(card,`แนะนำ ${readiness(state,profile).toFixed(2)} • เหมาะกับ ${statNames[profile.primary]} และ ${statNames[profile.secondary]} • งาน ${profile.job} เริ่มต้น ${profile.wage} เหรียญ/7 วัน`);
   paragraph(card,`ฝึกทักษะ ${profile.skill} และเติบโตสู่ ${profile.advanced.label}`);
@@ -47,6 +52,6 @@ export function renderCareer(parent,state,perform){
  const codex=document.createElement('details');codex.className='career-codex';parent.append(codex);paragraph(codex,'สารานุกรมอาชีพ 20 สายหลักและ 20 ขั้นชำนาญ','summary');
  const input=document.createElement('input');input.type='search';input.setAttribute('aria-label','ค้นหาในสารานุกรมอาชีพ');input.value=search;input.placeholder='ค้นหาชื่ออาชีพ';codex.append(input);
  const list=document.createElement('div');codex.append(list);
- const update=()=>{list.replaceChildren();for(const profile of careers.filter(item=>(item.label+item.advanced.label).includes(search))){paragraph(list,`${profile.label} → ${profile.advanced.label}`,'h4');paragraph(list,`พื้นฐาน: ${missingRequirements(state,profile).join(' • ')||'เข้าเงื่อนไขแล้ว'} • ขั้นชำนาญ: อายุ 18 ปี, ประสบการณ์ 120, ความชำนาญ 60, เรื่องอาชีพครบ 3 ตอน, ${statNames[profile.advanced.stat]} ${profile.advanced.minimum}`);}};
+ const update=()=>{list.replaceChildren();for(const profile of careers.filter(item=>(item.label+item.advanced.label).includes(search))){paragraph(list,`${profile.label} → ${profile.advanced.label}`,'h4');paragraph(list,`พื้นฐาน: ${missingRequirements(state,profile).join(' • ')||'เข้าเงื่อนไขแล้ว'} • ขั้นชำนาญ: อายุ 18 ปี, ประสบการณ์ 120, ความชำนาญ 60, เรื่องอาชีพครบ 3 ตอน, ${statNames[profile.advanced.stat]} ${profile.advanced.minimum}`);if(isV7(state)&&eligible.some(c=>c.id===profile.id)&&!recommended.some(c=>c.id===profile.id))actionButton(list,`เลือกอาชีพ ${profile.label}`,{type:'chooseCareer',careerId:profile.id,token},perform);}};
  input.oninput=()=>{search=input.value;update();};update();
 }

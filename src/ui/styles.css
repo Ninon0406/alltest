@@ -208,3 +208,6 @@ dialog::backdrop{background:#020912c9;backdrop-filter:blur(2px)}
 #panelNotice:not(:empty){padding:10px;background:#48392a;color:#ffe0ac;border-radius:6px}
 .map-preview>svg{width:100%;max-height:120px;border-radius:8px;display:block;margin:10px 0}
 .map-preview{background:#253b4b;border-radius:8px;overflow:hidden}
+
+.location-image{display:block;width:100%;height:auto;image-rendering:pixelated;object-fit:cover}
+.play-scene>.location-image{height:100%;object-fit:cover}

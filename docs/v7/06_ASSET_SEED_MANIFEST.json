@@ -1,0 +1,4094 @@
+{
+  "artPolicy": "original 16-bit pixel game assets; offline, no runtime image API",
+  "spriteLogicalSize": [
+    48,
+    64
+  ],
+  "sceneLogicalSize": [
+    320,
+    180
+  ],
+  "catalog": [
+    {
+      "id": "hairShapes_01",
+      "group": "hairShapes",
+      "label": "สั้นตรง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_02",
+      "group": "hairShapes",
+      "label": "สั้นปัดข้าง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_03",
+      "group": "hairShapes",
+      "label": "สั้นหน้าม้า",
+      "targetPath": "public/assets/sprites/characters/hairShapes/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_04",
+      "group": "hairShapes",
+      "label": "บ๊อบเรียบ",
+      "targetPath": "public/assets/sprites/characters/hairShapes/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_05",
+      "group": "hairShapes",
+      "label": "บ๊อบปลายงุ้ม",
+      "targetPath": "public/assets/sprites/characters/hairShapes/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_06",
+      "group": "hairShapes",
+      "label": "ยาวตรง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_07",
+      "group": "hairShapes",
+      "label": "ยาวลอนอ่อน",
+      "targetPath": "public/assets/sprites/characters/hairShapes/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_08",
+      "group": "hairShapes",
+      "label": "ยาวถักเปียเดี่ยว",
+      "targetPath": "public/assets/sprites/characters/hairShapes/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_09",
+      "group": "hairShapes",
+      "label": "ถักเปียสองข้าง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_10",
+      "group": "hairShapes",
+      "label": "รวบหางม้าสูง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_11",
+      "group": "hairShapes",
+      "label": "รวบหางม้าต่ำ",
+      "targetPath": "public/assets/sprites/characters/hairShapes/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_12",
+      "group": "hairShapes",
+      "label": "มัดครึ่งศีรษะ",
+      "targetPath": "public/assets/sprites/characters/hairShapes/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_13",
+      "group": "hairShapes",
+      "label": "หยักศกสั้น",
+      "targetPath": "public/assets/sprites/characters/hairShapes/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_14",
+      "group": "hairShapes",
+      "label": "หยักศกกลาง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_15",
+      "group": "hairShapes",
+      "label": "ลอนหนาฟู",
+      "targetPath": "public/assets/sprites/characters/hairShapes/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_16",
+      "group": "hairShapes",
+      "label": "แสกกลาง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_17",
+      "group": "hairShapes",
+      "label": "แสกข้าง",
+      "targetPath": "public/assets/sprites/characters/hairShapes/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_18",
+      "group": "hairShapes",
+      "label": "หน้าม้ายาว",
+      "targetPath": "public/assets/sprites/characters/hairShapes/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_19",
+      "group": "hairShapes",
+      "label": "ทรงสั้นเป็นชั้น",
+      "targetPath": "public/assets/sprites/characters/hairShapes/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairShapes_20",
+      "group": "hairShapes",
+      "label": "ผมหยิกวงเล็ก",
+      "targetPath": "public/assets/sprites/characters/hairShapes/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_01",
+      "group": "hairColors",
+      "label": "ดำสนิท",
+      "targetPath": "public/assets/sprites/characters/hairColors/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_02",
+      "group": "hairColors",
+      "label": "น้ำตาลเข้ม",
+      "targetPath": "public/assets/sprites/characters/hairColors/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_03",
+      "group": "hairColors",
+      "label": "น้ำตาลเกาลัด",
+      "targetPath": "public/assets/sprites/characters/hairColors/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_04",
+      "group": "hairColors",
+      "label": "น้ำตาลทอง",
+      "targetPath": "public/assets/sprites/characters/hairColors/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_05",
+      "group": "hairColors",
+      "label": "ทองอ่อน",
+      "targetPath": "public/assets/sprites/characters/hairColors/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_06",
+      "group": "hairColors",
+      "label": "ทองน้ำผึ้ง",
+      "targetPath": "public/assets/sprites/characters/hairColors/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_07",
+      "group": "hairColors",
+      "label": "เงินหม่น",
+      "targetPath": "public/assets/sprites/characters/hairColors/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_08",
+      "group": "hairColors",
+      "label": "เงินสว่าง",
+      "targetPath": "public/assets/sprites/characters/hairColors/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_09",
+      "group": "hairColors",
+      "label": "เทาหมอก",
+      "targetPath": "public/assets/sprites/characters/hairColors/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_10",
+      "group": "hairColors",
+      "label": "แดงสนิม",
+      "targetPath": "public/assets/sprites/characters/hairColors/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_11",
+      "group": "hairColors",
+      "label": "แดงไวน์",
+      "targetPath": "public/assets/sprites/characters/hairColors/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_12",
+      "group": "hairColors",
+      "label": "ส้มอ่อน",
+      "targetPath": "public/assets/sprites/characters/hairColors/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_13",
+      "group": "hairColors",
+      "label": "ทองแดง",
+      "targetPath": "public/assets/sprites/characters/hairColors/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_14",
+      "group": "hairColors",
+      "label": "น้ำเงินหม่น",
+      "targetPath": "public/assets/sprites/characters/hairColors/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_15",
+      "group": "hairColors",
+      "label": "คราม",
+      "targetPath": "public/assets/sprites/characters/hairColors/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_16",
+      "group": "hairColors",
+      "label": "ม่วงพลัม",
+      "targetPath": "public/assets/sprites/characters/hairColors/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_17",
+      "group": "hairColors",
+      "label": "เขียวมอสส์",
+      "targetPath": "public/assets/sprites/characters/hairColors/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_18",
+      "group": "hairColors",
+      "label": "เขียวหมอก",
+      "targetPath": "public/assets/sprites/characters/hairColors/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_19",
+      "group": "hairColors",
+      "label": "ชมพูหม่น",
+      "targetPath": "public/assets/sprites/characters/hairColors/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hairColors_20",
+      "group": "hairColors",
+      "label": "ขาวมุก",
+      "targetPath": "public/assets/sprites/characters/hairColors/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_01",
+      "group": "skinTones",
+      "label": "งาช้างอุ่น",
+      "targetPath": "public/assets/sprites/characters/skinTones/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_02",
+      "group": "skinTones",
+      "label": "เบจอ่อน",
+      "targetPath": "public/assets/sprites/characters/skinTones/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_03",
+      "group": "skinTones",
+      "label": "เบจกลาง",
+      "targetPath": "public/assets/sprites/characters/skinTones/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_04",
+      "group": "skinTones",
+      "label": "เบจทอง",
+      "targetPath": "public/assets/sprites/characters/skinTones/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_05",
+      "group": "skinTones",
+      "label": "ทรายอ่อน",
+      "targetPath": "public/assets/sprites/characters/skinTones/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_06",
+      "group": "skinTones",
+      "label": "ทรายอุ่น",
+      "targetPath": "public/assets/sprites/characters/skinTones/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_07",
+      "group": "skinTones",
+      "label": "น้ำผึ้งอ่อน",
+      "targetPath": "public/assets/sprites/characters/skinTones/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_08",
+      "group": "skinTones",
+      "label": "น้ำผึ้งทอง",
+      "targetPath": "public/assets/sprites/characters/skinTones/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_09",
+      "group": "skinTones",
+      "label": "น้ำผึ้งเข้ม",
+      "targetPath": "public/assets/sprites/characters/skinTones/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_10",
+      "group": "skinTones",
+      "label": "น้ำตาลอ่อน",
+      "targetPath": "public/assets/sprites/characters/skinTones/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_11",
+      "group": "skinTones",
+      "label": "น้ำตาลทอง",
+      "targetPath": "public/assets/sprites/characters/skinTones/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_12",
+      "group": "skinTones",
+      "label": "น้ำตาลกลาง",
+      "targetPath": "public/assets/sprites/characters/skinTones/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_13",
+      "group": "skinTones",
+      "label": "น้ำตาลอบเชย",
+      "targetPath": "public/assets/sprites/characters/skinTones/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_14",
+      "group": "skinTones",
+      "label": "น้ำตาลเข้ม",
+      "targetPath": "public/assets/sprites/characters/skinTones/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_15",
+      "group": "skinTones",
+      "label": "โกโก้อ่อน",
+      "targetPath": "public/assets/sprites/characters/skinTones/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_16",
+      "group": "skinTones",
+      "label": "โกโก้กลาง",
+      "targetPath": "public/assets/sprites/characters/skinTones/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_17",
+      "group": "skinTones",
+      "label": "โกโก้เข้ม",
+      "targetPath": "public/assets/sprites/characters/skinTones/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_18",
+      "group": "skinTones",
+      "label": "อำพันอุ่น",
+      "targetPath": "public/assets/sprites/characters/skinTones/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_19",
+      "group": "skinTones",
+      "label": "น้ำตาลอมแดง",
+      "targetPath": "public/assets/sprites/characters/skinTones/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "skinTones_20",
+      "group": "skinTones",
+      "label": "น้ำตาลเข้มลึก",
+      "targetPath": "public/assets/sprites/characters/skinTones/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_01",
+      "group": "faces",
+      "label": "หน้ารีสั้น",
+      "targetPath": "public/assets/sprites/characters/faces/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_02",
+      "group": "faces",
+      "label": "หน้ารียาว",
+      "targetPath": "public/assets/sprites/characters/faces/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_03",
+      "group": "faces",
+      "label": "หน้าเหลี่ยมนุ่ม",
+      "targetPath": "public/assets/sprites/characters/faces/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_04",
+      "group": "faces",
+      "label": "หน้ากลม",
+      "targetPath": "public/assets/sprites/characters/faces/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_05",
+      "group": "faces",
+      "label": "หน้าไข่",
+      "targetPath": "public/assets/sprites/characters/faces/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_06",
+      "group": "faces",
+      "label": "โหนกแก้มเด่น",
+      "targetPath": "public/assets/sprites/characters/faces/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_07",
+      "group": "faces",
+      "label": "กรามมน",
+      "targetPath": "public/assets/sprites/characters/faces/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_08",
+      "group": "faces",
+      "label": "คางแหลมอ่อน",
+      "targetPath": "public/assets/sprites/characters/faces/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_09",
+      "group": "faces",
+      "label": "คางสั้น",
+      "targetPath": "public/assets/sprites/characters/faces/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_10",
+      "group": "faces",
+      "label": "คางยาว",
+      "targetPath": "public/assets/sprites/characters/faces/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_11",
+      "group": "faces",
+      "label": "แก้มกลม",
+      "targetPath": "public/assets/sprites/characters/faces/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_12",
+      "group": "faces",
+      "label": "แก้มเรียว",
+      "targetPath": "public/assets/sprites/characters/faces/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_13",
+      "group": "faces",
+      "label": "หน้ากว้าง",
+      "targetPath": "public/assets/sprites/characters/faces/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_14",
+      "group": "faces",
+      "label": "หน้าผากสูง",
+      "targetPath": "public/assets/sprites/characters/faces/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_15",
+      "group": "faces",
+      "label": "หน้าแคบ",
+      "targetPath": "public/assets/sprites/characters/faces/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_16",
+      "group": "faces",
+      "label": "คิ้วโก่งเล็ก",
+      "targetPath": "public/assets/sprites/characters/faces/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_17",
+      "group": "faces",
+      "label": "คิ้วตรง",
+      "targetPath": "public/assets/sprites/characters/faces/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_18",
+      "group": "faces",
+      "label": "คิ้วหนา",
+      "targetPath": "public/assets/sprites/characters/faces/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_19",
+      "group": "faces",
+      "label": "สันจมูกตรง",
+      "targetPath": "public/assets/sprites/characters/faces/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "faces_20",
+      "group": "faces",
+      "label": "ปลายจมูกมน",
+      "targetPath": "public/assets/sprites/characters/faces/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_01",
+      "group": "eyes",
+      "label": "ตากลมเล็ก",
+      "targetPath": "public/assets/sprites/characters/eyes/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_02",
+      "group": "eyes",
+      "label": "ตากลมใหญ่",
+      "targetPath": "public/assets/sprites/characters/eyes/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_03",
+      "group": "eyes",
+      "label": "ตารีอ่อน",
+      "targetPath": "public/assets/sprites/characters/eyes/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_04",
+      "group": "eyes",
+      "label": "ตารีคม",
+      "targetPath": "public/assets/sprites/characters/eyes/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_05",
+      "group": "eyes",
+      "label": "ตาหางยก",
+      "targetPath": "public/assets/sprites/characters/eyes/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_06",
+      "group": "eyes",
+      "label": "ตาหางตก",
+      "targetPath": "public/assets/sprites/characters/eyes/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_07",
+      "group": "eyes",
+      "label": "ตาห่าง",
+      "targetPath": "public/assets/sprites/characters/eyes/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_08",
+      "group": "eyes",
+      "label": "ตาชิด",
+      "targetPath": "public/assets/sprites/characters/eyes/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_09",
+      "group": "eyes",
+      "label": "ตาสองชั้นกว้าง",
+      "targetPath": "public/assets/sprites/characters/eyes/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_10",
+      "group": "eyes",
+      "label": "ตาสองชั้นแคบ",
+      "targetPath": "public/assets/sprites/characters/eyes/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_11",
+      "group": "eyes",
+      "label": "ตาชั้นเดียว",
+      "targetPath": "public/assets/sprites/characters/eyes/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_12",
+      "group": "eyes",
+      "label": "ตาเรียบสงบ",
+      "targetPath": "public/assets/sprites/characters/eyes/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_13",
+      "group": "eyes",
+      "label": "ตาเบิกกว้าง",
+      "targetPath": "public/assets/sprites/characters/eyes/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_14",
+      "group": "eyes",
+      "label": "ตาโค้งยิ้ม",
+      "targetPath": "public/assets/sprites/characters/eyes/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_15",
+      "group": "eyes",
+      "label": "ตาจ้องมั่นคง",
+      "targetPath": "public/assets/sprites/characters/eyes/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_16",
+      "group": "eyes",
+      "label": "ตาตื้น",
+      "targetPath": "public/assets/sprites/characters/eyes/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_17",
+      "group": "eyes",
+      "label": "ตาลึก",
+      "targetPath": "public/assets/sprites/characters/eyes/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_18",
+      "group": "eyes",
+      "label": "ตาทรงอัลมอนด์",
+      "targetPath": "public/assets/sprites/characters/eyes/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_19",
+      "group": "eyes",
+      "label": "ตาขอบนุ่ม",
+      "targetPath": "public/assets/sprites/characters/eyes/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "eyes_20",
+      "group": "eyes",
+      "label": "ตาขอบชัด",
+      "targetPath": "public/assets/sprites/characters/eyes/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_01",
+      "group": "upper",
+      "label": "เสื้อชาวบ้านผ้าลินิน",
+      "targetPath": "public/assets/sprites/characters/upper/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_02",
+      "group": "upper",
+      "label": "เสื้อคอผูกเชือก",
+      "targetPath": "public/assets/sprites/characters/upper/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_03",
+      "group": "upper",
+      "label": "เสื้อแขนพับ",
+      "targetPath": "public/assets/sprites/characters/upper/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_04",
+      "group": "upper",
+      "label": "เสื้อนักเรียนฝึกงาน",
+      "targetPath": "public/assets/sprites/characters/upper/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_05",
+      "group": "upper",
+      "label": "เสื้อกั๊กช่าง",
+      "targetPath": "public/assets/sprites/characters/upper/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_06",
+      "group": "upper",
+      "label": "เสื้อช่างสวน",
+      "targetPath": "public/assets/sprites/characters/upper/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_07",
+      "group": "upper",
+      "label": "เสื้อแขนสั้นชุมชน",
+      "targetPath": "public/assets/sprites/characters/upper/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_08",
+      "group": "upper",
+      "label": "เสื้อเดินทางเบา",
+      "targetPath": "public/assets/sprites/characters/upper/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_09",
+      "group": "upper",
+      "label": "เสื้อคลุมตลาด",
+      "targetPath": "public/assets/sprites/characters/upper/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_10",
+      "group": "upper",
+      "label": "เสื้อเส้นใยป่า",
+      "targetPath": "public/assets/sprites/characters/upper/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_11",
+      "group": "upper",
+      "label": "เสื้อปักขอบเมือง",
+      "targetPath": "public/assets/sprites/characters/upper/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_12",
+      "group": "upper",
+      "label": "เสื้อพ่อค้าเล็ก",
+      "targetPath": "public/assets/sprites/characters/upper/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_13",
+      "group": "upper",
+      "label": "เสื้อนักดนตรีฝึกหัด",
+      "targetPath": "public/assets/sprites/characters/upper/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_14",
+      "group": "upper",
+      "label": "เสื้อเรียนอักษร",
+      "targetPath": "public/assets/sprites/characters/upper/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_15",
+      "group": "upper",
+      "label": "เสื้อช่วยโรงเตี๊ยม",
+      "targetPath": "public/assets/sprites/characters/upper/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_16",
+      "group": "upper",
+      "label": "เสื้อฝึกธรรมชาติ",
+      "targetPath": "public/assets/sprites/characters/upper/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_17",
+      "group": "upper",
+      "label": "เสื้อฝึกสำรวจ",
+      "targetPath": "public/assets/sprites/characters/upper/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_18",
+      "group": "upper",
+      "label": "เสื้อช่างเรือ",
+      "targetPath": "public/assets/sprites/characters/upper/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_19",
+      "group": "upper",
+      "label": "เสื้อย้อมคราม",
+      "targetPath": "public/assets/sprites/characters/upper/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "upper_20",
+      "group": "upper",
+      "label": "เสื้อเทศกาลเรียบ",
+      "targetPath": "public/assets/sprites/characters/upper/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_01",
+      "group": "pants",
+      "label": "กางเกงผ้าตรง",
+      "targetPath": "public/assets/sprites/characters/pants/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_02",
+      "group": "pants",
+      "label": "กางเกงขาสั้นเด็ก",
+      "targetPath": "public/assets/sprites/characters/pants/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_03",
+      "group": "pants",
+      "label": "กางเกงทรงหลวม",
+      "targetPath": "public/assets/sprites/characters/pants/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_04",
+      "group": "pants",
+      "label": "กางเกงเดินป่า",
+      "targetPath": "public/assets/sprites/characters/pants/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_05",
+      "group": "pants",
+      "label": "กางเกงขาม้วน",
+      "targetPath": "public/assets/sprites/characters/pants/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_06",
+      "group": "pants",
+      "label": "กางเกงทำงานเกษตร",
+      "targetPath": "public/assets/sprites/characters/pants/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_07",
+      "group": "pants",
+      "label": "กางเกงช่าง",
+      "targetPath": "public/assets/sprites/characters/pants/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_08",
+      "group": "pants",
+      "label": "กางเกงผ้าสีคราม",
+      "targetPath": "public/assets/sprites/characters/pants/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_09",
+      "group": "pants",
+      "label": "กางเกงผ้าสีเทา",
+      "targetPath": "public/assets/sprites/characters/pants/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_10",
+      "group": "pants",
+      "label": "กางเกงผ้าสีน้ำตาล",
+      "targetPath": "public/assets/sprites/characters/pants/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_11",
+      "group": "pants",
+      "label": "กางเกงผ้าเขียวหม่น",
+      "targetPath": "public/assets/sprites/characters/pants/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_12",
+      "group": "pants",
+      "label": "กางเกงขารัด",
+      "targetPath": "public/assets/sprites/characters/pants/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_13",
+      "group": "pants",
+      "label": "กางเกงชุดฝึก",
+      "targetPath": "public/assets/sprites/characters/pants/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_14",
+      "group": "pants",
+      "label": "กางเกงเทศกาล",
+      "targetPath": "public/assets/sprites/characters/pants/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_15",
+      "group": "pants",
+      "label": "กางเกงนักเรียน",
+      "targetPath": "public/assets/sprites/characters/pants/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_16",
+      "group": "pants",
+      "label": "กางเกงเย็บขอบเงิน",
+      "targetPath": "public/assets/sprites/characters/pants/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_17",
+      "group": "pants",
+      "label": "กางเกงพ่อค้า",
+      "targetPath": "public/assets/sprites/characters/pants/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_18",
+      "group": "pants",
+      "label": "กางเกงกลางแจ้ง",
+      "targetPath": "public/assets/sprites/characters/pants/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_19",
+      "group": "pants",
+      "label": "กางเกงชาวทะเล",
+      "targetPath": "public/assets/sprites/characters/pants/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "pants_20",
+      "group": "pants",
+      "label": "กางเกงท่องเมือง",
+      "targetPath": "public/assets/sprites/characters/pants/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_01",
+      "group": "shoes",
+      "label": "รองเท้าผ้านุ่ม",
+      "targetPath": "public/assets/sprites/characters/shoes/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_02",
+      "group": "shoes",
+      "label": "รองเท้าหนังเรียบ",
+      "targetPath": "public/assets/sprites/characters/shoes/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_03",
+      "group": "shoes",
+      "label": "รองเท้าหุ้มส้นอ่อน",
+      "targetPath": "public/assets/sprites/characters/shoes/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_04",
+      "group": "shoes",
+      "label": "รองเท้าสาน",
+      "targetPath": "public/assets/sprites/characters/shoes/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_05",
+      "group": "shoes",
+      "label": "รองเท้าบูตเดินทาง",
+      "targetPath": "public/assets/sprites/characters/shoes/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_06",
+      "group": "shoes",
+      "label": "รองเท้าบูตผ้า",
+      "targetPath": "public/assets/sprites/characters/shoes/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_07",
+      "group": "shoes",
+      "label": "รองเท้าหุ้มข้อ",
+      "targetPath": "public/assets/sprites/characters/shoes/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_08",
+      "group": "shoes",
+      "label": "รองเท้าตัดเย็บ",
+      "targetPath": "public/assets/sprites/characters/shoes/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_09",
+      "group": "shoes",
+      "label": "รองเท้าช่างสวน",
+      "targetPath": "public/assets/sprites/characters/shoes/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_10",
+      "group": "shoes",
+      "label": "รองเท้าช่างเรือ",
+      "targetPath": "public/assets/sprites/characters/shoes/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_11",
+      "group": "shoes",
+      "label": "รองเท้าสีดิน",
+      "targetPath": "public/assets/sprites/characters/shoes/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_12",
+      "group": "shoes",
+      "label": "รองเท้าหนังสีดำ",
+      "targetPath": "public/assets/sprites/characters/shoes/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_13",
+      "group": "shoes",
+      "label": "รองเท้าหนังสีน้ำตาล",
+      "targetPath": "public/assets/sprites/characters/shoes/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_14",
+      "group": "shoes",
+      "label": "รองเท้าหัวมน",
+      "targetPath": "public/assets/sprites/characters/shoes/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_15",
+      "group": "shoes",
+      "label": "รองเท้าคาดเส้น",
+      "targetPath": "public/assets/sprites/characters/shoes/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_16",
+      "group": "shoes",
+      "label": "รองเท้ารองพื้นหนา",
+      "targetPath": "public/assets/sprites/characters/shoes/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_17",
+      "group": "shoes",
+      "label": "รองเท้าเทศกาล",
+      "targetPath": "public/assets/sprites/characters/shoes/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_18",
+      "group": "shoes",
+      "label": "รองเท้าผ้าสีคราม",
+      "targetPath": "public/assets/sprites/characters/shoes/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_19",
+      "group": "shoes",
+      "label": "รองเท้ากันฝน",
+      "targetPath": "public/assets/sprites/characters/shoes/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "shoes_20",
+      "group": "shoes",
+      "label": "รองเท้าขอบลาย",
+      "targetPath": "public/assets/sprites/characters/shoes/20.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_01",
+      "group": "hats",
+      "label": "หมวกผ้าทรงเตี้ย",
+      "targetPath": "public/assets/sprites/characters/hats/01.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_02",
+      "group": "hats",
+      "label": "หมวกปีกเล็ก",
+      "targetPath": "public/assets/sprites/characters/hats/02.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_03",
+      "group": "hats",
+      "label": "หมวกสานเบา",
+      "targetPath": "public/assets/sprites/characters/hats/03.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_04",
+      "group": "hats",
+      "label": "หมวกครูฝึก",
+      "targetPath": "public/assets/sprites/characters/hats/04.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_05",
+      "group": "hats",
+      "label": "หมวกนักเดินทาง",
+      "targetPath": "public/assets/sprites/characters/hats/05.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_06",
+      "group": "hats",
+      "label": "หมวกเบเรต์ช่าง",
+      "targetPath": "public/assets/sprites/characters/hats/06.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_07",
+      "group": "hats",
+      "label": "หมวกคลุมหู",
+      "targetPath": "public/assets/sprites/characters/hats/07.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_08",
+      "group": "hats",
+      "label": "หมวกชาวทะเล",
+      "targetPath": "public/assets/sprites/characters/hats/08.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_09",
+      "group": "hats",
+      "label": "หมวกแก๊ปผ้าฝ้าย",
+      "targetPath": "public/assets/sprites/characters/hats/09.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_10",
+      "group": "hats",
+      "label": "หมวกใบไม้",
+      "targetPath": "public/assets/sprites/characters/hats/10.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_11",
+      "group": "hats",
+      "label": "หมวกขอบเงิน",
+      "targetPath": "public/assets/sprites/characters/hats/11.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_12",
+      "group": "hats",
+      "label": "หมวกคาดสาย",
+      "targetPath": "public/assets/sprites/characters/hats/12.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_13",
+      "group": "hats",
+      "label": "หมวกหัวกลม",
+      "targetPath": "public/assets/sprites/characters/hats/13.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_14",
+      "group": "hats",
+      "label": "หมวกคลุมผม",
+      "targetPath": "public/assets/sprites/characters/hats/14.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_15",
+      "group": "hats",
+      "label": "หมวกนักวิชาการ",
+      "targetPath": "public/assets/sprites/characters/hats/15.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_16",
+      "group": "hats",
+      "label": "หมวกงานเทศกาล",
+      "targetPath": "public/assets/sprites/characters/hats/16.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_17",
+      "group": "hats",
+      "label": "หมวกเดินป่า",
+      "targetPath": "public/assets/sprites/characters/hats/17.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_18",
+      "group": "hats",
+      "label": "หมวกปีกกว้าง",
+      "targetPath": "public/assets/sprites/characters/hats/18.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_19",
+      "group": "hats",
+      "label": "หมวกผ้าคราม",
+      "targetPath": "public/assets/sprites/characters/hats/19.png",
+      "visibleDistinct": true
+    },
+    {
+      "id": "hats_20",
+      "group": "hats",
+      "label": "หมวกเครื่องหมายกิลด์",
+      "targetPath": "public/assets/sprites/characters/hats/20.png",
+      "visibleDistinct": true
+    }
+  ],
+  "locationScenes": [
+    {
+      "id": "scene_arvenia_01",
+      "locationId": "arvenia_01",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: พระราชวังและหอนาฬิกา. Locale นครลูเมียร์, scene type capital. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_01.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_02",
+      "locationId": "arvenia_02",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ตลาดไม้และสะพานหิน. Locale เมืองออร์เดล, scene type city. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_02.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_03",
+      "locationId": "arvenia_03",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: คลองสามสาย. Locale เมืองเบลไวน์, scene type city. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_03.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_04",
+      "locationId": "arvenia_04",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: หอสมุดบนเนิน. Locale เมืองเฟรนลีย์, scene type city. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_04.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_05",
+      "locationId": "arvenia_05",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ป้อมคุ้มทาง. Locale เมืองคอร์วิน, scene type city. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_05.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_06",
+      "locationId": "arvenia_06",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: สวนฤดูใบไม้ผลิ. Locale เมืองเมโลรา, scene type city. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_06.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_07",
+      "locationId": "arvenia_07",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ทุ่งข้าวและกังหันลม. Locale หมู่บ้านเฮเซล, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_07.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_08",
+      "locationId": "arvenia_08",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: สะพานลำธาร. Locale หมู่บ้านวินด์บรูค, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_08.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_09",
+      "locationId": "arvenia_09",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ต้นโอ๊กกลางชุมชน. Locale หมู่บ้านเซลัน, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_09.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_10",
+      "locationId": "arvenia_10",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ลานฝึกเล็ก. Locale หมู่บ้านลิสการ์ด, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_10.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_11",
+      "locationId": "arvenia_11",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ท่าเรือแม่น้ำ. Locale หมู่บ้านริเวนทอล, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_11.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_12",
+      "locationId": "arvenia_12",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: เรือนเพาะชำ. Locale หมู่บ้านเฟิร์นวูด, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_12.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_13",
+      "locationId": "arvenia_13",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: บ้านหินและทุ่งเลี้ยง. Locale หมู่บ้านสโตนเมโดว์, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_13.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_14",
+      "locationId": "arvenia_14",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ป่าชายทุ่ง. Locale หมู่บ้านคาสต์วาล, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_14.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_15",
+      "locationId": "arvenia_15",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: เตาเผาอิฐ. Locale หมู่บ้านเอมเบอร์ริล, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_15.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_16",
+      "locationId": "arvenia_16",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: โกดังข้าว. Locale หมู่บ้านเกรนฮอลล์, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_16.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_17",
+      "locationId": "arvenia_17",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ทางเดินเมล็ดพันธุ์. Locale หมู่บ้านซีดพาธ, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_17.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_18",
+      "locationId": "arvenia_18",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: สะพานสีขาว. Locale หมู่บ้านคริสต์บริดจ์, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_18.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_19",
+      "locationId": "arvenia_19",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: บ้านเจ็ดตระกูล. Locale หมู่บ้านเซเวนโฮม, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_19.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_20",
+      "locationId": "arvenia_20",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: เนินชมดาว. Locale หมู่บ้านสกายทิล, scene type village. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_20.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_21",
+      "locationId": "arvenia_21",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: บ้านไม้สองชั้น. Locale โรงเตี๊ยมลูกจันทร์, scene type inn. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_21.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_22",
+      "locationId": "arvenia_22",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ลานหญ้ากับกระดานหิน. Locale โรงเรียนแสงเช้า, scene type school. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_22.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_23",
+      "locationId": "arvenia_23",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: พื้นหินลายวง. Locale ลานฝึกออร์เดล, scene type training. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_23.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_24",
+      "locationId": "arvenia_24",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: แผงผ้าริมคลอง. Locale ตลาดโค้งน้ำ, scene type market. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_24.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_25",
+      "locationId": "arvenia_25",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: เรือนกระจกแก้ว. Locale สวนเอลเดอร์, scene type garden. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_25.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_26",
+      "locationId": "arvenia_26",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ระฆังเงินริมแม่น้ำ. Locale หอระฆังเหนือธาร, scene type landmark. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_26.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_27",
+      "locationId": "arvenia_27",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: บันไดหินกับหน้าต่างสี. Locale หอสมุดร่มฝน, scene type library. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_27.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_28",
+      "locationId": "arvenia_28",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: รถลากและป้ายทาง. Locale ท่าคาราวานตะวันทอง, scene type caravan. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_28.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_29",
+      "locationId": "arvenia_29",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: ต้นไม้เตี้ยและเห็ดสีฟ้า. Locale ป่าชุมชนไอวี่, scene type forest. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_29.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_arvenia_30",
+      "locationId": "arvenia_30",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาร์เวเนีย, plains environment. Exact featured landmark: หออิฐสึกและเถาวัลย์. Locale ซากหอสังเกตการณ์, scene type ruin. clear morning, gentle clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #142a3b, #437d68, #86b59a, #c5ae73, #6b5144; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#142a3b",
+        "#437d68",
+        "#86b59a",
+        "#c5ae73",
+        "#6b5144"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_arvenia_30.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_01",
+      "locationId": "valdor_01",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ปราการหินดำ. Locale นครแบล็คริดจ์, scene type capital. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_01.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_02",
+      "locationId": "valdor_02",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ลานหินและโรงตี. Locale เมืองฮาร์ดเฟล, scene type city. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_02.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_03",
+      "locationId": "valdor_03",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ด่านหุบผา. Locale เมืองเรดพาส, scene type city. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_03.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_04",
+      "locationId": "valdor_04",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: หอนาฬิกาโรงงาน. Locale เมืองเฟอร์รัน, scene type city. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_04.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_05",
+      "locationId": "valdor_05",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ป้อมริมหน้าผา. Locale เมืองสโตนเวค, scene type city. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_05.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_06",
+      "locationId": "valdor_06",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: หมู่เตาหลอม. Locale เมืองคอปเปอร์เบย์, scene type city. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_06.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_07",
+      "locationId": "valdor_07",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: เนินเถ้าถ่าน. Locale หมู่บ้านแอชฮิล, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_07.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_08",
+      "locationId": "valdor_08",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ทุ่งหญ้าหิมะ. Locale หมู่บ้านเฟลนอร์, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_08.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_09",
+      "locationId": "valdor_09",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ฐานรากเหล็ก. Locale หมู่บ้านสตีลรูท, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_09.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_10",
+      "locationId": "valdor_10",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ถ้ำหินตื้น. Locale หมู่บ้านฮอลโลว์ร็อก, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_10.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_11",
+      "locationId": "valdor_11",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ต้นสนใบเงิน. Locale หมู่บ้านไอรอนลีฟ, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_11.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_12",
+      "locationId": "valdor_12",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: สะพานเหล็ก. Locale หมู่บ้านเกรย์ฟอร์ด, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_12.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_13",
+      "locationId": "valdor_13",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ลานหิมะ. Locale หมู่บ้านอัลพิน, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_13.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_14",
+      "locationId": "valdor_14",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: หินผามอสส์. Locale หมู่บ้านมอสแฮมเมอร์, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_14.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_15",
+      "locationId": "valdor_15",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: เรือนหินขาว. Locale หมู่บ้านซีเมนต์ครอส, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_15.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_16",
+      "locationId": "valdor_16",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ท่อนไม้ภูเขา. Locale หมู่บ้านคลีฟวูด, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_16.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_17",
+      "locationId": "valdor_17",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: กระท่อมใกล้ปล่องไฟ. Locale หมู่บ้านโฟร์จเนสต์, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_17.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_18",
+      "locationId": "valdor_18",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ร่องลม. Locale หมู่บ้านเบลโลว์, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_18.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_19",
+      "locationId": "valdor_19",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: เหมืองทรายหิน. Locale หมู่บ้านแกรนิตฮอลล์, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_19.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_20",
+      "locationId": "valdor_20",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ป่าพุ่มหนามเงิน. Locale หมู่บ้านซิลเวอร์ธอร์น, scene type village. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_20.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_21",
+      "locationId": "valdor_21",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: บ้านหินเตี้ย. Locale โรงเตี๊ยมค้อนพัก, scene type inn. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_21.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_22",
+      "locationId": "valdor_22",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ลานเดินบนหน้าผา. Locale สถาบันผู้พิทักษ์ผา, scene type school. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_22.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_23",
+      "locationId": "valdor_23",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: เต็นท์ฝึกและป้ายสี. Locale ค่ายฝึกทิศเหนือ, scene type camp. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_23.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_24",
+      "locationId": "valdor_24",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: แผงแร่ใต้หลังคา. Locale ตลาดแร่รุ่งอรุณ, scene type market. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_24.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_25",
+      "locationId": "valdor_25",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: ปล่องเตาสองยอด. Locale โรงหลอมมังกรหิน, scene type forge. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_25.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_26",
+      "locationId": "valdor_26",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: อุโมงค์ผลึก. Locale อุโมงค์แสงแร่, scene type tunnel. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_26.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_27",
+      "locationId": "valdor_27",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: หิมะสว่าง. Locale ธารน้ำแข็งยืนยง, scene type landmark. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_27.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_28",
+      "locationId": "valdor_28",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: เวทีไม้ในเมือง. Locale สนามแข่งแรงศรัทธา, scene type arena. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_28.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_29",
+      "locationId": "valdor_29",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: เสาหินธรรมชาติ. Locale ป่าหินเสียงก้อง, scene type forest. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_29.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_valdor_30",
+      "locationId": "valdor_30",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region วัลดอร์, mountain environment. Exact featured landmark: กำแพงหินมุมสูง. Locale ป้อมอาร์คติน, scene type fort. thin high-altitude mist. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #1e293d, #536479, #82929d, #9d7466, #d1c7b0; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#1e293d",
+        "#536479",
+        "#82929d",
+        "#9d7466",
+        "#d1c7b0"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_valdor_30.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_01",
+      "locationId": "celestia_01",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: หอคอยกระจก. Locale นครอัสเทล, scene type capital. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_01.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_02",
+      "locationId": "celestia_02",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: คลองเรืองแสง. Locale เมืองเนรูม, scene type city. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_02.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_03",
+      "locationId": "celestia_03",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ลานประดิษฐ์. Locale เมืองวาเรล, scene type city. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_03.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_04",
+      "locationId": "celestia_04",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: หอสังเกตการณ์. Locale เมืองอีซาริน, scene type city. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_04.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_05",
+      "locationId": "celestia_05",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: เรือนแก้วกลางเมือง. Locale เมืองฟอเรล, scene type city. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_05.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_06",
+      "locationId": "celestia_06",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: โค้งสะพานสีคราม. Locale เมืองซิลารา, scene type city. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_06.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_07",
+      "locationId": "celestia_07",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: เรือนริมทะเลสาบ. Locale หมู่บ้านมิราเวล, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_07.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_08",
+      "locationId": "celestia_08",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: โขดแก้ว. Locale หมู่บ้านเอนวิน, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_08.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_09",
+      "locationId": "celestia_09",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: สวนแสงดาว. Locale หมู่บ้านลูซาร์, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_09.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_10",
+      "locationId": "celestia_10",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: เนินหมอก. Locale หมู่บ้านนิมบัส, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_10.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_11",
+      "locationId": "celestia_11",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ทุ่งสีม่วง. Locale หมู่บ้านเอลลิน, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_11.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_12",
+      "locationId": "celestia_12",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ห้องเขียนหนังสือ. Locale หมู่บ้านเนียร์เพจ, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_12.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_13",
+      "locationId": "celestia_13",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: หินเรียงดาว. Locale หมู่บ้านคอนสเตล, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_13.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_14",
+      "locationId": "celestia_14",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: น้ำพุเรืองแสง. Locale หมู่บ้านซอเรล, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_14.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_15",
+      "locationId": "celestia_15",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ต้นไม้ผลึก. Locale หมู่บ้านเฟนริล, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_15.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_16",
+      "locationId": "celestia_16",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ศาลาโต๊ะสลัก. Locale หมู่บ้านวาลิส, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_16.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_17",
+      "locationId": "celestia_17",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: สวนยาสมุนไพร. Locale หมู่บ้านเมทิส, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_17.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_18",
+      "locationId": "celestia_18",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ทางเดินร่มเงา. Locale หมู่บ้านอาเดริน, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_18.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_19",
+      "locationId": "celestia_19",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: สะพานแก้ว. Locale หมู่บ้านอีเธอร์ครอส, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_19.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_20",
+      "locationId": "celestia_20",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ระฆังหอเล็ก. Locale หมู่บ้านออลเตอร์, scene type village. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_20.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_21",
+      "locationId": "celestia_21",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: โต๊ะหมึกและโคม. Locale โรงเตี๊ยมหมึกคราม, scene type inn. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_21.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_22",
+      "locationId": "celestia_22",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: กระดานอักษร. Locale โรงเรียนเซเวนสคริปต์, scene type school. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_22.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_23",
+      "locationId": "celestia_23",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: โถงเสาแก้ว. Locale สถาบันอัสเทล, scene type academy. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_23.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_24",
+      "locationId": "celestia_24",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ชั้นหนังสือวน. Locale หอสมุดคีรีแสง, scene type library. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_24.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_25",
+      "locationId": "celestia_25",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: เตาทดลองเงียบ. Locale ห้องทดลองเมฆเงิน, scene type laboratory. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_25.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_26",
+      "locationId": "celestia_26",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: แผงกระดาษ. Locale ตลาดสมุดลับ, scene type market. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_26.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_27",
+      "locationId": "celestia_27",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: เรือนพฤกษา. Locale สวนทดลองอ่อนแสง, scene type garden. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_27.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_28",
+      "locationId": "celestia_28",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: โดมสองยอด. Locale หอดูดาวฝาแฝด, scene type observatory. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_28.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_29",
+      "locationId": "celestia_29",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: เสาหินเขียนอักษร. Locale สะพานนิรันดร์, scene type landmark. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_29.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_celestia_30",
+      "locationId": "celestia_30",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region เซเลสเทีย, arcane environment. Exact featured landmark: ชิ้นหินอักขระ. Locale ซากหอจารึก, scene type ruin. soft luminous accents. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #172b42, #505c9a, #8792bf, #d7caaf, #3f5b7d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#172b42",
+        "#505c9a",
+        "#8792bf",
+        "#d7caaf",
+        "#3f5b7d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_celestia_30.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_01",
+      "locationId": "nightveir_01",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: นครไม้กับโคม. Locale นครดัสก์วูด, scene type capital. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_01.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_02",
+      "locationId": "nightveir_02",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ถนนใต้จันทร์. Locale เมืองมูนพาธ, scene type city. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_02.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_03",
+      "locationId": "nightveir_03",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: บ้านไม้เสียงสะท้อน. Locale เมืองเอคโควิล, scene type city. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_03.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_04",
+      "locationId": "nightveir_04",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: หินตะไคร่และหอช่าง. Locale เมืองเวนดาร์, scene type city. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_04.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_05",
+      "locationId": "nightveir_05",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: สะพานหมอก. Locale เมืองเพลรูน, scene type city. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_05.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_06",
+      "locationId": "nightveir_06",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: สวนหิ่งห้อย. Locale เมืองเฟย์เดล, scene type city. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_06.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_07",
+      "locationId": "nightveir_07",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ลำธารจันทร์. Locale หมู่บ้านลูนาโฟล, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_07.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_08",
+      "locationId": "nightveir_08",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: มอสส์เขียวสด. Locale หมู่บ้านเดลมอสส์, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_08.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_09",
+      "locationId": "nightveir_09",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: โคนไม้ใหญ่. Locale หมู่บ้านฮอลโลว์ฟิน, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_09.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_10",
+      "locationId": "nightveir_10",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: เฟิร์นเรืองแสง. Locale หมู่บ้านสตาร์เฟิร์น, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_10.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_11",
+      "locationId": "nightveir_11",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: เนินเสียงนก. Locale หมู่บ้านโอว์ลฮิล, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_11.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_12",
+      "locationId": "nightveir_12",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: หมอกเช้า. Locale หมู่บ้านเนบิวล์, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_12.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_13",
+      "locationId": "nightveir_13",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: เรือนไม้ริมแก่ง. Locale หมู่บ้านเงาริมธาร, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_13.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_14",
+      "locationId": "nightveir_14",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: โคมกลางต้นไม้. Locale หมู่บ้านวูดวิสป์, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_14.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_15",
+      "locationId": "nightveir_15",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: สนามหญ้าแสงดาว. Locale หมู่บ้านกราสมูน, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_15.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_16",
+      "locationId": "nightveir_16",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: รากไม้โค้ง. Locale หมู่บ้านเฟย์รูท, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_16.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_17",
+      "locationId": "nightveir_17",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ใบไม้สีแดง. Locale หมู่บ้านคริมสันลีฟ, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_17.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_18",
+      "locationId": "nightveir_18",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: สระน้ำสงบ. Locale หมู่บ้านสลีปิงพอนด์, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_18.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_19",
+      "locationId": "nightveir_19",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ต้นไม้โบราณ. Locale หมู่บ้านเอลเดอร์มอสส์, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_19.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_20",
+      "locationId": "nightveir_20",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: บ้านบนกิ่ง. Locale หมู่บ้านบรันช์เชด, scene type village. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_20.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_21",
+      "locationId": "nightveir_21",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: โคมเรืองแสง. Locale โรงเตี๊ยมใบไม้เงียบ, scene type inn. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_21.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_22",
+      "locationId": "nightveir_22",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ลานรากไม้. Locale สำนักการเดินป่า, scene type school. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_22.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_23",
+      "locationId": "nightveir_23",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: เต็นท์ริมธาร. Locale ค่ายแสงหิ่งห้อย, scene type camp. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_23.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_24",
+      "locationId": "nightveir_24",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: แผงไม้ใต้หมอก. Locale ตลาดหมอกสีเงิน, scene type market. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_24.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_25",
+      "locationId": "nightveir_25",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: หอคอยใต้ต้นใหญ่. Locale หอเฝ้าจันทร์, scene type tower. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_25.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_26",
+      "locationId": "nightveir_26",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ทางสามแพร่ง. Locale ทางแยกเสียงกระซิบ, scene type crossroads. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_26.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_27",
+      "locationId": "nightveir_27",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: กอไม้หนาทึบ. Locale ดงชะมดเขียว, scene type forest. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_27.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_28",
+      "locationId": "nightveir_28",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: เสาหินในรากไม้. Locale ซากเมืองเฟลริน, scene type ruin. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_28.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_29",
+      "locationId": "nightveir_29",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: น้ำใสราวกระจก. Locale สระกระจกเหนือหมอก, scene type lake. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_29.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_nightveir_30",
+      "locationId": "nightveir_30",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region ไนท์เวียร์, forest environment. Exact featured landmark: ประตูหินใต้พฤกษา. Locale ประตูหินเถาวัลย์, scene type gate. gentle ground fog, fireflies. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #17282d, #34554b, #5f8272, #8da58a, #9d855e; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#17282d",
+        "#34554b",
+        "#5f8272",
+        "#8da58a",
+        "#9d855e"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_nightveir_30.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_01",
+      "locationId": "akelon_01",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: เมืองท่าปะการัง. Locale นครคอราลิส, scene type capital. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_01.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_02",
+      "locationId": "akelon_02",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ท่าเรือสีขาว. Locale เมืองไทด์เบย์, scene type city. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_02.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_03",
+      "locationId": "akelon_03",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ตลาดปลาและธง. Locale เมืองเวฟฮาร์ต, scene type city. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_03.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_04",
+      "locationId": "akelon_04",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: โรงเรือไม้. Locale เมืองฟอร์มาริน, scene type city. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_04.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_05",
+      "locationId": "akelon_05",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: บ้านริมหาด. Locale เมืองอีสเทิร์นรีฟ, scene type city. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_05.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_06",
+      "locationId": "akelon_06",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ประภาคาร. Locale เมืองสตรอมพอร์ต, scene type city. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_06.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_07",
+      "locationId": "akelon_07",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ทุ่งเกลือชายทะเล. Locale หมู่บ้านซีบลูม, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_07.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_08",
+      "locationId": "akelon_08",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: อ่าวเล็ก. Locale หมู่บ้านคลาวด์โคฟ, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_08.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_09",
+      "locationId": "akelon_09",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: บ่อน้ำจืด. Locale หมู่บ้านอควาเดล, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_09.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_10",
+      "locationId": "akelon_10",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ลานตากเกลือ. Locale หมู่บ้านซอลท์ริล, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_10.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_11",
+      "locationId": "akelon_11",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: สะพานปลา. Locale หมู่บ้านโกลด์ฟิน, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_11.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_12",
+      "locationId": "akelon_12",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: หาดทรายขาว. Locale หมู่บ้านไวท์แซนด์, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_12.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_13",
+      "locationId": "akelon_13",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ลำคลองทะเล. Locale หมู่บ้านบลูครีก, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_13.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_14",
+      "locationId": "akelon_14",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: อ่าวไข่มุก. Locale หมู่บ้านเพิร์ลฮาร์เบอร์, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_14.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_15",
+      "locationId": "akelon_15",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ผาหญ้าริมทะเล. Locale หมู่บ้านซีเฟน, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_15.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_16",
+      "locationId": "akelon_16",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: น้ำกร่อย. Locale หมู่บ้านแบรคิช, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_16.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_17",
+      "locationId": "akelon_17",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: โขดหินจิ้งจอก. Locale หมู่บ้านฟ็อกทิด, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_17.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_18",
+      "locationId": "akelon_18",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: แนวหินใต้ทะเล. Locale หมู่บ้านเวลดาร์รีฟ, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_18.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_19",
+      "locationId": "akelon_19",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: โพรงหินริมอ่าว. Locale หมู่บ้านอันเดอร์เซล, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_19.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_20",
+      "locationId": "akelon_20",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: โคมแนวท่า. Locale หมู่บ้านฮาร์เบอร์ไลท์, scene type village. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_20.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_21",
+      "locationId": "akelon_21",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: หลังคาปะการัง. Locale โรงเตี๊ยมคลื่นพัก, scene type inn. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_21.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_22",
+      "locationId": "akelon_22",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: เรือฝึกที่จอดนิ่ง. Locale สำนักการเดินเรือ, scene type school. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_22.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_23",
+      "locationId": "akelon_23",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: อู่สร้างเรือ. Locale ค่ายช่างเรือ, scene type camp. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_23.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_24",
+      "locationId": "akelon_24",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ตลาดริมน้ำ. Locale ตลาดน้ำเงินรุ่ง, scene type market. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_24.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_25",
+      "locationId": "akelon_25",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: หอสูงสีฟ้า. Locale ประภาคารฟ้าสด, scene type lighthouse. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_25.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_26",
+      "locationId": "akelon_26",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ปากถ้ำริมหน้าผา. Locale ถ้ำเสียงคลื่น, scene type cave. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_26.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_27",
+      "locationId": "akelon_27",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: หน้าผานกทะเล. Locale เกาะนกเมฆ, scene type island. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_27.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_28",
+      "locationId": "akelon_28",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ศาลาเงาเสา. Locale ศาลาท่าเที่ยง, scene type landmark. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_28.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_29",
+      "locationId": "akelon_29",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ธงสีสัน. Locale ลานโคมฉลามดาว, scene type festival. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_29.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    },
+    {
+      "id": "scene_akelon_30",
+      "locationId": "akelon_30",
+      "prompt": "Original 16-bit-era fantasy RPG pixel art background, 320x180 logical pixels, crisp nearest-neighbor pixels, no text/no logos/no copyrighted characters. Region อาเคลอน, coast environment. Exact featured landmark: ท่าเรือหินเก่า. Locale ซากท่าแห่งกาล, scene type ruin. sea breeze, horizon clouds. Coherent perspective eye level ~1.6m, walking ground/platform for centered actor at bottom third, clear readable silhouettes, small unobtrusive details; region palette #13324b, #2b7691, #67b2b3, #e0c38b, #4d756d; mood calm life-adventure; do not generate UI or NPC baked into background.",
+      "palette": [
+        "#13324b",
+        "#2b7691",
+        "#67b2b3",
+        "#e0c38b",
+        "#4d756d"
+      ],
+      "targetPath": "public/assets/scenes/locations/scene_akelon_30.webp",
+      "logicalSize": [
+        320,
+        180
+      ],
+      "fallback": "deterministic procedural pixel tile scene"
+    }
+  ],
+  "interiors": [
+    {
+      "id": "interior_inn",
+      "targetPath": "public/assets/scenes/interiors/inn.webp",
+      "prompt": "Original 16-bit pixel art, cozy small fantasy inn, wooden room, counter, lantern, beds, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_house",
+      "targetPath": "public/assets/scenes/interiors/house.webp",
+      "prompt": "Original 16-bit pixel art, family home interior, handwoven cloth, warm cooking corner, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_school",
+      "targetPath": "public/assets/scenes/interiors/school.webp",
+      "prompt": "Original 16-bit pixel art, classroom with desks and chalk board, no lettering, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_academy",
+      "targetPath": "public/assets/scenes/interiors/academy.webp",
+      "prompt": "Original 16-bit pixel art, arcane lecture hall with illuminated mosaics, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_training",
+      "targetPath": "public/assets/scenes/interiors/training.webp",
+      "prompt": "Original 16-bit pixel art, safe practice courtyard with soft targets and chalk circles, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_camp",
+      "targetPath": "public/assets/scenes/interiors/camp.webp",
+      "prompt": "Original 16-bit pixel art, tent camp with a communal table and lantern, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_market",
+      "targetPath": "public/assets/scenes/interiors/market.webp",
+      "prompt": "Original 16-bit pixel art, merchant alley with stalls and baskets, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_forge",
+      "targetPath": "public/assets/scenes/interiors/forge.webp",
+      "prompt": "Original 16-bit pixel art, fantasy forge workshop with tools stored safely, nontechnical decorative setting, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_library",
+      "targetPath": "public/assets/scenes/interiors/library.webp",
+      "prompt": "Original 16-bit pixel art, shelf-lined reading room with open lamps and book tables, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_laboratory",
+      "targetPath": "public/assets/scenes/interiors/laboratory.webp",
+      "prompt": "Original 16-bit pixel art, quiet fantasy study room with glass jars and scrolls, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_temple",
+      "targetPath": "public/assets/scenes/interiors/temple.webp",
+      "prompt": "Original 16-bit pixel art, peaceful community sanctuary with light from stained glass, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_guild",
+      "targetPath": "public/assets/scenes/interiors/guild.webp",
+      "prompt": "Original 16-bit pixel art, adventurer guild reception with mission board and tables, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_barracks",
+      "targetPath": "public/assets/scenes/interiors/barracks.webp",
+      "prompt": "Original 16-bit pixel art, orderly lodging and noticeboard, nonviolent atmosphere, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_shop",
+      "targetPath": "public/assets/scenes/interiors/shop.webp",
+      "prompt": "Original 16-bit pixel art, cozy storefront and display cabinets, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_garden",
+      "targetPath": "public/assets/scenes/interiors/garden.webp",
+      "prompt": "Original 16-bit pixel art, botanical greenhouse with green trails, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_ruin",
+      "targetPath": "public/assets/scenes/interiors/ruin.webp",
+      "prompt": "Original 16-bit pixel art, aged stone ruin with vines and light beams, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_dungeon",
+      "targetPath": "public/assets/scenes/interiors/dungeon.webp",
+      "prompt": "Original 16-bit pixel art, fantasy subterranean ancient corridor with visible safe staging area, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_port",
+      "targetPath": "public/assets/scenes/interiors/port.webp",
+      "prompt": "Original 16-bit pixel art, harbor building with rope coils and maps, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_palace",
+      "targetPath": "public/assets/scenes/interiors/palace.webp",
+      "prompt": "Original 16-bit pixel art, council hall of medieval fantasy city, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    },
+    {
+      "id": "interior_farm",
+      "targetPath": "public/assets/scenes/interiors/farm.webp",
+      "prompt": "Original 16-bit pixel art, community barn and greenhouse, front-view 320x180, empty foreground staging area for independent actor sprite; clear lighting, crisp pixels, no text, no logos, game-ready reusable interior backdrop"
+    }
+  ],
+  "layerOrder": [
+    "back_aura",
+    "body",
+    "skin",
+    "face",
+    "eyes",
+    "pants",
+    "shoes",
+    "shirt",
+    "hair",
+    "hat",
+    "armor",
+    "held",
+    "accessory",
+    "front_aura"
+  ],
+  "qualityGate": "Every targetPath must exist before mark completed; named seed is not actual image; optimize <75KB per typical backdrop if feasible"
+}

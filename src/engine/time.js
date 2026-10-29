@@ -3,8 +3,10 @@ export const DAYS_PER_YEAR=360;
 export const seasons=['ใบไม้ผลิ','ฤดูร้อน','ฤดูใบไม้ร่วง','ฤดูหนาว'];
 export function calendar(state) {
  const {absoluteDay,birthAbsoluteDay}=state.time;
- return {ageYears:Math.floor((absoluteDay-birthAbsoluteDay)/360),worldYear:1001+Math.floor(absoluteDay/360),dayOfYear:absoluteDay%360+1,season:seasons[Math.floor(absoluteDay%360/90)]};
+ const lived=absoluteDay-birthAbsoluteDay,dayInYear=lived%360;
+ return {ageYears:Math.floor(lived/360),ageMonths:Math.floor(lived/30),dayInYear,yearProgress:dayInYear/360,worldYear:1001+Math.floor(absoluteDay/360),dayOfYear:absoluteDay%360+1,season:seasons[Math.floor(absoluteDay%360/90)]};
 }
+export function ageLabel(state){const c=calendar(state);return c.ageMonths<36?`${c.ageMonths} เดือน`:`${c.ageYears} ปี`;}
 export function normalize(state) {
  const c=calendar(state);state.age=c.ageYears;state.day=c.dayOfYear;state.season=c.season;
  for(const [key,maxKey] of [['hp','maxHp'],['mana','maxMana'],['stamina','maxStamina']])state[key]=Math.max(0,Math.min(state[maxKey],state[key]));

@@ -1,3 +1,18 @@
+# Roadmap — V7 current checkpoint
+
+V7 supersedes conflicting stages below. Current 0.8.0 completes V7-1/2 and the first nine-fork V7-3 slice.
+
+- [x] V7-1 audit/precedence and canonical source pack.
+- [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
+- [ ] V7-3 30–50 full early-life forks first, then ≥100: nine forks/27 choices currently verified, including delayed effects and a conditional role. Teen support chain is next.
+- [ ] V7-4 inherited visible appearance catalogs: v1 actor remains.
+- [ ] V7-5 art/journeys: twenty real PNGs for current twenty nodes, read-only map/main-page route choices done; interiors/new places/power-aware encounters remain.
+- [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.
+- [ ] V7-7/8 owned gear, economy/NPC/combat, earned lifespan and deity gates.
+- [ ] V7-9/10 full authored counts, balance and hardening.
+
+See `docs/NEXT_CODEX_TASK.md` for exact remaining work and validation. Historical checkpoints follow.
+
 # Roadmap
 
 - [x] 1. Vite project, modular shell, Thai navigation, responsive layout, local artwork, unit/browser tests.

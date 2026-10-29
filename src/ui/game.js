@@ -6,7 +6,7 @@ import { legacyDays } from '../engine/legacy.js';
 import { closePanel } from './panels.js';
 import {renderScene as renderSetting} from './scene.js';
 import { upgradeState } from '../engine/migrate.js';
-import { calendar, advanceTime, recordAction, normalize } from '../engine/time.js';
+import { calendar, ageLabel, advanceTime, recordAction, normalize } from '../engine/time.js';
 import { dispatch } from '../engine/actions.js';
 import { renderLife } from './life-view.js';
 import { storyToken, textTokens } from '../engine/life.js';
@@ -15,6 +15,8 @@ const escapeText = value => String(value).replace(/[&<>"']/g, char => ({'&':'&am
 import { GameState, replaceState } from '../engine/state.js';
 import { Scenes } from '../data/scenes.js';
 import { canChoose } from '../engine/choices.js';
+import {isV7} from '../engine/development.js';
+import {nextDecisionDay} from '../engine/decisions.js';
 export const Game = {
             active:false,
             clock:new ActivePlayClock(),
@@ -73,7 +75,7 @@ export const Game = {
                 document.getElementById("displayName").innerText = GameState.name;
                 document.getElementById("displayRace").innerText = `เผ่า: ${GameState.race}`;
                 document.getElementById("displayCareer").innerText = `อาชีพ: ${GameState.career}`;
-                document.getElementById('displayAge').textContent=GameState.age<1?`อายุ ${Math.floor((GameState.time.absoluteDay-GameState.time.birthAbsoluteDay)/30)} เดือน`:`อายุ ${GameState.age} ปี`;
+                document.getElementById('displayAge').textContent=`อายุ ${ageLabel(GameState)}`;
                 document.getElementById('displayPower').textContent=`Lv. ${GameState.power?.level??1} / 100`;
                 document.getElementById('timeControls').replaceChildren();
                 document.getElementById('displayGold').textContent=`${GameState.gold} เหรียญ`;
@@ -148,6 +150,7 @@ export const Game = {
                                 }
                             }
                         }
+                        if(isV7(GameState)&&GameState.time.absoluteDay+this.legacyDays(choice)>nextDecisionDay(GameState)){canPass=false;reqText+=' [มีเรื่องสำคัญระหว่างทาง กลับหน้ารายปีเพื่อเลือกก่อน]';}
 
                         html += `
                             <button type="button" class="choice-card ${canPass ? '' : 'disabled'}" ${canPass ? '' : 'disabled'} ${canPass ? `onclick="Game.choose('${choice.id}', '${storyToken(GameState)}')"` : ''}>

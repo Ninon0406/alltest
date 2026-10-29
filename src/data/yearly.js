@@ -1,12 +1,13 @@
 export const yearlyActivities=[
+ {id:'care',label:'อยู่ภายใต้การดูแล',minAge:0,maxAge:2,stats:[],memory:[],description:'ผู้ดูแลจัดอาหาร การพัก และการเล่นที่เหมาะกับพัฒนาการ ไม่ฝึกอาชีพหรือออกเดินทางเอง'},
  {id:'balanced',label:'เติบโตอย่างสมดุล',minAge:0,stats:['wis','int','con'],memory:['curiosity','kindness'],description:'เรียนรู้ตามวัย สลับพักและช่วยคนใกล้ตัว'},
  {id:'play',label:'เล่นและสร้างสรรค์',minAge:0,stats:['dex','cha'],memory:['curiosity','ambition'],description:'เล่นอย่างปลอดภัย ฝึกจินตนาการและการใช้มือ'},
  {id:'family',label:'ใช้เวลากับครอบครัว',minAge:0,stats:['cha','wis'],memory:['kindness'],description:'สะสมความทรงจำและกำลังใจจากคนที่ไว้ใจ'},
  {id:'rest',label:'ดูแลสุขภาพและพัก',minAge:0,stats:['con'],memory:['caution'],description:'จัดเวลาพัก ฟื้นพลังและลดความเหนื่อยล้า'},
- {id:'study',label:'เรียนรู้และอ่านตำรา',minAge:4,stats:['int','wis'],memory:['curiosity'],description:'เรียนตามวัย ตั้งแต่พื้นฐานจนถึงการฝึกที่ตรวจวัดได้'},
+ {id:'study',label:'เรียนรู้และอ่านตำรา',minAge:4,stats:['int','wis'],memory:['curiosity'],description:'เรียนพื้นฐานกับผู้ดูแล ตั้งแต่วัยอ่านเบื้องต้นจนถึงการฝึกที่ตรวจวัดได้'},
  {id:'train',label:'ฝึกความถนัด',minAge:8,stats:['str','dex','con','int','wis','per','luk','cha'],memory:['ambition'],description:'ฝึกฟรีพร้อมจัดเวลาพักอัตโนมัติ ใช้ความอึดและสมาธิจริง'},
  {id:'work',label:'ทำงานและเก็บเงิน',minAge:8,stats:['con','cha'],memory:['caution','kindness'],description:'ทำงานชุมชนหรืองานอาชีพที่เลือก รับเงินจริงลงบัญชี'},
- {id:'explore',label:'สำรวจโลกใกล้ตัว',minAge:4,stats:['per','wis'],memory:['curiosity'],description:'เดินเท้าตามเส้นทางที่เปิด พบสถานที่ใหม่ได้ไม่เกินหนึ่งแห่งต่อปี'},
+ {id:'explore',label:'สำรวจโลกใกล้ตัว',minAge:4,stats:['per','wis'],memory:['curiosity'],description:'สังเกตภูมิทัศน์และสิ่งใกล้ที่พัก เลือกการย้ายเมืองผ่านการเดินทาง'},
 ];
 const event=(id,minAge,maxAge,title,text,choices)=>({id,minAge,maxAge,title,text,choices:choices.map(([label,stat,memory,gold=0],i)=>({id:`${id}.${i+1}`,label,stat,memory,gold}))});
 export const lifeMilestones=[

@@ -1,16 +1,18 @@
 import {it,expect} from 'vitest';
+import {simulateV7} from '../scripts/v7-simulation.mjs';
+import {pendingDecision} from '../src/engine/decisions.js';
 import {createRun,ActivePlayClock} from '../src/engine/run.js';
 import {dispatch} from '../src/engine/actions.js';
 import {storyToken} from '../src/engine/life.js';
 import {archiveCompleted,completedSummary,readArchive,ARCHIVE_KEY} from '../src/save/archive.js';
 const act=(s,a)=>dispatch(s,{...a,token:storyToken(s)});
 const fresh=(id='run-1')=>createRun(8,{id,startedAt:'2026-10-29T00:00:00.000Z'});
-function finish(){let s=fresh();s=act(s,{type:'advanceYears',years:10});s=act(s,{type:'majorChoice',decisionId:'turn.school',choiceId:'turn.school.1'});s=act(s,{type:'advanceYears',years:5});s=act(s,{type:'majorChoice',decisionId:'turn.direction',choiceId:'turn.direction.1'});s=act(s,{type:'advanceYears',years:5});s=act(s,{type:'legacyArc'});for(const choiceId of ['c_path_peasant','c_peasant_farm','c_end_peasant'])s=act(s,{type:'legacyChoice',choiceId});return s;}
+function finish(){let s=simulateV7(8,{targetAge:60,ceremony:true}).state;while(pendingDecision(s)){const d=pendingDecision(s);s=act(s,{type:'majorChoice',decisionId:d.id,choiceId:d.choices.find(c=>!c.disabled).id});}s=act(s,{type:'legacyArc'});for(const choiceId of ['c_path_peasant','c_peasant_farm','c_end_peasant'])s=act(s,{type:'legacyChoice',choiceId});return s;}
 const storage=()=>{const data=new Map(),writes=[];return {data,writes,getItem:k=>data.get(k)??null,setItem:(k,v)=>{writes.push(k);data.set(k,v);}};};
 it('keeps action validation pure and prevents tokens from a previous run',()=>{
- const s=fresh(),before=structuredClone(s),action={type:'advanceYears',years:1,token:storyToken(s)};
+ const s=fresh(),before=structuredClone(s),action={type:'majorChoice',decisionId:'dev.warmth',choiceId:'dev.warmth.voice',token:storyToken(s)};
  expect(()=>dispatch(fresh('another-run'),action)).toThrow();expect(s).toEqual(before);
- const next=dispatch(s,action);expect(next.age).toBe(1);expect(next.run.id).toBe(s.run.id);expect(s).toEqual(before);
+ const next=dispatch(s,action);expect(next.story.flags.familiar_voice).toBe(true);expect(next.run.id).toBe(s.run.id);expect(s).toEqual(before);
  expect(()=>dispatch(next,action)).toThrow();
 });
 it('executes the original peaceful ending atomically and closes its run against every further action',()=>{

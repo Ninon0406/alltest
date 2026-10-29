@@ -15,9 +15,11 @@ import {readGallery} from './save/gallery.js';
 import {services,availableServices} from './world/economy.js';
 import {locations} from './world/locations.js';
 import {currentCareer,jobQuote} from './progression/engine.js';
+import {renderJourney} from './ui/journey-view.js';
+import {ageLabel} from './engine/time.js';
 window.Game=Game;initPanels();
 let dismissedDecision=null,manualOpening=false,textScale=100,reduced=false;
-const decisionKey=()=>{const d=Game.active&&GameState.run.status==='active'?pendingDecision(GameState):null;return d?`${GameState.run.id}:${d.id}:${GameState.age}`:null;};
+const decisionKey=()=>{const d=Game.active&&GameState.run.status==='active'?pendingDecision(GameState):null;return d?`${GameState.run.id}:${d.id}:${d.stage??''}:${GameState.time.absoluteDay}`:null;};
 function showBirth(){
  closePanel();document.body.classList.remove('yearly-mode','playing');document.querySelector('#gameView').hidden=true;document.querySelector('#runHeader').hidden=true;document.querySelector('.main-nav').hidden=true;document.querySelector('#birthScreen')?.remove();dismissedDecision=null;
  const screen=document.createElement('section');screen.id='birthScreen';screen.className='rebirth-screen';
@@ -50,7 +52,7 @@ function renderShop(parent){
  paragraph(parent,`ขนมปังในกระเป๋า ${GameState.world.inventory.bread??0}/20 ชิ้น`);
 }
 function renderStatus(parent){
- paragraph(parent,`${GameState.name} · อายุ ${GameState.age} ปี · ${GameState.career}`);paragraph(parent,`ระดับพลัง ${GameState.power?.level??1}/100 · ผู้เริ่มรับรู้พลัง`);
+ paragraph(parent,`${GameState.name} · อายุ ${ageLabel(GameState)} · ${GameState.career}`);paragraph(parent,`ระดับพลัง ${GameState.power?.level??1}/100 · ผู้เริ่มรับรู้พลัง`);
  const grid=document.createElement('div');grid.className='stats-grid';parent.append(grid);for(const [id,label]of Object.entries(statNames))paragraph(grid,`${label} ${GameState.stats[id]}`);
  paragraph(parent,`พลังชีวิต ${GameState.hp}/${GameState.maxHp} · ความอึด ${GameState.stamina}/${GameState.maxStamina} · มานา ${GameState.mana}/${GameState.maxMana}`);paragraph(parent,`อาหาร ${GameState.hunger}/100 · น้ำ ${GameState.thirst}/100 · เหนื่อยล้า ${GameState.progression.fatigue}/100 · สมาธิ ${GameState.progression.focus}/100 · ขวัญกำลังใจ ${GameState.morale}/100`);paragraph(parent,GameState.traits.join(' · '));panelButton(parent,'บันทึกตัวละคร','record');
 }
@@ -72,9 +74,10 @@ function showPanel(key){
  const previous=document.activeElement,label=previous?.getAttribute('aria-label')??previous?.textContent;
  manualOpening=true;stopYearlyAuto();if(Game.active)Game.render();manualOpening=false;
  const titles={map:'แผนที่และบริการ',career:'อาชีพและการฝึก',bag:'กระเป๋า',record:'บันทึกตัวละคร',chronicle:'บันทึกชีวิตรายปี',focus:'แนวชีวิตประจำปี',decision:'การตัดสินใจสำคัญ',shop:'ร้านค้าและเสบียง',status:'สถานะตัวละคร',work:'งานและรายได้',archive:'ประวัติชีวิตที่จบแล้ว',options:'ตัวเลือก',more:'เพิ่มเติม',guide:'คู่มือโลก'};
- if(!titles[key])return;
+ titles.journey='เลือกการเดินทาง';if(!titles[key])return;
  const render=parent=>{
   if(key==='map')renderMap(parent,GameState,a=>Game.perform(a),refreshPanel);
+  else if(key==='journey')renderJourney(parent,GameState,a=>{const ok=Game.perform(a);if(ok)closePanel();return ok;},refreshPanel);
   else if(key==='career')renderCareer(parent,GameState,a=>{const ok=Game.perform(a);if(ok&&a.type==='beginAwakening')closePanel();return ok;});
   else if(key==='bag')renderBag(parent);
   else if(key==='shop')renderShop(parent);
@@ -87,7 +90,7 @@ function showPanel(key){
   else if(key==='archive')renderArchive(parent);
   else if(key==='options')renderOptions(parent);
   else if(key==='more'){for(const [label,id]of [['ดูสถานะทั้งหมด','status'],['บันทึกตัวละคร','record'],['บันทึกชีวิตรายปี','chronicle'],['เปลี่ยนแผน','focus'],['งานและรายได้','work'],['ร้านค้าและเสบียง','shop'],['คู่มือโลก','guide']])panelButton(parent,label,id);}
-  else paragraph(parent,'เลือกแนวชีวิตแล้วผ่านครั้งละ 1, 2 หรือ 5 ปี เรื่องทั่วไปสะสมในบันทึก เรื่องสำคัญจะหยุดรอให้เลือก เปิดแผนที่ ฝึก ทำงาน และซื้อเสบียงในหน้าต่างย่อยได้โดยไม่เริ่มชีวิตใหม่ เวลาอัตโนมัติหยุดเมื่อซ่อนแท็บหรือเปิดหน้าต่างย่อย ชีวิตอยู่ในหน่วยความจำเท่านั้น รีเฟรชแล้วกลับไปเกิดใหม่');
+  else paragraph(parent,'วัยเล็กอยู่ภายใต้การดูแลและแสดงอายุเป็นเดือนจนถึง 3 ปี หลังจากนั้นเลือกแนวชีวิตและผ่านครั้งละ 1, 2 หรือ 5 ปี เรื่องสำคัญจะหยุดรอให้เลือก พิธีอายุ 12 ปีเลือกทีละขั้น แผนที่ใช้ดูข้อมูล ส่วนการเดินทางเลือกจากหน้าชีวิต เวลาอัตโนมัติครั้งละ 30 วันหยุดเมื่อซ่อนแท็บหรือเปิดหน้าต่างย่อย ชีวิตอยู่ในหน่วยความจำเท่านั้น รีเฟรชแล้วกลับไปเกิดใหม่');
  };
  const restore=previous?.isConnected?previous:[...document.querySelectorAll('button')].find(b=>(b.getAttribute('aria-label')??b.textContent)===label);
  openPanel(key,titles[key],render,()=>{if(key==='decision')dismissedDecision=decisionKey();if(Game.active)Game.render();},restore);

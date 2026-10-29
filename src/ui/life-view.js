@@ -2,6 +2,8 @@ import {renderScene as renderSetting} from './scene.js';
 import { currentEvent, storyToken, choiceDays, textTokens } from '../engine/life.js';
 import { calendar } from '../engine/time.js';
 import { archetypes } from '../data/archetypes.js';
+import {isV7} from '../engine/development.js';
+import {pendingDecision} from '../engine/decisions.js';
 export const statNames={str:'พละกำลัง',dex:'ความคล่อง',con:'ความอึด',int:'สติปัญญา',wis:'ความเข้าใจ',per:'การสังเกต',luk:'โชค',cha:'เสน่ห์'};
 export function paragraph(parent,text,tag='p'){const node=document.createElement(tag);node.textContent=text;parent.append(node);return node;}
 export function actionButton(parent,label,action,perform){const button=document.createElement('button');button.type='button';button.textContent=label;button.onclick=()=>perform(action);parent.append(button);return button;}
@@ -10,6 +12,8 @@ export function renderLife(parent,state,perform){
  parent.replaceChildren();const event=currentEvent(state),token=storyToken(state),page=Math.min(state.life.page,event.pages.length-1),c=calendar(state);
  actionButton(parent,'กลับหน้าชีวิตรายปี',{type:'setPacing',view:'yearly',token},perform);
  renderSetting(parent,state);
+ const pending=isV7(state)&&pendingDecision(state);
+ if(pending){paragraph(parent,pending.title,'h2');paragraph(parent,'เรื่องสำคัญกำลังรอคุณ เวลาและกิจกรรมอื่นจะรอจนกว่าคุณเลือก');panelButton(parent,'ตัดสินใจตอนนี้','decision');return;}
  const story=document.createElement('article');story.className='scene-text-box';parent.append(story);
  paragraph(story,`${event.title} — อายุ ${c.ageYears} ปี`,'h2');
  paragraph(story,`หน้า ${page+1}/${event.pages.length} • ${state.location}`,'small');
@@ -32,6 +36,6 @@ export function renderJournal(parent,state){
   const detail=document.createElement('section');detail.className='year-card';parent.append(detail);
   const update=()=>{detail.replaceChildren();const year=state.chronicle.find(r=>r.age===Number(select.value));paragraph(detail,`อายุ ${year.age} ปี · ${year.actions.length} รายการ`,'h3');for(const e of year.actions.slice(-12))paragraph(detail,e.title+(e.automatic?' · เกิดขึ้นตามแนวชีวิต':''));if(year.actions.length>12)paragraph(detail,`แสดง 12 รายการล่าสุดจาก ${year.actions.length} รายการ`,'small');};select.onchange=update;update();
  }
- paragraph(parent,'เหตุการณ์ล่าสุด','h3');for(const e of state.journal.slice(-12).reverse())paragraph(parent,`อายุ ${e.age} ปี · ${e.location} · ${e.title}`);
+ paragraph(parent,'เหตุการณ์ล่าสุด','h3');for(const e of state.journal.slice(-12).reverse())paragraph(parent,`อายุ ${e.ageMonths!=null&&e.ageMonths<36?e.ageMonths+' เดือน':e.age+' ปี'} · ${e.location} · ${e.title}`);
  if(!state.journal.length)paragraph(parent,'ยังไม่มีเหตุการณ์ในชีวิตนี้');
 }

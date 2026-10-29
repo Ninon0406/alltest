@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "source": "src/ui/scene-art.js",
+  "images": [
+    {
+      "locationId": "dawn",
+      "file": "dawn.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "4e8be4ff4182c452bedd136892a5edd1334916113afbe1796b071da923d4324c"
+    },
+    {
+      "locationId": "market",
+      "file": "market.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "8d12c5fb255039f21fbe5255d0fa1509776794c16e82688105b06d85bf7ea922"
+    },
+    {
+      "locationId": "school",
+      "file": "school.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "44030ec1db7665eff3a2fbe26cf6193a5eec8f3166d87abcf7f14bed54d05c29"
+    },
+    {
+      "locationId": "grove",
+      "file": "grove.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "691a1ce5cae0eea12efa2203eaa4a2317e3148415341f833960db28352a2b098"
+    },
+    {
+      "locationId": "capital",
+      "file": "capital.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "0a7d458d14350022911940fca306c7cf534318551d0c68cb16c8b36dc5f1a1bf"
+    },
+    {
+      "locationId": "mist",
+      "file": "mist.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "b061bba93f6f1820834f17a1db33c3599f425a6170d8d9cd153a87252fe5248a"
+    },
+    {
+      "locationId": "forge",
+      "file": "forge.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "6d0f1ef0d56d9125598fc42cd8ffef8b571deb3412242467ffcd6846e692376e"
+    },
+    {
+      "locationId": "mine",
+      "file": "mine.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "ec8400655573baa92c4d2f09e0fdd623f204635f6defe8b39af5565b04eb71da"
+    },
+    {
+      "locationId": "pass",
+      "file": "pass.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "60fc7c54ddf9a8821546a3d417d15e7a0fdb0859260873c89cd8acdeb79abfc4"
+    },
+    {
+      "locationId": "starfall",
+      "file": "starfall.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "027c43490a59dd24c5dc24e99596b7b40b28f9c1f79e6511f9b11f001c003904"
+    },
+    {
+      "locationId": "library",
+      "file": "library.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "bbb222e37e1475af95e4578869da25603b0fb0b8b24e28b8389b239f52a3f4d4"
+    },
+    {
+      "locationId": "observatory",
+      "file": "observatory.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "592790affd5f6203c4e4d52b50dfbf2a1fe9aad54c1497dc7feb0f2448e2a7c1"
+    },
+    {
+      "locationId": "herb",
+      "file": "herb.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "71e9321687519567e71cab1e7205a8f4ad67080404c66f907b9f19cb40810ab0"
+    },
+    {
+      "locationId": "roots",
+      "file": "roots.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "b40be19d6f319793f505b75b052b6279fd7e4a150f76f345dc1e05edc5e3a02a"
+    },
+    {
+      "locationId": "forest",
+      "file": "forest.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "d1ce25703b9773d78c18c91a1df44e99596fa765db169f2f363339dd06742146"
+    },
+    {
+      "locationId": "ruins",
+      "file": "ruins.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "f52d60bdc3eff6e06b0e7667d3ddf9201040c37858527b605788af0f64a5e5e4"
+    },
+    {
+      "locationId": "moonport",
+      "file": "moonport.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "337cb8f8c6edafe9bf8405a872bf8cd6b68f323537fdc0b031e1978b93e84787"
+    },
+    {
+      "locationId": "fishmarket",
+      "file": "fishmarket.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "7bb1c007d0c5f2e5cb8e88073ca64abb42f99ea5a34cf424ff4a466eada6a820"
+    },
+    {
+      "locationId": "lighthouse",
+      "file": "lighthouse.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "9ba14aab1dd12c9c4f417b427ff69689acd08329d940f46429ba5eeabf20ea50"
+    },
+    {
+      "locationId": "dock",
+      "file": "dock.png",
+      "width": 320,
+      "height": 160,
+      "sha256": "525ba5cbd065c594b7b374052857c13e466ccae98f4f9cedaefd2fc364f0f6ea"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import {generateBirth} from '../src/character/rebirth.js';
 import {locations} from '../src/world/locations.js';
 import {locationArt} from '../src/ui/scene.js';
 import {sprite} from '../src/ui/avatar/sprite.js';
+import {simulateV7} from '../scripts/v7-simulation.mjs';
 import {createRun} from '../src/engine/run.js';
 import {dispatch} from '../src/engine/actions.js';
 import {storyToken} from '../src/engine/life.js';
@@ -16,5 +17,5 @@ it('renders all existing races and never invents an equipped weapon from the car
  const s=generateBirth(5);for(const race of ['มนุษย์','พรายพฤกษา','ชนศิลา','สายเลือดดารา']){s.race=race;expect(sprite(s)).toContain('<svg');expect(sprite(s)).toContain('shape-rendering="crispEdges"');}s.career='นักดาบ';expect(sprite(s)).not.toContain('weapon');
 });
 it('labels initial power honestly and cannot gain levels or deity status just by skipping years',()=>{
- let s=createRun(8,{id:'pixel-test',startedAt:'2026-10-29T00:00:00Z'});s=dispatch(s,{type:'advanceYears',years:5,token:storyToken(s)});expect(s.power.level).toBe(1);expect(()=>dispatch(s,{type:'ascend',token:storyToken(s)})).toThrow();
+ const s=simulateV7(8,{targetAge:10}).state;expect(s.power.level).toBe(1);expect(()=>dispatch(s,{type:'ascend',token:storyToken(s)})).toThrow();
 });

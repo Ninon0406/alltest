@@ -14,6 +14,7 @@ export function availableServices(state){return [...new Set([...locations[state.
 export function useService(state,id){
  const config=services[id],year=calendar(state).ageYears;
  if(!config||!availableServices(state).includes(id)||year<config.minAge)throw Error('ยังใช้บริการนี้ไม่ได้ตามวัยหรือสถานที่');
+ if(state.story?.version===7&&id==='study'&&year<6)throw Error('อ่านตำราพื้นฐานกับผู้ดูแลเมื่ออายุ 6 ปี');
  if(state.gold+config.gold<0)throw Error('เงินไม่พอ ยังมีงานและที่พักชุมชนฟรี');
  if(id==='work'&&state.stamina<10)throw Error('ความอึดไม่พอ กรุณาพักก่อน');
  const key=`${state.world.currentLocationId}:${year}`;

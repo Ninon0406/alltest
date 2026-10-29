@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.0 — 2026-10-29 — V7 infant development and truthful time
+
+Continued from e8af5f8 and imported the canonical V7 authoring pack. Added care-only infancy with exact month triggers, nine three-choice developmental/school forks, real memory/relationship flags and delayed school effects including a gated community role. New lives choose all seven existing ceremony stages manually without rerolling measurement. All timed actions now respect a shared decision boundary; 30-day autoplay supports 1–16×, actual calendar progress and precise stopping. Map is read-only; actual travel choices move to the main scene with real route costs and no silent focus relocation. Recommendations show up to eight eligible careers while the codex retains other eligible paths. Baked 20 actual location PNGs with mapping/dimension/hash validation and base-path-safe production loading. One Life/archive, frozen births, existing careers/graph/six endings remain.
+
+Implemented counts: 135 event/scene records, 296 authored choices; nine new V7 forks/27 choices; 20 unique scene PNGs. This is an initial V7 slice, not ≥100 forks/endings, inherited appearance, gear, power growth or long-life completion. Final validation and deployment evidence are recorded in docs/NEXT_CODEX_TASK.md.
+
 ## 0.7.0 — 2026-10-29 — V6 Phase B compact UI
 
 Replaced long stacked cards with a viewport dashboard: prominent age/initial Lv1, compact vitals, three time-step buttons and a focus picker, original pixel actor in contextual tile scenes, desktop summary dock and five-control mobile navigation. Map/career/training/real bread shop/bag/work/record/journal/options and rare decisions now share one native dialog with explicit Tab wrap, ESC, close/focus return, background locking, pause-on-open and inline errors. Added session-only text sizing and reduced effects; journal reads one actual year at a time. Existing 20 locations get distinct procedural compositions/previews. Appearance-v1 identity and all original mechanics remain; inherited v2/20-variant catalogs, equipment and earned power 1–100 remain incomplete.
