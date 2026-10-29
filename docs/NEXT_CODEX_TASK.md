@@ -28,7 +28,7 @@ The first coherent V7 early-life cluster now has **30 runnable forks / 90 author
 
 ## Current work
 
-School/story implementation is complete; local and public browser checks passed. The full GitHub workflow failed at Playwright; diagnostics/fix are still in progress below. Do not describe that CI run as passing. No half-built gameplay feature is intentionally left behind.
+School/story implementation is complete; local and public browser checks passed. CI follow-up adds readable failure annotations and a scoped budget for the two genuine age-60 browser scenarios. Final CI publication evidence follows below. No half-built gameplay feature is intentionally left behind.
 
 ## Next task — V7-4 inherited appearance
 
@@ -42,7 +42,7 @@ The first 30-fork slice is complete; do not reimplement infancy, time controls, 
 
 New: `src/data/events/school.js`, `tests/school-story.test.js`, `tests/browser/school.spec.js`.
 
-Updated: `src/engine/development.js` (chronological union, specific requirement hints), `src/data/events/teen.js` (childhood callbacks), `scripts/verify-progression.mjs` (real school-chain check), `tests/development.test.js` (actual new boundary without an injected age jump), `tests/teen-story.test.js` (current authored scope), package version, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/USER_DIRECTIVE_V7/CHANGELOG, this file and generated publication outputs. Follow-up: `playwright.config.js` enables GitHub failure annotations in CI so actual test failures are readable through check-run metadata.
+Updated: `src/engine/development.js` (chronological union, specific requirement hints), `src/data/events/teen.js` (childhood callbacks), `scripts/verify-progression.mjs` (real school-chain check), `tests/development.test.js` (actual new boundary without an injected age jump), `tests/teen-story.test.js` (current authored scope), package version, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/USER_DIRECTIVE_V7/CHANGELOG, this file and generated publication outputs. Follow-up: `playwright.config.js` enables GitHub failure annotations in CI; `tests/browser/game.spec.js` gives only the two full-lifetime scenarios 90 seconds. Every gameplay step/assertion remains, other tests retain their normal budget; no retries or skips were added.
 
 ## Limitations / remaining systems
 
@@ -60,10 +60,12 @@ All three production-preview verifiers passed: seven widths (320/360/390/768/102
 
 Visually reviewed the real untrained school-exhibition dialog at 360×900 after clicked play from birth. All three options and close control fit; no horizontal overflow and no button under 44px high. No known unresolved regression in the completed local checks.
 
+CI timing investigation: the first workflow's Playwright step failed; the original runner log host is network-denied and its old annotations contained no case details. The instrumented rerun's build passed all suites. Independently restricted only a diagnostic subprocess and its children to one CPU, with two browser workers: all four desktop/mobile full-lifetime cases hit the original 30-second test deadline. After giving only those two age-60 scenarios 90 seconds, all four passed on the same constrained CPU in 42–45 seconds each (1.5 minutes total). They still click every decision, reach age 60, check the genuine ending/archive/download and never inject ages. This establishes a real insufficient test budget under contention; it is not a claim that the inaccessible original log identified a specific failed case. The final CI run verifies the fix without changing the game bundle.
+
 Actual totals: **156 scenes/events, 359 authored choices, six reachable endings**. Non-legacy: 141 events / 330 choices. V7: **30 forks / 90 reachable choices**, 27 adapted briefs + three original follow-ups. Retained: 20 actual location PNGs, 20 map nodes / five regions / 20 edges, 20 base / 20 advanced career families, 120 names, zero important authored NPC profiles/dungeons. Source-pack drafts are not implemented counts. Audit includes 100 new V7 lives through age 20, 100 legacy branch traversals, 100 detailed childhood runs, 40 career runs and five annual runs beyond age 60.
 
 ## Commit / publication evidence
 
 Base: `5e029449551496f958d922b98ecbd8ee94dbe473`. Prior runtime `78a10b5` and verification `beb2896` were publicly verified with all three scripts; final full CI [40838430108](https://github.com/Ninon0406/alltest/actions/runs/40838430108) passed.
 
-Runtime: `433546dac69e5c97a22ea96345a114c473751fd0`. Branch Pages [40843895952](https://github.com/Ninon0406/alltest/actions/runs/40843895952) succeeded. Public HTML serves `assets/app-DcD8zOM7.js` / `assets/app-jJszjJhO.css`; all three public scripts passed (seven widths, actual school/ceremony/career/teen play to 20 at 1366/360, terminal-only history). Full workflow [40843896275](https://github.com/Ninon0406/alltest/actions/runs/40843896275) failed at Playwright, so its later content/artifact/deploy steps were skipped. Runner logs redirect to a network-denied host; existing API annotations only say exit code 1. Adding the GitHub reporter exposes the actual failed case/stack in allowed check-run metadata without bypassing network policy. Fix/recheck the actual failure before finalizing. Preserve old hashes. Source: app.html/src/public; root index/assets/art are generated main:/ compatibility outputs. Do not change Pages settings.
+Runtime: `433546dac69e5c97a22ea96345a114c473751fd0`. Branch Pages [40843895952](https://github.com/Ninon0406/alltest/actions/runs/40843895952) succeeded. Public HTML serves `assets/app-DcD8zOM7.js` / `assets/app-jJszjJhO.css`; all three public scripts passed (seven widths, actual school/ceremony/career/teen play to 20 at 1366/360, terminal-only history). Full workflow [40843896275](https://github.com/Ninon0406/alltest/actions/runs/40843896275) failed at Playwright, so its later content/artifact/deploy steps were skipped. Reporter follow-up `0b4cb51ec61d7fa5ffaac252b177709e58e59f02` / [40844685663](https://github.com/Ninon0406/alltest/actions/runs/40844685663) passed the complete build/test/content job; final deploy status and scoped-budget follow-up are to be recorded after verification. Preserve old hashes. Source: app.html/src/public; root index/assets/art are generated main:/ compatibility outputs. Do not change Pages settings.

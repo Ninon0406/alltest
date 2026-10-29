@@ -6,6 +6,8 @@ Added nine authored school forks / 27 choices at months 48/60/84/90/108/114/126/
 
 Local validation: 80 unit / 47 browser cases (zero skipped), content/build/staging/20-file PNG audit and all three production-preview scripts passed. Public evidence follows deployment; source-pack drafts are excluded from implemented counts.
 
+CI follow-up: expose browser failures as GitHub check annotations and budget 90 seconds only for the two genuine birth-to-age-60 ending/archive scenarios. One-CPU diagnostics reproduced their 30-second deadline failures; all four desktop/mobile cases then passed at 42–45 seconds with every original action/assertion retained. No retries, skipped tests or game-time shortcuts were added.
+
 ## 0.9.0 — 2026-10-29 — teen education and long-term support
 
 Added twelve authored teen forks / 36 choices, shared eligibility/expiry and ceremony priority, actual tuition discounts/payments with free routes, capped per-stat guidance applied only during actual practice, career networking wages applied only on real jobs, and delayed school/community/family gates. Added outcome receipts and live selected-stat training quotes. Invitations/contact never teleport. Expanded reference validation and 100 seeded V7 lives through age 20; retained One Life, old content, careers, map and 20 PNGs. Counts are now 147 scenes/events, 332 authored choices, six endings, including 21 V7 forks/63 choices. No inherited art, gear, power/lifespan or full 100-fork milestone is claimed. Final test/deployment evidence is in docs/NEXT_CODEX_TASK.md.
