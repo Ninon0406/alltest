@@ -3,6 +3,7 @@ import {existsSync} from 'node:fs';
 import {oneMonth,closeOverlay} from '../tests/browser/helpers.js';
 import {checkPublishedCharacters,waitForCharacterImages} from './published-character-check.mjs';
 import {checkPublishedInteriors} from './published-interior-check.mjs';
+import {checkPublishedEquipment} from './published-equipment-check.mjs';
 const url=process.argv[2]||'http://127.0.0.1:4185/';
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 try{
@@ -19,7 +20,7 @@ try{
   if(await page.locator('.play-scene').getAttribute('data-context')!=='home'||await page.locator('.play-scene').getAttribute('data-location-id')!==state.world.currentLocationId)throw Error('Care room is detached from actual node');if(width===320&&await checkPublishedInteriors(page)!==16)throw Error('Missing interiors');
   if(width===320){const files=await page.evaluate(async()=>{const manifest=await(await fetch(new URL('assets/scenes/manifest.json',location.href))).json();for(const entry of manifest.images){const img=new Image();img.src=new URL('assets/scenes/'+entry.file,location.href);await img.decode();if(img.naturalWidth!==320||img.naturalHeight!==160)throw Error('Invalid scene image');}return manifest.images.length;});if(files!==20)throw Error('Missing published PNGs');}
   await page.screenshot({path:`/tmp/reborn-ui-${width}.png`});
-  if(state.appearance.version!==2)throw Error('Inherited appearance is not published');if(width===320&&await checkPublishedCharacters(page)!==183)throw Error('Missing sprite files');
+  if(state.appearance.version!==2)throw Error('Inherited appearance is not published');if(width===320&&await checkPublishedCharacters(page)!==183)throw Error('Missing sprite files');if(width===320&&await checkPublishedEquipment(page)!==6)throw Error('Missing equipment files');
   for(const name of ['แผนที่และบริการ','อาชีพและการฝึก','กระเป๋า','บันทึกชีวิตรายปี','บันทึกตัวละคร']){
    const button=page.getByRole('button',{name,exact:true});if(await button.isVisible())await button.click();else{await page.getByRole('button',{name:'เพิ่มเติม',exact:true}).click();await page.getByRole('dialog').getByRole('button',{name,exact:true}).click();}
    await page.getByRole('dialog').waitFor();if((await page.evaluate(()=>Game.snapshot)).run.id!==state.run.id)throw Error('Overlay reset run');

@@ -31,6 +31,7 @@ jobs:
         run: |
           node scripts/stage-site.mjs
           node scripts/verify-interior-assets.mjs .
+          node scripts/verify-equipment-assets.mjs .
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html assets art .nojekyll
@@ -66,7 +67,7 @@ jobs:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           for attempt in 1 2 3 4; do
-            node scripts/verify-production.mjs "$SITE_URL" && node scripts/verify-progression.mjs "$SITE_URL" && node scripts/verify-one-life.mjs "$SITE_URL" && exit 0
+            node scripts/verify-production.mjs "$SITE_URL" && node scripts/verify-progression.mjs "$SITE_URL" && node scripts/verify-one-life.mjs "$SITE_URL" && node scripts/verify-equipment.mjs "$SITE_URL" && exit 0
             sleep 15
           done
           exit 1

@@ -1,6 +1,6 @@
 # REBORN · หนึ่งชีวิตในเอลินดรา
 
-Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.12.0 adds actual house, classroom and ceremony interiors to the existing V7 life simulation, inherited pixel characters and owned casual wardrobe.
+Original Thai fantasy life RPG, Vite + vanilla ES modules, static GitHub Pages. Current release 0.13.0 adds real owned equipment, shops, derived bonuses and visible gear to the existing V7 life simulation, regional interiors and inherited pixel families.
 
 Play: https://ninon0406.github.io/alltest/
 
@@ -22,7 +22,9 @@ New runs use 64×80 layered file-backed pixel actors with five immutable traits 
 
 Five family-gift garments (two tops, pants, shoes and hat) are actually owned. From age three, the bag allows changing owned clothes and removing the hat; each change updates the sprite with zero days, money or stat changes. Unowned/wrong-slot clothing and stale actions are rejected. New v2 characters never invent a weapon or aura from career text. Original v1 portraits and birth generators remain for historical compatibility.
 
-Twenty location-specific PNG backdrops remain generated from local tile compositions. Run `node scripts/verify-assets.mjs` to check mapping/dimensions/hashes; regenerate deliberately with `node scripts/generate-scene-assets.mjs` using installed Chromium. No hosted image service runs in gameplay. One original AI family-room background is stored with its PNG source and compressed runtime WebP; character parts are authored procedurally, not AI-generated. Combat gear/shops/modifiers, power growth, lifespan/deity paths, full fork/ending targets and combat remain incomplete. Existing equal births, 360-day calendar, 20 base/20 higher careers, twenty map nodes and six original endings remain; see CONTENT_MANIFEST.md for honest playable versus draft counts.
+Six additional equipment designs are sold by eight shops at existing canonical nodes: training staff/sword, focus rod, wooden shield, padded vest and travel coat. Buying or half-price returns cost one actual day; buying never auto-equips. Age/base-stat requirements, ownership, slots and stale-action checks are enforced atomically. The bag equips three slots over the existing family wardrobe. Six original procedural transparent PNGs show the actual worn items. Bonuses are derived separately from earned stats/capacities: suitable tools add XP only on real timed practice; the coat reduces actual community/career job stamina by two. Equipping never heals or adds power; removal clamps current resources to the lower cap. The status panel explains base versus equipment values; career/ceremony qualification still uses earned values.
+
+Twenty location-specific PNG backdrops remain generated from local tile compositions. Run `node scripts/verify-assets.mjs` to check mapping/dimensions/hashes; regenerate deliberately with `node scripts/generate-scene-assets.mjs` using installed Chromium. No hosted image service runs in gameplay. One original AI family-room background is stored with its PNG source and compressed runtime WebP; character parts are authored procedurally, not AI-generated. Power growth, combat/loot, lifespan/deity paths, full fork/ending targets and advanced equipment tiers remain incomplete. Existing equal births, 360-day calendar, 20 base/20 higher careers, twenty map nodes and six original endings remain; see CONTENT_MANIFEST.md for honest playable versus draft counts.
 
 Sixteen additional 320×160 interior PNGs show three room types across five regional styles and one original AI Starfall ceremony hall. Actual infant care, explicitly indoor pending stories and a ceremony at its real venue select the room. Resolving a story or pausing/finishing the ceremony returns outdoors; walking still updates the same canonical node, days, wallet and stamina. Room rendering changes none of those values. All 20 nodes have room bindings (60 references to 16 images, not 60 new places/artworks); map previews keep outdoor landmarks. Ambiguous conversations stay outdoors. Missing images use the corresponding procedural room fallback. The AI original and runtime derivative are preserved with provenance; normal builds need no image API.
 
@@ -42,16 +44,19 @@ npm run preview -- --port 4185
 node scripts/verify-production.mjs http://127.0.0.1:4185/
 node scripts/verify-progression.mjs http://127.0.0.1:4185/
 node scripts/verify-one-life.mjs http://127.0.0.1:4185/
+node scripts/verify-equipment.mjs http://127.0.0.1:4185/
 node scripts/verify-character-assets.mjs
 node scripts/verify-character-composition.mjs
 node scripts/verify-interior-assets.mjs
 node scripts/verify-interior-assets.mjs .
+node scripts/verify-equipment-assets.mjs
+node scripts/verify-equipment-assets.mjs .
 ```
 
 Playwright uses `/usr/bin/chromium` or `CHROMIUM_PATH`; production preview test port 4173. Desktop/mobile scenarios plus a separate seven-width project test overlays, real transactions, no active persistence, independent tabs, lifecycle, genuine terminal archive and storage failure downloads. Unit tests retain the 100,000-origin audit, 40 detailed career paths and 20 annual-planner promotions.
 
 ## Publication
 
-Source: `app.html`, `src/`, `public/`. Root `index.html`, `assets/`, `art/` are generated compatibility outputs for existing Pages `main:/`. Build then stage-site; retain prior published hashes for cached HTML. Do not hand-edit generated HTML. `.github/workflows/pages.yml` tests/builds and deploys, then runs all three public verifiers. A successful push alone is not evidence of working public CSS/gameplay. Vite uses relative `./` paths for `/alltest/`. No backend, paid API or external runtime art service is required.
+Source: `app.html`, `src/`, `public/`. Root `index.html`, `assets/`, `art/` are generated compatibility outputs for existing Pages `main:/`. Build then stage-site; retain prior published hashes for cached HTML. Do not hand-edit generated HTML. `.github/workflows/pages.yml` tests/builds and deploys, then runs all four public verifiers. A successful push alone is not evidence of working public CSS/gameplay. Vite uses relative `./` paths for `/alltest/`. No backend, paid API or external runtime art service is required.
 
-Read docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md, docs/USER_DIRECTIVE_V7.md and docs/NEXT_CODEX_TASK.md before continuation. More places/room types, modeled risky journeys, combat equipment, power/mortality, combat/NPC/long-life content targets are unfinished.
+Read docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md, docs/USER_DIRECTIVE_V7.md and docs/NEXT_CODEX_TASK.md before continuation. More places/room types, modeled risky journeys, advanced equipment/loot, power/mortality, combat/NPC/long-life content targets are unfinished.

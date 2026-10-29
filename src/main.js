@@ -18,6 +18,8 @@ import {currentCareer,jobQuote} from './progression/engine.js';
 import {renderJourney} from './ui/journey-view.js';
 import {ageLabel} from './engine/time.js';
 import {renderWardrobe} from './ui/wardrobe-view.js';
+import {renderEquipment,renderEquipmentShop,renderEquipmentStatus} from './ui/equipment-view.js';
+import {effectiveStats,effectiveCapacities,workStaminaCost} from './character/equipment-stats.js';
 window.Game=Game;initPanels();
 let dismissedDecision=null,manualOpening=false,textScale=100,reduced=false;
 const decisionKey=()=>{const d=Game.active&&GameState.run.status==='active'?pendingDecision(GameState):null;return d?`${GameState.run.id}:${d.id}:${d.stage??''}:${GameState.time.absoluteDay}`:null;};
@@ -44,6 +46,7 @@ function renderBag(parent){
  if(qty&&GameState.age>=4)actionButton(parent,'กินขนมปัง · ฟื้นอาหาร 25 · 1 วัน',{type:'service',serviceId:'eat',token:storyToken(GameState)},a=>Game.perform(a));
  panelButton(parent,'ร้านค้าและเสบียง','shop');
  renderWardrobe(parent,GameState,a=>Game.perform(a));
+ renderEquipment(parent,GameState,a=>Game.perform(a));
 }
 function renderShop(parent){
  paragraph(parent,`${GameState.location} · เงิน ${GameState.gold} เหรียญ`);
@@ -52,16 +55,18 @@ function renderShop(parent){
  for(const id of offered){const c=services[id];actionButton(parent,`${c.label} · ${c.gold>=0?'+':''}${c.gold} เหรียญ · ${c.days} วัน`,{type:'service',serviceId:id,token:storyToken(GameState)},a=>Game.perform(a));}
  if(!offered.includes('food')){paragraph(parent,'ที่นี่ยังไม่มีแผงขายเสบียง ลองดูตลาดหรือเมืองท่าที่รู้จักบนแผนที่');panelButton(parent,'ดูแผนที่และบริการ','map');}
  paragraph(parent,`ขนมปังในกระเป๋า ${GameState.world.inventory.bread??0}/20 ชิ้น`);
+ renderEquipmentShop(parent,GameState,a=>Game.perform(a));
 }
 function renderStatus(parent){
  paragraph(parent,`${GameState.name} · อายุ ${ageLabel(GameState)} · ${GameState.career}`);paragraph(parent,`ระดับพลัง ${GameState.power?.level??1}/100 · ผู้เริ่มรับรู้พลัง`);
- const grid=document.createElement('div');grid.className='stats-grid';parent.append(grid);for(const [id,label]of Object.entries(statNames))paragraph(grid,`${label} ${GameState.stats[id]}`);
- paragraph(parent,`พลังชีวิต ${GameState.hp}/${GameState.maxHp} · ความอึด ${GameState.stamina}/${GameState.maxStamina} · มานา ${GameState.mana}/${GameState.maxMana}`);paragraph(parent,`อาหาร ${GameState.hunger}/100 · น้ำ ${GameState.thirst}/100 · เหนื่อยล้า ${GameState.progression.fatigue}/100 · สมาธิ ${GameState.progression.focus}/100 · ขวัญกำลังใจ ${GameState.morale}/100`);paragraph(parent,GameState.traits.join(' · '));panelButton(parent,'บันทึกตัวละคร','record');
+ const stats=effectiveStats(GameState),caps=effectiveCapacities(GameState),grid=document.createElement('div');grid.className='stats-grid';parent.append(grid);for(const [id,label]of Object.entries(statNames))paragraph(grid,`${label} ${stats[id]}${stats[id]!==GameState.stats[id]?` (พื้นฐาน ${GameState.stats[id]} + อุปกรณ์ ${stats[id]-GameState.stats[id]})`:''}`);
+ renderEquipmentStatus(parent,GameState);
+ paragraph(parent,`พลังชีวิต ${GameState.hp}/${caps.maxHp} · ความอึด ${GameState.stamina}/${caps.maxStamina} · มานา ${GameState.mana}/${caps.maxMana}`);paragraph(parent,`อาหาร ${GameState.hunger}/100 · น้ำ ${GameState.thirst}/100 · เหนื่อยล้า ${GameState.progression.fatigue}/100 · สมาธิ ${GameState.progression.focus}/100 · ขวัญกำลังใจ ${GameState.morale}/100`);paragraph(parent,GameState.traits.join(' · '));panelButton(parent,'บันทึกตัวละคร','record');
 }
 function renderWork(parent){
  if(GameState.age<8){paragraph(parent,'ตอนนี้ยังอยู่ในวัยเรียนรู้ งานชุมชนที่มีผู้ดูแลเปิดเมื่ออายุ 8 ปี');return;}
  if(currentCareer(GameState)){const job=jobQuote(GameState);actionButton(parent,`${currentCareer(GameState).job} · รับ ${job.gold} เหรียญ · ${job.days} วัน`,{type:'careerJob',token:storyToken(GameState)},a=>Game.perform(a));}
- else if(availableServices(GameState).includes('work'))actionButton(parent,'ช่วยงานชุมชน · +4 เหรียญ · 1 วัน',{type:'service',serviceId:'work',token:storyToken(GameState)},a=>Game.perform(a));
+ else if(availableServices(GameState).includes('work'))actionButton(parent,`ช่วยงานชุมชน · +4 เหรียญ · 1 วัน · ใช้ความอึด ${workStaminaCost(GameState,10)}`,{type:'service',serviceId:'work',token:storyToken(GameState)},a=>Game.perform(a));
  else{paragraph(parent,'ที่นี่ยังไม่มีงานชุมชน ลองดูหมู่บ้าน ตลาด หรือเมืองท่าที่เปิดรับงาน');panelButton(parent,'หางานบนแผนที่','map');}
  panelButton(parent,'อาชีพและการฝึก','career');
 }

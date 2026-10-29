@@ -6,6 +6,7 @@ import { services,availableServices } from '../world/economy.js';
 import { storyToken } from '../engine/life.js';
 import { paragraph,actionButton } from './life-view.js';
 import {isV7} from '../engine/development.js';
+import {equipmentShops,equipmentById} from '../data/equipment.js';
 let selected=null,zoom=1,offsetX=0,offsetY=0,lastRun=null;
 const ns='http://www.w3.org/2000/svg';
 export function renderMap(parent,state,perform,refresh){
@@ -40,6 +41,7 @@ export function renderMap(parent,state,perform,refresh){
  if(isV7(state)){
   if(selected!==current.id)paragraph(parent,quote?`${quote.path.map(id=>locations[id].name).join(' → ')} · ขบวนเดินทาง ${quote.days} วัน · ${quote.gold} เหรียญ`:'เส้นทางยังไม่เปิดตามวัย');
   paragraph(parent,`บริการของสถานที่นี้: ${destination.services.map(id=>services[id]?.label).filter(Boolean).join(' · ')||'พื้นที่พักและชมภูมิทัศน์'}`);
+  if(equipmentShops[selected])paragraph(parent,`ร้านอุปกรณ์: ${equipmentShops[selected].map(id=>equipmentById[id].label).join(' · ')}`);
   paragraph(parent,'แผนที่ใช้ดูตำแหน่งและข้อมูล เลือก “วางแผนเดินทาง” จากหน้าชีวิตเมื่อพร้อม');return;
  }
  if(selected!==current.id){paragraph(parent,quote?`${quote.path.map(id=>locations[id].name).join(' → ')} • ${quote.days} วัน • ${quote.gold} เหรียญ`:'ยังไม่มีเส้นทางที่เปิดให้เดินทางได้ตามวัย');if(quote){actionButton(parent,'เดินทางตามเส้นทางนี้',{type:'travel',destination:selected,token},perform);if(quote.gold>0){const walking=findRoute(state,selected,'walk');actionButton(parent,`เดินเท้าพร้อมผู้ร่วมทาง • ${walking.days} วัน • ฟรี`,{type:'travel',destination:selected,method:'walk',token},perform);}}}

@@ -1,4 +1,5 @@
 import { getCareer } from '../data/careers.js';
+import {effectiveCapacities} from '../character/equipment-stats.js';
 export const DAYS_PER_YEAR=360;
 export const seasons=['ใบไม้ผลิ','ฤดูร้อน','ฤดูใบไม้ร่วง','ฤดูหนาว'];
 export function calendar(state) {
@@ -9,7 +10,8 @@ export function calendar(state) {
 export function ageLabel(state){const c=calendar(state);return c.ageMonths<36?`${c.ageMonths} เดือน`:`${c.ageYears} ปี`;}
 export function normalize(state) {
  const c=calendar(state);state.age=c.ageYears;state.day=c.dayOfYear;state.season=c.season;
- for(const [key,maxKey] of [['hp','maxHp'],['mana','maxMana'],['stamina','maxStamina']])state[key]=Math.max(0,Math.min(state[maxKey],state[key]));
+ const capacities=effectiveCapacities(state);
+ for(const [key,maxKey] of [['hp','maxHp'],['mana','maxMana'],['stamina','maxStamina']])state[key]=Math.max(0,Math.min(capacities[maxKey],state[key]));
  for(const key of ['hunger','thirst','morale'])state[key]=Math.max(0,Math.min(100,state[key]??100));
  state.gold=Math.max(0,state.gold);
  if(state.progression){state.progression.fatigue=Math.max(0,Math.min(100,state.progression.fatigue));state.progression.focus=Math.max(0,Math.min(100,state.progression.focus));const c=getCareer(state.progression.activeCareerId);if(c)state.career=state.progression.records[c.id].advanced?c.advanced.label:c.label;}

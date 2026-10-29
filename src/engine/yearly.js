@@ -3,7 +3,8 @@ import { careers } from '../data/careers.js';
 import { infantEvents,childhoodEvents } from '../data/events/childhood.js';
 import { currentEvent,applyLifeChoice } from './life.js';
 import { calendar,advanceTime,recordAction,normalize } from './time.js';
-import { train,trainingQuote,workCareer,recoverProgression,earnCareerXp } from '../progression/engine.js';
+import { train,trainingQuote,workCareer,jobQuote,recoverProgression,earnCareerXp } from '../progression/engine.js';
+import {workStaminaCost} from '../character/equipment-stats.js';
 import { careerRecord } from '../progression/state.js';
 import { useService,availableServices } from '../world/economy.js';
 import { locations } from '../world/locations.js';
@@ -79,7 +80,7 @@ function runOneYear(state){
     if(route&&route.days<=left){if(state.stamina<route.days*2){rest(state,Math.min(2,left));counts.rest++;continue;}travel(state,step,'walk');counts.travel++;continue;}
    }
    if(left>=days&&(professional||availableServices(state).includes('work'))){
-    if(state.stamina<(professional?15:10)||professional&&state.progression.fatigue>=85){rest(state,Math.min(2,left));counts.rest++;continue;}
+    if(state.stamina<(professional?jobQuote(state).stamina:workStaminaCost(state,10))||professional&&state.progression.fatigue>=85){rest(state,Math.min(2,left));counts.rest++;continue;}
     if(professional)workCareer(state);else useService(state,'work');counts.work++;continue;
    }
   }
@@ -126,7 +127,7 @@ function runV7Month(state,end){
   if(focus.id==='work'&&state.age>=8){
    const professional=!!state.progression.activeCareerId,days=professional?7:1;
    if(left>=days&&(professional||availableServices(state).includes('work'))){
-    if(state.stamina<(professional?15:10)||professional&&state.progression.fatigue>=85){rest(state,Math.min(2,left));counts.rest++;continue;}
+    if(state.stamina<(professional?jobQuote(state).stamina:workStaminaCost(state,10))||professional&&state.progression.fatigue>=85){rest(state,Math.min(2,left));counts.rest++;continue;}
     if(professional)workCareer(state);else useService(state,'work');counts.work++;continue;
    }
   }

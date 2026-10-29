@@ -1,6 +1,6 @@
 # Roadmap — V7 current checkpoint
 
-V7 supersedes conflicting stages below. Current 0.12.0 adds real house/classroom/ceremony art selected from actual place/story context, retaining V7-4 characters/wardrobe and the first 30-fork early-life cluster.
+V7 supersedes conflicting stages below. Current 0.13.0 adds the first actual owned equipment/shops/modifier slice, retaining V7-5 interiors, V7-4 characters/wardrobe and the first 30-fork early-life cluster.
 
 - [x] V7-1 audit/precedence and canonical source pack.
 - [x] V7-2 care-only months 0–35, manual developmental choices, exact decision stops, calendar progress, 30-day ticks/1–16×, seven manual ritual stages.
@@ -8,9 +8,10 @@ V7 supersedes conflicting stages below. Current 0.12.0 adds real house/classroom
 - [ ] V7-3 full expansion to ≥100 coherent runnable forks; the first cluster does not satisfy this target.
 - [x] V7-4 published/verified: deterministic parental inheritance, nine groups × 20 visible variants, 183 PNG parts, growing body/gray hair, family portraits and owned casual clothes. Historical v1 births/identity remain. Full CI, preview and actual public scripts passed.
 - [x] V7-5 interior slice: 16 real PNGs (15 procedural regional rooms + one original AI Starfall hall), exact 20-node bindings, pure care/story/venue selection, matching fallback and manual ceremony/travel regression checks. No extra locations or visits are inferred from room art.
-- [ ] V7-5 remainder: new places/room types and power-aware route encounters/rewards. Twenty outdoor PNGs, read-only map and actual main-page route choices remain working. Implement owned combat gear/modifiers and earned power before advertising encounter survival probabilities.
+- [ ] V7-5 remainder: new places/room types and power-aware route encounters/rewards. Twenty outdoor PNGs, read-only map and actual main-page route choices remain working. Owned gear/modifiers now exist; implement earned power and an actual encounter model before advertising survival probabilities.
 - [ ] V7-6 progression: up to eight eligible recommendations done; affinity balance, earned titles and power remain.
-- [ ] V7-7/8 combat gear/modifiers/shops beyond the five owned basic garments, economy/NPC/combat, earned lifespan and deity gates.
+- [x] V7-7 equipment foundation: six real items / three slots / eight canonical shops, atomic payment/half-price returns, derived stats/capacities, actual timed practice/job effects, ownership-only PNG sprite layers and memory-only lifecycle.
+- [ ] V7-7/8 remainder: advanced gear/loot, economy/NPC/combat, earned power/lifespan and deity gates.
 - [ ] V7-9/10 full authored counts, balance and hardening.
 
 See `docs/NEXT_CODEX_TASK.md` for exact remaining work and validation. Historical checkpoints follow.

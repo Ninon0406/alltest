@@ -2,6 +2,7 @@ import {assetPath,catalogById,groups,hairColors,skinColors,clothColors} from '..
 import {validInheritedAppearance} from '../../character/inheritance.js';
 import {validWardrobe} from '../../character/wardrobe.js';
 import {tintFilter} from './pixel-parts.js';
+import {wornEquipment} from '../../character/equipment-stats.js';
 const base=()=>import.meta.env?.BASE_URL??'/';
 export const spriteAsset=path=>`${base()}${path}`;
 const support=id=>`assets/sprites/characters/${id}.png`;
@@ -28,6 +29,7 @@ export function pixelAvatar(state,{role='child',context='scene',headOnly=false,p
  else if(state.race==='สายเลือดดารา')layers+='<path d="M32 18l2 2-2 2-2-2z" fill="#e8dcaa"/>';
  layers+=image(assetPath('eyes',genes.eyes));
  layers+=image(baby?support('infant-hair'):assetPath('hairShapes',genes.hair),hair);
+ if(!headOnly&&!adult&&age>=8)for(const item of wornEquipment(state).toSorted((a,b)=>['body','mainHand','offHand'].indexOf(a.slot)-['body','mainHand','offHand'].indexOf(b.slot)))layers+=`<g data-equipment-id="${item.id}">${image(item.path,'',item.slot)}</g>`;
  if(!headOnly&&age>=3&&state.wardrobe.equipped.hats)layers+=image(catalogById[state.wardrobe.equipped.hats].path,'','hats');
  if(old)layers+='<path d="M22 32h4M38 32h4M29 35h6" stroke="#614f48" stroke-width="1" opacity=".5"/>';
  const scale=baby?1:age<3?.68:age<12?.82:age<18?.94:1,transform=headOnly?'':baby?'translate(0 8)':`translate(${32*(1-scale)} ${77*(1-scale)}) scale(${scale})`;

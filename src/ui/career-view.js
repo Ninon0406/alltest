@@ -4,6 +4,7 @@ import { paragraph,actionButton,statNames } from './life-view.js';
 import { storyToken } from '../engine/life.js';
 import {isV7} from '../engine/development.js';
 import {ageLabel} from '../engine/time.js';
+import {effectiveCapacities} from '../character/equipment-stats.js';
 let selectedStat='wis',search='',lastCareer=null;
 const rankLabel=r=>r.advanced?'ขั้นชำนาญ':'พื้นฐาน';
 export function renderCareer(parent,state,perform){
@@ -11,7 +12,7 @@ export function renderCareer(parent,state,perform){
  const p=state.progression,a=p.awakening,c=currentCareer(state),token=storyToken(state);
  paragraph(parent,'อาชีพและการฝึก','h2');
  if(isV7(state)&&state.age<3){paragraph(parent,`อายุ ${ageLabel(state)} · ผู้ดูแลจัดการพัก อาหาร และการเล่นที่ปลอดภัย เรื่องอาชีพยังไม่เปิดในวัยนี้`);return;}
- paragraph(parent,`อายุ ${state.age} ปี • เงิน ${state.gold} เหรียญ • ความอึด ${state.stamina}/${state.maxStamina} • เหนื่อยล้า ${p.fatigue}/100 • สมาธิ ${p.focus}/100`);
+ paragraph(parent,`อายุ ${state.age} ปี • เงิน ${state.gold} เหรียญ • ความอึด ${state.stamina}/${effectiveCapacities(state).maxStamina} • เหนื่อยล้า ${p.fatigue}/100 • สมาธิ ${p.focus}/100`);
  if(a.step<7){
   paragraph(parent,state.age<12?'พิธีแห่งเส้นชีพจรเปิดเมื่ออายุครบ 12 ปี การฝึกพื้นฐานเปิดตั้งแต่อายุ 8 ปี':`พิธีแห่งเส้นชีพจร: ผ่านแล้ว ${a.step}/7 ช่วง • ไม่มีค่าเข้าร่วม`);
   if(a.venue)paragraph(parent,`สถานที่พิธี: ${a.venue.name}`);
@@ -33,7 +34,7 @@ export function renderCareer(parent,state,perform){
  paragraph(parent,'ฝึกพื้นฐานฟรี','h3');
  if(state.age>=8){
   const select=document.createElement('select');select.setAttribute('aria-label','หัวข้อฝึกพื้นฐาน');for(const stat of statKeys){const option=document.createElement('option');option.value=stat;option.textContent=statNames[stat];select.append(option);}select.value=selectedStat;select.onchange=()=>{selectedStat=select.value;updateQuote();};parent.append(select);
-  const quoteText=paragraph(parent,'');quoteText.className='training-quote';const updateQuote=()=>{const q=trainingQuote(state,selectedStat);quoteText.textContent=`ฝึก ${q.days} วัน • ใช้ความอึด ${q.stamina} • เหนื่อยล้า +${q.fatigue} • สมาธิ -${q.focus} • ได้ ${q.xp} ประสบการณ์ (รวมคำแนะนำ +${q.learningBonus}) • ทุก 20 ประสบการณ์เพิ่มคุณลักษณะ 1 จุด ผลตอบแทนลดลงเมื่อฝึกถี่ในรอบ 30 วัน`;};updateQuote();
+  const quoteText=paragraph(parent,'');quoteText.className='training-quote';const updateQuote=()=>{const q=trainingQuote(state,selectedStat);quoteText.textContent=`ฝึก ${q.days} วัน • ใช้ความอึด ${q.stamina} • เหนื่อยล้า +${q.fatigue} • สมาธิ -${q.focus} • ได้ ${q.xp} ประสบการณ์ (รวมคำแนะนำ +${q.learningBonus} · อุปกรณ์ +${q.equipmentBonus}) • ทุก 20 ประสบการณ์เพิ่มคุณลักษณะ 1 จุด ผลตอบแทนลดลงเมื่อฝึกถี่ในรอบ 30 วัน`;};updateQuote();
   if(state.story?.learning)paragraph(parent,`คำแนะนำสะสม (สูงสุด 3 ต่อวิชา): ${Object.entries(state.story.learning).map(([stat,n])=>`${statNames[stat]} +${n}`).join(' · ')}`,'small');
   const b=document.createElement('button');b.textContent='เริ่มฝึกฟรี';b.onclick=()=>perform({type:'train',stat:selectedStat,token});parent.append(b);
   actionButton(parent,'พักฟื้น 2 วัน • ฟรี • ฟื้นแรง สมาธิ และลดความเหนื่อยล้า',{type:'trainingRest',token},perform);

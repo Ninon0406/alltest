@@ -2,6 +2,7 @@ import { recoverProgression } from '../progression/engine.js';
 import { locations } from './locations.js';
 import { calendar, advanceTime, recordAction } from '../engine/time.js';
 import { guardExternalTime } from './travel.js';
+import {workStaminaCost} from '../character/equipment-stats.js';
 export const services={
  rest:{label:'พักในพื้นที่ปลอดภัย',days:1,gold:0,minAge:4,description:'ฟื้นความอึด 20 และขวัญกำลังใจ 5'},
  study:{label:'อ่านตำราสาธารณะ',days:7,gold:0,minAge:4,description:'สติปัญญา +1 ครั้งเดียวต่อสถานที่ต่อปี'},
@@ -16,7 +17,8 @@ export function useService(state,id){
  if(!config||!availableServices(state).includes(id)||year<config.minAge)throw Error('ยังใช้บริการนี้ไม่ได้ตามวัยหรือสถานที่');
  if(state.story?.version===7&&id==='study'&&year<6)throw Error('อ่านตำราพื้นฐานกับผู้ดูแลเมื่ออายุ 6 ปี');
  if(state.gold+config.gold<0)throw Error('เงินไม่พอ ยังมีงานและที่พักชุมชนฟรี');
- if(id==='work'&&state.stamina<10)throw Error('ความอึดไม่พอ กรุณาพักก่อน');
+ const workCost=workStaminaCost(state,10);
+ if(id==='work'&&state.stamina<workCost)throw Error('ความอึดไม่พอ กรุณาพักก่อน');
  const key=`${state.world.currentLocationId}:${year}`;
  if(id==='study'&&state.world.studied?.includes(key))throw Error('เรียนหัวข้อนี้แล้วในปีนี้ ลองอ่านที่อื่นหรือกลับปีหน้า');
  if(id==='food'&&(state.world.inventory.bread??0)>=20)throw Error('กระเป๋าเต็มแล้ว');
@@ -24,7 +26,7 @@ export function useService(state,id){
  state.gold+=config.gold;
  if(id==='rest'){state.stamina+=20;state.morale+=5;state.mana+=15;recoverProgression(state,25);}
  if(id==='study'){state.stats.int++;state.world.studied??=[];state.world.studied.push(key);state.stamina-=5;}
- if(id==='work')state.stamina-=10;
+ if(id==='work')state.stamina-=workCost;
  if(id==='food')state.world.inventory.bread=(state.world.inventory.bread??0)+1;
  if(id==='eat'||id==='sell'){state.world.inventory.bread--;if(state.world.inventory.bread===0)delete state.world.inventory.bread;if(id==='eat')state.hunger+=25;}
  state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:id,amount:config.gold});

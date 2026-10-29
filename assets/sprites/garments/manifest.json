@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "kind": "original procedural equipment",
+  "files": [
+    {
+      "id": "practice_staff",
+      "path": "assets/sprites/garments/practice_staff.png",
+      "slot": "mainHand",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "bytes": 468,
+      "sha256": "06e67bf8d72666d1a8cb57845f0b388d40e6d48291bfb1229b3084ef4b524498",
+      "pixelSha256": "a7d5cb594577408684a805cb630d986ffb094aca0911052e58587d6de0012e5f",
+      "source": "src/ui/avatar/equipment-parts.js",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "training_sword",
+      "path": "assets/sprites/garments/training_sword.png",
+      "slot": "mainHand",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "bytes": 471,
+      "sha256": "1b34fb0296fd1e8f36aadeda0d02a869115af33fa7a888b32fc244075c9d3cd2",
+      "pixelSha256": "1983144f600b084e043d26a70f95cc6c46ea0ad56f4b475b4a3fee8575a316a3",
+      "source": "src/ui/avatar/equipment-parts.js",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "focus_rod",
+      "path": "assets/sprites/garments/focus_rod.png",
+      "slot": "mainHand",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "bytes": 563,
+      "sha256": "1705ca8559574f5819a096c1f90c76c259d0d0e87a91621a0300de76a699af13",
+      "pixelSha256": "82f9c6c552ad8e21575f741da9c80abc060f090bc5441ce5df244a1ee3612d0a",
+      "source": "src/ui/avatar/equipment-parts.js",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "round_shield",
+      "path": "assets/sprites/garments/round_shield.png",
+      "slot": "offHand",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "bytes": 697,
+      "sha256": "fa14ca319b2b94243483135597d7bdc15b497ac56cbaa9db912f1e4e7b3d5153",
+      "pixelSha256": "c7f60cad6fc686ba5e78e479e6c9511c88a7781b9a55f4c3e4cfdaebb5e6ce2d",
+      "source": "src/ui/avatar/equipment-parts.js",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "padded_vest",
+      "path": "assets/sprites/garments/padded_vest.png",
+      "slot": "body",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "bytes": 597,
+      "sha256": "26cc906e8effed1b43f70c3eb730b54c1246d0577a5d468c800905ea4b882936",
+      "pixelSha256": "dda95eaed01f782fa44895f85bef78a9a7254737e1a57e47d5ac910720d99990",
+      "source": "src/ui/avatar/equipment-parts.js",
+      "license": "Original project artwork"
+    },
+    {
+      "id": "travel_coat",
+      "path": "assets/sprites/garments/travel_coat.png",
+      "slot": "body",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "bytes": 688,
+      "sha256": "3ccb20829176ee2e82f6c3e37d5ac48efb7616e3896ad6755762bb3e610b41f1",
+      "pixelSha256": "7deee5ebaf51affedb956453e1512c0ab416b5753341e554411754d06f364656",
+      "source": "src/ui/avatar/equipment-parts.js",
+      "license": "Original project artwork"
+    }
+  ]
+}

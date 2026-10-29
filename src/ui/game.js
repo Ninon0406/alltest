@@ -17,6 +17,7 @@ import { Scenes } from '../data/scenes.js';
 import { canChoose } from '../engine/choices.js';
 import {isV7} from '../engine/development.js';
 import {nextDecisionDay} from '../engine/decisions.js';
+import {effectiveStats,effectiveCapacities} from '../character/equipment-stats.js';
 export const Game = {
             active:false,
             clock:new ActivePlayClock(),
@@ -60,7 +61,8 @@ export const Game = {
                 if(!GameState.time)replaceState(upgradeState(GameState));
                 normalize(GameState);
                 document.body.classList.add('playing');
-                document.getElementById('quickVitals').textContent=`ชีวิต ${GameState.hp}/${GameState.maxHp} · แรง ${GameState.stamina}/${GameState.maxStamina} · มานา ${GameState.mana}/${GameState.maxMana}`;
+                const capacities=effectiveCapacities(GameState),stats=effectiveStats(GameState);
+                document.getElementById('quickVitals').textContent=`ชีวิต ${GameState.hp}/${capacities.maxHp} · แรง ${GameState.stamina}/${capacities.maxStamina} · มานา ${GameState.mana}/${capacities.maxMana}`;
                 document.body.classList.toggle('yearly-mode',GameState.yearly.view==='yearly');
                 const log=document.getElementById('logBox');log.replaceChildren();
                 for(const entry of GameState.journal.slice(-3).reverse()){const item=document.createElement('p');item.textContent=`อายุ ${entry.age} ปี • ${entry.title}`;log.append(item);}
@@ -80,20 +82,13 @@ export const Game = {
                 document.getElementById('timeControls').replaceChildren();
                 document.getElementById('displayGold').textContent=`${GameState.gold} เหรียญ`;
 
-                this.updateBar("Hp", GameState.hp, GameState.maxHp);
-                this.updateBar("Stamina", GameState.stamina, GameState.maxStamina);
-                this.updateBar("Mana", GameState.mana, GameState.maxMana);
+                this.updateBar("Hp", GameState.hp, capacities.maxHp);
+                this.updateBar("Stamina", GameState.stamina, capacities.maxStamina);
+                this.updateBar("Mana", GameState.mana, capacities.maxMana);
                 this.updateBar("Hunger", GameState.hunger, 100);
                 this.updateBar("Thirst", GameState.thirst, 100);
 
-                document.getElementById("statStr").innerText = GameState.stats.str;
-                document.getElementById("statDex").innerText = GameState.stats.dex;
-                document.getElementById("statCon").innerText = GameState.stats.con;
-                document.getElementById("statInt").innerText = GameState.stats.int;
-                document.getElementById("statWis").innerText = GameState.stats.wis;
-                document.getElementById("statPer").innerText = GameState.stats.per;
-                document.getElementById("statLuk").innerText = GameState.stats.luk;
-                document.getElementById("statCha").innerText = GameState.stats.cha;
+                for(const [key,value]of Object.entries(stats))document.getElementById(`stat${key[0].toUpperCase()+key.slice(1)}`).innerText=value;
 
                 document.getElementById("lblDay").innerText = GameState.day;
                 document.getElementById("lblSeason").innerText = GameState.season;

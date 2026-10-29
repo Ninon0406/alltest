@@ -2,9 +2,10 @@ import { generateBirth } from '../character/rebirth.js';
 import {createStory} from './development.js';
 import {createInheritedAppearance} from '../character/inheritance.js';
 import {createWardrobe} from '../character/wardrobe.js';
+import {createEquipment} from '../character/equipment-stats.js';
 export function createRun(seed,{id,startedAt}){
  if(typeof id!=='string'||!id||!Number.isFinite(Date.parse(startedAt)))throw Error('Invalid run identity');
- const state=generateBirth(seed);state.appearance=createInheritedAppearance(seed);state.wardrobe=createWardrobe(seed);state.power={version:1,level:1};state.story=createStory();state.yearly.focus='care';state.run={id,startedAt,status:'active',activeMs:0};
+ const state=generateBirth(seed);state.appearance=createInheritedAppearance(seed);state.wardrobe=createWardrobe(seed);state.equipment=createEquipment();state.power={version:1,level:1};state.story=createStory();state.yearly.focus='care';state.run={id,startedAt,status:'active',activeMs:0};
  return state;
 }
 // Only visible time within 15 seconds of a real interaction counts as engagement.
