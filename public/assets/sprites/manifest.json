@@ -1,0 +1,3131 @@
+{
+  "version": 2,
+  "width": 64,
+  "height": 80,
+  "anchor": [
+    32,
+    77
+  ],
+  "kind": "authored procedural parts",
+  "files": [
+    {
+      "id": "hairShapes_01",
+      "group": "hairShapes",
+      "label": "สั้นตรง",
+      "path": "assets/sprites/characters/hairShapes/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3a3454a5d4eeaedb5489cf4f198a73fda6a2dc338832b54d68d3d086a94f3cfd",
+      "pixelSha256": "81edc7b88d9fe9a8816e78e280f857757d711cdda2a7597a6efacd9e0e53aa5e",
+      "bytes": 469,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_02",
+      "group": "hairShapes",
+      "label": "สั้นปัดข้าง",
+      "path": "assets/sprites/characters/hairShapes/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "133edc4955b10287d172447a0c0d89336db16239ac59ae38ff36cc8404953be1",
+      "pixelSha256": "1a22437d26492d3e9ba6509446bbf1649ffe46b01b6e88e5346f811eb650d21a",
+      "bytes": 483,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_03",
+      "group": "hairShapes",
+      "label": "สั้นหน้าม้า",
+      "path": "assets/sprites/characters/hairShapes/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "f6dc10be6692985bc60e1a9218a4df828c5ffd09c9898c2a5999ec70290da7ff",
+      "pixelSha256": "6eb5676881b01ed4cbdfdd67767c9208d10465ed4aab805918be6fd0dc37e6ea",
+      "bytes": 472,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_04",
+      "group": "hairShapes",
+      "label": "บ๊อบเรียบ",
+      "path": "assets/sprites/characters/hairShapes/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a1498e52e4bf59ca7c31d410f76fa7078c94b30214676d992b73684f34c2ea36",
+      "pixelSha256": "bbb55a01f283f7aed1190ee17b4a18da5e09fad4102620cc2b421e9a186524c4",
+      "bytes": 480,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_05",
+      "group": "hairShapes",
+      "label": "บ๊อบปลายงุ้ม",
+      "path": "assets/sprites/characters/hairShapes/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "229a9ab7842060a13ac5b1af22b07fe85cb02d53797c036062949474884ad2db",
+      "pixelSha256": "8a902d3d1739518d7484a698378946b246bfaf58785e95f7d0778df8f4cc5aea",
+      "bytes": 502,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_06",
+      "group": "hairShapes",
+      "label": "ยาวตรง",
+      "path": "assets/sprites/characters/hairShapes/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "c422815f056ef296b484f8c41921b20f3ccd1a6a066d229c95bdf410fc03476a",
+      "pixelSha256": "164591d89737b8b8c152d1b13224b866ef8bc4e1b9618e84f7ebea333fee33b6",
+      "bytes": 461,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_07",
+      "group": "hairShapes",
+      "label": "ยาวลอนอ่อน",
+      "path": "assets/sprites/characters/hairShapes/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "2b56c77c0858f2777fc79f48d76351cca94283b25ad0731920a34de930b97439",
+      "pixelSha256": "9f34d2b547df4b435d45110f771f8cdc6ac868146a4231526dded4df0c73bc6d",
+      "bytes": 551,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_08",
+      "group": "hairShapes",
+      "label": "ยาวถักเปียเดี่ยว",
+      "path": "assets/sprites/characters/hairShapes/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "bc62a575b507b36a78b1af63717ef0eb1d8388200fde35b8ad5528b712851dad",
+      "pixelSha256": "014932e55b41a33c4daeca9b415217fefa81206607f26bb4db0146cd04853cae",
+      "bytes": 596,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_09",
+      "group": "hairShapes",
+      "label": "ถักเปียสองข้าง",
+      "path": "assets/sprites/characters/hairShapes/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "731a6ec9ef0527db3fcdf81e549ea42540bb0321ad64527154e34836ab6bc693",
+      "pixelSha256": "c7a308bb121b02fee2baff4e865b65a184e0d693f0c033384f94360583df0dc0",
+      "bytes": 659,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_10",
+      "group": "hairShapes",
+      "label": "รวบหางม้าสูง",
+      "path": "assets/sprites/characters/hairShapes/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "57cee10cec2535d97cb0ddc8ddd3a239d5f4adaa32fcef3216990490b99d4ecb",
+      "pixelSha256": "123eaa132598bdf0e8f78f9206079a14bfb9c210ebb7ac54aa2275088f4ebe34",
+      "bytes": 506,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_11",
+      "group": "hairShapes",
+      "label": "รวบหางม้าต่ำ",
+      "path": "assets/sprites/characters/hairShapes/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a2f2592200493c979cad06c5b6581fc08753aaa74b7e70241c591ff2f08b1bff",
+      "pixelSha256": "0d9a25d046c693b5fb015ffc11add700f760f81c26ec16f3396aa33a7c5db6fd",
+      "bytes": 462,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_12",
+      "group": "hairShapes",
+      "label": "มัดครึ่งศีรษะ",
+      "path": "assets/sprites/characters/hairShapes/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "6fbfd8fa98e12ab074163fc7b50d1cf2fe39fd4f92a7bec10d9ef7f0672fee89",
+      "pixelSha256": "00e8d97c571d7ff2ee61e3c65d143b4883bc6386f1280a544a127b8dfd5e5f78",
+      "bytes": 487,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_13",
+      "group": "hairShapes",
+      "label": "หยักศกสั้น",
+      "path": "assets/sprites/characters/hairShapes/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "f4ea4931d4419d987160961aef22ac2acbcfe0a9024d02ab5028fde54dc515bc",
+      "pixelSha256": "8b8941a92c02c1a3711e639efe37cc60e0b15710467e9e99f57410df287984ff",
+      "bytes": 540,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_14",
+      "group": "hairShapes",
+      "label": "หยักศกกลาง",
+      "path": "assets/sprites/characters/hairShapes/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "70f839f5ff19725b7e3d249c7acdaa6e2eaafa5880a57ec4417f2fc74cdf7568",
+      "pixelSha256": "f440e07f21d7b9561c1f22743f08e84b260772e6e1738c35dabc1ba6bebdf634",
+      "bytes": 522,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_15",
+      "group": "hairShapes",
+      "label": "ลอนหนาฟู",
+      "path": "assets/sprites/characters/hairShapes/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0a9e51ab5cd1ae3b9d60d8e27c70122a19766815f2ea79a705bb3d5919b8e485",
+      "pixelSha256": "14746621ac3bc0721387353bbb0d500ac5149a7e3abfde77990274b11697d5a7",
+      "bytes": 463,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_16",
+      "group": "hairShapes",
+      "label": "แสกกลาง",
+      "path": "assets/sprites/characters/hairShapes/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "4d001e4bfdbca2fe3700fe29839b9015f1a56101ed970bfec6124e16766f4ea5",
+      "pixelSha256": "75c716b0f5c88df7982e316c1ebb21a4cfa17a1ed3225a7c2e34144e28fc579c",
+      "bytes": 488,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_17",
+      "group": "hairShapes",
+      "label": "แสกข้าง",
+      "path": "assets/sprites/characters/hairShapes/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b09732e20fb0314f43b248163afe3c2d93c1494ef5f5b730fa095cd95b531d71",
+      "pixelSha256": "7faf65e4ae98d43cc7c828931993eaa080295ac053b18f56bf7b02850b8d5f95",
+      "bytes": 493,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_18",
+      "group": "hairShapes",
+      "label": "หน้าม้ายาว",
+      "path": "assets/sprites/characters/hairShapes/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5b75d860585611b049efb2c4bc9a36ae3d567e373a644b4ad21216ed1d041d8a",
+      "pixelSha256": "b9044214c6806b3e06eb416ae2648aa098c840c98a341026c14661ded4121dd5",
+      "bytes": 521,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_19",
+      "group": "hairShapes",
+      "label": "ทรงสั้นเป็นชั้น",
+      "path": "assets/sprites/characters/hairShapes/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0977cfc09e8b5cc5cacbf1c71858e809b1b9f3fe478d1a8001bc594000b77b08",
+      "pixelSha256": "316aa3fe63641f5572676c007d96b4d68628aee789591cccc7f570cca2360953",
+      "bytes": 496,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairShapes_20",
+      "group": "hairShapes",
+      "label": "ผมหยิกวงเล็ก",
+      "path": "assets/sprites/characters/hairShapes/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e423ef90aa67f05ffb80c7bb8a625295bf63363e36aaad140c03cd9a16ecd7cb",
+      "pixelSha256": "4319df5d6bd7e716d5fb04d8c7885c400f5328b456eaf892013a23805452bdad",
+      "bytes": 544,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_01",
+      "group": "hairColors",
+      "label": "ดำสนิท",
+      "path": "assets/sprites/characters/hairColors/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d3e8dd455beda44180fe7a8e49be799f5c9b88d2c0e7780e45b06850e00e3ea1",
+      "pixelSha256": "02c4aa82790832654d4ef9e10efed0853b078148a41f1e051968adbf57b438f7",
+      "bytes": 484,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_02",
+      "group": "hairColors",
+      "label": "น้ำตาลเข้ม",
+      "path": "assets/sprites/characters/hairColors/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "9471870c7e464c1cfb6831e186f1a2d4c9fe15a7ba410f7f271b7d098bf3e9a9",
+      "pixelSha256": "d9be78004d0add4703c62e52d76517e7408f9991a83dce5835c00b321f7a0847",
+      "bytes": 483,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_03",
+      "group": "hairColors",
+      "label": "น้ำตาลเกาลัด",
+      "path": "assets/sprites/characters/hairColors/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b7e1df21eef46b18ac11a1436c7640659ae28784f85b546980fc9301c260968f",
+      "pixelSha256": "7c305ec702e5244d7a7e42afa991bc6c31b6f263e914422deb0511171a538556",
+      "bytes": 492,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_04",
+      "group": "hairColors",
+      "label": "น้ำตาลทอง",
+      "path": "assets/sprites/characters/hairColors/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "84e881096eb37d5ca14902feceae7afe12be649d8e47f66b6bdd01a7fa293714",
+      "pixelSha256": "2644cad92b61b894da17013ade59f48aa38a7409ab751ec0b3eda20cff207ed2",
+      "bytes": 491,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_05",
+      "group": "hairColors",
+      "label": "ทองอ่อน",
+      "path": "assets/sprites/characters/hairColors/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d3a50aa94b5b2272cc18bf1a1645d5e87a2f037016d1459e773c1db6796f0201",
+      "pixelSha256": "45fe84fa86797464e714d0e79cc68e93408d9682c1257300129394c48819cde3",
+      "bytes": 490,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_06",
+      "group": "hairColors",
+      "label": "ทองน้ำผึ้ง",
+      "path": "assets/sprites/characters/hairColors/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "bedded2c4567f53877054e3d98928d5f921f29ebc14402180c86d8ad49708976",
+      "pixelSha256": "36d23aa328926dd16a1b9514077e9ce76e8b5fabb32e676ff2aa67811871cdd4",
+      "bytes": 489,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_07",
+      "group": "hairColors",
+      "label": "เงินหม่น",
+      "path": "assets/sprites/characters/hairColors/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "027c742124328ee4e7682cd511b68b9cd0246a7ab776796706f60d6489602422",
+      "pixelSha256": "b082124711eae83fd800e326173860e70c477b35bb311c05a2ad3dbd93a0c1b1",
+      "bytes": 488,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_08",
+      "group": "hairColors",
+      "label": "เงินสว่าง",
+      "path": "assets/sprites/characters/hairColors/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d987311ea785e9179a462d92c34f19899554dd3a4bd93c5910fc8b4e351772af",
+      "pixelSha256": "c1f88f8c36279249dff766b94fe1732309ab68130a2ada314d408d295a355e7f",
+      "bytes": 478,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_09",
+      "group": "hairColors",
+      "label": "เทาหมอก",
+      "path": "assets/sprites/characters/hairColors/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "25560bd0fff87029cf1d16c40456fc9a44cf391d55875581601a5bcc32f35ee1",
+      "pixelSha256": "0a57cbbf87c376acf90b1c34bd3ef9a7a0166fa5eec8ceafb59dc87bfd7eafb4",
+      "bytes": 484,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_10",
+      "group": "hairColors",
+      "label": "แดงสนิม",
+      "path": "assets/sprites/characters/hairColors/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "223b602415a1be23110c8ce06e03f7624c75c5cba6761ada65f53280b4d46baa",
+      "pixelSha256": "a37041b50e0c51c36c483d5dade0387264179b15d796f8f674eaa11ac9c6e8e1",
+      "bytes": 487,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_11",
+      "group": "hairColors",
+      "label": "แดงไวน์",
+      "path": "assets/sprites/characters/hairColors/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5bb0793519d04aa27a28a36eae5ba30e020164d544cb116ed7c74c143a2a753f",
+      "pixelSha256": "4003c7b0a9262c67b40f408e5826d7f8ed5b62844b0037f7063549d7d11203fd",
+      "bytes": 490,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_12",
+      "group": "hairColors",
+      "label": "ส้มอ่อน",
+      "path": "assets/sprites/characters/hairColors/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d85edc415eca752d8fe2df9742c78f9c5be14ccbafea545c20af0a32d7962ad6",
+      "pixelSha256": "559e88fb9d86b3ee969f62287ff9bd6d924f8d302a0b2ae498485c124c6e34b4",
+      "bytes": 494,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_13",
+      "group": "hairColors",
+      "label": "ทองแดง",
+      "path": "assets/sprites/characters/hairColors/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "ed61e5fb0e445fb7d368642c7666fa53c6315105be6b5612d1d1e3f89a0d5961",
+      "pixelSha256": "06632a8ce81d267bc9f41399860718a642f692eae9f73905ca8ecbc0eda73daf",
+      "bytes": 489,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_14",
+      "group": "hairColors",
+      "label": "น้ำเงินหม่น",
+      "path": "assets/sprites/characters/hairColors/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7525aa7b778bedb2d49feaacfb232ed62c81dfd8f89d8c0df9610088f9d103f5",
+      "pixelSha256": "b3ea930f49c26395f08b81f315ac51ee6733e5efa06a7db659f878af05f8e095",
+      "bytes": 490,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_15",
+      "group": "hairColors",
+      "label": "คราม",
+      "path": "assets/sprites/characters/hairColors/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "38bbc6a3b65f0e6bc00cc6d134b05c3af9e61fa0fd75be81b35964b9afc5e6fe",
+      "pixelSha256": "5e78179288436edf21910cf4fecba3a155188bf9abbf953744f9dfa6e7bd62ff",
+      "bytes": 487,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_16",
+      "group": "hairColors",
+      "label": "ม่วงพลัม",
+      "path": "assets/sprites/characters/hairColors/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d6d1d6e0362d9022d82fffdfcaf8f7c63449c0de45951b411a4ef31c9936aeb7",
+      "pixelSha256": "05272f4d44cb330268c8ad9a7e748ce3e7a4b39ad653eaa9e86dd5ccaaf0c315",
+      "bytes": 485,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_17",
+      "group": "hairColors",
+      "label": "เขียวมอสส์",
+      "path": "assets/sprites/characters/hairColors/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "15be9770106ebf72b6014fdd8c9543f3081db44bba8f51dc05c44b63eaaced14",
+      "pixelSha256": "e3ae9e22a9e76cde1dcd9d1a33363e44500c5bfa48e8fbf27422381331a33831",
+      "bytes": 487,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_18",
+      "group": "hairColors",
+      "label": "เขียวหมอก",
+      "path": "assets/sprites/characters/hairColors/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "225d7ce00f3308ffc91e11e2f8dd0c4cafd59bc720546762cea227bc384464d9",
+      "pixelSha256": "59768552f812df2eb5589588c0eff7f85ee86a129cba60ed7a10bddb958f92ba",
+      "bytes": 490,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_19",
+      "group": "hairColors",
+      "label": "ชมพูหม่น",
+      "path": "assets/sprites/characters/hairColors/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "448b8104b1737f228126f11b3facf2b182e3d9d5b0e890292140aa5ef2c0635b",
+      "pixelSha256": "87680ebb72aad6218ffa0eb40ffe277eda5052b473c917bb0fec9a28b3ab316f",
+      "bytes": 492,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hairColors_20",
+      "group": "hairColors",
+      "label": "ขาวมุก",
+      "path": "assets/sprites/characters/hairColors/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d37310e842d298c41fe298a3838d705e55e758525f4b8d5bef5e8d717d6a7105",
+      "pixelSha256": "f06b45a93ac003fc7938bd3d3d893778bc93a6b9cfd834ebf2ad2a61ec35fca6",
+      "bytes": 482,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_01",
+      "group": "skinTones",
+      "label": "งาช้างอุ่น",
+      "path": "assets/sprites/characters/skinTones/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "2598de897f31cfbc5b05b795496e91942b4f0ef29fadb855a6de8dbccd6fdebc",
+      "pixelSha256": "839da5ddffcb43c75b800c2b646038c9fde53d104a3b6bffe35c232dc82b2680",
+      "bytes": 614,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_02",
+      "group": "skinTones",
+      "label": "เบจอ่อน",
+      "path": "assets/sprites/characters/skinTones/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3a0c51911115d27cf1b51c40a9dc9688a5e9a4ea958a52639f003b96574564fc",
+      "pixelSha256": "410f74e328e6ec0c5774f69a11de3ce7399cd6cf5eb4016034697089dbdb21ac",
+      "bytes": 613,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_03",
+      "group": "skinTones",
+      "label": "เบจกลาง",
+      "path": "assets/sprites/characters/skinTones/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "db346cdc4681f1e9df2db0aef9c46db6e8be7dd90436fdd8a56738747ca65d8a",
+      "pixelSha256": "9d2288b0bc65d8fd2abd8267ebd0752c69854a771962812914cd0dfe9fe9f5aa",
+      "bytes": 612,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_04",
+      "group": "skinTones",
+      "label": "เบจทอง",
+      "path": "assets/sprites/characters/skinTones/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "222d3cce8367d183d24e768f8bafbd1a1cd477a6aed98d4ebea4fd40c771ca8d",
+      "pixelSha256": "169cdfaf90a7ed76c96cbf6ee1dcbf34b5b8db8a57921d0c4a1df2023323ae09",
+      "bytes": 612,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_05",
+      "group": "skinTones",
+      "label": "ทรายอ่อน",
+      "path": "assets/sprites/characters/skinTones/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "cc83144003e2f0592d2bafee763fa76b72c033146a95c60060f261752dbaf388",
+      "pixelSha256": "7ee6fd9ae70d5680ee42a54540090377ef2029161bdbb188893e933bc562b407",
+      "bytes": 612,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_06",
+      "group": "skinTones",
+      "label": "ทรายอุ่น",
+      "path": "assets/sprites/characters/skinTones/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "64d8613fa15761ed1aaeb4e1b28331890dd2e521d2b3461d70193ef8f087ab8c",
+      "pixelSha256": "3ec612ec3f32f773028d01d28e903253301da69bdd7b137ca0f900e8ab4a2c2f",
+      "bytes": 613,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_07",
+      "group": "skinTones",
+      "label": "น้ำผึ้งอ่อน",
+      "path": "assets/sprites/characters/skinTones/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d306ff7c0d49e0dd88451e39fdce5b9c1794f55db33d1ea64d1c47f4588420b9",
+      "pixelSha256": "e1dc7704b7090563fb9642f09c320b8c327accb8cd23b6c2dc57412a5690e165",
+      "bytes": 614,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_08",
+      "group": "skinTones",
+      "label": "น้ำผึ้งทอง",
+      "path": "assets/sprites/characters/skinTones/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5242f6a71a245abfc176eb7be943876a00f41c6812a933f2fb1eb093b0068c5b",
+      "pixelSha256": "a4290f532374eeb9e86d9e19c72a358b1b7288895a4498b52adbcab4a0cda9be",
+      "bytes": 611,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_09",
+      "group": "skinTones",
+      "label": "น้ำผึ้งเข้ม",
+      "path": "assets/sprites/characters/skinTones/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "1c1f8e47372a4a75567e5c6b67b6f236d2eff7ec409c9a99d2da028b82a26851",
+      "pixelSha256": "12d9d39e57ab402b1c3d9a3d4c7a98ac559adf7f110147bf3cd189d1d74893ab",
+      "bytes": 612,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_10",
+      "group": "skinTones",
+      "label": "น้ำตาลอ่อน",
+      "path": "assets/sprites/characters/skinTones/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "58d5dc95f40c014613185f9b5a044951a8ce0ca2bf0507f0126512a5fe744e5b",
+      "pixelSha256": "4dbed814821605c244806ffe49f7b17a72b9235624a649825e2051f3dc22b940",
+      "bytes": 616,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_11",
+      "group": "skinTones",
+      "label": "น้ำตาลทอง",
+      "path": "assets/sprites/characters/skinTones/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "ac6cc3237183dd797dd5c4afaf218f4081d81c9887d36753f5d3e746ee3f509b",
+      "pixelSha256": "6dcd494a540ebfba20c360f89913602b73c92b83135546a2efaca713f9f8f691",
+      "bytes": 611,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_12",
+      "group": "skinTones",
+      "label": "น้ำตาลกลาง",
+      "path": "assets/sprites/characters/skinTones/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d8a0e4b4397326413518d091365867fb8cf52654117a38641e371fca7ce09135",
+      "pixelSha256": "9ba481857e27bd995c7fb40c0f4ca6a6ab0b7f378b512a710e133a8c48505739",
+      "bytes": 611,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_13",
+      "group": "skinTones",
+      "label": "น้ำตาลอบเชย",
+      "path": "assets/sprites/characters/skinTones/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3cf25fd0e47bc9e413f023d0a7706126292541ac1bac7e8d8f3bf1bd85541cde",
+      "pixelSha256": "2291197a1665caed09bfe39dff2c875ea61f3060c88e19ec5c225d66d7eacd34",
+      "bytes": 614,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_14",
+      "group": "skinTones",
+      "label": "น้ำตาลเข้ม",
+      "path": "assets/sprites/characters/skinTones/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5e2fb684f338cd3a12e32c101912a94efb64617adba5231092a8fb19187bb809",
+      "pixelSha256": "854e6f260970afc9720185f19419df9ffb598f5df8f2f25f54389bbb01f32b3c",
+      "bytes": 611,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_15",
+      "group": "skinTones",
+      "label": "โกโก้อ่อน",
+      "path": "assets/sprites/characters/skinTones/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "56baa1ba5bfd97e22e73a86251cbd05a0a4699224d64848f6a8c8ac8939f6521",
+      "pixelSha256": "8393e5b77eff17c4f884186dee8160723da6e750768b15552162edd9e4d4fb65",
+      "bytes": 612,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_16",
+      "group": "skinTones",
+      "label": "โกโก้กลาง",
+      "path": "assets/sprites/characters/skinTones/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e379d3f2d97ab9c9cf8898436871d24687664a1055ff3bef47e134952539dfc9",
+      "pixelSha256": "e12362216066bc2f399b61a71235ca5a4ebcdd83cff7ebb57c2fd95ed7dd310c",
+      "bytes": 611,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_17",
+      "group": "skinTones",
+      "label": "โกโก้เข้ม",
+      "path": "assets/sprites/characters/skinTones/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "eb47bf6498206e1bac1cde04217c8dc71ef7b7966c7d75fa43f0d06c27a9bf41",
+      "pixelSha256": "bd223651ad56fd9c840c20171b7b60ad3d9df35f27dcb428b058446df5f08e7a",
+      "bytes": 607,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_18",
+      "group": "skinTones",
+      "label": "อำพันอุ่น",
+      "path": "assets/sprites/characters/skinTones/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "05bd0b19b1be54a27ad955ef9f45af368ec92c2af63c7b9fe5a2d4a4d929891c",
+      "pixelSha256": "126cd52256c1a821f633f890c80ea306e8f922af0d9fdea9b3b089211e7e9af3",
+      "bytes": 611,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_19",
+      "group": "skinTones",
+      "label": "น้ำตาลอมแดง",
+      "path": "assets/sprites/characters/skinTones/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "150365c7e10b3c3e3a89d8f0fb480f261396b3d5e552db965b529bf54c2173bb",
+      "pixelSha256": "d8f18ebdaad2cb69d7cbea8a911941a906e04862537253933eeee42d4e75b387",
+      "bytes": 607,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "skinTones_20",
+      "group": "skinTones",
+      "label": "น้ำตาลเข้มลึก",
+      "path": "assets/sprites/characters/skinTones/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "9ae031588162d643dc8c36825bb76ad09aab1146e36d8a8e51e4dfe3755600d8",
+      "pixelSha256": "3d1b0f349ecf3748a079df31528545bb2009579dc3ba31441b857fe0c33cdd1f",
+      "bytes": 607,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_01",
+      "group": "faces",
+      "label": "หน้ารีสั้น",
+      "path": "assets/sprites/characters/faces/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "1b935ae47e06420993aee0b01b6889a92124d5bab86db5fb2feccce270ff3959",
+      "pixelSha256": "ea91e8e452cb128988a5657983ad8273160c1db337c62f85954f5b6b0f66e546",
+      "bytes": 591,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_02",
+      "group": "faces",
+      "label": "หน้ารียาว",
+      "path": "assets/sprites/characters/faces/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "079ad3e60443c3b2fb7a954898300abe59a1b8f8fb861a7e7fbd741012fbb011",
+      "pixelSha256": "42399f951a6c0fa8a648e99f03b9cc91ab2fe6f0b5a0c292b28f9ec22131f28e",
+      "bytes": 592,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_03",
+      "group": "faces",
+      "label": "หน้าเหลี่ยมนุ่ม",
+      "path": "assets/sprites/characters/faces/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "2d97382670f87f696a2be9fc4497531c6471a2423f956186abeb30055c42b436",
+      "pixelSha256": "dd35c9deaa46ee04a8e29b8191d9ae38e6da6fc498b4be7c3c24859b3d91c826",
+      "bytes": 584,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_04",
+      "group": "faces",
+      "label": "หน้ากลม",
+      "path": "assets/sprites/characters/faces/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "fa4d952280fc7b222674e7f7062626020439907231ecd526198fb1080aff4649",
+      "pixelSha256": "8486f1a28ac352ca4e151d9bb3accdfcc251691a9bfffbeae191cb346521c9c1",
+      "bytes": 568,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_05",
+      "group": "faces",
+      "label": "หน้าไข่",
+      "path": "assets/sprites/characters/faces/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5f89649830538b68b583febe64e0716db2a62f0846bf62d950929e589749a5bb",
+      "pixelSha256": "ef51c403aa78b186e88246f14a234e1d1d1fe117be6d933c13333b0baccae73c",
+      "bytes": 587,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_06",
+      "group": "faces",
+      "label": "โหนกแก้มเด่น",
+      "path": "assets/sprites/characters/faces/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "272116366fe856677653c9b8ddcef626d930f1ab9899c77ed5a63156ad5d3a18",
+      "pixelSha256": "1b16426717da8895aee2487e9b3fd8d8e102154f03b0de42c4090645c04170ae",
+      "bytes": 598,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_07",
+      "group": "faces",
+      "label": "กรามมน",
+      "path": "assets/sprites/characters/faces/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "06404d63788a6d53a47687f13ecd08d969b7d5daaac1e6189c9b5176be6365f1",
+      "pixelSha256": "2c563f0979ad1c21f41904eec26c81050ad6efb0c6129a592cde65bb2bbd9cd7",
+      "bytes": 576,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_08",
+      "group": "faces",
+      "label": "คางแหลมอ่อน",
+      "path": "assets/sprites/characters/faces/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "aa08ad5d3fc08c232710e1cae4fba9d923596487e46f1f874279f9db3eb3b678",
+      "pixelSha256": "3ea1aa0acb42ba9126ba9652cf629ce5b9541eaaf056823794a37ab861b44f60",
+      "bytes": 614,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_09",
+      "group": "faces",
+      "label": "คางสั้น",
+      "path": "assets/sprites/characters/faces/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b2524c84b7bf27cb9897efe5ec8edd3ef941d859eb767b34b11d038e4597f020",
+      "pixelSha256": "0b415805957888737804dac576517c6d566b68e412c7ae3d663ca9a33cba40f7",
+      "bytes": 586,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_10",
+      "group": "faces",
+      "label": "คางยาว",
+      "path": "assets/sprites/characters/faces/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7976f51b6966bce1118579754a0d224c81924a131e25d9bdeff85d320b3aa77c",
+      "pixelSha256": "fd353559f48d3fcc41e1028e54431bc3e1289ea94f2a912010c4ec3497df022b",
+      "bytes": 602,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_11",
+      "group": "faces",
+      "label": "แก้มกลม",
+      "path": "assets/sprites/characters/faces/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "85615f500b267c62848670111e9ca82e2c14d49af948bc24f1eafe8c1cbe0232",
+      "pixelSha256": "eba9213ba0098afe6271cd3e709ecedd3124671204196984614db53a4f656f2e",
+      "bytes": 586,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_12",
+      "group": "faces",
+      "label": "แก้มเรียว",
+      "path": "assets/sprites/characters/faces/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e0296c3816523e1066de8e763c1ec26bb1f6150ae764b86a58ea2dbd024c9542",
+      "pixelSha256": "cb04d313dc9ac6c469a491c695f659c9be2d3e4a05ee2c9497fdb97b0d320cf8",
+      "bytes": 619,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_13",
+      "group": "faces",
+      "label": "หน้ากว้าง",
+      "path": "assets/sprites/characters/faces/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a7937b5cf309fda46f23d9c78803922badf7b02646fb48a891abce68f3e1dd9b",
+      "pixelSha256": "a825f61cd68fb6b8e4838b27deb6e89ab2bf2f7ff1fbf6fb69839205398007c7",
+      "bytes": 572,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_14",
+      "group": "faces",
+      "label": "หน้าผากสูง",
+      "path": "assets/sprites/characters/faces/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "46df3c191e7f43e138d8858b304c80dc8b085cd62454a291648fa24d10baf514",
+      "pixelSha256": "0d0d4d4d12e7aa8729e8652fea056706747502aa548a37f7fa65e012c6a2c273",
+      "bytes": 596,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_15",
+      "group": "faces",
+      "label": "หน้าแคบ",
+      "path": "assets/sprites/characters/faces/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e00aa40bfd95a589903b70a4b0f6ca65b6ef2dfd60017d3cde6660dfc8863c30",
+      "pixelSha256": "24cc4c7e5a40444f099cae308d2b2d9c6beba48cfd9bb5d5226076efd14bb0cb",
+      "bytes": 614,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_16",
+      "group": "faces",
+      "label": "คิ้วโก่งเล็ก",
+      "path": "assets/sprites/characters/faces/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "23a741315bdc9a3095cbac9bb8f20b59cf489dbd555d8e3fc62e455e3444dec8",
+      "pixelSha256": "4618ad75281bd7584c8ee04f9a499a420bb60fa466de9a663c1775cb585ef929",
+      "bytes": 587,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_17",
+      "group": "faces",
+      "label": "คิ้วตรง",
+      "path": "assets/sprites/characters/faces/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "abe97d3aab354761055e3062513c4d61d0c92db91fab76b84127ba57d7765e81",
+      "pixelSha256": "d79087c0fe68b365910656747fd5069d2d1dd52ce9e26b3b24b76b8063c9fdb0",
+      "bytes": 575,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_18",
+      "group": "faces",
+      "label": "คิ้วหนา",
+      "path": "assets/sprites/characters/faces/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a143b2f117890b503268d58a1baad3c426b7c365f28dde61da5f66d2b037890b",
+      "pixelSha256": "9e49bdbafa5678fd6879d6d3d4ecefa3116123ffb74a4c790738f605c6ab4b48",
+      "bytes": 585,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_19",
+      "group": "faces",
+      "label": "สันจมูกตรง",
+      "path": "assets/sprites/characters/faces/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "8c3afbfcd23683c9cbab3e50f03a9a06c7e2ce0b27044309f2916182fee89520",
+      "pixelSha256": "a3808e1a9ec0ebb1301dd1974e1915a888aa4df5e003ee032363c901c82800ad",
+      "bytes": 582,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "faces_20",
+      "group": "faces",
+      "label": "ปลายจมูกมน",
+      "path": "assets/sprites/characters/faces/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b3b8637de6f39af5a906ccee5fca25e585cf0c364dde9ce47b9283feab4fa442",
+      "pixelSha256": "f6bf44edef81256386467557ada9e2ce35ab88040b7bf53a7835d338ee3c8461",
+      "bytes": 601,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_01",
+      "group": "eyes",
+      "label": "ตากลมเล็ก",
+      "path": "assets/sprites/characters/eyes/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e57b072e297158bb1e02eb5f58ffee9e97ec5f1f1f55f5398c2ac0f9d8bb402d",
+      "pixelSha256": "f3d7d0e67a658fed695d6dc8889b1478d70f94ea12d0476500f10181576d0407",
+      "bytes": 454,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_02",
+      "group": "eyes",
+      "label": "ตากลมใหญ่",
+      "path": "assets/sprites/characters/eyes/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "002e17c492d2cf8af2afaca0bc1b1cd5d0c4db9f18c2bd5b26060c4abe373a81",
+      "pixelSha256": "1af4e5573722e45c40c7d2d58f85d5846821ba2f399947dedf43bfbbd5ef2d9c",
+      "bytes": 470,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_03",
+      "group": "eyes",
+      "label": "ตารีอ่อน",
+      "path": "assets/sprites/characters/eyes/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "ece48f11153482e88e6013500ce0e8d54bcfeeba9b04d3428d0a57f4796bf0f7",
+      "pixelSha256": "fb7ed47790ff16a72802909f7c6b39ce0b9ca9cc83ab2558112c5466e7875acb",
+      "bytes": 462,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_04",
+      "group": "eyes",
+      "label": "ตารีคม",
+      "path": "assets/sprites/characters/eyes/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "72705f5d7f34c74bec2d0917f7c749b125665f595ceb6ab86b163bead80f9ad5",
+      "pixelSha256": "652678048283dd9ee17af9c0ed20cdf34364cf2251ac67a74657b9499e86c0f4",
+      "bytes": 476,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_05",
+      "group": "eyes",
+      "label": "ตาหางยก",
+      "path": "assets/sprites/characters/eyes/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "14430f0de18800d26c8a1bd2f1100528627df778d986df9f8cf2fbed28d95b9e",
+      "pixelSha256": "d8c09797785f0b81e15244172188f5c6244776b64c4bf9a081a5af99c25b5245",
+      "bytes": 478,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_06",
+      "group": "eyes",
+      "label": "ตาหางตก",
+      "path": "assets/sprites/characters/eyes/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "674de38d96d2d52ec337c6e605d3e5a1a3fb129f885126e96b1206a68ebd61a4",
+      "pixelSha256": "785e80995cc26f530a299fa533db6ddfb2ed32241f6ed00044fba160ca150967",
+      "bytes": 482,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_07",
+      "group": "eyes",
+      "label": "ตาห่าง",
+      "path": "assets/sprites/characters/eyes/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3c879e1f00aed38b54ac3f93f61e2ec77314908b911a646b52ef93f6b381e017",
+      "pixelSha256": "5367d51d09f4c3c6d140958594f67766730f3cab85c6757ca479373ca9a93717",
+      "bytes": 462,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_08",
+      "group": "eyes",
+      "label": "ตาชิด",
+      "path": "assets/sprites/characters/eyes/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e1d9461766f94b245f463cca6c168f0ad61329773fb164160c394c37c2bbd1ea",
+      "pixelSha256": "ad03bb0fb662c83eb6eca72f6e216ae02d5224cca95b2a02a9df034223eb020b",
+      "bytes": 463,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_09",
+      "group": "eyes",
+      "label": "ตาสองชั้นกว้าง",
+      "path": "assets/sprites/characters/eyes/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5ef84152a29caefb5c79566ccf59cb0559d67c2bd28214a7fa98761c2a725d30",
+      "pixelSha256": "6863fe50bfe13a1d5785152912b9162677b29e8b42e9034b98aac007aabd41ae",
+      "bytes": 468,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_10",
+      "group": "eyes",
+      "label": "ตาสองชั้นแคบ",
+      "path": "assets/sprites/characters/eyes/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3cc8e50c6580efb4c627720d7bc2da15cce4f3239d52572775c1ed68f74c6fd5",
+      "pixelSha256": "57c141c33563319de2ce88d31e8df30bd11eed46c2ad59b6b814b8195925a835",
+      "bytes": 464,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_11",
+      "group": "eyes",
+      "label": "ตาชั้นเดียว",
+      "path": "assets/sprites/characters/eyes/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3edacd88d0af8677f6cb5309ea2846c127283009b6eba971e9a1ead544be730d",
+      "pixelSha256": "19fbbca96108d7c8f79b4d1fcdb11d212a7b40be64d1dacf4d234c611d31da13",
+      "bytes": 457,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_12",
+      "group": "eyes",
+      "label": "ตาเรียบสงบ",
+      "path": "assets/sprites/characters/eyes/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7e85c94133eb7cc2f11e2b96c91ec83b57722692fef6a221638a4780a9fa0aa7",
+      "pixelSha256": "2e7308a69b4fea20d717308cfc7df1d8cbe74646093ad51394491e814b462ca2",
+      "bytes": 469,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_13",
+      "group": "eyes",
+      "label": "ตาเบิกกว้าง",
+      "path": "assets/sprites/characters/eyes/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "21d3601b53adb4f369855a69befdf2d891bcf22acf675337eb80b0adb7ba244a",
+      "pixelSha256": "8ca2c1179a79c44a36c01fffa5f8f9abf6d0a98f266e1f6d8d05f58f364db5c3",
+      "bytes": 479,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_14",
+      "group": "eyes",
+      "label": "ตาโค้งยิ้ม",
+      "path": "assets/sprites/characters/eyes/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "bd811ca9726e982e84dc8eac1723e50286399bd4c5b42e31b45ac9a10427132b",
+      "pixelSha256": "e85921c61675abc5d1c8c2a97c5d39ef56729506e34e924459d814bff145feae",
+      "bytes": 475,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_15",
+      "group": "eyes",
+      "label": "ตาจ้องมั่นคง",
+      "path": "assets/sprites/characters/eyes/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "671329f6513e0c242b7b6c0992c9683cd5cf0cbdc5a56ffc07c4f40a41c01e7c",
+      "pixelSha256": "14f85ad153d9500da2b892cc8bd363e163a6378ea475b08720cf0fd1e2681302",
+      "bytes": 460,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_16",
+      "group": "eyes",
+      "label": "ตาตื้น",
+      "path": "assets/sprites/characters/eyes/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "34ff0bd6b4da47470ff15575387576cf2519c8a32edc9f8d2de556981a8c539a",
+      "pixelSha256": "302fb6274640d0c738e026de85348abdcdf459170c554af55b3568c3397f1384",
+      "bytes": 476,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_17",
+      "group": "eyes",
+      "label": "ตาลึก",
+      "path": "assets/sprites/characters/eyes/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "2a4997c4f728a7503acab3a90352cc381da84fc05ee5d6968329e1df956085c8",
+      "pixelSha256": "bfd5f4bfd0d769d6a9cbee074c86bb51ae177b94f6e88a693fd4e8736a82279a",
+      "bytes": 479,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_18",
+      "group": "eyes",
+      "label": "ตาทรงอัลมอนด์",
+      "path": "assets/sprites/characters/eyes/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "811ecc5b95b18a8ff4c25b282aeab82b640b3e06ff32fb1f32b015fd2a7f022b",
+      "pixelSha256": "7b752998cd35c1b09f8c9d2d56e8ec65219e33fa6b59f0baeb95871916260008",
+      "bytes": 478,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_19",
+      "group": "eyes",
+      "label": "ตาขอบนุ่ม",
+      "path": "assets/sprites/characters/eyes/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a84e084ea45277e35db300449dbdd0bc64ba5782277fa6c396eda2122a1deca3",
+      "pixelSha256": "677b4505474d381a5a6c333c8261a62f496da170e33b76d4ffff935f6c6f0596",
+      "bytes": 469,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "eyes_20",
+      "group": "eyes",
+      "label": "ตาขอบชัด",
+      "path": "assets/sprites/characters/eyes/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "408deafbf83ceafd9d6f5930b5cf7fab7dc90cdb5b119fd36153df3f7f27149e",
+      "pixelSha256": "b1f3815440d644cc24467268afe639b25e0cc4f5254213078515dfa7d8889c61",
+      "bytes": 469,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_01",
+      "group": "upper",
+      "label": "เสื้อชาวบ้านผ้าลินิน",
+      "path": "assets/sprites/characters/upper/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "cf70edc6c733b2705ee79ad30227a2353860dd309062bf1fdf2bdc84d9fcfd96",
+      "pixelSha256": "7329b0da40247d6fa95de113902db6bb2df5be8ac3ad25ffa81025c5ecbc3c32",
+      "bytes": 483,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_02",
+      "group": "upper",
+      "label": "เสื้อคอผูกเชือก",
+      "path": "assets/sprites/characters/upper/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0954f7c47ebd05752f0693e90009b40a25550ca5108de4767c69c61b398f02ec",
+      "pixelSha256": "df720802e4d71b314fccd35a229c7438834811ff944359a6d57cdee9c2283695",
+      "bytes": 550,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_03",
+      "group": "upper",
+      "label": "เสื้อแขนพับ",
+      "path": "assets/sprites/characters/upper/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "c22c59367a3637d5e70181491883be3dede508995f5f9c2bb5e4f701346c997a",
+      "pixelSha256": "da5887f8f29f066733651b799730cabcf437e2c6d0802fc4f15d175da7121b85",
+      "bytes": 464,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_04",
+      "group": "upper",
+      "label": "เสื้อนักเรียนฝึกงาน",
+      "path": "assets/sprites/characters/upper/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0b878bd8eefe69fadd68e5f12fdeb0152cfd6758081ff5a7f49b7201d4d1ca26",
+      "pixelSha256": "9a38def73d155215a4ca6d3f6caff35b2c72b1d7f19ef60826f7f190228132f6",
+      "bytes": 513,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_05",
+      "group": "upper",
+      "label": "เสื้อกั๊กช่าง",
+      "path": "assets/sprites/characters/upper/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b4d21f1b342de7ed06050f83b96e61fff917605964436f1a6b0457777aa450db",
+      "pixelSha256": "c3b58879da8e0fb71ffe3d4a67323b583f6f8f22676ebab92d31351d033d0884",
+      "bytes": 472,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_06",
+      "group": "upper",
+      "label": "เสื้อช่างสวน",
+      "path": "assets/sprites/characters/upper/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0780ed17cdeefb922c08bff19050f5e4842c9717d3d951d2ea5047ba5108fdda",
+      "pixelSha256": "05a68325d54c9abcdf8a8ef3931efbc8a61709ade53b4c237d6bdb08f880c248",
+      "bytes": 505,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_07",
+      "group": "upper",
+      "label": "เสื้อแขนสั้นชุมชน",
+      "path": "assets/sprites/characters/upper/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e35387a8a1d0fac1721383ea42ecce3e127d88603ff30d080b8540b8576def76",
+      "pixelSha256": "6cb91424ec700b5e632efaeff3f25e1883f45d73446b9319f9d7b2164d96cde8",
+      "bytes": 565,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_08",
+      "group": "upper",
+      "label": "เสื้อเดินทางเบา",
+      "path": "assets/sprites/characters/upper/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "4f4dd9224b804713cd52f9056fecff27591cb122f06dd01f8f1a64ed217b7cb0",
+      "pixelSha256": "67a7c9118e81ca048c2f1078e44c1d17be2e91d08b7b75978e9e7a1de5d7b3e8",
+      "bytes": 481,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_09",
+      "group": "upper",
+      "label": "เสื้อคลุมตลาด",
+      "path": "assets/sprites/characters/upper/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "f6f2bbb9b6aaa251866b1e3ae7db2a5a268b3a8f6b4ce99a58b5526feac72a48",
+      "pixelSha256": "483b220f768bbb8f1090536ed5f2a669a6682ef08c977e1d57928603040879af",
+      "bytes": 529,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_10",
+      "group": "upper",
+      "label": "เสื้อเส้นใยป่า",
+      "path": "assets/sprites/characters/upper/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "6dfe06d81f0b1a0a4e456289b8f0c2d7eba1cc64190dfe07cf1aadfd50612d17",
+      "pixelSha256": "9bea4c09e33dc4ca0d19212b4fcb6bb0b349eb8bfa2ca31ef4d36450ba9036c1",
+      "bytes": 487,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_11",
+      "group": "upper",
+      "label": "เสื้อปักขอบเมือง",
+      "path": "assets/sprites/characters/upper/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "1dc65f480b87280ceb60fee079c037c17ac2239a0a2f805140910b47d0f2fc4e",
+      "pixelSha256": "5d6174b56aca7bc99a08c3cf2c684a29b11812386a80f451481170fda20d2c49",
+      "bytes": 542,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_12",
+      "group": "upper",
+      "label": "เสื้อพ่อค้าเล็ก",
+      "path": "assets/sprites/characters/upper/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "33d006db02eb2320f2a17ec75df13b2889e754a0d9a3be4d1e23e56b726a9129",
+      "pixelSha256": "a225bfb6e327f18d46f637ee524b9bfcde29babdd2c026c848944f7a1f209c26",
+      "bytes": 596,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_13",
+      "group": "upper",
+      "label": "เสื้อนักดนตรีฝึกหัด",
+      "path": "assets/sprites/characters/upper/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "f953920bc26231eb16a24b1338f9dc8600eb69a9f20d51b88722879bbd2c2a98",
+      "pixelSha256": "ef7da80945fb8aec3f5f8eec411ffe3ab468a6e48b2dfadd670b9d3c48691f8c",
+      "bytes": 511,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_14",
+      "group": "upper",
+      "label": "เสื้อเรียนอักษร",
+      "path": "assets/sprites/characters/upper/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "6a4bf2c5d058caf0c3f3b094cfef224baa5e7b9d3afbec295021c0a09262ff52",
+      "pixelSha256": "7a294ca3ed66661b7e3034e5ccd80e41f304133aa78dd6992d6172c8b6d9badb",
+      "bytes": 545,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_15",
+      "group": "upper",
+      "label": "เสื้อช่วยโรงเตี๊ยม",
+      "path": "assets/sprites/characters/upper/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "142913b83666b8457915286d5cea24517df489e0d0631cdb52b246cb120aee9a",
+      "pixelSha256": "de4bd4a84221cfadac4fa70956e33ce05f186e559d5d8ad1736e4fcccc87cbdb",
+      "bytes": 548,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_16",
+      "group": "upper",
+      "label": "เสื้อฝึกธรรมชาติ",
+      "path": "assets/sprites/characters/upper/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "8cbc5ce3b9c583cf227aa4a221c6257e0e84fe474fea29b5adf67c5621fc139b",
+      "pixelSha256": "944000d1ee137528a31d965195baf36d049a1607eaced26128b55eee3c0c0ba9",
+      "bytes": 571,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_17",
+      "group": "upper",
+      "label": "เสื้อฝึกสำรวจ",
+      "path": "assets/sprites/characters/upper/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5b9cde4ca4759427bce95cc79b1831868d2a0f59cdc56056c2dfcaac507d1ee6",
+      "pixelSha256": "a25072346702065e7377932b4fc357fe39c0da1b75528c45fbe2133bd5298935",
+      "bytes": 623,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_18",
+      "group": "upper",
+      "label": "เสื้อช่างเรือ",
+      "path": "assets/sprites/characters/upper/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "cf92e3d1230e053c6c7d305b1306b215e5b9c7d556c9033739af60e5f57127d7",
+      "pixelSha256": "d7744f452e721d1c2b8ca85d9e686fa8217a3c96fa43eba6b13b0aa9bc05ae09",
+      "bytes": 558,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_19",
+      "group": "upper",
+      "label": "เสื้อย้อมคราม",
+      "path": "assets/sprites/characters/upper/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "431f7ee7cd54b8578fd87aaf823c21b7a78480cc9302b70ce4c05cacb42e55d8",
+      "pixelSha256": "2feb4239a02d22d0b979acde04ee3486ebeed5fde147496f75f184627fad9dbc",
+      "bytes": 586,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "upper_20",
+      "group": "upper",
+      "label": "เสื้อเทศกาลเรียบ",
+      "path": "assets/sprites/characters/upper/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7e37538c0f9222c710765dcc3fdd53566fec8d59c5610d602b3c83fdc276d5cf",
+      "pixelSha256": "69ab39f07463d2d3a2f408c89bf5f4662fae0a4e86b163faf0e9bd28d388bf54",
+      "bytes": 567,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_01",
+      "group": "pants",
+      "label": "กางเกงผ้าตรง",
+      "path": "assets/sprites/characters/pants/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "73e114952d501f2600f02f9ab6e4fb98f8b21a3276ac14e77234a347adc67d97",
+      "pixelSha256": "51d74c03cb84609def2cd0a5953ec663ebfd23f38cddba99bbe308775d5fb727",
+      "bytes": 431,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_02",
+      "group": "pants",
+      "label": "กางเกงขาสั้นเด็ก",
+      "path": "assets/sprites/characters/pants/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "2ae1b6a51a1f7b20eaa450c90c9bbbf50707b0834e93e2735137f5465aaf6716",
+      "pixelSha256": "b5780b5f282500de12a9287165695d60b209616378caaadea717193eaac86474",
+      "bytes": 439,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_03",
+      "group": "pants",
+      "label": "กางเกงทรงหลวม",
+      "path": "assets/sprites/characters/pants/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "990f173a9c7f833547c83256c47907e194528a9ae890ca26a876bf57ac8503aa",
+      "pixelSha256": "053834112bf757237d8f02974d4469e94fc8f7a4aaf10fa01a1dd5b9ab386bc9",
+      "bytes": 464,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_04",
+      "group": "pants",
+      "label": "กางเกงเดินป่า",
+      "path": "assets/sprites/characters/pants/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "c6f552c777ac6214198f5eb21b5467c3409ba3d3c9ab68e328ef41b1ed862388",
+      "pixelSha256": "c32bb3d4860631c6c75d833bf569e392b5b2f59e521bb37ef2c509931fa80c81",
+      "bytes": 467,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_05",
+      "group": "pants",
+      "label": "กางเกงขาม้วน",
+      "path": "assets/sprites/characters/pants/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "ed7ee507bda3fa75030384a19989a607ab0f1daa3dd2e0d539755da9867c9b9d",
+      "pixelSha256": "5714c3008ea4464f1292f49f89dfb016092def4a3413a75669b2799228364cb3",
+      "bytes": 443,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_06",
+      "group": "pants",
+      "label": "กางเกงทำงานเกษตร",
+      "path": "assets/sprites/characters/pants/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0c900cd62df2472f54bd22d8b0205d2ac9dfdeb78994fa11940d735fdb4ba4e0",
+      "pixelSha256": "68819772c8e9530e9360c45374eec8bdf6f4f81e2b971cc9edbc3247e1b6a9f2",
+      "bytes": 461,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_07",
+      "group": "pants",
+      "label": "กางเกงช่าง",
+      "path": "assets/sprites/characters/pants/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "0d3f6bacab37ec37533f57ac6113b3535748fc0cc7a4c2ad36a1998dae1c6a72",
+      "pixelSha256": "2045c9ced0b1726991cc7a9535356f40832cfc3c189e8c8d9677445efa6a8cc4",
+      "bytes": 455,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_08",
+      "group": "pants",
+      "label": "กางเกงผ้าสีคราม",
+      "path": "assets/sprites/characters/pants/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e2886129f2eee9c8868adad7c87eb1d5f08aee85094ff21a692cf8eb6e0e7366",
+      "pixelSha256": "4caddfca0b70d23b917dc61085b664a408db5ceef4db097a2d114c822d96f611",
+      "bytes": 487,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_09",
+      "group": "pants",
+      "label": "กางเกงผ้าสีเทา",
+      "path": "assets/sprites/characters/pants/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "70e7014c097376588e8509351039a06d21f341cc046cda0204f4c9d2b3bf6298",
+      "pixelSha256": "57720733aed23125356f29eb19c35195e5d74c8868ca586cba5312d376e304f1",
+      "bytes": 439,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_10",
+      "group": "pants",
+      "label": "กางเกงผ้าสีน้ำตาล",
+      "path": "assets/sprites/characters/pants/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "307b1493546747e278224726e304291c7a20f0b5d682aa67e3a7807831022693",
+      "pixelSha256": "1b133ab4017cd0ee2454c60eab0ef7cfb54aa7f572d91f906dbbaecbdf6464d7",
+      "bytes": 445,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_11",
+      "group": "pants",
+      "label": "กางเกงผ้าเขียวหม่น",
+      "path": "assets/sprites/characters/pants/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "27f990b452aea179d9f9e75e43af2c68d762645b6615e05b9887ec09e9d7e00b",
+      "pixelSha256": "b9b3dad1c812c42a7b0b0f33a132988f749c038485e7b6135ea67cd19826e974",
+      "bytes": 461,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_12",
+      "group": "pants",
+      "label": "กางเกงขารัด",
+      "path": "assets/sprites/characters/pants/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "47fd25664a1f74f58c2feac8b6be04e4f9ff88ce7fbdb50e074338a62b88aa8f",
+      "pixelSha256": "e3da73462654ba67c779e3e94c54adce2c1edea28cc9ff51a095bd5fac873c74",
+      "bytes": 482,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_13",
+      "group": "pants",
+      "label": "กางเกงชุดฝึก",
+      "path": "assets/sprites/characters/pants/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "4f0abd7ae17fe22a9436bf0128a8749a7f97b7ddd7b8609b65e4fa1fa77b0243",
+      "pixelSha256": "acc0c5b42e9ce37e55ae1e711f13ae94b25354cb4284333283f01d5d20394f4a",
+      "bytes": 436,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_14",
+      "group": "pants",
+      "label": "กางเกงเทศกาล",
+      "path": "assets/sprites/characters/pants/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "9391dec27b38408728d497da17e537a42ce183ee7f3adc0bd616fc51e15bd14a",
+      "pixelSha256": "b958df2debe49fcbfdb44e9809656c2e08366374a90e334bc79f40094557a535",
+      "bytes": 464,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_15",
+      "group": "pants",
+      "label": "กางเกงนักเรียน",
+      "path": "assets/sprites/characters/pants/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "2845d5a0cd4b93f3dc2f8f099d423aa83cebe01ff8fca983bb609aa911ada34d",
+      "pixelSha256": "12ea7bd87c0f7795298d7e96f58b2a8f8b1e83fd61e4c56a2c03b905ea9cec4e",
+      "bytes": 453,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_16",
+      "group": "pants",
+      "label": "กางเกงเย็บขอบเงิน",
+      "path": "assets/sprites/characters/pants/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "48621b7c7ddf67b46fa41593a7c9f4a1edf8e4e6a0167c20375239a413257548",
+      "pixelSha256": "2b8d91c2c4688207072e0d127fbe1d5470e7c42a132db76aa873c20d49c1e051",
+      "bytes": 469,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_17",
+      "group": "pants",
+      "label": "กางเกงพ่อค้า",
+      "path": "assets/sprites/characters/pants/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "aabaf3aa0a393e2470b6df88081fa1982d082edae390dbbe1dc916436f9ddbb0",
+      "pixelSha256": "12708a7ea99ef06d4071fbea91cbb233479b9b6abe8c4c6ee7ffc6211ee06ec4",
+      "bytes": 440,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_18",
+      "group": "pants",
+      "label": "กางเกงกลางแจ้ง",
+      "path": "assets/sprites/characters/pants/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "3fe42e67075c04a13be905cdf1949770807f9677da54805618080218b6e48414",
+      "pixelSha256": "302e9ba563b7076665e58133dc9c84d071e88d8d25983eb629e8a1546a7b4341",
+      "bytes": 446,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_19",
+      "group": "pants",
+      "label": "กางเกงชาวทะเล",
+      "path": "assets/sprites/characters/pants/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7f45f1132b82df8e83de1733f15ed572781fe2e2bb9ed7abe7568482a15993d4",
+      "pixelSha256": "2872ee96a42a937ce6d0ae516f1ee45a874ea5f63d44259cd30e8120f361dfa8",
+      "bytes": 458,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "pants_20",
+      "group": "pants",
+      "label": "กางเกงท่องเมือง",
+      "path": "assets/sprites/characters/pants/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "1d4cc48cf29daeb0ff2ffb7fea6fd05e48fe36ae29472af4b5e89b6a28fe76d1",
+      "pixelSha256": "22124defe22398529b0ad97c2117ac5230c11f387d402cedae27817f647dc4d9",
+      "bytes": 470,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_01",
+      "group": "shoes",
+      "label": "รองเท้าผ้านุ่ม",
+      "path": "assets/sprites/characters/shoes/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "bb1c41bdd32d41e8e42ffde5917d8461f64f45940d942736378706e2b2e944d7",
+      "pixelSha256": "c2ff18fb6ca22fad2c0a741b94690b31db663b0d49c44f5ec224e4e82ef268fe",
+      "bytes": 402,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_02",
+      "group": "shoes",
+      "label": "รองเท้าหนังเรียบ",
+      "path": "assets/sprites/characters/shoes/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a9567f035e7b09f730d2935957c237d9b7e6c7557b25b77ddb310122875d3e4f",
+      "pixelSha256": "4dc0c9f86d4d7e8ba04399e56cac890843208265e73a65daebd40760d845e085",
+      "bytes": 397,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_03",
+      "group": "shoes",
+      "label": "รองเท้าหุ้มส้นอ่อน",
+      "path": "assets/sprites/characters/shoes/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "4206a9b87c38e39e7582e45ce227bbfd6c3f5d3757c538a633425deefdc13450",
+      "pixelSha256": "b8d369a86ea81e0574dddd02e4336ea56ca6a2e29295a8c5c3fa029f45d30888",
+      "bytes": 396,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_04",
+      "group": "shoes",
+      "label": "รองเท้าสาน",
+      "path": "assets/sprites/characters/shoes/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e93ff494da97e6d2fa6eba7e22ed765859a6717da0d904efa497120994e8b475",
+      "pixelSha256": "0c41d8b5b2f04196fd40d83d5d563a08b0faa3a2e985594aa801ba995768c249",
+      "bytes": 392,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_05",
+      "group": "shoes",
+      "label": "รองเท้าบูตเดินทาง",
+      "path": "assets/sprites/characters/shoes/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e6f21375437a38e7a13ad0f6efe8d992dea358dd5f45ca43bb01212aee59188e",
+      "pixelSha256": "91762ee7e3665c3d6c3c8bc5995c48d57b6b85ae0b23faf84c6f1d72cf29557c",
+      "bytes": 398,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_06",
+      "group": "shoes",
+      "label": "รองเท้าบูตผ้า",
+      "path": "assets/sprites/characters/shoes/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "243e9578722009c19b13e064ae4d4d47ecd710d61f361e307acb27900ce6532c",
+      "pixelSha256": "7158579c81efdaea601555fd13df09604b2da0274a1b0aeb7eb9bb55f72018ef",
+      "bytes": 415,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_07",
+      "group": "shoes",
+      "label": "รองเท้าหุ้มข้อ",
+      "path": "assets/sprites/characters/shoes/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "eaa240a1cbbec1ac34515caad1d947263974544ce9047c3a59ffcdfbaf18d1c8",
+      "pixelSha256": "d93bd0f486595a7d22305d14505d6fcedda85fb4e47dde46a22b673aabaf048f",
+      "bytes": 425,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_08",
+      "group": "shoes",
+      "label": "รองเท้าตัดเย็บ",
+      "path": "assets/sprites/characters/shoes/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "44ee41ed74a401191e4ef73287d31fa2e6a10dcd91ac80cfab93b2d685701dc7",
+      "pixelSha256": "5a080b0a2038fe1c102b69418dd5347309b7a0f9fe66f2d4b5ed32166fa31955",
+      "bytes": 433,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_09",
+      "group": "shoes",
+      "label": "รองเท้าช่างสวน",
+      "path": "assets/sprites/characters/shoes/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "4cbd449148ba2998b8e05001d60358fe243555e44443c213f59b280c2c2b38df",
+      "pixelSha256": "cc6c0651cde49320de16b1c38f02abd87fb4d6e7861a840609ba252361f49023",
+      "bytes": 418,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_10",
+      "group": "shoes",
+      "label": "รองเท้าช่างเรือ",
+      "path": "assets/sprites/characters/shoes/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "82bb829428e914e023501df7d683aea91722476fcad53e04a6915ec2776073aa",
+      "pixelSha256": "03f166476325cca0b3d1fbd264aeaa18f6647e7c51563b5c8164a8de1363452b",
+      "bytes": 433,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_11",
+      "group": "shoes",
+      "label": "รองเท้าสีดิน",
+      "path": "assets/sprites/characters/shoes/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b539e54053937a91e05fd3a6f3738404f2ca5f5c42663d1679efe898de1c6469",
+      "pixelSha256": "4e53a6de893494c91fe2d030a5065f31770d521b969781674dc7c36099f277e4",
+      "bytes": 446,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_12",
+      "group": "shoes",
+      "label": "รองเท้าหนังสีดำ",
+      "path": "assets/sprites/characters/shoes/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5fd4e85175bfd922b7429afc9c8198a1bfefb181ea28ec90c882af420767ad10",
+      "pixelSha256": "21e2a981189881a830f11430a3bc9b7f2551bafbaeef5b3044536bbbfdd8d63b",
+      "bytes": 463,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_13",
+      "group": "shoes",
+      "label": "รองเท้าหนังสีน้ำตาล",
+      "path": "assets/sprites/characters/shoes/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "32f3a2581881d42088b1fb7180155ff09bce0ea26611a9022a62af5f2ed4de84",
+      "pixelSha256": "3b34034ca9b3ec2a915e53213412c9b269e45a6b82fc3da1c2a5ef300809aea6",
+      "bytes": 471,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_14",
+      "group": "shoes",
+      "label": "รองเท้าหัวมน",
+      "path": "assets/sprites/characters/shoes/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "bcd4a7fc7aabe6deabaded2f3169cd1052e8396211de838e42be233a8e387af0",
+      "pixelSha256": "593940aec29fc50a994e3fe35d27dc176e6e1a3a402c210f9f97419f5e51c48c",
+      "bytes": 461,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_15",
+      "group": "shoes",
+      "label": "รองเท้าคาดเส้น",
+      "path": "assets/sprites/characters/shoes/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b92266ee5a6171bdf15c8d5a0f89f00c8031a42b00dc70374bd88e83bfcce4dc",
+      "pixelSha256": "f2d20ba6b06b03a59d7c0cc1b98272131a0c3397db99cb0050490c7659bc8600",
+      "bytes": 474,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_16",
+      "group": "shoes",
+      "label": "รองเท้ารองพื้นหนา",
+      "path": "assets/sprites/characters/shoes/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "dcfc886272c57105a8ba264a53981faac253d00192fb616585801d3ca32eccee",
+      "pixelSha256": "bd74f1e79088b90b430276aaf71bfd91752d8899e0602612487f9e4229b4388b",
+      "bytes": 432,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_17",
+      "group": "shoes",
+      "label": "รองเท้าเทศกาล",
+      "path": "assets/sprites/characters/shoes/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d43d5920962e3620403e9c9a4adbdd87cd4158cd7ec17426f1f2a2af1b36c2f1",
+      "pixelSha256": "99e801ed541adbef831e407c11ae1a78cc6e3ce41487505ec482676dd9628811",
+      "bytes": 463,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_18",
+      "group": "shoes",
+      "label": "รองเท้าผ้าสีคราม",
+      "path": "assets/sprites/characters/shoes/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "66daf802419b446e2e487b21ef17a4f699b00a164161540f0b8033ef767a93de",
+      "pixelSha256": "6b8c9d28ef6768581d0c2dd24b80e9d9d62dab09b4bef17c12bbfa9e3be3455f",
+      "bytes": 497,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_19",
+      "group": "shoes",
+      "label": "รองเท้ากันฝน",
+      "path": "assets/sprites/characters/shoes/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "1680d7fab94aad77259be27cbef180c6b54580d946f9cee63d2533b4f4c2c347",
+      "pixelSha256": "658634e1cbea174e3ccbd583418a0dcc7c200625737b6bde1b64358c07763d74",
+      "bytes": 495,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "shoes_20",
+      "group": "shoes",
+      "label": "รองเท้าขอบลาย",
+      "path": "assets/sprites/characters/shoes/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "be4a81615881bf275a22f780458d8f6ba68e3417941cbb6f467b5313f0278c25",
+      "pixelSha256": "9ba90b3288f133dd99d2214f7bd63cce10fdea50a023880ad9b759c82d57723d",
+      "bytes": 498,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_01",
+      "group": "hats",
+      "label": "หมวกผ้าทรงเตี้ย",
+      "path": "assets/sprites/characters/hats/01.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "53811594b5754da32f726557bebd3f0b3feac9225c97105b331e4ee9d79001e9",
+      "pixelSha256": "9757468f29b05f46c41ea4a504c7558959ac8952b835a32afbe7148f7a157909",
+      "bytes": 404,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_02",
+      "group": "hats",
+      "label": "หมวกปีกเล็ก",
+      "path": "assets/sprites/characters/hats/02.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "af2a55c18ff82862bccba37e105386c71fbb952e3f4e397cc56c9b4a7d0e6825",
+      "pixelSha256": "b9b192c7dc8eb2f28140207a2b208a07a44f50fde977f7c231bba73d8e970886",
+      "bytes": 419,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_03",
+      "group": "hats",
+      "label": "หมวกสานเบา",
+      "path": "assets/sprites/characters/hats/03.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5f20383f87528f92e8ee649e47923fd63252ae817c95e5586cf6908e0f20c0eb",
+      "pixelSha256": "517d7d74e6ae7e61242b7eb26031efbe7d812f3543fca708b3083c592d7889d5",
+      "bytes": 481,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_04",
+      "group": "hats",
+      "label": "หมวกครูฝึก",
+      "path": "assets/sprites/characters/hats/04.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "24fcbabaaa11cebb63b067537008d0a0128175aec7ecf0441a72c700a0d9caf3",
+      "pixelSha256": "93dbbf5a226dce70e69d47ee0699d282a8e7a233f3df4f4a6c4fc758edaed972",
+      "bytes": 418,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_05",
+      "group": "hats",
+      "label": "หมวกนักเดินทาง",
+      "path": "assets/sprites/characters/hats/05.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "72591ba8ebd5f364a6c4a942e12ac38fe51abafb2afa7dc5256e36b5cea261e7",
+      "pixelSha256": "7926a8f335982723512f5d66ca531eeebe095719ee47ef454d74a9b2a8a79cd5",
+      "bytes": 508,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_06",
+      "group": "hats",
+      "label": "หมวกเบเรต์ช่าง",
+      "path": "assets/sprites/characters/hats/06.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "13e7a11c3c97f50d9e5bc787d522341e78c7c2eaf577be7e86dd2ab35e3a61f5",
+      "pixelSha256": "10ac317e7b6e20646aeef092e264cebeaa5e334b7781119d758ee3308fc0372a",
+      "bytes": 435,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_07",
+      "group": "hats",
+      "label": "หมวกคลุมหู",
+      "path": "assets/sprites/characters/hats/07.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "6378975e4cdd39596415e1709289c387332efef5947231dbca3c609766e2fd32",
+      "pixelSha256": "bad2b3043ffd3788d84450f90dc069cb7c8abaab1ceecc69c57f4a1b6804937e",
+      "bytes": 444,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_08",
+      "group": "hats",
+      "label": "หมวกชาวทะเล",
+      "path": "assets/sprites/characters/hats/08.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d85bbab4381fd0306881ec7d3c269828909c1535777cbb46605db3087d934eee",
+      "pixelSha256": "ca5ec8f6168025193f8d9e0a4b92cafbae4a3592731ed1e7c45cf92370cd369b",
+      "bytes": 488,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_09",
+      "group": "hats",
+      "label": "หมวกแก๊ปผ้าฝ้าย",
+      "path": "assets/sprites/characters/hats/09.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7425b451b4688efb5aa4f748a5047e944dab2842911d6f7bfdd3c7ca5ac9bb24",
+      "pixelSha256": "8b2fb4f6dab7868ccd419e52bbfa1d2edb634431867d9c31c23f567cfd6dbbee",
+      "bytes": 450,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_10",
+      "group": "hats",
+      "label": "หมวกใบไม้",
+      "path": "assets/sprites/characters/hats/10.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "5b12b62a9095993a8f5dcc1146b8084fe46ba7a1f219747c28d322fc4790f3e5",
+      "pixelSha256": "8860581a39a2ead6c0e758609e2b1d005948e084859332e64142027f1aa841f4",
+      "bytes": 515,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_11",
+      "group": "hats",
+      "label": "หมวกขอบเงิน",
+      "path": "assets/sprites/characters/hats/11.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e85dc7d5d4b786d7bbb62ab76d53d52c661721f0796f671fa24acf5624bb7a15",
+      "pixelSha256": "11a168ef2ac25cae9bb00dd6eee64072309c41b15b4d8a04ce7fdc9ef105832f",
+      "bytes": 453,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_12",
+      "group": "hats",
+      "label": "หมวกคาดสาย",
+      "path": "assets/sprites/characters/hats/12.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "ef9518532c29196ef0c0a2cbaf884c77ae66bdec69cb8bf877e36bdafb189f8e",
+      "pixelSha256": "27c73b030bc13602a878c7cbe70e44ea0545f4d100a032367262a627ff5614db",
+      "bytes": 454,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_13",
+      "group": "hats",
+      "label": "หมวกหัวกลม",
+      "path": "assets/sprites/characters/hats/13.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "e6c4faef87c56bf4e1b855650026cf3d48720ed9ba00323e0e2c0de8590b7016",
+      "pixelSha256": "d82b7e63e573fd1880428ee55a13086d93949e2c1c0547d55a73a7e689d0ab2a",
+      "bytes": 497,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_14",
+      "group": "hats",
+      "label": "หมวกคลุมผม",
+      "path": "assets/sprites/characters/hats/14.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "7cec6bf0c79667f85dd2757d104e4e91f0bf6208237b131132a2bcfc3df7692c",
+      "pixelSha256": "1d0305892a8d86c32b699c0a9d0a53ba885e7a4517dd61410760982d40039685",
+      "bytes": 462,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_15",
+      "group": "hats",
+      "label": "หมวกนักวิชาการ",
+      "path": "assets/sprites/characters/hats/15.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "d097205b55ff08f750b3d06b768643ce54d6a44c488dbd264b77f385c6fefb64",
+      "pixelSha256": "d5813c3c2117d398e762ad20647d8db9e7f8a536902b43e00ab9fa6f5f1950d8",
+      "bytes": 518,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_16",
+      "group": "hats",
+      "label": "หมวกงานเทศกาล",
+      "path": "assets/sprites/characters/hats/16.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "9c4a1eee81b4183842ad56974c95225b0d74f43124c4bc524d895b84749cc7c5",
+      "pixelSha256": "b7cf2c3cf9e70b7bc755d3e55455b2b490edda2892dcb28f7a99ac82493e2016",
+      "bytes": 446,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_17",
+      "group": "hats",
+      "label": "หมวกเดินป่า",
+      "path": "assets/sprites/characters/hats/17.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "42b89f49c0c1c9846b3d7c705bc8efaadcf219cba6aaafdaa5b19a500801ca36",
+      "pixelSha256": "e1858c508d2c0bd1711ffd64178d6e17218c304c10634130a874143721a7f15c",
+      "bytes": 456,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_18",
+      "group": "hats",
+      "label": "หมวกปีกกว้าง",
+      "path": "assets/sprites/characters/hats/18.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "622e1be01fcafe7a5c6f1fe2bff90637738b01bfbb88871241fbe21914f8959c",
+      "pixelSha256": "935a6103eff58935391975032689b5e84d4402ab9b42f643805f77d21fcee942",
+      "bytes": 497,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_19",
+      "group": "hats",
+      "label": "หมวกผ้าคราม",
+      "path": "assets/sprites/characters/hats/19.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "932e0467cb303eca3daa7a94d130c6cba7fee45ef5e1b619ddc5c2776370613d",
+      "pixelSha256": "624b100a9e165901ef35111e07dba0d84480669ae540f13ab1af7222aadb70da",
+      "bytes": 463,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "hats_20",
+      "group": "hats",
+      "label": "หมวกเครื่องหมายกิลด์",
+      "path": "assets/sprites/characters/hats/20.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "b26f18b46e0cfa4f14ef8c1368bae90ca84ddc453e4e9a3f553e0ddc10bbc895",
+      "pixelSha256": "4053b8cf24c5a57fd06e595391b6168efcb5f6192069a5d104d4cc6c4148dee6",
+      "bytes": 523,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "body",
+      "group": "support",
+      "path": "assets/sprites/characters/body.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "a575a186bdeb81f6309586459db797cfe6cf3f3333be0fc9d314f985d212ba46",
+      "pixelSha256": "c1dc46cf33270c850a1e914d0b975371d6b3ba9662010e4aebf46bd249325ef8",
+      "bytes": 410,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "infant-wrap",
+      "group": "support",
+      "path": "assets/sprites/characters/infant-wrap.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "dfe4b79ffc09548608fab682a28707439fe08040adbef64590d492dd3eea5dac",
+      "pixelSha256": "4d2281d3a98df877980631cc285f578ffc08236adb69d75bfa21c1392990c597",
+      "bytes": 636,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    },
+    {
+      "id": "infant-hair",
+      "group": "support",
+      "path": "assets/sprites/characters/infant-hair.png",
+      "width": 64,
+      "height": 80,
+      "anchor": [
+        32,
+        77
+      ],
+      "sha256": "c208af2fb6399433d51406ba2b71cb013b41488c0220f27b49b8efb496fc9b6c",
+      "pixelSha256": "fc21d62b766de90b23c1a801f64452850b4d779147c93bf13caf289d9007f80c",
+      "bytes": 398,
+      "license": "Original project artwork",
+      "source": "src/ui/avatar/pixel-parts.js"
+    }
+  ],
+  "background": {
+    "path": "art/family-room.webp",
+    "width": 1774,
+    "height": 887,
+    "sha256": "be68b6760ddf2d80d0995e14844a2f16f0195167bcdef665f8b1f558911534fc",
+    "bytes": 120642,
+    "sourcePath": "docs/art/family-room-source.png",
+    "sourceSha256": "2ac4cb82acf176b0fc5fe0438bbe05c5c72471431df29c16e268bc0c063f8e9b",
+    "source": "Original AI-generated family room, 2026-10-29",
+    "license": "Original project artwork"
+  }
+}

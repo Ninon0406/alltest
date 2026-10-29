@@ -10,11 +10,12 @@ import { chooseLegacy,legacyDays } from './legacy.js';
 import {Scenes} from '../data/scenes.js';
 import {guardDecisionTime,pendingDecision} from './decisions.js';
 import {isV7} from './development.js';
+import {dress} from '../character/wardrobe.js';
 export function dispatch(input,action){
  if(input.run?.status==='ended')throw Error('ชีวิตนี้จบแล้ว เริ่มชีวิตใหม่เพื่อเล่นต่อ');
  if(action.token!==storyToken(input))throw Error('รายการนี้เปลี่ยนไปแล้ว กรุณาเลือกจากหน้าปัจจุบัน');
  const state=upgradeState(input);
- if(isV7(state)&&pendingDecision(state)&&!['majorChoice','readNext','setPacing','dailyLife','yearFocus','pauseAwakening','beginAwakening'].includes(action.type))throw Error('มีการตัดสินใจสำคัญรออยู่ กรุณาตัดสินใจก่อนทำกิจกรรม');
+ if(isV7(state)&&pendingDecision(state)&&!['majorChoice','readNext','setPacing','dailyLife','yearFocus','pauseAwakening','beginAwakening','dress'].includes(action.type))throw Error('มีการตัดสินใจสำคัญรออยู่ กรุณาตัดสินใจก่อนทำกิจกรรม');
  if(action.type==='legacyChoice'){
   const choice=Scenes[state.currentSceneId]?.choices?.find(c=>c.id===action.choiceId);if(choice)guardDecisionTime(state,legacyDays(state,choice));chooseLegacy(state,action.choiceId);
  }
@@ -43,6 +44,7 @@ export function dispatch(input,action){
   if(action.method!=='stay')travel(state,action.destination,action.method);
  }
  else if(action.type==='service')useService(state,action.serviceId);
+ else if(action.type==='dress')dress(state,action.slot,action.itemId);
  else if(action.type==='legacyArc'&&state.age>=12){state.yearly.view='detailed';if(state.progression.awakening.step<7)state.progression.awakening.paused=true;state.life.mode='legacy';state.currentSceneId=state.life.legacySceneId??'scene_childhood_hub_2';}
  else if(action.type==='dailyLife'){state.yearly.view='yearly';state.life.legacySceneId=state.currentSceneId;state.life.mode='annual';state.life.page=0;}
  else throw Error('ทำรายการนี้ไม่ได้');

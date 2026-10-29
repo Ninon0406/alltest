@@ -18,6 +18,7 @@ try{
  await page.waitForFunction(()=>document.querySelector('.terminal-summary')?.textContent.includes('เก็บสรุปชีวิตที่จบแล้วในประวัติเรียบร้อย'),null,{timeout:30000});
  await page.evaluate(()=>Game.render());const result=await page.evaluate(()=>({writes:window.archiveWrites,lives:JSON.parse(localStorage.getItem('reborn_finished_lives_v1')).lives,old:localStorage.getItem('reborn_save')}));
  if(result.writes.length!==1||result.writes[0]!=='reborn_finished_lives_v1'||result.lives.length!==1||result.lives[0].age!==60||result.old!==null||'state' in result.lives[0])throw Error('Incorrect terminal-only archive');
+ const photo=result.lives[0].appearance;if(photo?.version!==2||!['face','hair','hairColor','eyes','skin'].every(k=>photo[k]===first.appearance[k])||JSON.stringify(photo.parents)!==JSON.stringify(first.appearance.parents)||'seed' in photo)throw Error('Terminal inherited identity changed or stored a seed');
  await page.reload();await page.locator('#birthScreen').waitFor();if(await page.evaluate(()=>Game.snapshot!==null))throw Error('Run resumed');await page.getByRole('button',{name:'ประวัติชีวิต',exact:true}).click();await page.getByRole('dialog').getByText(first.name,{exact:false}).first().waitFor();
  if(errors.length)throw Error(errors.join('\n'));
  console.log(`PASS ${url}: independent tabs, zero active writes, genuine peaceful ending, exactly one summary, no resume after reload`);

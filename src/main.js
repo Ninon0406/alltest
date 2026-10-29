@@ -17,6 +17,7 @@ import {locations} from './world/locations.js';
 import {currentCareer,jobQuote} from './progression/engine.js';
 import {renderJourney} from './ui/journey-view.js';
 import {ageLabel} from './engine/time.js';
+import {renderWardrobe} from './ui/wardrobe-view.js';
 window.Game=Game;initPanels();
 let dismissedDecision=null,manualOpening=false,textScale=100,reduced=false;
 const decisionKey=()=>{const d=Game.active&&GameState.run.status==='active'?pendingDecision(GameState):null;return d?`${GameState.run.id}:${d.id}:${d.stage??''}:${GameState.time.absoluteDay}`:null;};
@@ -39,9 +40,10 @@ function renderArchive(parent){
  const legacy=readGallery(localStorage);if(legacy.length){const old=document.createElement('details');parent.append(old);paragraph(old,`ฉากจบจากรุ่นก่อน (${legacy.length})`,'summary');paragraph(old,legacy.map(id=>Object.values(Scenes).find(s=>s.endingId===id).title).join(' · '));}
 }
 function renderBag(parent){
- const qty=GameState.world.inventory.bread??0;paragraph(parent,`เงิน ${GameState.gold} เหรียญ · อยู่ที่${GameState.location}`);paragraph(parent,qty?`ขนมปัง ${qty}/20 ชิ้น`:'ยังไม่มีสิ่งของในกระเป๋า');
+ const qty=GameState.world.inventory.bread??0;paragraph(parent,`เงิน ${GameState.gold} เหรียญ · อยู่ที่${GameState.location}`);paragraph(parent,qty?`ขนมปัง ${qty}/20 ชิ้น`:'ยังไม่มีเสบียงในกระเป๋า');
  if(qty&&GameState.age>=4)actionButton(parent,'กินขนมปัง · ฟื้นอาหาร 25 · 1 วัน',{type:'service',serviceId:'eat',token:storyToken(GameState)},a=>Game.perform(a));
  panelButton(parent,'ร้านค้าและเสบียง','shop');
+ renderWardrobe(parent,GameState,a=>Game.perform(a));
 }
 function renderShop(parent){
  paragraph(parent,`${GameState.location} · เงิน ${GameState.gold} เหรียญ`);

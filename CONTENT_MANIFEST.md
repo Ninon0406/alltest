@@ -1,4 +1,4 @@
-# Verified implemented content — 0.10.0 / V7 subset
+# Verified implemented content — 0.11.0 / V7 subset
 
 Run `npm run content` for authored records, deterministic union reachability and actual file validation. Counts include retained historical optional content; they are not a claim of 100 completed V7 forks or mandatory prompts in one run.
 
@@ -17,6 +17,10 @@ Run `npm run content` for authored records, deterministic union reachability and
 | Functional map locations / regions / route edges | 20 / 5 / 20 | 20 / 5 / 20 |
 | Important authored NPC profiles / functional dungeons | 0 / 0 | 0 / 0 |
 | Actual local location PNGs / distinct file pixel hashes | 20 / 20 | 20 / 20 |
+| Character catalog groups / variants per group | 9 / 20 | 9 / 20 |
+| Actual transparent character PNGs (catalog + support) | 180 + 3 | 180 + 3 |
+| Owned basic garment designs / reachable via births | 80 | 80 |
+| Distinct AI family-room artworks (source PNG + runtime WebP) | 1 | 1 |
 
 The retained nine childhood V7 nodes occur at months 0, 3, 6, 12, 24, 36, 72, 96 and 120. Eight adapt source briefs `001/008/011/016/019/027/039/045`; the community-library follow-up is original. Each has three real choices. Early comfort/voice, sharing, river questions and library work influence later memory/relationship effects; returning the purse opens the distinct trust role at ten. These effects feed the existing memory/awakening calculations or actual relationship/gate state. Relationships are a small caregiver/community foundation, not 100 authored important NPCs.
 
@@ -30,20 +34,28 @@ Nine school forks / 27 choices adapt briefs `029/034/037/038/040/036/041/048/049
 
 100 legacy births with feasible branch traversal; 100 historical detailed childhood runs; 40 complete career runs (20 × two story policies); five annual-planner policies beyond age 60; 100 new V7 seeded lives through age 20 and the full manual ceremony. All 30 V7 forks / 90 choices are exercised across the three V7 policies, including the conditional branch. Full-playthrough clocks progress through actual actions, not injected ages. Union reachability spans different runs, including the retained optional/historical reader; not every old vignette appears in the new V7 main flow.
 
+## Character art implementation
+
+180 committed catalog PNGs are original procedural pixel parts from `src/ui/avatar/pixel-parts.js`, matching the nine V7 groups. Three supporting PNGs provide body, infant wrap and infant hair, all 64×80 with shared anchor [32,77] and hard alpha. The manifest records SHA-256 for bytes and decoded RGBA. Every group has 20 different decoded pixel images; the graphics composition audit also confirms 20 distinct complete characters per varied group. These 180 graphics fixtures are not counted as played lives or NPC profiles.
+
+The family-room background is one original AI-generated artwork: source `docs/art/family-room-source.png`, compressed runtime `public/art/family-room.webp`, both preserved and hashed. They are two formats of one artwork. New runs inherit at least four of five traits from actual mother/father profiles; one small variation can occur, independently of stats/race/wealth. Cohort tests cover 1,000 seeded families and all 80 casual garment designs through actual birth ownership. Parent profiles are visual records, not additional authored important NPCs.
+
 ## Art and authoring pack
 
 Twenty original committed PNG files (320×160) now correspond one-to-one to the existing canonical locations, baked from `src/ui/scene-art.js`. `public/assets/scenes/manifest.json` binds ID/path/size/SHA-256; `scripts/verify-assets.mjs` rejects missing, duplicate or corrupt scene files. Scene and map preview render these files locally under the Pages base path, with a procedural fallback. Generated publication copies do not count twice. Other retained art: two pixel SVG illustrations, one original AI environment and v1 layered portrait/full-body renderers.
 
 V7 JSON drafts are **not playable counts**: 150 draft locations (different IDs/no graph/service migration), 100 important-NPC drafts, 120 career-fork briefs, 123 life briefs, 200 tier titles (10 per career), 150 scene prompts, 20 interior prompts, 180 character-design entries. They lack executable effects/conditions/pixel geometry. Source target paths and labels are not generated assets or reachable endings.
 
-Retained birth data: 120 Thai names, 20 equal archetypes, four races, eight histories, four resource talents and three rare hidden identities. Frozen generator 1/2 tables are unchanged. Current sprite still uses appearance-v1: no inherited parent catalogs / ≥20 visible variants per group. Bread remains the one owned stackable item; no actual equipped weapons/armor. Power level is honestly 1, separate from career XP.
+Retained birth data: 120 Thai names, 20 equal archetypes, four races, eight histories, four resource talents and three rare hidden identities. Frozen generator 1/2 tables are unchanged. New-run appearance-v2 has five inherited traits, actual parent profiles and 20 distinct visible variants per group; original appearance-v1 remains for historical characters. Five family garments are owned per run (two tops plus pants/shoes/hat), drawn only from actual equipment, with no modifiers or weapons/armor. Bread remains the one stackable consumable. Power level is honestly 1, separate from career XP.
 
 ## Remaining targets
 
-The first 30-fork cluster across ages 0–19 is complete. Remaining: ≥100 with verified downstream distinctions; ≥100 reachable endings; inherited character catalogs; richer file scenes/interiors/new locations; actual equipment/power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
+The first 30-fork cluster across ages 0–19 is complete. Remaining: ≥100 with verified downstream distinctions; ≥100 reachable endings; richer file scenes/interiors/new locations; combat equipment/shops/modifiers and power growth; NPCs/encounters/combat/dungeons; economy/business/crafting; mortality/lifespan/eras/≥1000-year deity gates. The current release does not meet those full-game targets.
 
 Historical 0.8.0 validation: 67 unit / 39 browser cases passed; all three preview and live GitHub Pages verifiers passed for runtime 370e5c3, including all 20 actual PNG files, seven layouts, real birth-to-career progression and a genuine terminal-only archive. These checks establish the implemented subset, not future V7 systems.
 
 Historical 0.9.0 validation: 74 unit / 43 browser cases passed, plus content/build/staging/PNG checks and all three preview/live production verifiers. Public source `78a10b5` serves `app-jMSiVLl5.js` / `app-jJszjJhO.css`; both Pages workflows succeeded. Live checks include all 20 decoded files, seven layouts, genuine birth-to-20 teen education/payment/support and terminal-only history. Image assertions now wait for network loading before validating dimensions. See `docs/NEXT_CODEX_TASK.md` for exact evidence and remaining work.
 
-Current 0.10.0 validation: 80 unit / 47 browser cases passed, with zero skipped; content/build/staging/PNG audit and all three preview/live verifiers passed. Coverage includes all nine school forks, real practice/record gates, mixed childhood-to-teen callbacks, capped guidance on actual timed training, all seven layouts, real birth-to-20 progression and authentic terminal-only history. Runtime `433546d` serves `app-DcD8zOM7.js` / `app-jJszjJhO.css`. Final CI follow-up `9a06fff` passed the full test/build/deploy/live workflow [40845239881](https://github.com/Ninon0406/alltest/actions/runs/40845239881). The constrained-CPU full-lifetime cases also passed after a scoped test-budget fix; see NEXT_CODEX_TASK for the initial CI failure and exact evidence.
+Historical 0.10.0 validation: 80 unit / 47 browser cases passed, with zero skipped; content/build/staging/PNG audit and all three preview/live verifiers passed. Coverage includes all nine school forks, real practice/record gates, mixed childhood-to-teen callbacks, capped guidance on actual timed training, all seven layouts, real birth-to-20 progression and authentic terminal-only history. Runtime `433546d` serves `app-DcD8zOM7.js` / `app-jJszjJhO.css`. Final CI follow-up `9a06fff` passed the full test/build/deploy/live workflow [40845239881](https://github.com/Ninon0406/alltest/actions/runs/40845239881). The constrained-CPU full-lifetime cases also passed after a scoped test-budget fix; see NEXT_CODEX_TASK for the initial CI failure and exact evidence.
+
+Current 0.11.0 local validation: 88 unit / 51 browser cases (zero skipped), the 1,000-family cohort, source/staged PNG/transparency/anchor/hash checks and 180 complete composite variants passed. Content/build/staging and all three production-preview scripts passed, including all 183 decoded character parts, seven family layouts, real school/ceremony/career/wardrobe/teen progression and terminal-only history. Public evidence follows deployment; all story/location/NPC/ending counts remain unchanged.

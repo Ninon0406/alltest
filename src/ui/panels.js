@@ -9,7 +9,9 @@ export function refreshPanel(){
  const content=document.getElementById('modalContent'),top=content.scrollTop,focused=document.activeElement;
  const wasInside=content.contains(focused);
  const label=focused?.getAttribute('aria-label'),text=focused?.textContent;
+ const sections=new Map([...content.querySelectorAll('details[data-panel-section]')].map(n=>[n.dataset.panelSection,n.open]));
  content.replaceChildren();draw(content);
+ for(const section of content.querySelectorAll('details[data-panel-section]'))if(sections.has(section.dataset.panelSection))section.open=sections.get(section.dataset.panelSection);
  content.scrollTop=top;
  const replacement=[...content.querySelectorAll('button,input,select,summary')].find(e=>label?e.getAttribute('aria-label')===label:text&&e.textContent===text);
  if(wasInside)(replacement??document.getElementById('closePanel')).focus({preventScroll:true});

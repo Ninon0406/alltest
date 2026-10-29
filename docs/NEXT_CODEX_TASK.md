@@ -1,71 +1,62 @@
-# Continue REBORN — V7 / 0.10.0
+# Continue REBORN — V7 / 0.11.0
 
-Read AGENTS.md, ROADMAP.md, docs/USER_DIRECTIVE_V7.md, docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md and actual HEAD. Continue the existing project. V7 wins over historical conflicting rules. One Life remains memory-only; old active saves/backups stay ignored and untouched.
+Read AGENTS.md, ROADMAP.md, GAME_DESIGN.md, CONTENT_MANIFEST.md, docs/USER_DIRECTIVE_V7.md and docs/v7/REBORN_CODEX_V7_ALL_IN_ONE.md. Continue the current repository. V7 supersedes conflicting historical rules. One Life is memory-only; never restore/write/delete old active saves/backups. Preserve frozen birth generators 1/2 and appearance-v1.
 
-## Completed this round
+## Base / completed implementation
 
-Continued from published `5e02944` / runtime `78a10b5` (0.9.0). No project rewrite, birth-table change, persistence or time-engine replacement.
+Continued from published `8f31f85` / runtime `433546d` (0.10.0). The existing first 30 V7 forks / 90 choices, infant care, clock/pause/decision boundaries, seven manual ritual stages, map journeys, 20 base/20 advanced careers and six endings are retained.
 
-The first coherent V7 early-life cluster now has **30 runnable forks / 90 authored and reachable choices** across ages 0–19. Full V7-3 ≥100-fork expansion remains incomplete. Nine new school forks / 27 choices adapt actual V7 life briefs:
+V7-4 implementation this round:
 
-| Event | Month | Brief | Actual role |
-| --- | ---: | --- | --- |
-| child.seeds | 48 | 029 | Supervised seed play; patience/shared care returns in school outcomes |
-| child.mechanism | 60 | 034 | Safe toy observation/play/sketching feeds later craft memories/bonds |
-| child.rules | 84 | 037 | Fair turns/listening/teacher support, later friendship consequences |
-| child.workshop | 90 | 038 | Cooled tools with adults; earlier toy choices and later practice guidance |
-| child.caravan | 108 | 040 | Real per/cha/wis practice support; later travel advice, no teleport |
-| child.farewell | 114 | 036 | Picture/contact/farewell circle; later letters/family contact |
-| child.fair | 126 | 041 | Actual practice required for showing a training record; free host/recorder options |
-| child.invitation | 132 | 048 | Manual preparation only; no early ceremony, money charge or profession assignment |
-| child.eve | 138 | 049 | Earned-record diary gate, family conversation or rest; all lead to the real age-12 ceremony |
+- New `createRun` lives get appearance version 2 with five traits (face, hair shape/color, eyes, skin), actual independent mother/father profiles and per-trait donor provenance. At least four traits match their selected parent exactly; at most one varies by one catalog step. Both parents and child render from the same actual catalog. Appearance randomness uses a separate seed stream; frozen births/names/race/wealth/stats/resources and old appearance-v1 are unchanged. Appearance does not affect ability scores.
+- 180 original authored procedural PNG variants: nine groups × 20, using the V7 catalogue labels. Three extra transparent PNGs provide body, infant wrap and infant hair. Logical 64×80, fixed anchor [32,77], binary alpha, byte and decoded-RGBA SHA-256. The verifier rejects empty/opaque/corrupt/missing/duplicate parts. A separate graphics fixture audit confirms all 180 complete composed characters remain visually distinct. Fixtures are not played lives or NPC counts.
+- Real layered file rendering, with skin/hair tint filters, race details, wrapped infants, growing toddler/child/teen proportions, and gray hair in older age. Trait indices never reroll. New renderer shows only actual owned clothes and no invented class weapon/aura. Historical v1 portraits/sprites stay intact.
+- Family record displays mother/child/father, their actual names, expandable trait origins and a local family-room background. One original AI background is preserved as `docs/art/family-room-source.png`; a 118 KiB WebP derivative is used in the UI. They count as one artwork. Character PNGs are procedural, not AI-generated. No image service runs during play/build.
+- Five family-gift garments are actually owned per run: two tops, pants, shoes and hat. From age three, the bag changes only owned same-slot clothes; hat can be stored again. Changes consume zero days/gold/stats/XP, retain face/parents and use revision tokens/clone-and-commit. Infant/toddler dressing is supervised; active choices remain pending while cosmetic actions are allowed. Body clothing is kept on. No purchases, combat modifiers, armor or weapons are claimed.
+- The wardrobe stays expanded when a successful action refreshes its dialog. Family trait text uses safe DOM text; SVG interpolates only validated numeric/catalog values. Terminal history stores the compact v2 identity and actual worn-item labels once, never the active state or birth seed.
 
-- New events are chronological with the existing childhood/teen nodes. Their eligibility uses the existing shared pending-decision/time-boundary scheduler. Ages 4–11 have at most two important childhood prompts per year; fixed 30-day autoplay still stops and never chooses for the player.
-- Ages four/five remain supervised sensory play, memories and relationships. No adult stat, practice XP, wage or phantom equipment is granted. Actual formal practice starts at eight. School conversations consume zero game days; guidance only affects a subsequent real seven-day action, capped at +3 XP per stat. Networking wage cap remains +3 coins per actual job.
-- Earlier seed/workshop choices change school reflection and learning. Caravan maps/craft, farewell pictures/letters and listening return in existing teen decisions with actual different effects. Unit tests exercise mixed paths, including free study routes and cap saturation.
-- Showing a training record and reviewing a diary require actual prior actions/records. Disabled options explain the missing experience in Thai; free alternatives remain. No travel occurs through these conversations, no fee is added and no school branch changes measured awakening results after measurement.
-- Existing infant care, seven manual awakening steps, 20 base/20 earned advanced careers, tuition/jobs/practice, six original endings, view-only map/main-page journeys, all 20 PNGs and terminal-only history remain.
+## Current work / tests
 
-## Current work
+Implemented and locally integrated; finish the final full browser/preview/live/CI checks below before marking V7-4 released. No intentional incomplete gameplay stub is left.
 
-School/story implementation, local/public checks and final full CI publication are complete. CI follow-up adds readable failure annotations and a scoped budget for the two genuine age-60 browser scenarios. No half-built gameplay feature is intentionally left behind. Start V7-4 below.
+Confirmed: `npm ci`; 88/88 Vitest cases; `npm run content`; `npm run build`; `node scripts/stage-site.mjs`; source/staged character asset validation; the complete 180-fixture composition audit; full 51/51 Playwright cases (zero skipped). Unit coverage includes 1,000 deterministic families, bounded real donor inheritance, coverage of all twenty trait values and all eighty casual clothing designs, frozen birth parity, actual timed progression, atomic invalid/unowned dressing, wrapped infant/hat state and terminal-only archived identity.
 
-## Next task — V7-4 inherited appearance
+All three production-preview scripts passed: seven responsive widths, 20 existing scene PNGs and all 183 character PNG hashes/decodes plus the family background, actual family portraits, overlays/month/progress/no resume; birth-to-20 manual school/ceremony/career/job/training/tuition, zero-cost owned clothes with unchanged genes/stats/time; independent tabs, zero active writes, genuine age-60 ending, one archived inherited identity and no seed/resume. Family and main-screen screenshots were visually reviewed at 360×900; no overflow. Actual public/CI evidence is pending below.
 
-The first 30-fork slice is complete; do not reimplement infancy, time controls, teen funding or school stories. Full ≥100-fork expansion is still required after the visual/progression foundations.
+Early pixel probes found duplicate face/eye designs, then another face pair while standardizing eye registration. These were corrected with actual eyebrow/chin/eyelid/iris geometry; both PNG-level and complete-composition checks now pass twenty distinct outputs in each group. Do not substitute metadata/name hashes for rendered pixels.
 
-1. Inspect `src/character/appearance.js`, `src/ui/avatar/sprite.js`, `src/ui/avatar/portrait.js`, birth generator 1/2, `docs/v7/06_ASSET_SEED_MANIFEST.json`, the world bible and appearance tests. Design a separately versioned new-run appearance initializer with stable parent/child DNA, retaining frozen historical birth generation and old appearance-v1 identity. Never reroll a live character or alter frozen origin/name/race tables.
-2. Create real visible geometry/atlases for ≥20 variants per requested group; render both parents and child at aligned anchors with deterministic inheritance and small independent variation. Generated files need dimensions/hash/alpha/registration validation and actual distinct rendered silhouettes, not labels or color-only claims. Owned gear is not yet implemented; do not pretend career cosmetics are owned items.
-3. Test deterministic inheritance, stable rerenders and all seven viewport widths, build/stage and verify preview/live. Continue with owned equipment before showing held gear, then earned power/title/aura and long-life systems. Keep narrative expansion traceable to the existing source pack.
+Required final commands: npm test; npm run content; npm run build; node scripts/stage-site.mjs; npm run test:e2e; node scripts/verify-character-assets.mjs (also staged root); node scripts/verify-character-composition.mjs; all three production scripts on preview then actual Pages. Heavy suites run sequentially. Existing two genuine birth-to-age-60 tests keep a 90-second budget for constrained runners; other budgets/assertions remain. No retries/skips or injected ages in gameplay tests. Composition-only art fixtures use a controlled adult pose explicitly, with no claim of progression reachability.
+
+## Actual counts
+
+Story unchanged: **156 scenes/events, 359 authored choices, six reachable endings**, including **30 V7 forks / 90 reachable choices**, 27 adapted briefs + three originals. Non-legacy: 141 events / 330 choices. Existing audits: 100 V7 lives through 20, 100 old branch traversals, 100 detailed childhood runs, 40 career runs, five annual lives beyond 60.
+
+Art: **180 catalog PNGs + three support PNGs**, nine groups / 20 distinct variants each; one AI family-room artwork in two formats (source PNG + runtime WebP). Twenty location PNGs remain. Source/staged copies are not counted twice; generated combinations/1,000 parent profiles are not new artworks or authored NPCs. The per-run wardrobe owns five of eighty catalog garment designs; all eighty occur across tested births. No new story, location, important NPC or ending is added.
+
+Other retained counts: 20 map nodes / five regions / 20 edges; 20 base / 20 earned advanced careers; 120 names; zero important authored NPC profiles/dungeons. Source-pack draft counts are not implemented counts.
+
+## Next milestone — V7-5 interiors and place context
+
+After this release is verified, do not redo V7-4 or the first 30-fork cluster.
+
+1. Inspect existing `src/ui/scene.js`, `src/ui/scene-art.js`, story venue/context, canonical `src/world/locations.js` and V7 interior prompts. Add a small coherent set of real house/classroom/ceremony interior art tied to actual current node and story context. Preserve all twenty location IDs, outside backgrounds and read-only map.
+2. Make room/context selection derive from GameState and actual story/ritual stage; it must never relocate the player or simulate a visit by moving a map pin. Generate real local files with dimensions/hash/provenance and fallback/production checks. Keep UI compact and age plausible.
+3. Prove entering/leaving the context and journeys update actual scene, position, cost, days and stamina exactly once. Power-aware encounters need a real encounter/power/gear model before displaying survival probabilities. Extend actual owned inventory/gear before drawing weapons/modifiers; reuse the basic wardrobe without regranting gifts or rerolling appearance.
+
+## Remaining / limits
+
+Full ≥100-fork/≥100-ending expansion; richer interiors/new places; actual route encounters/combat/dungeons; graded affinity/title/aura/power growth; combat gear/shops/modifiers; crafting/businesses; important NPCs/companions; mortality/extension/eras/≥1000-year deity gates remain incomplete. Power is still honestly level 1, separate from practice/career XP. Family profiles are appearance records, not a full NPC relationship/lifespan model.
+
+No known unresolved regression in completed local checks. Full browser, public production evidence and physical iOS/PWA/native unload behavior must not be assumed from local build success.
 
 ## Files changed
 
-New: `src/data/events/school.js`, `tests/school-story.test.js`, `tests/browser/school.spec.js`.
+New: `src/data/appearance-v2.js`, `src/character/inheritance.js`, `src/character/wardrobe.js`, `src/ui/avatar/pixel-parts.js`, `src/ui/avatar/pixel-avatar.js`, `src/ui/family-view.js`, `src/ui/wardrobe-view.js`, `scripts/generate-character-assets.mjs`, `scripts/verify-character-assets.mjs`, `scripts/verify-character-composition.mjs`, `scripts/published-character-check.mjs`, `tests/inheritance.test.js`, `tests/browser/family.spec.js`, `public/assets/sprites/**`, `public/art/family-room.webp`, `docs/art/**`.
 
-Updated: `src/engine/development.js` (chronological union, specific requirement hints), `src/data/events/teen.js` (childhood callbacks), `scripts/verify-progression.mjs` (real school-chain check), `tests/development.test.js` (actual new boundary without an injected age jump), `tests/teen-story.test.js` (current authored scope), package version, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/USER_DIRECTIVE_V7/CHANGELOG, this file and generated publication outputs. Follow-up: `playwright.config.js` enables GitHub failure annotations in CI; `tests/browser/game.spec.js` gives only the two full-lifetime scenarios 90 seconds. Every gameplay step/assertion remains, other tests retain their normal budget; no retries or skips were added.
+Updated: run/actions/appearance, v1 sprite/portrait delegation, birth record/panels/styles/main bag UI, terminal archive, content/production/progression checks, layout tests, package/lock, Pages workflow composition check, AGENTS/README/ROADMAP/GAME_DESIGN/CONTENT_MANIFEST/USER_DIRECTIVE_V7/CHANGELOG and generated publication files. Source: app.html/src/public; root index/assets/art are generated main:/ compatibility outputs. Keep old published hashes; do not change Pages settings.
 
-## Limitations / remaining systems
+## Commit / publication
 
-No new art files this round; 20 existing distinct 320×160 location PNGs remain. Actor/portraits still use appearance-v1. No inherited parent catalogs, real equipped gear, earned power/title/aura ladder, route encounters/combat/dungeons, businesses/crafting, authored NPC/party system, mortality/extension/eras, ≥1000-year deity gate or new endings. Power stays honestly level 1; career XP and guidance are separate.
+Base `8f31f85b00f8f6247b62593da4da371db66f1b11`. Prior final full CI [40845239881](https://github.com/Ninon0406/alltest/actions/runs/40845239881) passed for 0.10.0.
 
-Stories have finite age windows and prerequisites. Timed actions stop at eligible decisions; unmet/expired prerequisites cannot freeze the clock. Some practice/record choices are intentionally unavailable without earlier actions; free paths reach the ceremony. Relationships are a small caregiver/community foundation, not authored important NPC profiles. Physical iOS/PWA/native unload behavior remains outside guaranteed Chromium coverage.
-
-## Tests and actual counts
-
-Required: npm test; npm run content; npm run build; node scripts/stage-site.mjs; npm run test:e2e; node scripts/verify-assets.mjs; all three production scripts on preview then actual Pages. Run heavy suites sequentially.
-
-Confirmed: npm ci; 80/80 Vitest cases; 47/47 Playwright cases (zero skipped); content/reference/reachability audit; production build/staging; all 20 PNG files/hash/dimension checks passed. New browser cases cover honest practice/diary gates and free alternatives, real practice before exhibition, new feedback on mobile, exact seven-day guided practice and no active writes. One initial new unit assertion incorrectly expected every craft choice to change memory: drawing with friends intentionally changes relationships. Corrected the assertion to check meaningful memory or bond effects; all unit cases now pass. Existing time-guard regression now reaches the next actual school boundary via the dispatcher, without injecting a later age.
-
-All three production-preview and actual public-site verifiers passed: seven widths (320/360/390/768/1024/1366/1920), month/calendar and all 20 decoded PNGs, overlays/no resume; genuine manual school chain/ceremony/career/job/practice/tuition/teen stories through age 20 at 1366/360; independent tabs, zero active writes, genuine age-60 peaceful ending and exactly one terminal summary. No runtime/request errors occurred in those scenarios. Final full CI also passed all suites, staging, deployment and all three live verifiers; its GitHub Playwright summary explicitly reports 47 passed.
-
-Visually reviewed the real untrained school-exhibition dialog at 360×900 after clicked play from birth. All three options and close control fit; no horizontal overflow and no button under 44px high. No known unresolved regression in the completed local checks.
-
-CI timing investigation: the first workflow's Playwright step failed; the original runner log host is network-denied and its old annotations contained no case details. The instrumented rerun passed the full workflow. Independently restricted only a diagnostic subprocess and its children to one CPU, with two browser workers: all four desktop/mobile full-lifetime cases hit the original 30-second test deadline. After giving only those two age-60 scenarios 90 seconds, all four passed on the same constrained CPU in 42–45 seconds each (1.5 minutes total). They still click every decision, reach age 60, check the genuine ending/archive/download and never inject ages. This establishes a real insufficient test budget under contention; it is not a claim that the inaccessible original log identified a specific failed case. The final full CI run passed with this fix and the unchanged game bundle. No known unresolved regression remains in completed checks.
-
-Actual totals: **156 scenes/events, 359 authored choices, six reachable endings**. Non-legacy: 141 events / 330 choices. V7: **30 forks / 90 reachable choices**, 27 adapted briefs + three original follow-ups. Retained: 20 actual location PNGs, 20 map nodes / five regions / 20 edges, 20 base / 20 advanced career families, 120 names, zero important authored NPC profiles/dungeons. Source-pack drafts are not implemented counts. Audit includes 100 new V7 lives through age 20, 100 legacy branch traversals, 100 detailed childhood runs, 40 career runs and five annual runs beyond age 60.
-
-## Commit / publication evidence
-
-Base: `5e029449551496f958d922b98ecbd8ee94dbe473`. Prior runtime `78a10b5` and verification `beb2896` were publicly verified with all three scripts; final full CI [40838430108](https://github.com/Ninon0406/alltest/actions/runs/40838430108) passed.
-
-Runtime: `433546dac69e5c97a22ea96345a114c473751fd0`. Branch Pages [40843895952](https://github.com/Ninon0406/alltest/actions/runs/40843895952) succeeded. Public HTML serves `assets/app-DcD8zOM7.js` / `assets/app-jJszjJhO.css`; all three public scripts passed (seven widths, actual school/ceremony/career/teen play to 20 at 1366/360, terminal-only history). Initial full workflow [40843896275](https://github.com/Ninon0406/alltest/actions/runs/40843896275) failed at Playwright; its later content/artifact/deploy steps were skipped. Reporter follow-up `0b4cb51ec61d7fa5ffaac252b177709e58e59f02` / [40844685663](https://github.com/Ninon0406/alltest/actions/runs/40844685663) passed the full test/build/deploy/live workflow. Final scoped-budget commit: `9a06fff945cdc4a20b42e090b8fd62e0177d4d79`; both branch Pages [40845239794](https://github.com/Ninon0406/alltest/actions/runs/40845239794) and full CI [40845239881](https://github.com/Ninon0406/alltest/actions/runs/40845239881) completed successfully. The final documentation-only record uses `[site-build]` to avoid rerunning unchanged tests; use `git log -1` for that record's exact hash. Preserve old hashes. Source: app.html/src/public; root index/assets/art are generated main:/ compatibility outputs. Do not change Pages settings.
+0.11.0 runtime commit/publication not yet recorded. Current local bundle: `assets/app-Bp4m3zB2.js` / `assets/app-BGZLPjBY.css`. Do not call it published until actual Pages HTML and public verifiers confirm it. Final source/CI/branch deployment evidence belongs here after release.

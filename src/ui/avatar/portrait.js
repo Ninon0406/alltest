@@ -1,5 +1,7 @@
 import { ensureAppearance } from '../../character/appearance.js';
-export function portrait(state) {
+import {pixelAvatar} from './pixel-avatar.js';
+export function portrait(state,{context='sidebar'}={}) {
+ if(state.appearance?.version===2)return pixelAvatar(state,{context,portrait:true});
  const a=ensureAppearance(state),skin=['#edc3a2','#c88f6e','#9b624d','#754737','#e2d3bf'][a.skin],hair=['#322b3e','#704132','#b7a681','#d9dfe7','#1d2439','#af7044'][a.hairColor],eyes=['#81c8c5','#c5a04d','#9fb1df','#9563c0','#677b45'][a.eyes];
  const old=state.age>=60,adult=state.age>=18,child=state.age>=6,mage=/เวท/.test(state.career),warrior=/ดาบ|รบ/.test(state.career),merchant=/พ่อค้า/.test(state.career),legend=mage && state.stats.int>=18;
  const active=state.progression?.activeCareerId,promoted=active&&state.progression.records[active]?.advanced;

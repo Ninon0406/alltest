@@ -1,6 +1,7 @@
-// Small original pixel figure using the existing appearance-v1 identity.
-// Parent inheritance and expanded appearance-v2 catalogs belong to Phase C.
+// Preserve appearance-v1 for historical characters; new runs use file-backed v2 layers.
+import {pixelAvatar} from './pixel-avatar.js';
 export function sprite(state){
+ if(state.appearance?.version===2)return pixelAvatar(state);
  const a=state.appearance,skin=['#edc3a2','#c88f6e','#9b624d','#754737','#e2d3bf'][a.skin],hair=['#322b3e','#704132','#b7a681','#d9dfe7','#1d2439','#af7044'][a.hairColor],eye=['#81c8c5','#c5a04d','#9fb1df','#9563c0','#677b45'][a.eyes];
  const old=state.age>=60,baby=state.age<1,child=state.age<12,cloth=['#4b7a85','#55688d','#7f677f','#60754e'][a.face];
  const pixel=(x,y,w,h,fill)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}"/>`;

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.0 — 2026-10-29 — inherited pixel characters and family wardrobe
+
+New memory-only runs receive separately versioned appearance-v2: five traits from actual parental profiles, at most one small variation, stable identity across age/career/render, infant wrapping and growing proportions. Added 180 distinct catalog PNG parts across nine groups, three age/body PNGs, full composition/pixel/alpha/hash audits, family portraits/origin descriptions and one original AI family-room background (PNG source + runtime WebP). Five actual family-gift garments support ownership-checked zero-time dressing after age three, with real sprite updates and no stat or power reward. Terminal summaries preserve compact inherited identity/worn items only. Frozen birth generators and v1 identity/rendering remain; all story/map/career/One Life systems stay. No new stories, authored NPCs or location nodes are counted. Full combat gear/shops/modifiers, power and long-life systems remain incomplete. Final validation/publication evidence is in docs/NEXT_CODEX_TASK.md.
+
+Local validation: 88 unit / 51 browser cases passed, content/build/staging and file-backed character/20-location audits passed. All 180 complete graphics fixtures are distinct, and all three production-preview scripts passed with actual family images, owned clothes and genuine terminal history. Public release evidence is recorded separately.
+
 ## 0.10.0 — 2026-10-29 — first 30-fork early-life cluster
 
 Added nine authored school forks / 27 choices at months 48/60/84/90/108/114/126/132/138, adapting nine V7 briefs. Supervised seed/toy play develops memories and bonds; craft, fair rules and caravan news return in later school/teen outcomes. Actual practice and earned records gate exhibition/diary choices, with clear Thai explanations and free alternatives. Conversations cost zero days; guidance only improves subsequent real timed training, capped at +3 per stat. Chronological event selection preserves shared time boundaries and all existing manual ceremony/career/travel/One Life behavior. Counts: 156 events/scenes, 359 authored choices, six endings; 30 V7 forks / 90 reachable choices. No new art files, inherited appearance, gear, power or lifespan completion is claimed. See docs/NEXT_CODEX_TASK.md for checks and publication evidence.
