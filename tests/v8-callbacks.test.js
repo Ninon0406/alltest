@@ -78,7 +78,9 @@ it('new life histories reconcile all manual and routine days without adding powe
  }
 });
 
-it('a genuinely short natural lifespan closes before an unearned later library callback',()=>{
- const s=simulateV8(35,{storyPath:'library',policy:0,focus:'study'}).state;
- expect(s.birth.lifespan).toBe(65);expect(s.v8.flags.libraryPublished).toBe(true);expect(s.v8.flags.schoolLegacy).toBeUndefined();expect(s.v8.completed).not.toContain('v8.school-return');expect(s.run.endingId).not.toBe('v8.library');expect(s.run.status).toBe('ended');expect(s.age).toBe(65);expect(()=>completedSummary(s,'2026-10-30T00:00:00Z')).not.toThrow();
+it('genuine lifespans before and exactly at 68 close before the unearned three-day library callback',()=>{
+ for(const [seed,age]of [[35,65],[20,68]]){
+  const s=simulateV8(seed,{storyPath:'library',policy:0,focus:'study'}).state;
+  expect(s.birth.lifespan).toBe(age);expect(s.v8.flags.libraryPublished).toBe(true);expect(s.v8.flags.schoolLegacy).toBeUndefined();expect(s.v8.completed).not.toContain('v8.school-return');expect(s.run.endingId).not.toBe('v8.library');expect(s.run.status).toBe('ended');expect(s.age).toBe(age);expect(()=>completedSummary(s,'2026-10-30T00:00:00Z')).not.toThrow();
+ }
 });

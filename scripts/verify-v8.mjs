@@ -25,8 +25,8 @@ try{
  const page=await browser.newPage({viewport:{width:320,height:900}}),powerErrors=[];page.on('pageerror',e=>powerErrors.push(e.message));page.on('requestfailed',r=>powerErrors.push(r.url()));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))powerErrors.push(`${r.status()} ${r.url()}`);});await startV8(page,{url});const ready=await playV8Until(page,{eventId:'power.first-realm',awaken:true,focus:'cultivate'});if(ready.power.level!==9||ready.power.practiceDays<210)throw Error('V8 earned power missing');await page.locator('[data-choice-id="steady"]').click();const final=await v8Snapshot(page);if(final.power.level!==10||final.stamina!==ready.stamina-15||final.time.absoluteDay!==ready.time.absoluteDay)throw Error('V8 manual certification failed');await waitForCharacterImages(page);if(await page.locator('[data-power-milestone="10"]').count()!==1||powerErrors.length)throw Error('V8 power rendering failed '+powerErrors.join('\n'));await page.screenshot({path:'work/v8-public-power-320.png'});console.log(`PASS V8 ${url}: actual seven-step ritual/career/cultivation/manual certification at 320px, ${ready.power.practiceDays} real practice days`);await page.close();
  for(const storyPath of ['library','family','circle','fairwork']){
   let reached=false;
-  // Genuine short lifespans can end before the age-68 library callback; they must still end normally.
-  for(let attempt=0;attempt<4&&!reached;attempt++){
+  // Natural death at exactly 68 also precedes the age-68 three-day callback.
+  for(let attempt=0;attempt<8&&!reached;attempt++){
    const page=await browser.newPage({viewport:{width:320,height:844}}),errors=[];
    page.on('pageerror',e=>errors.push(e.message));page.on('requestfailed',r=>errors.push(r.url()));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))errors.push(`${r.status()} ${r.url()}`);});
    await startV8(page,{url});
@@ -44,11 +44,11 @@ try{
    const ended=await finishV8(page,{storyPath,policy:0,focus:storyPath==='library'?'study':'bonds'});
    if(errors.length)throw Error(errors.join('\n'));
    reached=ended.run.endingId===`v8.${storyPath}`;
-   if(!reached&&!(storyPath==='library'&&ended.age<68))throw Error('Chained epilogue missing '+storyPath);
+   if(!reached&&!(storyPath==='library'&&ended.age<=68&&!ended.v8.flags.schoolLegacy))throw Error('Chained epilogue missing '+JSON.stringify({storyPath,age:ended.age,ending:ended.run.endingId,knowledge:ended.v8.knowledge,flags:ended.v8.flags}));
    if(reached){await page.screenshot({path:`work/v8-public-${storyPath}-ending-320.png`});console.log(`PASS V8 ${url}: conditional ${storyPath} natural ending, genuine archive, no active save`);}
-   else console.log(`PASS V8 ${url}: natural lifespan ${ended.age} ends before age-68 library opportunity`);
+   else console.log(`PASS V8 ${url}: natural lifespan ${ended.age} ends before completing the age-68 library opportunity`);
    await page.close();
   }
-  if(!reached)throw Error('No genuine eligible library lifespan observed in four births');
+  if(!reached)throw Error('No genuine eligible library lifespan observed in eight births');
  }
 }finally{await browser.close();}
