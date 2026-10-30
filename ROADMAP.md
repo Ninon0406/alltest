@@ -1,3 +1,24 @@
+# Roadmap — V8 controlling checkpoint / 0.15.0
+
+V8 replaces conflicting V7 priorities. Implement the life loop before the old massive world/gear backlog. The authoritative file is docs/v8/REBORN_V8_MASTER_PROMPT.md.
+
+- [x] Phase 0: inspect actual HEAD, preserve generators/archive/mechanics; commit the three supplied V8 directives.
+- [x] Phase 1 implementation: default one-screen Thai birth/life/status/pixel scene/timeline/choice/outcome/continue; mobile primary action; 1/2/4/8× time and explicit seek.
+- [x] Age-appropriate focus, five caregiver observations, sparse manual childhood/adult stories, ordinary opt-out of awakening.
+- [x] Reused seven actual ritual stages, top-eight eligible careers and earned first-realm power/manual certification.
+- [x] Natural ordinary lifespans and four state-conditioned endings, terminal-only archive, no active save or resurrection.
+- [ ] Phase 1 final release verification: full local/production gates; see NEXT for the latest confirmed status.
+- [ ] Phase 2: 65 new executable stories / 150 actual choices. Current 29 / 87; adult relationship, one real trip, scholarship callback and safe road encounter are included. Add conditional family/academic/career/world callbacks next, not duplicated labels.
+- [ ] First full V8 release ending target: four of at least twelve original reachable endings; this is a core checkpoint, not full V8 acceptance.
+- [ ] Two new vocation-specific branches for each of 20 careers; migrate relevant existing arcs/promotion into the V8 scheduler.
+- [ ] Phase 3: contextual world/travel/services and earned realms 11–40 with real manual gates.
+- [ ] Phase 4: illness/earned lifespan extensions, eras, power 41–99, actual divine requirements and 30 endings.
+- [ ] Phase 5: 100 genuine endings, cross-career validation and final balance/performance.
+
+Existing V7 source and all its regression cases remain in the compatibility surface `?classic=1`; they are not newly authored V8 story counts. The unfinished optional V7 seed-cart experiment was set aside at the V8 pivot and is not shipped or counted. Historical milestones below are records, not the current task order.
+
+---
+
 # Roadmap — V7 current checkpoint
 
 V7 supersedes conflicting stages below. Current 0.14.0 adds the earned first power realm (1–10), manual certification, actual first-tier titles/auras, retaining V7-5 interiors, V7-4 characters/wardrobe and the first 30-fork early-life cluster.

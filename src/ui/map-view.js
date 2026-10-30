@@ -38,11 +38,11 @@ export function renderMap(parent,state,perform,refresh){
  const select=document.createElement('select');select.setAttribute('aria-label','เลือกสถานที่ที่รู้จัก');for(const id of revealed){const option=document.createElement('option');option.value=id;option.textContent=locations[id].name;select.append(option);}select.value=selected;select.onchange=()=>{selected=select.value;refresh();};parent.append(select);
  const destination=locations[selected];const preview=document.createElement('div');preview.className='map-preview';renderLocationArt(preview,destination);parent.append(preview);paragraph(parent,destination.name,'h3');paragraph(parent,destination.description);
  const quote=findRoute(state,selected);
- if(isV7(state)){
+ if(isV7(state)||state.v8){
   if(selected!==current.id)paragraph(parent,quote?`${quote.path.map(id=>locations[id].name).join(' → ')} · ขบวนเดินทาง ${quote.days} วัน · ${quote.gold} เหรียญ`:'เส้นทางยังไม่เปิดตามวัย');
   paragraph(parent,`บริการของสถานที่นี้: ${destination.services.map(id=>services[id]?.label).filter(Boolean).join(' · ')||'พื้นที่พักและชมภูมิทัศน์'}`);
   if(equipmentShops[selected])paragraph(parent,`ร้านอุปกรณ์: ${equipmentShops[selected].map(id=>equipmentById[id].label).join(' · ')}`);
-  paragraph(parent,'แผนที่ใช้ดูตำแหน่งและข้อมูล เลือก “วางแผนเดินทาง” จากหน้าชีวิตเมื่อพร้อม');return;
+  paragraph(parent,state.v8?'แผนที่ใช้ดูข้อมูล การย้ายสถานที่เกิดจากช้อยส์ในเรื่องราวเท่านั้น':'แผนที่ใช้ดูตำแหน่งและข้อมูล เลือก “วางแผนเดินทาง” จากหน้าชีวิตเมื่อพร้อม');return;
  }
  if(selected!==current.id){paragraph(parent,quote?`${quote.path.map(id=>locations[id].name).join(' → ')} • ${quote.days} วัน • ${quote.gold} เหรียญ`:'ยังไม่มีเส้นทางที่เปิดให้เดินทางได้ตามวัย');if(quote){actionButton(parent,'เดินทางตามเส้นทางนี้',{type:'travel',destination:selected,token},perform);if(quote.gold>0){const walking=findRoute(state,selected,'walk');actionButton(parent,`เดินเท้าพร้อมผู้ร่วมทาง • ${walking.days} วัน • ฟรี`,{type:'travel',destination:selected,method:'walk',token},perform);}}}
  paragraph(parent,`บริการ ณ ${current.name}`,'h3');

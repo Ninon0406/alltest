@@ -1,7 +1,7 @@
 import {chromium} from '@playwright/test';
 import {existsSync} from 'node:fs';
 import {reachAge} from '../tests/browser/helpers.js';
-const url=process.argv[2]??'http://127.0.0.1:4185/';
+const classicURL=new URL(process.argv[2]??'http://127.0.0.1:4185/');classicURL.searchParams.set('classic','1');const url=classicURL.href;
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 try{
  const context=await browser.newContext(),page=await context.newPage(),errors=[];context.setDefaultTimeout(30000);

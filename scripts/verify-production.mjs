@@ -4,7 +4,7 @@ import {oneMonth,closeOverlay} from '../tests/browser/helpers.js';
 import {checkPublishedCharacters,waitForCharacterImages} from './published-character-check.mjs';
 import {checkPublishedInteriors} from './published-interior-check.mjs';
 import {checkPublishedEquipment} from './published-equipment-check.mjs';
-const url=process.argv[2]||'http://127.0.0.1:4185/';
+const classicURL=new URL(process.argv[2]??'http://127.0.0.1:4185/');classicURL.searchParams.set('classic','1');const url=classicURL.href;
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 try{
  for(const width of [320,360,390,768,1024,1366,1920]){

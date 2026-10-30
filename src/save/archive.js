@@ -3,11 +3,18 @@ import {appearanceSnapshot} from '../character/inheritance.js';
 import {catalogById} from '../data/appearance-v2.js';
 import {wornEquipment} from '../character/equipment-stats.js';
 import {powerTitle} from '../progression/power-model.js';
+import {v8Endings,v8EndingId} from '../data/v8-endings.js';
+import {naturalEndDay} from '../engine/v8-model.js';
 export const ARCHIVE_KEY='reborn_finished_lives_v1',ARCHIVE_LIMIT=100;
-const endings=new Set(Object.values(Scenes).filter(s=>s.isEnding).map(s=>s.endingId));
+const endings=new Set([...Object.values(Scenes).filter(s=>s.isEnding).map(s=>s.endingId),...Object.keys(v8Endings)]);
 const cut=(value,max=300)=>String(value??'').slice(0,max);
 const valid=r=>r&&typeof r.runId==='string'&&endings.has(r.endingId)&&typeof r.name==='string'&&typeof r.epilogue==='string'&&r.epilogue.length<=1200&&Number.isFinite(Date.parse(r.startedAt))&&Number.isFinite(Date.parse(r.finishedAt))&&Number.isSafeInteger(r.age)&&r.age>=0&&Number.isSafeInteger(r.powerLevel)&&r.powerLevel>=1&&r.powerLevel<=100&&Number.isFinite(r.activePlayMs)&&r.activePlayMs>=0&&Array.isArray(r.events)&&r.events.length<=12;
 export function completedSummary(state,finishedAt){
+ if(state.v8){
+  const ending=v8Endings[state.run?.endingId];
+  if(state.run?.status!=='ended'||!ending||state.v8.finishedAtDay!==state.time.absoluteDay||state.time.absoluteDay!==naturalEndDay(state)||state.run.endingId!==v8EndingId(state))throw Error('ชีวิตนี้ยังไม่ถึงฉากจบ');
+  return {runId:state.run.id,endingId:state.run.endingId,title:ending.title,name:cut(state.name,80),race:cut(state.race,80),age:state.age,career:cut(state.career,100),powerLevel:state.power.level,powerTier:state.progression.awakening.step===7?powerTitle(state):'ยังไม่ปลุกพลัง',gold:state.gold,earnedGold:state.world.ledger.reduce((n,e)=>n+Math.max(0,e.amount),0),visitedCount:state.world.visited.length,activePlayMs:state.run.activeMs,startedAt:state.run.startedAt,finishedAt,epilogue:ending.text,events:state.journal.filter(e=>e.majorDecision).map(e=>cut(e.title)).slice(-8),achievements:[state.v8.relationship==='partner'?'มีคู่ชีวิต':state.v8.relationship==='friend'?'เลือกมิตรภาพ':'เลือกชีวิตอิสระ'],appearance:appearanceSnapshot(state.appearance),equipment:wornEquipment(state).map(item=>({id:item.id,label:item.label}))};
+ }
  const scene=Scenes[state.currentSceneId];
  if(state.run?.status!=='ended'||!scene?.isEnding||state.run.endingId!==scene.endingId)throw Error('ชีวิตนี้ยังไม่ถึงฉากจบ');
  const appearance=appearanceSnapshot(state.appearance);

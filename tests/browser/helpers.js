@@ -1,7 +1,7 @@
 import {expect} from '@playwright/test';
 import {pendingDecision} from '../../src/engine/decisions.js';
 export const snapshot=page=>page.evaluate(()=>Game.snapshot);
-export async function start(page){page.on('dialog',d=>d.accept());await page.goto('/');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่',exact:true}).click();}
+export async function start(page){page.on('dialog',d=>d.accept());await page.goto('/?classic=1');await page.getByRole('button',{name:'ก้าวสู่ชีวิตใหม่',exact:true}).click();}
 export async function closeOverlay(page){if(await page.getByRole('dialog').isVisible())await page.getByRole('button',{name:'ปิดหน้าต่าง',exact:true}).click();}
 export async function openOverlay(page,name){
  await closeOverlay(page);const direct=page.getByRole('button',{name,exact:true});if(await direct.isVisible())await direct.click();else{await page.getByRole('button',{name:'เพิ่มเติม',exact:true}).click();await page.getByRole('dialog').getByRole('button',{name,exact:true}).click();}

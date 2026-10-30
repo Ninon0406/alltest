@@ -4,8 +4,10 @@ import {awakeningEvents} from '../data/events/awakening.js';
 import {calendar} from './time.js';
 import {isV7,developmentDecision,nextDevelopmentDay} from './development.js';
 import {powerDecision} from '../progression/power-model.js';
+import {isV8,v8Decision,v8NextDecisionDay} from './v8-model.js';
 function careerDue(state,event){return Math.max([13,15,17][event.stage],state.yearly.cooldowns[event.id]??0,(state.yearly.lastCareerAge??-10)+2);}
 export function pendingDecision(state){
+ if(isV8(state))return v8Decision(state);
  const development=developmentDecision(state);if(development&&development.month<144)return development;
  const y=state.yearly,a=state.progression.awakening,age=calendar(state).ageYears;
  if(age>=12&&a.step<7&&!a.paused){
@@ -30,6 +32,7 @@ export function pendingDecision(state){
 }
 // Absolute calendar boundary, shared by the planner and every external timed action.
 export function nextDecisionDay(state){
+ if(isV8(state))return v8NextDecisionDay(state);
  if(!isV7(state))return Infinity;
  if(pendingDecision(state))return state.time.absoluteDay;
  const {ageYears:age}=calendar(state),birth=state.time.birthAbsoluteDay,now=state.time.absoluteDay;
@@ -42,6 +45,10 @@ export function nextDecisionDay(state){
  return Math.min(Infinity,...due.filter(day=>day>=now));
 }
 export function guardDecisionTime(state,days){
+ if(isV8(state)){
+  if(state.time.absoluteDay+days>v8NextDecisionDay(state)||state.v8.outcome||v8Decision(state))throw Error('มีเรื่องสำคัญรอให้คุณเลือก เวลาได้หยุดแล้ว');
+  return;
+ }
  if(!isV7(state))return;
  if(pendingDecision(state))throw Error('มีการตัดสินใจสำคัญรออยู่ กรุณาตัดสินใจก่อนใช้เวลา');
  if(state.time.absoluteDay+days>nextDecisionDay(state))throw Error('กิจกรรมนี้จะข้ามเหตุการณ์สำคัญ ใช้ชีวิตต่อจนถึงจุดตัดสินใจก่อน');

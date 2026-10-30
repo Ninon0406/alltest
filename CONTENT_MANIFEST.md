@@ -1,3 +1,29 @@
+# Implemented content — V8 core / 0.15.0
+
+`npm run content` reports preserved V7 and the new V8 registry separately. It measures actual authored records and genuine action-driven union reachability, not a claim that all content appears in one life.
+
+| V8 default flow | Authored | Reachable audit |
+| --- | ---: | ---: |
+| New meaningful story forks | 29 | 29 |
+| New scoped story choice records | 87 | 87 |
+| Caregiver observations (no choices) | 5 | 5 |
+| New natural-lifespan endings | 4 | 4 |
+| Reused ritual stages / responses | 7 / 14 | 7 / 14 |
+| Origin-specific age-four stories | 3 variants | 3 |
+| Eligible base career families | 20 preserved | all 20 origins have a real eligible route; at most 8 recommendations per offer |
+
+The V8 cohort runs 135 general complete natural lives over 101 distinct seeds (0–99 plus the missing smith origin at 108), twenty additional complete lives covering all twenty actually offered careers without power practice, and twenty actual origin-to-ritual/career checks. That is 155 full natural lives, plus the short eligibility checks. Observed terminal ages are 65–383. All 29/87 authored forks/choices and four epilogues are reached. This measures simulated calendar/choice paths, not actual human playing minutes. Browser tests additionally play five real seeded lifetimes through the public UI.
+
+The preserved compatibility registry remains 156 scenes/events / 359 authored choices / six old endings (including 30 V7 forks / 90 choices). A combined registry has 194 scene/event/observation/ending records, 446 narrative choices and ten endings across both interfaces. **These totals are not 194 unique branching arcs, 65 new V8 stories or ten V8 endings.** The new V8 target remains 29/65 forks, 87/150 choices and 4/12 new endings for the first full release. This core checkpoint does not satisfy that full-release content target. Dynamic career options, mechanical power certification, reused rituals and observations are not added to the new authored choice target.
+
+Art/world counts are unchanged: 20 outdoor PNGs, 16 regional/contextual interior PNGs, 183 character PNG layers and six equipment PNGs; twenty connected canonical places, five regions, twenty edges, eight preserved equipment shops. There are no new AI artworks, place nodes, authored important NPC profiles or functional dungeons this round. Family portraits and pixel combinations do not multiply authored content. Adult relationships currently use an original anonymous adult contact/state, not a claimed authored NPC roster.
+
+Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Full verification/publication evidence is in NEXT_CODEX_TASK.
+
+Historical V7 manifest follows.
+
+---
+
 # Verified implemented content — 0.14.0 / V7 subset
 
 Run `npm run content` for authored records, deterministic union reachability and actual file validation. Counts include retained historical optional content; they are not a claim of 100 completed V7 forks or mandatory prompts in one run.

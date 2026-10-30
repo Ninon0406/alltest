@@ -15,7 +15,8 @@ export function normalize(state) {
  for(const key of ['hunger','thirst','morale'])state[key]=Math.max(0,Math.min(100,state[key]??100));
  state.gold=Math.max(0,state.gold);
  if(state.progression){state.progression.fatigue=Math.max(0,Math.min(100,state.progression.fatigue));state.progression.focus=Math.max(0,Math.min(100,state.progression.focus));const c=getCareer(state.progression.activeCareerId);if(c)state.career=state.progression.records[c.id].advanced?c.advanced.label:c.label;}
- if(!state.progression?.activeCareerId && /^เด็ก|^เยาวชน/.test(state.career))state.career=state.age<1?'เด็กทารก':state.age<4?'เด็กเล็ก':state.age<12?'เด็กวัยเรียน':'เยาวชนผู้ค้นหาเส้นทาง';
+ if(!state.progression?.activeCareerId&&state.v8)state.career=state.age<1?'เด็กทารก':state.age<4?'เด็กเล็ก':state.age<12?'เด็กวัยเรียน':state.age<18?'เยาวชนผู้ค้นหาเส้นทาง':state.age<60?'ผู้ใช้ชีวิตในชุมชน':'ผู้อาวุโสในชุมชน';
+ else if(!state.progression?.activeCareerId && /^เด็ก|^เยาวชน/.test(state.career))state.career=state.age<1?'เด็กทารก':state.age<4?'เด็กเล็ก':state.age<12?'เด็กวัยเรียน':'เยาวชนผู้ค้นหาเส้นทาง';
  return state;
 }
 export function advanceTime(state,days) {

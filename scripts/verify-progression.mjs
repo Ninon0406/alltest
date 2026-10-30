@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs';
 import {reachAge,selectCareer,openOverlay,closeOverlay} from '../tests/browser/helpers.js';
 import {schoolEvents} from '../src/data/events/school.js';
 import {catalogById} from '../src/data/appearance-v2.js';
-const url=process.argv[2]??'http://127.0.0.1:4185/';
+const classicURL=new URL(process.argv[2]??'http://127.0.0.1:4185/');classicURL.searchParams.set('classic','1');const url=classicURL.href;
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 try{
  for(const width of [1366,360]){

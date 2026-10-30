@@ -14,7 +14,9 @@ import {dress} from '../character/wardrobe.js';
 import {buyEquipment,sellEquipment,equipEquipment} from '../character/equipment.js';
 import {trainPower,resumePower} from '../progression/power.js';
 import {hasPower} from '../progression/power-model.js';
+import {dispatchV8} from './v8-life-loop.js';
 export function dispatch(input,action){
+ if(input.v8)return dispatchV8(input,action);
  if(input.run?.status==='ended')throw Error('ชีวิตนี้จบแล้ว เริ่มชีวิตใหม่เพื่อเล่นต่อ');
  if(action.token!==storyToken(input))throw Error('รายการนี้เปลี่ยนไปแล้ว กรุณาเลือกจากหน้าปัจจุบัน');
  const state=upgradeState(input);
