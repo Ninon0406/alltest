@@ -28,7 +28,7 @@ const choose=(s,id)=>v8Act(s,{type:'v8Choice',decisionId:v8Decision(s).id,choice
 it('100 seeded lives plus a missing-origin representative end at their lifespan across all origins and four epilogues',()=>{
  const endings=new Set(),origins=new Set();let longest=0;
  for(const seed of [...Array(100).keys(),108]){
-  const {state:s,steps}=simulateV8(seed);expect(s.run.status).toBe('ended');expect(s.time.absoluteDay).toBe(naturalEndDay(s));expect(s.age).toBe(s.birth.lifespan);expect(s.career).toBe('ผู้อาวุโสในชุมชน');expect(s.power.level).toBe(1);expect(hasPower(s)).toBe(true);expect(s.v8.completed.length).toBeGreaterThanOrEqual(21);expect(steps).toBeLessThan(100);
+  const {state:s,steps}=simulateV8(seed);expect(s.run.status).toBe('ended');expect(s.time.absoluteDay).toBe(naturalEndDay(s));expect(s.age).toBe(s.birth.lifespan);expect(s.career).toBe('ผู้อาวุโสในชุมชน');expect(s.power.level).toBe(1);expect(hasPower(s)).toBe(true);expect(s.v8.completed.length).toBeGreaterThanOrEqual(21);expect(steps).toBeLessThan(150);
   endings.add(s.run.endingId);origins.add(s.birth.archetypeId);longest=Math.max(longest,s.age);
  }
  expect([...endings].sort()).toEqual(['v8.garden','v8.home','v8.pages','v8.roads']);expect(origins.size).toBe(20);expect(longest).toBeLessThan(500);

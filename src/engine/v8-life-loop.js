@@ -13,11 +13,11 @@ import {effectiveCapacities} from '../character/equipment-stats.js';
 
 export function createV8Run(seed,identity){
  const state=createRun(seed,identity);state.story.version=8;state.morale=70;
- state.v8={version:1,stage:'reveal',focus:'care',nextFocus:null,knowledge:0,bonds:0,completed:[],observed:[],flags:{},relationship:'none',ritual:false,careerOffered:false,outcome:null,lastRoutineWindow:null,routineDays:0,lastAmbient:null,finishedAtDay:null};
+ state.v8={version:1,stage:'reveal',focus:'care',nextFocus:null,knowledge:0,bonds:0,wagesDue:0,completed:[],observed:[],flags:{},relationship:'none',ritual:false,careerOffered:false,outcome:null,lastRoutineWindow:null,routineDays:0,lastAmbient:null,finishedAtDay:null};
  return state;
 }
 const clamp=n=>Math.max(0,Math.min(100,n));
-export const v8Vitals=state=>({health:state.hp/effectiveCapacities(state).maxHp*100,happiness:state.morale,knowledge:state.v8.knowledge,bonds:state.v8.bonds,gold:state.gold,stamina:state.stamina,focus:state.progression.focus,mana:state.mana,power:state.power.level});
+export const v8Vitals=state=>({health:state.hp/effectiveCapacities(state).maxHp*100,happiness:state.morale,knowledge:state.v8.knowledge,bonds:state.v8.bonds,gold:state.gold,wagesDue:state.v8.wagesDue??0,stamina:state.stamina,focus:state.progression.focus,mana:state.mana,power:state.power.level});
 function delta(before,state){const after=v8Vitals(state);return Object.fromEntries(Object.entries(after).map(([key,n])=>[key,Math.round((n-before[key])*100)/100]).filter(([,n])=>n!==0));}
 function observe(state){
  for(const event of v8Observations)if(calendar(state).ageMonths>=event.month&&!state.v8.observed.includes(event.id)){
@@ -32,6 +32,7 @@ function effect(state,effects){
   else if(key==='happiness')state.morale=clamp(state.morale+value);
   else if(key==='health')state.hp+=effectiveCapacities(state).maxHp*value/100;
   else if(key==='gold')state.gold+=value;
+  else if(key==='wagesDue')v.wagesDue=(v.wagesDue??0)+value;
   else if(key==='flag')v.flags[value]=true;
   else if(key==='memory')for(const [id,n]of Object.entries(value))state.childhoodMemory[id]+=n;
   else if(key==='trust')state.story.relationships.community+=value;
@@ -66,9 +67,13 @@ function choose(state,action){
    state.gold-=c.costGold;state.stamina-=c.stamina;
    if(c.costGold)state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:`story:${d.id}`,amount:-c.costGold});
   }
+  if(c.wagesSettled){
+   v.wagesDue-=c.wagesSettled;state.gold+=c.paymentGold;
+   if(c.paymentGold)state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:`wages:${d.id}`,amount:c.paymentGold});
+  }
   effect(state,c.effects);
   if(c.effects.gold)state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:`story:${d.id}`,amount:c.effects.gold});
-  recordAction(state,`${d.title} — ${c.label}`,c.timeDays,{majorDecision:d.id,choiceId:c.id,ageMonths:calendar(state).ageMonths,goldDelta:state.gold-before.gold});
+  recordAction(state,`${d.title} — ${c.label}`,c.timeDays,{majorDecision:d.id,choiceId:c.id,ageMonths:calendar(state).ageMonths,goldDelta:state.gold-before.gold,wagesDueDelta:(v.wagesDue??0)-before.wagesDue});
   if(c.special!=='travel')advanceTime(state,c.timeDays);
   let text=c.outcomeText;
   if(d.id==='v8.home-return')text+=(v.relationship==='partner'?' คนที่คบกันยังเป็นส่วนหนึ่งของการนัดหมาย':v.relationship==='friend'?' มิตรภาพที่คุณเลือกยังมีพื้นที่ในบ้านนี้':' คุณรักษาพื้นที่อิสระและติดต่อคนรอบตัวตามที่สบายใจ');
@@ -133,7 +138,7 @@ function passTime(state,days){
  normalize(state);
 }
 export function dispatchV8(input,action){
- if(!isV8(input)||!hasPower(input))throw Error('ข้อมูลชีวิตไม่ถูกต้อง');
+ if(!isV8(input)||!hasPower(input)||!Number.isSafeInteger(input.v8.wagesDue??0)||(input.v8.wagesDue??0)<0)throw Error('ข้อมูลชีวิตไม่ถูกต้อง');
  if(input.run.status==='ended')throw Error('ชีวิตนี้จบแล้ว เริ่มชีวิตใหม่เพื่อเล่นต่อ');
  if(action.token!==storyToken(input))throw Error('รายการนี้เปลี่ยนไปแล้ว กรุณาเลือกจากหน้าปัจจุบัน');
  const state=structuredClone(input),v=state.v8;
@@ -152,5 +157,5 @@ export function dispatchV8(input,action){
  else if(action.type==='v8ResumePower'){
   if(!v8CanResumePower(state))throw Error('ไม่มีบทฝึกที่พร้อมทบทวน');resumePower(state);
  }else throw Error('ทำรายการนี้ไม่ได้');
- normalize(state);if(!hasPower(state))throw Error('บันทึกพลังไม่สอดคล้องกับวันฝึกจริง');state.life.revision++;return state;
+ normalize(state);if(!hasPower(state))throw Error('บันทึกพลังไม่สอดคล้องกับวันฝึกจริง');if(!Number.isSafeInteger(v.wagesDue??0)||(v.wagesDue??0)<0)throw Error('บัญชีค่าจ้างไม่ถูกต้อง');state.life.revision++;return state;
 }

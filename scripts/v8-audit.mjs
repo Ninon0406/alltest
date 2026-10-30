@@ -4,6 +4,8 @@ import {simulateV8,chooseV8Policy,v8Act} from './v8-simulation.mjs';
 import {v8Decision} from '../src/engine/v8-model.js';
 import {eligibleCareers} from '../src/progression/engine.js';
 import {completedSummary} from '../src/save/archive.js';
+import {v8CommunityEvents} from '../src/data/v8-community-events.js';
+import {v8CallbackPaths} from './v8-story-policies.mjs';
 export function auditV8(){
  const ids=new Set(),allChoices=new Set(),seen=new Set(),reached=new Set(),endings=new Set(),origins=new Set();let lives=0,minAge=Infinity,maxAge=0,maxSteps=0;
  for(const e of v8LifeEvents){
@@ -22,6 +24,24 @@ export function auditV8(){
  run(0,{policy:2,focus:'practice'});
  run(0,{policy:0,awaken:true});
  run(0,{policy:2,choose:(d,p,options)=>d.id==='v8.nearby-invitation'?d.choices.find(c=>c.id==='stay'):chooseV8Policy(d,p,options)});
+ const checkpointPaths=new Set();
+ for(const event of v8CommunityEvents)for(const target of event.choices){
+  const storyPath=v8CallbackPaths[event.id.slice(3)];
+  let selectedTarget=false;
+  const s=run(0,{policy:0,storyPath,focus:storyPath==='library'?'study':'bonds',choose:(d,p,options)=>{
+   if(d.id===event.id){selectedTarget=true;return d.choices.find(c=>c.id===target.id);}
+   if(selectedTarget)return chooseV8Policy(d,p,{...options,storyPath:'quiet'});
+   if(d.id==='v8.old-book'&&event.id==='v8.hard-assignment'&&target.id==='teacher')return d.choices.find(c=>c.id==='teacher');
+   if(d.id==='v8.delayed-payment'&&event.id==='v8.payment-followup')return d.choices.find(c=>c.id==='part');
+   return chooseV8Policy(d,p,options);
+  }});
+  if(!s.v8.completed.includes(event.id))throw Error(`Callback was not reached: ${event.id}:${target.id}`);
+  checkpointPaths.add(`${event.id}:${target.id}`);
+ }
+ for(const storyPath of ['library','family','circle','fairwork']){
+  const s=run(0,{policy:0,storyPath,focus:storyPath==='library'?'study':'bonds'});
+  if(s.run.endingId!==`v8.${storyPath}`)throw Error('Wrong chained ending '+storyPath);
+ }
  const missing=[...allChoices].filter(id=>!reached.has(id));
  if(missing.length)throw Error('Unreached V8 choices: '+missing.join(', '));
  if(origins.size!==20||endings.size!==Object.keys(v8Endings).length)throw Error('Incomplete V8 ordinary paths');
@@ -43,5 +63,5 @@ export function auditV8(){
   const {state:s}=simulateV8(seed,{policy:0,awaken:true,focus:'rest',choose:(d,p,options)=>d.kind==='career'?d.choices.find(c=>c.careerId===id):chooseV8Policy(d,p,options)});
   if(s.run.status!=='ended'||s.progression.activeCareerId!==id||s.power.level!==1||s.power.practiceDays!==0)throw Error('V8 career ordinary-life route failed: '+id);
  }
- return {authoredStoryForks:ids.size,authoredStoryChoices:allChoices.size,caregiverObservations:v8Observations.length,ordinaryEndings:Object.keys(v8Endings).length,reusedRitualStages:7,reusedRitualChoices:14,reachableForks:[...ids].filter(id=>seen.has(id)).length,reachableChoices:allChoices.size,reachableEndings:endings.size,simulatedNaturalLives:lives,distinctBaseSeeds:101,originCareerChecks:reps.size,careerNaturalLives:careerSeeds.size,careerSeeds:Object.fromEntries(careerSeeds),ageRange:[minAge,maxAge],maxDecisionsAndContinuationsAndSeeks:maxSteps,realTimePlayDuration:'not measured; simulations use explicit skip controls',phase2Target:{newMoments:65,newChoices:150,newEndingTarget:12,complete:false}};
+ return {authoredStoryForks:ids.size,authoredStoryChoices:allChoices.size,caregiverObservations:v8Observations.length,ordinaryEndings:Object.keys(v8Endings).length,reusedRitualStages:7,reusedRitualChoices:14,reachableForks:[...ids].filter(id=>seen.has(id)).length,reachableChoices:allChoices.size,reachableEndings:endings.size,simulatedNaturalLives:lives,callbackChoiceNaturalLives:checkpointPaths.size,distinctBaseSeeds:101,originCareerChecks:reps.size,careerNaturalLives:careerSeeds.size,careerSeeds:Object.fromEntries(careerSeeds),ageRange:[minAge,maxAge],maxDecisionsAndContinuationsAndSeeks:maxSteps,realTimePlayDuration:'not measured; simulations use explicit skip controls',phase2Target:{newMoments:65,newChoices:150,newEndingTarget:12,complete:false}};
 }

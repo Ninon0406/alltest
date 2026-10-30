@@ -19,7 +19,7 @@ initPanels();
 const root=document.getElementById('v8Root'),clock=new ActivePlayClock();
 let state=null,summary=null,archiveStatus=null,running=false,autoWanted=false,speed=1,raf=null,lastFrame=0,carry=0;
 const MONTH_MS=600;
-const names={health:'สุขภาพ',happiness:'ความสุข',knowledge:'ความรู้',bonds:'สายสัมพันธ์',gold:'เงิน',stamina:'ความอึด',focus:'สมาธิ',mana:'มานา',power:'ระดับพลัง'};
+const names={health:'สุขภาพ',happiness:'ความสุข',knowledge:'ความรู้',bonds:'สายสัมพันธ์',gold:'เงิน',wagesDue:'ค่าจ้างรอรับ',stamina:'ความอึด',focus:'สมาธิ',mana:'มานา',power:'ระดับพลัง'};
 const statNames={str:'พละกำลัง',dex:'ความคล่อง',con:'ความทนทาน',int:'สติปัญญา',wis:'ความเข้าใจ',per:'การสังเกต',luk:'โชค',cha:'เสน่ห์'};
 const rounded=n=>Math.round(n*10)/10;
 function el(tag,parent,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;parent?.append(n);return n;}
@@ -95,6 +95,7 @@ function choiceDescription(choice){
  if(choice.destination)parts.push(`ไป${choice.destination}`);
  if(choice.costGold)parts.push(`เงิน −${choice.costGold}`);else parts.push('ฟรี');
  if(choice.stamina)parts.push(`ความอึด −${choice.stamina}`);
+ if(choice.wagesSettled)parts.push(`รับเงินจริง ${choice.paymentGold} · ค่าจ้างยังรอรับ ${state.v8.wagesDue-choice.wagesSettled}`);
  for(const [key,n]of Object.entries(choice.effects??{}))if(names[key]&&typeof n==='number'){
   const old=v8Vitals(state)[key],cap=['knowledge','bonds','happiness','health'].includes(key)?100:Infinity;
   const actual=rounded(Math.min(cap,Math.max(0,old+n))-old);if(actual)parts.push(`${names[key]} ${actual>0?'+':''}${actual}`);
@@ -140,7 +141,7 @@ function birth(parent){
 function finale(parent){
  const ending=v8Endings[state.run.endingId],card=el('section',parent,undefined,'v8-card v8-final');card.dataset.endingId=state.run.endingId;
  el('p',card,'ชีวิตถึงปลายอายุขัยตามธรรมชาติ','v8-context');el('h2',card,ending.title);el('p',card,ending.text);
- facts(card,[['อาชีพ',state.career],['ความสัมพันธ์',state.v8.relationship==='partner'?'มีคู่ชีวิต':state.v8.relationship==='friend'?'มิตรภาพที่ไว้ใจ':'ใช้ชีวิตอิสระ'],['สถานที่ที่เคยไป',`${state.world.visited.length} แห่ง`],['เงินที่เหลือ',`${state.gold} เหรียญ`],['ความไว้ใจชุมชน',String(state.story.relationships.community)]]);
+ facts(card,[['อาชีพ',state.career],['ความสัมพันธ์',state.v8.relationship==='partner'?'มีคู่ชีวิต':state.v8.relationship==='friend'?'มิตรภาพที่ไว้ใจ':'ใช้ชีวิตอิสระ'],['สถานที่ที่เคยไป',`${state.world.visited.length} แห่ง`],['เงินที่เหลือ',`${state.gold} เหรียญ`],['ค่าจ้างที่ยังไม่ได้รับ',`${state.v8.wagesDue??0} เหรียญ`],['ความไว้ใจชุมชน',String(state.story.relationships.community)]]);
  el('h3',card,'สิ่งที่คุณเลือกไว้');const list=el('ul',card);for(const text of summary.events)el('li',list,text);
  const note=el('p',card,archiveStatus==='success'?'เก็บสรุปชีวิตที่จบแล้วเรียบร้อย':archiveStatus==='failed'?'เก็บประวัติไม่ได้ ดาวน์โหลดสรุปไว้ได้':'กำลังเก็บประวัติชีวิต');note.setAttribute('role','status');
  if(archiveStatus==='failed')button(card,'ลองเก็บประวัติอีกครั้ง',()=>archiveEnding());
@@ -181,6 +182,7 @@ function panel(id){
   }else{
    const s=effectiveStats(state),caps=effectiveCapacities(state);facts(parent,[['ชื่อ',state.name],['เผ่า',state.race],['อาชีพ',state.career],['สุขภาพ',`${rounded(state.hp)}/${caps.maxHp}`],['ความอึด',`${rounded(state.stamina)}/${caps.maxStamina}`],['มานา',`${rounded(state.mana)}/${caps.maxMana}`],['สมาธิ',`${state.progression.focus}/100`],['เหนื่อยล้า',`${state.progression.fatigue}/100`],...Object.entries(s).map(([key,n])=>[statNames[key],String(n)])]);
    el('p',parent,'ขอบเขตพลังที่ฝึกได้ขณะนี้คือระดับ 1–10 ต้องผ่านพิธี เลือกอาชีพ และใช้วันฝึกจริง ระดับสิบต้องยืนยันด้วยตนเอง');
+   facts(parent,[['ค่าจ้างรอรับ',`${state.v8.wagesDue??0} เหรียญ · ยังใช้จ่ายไม่ได้`]]);
    renderFamily(parent,state);
   }
  });

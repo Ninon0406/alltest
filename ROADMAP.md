@@ -1,4 +1,4 @@
-# Roadmap — V8 controlling checkpoint / 0.15.0
+# Roadmap — V8 controlling checkpoint / 0.16.0
 
 V8 replaces conflicting V7 priorities. Implement the life loop before the old massive world/gear backlog. The authoritative file is docs/v8/REBORN_V8_MASTER_PROMPT.md.
 
@@ -8,8 +8,9 @@ V8 replaces conflicting V7 priorities. Implement the life loop before the old ma
 - [x] Reused seven actual ritual stages, top-eight eligible careers and earned first-realm power/manual certification.
 - [x] Natural ordinary lifespans and four state-conditioned endings, terminal-only archive, no active save or resurrection.
 - [x] Phase 1 core checkpoint published: 125 unit / 78 browser cases, content/build/stage, all SIX independent preview/public verifiers and full CI succeeded. This does not mark the larger V8 content acceptance target complete.
-- [ ] Phase 2: 65 new executable stories / 150 actual choices. Current 29 / 87; adult relationship, one real trip, scholarship callback and safe road encounter are included. Add conditional family/academic/career/world callbacks next, not duplicated labels.
-- [ ] First full V8 release ending target: four of at least twelve original reachable endings; this is a core checkpoint, not full V8 acceptance.
+- [x] Phase 2 first callback cluster: eighteen original family/academic/community-work forks / 54 choices, real delivered-work receivables/partial payment/waiver, conditional research/family/care/work outcomes, four additional natural endings.
+- [ ] Phase 2: 65 new executable stories / 150 actual choices. Current 47 / 141. Add distinctive career-specific consequences and manual promotion next; do not duplicate the completed family/library/receivable chains.
+- [ ] First full V8 release ending target: eight of at least twelve original reachable endings; this is an incremental checkpoint, not full V8 acceptance.
 - [ ] Two new vocation-specific branches for each of 20 careers; migrate relevant existing arcs/promotion into the V8 scheduler.
 - [ ] Phase 3: contextual world/travel/services and earned realms 11–40 with real manual gates.
 - [ ] Phase 4: illness/earned lifespan extensions, eras, power 41–99, actual divine requirements and 30 endings.

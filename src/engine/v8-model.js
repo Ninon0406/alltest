@@ -9,6 +9,20 @@ import {locations} from '../world/locations.js';
 
 export const isV8=state=>state.v8?.version===1;
 export const naturalEndDay=state=>state.time.birthAbsoluteDay+state.birth.lifespan*360;
+// Both scheduler boundaries and visible choice gates use the same live requirements.
+export function v8RequirementsMissing(state,requires={}){
+ const v=state.v8,missing=[];
+ for(const [key,value]of Object.entries(requires)){
+  if(key==='flags'&&!value.every(f=>v.flags[f]))missing.push('ต้องมีประสบการณ์จากการตัดสินใจก่อนหน้า');
+  else if(key==='anyFlags'&&!value.some(f=>v.flags[f]))missing.push('ต้องเคยเลือกเส้นทางที่เกี่ยวข้อง');
+  else if(key==='knowledge'&&v.knowledge<value)missing.push(`ต้องมีความรู้ ${value} ขณะนี้ ${Math.floor(v.knowledge)}`);
+  else if(key==='bonds'&&v.bonds<value)missing.push(`ต้องมีสายสัมพันธ์ ${value} ขณะนี้ ${Math.floor(v.bonds)}`);
+  else if(key==='wagesDue'&&(v.wagesDue??0)<value)missing.push('ไม่มีค่าจ้างค้างรับจากงานที่ส่งแล้ว');
+  else if(key==='wagesClear'&&value&&(v.wagesDue??0)!==0)missing.push('ต้องปิดบัญชีค่าจ้างค้างรับก่อน');
+  else if(!['flags','anyFlags','knowledge','bonds','wagesDue','wagesClear'].includes(key))throw Error('เงื่อนไขเรื่องราวไม่ถูกต้อง');
+ }
+ return missing;
+}
 const focus=(id,label,description)=>({id,label,description});
 export function v8Focuses(state){
  const months=calendar(state).ageMonths;
@@ -26,7 +40,7 @@ export function v8Focuses(state){
 }
 export function eligibleV8Events(state){
  const months=calendar(state).ageMonths,v=state.v8;
- return v8LifeEvents.filter(e=>!v.completed.includes(e.id)&&months<=e.ageMaxMonths&&(!e.origin||e.origin===originKind(state))&&(!e.requires?.flags||e.requires.flags.every(f=>v.flags[f])));
+ return v8LifeEvents.filter(e=>!v.completed.includes(e.id)&&months<=e.ageMaxMonths&&(!e.origin||e.origin===originKind(state))&&!v8RequirementsMissing(state,e.requires).length);
 }
 export function nextV8EventDay(state,excludeId=null){
  const now=state.time.absoluteDay;
@@ -38,6 +52,13 @@ export function v8TravelQuote(state){
 }
 export function v8ChoiceQuote(state,event,choice){
  const q={...choice,timeDays:choice.timeDays??0,costGold:choice.costGold??0,stamina:choice.stamina??0,disabled:false,unavailable:''};
+ q.unavailable=v8RequirementsMissing(state,choice.requires).join(' · ');
+ if(['collect-wages','part-wages','waive-wages'].includes(choice.special)){
+  const due=state.v8.wagesDue??0;
+  q.paymentGold=choice.special==='waive-wages'?0:choice.special==='part-wages'?Math.ceil(due/2):due;
+  q.wagesSettled=choice.special==='part-wages'?q.paymentGold:due;
+  if(!due)q.unavailable='ไม่มีค่าจ้างค้างรับให้ดำเนินการ';
+ }
  if(choice.special==='travel'){
   const trip=v8TravelQuote(state);q.trip=trip;
   if(trip){q.timeDays=trip.route.days;q.costGold=trip.route.gold;q.stamina=trip.route.days*2;q.destination=locations[trip.id].name;}

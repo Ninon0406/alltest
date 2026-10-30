@@ -39,3 +39,25 @@ test('the V8 ritual and passive cultivation retain real power and manual first-r
  test.setTimeout(90000);await startV8(page,{seed:0});const ready=await playV8Until(page,{eventId:'power.first-realm',awaken:true,focus:'cultivate'});expect(ready.power.level).toBe(9);expect(ready.power.practiceDays).toBe(266);const day=ready.time.absoluteDay;
  await page.locator('[data-choice-id="steady"]').click();const earned=await v8Snapshot(page);expect(earned.power.level).toBe(10);expect(earned.time.absoluteDay).toBe(day);expect(earned.stamina).toBe(ready.stamina-15);await expect(page.locator('#v8Power')).toContainText('10 / 10');expect((await page.locator('#v8Age').boundingBox()).y).toBeLessThan(140);await expect(page.locator('[data-power-milestone="10"]')).toBeVisible();expect(await page.evaluate(()=>localStorage.length)).toBe(0);
 });
+
+test('V8 earned receivables are paid in two real transactions without duplicate income',async({page})=>{
+ test.setTimeout(90000);await page.setViewportSize({width:320,height:844});await startV8(page,{seed:0});
+ const due=await playV8Until(page,{eventId:'v8.delayed-payment',storyPath:'fairwork',focus:'rest'});
+ expect(due.v8.wagesDue).toBe(10);await expect(page.locator('[data-choice-id="part"]')).toContainText('รับเงินจริง 5');
+ const button=page.locator('[data-choice-id="part"]');await button.evaluate(b=>{b.click();b.click();});const paid=await v8Snapshot(page);
+ expect(paid.gold).toBe(due.gold+5);expect(paid.v8.wagesDue).toBe(5);expect(paid.v8.completed.filter(id=>id==='v8.delayed-payment')).toHaveLength(1);await expect(page.locator('.v8-outcome')).toContainText('ค่าจ้างรอรับ -5');
+ const follow=await playV8Until(page,{eventId:'v8.payment-followup',storyPath:'fairwork',focus:'rest'});expect(follow.time.absoluteDay-follow.time.birthAbsoluteDay).toBe(258*30);
+ await expect(page.locator('[data-choice-id="collect"]')).toContainText('รับเงินจริง 5');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ const main=await page.locator('[data-choice-id="collect"]').boundingBox();expect(main.y+main.height).toBeLessThanOrEqual(844);await page.screenshot({path:`work/v8-wages-${test.info().project.name}.png`});
+ await page.locator('[data-choice-id="collect"]').click();const closed=await v8Snapshot(page);expect(closed.gold).toBe(due.gold+10);expect(closed.v8.wagesDue).toBe(0);expect(await page.evaluate(()=>localStorage.length)).toBe(0);
+ await page.getByRole('button',{name:'รายละเอียด',exact:true}).click();await expect(page.getByRole('dialog')).toContainText('0 เหรียญ · ยังใช้จ่ายไม่ได้');await page.keyboard.press('Escape');
+});
+
+test('four conditional community legacies reach their natural endings through actual UI choices',async({page})=>{
+ test.setTimeout(180000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ for(const storyPath of ['library','family','circle','fairwork']){
+  await startV8(page,{seed:0});const s=await finishV8(page,{policy:0,storyPath,focus:storyPath==='library'?'study':'bonds'});
+  expect(s.run.endingId).toBe(`v8.${storyPath}`);expect(s.age).toBe(s.birth.lifespan);expect(s.power.practiceDays).toBe(0);expect(s.v8.wagesDue).toBe(0);await expect(page.locator(`.v8-final[data-ending-id="v8.${storyPath}"]`)).toBeVisible();
+ }
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('reborn_finished_lives_v1')).lives.length)).toBe(4);expect(await page.evaluate(()=>localStorage.getItem('reborn_save'))).toBeNull();expect(errors).toEqual([]);
+});

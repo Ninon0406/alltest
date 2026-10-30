@@ -1,24 +1,27 @@
-# Implemented content — V8 core / 0.15.0
+# Implemented content — V8 callback stories / 0.16.0
 
 `npm run content` reports preserved V7 and the new V8 registry separately. It measures actual authored records and genuine action-driven union reachability, not a claim that all content appears in one life.
 
 | V8 default flow | Authored | Reachable audit |
 | --- | ---: | ---: |
-| New meaningful story forks | 29 | 29 |
-| New scoped story choice records | 87 | 87 |
+| New meaningful story forks | 47 | 47 |
+| New scoped story choice records | 141 | 141 |
 | Caregiver observations (no choices) | 5 | 5 |
-| New natural-lifespan endings | 4 | 4 |
+| New natural-lifespan endings | 8 | 8 |
+| Included new family/academic/community-work forks / choices | 18 / 54 | 18 / 54 |
 | Reused ritual stages / responses | 7 / 14 | 7 / 14 |
 | Origin-specific age-four stories | 3 variants | 3 |
 | Eligible base career families | 20 preserved | all 20 origins have a real eligible route; at most 8 recommendations per offer |
 
-The V8 cohort runs 135 general complete natural lives over 101 distinct seeds (0–99 plus the missing smith origin at 108), twenty additional complete lives covering all twenty actually offered careers without power practice, and twenty actual origin-to-ritual/career checks. That is 155 full natural lives, plus the short eligibility checks. Observed terminal ages are 65–383. All 29/87 authored forks/choices and four epilogues are reached. This measures simulated calendar/choice paths, not actual human playing minutes. Browser tests additionally play five real seeded lifetimes through the public UI.
+The V8 cohort runs 193 general complete natural lives over 101 distinct seeds (0–99 plus the missing smith origin at 108): the previous 135, 54 independent from-birth choice-targeted lives for all new callback choices, and four named new ending policies. Twenty additional complete lives cover all twenty actually offered careers without power practice; twenty short actual origin-to-ritual/career checks remain. That is 213 full natural lives plus the short eligibility checks. Observed terminal ages are 65–383, with at most 116 decision/continue/seek actions in the general cohort. All 47/141 authored forks/choices and eight epilogues are reached. This measures simulated calendar/choice paths, not actual human playing minutes. Browser tests retain the five original seeded lifetimes and add four new full conditional ending lives plus actual partial/final wage transactions on desktop/mobile.
 
-The preserved compatibility registry remains 156 scenes/events / 359 authored choices / six old endings (including 30 V7 forks / 90 choices). A combined registry has 194 scene/event/observation/ending records, 446 narrative choices and ten endings across both interfaces. **These totals are not 194 unique branching arcs, 65 new V8 stories or ten V8 endings.** The new V8 target remains 29/65 forks, 87/150 choices and 4/12 new endings for the first full release. This core checkpoint does not satisfy that full-release content target. Dynamic career options, mechanical power certification, reused rituals and observations are not added to the new authored choice target.
+The preserved compatibility registry remains 156 scenes/events / 359 authored choices / six old endings (including 30 V7 forks / 90 choices). A combined registry has 216 scene/event/observation/ending records, 500 narrative choices and fourteen endings across both interfaces. **These totals are not 216 unique branching arcs, 65 new V8 stories or fourteen V8 endings.** The new V8 target remains 47/65 forks, 141/150 choices and 8/12 new endings for the first full release. This checkpoint does not satisfy that full-release content target. Dynamic career options, mechanical power certification, reused rituals and observations are not added to the new authored choice target.
+
+The new stories are original Thai family listening/reunion/letters; difficult assignment/public presentation; optional research/source review/library/reader handover; festival commission/late payment/follow-up; honest work/rival collaboration/accounts/work handover; and voluntary care/handing authority onward. Their shared live requirements and actual receipt/ledger effects are executable. Receivables are never spendable until collected; waiver does not grant income. The four new endings require multiple actual decisions and natural lifespan closure. These are community stories, not forty completed vocation-specific branches, named aging NPCs or a business-ownership simulation.
 
 Art/world counts are unchanged: 20 outdoor PNGs, 16 regional/contextual interior PNGs, 183 character PNG layers and six equipment PNGs; twenty connected canonical places, five regions, twenty edges, eight preserved equipment shops. There are no new AI artworks, place nodes, authored important NPC profiles or functional dungeons this round. Family portraits and pixel combinations do not multiply authored content. Adult relationships currently use an original anonymous adult contact/state, not a claimed authored NPC roster.
 
-Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Runtime 3d1389a is published and verified: 125 unit / 78 browser cases, content/build/staging, 180 complete character fixtures and all SIX independent preview/public scripts passed, plus full CI 40997632460. Full verification/publication evidence is in NEXT_CODEX_TASK.
+Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Previous runtime 3d1389a is the verified published core; current 0.16.0 verification/publication status is recorded in NEXT_CODEX_TASK.
 
 Historical V7 manifest follows.
 
