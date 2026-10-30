@@ -13,6 +13,7 @@ V8 replaces conflicting V7 priorities. Implement the life loop before the old ma
 - [x] Reused all60 genuine career episodes/120 responses in V8, with manual choice, free pause/resume and shared exact time boundaries. Original effects remain shared with the legacy reader.
 - [x] All20 careers can earn and manually accept promotion with actual records/time; study supports ordinary non-power skill practice. No calendar-only or automatic promotion.
 - [x] First four vocation families (farmer/healer/smith/scholar): eight original forks/24 choices and four promoted-career endings.
+- [x] Published/verified0.17:144 unit/88 Browser cases, content/build/stage,180 composites, all SIX preview/public scripts and full CI41010229523 passed; all38 current/cached JS/CSS hashes remain available. Actual random public musician/farmer careers promoted and reached natural endings without power practice.
 - [ ] Phase 2:65 new executable stories. Current55/165 choices; the150-choice threshold is met. Continue the sixteen other career families; do not duplicate migrated episodes to meet counts.
 - [x] Twelve original V8 endings are conditionally reachable; this threshold alone is not full V8 acceptance.
 - [ ] Two new vocation-specific branches for each of20 careers:8/40 done,32 remain. Next cluster: inventor/alchemist/merchant/sailor with distinct mechanics and callbacks.

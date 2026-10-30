@@ -24,7 +24,7 @@ Preserved compatibility registry remains156 records/359 choices/six endings, inc
 
 Art/world unchanged:20 outdoor PNGs,16 interior PNGs,183 character layers,six equipment PNGs; twenty nodes/five regions/twenty edges/eight preserved equipment shops. No new AI artwork, world node, important authored NPC profile or dungeon. Existing pixel inheritance and archive compatibility remain.
 
-Unfinished: ten more coherent V8 forks toward65,32 vocation branches, richer travel/services/contexts/NPCs/business ownership, illness/earned longevity, power11–100/deity and100 endings. Human pacing and physical iOS need independent validation. Current release verification/publication status and exact next work are in NEXT_CODEX_TASK.
+Unfinished: ten more coherent V8 forks toward65,32 vocation branches, richer travel/services/contexts/NPCs/business ownership, illness/earned longevity, power11–100/deity and100 endings. Human pacing and physical iOS need independent validation. Runtime0247873 is live:144 unit/88 Browser cases, content/build/stage/180 compositions, all SIX preview/public scripts and full CI41010229523 passed. All twelve endings are reached by local browser playthroughs/audit; public random musician and farmer paths independently earned actual promotion/natural endings. All38 retained/current JS/CSS hashes are verified. Exact evidence/next work are in NEXT_CODEX_TASK.
 
 Historical V7 manifest follows.
 
