@@ -14,6 +14,8 @@ Use existing PNGs and actual canonical location/context. Maps inspect only; stor
 
 Required gates remain npm ci / npm test / npm run content / npm run build / stage-site / full test:e2e and source/staged asset/composition checks. `verify-v8.mjs` checks the actual default site first; the five older verifiers explicitly inspect `?classic=1`. Run all SIX scripts on preview and public Pages and record results honestly. Keep previous published hashes. User authorization covers routine code, tests, normal commits/push and existing Pages publication; do not request it again. Do not spawn sub-agents unless explicitly asked. Update NEXT, ROADMAP, GAME_DESIGN, CONTENT_MANIFEST, CHANGELOG and README with real status.
 
+Publication cache contract: after building, stage-site merges old published assets/art into dist as well as the branch root. The Actions artifact must retain older hashes too; merely retaining them in Git leaves cached HTML broken after artifact deployment. The real staging integration test covers both outputs. verify-v8 checks every staged top-level JS/CSS byte hash on preview/public before gameplay. Never delete earlier tracked hashes or upload a fresh dist without staging.
+
 Historical development rules follow and apply only where compatible with V8.
 
 # Development rules

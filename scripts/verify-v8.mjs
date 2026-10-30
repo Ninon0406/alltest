@@ -5,7 +5,9 @@ import {waitForCharacterImages,checkPublishedCharacters} from './published-chara
 import {checkPublishedInteriors} from './published-interior-check.mjs';
 import {checkPublishedEquipment} from './published-equipment-check.mjs';
 import {v8Decision} from '../src/engine/v8-model.js';
+import {checkPublishedBuilds} from './published-build-check.mjs';
 const url=process.argv[2]??'http://127.0.0.1:4185/';mkdirSync('work',{recursive:true});
+console.log(`PASS V8 ${url}: ${await checkPublishedBuilds(url)} current/cached JS and CSS files match staged hashes`);
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 const endings=new Set();
 try{
