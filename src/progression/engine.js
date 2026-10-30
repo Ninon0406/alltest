@@ -18,9 +18,9 @@ export function currentCareer(state){return getCareer(state.progression.activeCa
 export function earnCareerXp(state,id,xp){
  const r=careerRecord(state,id);r.xp+=xp;r.mastery=Math.min(100,r.mastery+Math.max(1,Math.floor(xp/2)));
 }
-export function promotionMissing(state,c=currentCareer(state)){
+export function promotionMissing(state,c=currentCareer(state),{ignoreAge=false}={}){
  if(!c)return ['เลือกอาชีพก่อน'];const r=state.progression.records[c.id],a=c.advanced;
- return [state.age<a.minAge?`อายุ ${a.minAge} ปี`:null,r.xp<a.minXp?`ประสบการณ์ ${a.minXp}`:null,r.mastery<a.minMastery?`ความชำนาญ ${a.minMastery}`:null,state.stats[a.stat]<a.minimum?`${a.stat.toUpperCase()} ${a.minimum}`:null,r.arcStep<3?'จบเรื่องอาชีพ 3 ตอน':null].filter(Boolean);
+ return [!ignoreAge&&state.age<a.minAge?`อายุ ${a.minAge} ปี`:null,r.xp<a.minXp?`ประสบการณ์ ${a.minXp}`:null,r.mastery<a.minMastery?`ความชำนาญ ${a.minMastery}`:null,state.stats[a.stat]<a.minimum?`${a.stat.toUpperCase()} ${a.minimum}`:null,r.arcStep<3?'จบเรื่องอาชีพ 3 ตอน':null].filter(Boolean);
 }
 export function selectCareer(state,id){
  const c=getCareer(id);if(!c)throw Error('ไม่พบอาชีพ');

@@ -12,6 +12,8 @@ import {renderFamily} from './family-view.js';
 import {initPanels,openPanel,closePanel} from './panels.js';
 import {archiveCompleted,completedSummary,readArchive} from '../save/archive.js';
 import {v8Endings} from '../data/v8-endings.js';
+import {v8CanResumeCareer,v8PromotionMissing} from '../engine/v8-career-model.js';
+import {statLabels as statNames} from '../data/careers.js';
 
 document.body.className='v8-app';
 document.body.innerHTML='<header class="v8-top"><h1>REBORN</h1><div><button id="v8Archive">ประวัติชีวิต</button><button id="v8Settings" aria-label="ตั้งค่า">⚙</button></div></header><p id="gameNotice" role="status" aria-live="polite"></p><main class="v8-shell" id="v8Root"></main><dialog id="modalOverlay" aria-labelledby="panelTitle"><div class="panel-top"><h2 id="panelTitle"></h2><button id="closePanel" aria-label="ปิดหน้าต่าง">✕</button></div><div id="modalContent" tabindex="-1"></div></dialog>';
@@ -19,8 +21,7 @@ initPanels();
 const root=document.getElementById('v8Root'),clock=new ActivePlayClock();
 let state=null,summary=null,archiveStatus=null,running=false,autoWanted=false,speed=1,raf=null,lastFrame=0,carry=0;
 const MONTH_MS=600;
-const names={health:'สุขภาพ',happiness:'ความสุข',knowledge:'ความรู้',bonds:'สายสัมพันธ์',gold:'เงิน',wagesDue:'ค่าจ้างรอรับ',stamina:'ความอึด',focus:'สมาธิ',mana:'มานา',power:'ระดับพลัง'};
-const statNames={str:'พละกำลัง',dex:'ความคล่อง',con:'ความทนทาน',int:'สติปัญญา',wis:'ความเข้าใจ',per:'การสังเกต',luk:'โชค',cha:'เสน่ห์'};
+const names={health:'สุขภาพ',happiness:'ความสุข',knowledge:'ความรู้',bonds:'สายสัมพันธ์',gold:'เงิน',wagesDue:'ค่าจ้างรอรับ',stamina:'ความอึด',focus:'สมาธิ',mana:'มานา',power:'ระดับพลัง',careerXp:'ประสบการณ์อาชีพ',careerMastery:'ความชำนาญอาชีพ',trainingBonus:'ประสบการณ์ฝึกเพิ่ม',payBonus:'ค่าจ้างเพิ่ม',maxHp:'สุขภาพสูงสุด',maxMana:'มานาสูงสุด',maxStamina:'ความอึดสูงสุด',...statNames};
 const rounded=n=>Math.round(n*10)/10;
 function el(tag,parent,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;parent?.append(n);return n;}
 function button(parent,label,fn,className){const b=el('button',parent,label,className);b.type='button';b.dataset.key=label;b.onclick=fn;return b;}
@@ -95,6 +96,9 @@ function choiceDescription(choice){
  if(choice.destination)parts.push(`ไป${choice.destination}`);
  if(choice.costGold)parts.push(`เงิน −${choice.costGold}`);else parts.push('ฟรี');
  if(choice.stamina)parts.push(`ความอึด −${choice.stamina}`);
+ if(choice.skillXp)parts.push(`ประสบการณ์อาชีพ +${choice.skillXp}`);
+ if(choice.earnedGold)parts.push(`ค่าจ้างจริง +${choice.earnedGold}`);
+ if(choice.focusCost)parts.push(`สมาธิ −${choice.focusCost}`);
  if(choice.wagesSettled)parts.push(`รับเงินจริง ${choice.paymentGold} · ค่าจ้างยังรอรับ ${state.v8.wagesDue-choice.wagesSettled}`);
  for(const [key,n]of Object.entries(choice.effects??{}))if(names[key]&&typeof n==='number'){
   const old=v8Vitals(state)[key],cap=['knowledge','bonds','happiness','health'].includes(key)?100:Infinity;
@@ -130,6 +134,7 @@ function lifeContent(parent){
   for(const f of focuses){const b=button(grid,'',()=>{stopAuto(true);perform({type:'v8Focus',focus:f.id});},'');b.dataset.key=`focus:${f.id}`;b.dataset.focusId=f.id;b.setAttribute('aria-pressed',String((v.nextFocus??v.focus)===f.id));el('strong',b,f.label);el('span',b,f.description);}
  }
  if(v8CanResumePower(state))button(card,'กลับไปทบทวนขอบเขตพลัง',()=>{stopAuto(true);perform({type:'v8ResumePower'});});
+ if(v8CanResumeCareer(state))button(card,'กลับไปทบทวนงานอาชีพ',()=>{stopAuto(true);perform({type:'v8ResumeCareer'});});
 }
 function birth(parent){
  const card=el('section',parent,undefined,'v8-card');el('h2',card,'ชีวิตใหม่ในเอลินดรา');
@@ -183,6 +188,8 @@ function panel(id){
    const s=effectiveStats(state),caps=effectiveCapacities(state);facts(parent,[['ชื่อ',state.name],['เผ่า',state.race],['อาชีพ',state.career],['สุขภาพ',`${rounded(state.hp)}/${caps.maxHp}`],['ความอึด',`${rounded(state.stamina)}/${caps.maxStamina}`],['มานา',`${rounded(state.mana)}/${caps.maxMana}`],['สมาธิ',`${state.progression.focus}/100`],['เหนื่อยล้า',`${state.progression.fatigue}/100`],...Object.entries(s).map(([key,n])=>[statNames[key],String(n)])]);
    el('p',parent,'ขอบเขตพลังที่ฝึกได้ขณะนี้คือระดับ 1–10 ต้องผ่านพิธี เลือกอาชีพ และใช้วันฝึกจริง ระดับสิบต้องยืนยันด้วยตนเอง');
    facts(parent,[['ค่าจ้างรอรับ',`${state.v8.wagesDue??0} เหรียญ · ยังใช้จ่ายไม่ได้`]]);
+   const r=state.progression.records[state.progression.activeCareerId];
+   if(r){facts(parent,[['ประสบการณ์อาชีพ',String(r.xp)],['ความชำนาญอาชีพ',`${r.mastery}/100`],['เรื่องอาชีพที่ทำแล้ว',`${r.arcStep}/3`],['การเลื่อนขั้น',r.advanced?'รับขั้นอาชีพแล้ว':state.v8.careerPaused?'พักไว้ตามที่เลือก':'ยังไม่รับขั้นใหม่']]);if(!r.advanced)el('p',parent,`สิ่งที่ยังต้องทำ: ${v8PromotionMissing(state).join(' · ')||'ถึงเวลาทบทวนขั้นอาชีพเมื่ออายุอย่างน้อย 18 ปี 6 เดือน'}`);}
    renderFamily(parent,state);
   }
  });

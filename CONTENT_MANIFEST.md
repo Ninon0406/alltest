@@ -1,27 +1,30 @@
-# Implemented content — V8 callback stories / 0.16.0
+# Implemented content — V8 careers / 0.17.0
 
-`npm run content` reports preserved V7 and the new V8 registry separately. It measures actual authored records and genuine action-driven union reachability, not a claim that all content appears in one life.
+`npm run content` separates original V8 writing, migrated legacy episodes and actual action-driven reachability. Reusing the same episode in another interface does not create a new story.
 
 | V8 default flow | Authored | Reachable audit |
 | --- | ---: | ---: |
-| New meaningful story forks | 47 | 47 |
-| New scoped story choice records | 141 | 141 |
-| Caregiver observations (no choices) | 5 | 5 |
-| New natural-lifespan endings | 8 | 8 |
-| Included new family/academic/community-work forks / choices | 18 / 54 | 18 / 54 |
+| New meaningful story forks | 55 | 55 |
+| New scoped story choices | 165 | 165 |
+| Caregiver observations | 5 | 5 |
+| New natural-lifespan endings | 12 | 12 |
+| Included new vocation forks / choices | 8 / 24 | 8 / 24 |
+| Migrated original career episodes / responses | 60 / 120 reused | 60 / 120 |
+| Actually promotable career families | 20 preserved | 20 |
 | Reused ritual stages / responses | 7 / 14 | 7 / 14 |
-| Origin-specific age-four stories | 3 variants | 3 |
-| Eligible base career families | 20 preserved | all 20 origins have a real eligible route; at most 8 recommendations per offer |
+| Age-four origin stories | 3 variants | 3 |
 
-The V8 cohort runs 193 general complete natural lives over 101 distinct seeds (0–99 plus the missing smith origin at 108): the previous 135, 54 independent from-birth choice-targeted lives for all new callback choices, and four named new ending policies. Twenty additional complete lives cover all twenty actually offered careers without power practice; twenty short actual origin-to-ritual/career checks remain. That is 213 full natural lives plus the short eligibility checks. Observed terminal ages are 65–383, with at most 116 decision/continue/seek actions in the general cohort. All 47/141 authored forks/choices and eight epilogues are reached. This measures simulated calendar/choice paths, not actual human playing minutes. Browser tests retain the five original seeded lifetimes and add four new full conditional ending lives plus actual partial/final wage transactions on desktop/mobile.
+The cohort runs **221 general complete natural lives** over101 distinct base seeds (0–99 plus smith108): the previous193,24 independent birth-to-natural-end policies targeting every new vocation choice, and four full professional ending policies. It separately runs twenty ordinary career lives with formal episodes paused and no power practice, plus forty complete promoted lives (twenty families × both original career-response policies). **281 complete natural lives** total, plus twenty short origin/ritual/eligibility checks. General ages65–383, max137 decision/continue/seek actions; simulations use explicit skips and do not measure human play minutes.
 
-The preserved compatibility registry remains 156 scenes/events / 359 authored choices / six old endings (including 30 V7 forks / 90 choices). A combined registry has 216 scene/event/observation/ending records, 500 narrative choices and fourteen endings across both interfaces. **These totals are not 216 unique branching arcs, 65 new V8 stories or fourteen V8 endings.** The new V8 target remains 47/65 forks, 141/150 choices and 8/12 new endings for the first full release. This checkpoint does not satisfy that full-release content target. Dynamic career options, mechanical power certification, reused rituals and observations are not added to the new authored choice target.
+All55 new forks/165 choices/twelve endings are reached. All60 migrated episodes/120 original responses are exercised, with actual three-episode completion, earned XP/mastery/stats and one manual promotion per family. The forty promotion policies keep each representative seed's standard birth/ritual choices and vary only original career responses, so they never force an unavailable recommendation. Every promoted life has zero power practice. Browser cases retain earlier lifetimes and add four full professional lives plus date/pause/resume/promotion/job receipts on desktop/mobile.
 
-The new stories are original Thai family listening/reunion/letters; difficult assignment/public presentation; optional research/source review/library/reader handover; festival commission/late payment/follow-up; honest work/rival collaboration/accounts/work handover; and voluntary care/handing authority onward. Their shared live requirements and actual receipt/ledger effects are executable. Receivables are never spendable until collected; waiver does not grant income. The four new endings require multiple actual decisions and natural lifespan closure. These are community stories, not forty completed vocation-specific branches, named aging NPCs or a business-ownership simulation.
+The eight new forks are original seed trials/community reserves, listening/consent in care, actual repair work/standards, and measured maps/limits. Dynamic work/training quotes call the actual seven-day engines, charge resources once and record one ledger/journal transaction. Their four epilogues require project flags, real promotion, maintained knowledge/bonds and natural death. No fake personal equipment, building ownership, named aging NPC roster or power reward is inferred from these projects.
 
-Art/world counts are unchanged: 20 outdoor PNGs, 16 regional/contextual interior PNGs, 183 character PNG layers and six equipment PNGs; twenty connected canonical places, five regions, twenty edges, eight preserved equipment shops. There are no new AI artworks, place nodes, authored important NPC profiles or functional dungeons this round. Family portraits and pixel combinations do not multiply authored content. Adult relationships currently use an original anonymous adult contact/state, not a claimed authored NPC roster.
+Preserved compatibility registry remains156 records/359 choices/six endings, including the same60 career episodes. Combined registries: **228 records/524 narrative choices/eighteen endings across both interfaces**. These are not228 arcs or eighteen V8 endings. The65-fork threshold remains55/65;165/150 choices and12/12 first-release endings are met. New vocation writing is8/40, leaving32 branches for sixteen families. Operational pause/resume/promotion options and reused material do not increase new authored counts.
 
-Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Gameplay runtime fcf50a1 and final publication hardening72f2d49 are live. Full CI41004540436 passed134 unit/82 browser cases, content/build/stage/180 character compositions and all SIX live scripts; independent preview/public checks also passed, including all34 retained/current JS/CSS hashes and the previous cached HTML. Exact evidence is in NEXT_CODEX_TASK.
+Art/world unchanged:20 outdoor PNGs,16 interior PNGs,183 character layers,six equipment PNGs; twenty nodes/five regions/twenty edges/eight preserved equipment shops. No new AI artwork, world node, important authored NPC profile or dungeon. Existing pixel inheritance and archive compatibility remain.
+
+Unfinished: ten more coherent V8 forks toward65,32 vocation branches, richer travel/services/contexts/NPCs/business ownership, illness/earned longevity, power11–100/deity and100 endings. Human pacing and physical iOS need independent validation. Current release verification/publication status and exact next work are in NEXT_CODEX_TASK.
 
 Historical V7 manifest follows.
 

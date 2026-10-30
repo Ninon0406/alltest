@@ -3,7 +3,7 @@ import { awakeningEvents } from '../data/events/awakening.js';
 import { careerEvents } from '../data/events/careers.js';
 import { advanceAwakening } from '../progression/awakening.js';
 import { careerRecord } from '../progression/state.js';
-import { earnCareerXp, recoverProgression } from '../progression/engine.js';
+import {applyLifeEffects} from './life-effects.js';
 import { infantEvents, childhoodEvents, randomEvents, dailyEvent } from '../data/events/childhood.js';
 import { seededRandom } from './random.js';
 import { calendar, advanceTime, recordAction, normalize } from './time.js';
@@ -28,16 +28,7 @@ export function applyLifeChoice(state,choiceId){
  const event=currentEvent(state),choice=event.choices.find(c=>c.id===choiceId);
  if(!choice || state.life.page<event.pages.length-1)throw Error('กรุณาอ่านเหตุการณ์ให้จบก่อนเลือก');
  const days=choiceDays(state,event),age=calendar(state).ageYears;
- for(const effect of choice.effects){
-  if(effect.type==='stat')state.stats[effect.key]+=effect.amount;
-  else if(effect.type==='memory')state.childhoodMemory[effect.key]+=effect.amount;
-  else if(effect.type==='flag')state.life.flags={...state.life.flags,[effect.key]:true};
-  else if(effect.type==='morale')state.morale+=effect.amount;
-  else if(effect.type==='recover'){state.hp+=effect.amount;state.stamina+=effect.amount;state.mana+=effect.amount;state.morale+=5;recoverProgression(state,40);}
-  else if(effect.type==='careerXp')earnCareerXp(state,event.careerId,effect.amount);
-  else if(effect.type==='careerPerk')careerRecord(state,event.careerId)[effect.key]+=effect.amount;
-  else throw Error('ผลลัพธ์ที่ไม่รู้จัก');
- }
+ applyLifeEffects(state,event,choice);
  if(event.category==='awakening')advanceAwakening(state);
  if(event.category==='career')careerRecord(state,event.careerId).arcStep++;
  if(event.category==='random')state.life.randomYears.push(age);

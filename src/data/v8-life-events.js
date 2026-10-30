@@ -1,6 +1,7 @@
 // Original Thai V8 stories. IDs, gates and consequences are executable data.
 import {c,e} from './v8-story-schema.js';
 import {v8CommunityEvents} from './v8-community-events.js';
+import {v8CareerEvents} from './v8-career-events.js';
 export const originKind=state=>['farmer','herbalist','fisher','keeper','hunter'].includes(state.birth.archetypeId)?'nature':['smith','inventor','baker'].includes(state.birth.archetypeId)?'craft':'stories';
 export const v8Observations=[
  {id:'v8.observe.home',month:0,title:'บ้านหลังแรก',text:'ผู้ดูแลโอบคุณไว้ใกล้หน้าต่าง เสียงในบ้านค่อย ๆ กลายเป็นสิ่งคุ้นเคย'},
@@ -11,6 +12,7 @@ export const v8Observations=[
 ];
 export const v8LifeEvents=[
  ...v8CommunityEvents,
+ ...v8CareerEvents,
  e('small-friend',18,'เพื่อนตัวเล็ก','ผู้ดูแลพาคุณมาพบเด็กข้างบ้าน ของเล่นชิ้นเดียววางอยู่ระหว่างเสื่อทั้งสองผืน',[
   c('join','เล่นด้วยกันโดยมีผู้ใหญ่ดูแล','คุณส่งลูกบอลกลับไป ความคุ้นเคยเล็ก ๆ เริ่มขึ้น',{bonds:6,happiness:3,flag:'earlyFriend'}),
   c('watch','นั่งมองข้างผู้ดูแลก่อน','คุณได้เวลาคุ้นกับคนใหม่โดยไม่ถูกเร่ง',{happiness:5,memory:{caution:1}}),

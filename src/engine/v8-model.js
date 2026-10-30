@@ -1,7 +1,8 @@
 import {calendar} from './time.js';
 import {v8LifeEvents,originKind} from '../data/v8-life-events.js';
 import {awakeningEvents} from '../data/events/awakening.js';
-import {eligibleCareers,readiness} from '../progression/engine.js';
+import {eligibleCareers,readiness,trainingQuote,jobQuote,currentCareer} from '../progression/engine.js';
+import {nextV8CareerDay,v8CareerDecision} from './v8-career-model.js';
 import {powerDecision,powerTrainingMissing,powerReady,hasPower} from '../progression/power-model.js';
 import {effectiveStats} from '../character/equipment-stats.js';
 import {findRoute} from '../world/travel.js';
@@ -11,7 +12,7 @@ export const isV8=state=>state.v8?.version===1;
 export const naturalEndDay=state=>state.time.birthAbsoluteDay+state.birth.lifespan*360;
 // Both scheduler boundaries and visible choice gates use the same live requirements.
 export function v8RequirementsMissing(state,requires={}){
- const v=state.v8,missing=[];
+ const v=state.v8,missing=[],record=state.progression.records[state.progression.activeCareerId];
  for(const [key,value]of Object.entries(requires)){
   if(key==='flags'&&!value.every(f=>v.flags[f]))missing.push('ต้องมีประสบการณ์จากการตัดสินใจก่อนหน้า');
   else if(key==='anyFlags'&&!value.some(f=>v.flags[f]))missing.push('ต้องเคยเลือกเส้นทางที่เกี่ยวข้อง');
@@ -19,7 +20,10 @@ export function v8RequirementsMissing(state,requires={}){
   else if(key==='bonds'&&v.bonds<value)missing.push(`ต้องมีสายสัมพันธ์ ${value} ขณะนี้ ${Math.floor(v.bonds)}`);
   else if(key==='wagesDue'&&(v.wagesDue??0)<value)missing.push('ไม่มีค่าจ้างค้างรับจากงานที่ส่งแล้ว');
   else if(key==='wagesClear'&&value&&(v.wagesDue??0)!==0)missing.push('ต้องปิดบัญชีค่าจ้างค้างรับก่อน');
-  else if(!['flags','anyFlags','knowledge','bonds','wagesDue','wagesClear'].includes(key))throw Error('เงื่อนไขเรื่องราวไม่ถูกต้อง');
+  else if(key==='careerId'&&state.progression.activeCareerId!==value)missing.push('ต้องอยู่ในสายอาชีพที่เกี่ยวข้อง');
+  else if(key==='careerArc'&&(record?.arcStep??0)<value)missing.push(`ต้องจบเรื่องอาชีพ ${value} ตอน`);
+  else if(key==='careerMastery'&&(record?.mastery??0)<value)missing.push(`ต้องมีความชำนาญอาชีพ ${value}`);
+  else if(!['flags','anyFlags','knowledge','bonds','wagesDue','wagesClear','careerId','careerArc','careerMastery'].includes(key))throw Error('เงื่อนไขเรื่องราวไม่ถูกต้อง');
  }
  return missing;
 }
@@ -34,7 +38,7 @@ export function v8Focuses(state){
   focus(cultivation?'cultivate':'practice',cultivation?'ฝึกประสานพลัง':'ฝึกวิชาพื้นฐาน',cultivation?'ฝึกจริงเจ็ดวันต่อเดือน สลับพักและหยุดรับรองระดับด้วยตนเอง':'ฝึกทักษะตามความถนัดเมื่อร่างกายพร้อม ไม่ให้ระดับพลัง'),
   focus('work',months<228?'ฝึกงานหาเงิน':'ทำงานตามกำลัง','รับงานหนึ่งช่วงต่อเดือนเมื่อพร้อม มีค่าจ้างและความเหนื่อยจริง'),
   focus('bonds',months>=720?'ถ่ายทอดและพบปะ':'สร้างความสัมพันธ์','ให้เวลากับคนรอบตัวและความสุข'),
-  focus('study','ศึกษาความรู้','สะสมความรู้และฝึกความคิดอย่างค่อยเป็นค่อยไป'),
+  focus('study',currentCareer(state)?'ศึกษาและฝึกวิชาอาชีพ':'ศึกษาความรู้',currentCareer(state)?'ฝึกวิชาหลักจริงเจ็ดวันต่อเดือน ใช้ความอึดและสมาธิ ไม่เพิ่มระดับพลัง':'สะสมความรู้และฝึกความคิดอย่างค่อยเป็นค่อยไป'),
   focus('rest','พักและดูแลชีวิต','ฟื้นสุขภาพ ความอึด มานา และสมาธิ'),
  ];
 }
@@ -44,7 +48,7 @@ export function eligibleV8Events(state){
 }
 export function nextV8EventDay(state,excludeId=null){
  const now=state.time.absoluteDay;
- return Math.min(naturalEndDay(state),...eligibleV8Events(state).filter(e=>e.id!==excludeId).map(e=>Math.max(now,state.time.birthAbsoluteDay+e.ageMinMonths*30)));
+ return Math.min(naturalEndDay(state),nextV8CareerDay(state,excludeId),...eligibleV8Events(state).filter(e=>e.id!==excludeId).map(e=>Math.max(now,state.time.birthAbsoluteDay+e.ageMinMonths*30)));
 }
 export function v8TravelQuote(state){
  const candidates=locations[state.world.currentLocationId].neighbors.map(id=>({id,route:findRoute(state,id,'walk')})).filter(x=>x.route).sort((a,b)=>Number(state.world.visited.includes(a.id))-Number(state.world.visited.includes(b.id))||a.id.localeCompare(b.id));
@@ -53,6 +57,14 @@ export function v8TravelQuote(state){
 export function v8ChoiceQuote(state,event,choice){
  const q={...choice,timeDays:choice.timeDays??0,costGold:choice.costGold??0,stamina:choice.stamina??0,disabled:false,unavailable:''};
  q.unavailable=v8RequirementsMissing(state,choice.requires).join(' · ');
+ if(choice.special==='career-practice'||choice.special==='career-job'){
+  const career=currentCareer(state),practice=choice.special==='career-practice',activity=practice?trainingQuote(state,choice.stat??career?.primary):jobQuote(state);
+  if(!career||!activity)q.unavailable='ต้องเลือกอาชีพก่อนทำงานหรือฝึกเฉพาะทาง';
+  else{
+   q.timeDays=activity.days;q.stamina=activity.stamina;q.skillXp=activity.xp;q.focusCost=activity.focus??0;q.earnedGold=activity.gold??0;
+   if(state.progression.fatigue>=(practice?80:85)||practice&&(state.progression.focus<20||state.morale<20))q.unavailable='ร่างกายหรือสมาธิยังไม่พร้อม เลือกพักหรือส่งต่อได้';
+  }
+ }
  if(['collect-wages','part-wages','waive-wages'].includes(choice.special)){
   const due=state.v8.wagesDue??0;
   q.paymentGold=choice.special==='waive-wages'?0:choice.special==='part-wages'?Math.ceil(due/2):due;
@@ -83,6 +95,7 @@ export function v8Decision(state){
   return {id:'v8.career',kind:'career',title:'เส้นทางที่เปิดอยู่',prose:'ความถนัดเป็นจุดเริ่ม ไม่ใช่คำตัดสินชีวิต เลือกอาชีพที่เข้าเงื่อนไขจริง หรือใช้ชีวิตชุมชนโดยไม่ผูกอาชีพ',choices:[...eligible.map(c=>({id:`career:${c.id}`,careerId:c.id,label:c.label,description:`ความพร้อม ${readiness(state,c)} · เริ่มฝึกงาน 7 วัน ฟรี · ${c.job}`,timeDays:7,costGold:0,stamina:0})),{id:'career:ordinary',label:'ใช้ชีวิตชุมชนโดยไม่ผูกอาชีพ',description:'ไม่เสียเงินหรือเวลา · เรียน ทำงานพื้นฐาน และสร้างความสัมพันธ์ต่อได้',timeDays:0,costGold:0,stamina:0}]};
  }
  const power=powerDecision(state);if(power)return {...power,prose:power.text};
+ const career=v8CareerDecision(state,v8ChoiceQuote);if(career)return career;
  const months=calendar(state).ageMonths;
  const event=eligibleV8Events(state).filter(e=>months>=e.ageMinMonths).sort((a,b)=>a.priority-b.priority||a.ageMinMonths-b.ageMinMonths||a.id.localeCompare(b.id))[0];
  return event?{...event,kind:'story',choices:event.choices.map(c=>v8ChoiceQuote(state,event,c))}:null;

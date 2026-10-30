@@ -6,6 +6,9 @@ import {eligibleCareers} from '../src/progression/engine.js';
 import {completedSummary} from '../src/save/archive.js';
 import {v8CommunityEvents} from '../src/data/v8-community-events.js';
 import {v8CallbackPaths} from './v8-story-policies.mjs';
+import {v8CareerEvents} from '../src/data/v8-career-events.js';
+import {careerEvents} from '../src/data/events/careers.js';
+import {validateProgression} from '../src/progression/validate.js';
 export function auditV8(){
  const ids=new Set(),allChoices=new Set(),seen=new Set(),reached=new Set(),endings=new Set(),origins=new Set();let lives=0,minAge=Infinity,maxAge=0,maxSteps=0;
  for(const e of v8LifeEvents){
@@ -42,9 +45,21 @@ export function auditV8(){
   const s=run(0,{policy:0,storyPath,focus:storyPath==='library'?'study':'bonds'});
   if(s.run.endingId!==`v8.${storyPath}`)throw Error('Wrong chained ending '+storyPath);
  }
- const missing=[...allChoices].filter(id=>!reached.has(id));
- if(missing.length)throw Error('Unreached V8 choices: '+missing.join(', '));
- if(origins.size!==20||endings.size!==Object.keys(v8Endings).length)throw Error('Incomplete V8 ordinary paths');
+ const vocationSeeds={farmer:0,healer:2,smith:0,scholar:1},vocationEndings={farmer:'v8.seedbank',healer:'v8.consent',smith:'v8.repairs',scholar:'v8.margins'};
+ let vocationChoiceLives=0;
+ for(const event of v8CareerEvents)for(const target of event.choices){
+  vocationChoiceLives++;
+  const careerId=event.requires.careerId;let selected=false;
+  const s=run(vocationSeeds[careerId],{awaken:true,policy:0,careerId,focus:'study',storyPath:'vocation',choose:(d,p,o)=>{
+   if(d.id===event.id){selected=true;return d.choices.find(c=>c.id===target.id);}
+   return chooseV8Policy(d,p,selected?{...o,storyPath:'quiet'}:o);
+  }});
+  if(!s.v8.completed.includes(event.id))throw Error('Unreached vocation callback '+event.id);
+ }
+ for(const [careerId,seed]of Object.entries(vocationSeeds)){
+  const s=run(seed,{awaken:true,policy:0,careerId,focus:'study',storyPath:'vocation'});
+  if(s.run.endingId!==vocationEndings[careerId]||!s.progression.records[careerId].advanced||s.power.practiceDays!==0)throw Error('Unreachable professional epilogue '+careerId);
+ }
  const reps=new Map();for(let seed=0;seed<200&&reps.size<20;seed++){
   const r=simulateV8(seed,{stopAge:12});if(!reps.has(r.state.birth.archetypeId))reps.set(r.state.birth.archetypeId,r.state);
  }
@@ -60,8 +75,19 @@ export function auditV8(){
  }});
  if(careerSeeds.size!==20)throw Error('Not all twenty V8 career families are offered');
  for(const [id,seed]of careerSeeds){
-  const {state:s}=simulateV8(seed,{policy:0,awaken:true,focus:'rest',choose:(d,p,options)=>d.kind==='career'?d.choices.find(c=>c.careerId===id):chooseV8Policy(d,p,options)});
+  const {state:s}=simulateV8(seed,{policy:0,awaken:true,focus:'rest',careerPolicy:'pause',careerId:id});
   if(s.run.status!=='ended'||s.progression.activeCareerId!==id||s.power.level!==1||s.power.practiceDays!==0)throw Error('V8 career ordinary-life route failed: '+id);
  }
- return {authoredStoryForks:ids.size,authoredStoryChoices:allChoices.size,caregiverObservations:v8Observations.length,ordinaryEndings:Object.keys(v8Endings).length,reusedRitualStages:7,reusedRitualChoices:14,reachableForks:[...ids].filter(id=>seen.has(id)).length,reachableChoices:allChoices.size,reachableEndings:endings.size,simulatedNaturalLives:lives,callbackChoiceNaturalLives:checkpointPaths.size,distinctBaseSeeds:101,originCareerChecks:reps.size,careerNaturalLives:careerSeeds.size,careerSeeds:Object.fromEntries(careerSeeds),ageRange:[minAge,maxAge],maxDecisionsAndContinuationsAndSeeks:maxSteps,realTimePlayDuration:'not measured; simulations use explicit skip controls',phase2Target:{newMoments:65,newChoices:150,newEndingTarget:12,complete:false}};
+ const migrated=new Set(),migratedChoices=new Set(),promoted=new Set();let promotionLives=0;
+ for(const [careerId,seed]of careerSeeds)for(let policy=0;policy<2;policy++){
+  const {state:s,seen:trace}=simulateV8(seed,{policy:0,awaken:true,focus:'study',careerId,choose:(d,p,o)=>d.kind==='career-story'?d.choices[policy]:chooseV8Policy(d,p,o)});promotionLives++;validateProgression(s);
+  if(s.run.status!=='ended'||!s.progression.records[careerId].advanced||s.power.level!==1||s.power.practiceDays!==0)throw Error('Career promotion failed '+careerId);
+  promoted.add(careerId);for(const id of trace.events)if(id.startsWith('career.'))migrated.add(id);
+  for(const id of trace.choices)if(id.startsWith('career.'))migratedChoices.add(id);
+ }
+ if(migrated.size!==careerEvents.length||migratedChoices.size!==careerEvents.reduce((n,e)=>n+e.choices.length,0))throw Error('Incomplete migrated career responses');
+ const missing=[...allChoices].filter(id=>!reached.has(id));
+ if(missing.length)throw Error('Unreached V8 choices: '+missing.join(', '));
+ if(origins.size!==20||endings.size!==Object.keys(v8Endings).length)throw Error('Incomplete V8 ordinary paths');
+ return {authoredStoryForks:ids.size,authoredStoryChoices:allChoices.size,caregiverObservations:v8Observations.length,ordinaryEndings:Object.keys(v8Endings).length,reusedRitualStages:7,reusedRitualChoices:14,reachableForks:[...ids].filter(id=>seen.has(id)).length,reachableChoices:allChoices.size,reachableEndings:endings.size,simulatedNaturalLives:lives,callbackChoiceNaturalLives:checkpointPaths.size,newVocationForks:v8CareerEvents.length,newVocationChoices:v8CareerEvents.reduce((n,e)=>n+e.choices.length,0),vocationChoiceNaturalLives:vocationChoiceLives,migratedCareerEpisodes:migrated.size,migratedCareerResponses:migratedChoices.size,careerPromotionLives:promotionLives,promotedCareerFamilies:promoted.size,distinctBaseSeeds:101,originCareerChecks:reps.size,careerNaturalLives:careerSeeds.size,careerSeeds:Object.fromEntries(careerSeeds),ageRange:[minAge,maxAge],maxDecisionsAndContinuationsAndSeeks:maxSteps,realTimePlayDuration:'not measured; simulations use explicit skip controls',phase2Target:{newMoments:65,newChoices:150,newEndingTarget:12,complete:false}};
 }

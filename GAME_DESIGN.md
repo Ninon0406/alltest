@@ -1,4 +1,4 @@
-# REBORN V8 — implemented life and callback stories / 0.16.0
+# REBORN V8 — life, vocation stories and manual advancement / 0.17.0
 
 The attached [V8 contract](docs/v8/REBORN_V8_MASTER_PROMPT.md) supersedes conflicting instructions below. The default experience is a fast, one-column, Thai choice-based fantasy life. Existing working mechanics remain domain modules, and the original V7 interface remains a compatibility test surface under `?classic=1`.
 
@@ -16,7 +16,15 @@ Actual delivered work creates `v8.wagesDue`, separate from spendable gold. A sev
 
 At immutable seeded lifespan closure, the engine chooses one of eight genuinely conditioned epilogues. Four newer chains take priority only when their multiple requirements hold: verified/published/passed-on research + knowledge; established/handed-on care + maintained bonds; documented/audited/passed-on work + cleared wages; or childhood listening/reconciliation/letters + bonds. Otherwise the original garden/book/roads/home conditions remain. Life never ends early merely by selecting a project. Final screen shows real age/persona/career/relationship/gold/unpaid wages/community impact and up to eight past decisions. The existing archive accepts only a non-resumable terminal summary, idempotently. Earlier legitimate summaries and old save keys remain intact.
 
-V8 now has 47 new authored forks / 141 choices plus five observations and eight new endings. Reused ritual/career/power data are not new story counts. Full 65/150 V8 story acceptance, twelve new endings, vocation-specific branches/promotion, richer NPCs/businesses, additional scenes, new realms and divine ending remain future work. There is no measured human play-duration claim; test simulations use the explicit skip control.
+V8 now offers the original three career episodes for all20 families at12½/14½/16½, never before their old minimum ages12/13/16. The original stat/XP/perk effects are shared with the historical reader, while the V8 adapter spends exactly seven real days and records one manual decision. A free pause preserves progress and permits normal work/study; resume is manual. Career stories and qualified promotions participate in the same clock boundaries as other important decisions, so automatic time never resolves them.
+
+Actual three-episode completion, XP>=120, mastery>=60 and earned base primary-stat requirements unlock manual review from18½. Accepting uses the original seven-day promotion transaction, resource-cap/current-resource reward and later wage/training bonuses once. Deferral is free; time alone cannot earn the record. A qualified monthly task stops its remaining month for manual review. Career XP/mastery/perks and actual changed base stats now appear in receipts/details. Professional advancement never grants a power level.
+
+For a chosen career, study focus explicitly means seven days of real primary-stat practice/month plus ordinary knowledge; it consumes stamina/focus and creates fatigue through the existing training engine. It gives no power XP. Unaffiliated study remains passive learning, and the five adult focus cards/rest default remain. Cultivation still requires a separate explicit choice. This makes ordinary professional mastery possible without forced cultivation.
+
+Eight original vocation forks link seed comparison/exchange to community reserves, listening in care to consent, actual repair work to explicit standards, and measured maps to documented limits. Their gates use the real active career/arc/mastery and previous choices; some choices call actual work/training rather than granting fake salary/XP. Free opt-outs keep the existing ordinary endings viable. Four additional epilogues require these multi-stage projects, actual promotion and maintained knowledge/bonds, followed by genuine natural death. The eight earlier V8 epilogues remain.
+
+Current authored totals:55 new forks/165 choices/five observations/twelve V8 endings. All60 migrated episodes/120 responses, pause/resume, promotion and reused rituals remain separate from new counts. The65-fork threshold,32 new branches for sixteen other career families, richer NPC/business/world contexts, new realms and deity remain unfinished. No measured human play-duration claim; tests use explicit skip controls.
 
 Historical design follows only where compatible.
 

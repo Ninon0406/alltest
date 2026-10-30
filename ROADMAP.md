@@ -1,4 +1,4 @@
-# Roadmap — V8 controlling checkpoint / 0.16.0
+# Roadmap — V8 controlling checkpoint / 0.17.0
 
 V8 replaces conflicting V7 priorities. Implement the life loop before the old massive world/gear backlog. The authoritative file is docs/v8/REBORN_V8_MASTER_PROMPT.md.
 
@@ -10,9 +10,12 @@ V8 replaces conflicting V7 priorities. Implement the life loop before the old ma
 - [x] Phase 1 core checkpoint published: 125 unit / 78 browser cases, content/build/stage, all SIX independent preview/public verifiers and full CI succeeded. This does not mark the larger V8 content acceptance target complete.
 - [x] Phase 2 first callback cluster: eighteen original family/academic/community-work forks / 54 choices, real delivered-work receivables/partial payment/waiver, conditional research/family/care/work outcomes, four additional natural endings.
 - [x] Published/verified 0.16.0:134 unit/82 browser cases, content/build/stage,180 compositions, all SIX preview/public scripts and full CI41004540436. All34 current/cached JS/CSS hashes survive artifact deployment; actual previous cached HTML still plays. Next is vocation-specific stories/promotion, not rebuilding this release.
-- [ ] Phase 2: 65 new executable stories / 150 actual choices. Current 47 / 141. Add distinctive career-specific consequences and manual promotion next; do not duplicate the completed family/library/receivable chains.
-- [ ] First full V8 release ending target: eight of at least twelve original reachable endings; this is an incremental checkpoint, not full V8 acceptance.
-- [ ] Two new vocation-specific branches for each of 20 careers; migrate relevant existing arcs/promotion into the V8 scheduler.
+- [x] Reused all60 genuine career episodes/120 responses in V8, with manual choice, free pause/resume and shared exact time boundaries. Original effects remain shared with the legacy reader.
+- [x] All20 careers can earn and manually accept promotion with actual records/time; study supports ordinary non-power skill practice. No calendar-only or automatic promotion.
+- [x] First four vocation families (farmer/healer/smith/scholar): eight original forks/24 choices and four promoted-career endings.
+- [ ] Phase 2:65 new executable stories. Current55/165 choices; the150-choice threshold is met. Continue the sixteen other career families; do not duplicate migrated episodes to meet counts.
+- [x] Twelve original V8 endings are conditionally reachable; this threshold alone is not full V8 acceptance.
+- [ ] Two new vocation-specific branches for each of20 careers:8/40 done,32 remain. Next cluster: inventor/alchemist/merchant/sailor with distinct mechanics and callbacks.
 - [ ] Phase 3: contextual world/travel/services and earned realms 11–40 with real manual gates.
 - [ ] Phase 4: illness/earned lifespan extensions, eras, power 41–99, actual divine requirements and 30 endings.
 - [ ] Phase 5: 100 genuine endings, cross-career validation and final balance/performance.

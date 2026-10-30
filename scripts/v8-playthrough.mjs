@@ -13,18 +13,18 @@ export async function v8Focus(page,id){
  const s=await v8Snapshot(page);if(!v8Focuses(s).some(f=>f.id===id)||s.v8.focus===id||s.v8.nextFocus===id)return;
  await page.getByText('แนวชีวิตช่วงนี้',{exact:true}).click();await page.locator(`[data-focus-id="${id}"]`).click();
 }
-export async function playV8Until(page,{eventId=null,policy=0,awaken=false,focus=null,storyPath='quiet',choose=chooseV8Policy}={}){
+export async function playV8Until(page,{eventId=null,policy=0,awaken=false,focus=null,storyPath='quiet',choose=chooseV8Policy,careerId=null,careerPolicy='complete'}={}){
  for(let step=0;step<240;step++){
   const s=await v8Snapshot(page),d=v8Decision(s);
   if(s.run.status==='ended'||d?.id===eventId)return s;
   if(s.v8.outcome)await page.getByRole('button',{name:'ดำเนินชีวิตต่อ',exact:true}).click();
-  else if(d){const c=choose(d,policy,{awaken,state:s,storyPath});if(!c||c.disabled)throw Error(`Unavailable browser policy: ${d.id}`);await page.locator(`[data-choice-id="${c.id}"]`).click();}
+  else if(d){const c=choose(d,policy,{awaken,state:s,storyPath,careerId,careerPolicy});if(!c||c.disabled)throw Error(`Unavailable browser policy: ${d.id}`);await page.locator(`[data-choice-id="${c.id}"]`).click();}
   else{if(focus)await v8Focus(page,focus);await page.getByRole('button',{name:'ข้ามไปเหตุการณ์ถัดไป',exact:true}).click();}
  }
  throw Error('V8 browser flow stalled');
 }
-export async function finishV8(page,{policy=0,awaken=false,focus=policy===1?'study':policy===0?'bonds':policy===2?'work':'rest',storyPath='quiet',choose=chooseV8Policy}={}){
- const s=await playV8Until(page,{policy,awaken,focus,storyPath,choose});
+export async function finishV8(page,{policy=0,awaken=false,focus=policy===1?'study':policy===0?'bonds':policy===2?'work':'rest',storyPath='quiet',choose=chooseV8Policy,careerId=null,careerPolicy='complete'}={}){
+ const s=await playV8Until(page,{policy,awaken,focus,storyPath,choose,careerId,careerPolicy});
  if(s.run.status!=='ended'||!s.run.endingId.startsWith('v8.')||s.age!==s.birth.lifespan)throw Error('Not a natural V8 ending');
  await page.waitForFunction(id=>{const raw=localStorage.getItem('reborn_finished_lives_v1');return raw&&JSON.parse(raw).lives.filter(r=>r.runId===id).length===1;},s.run.id);
  const summary=await page.evaluate(id=>JSON.parse(localStorage.getItem('reborn_finished_lives_v1')).lives.find(r=>r.runId===id),s.run.id);

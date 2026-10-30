@@ -27,3 +27,4 @@ export const careers=rows.map(([id,label,primary,minimum,secondary,secondMinimum
 }));
 export const getCareer=id=>careers.find(c=>c.id===id);
 export const statKeys=['str','dex','con','int','wis','per','luk','cha'];
+export const statLabels={str:'พละกำลัง',dex:'ความคล่อง',con:'ความทนทาน',int:'สติปัญญา',wis:'ความเข้าใจ',per:'การสังเกต',luk:'โชค',cha:'เสน่ห์'};

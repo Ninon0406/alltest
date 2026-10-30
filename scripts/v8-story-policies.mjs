@@ -1,5 +1,7 @@
 import {v8CommunityEvents} from '../src/data/v8-community-events.js';
+import {v8CareerEvents} from '../src/data/v8-career-events.js';
 const communityIds=new Set(v8CommunityEvents.map(e=>e.id));
+const vocationIds=new Set(v8CareerEvents.map(e=>e.id));
 export const v8CallbackPaths={
  'family-table':'family','hard-assignment':'library','public-project':'library','open-study':'library',
  'family-reunion':'family','family-letter':'family','workshop-commission':'fairwork','delayed-payment':'fairwork','payment-followup':'fairwork',
@@ -16,6 +18,7 @@ const paths={
 };
 export function chooseV8StoryPath(d,path='quiet'){
  if(path==='varied')return null;
+ if(vocationIds.has(d.id))return path==='vocation'?d.choices.find(c=>!c.disabled):d.choices.at(-1);
  const id=paths[path]?.[d.id];
  if(id){const choice=d.choices.find(c=>c.id===id);if(!choice||choice.disabled)throw Error(`Story path ${path} cannot choose ${d.id}:${id}: ${choice?.unavailable}`);return choice;}
  return communityIds.has(d.id)?d.choices.at(-1):null;

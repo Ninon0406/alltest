@@ -1,11 +1,14 @@
 import {createRun} from './run.js';
 import {calendar,advanceTime,recordAction,normalize} from './time.js';
 import {storyToken} from './life.js';
+import {applyLifeEffects} from './life-effects.js';
+import {v8CanResumeCareer} from './v8-career-model.js';
 import {v8Decision,v8NextDecisionDay,v8Focuses,naturalEndDay,v8CanResumePower,isV8} from './v8-model.js';
 import {v8Observations} from '../data/v8-life-events.js';
 import {v8EndingId} from '../data/v8-endings.js';
 import {advanceAwakening} from '../progression/awakening.js';
-import {selectCareer,currentCareer,train,workCareer} from '../progression/engine.js';
+import {selectCareer,currentCareer,train,workCareer,promote} from '../progression/engine.js';
+import {validateProgression} from '../progression/validate.js';
 import {trainPower,resolvePower,resumePower} from '../progression/power.js';
 import {hasPower,powerReady} from '../progression/power-model.js';
 import {travel} from '../world/travel.js';
@@ -13,11 +16,11 @@ import {effectiveCapacities} from '../character/equipment-stats.js';
 
 export function createV8Run(seed,identity){
  const state=createRun(seed,identity);state.story.version=8;state.morale=70;
- state.v8={version:1,stage:'reveal',focus:'care',nextFocus:null,knowledge:0,bonds:0,wagesDue:0,completed:[],observed:[],flags:{},relationship:'none',ritual:false,careerOffered:false,outcome:null,lastRoutineWindow:null,routineDays:0,lastAmbient:null,finishedAtDay:null};
+ state.v8={version:1,stage:'reveal',focus:'care',nextFocus:null,knowledge:0,bonds:0,wagesDue:0,completed:[],observed:[],flags:{},relationship:'none',ritual:false,careerOffered:false,careerPaused:false,outcome:null,lastRoutineWindow:null,routineDays:0,lastAmbient:null,finishedAtDay:null};
  return state;
 }
 const clamp=n=>Math.max(0,Math.min(100,n));
-export const v8Vitals=state=>({health:state.hp/effectiveCapacities(state).maxHp*100,happiness:state.morale,knowledge:state.v8.knowledge,bonds:state.v8.bonds,gold:state.gold,wagesDue:state.v8.wagesDue??0,stamina:state.stamina,focus:state.progression.focus,mana:state.mana,power:state.power.level});
+export const v8Vitals=state=>({health:state.hp/effectiveCapacities(state).maxHp*100,happiness:state.morale,knowledge:state.v8.knowledge,bonds:state.v8.bonds,gold:state.gold,wagesDue:state.v8.wagesDue??0,stamina:state.stamina,focus:state.progression.focus,mana:state.mana,power:state.power.level,...effectiveCapacities(state),...state.stats,careerXp:state.progression.records[state.progression.activeCareerId]?.xp??0,careerMastery:state.progression.records[state.progression.activeCareerId]?.mastery??0,trainingBonus:state.progression.records[state.progression.activeCareerId]?.trainingBonus??0,payBonus:state.progression.records[state.progression.activeCareerId]?.payBonus??0});
 function delta(before,state){const after=v8Vitals(state);return Object.fromEntries(Object.entries(after).map(([key,n])=>[key,Math.round((n-before[key])*100)/100]).filter(([,n])=>n!==0));}
 function observe(state){
  for(const event of v8Observations)if(calendar(state).ageMonths>=event.month&&!state.v8.observed.includes(event.id)){
@@ -56,6 +59,19 @@ function choose(state,action){
   if(c.careerId)selectCareer(state,c.careerId);else{v.flags.ordinaryPath=true;recordAction(state,'เลือกชีวิตชุมชนโดยไม่ผูกอาชีพ',0,{majorDecision:d.id,choiceId:c.id});}
   if(c.careerId){state.journal.at(-1).majorDecision=d.id;state.journal.at(-1).choiceId=c.id;}
   outcome(state,d,c,before,c.careerId?`คุณเริ่มเส้นทาง${c.label}ด้วยการฝึกงานจริงเจ็ดวัน ยังมีเวลาสำหรับชีวิตด้านอื่น`:'คุณเลือกชีวิตที่ไม่ต้องแข่งขันด้านพลัง งานพื้นฐานและการเรียนรู้ยังเดินต่อได้');
+ }else if(d.kind==='career-story'||d.kind==='promotion'){
+  if(c.id==='career:pause'){
+   v.careerPaused=true;recordAction(state,`พักเรื่อง${d.title}`,0,{majorDecision:d.id,choiceId:c.id});
+   outcome(state,d,c,before,'คุณรักษางานและประสบการณ์เดิมไว้ ใช้ชีวิตด้านอื่นต่อได้ แล้วกลับมาทบทวนเรื่องอาชีพด้วยตนเองเมื่อพร้อม');
+  }else if(d.kind==='career-story'){
+   recordAction(state,`${d.title} — ${c.label}`,c.timeDays,{majorDecision:d.id,choiceId:c.id,careerId:d.event.careerId,effects:structuredClone(c.legacyChoice.effects)});
+   advanceTime(state,c.timeDays);applyLifeEffects(state,d.event,c.legacyChoice);state.progression.records[d.event.careerId].arcStep++;
+   v.completed.push(d.id);outcome(state,d,c,before,'คุณใช้เวลาทำงานตามที่เลือกครบเจ็ดวัน ผลงานนี้เพิ่มความถนัดและประสบการณ์อาชีพจริง โดยไม่เพิ่มระดับพลัง');
+  }else{
+   v.careerPaused=true;promote(state);v.careerPaused=false;v.completed.push(d.id);
+   state.journal.at(-1).majorDecision=d.id;state.journal.at(-1).choiceId=c.id;
+   outcome(state,d,c,before,'คุณรับขั้นใหม่จากผลงานและการฝึกที่ทำจริง ค่าจ้างและประสิทธิภาพใหม่จะใช้กับงานหรือการฝึกครั้งต่อไป ระดับพลังยังคงเดิม');
+  }
  }else if(d.kind==='power'){
   resolvePower(state,c.id);if(v.focus==='cultivate')v.focus='rest';v.nextFocus=null;
   outcome(state,d,c,before,c.id==='later'?'คุณเก็บบทฝึกไว้ พักฟื้นจริงแล้วกลับมาทบทวนได้เมื่อพร้อม':'ระดับสิบมาจากวันฝึกที่สะสมและการยืนยันของคุณ ไม่มีการเติมทรัพยากรทันที');
@@ -63,6 +79,8 @@ function choose(state,action){
   v.completed.push(d.id);
   if(c.special==='ritual'){v.ritual=true;state.progression.awakening.paused=false;}
   if(c.special==='travel')travel(state,c.trip.id,'walk');
+  else if(c.special==='career-practice')train(state,c.stat??currentCareer(state).primary);
+  else if(c.special==='career-job')workCareer(state);
   else{
    state.gold-=c.costGold;state.stamina-=c.stamina;
    if(c.costGold)state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:`story:${d.id}`,amount:-c.costGold});
@@ -73,8 +91,10 @@ function choose(state,action){
   }
   effect(state,c.effects);
   if(c.effects.gold)state.world.ledger.push({day:state.time.absoluteDay,location:state.world.currentLocationId,source:`story:${d.id}`,amount:c.effects.gold});
-  recordAction(state,`${d.title} — ${c.label}`,c.timeDays,{majorDecision:d.id,choiceId:c.id,ageMonths:calendar(state).ageMonths,goldDelta:state.gold-before.gold,wagesDueDelta:(v.wagesDue??0)-before.wagesDue});
-  if(c.special!=='travel')advanceTime(state,c.timeDays);
+  const details={majorDecision:d.id,choiceId:c.id,ageMonths:Math.floor((state.time.absoluteDay-state.time.birthAbsoluteDay)/30),goldDelta:state.gold-before.gold,wagesDueDelta:(v.wagesDue??0)-before.wagesDue};
+  if(c.special==='career-practice'||c.special==='career-job')Object.assign(state.journal.at(-1),details,{title:`${d.title} — ${c.label}`});
+  else recordAction(state,`${d.title} — ${c.label}`,c.timeDays,details);
+  if(!['travel','career-practice','career-job'].includes(c.special))advanceTime(state,c.timeDays);
   let text=c.outcomeText;
   if(d.id==='v8.home-return')text+=(v.relationship==='partner'?' คนที่คบกันยังเป็นส่วนหนึ่งของการนัดหมาย':v.relationship==='friend'?' มิตรภาพที่คุณเลือกยังมีพื้นที่ในบ้านนี้':' คุณรักษาพื้นที่อิสระและติดต่อคนรอบตัวตามที่สบายใจ');
   outcome(state,d,c,before,text);
@@ -93,7 +113,7 @@ function routine(state,end){
   const left=end-start,ready=state.stamina>=15&&state.progression.fatigue<80&&state.progression.focus>=25&&state.morale>=20;
   if(left>=7&&state.age>=12){
    if(v.focus==='cultivate'&&!powerReady(state)&&ready){trainPower(state);v.lastRoutineWindow=window;}
-   else if(v.focus==='practice'&&ready){train(state,currentCareer(state)?.primary??'con');v.lastRoutineWindow=window;}
+   else if((v.focus==='practice'||v.focus==='study'&&currentCareer(state))&&ready){train(state,currentCareer(state)?.primary??'con');v.lastRoutineWindow=window;}
    else if(v.focus==='work'&&state.stamina>=15&&state.progression.fatigue<85){
     if(currentCareer(state))workCareer(state);
     else{state.gold+=5;state.stamina-=10;state.progression.fatigue+=10;recordAction(state,'งานพื้นฐานที่เหมาะกับวัยในชุมชน',7,{goldDelta:5});state.world.ledger.push({day:start,location:state.world.currentLocationId,source:'v8:community-work',amount:5});advanceTime(state,7);}
@@ -101,7 +121,7 @@ function routine(state,end){
    }
   }
  }
- const remaining=powerReady(state)&&!state.power.deferred?0:end-state.time.absoluteDay;
+ const remaining=v8Decision(state)?0:end-state.time.absoluteDay;
  if(remaining){
   const recovery=remaining/30;
   state.stamina+=Math.ceil(recovery*30);state.mana+=Math.ceil(recovery*25);state.progression.focus=clamp(state.progression.focus+Math.ceil(recovery*25));state.progression.fatigue=clamp(state.progression.fatigue-Math.ceil(recovery*30));
@@ -154,8 +174,10 @@ export function dispatchV8(input,action){
  }else if(action.type==='v8Tick'){
   if(action.days!==30)throw Error('เวลาอัตโนมัติเดินครั้งละหนึ่งเดือน');passTime(state,action.days);
  }else if(action.type==='v8Seek')passTime(state,Math.max(1,v8NextDecisionDay(state)-state.time.absoluteDay));
- else if(action.type==='v8ResumePower'){
+ else if(action.type==='v8ResumeCareer'){
+  if(!v8CanResumeCareer(state))throw Error('ไม่มีเรื่องอาชีพที่พักไว้');v.careerPaused=false;
+ }else if(action.type==='v8ResumePower'){
   if(!v8CanResumePower(state))throw Error('ไม่มีบทฝึกที่พร้อมทบทวน');resumePower(state);
  }else throw Error('ทำรายการนี้ไม่ได้');
- normalize(state);if(!hasPower(state))throw Error('บันทึกพลังไม่สอดคล้องกับวันฝึกจริง');if(!Number.isSafeInteger(v.wagesDue??0)||(v.wagesDue??0)<0)throw Error('บัญชีค่าจ้างไม่ถูกต้อง');state.life.revision++;return state;
+ normalize(state);validateProgression(state);if(!hasPower(state))throw Error('บันทึกพลังไม่สอดคล้องกับวันฝึกจริง');if(!Number.isSafeInteger(v.wagesDue??0)||(v.wagesDue??0)<0)throw Error('บัญชีค่าจ้างไม่ถูกต้อง');state.life.revision++;return state;
 }

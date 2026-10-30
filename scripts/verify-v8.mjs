@@ -6,6 +6,7 @@ import {checkPublishedInteriors} from './published-interior-check.mjs';
 import {checkPublishedEquipment} from './published-equipment-check.mjs';
 import {v8Decision} from '../src/engine/v8-model.js';
 import {checkPublishedBuilds} from './published-build-check.mjs';
+import {currentCareer} from '../src/progression/engine.js';
 const url=process.argv[2]??'http://127.0.0.1:4185/';mkdirSync('work',{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 const endings=new Set();
@@ -53,4 +54,21 @@ try{
   }
   if(!reached)throw Error('No genuine eligible library lifespan observed in eight births');
  }
+ const careerPage=await browser.newPage({viewport:{width:320,height:844}}),careerErrors=[];careerPage.on('pageerror',e=>careerErrors.push(e.message));careerPage.on('requestfailed',r=>careerErrors.push(r.url()));careerPage.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))careerErrors.push(`${r.status()} ${r.url()}`);});
+ await startV8(careerPage,{url});
+ const offered=await playV8Until(careerPage,{eventId:'v8.career',awaken:true,focus:'rest'}),choice=v8Decision(offered).choices.find(c=>c.careerId),careerId=choice.careerId;
+ await careerPage.locator(`[data-choice-id="${choice.id}"]`).click();
+ const first=await playV8Until(careerPage,{eventId:`career.${careerId}.1`,awaken:true,focus:'rest',careerId});
+ await careerPage.locator('[data-choice-id="career:pause"]').click();const paused=await v8Snapshot(careerPage);
+ if(paused.time.absoluteDay!==first.time.absoluteDay||JSON.stringify(paused.progression)!==JSON.stringify(first.progression))throw Error('Career pause granted progress');
+ await careerPage.getByRole('button',{name:'ดำเนินชีวิตต่อ',exact:true}).click();await careerPage.getByRole('button',{name:'กลับไปทบทวนงานอาชีพ',exact:true}).click();
+ const readyCareer=await playV8Until(careerPage,{eventId:`v8.promotion:${careerId}`,awaken:true,careerId,focus:'study'}),profile=currentCareer(readyCareer),record=readyCareer.progression.records[careerId];
+ if(record.advanced||record.arcStep!==3||record.xp<120||record.mastery<60||readyCareer.power.practiceDays!==0)throw Error('Unearned career promotion');
+ await careerPage.locator('[data-choice-id="career:promote"]').evaluate(b=>{b.click();b.click();});const advanced=await v8Snapshot(careerPage);
+ if(!advanced.progression.records[careerId].advanced||advanced.time.absoluteDay!==readyCareer.time.absoluteDay+7||advanced[profile.advanced.resource]!==readyCareer[profile.advanced.resource]+profile.advanced.resourceBonus||advanced.power.level!==readyCareer.power.level)throw Error('Career promotion paid twice or changed power');
+ await careerPage.screenshot({path:'work/v8-public-career-promotion-320.png'});
+ const natural=await finishV8(careerPage,{awaken:true,careerId,focus:'study',storyPath:'vocation',policy:0});
+ const epilogues={farmer:'v8.seedbank',healer:'v8.consent',smith:'v8.repairs',scholar:'v8.margins'};
+ if(epilogues[careerId]&&natural.run.endingId!==epilogues[careerId]||natural.power.practiceDays!==0||careerErrors.length)throw Error('Professional ordinary life failed '+careerErrors.join('\n'));
+ console.log(`PASS V8 ${url}: actual ${careerId} career episodes, pause/resume, earned manual promotion, no power practice and genuine natural epilogue at 320px`);await careerPage.close();
 }finally{await browser.close();}
