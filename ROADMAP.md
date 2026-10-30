@@ -7,7 +7,7 @@ V8 replaces conflicting V7 priorities. Implement the life loop before the old ma
 - [x] Age-appropriate focus, five caregiver observations, sparse manual childhood/adult stories, ordinary opt-out of awakening.
 - [x] Reused seven actual ritual stages, top-eight eligible careers and earned first-realm power/manual certification.
 - [x] Natural ordinary lifespans and four state-conditioned endings, terminal-only archive, no active save or resurrection.
-- [ ] Phase 1 final release verification: full local/production gates; see NEXT for the latest confirmed status.
+- [x] Phase 1 core checkpoint published: 125 unit / 78 browser cases, content/build/stage, all SIX independent preview/public verifiers and full CI succeeded. This does not mark the larger V8 content acceptance target complete.
 - [ ] Phase 2: 65 new executable stories / 150 actual choices. Current 29 / 87; adult relationship, one real trip, scholarship callback and safe road encounter are included. Add conditional family/academic/career/world callbacks next, not duplicated labels.
 - [ ] First full V8 release ending target: four of at least twelve original reachable endings; this is a core checkpoint, not full V8 acceptance.
 - [ ] Two new vocation-specific branches for each of 20 careers; migrate relevant existing arcs/promotion into the V8 scheduler.

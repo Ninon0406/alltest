@@ -18,7 +18,7 @@ The preserved compatibility registry remains 156 scenes/events / 359 authored ch
 
 Art/world counts are unchanged: 20 outdoor PNGs, 16 regional/contextual interior PNGs, 183 character PNG layers and six equipment PNGs; twenty connected canonical places, five regions, twenty edges, eight preserved equipment shops. There are no new AI artworks, place nodes, authored important NPC profiles or functional dungeons this round. Family portraits and pixel combinations do not multiply authored content. Adult relationships currently use an original anonymous adult contact/state, not a claimed authored NPC roster.
 
-Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Full verification/publication evidence is in NEXT_CODEX_TASK.
+Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Runtime 3d1389a is published and verified: 125 unit / 78 browser cases, content/build/staging, 180 complete character fixtures and all SIX independent preview/public scripts passed, plus full CI 40997632460. Full verification/publication evidence is in NEXT_CODEX_TASK.
 
 Historical V7 manifest follows.
 
