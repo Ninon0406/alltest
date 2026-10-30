@@ -21,7 +21,7 @@ The new stories are original Thai family listening/reunion/letters; difficult as
 
 Art/world counts are unchanged: 20 outdoor PNGs, 16 regional/contextual interior PNGs, 183 character PNG layers and six equipment PNGs; twenty connected canonical places, five regions, twenty edges, eight preserved equipment shops. There are no new AI artworks, place nodes, authored important NPC profiles or functional dungeons this round. Family portraits and pixel combinations do not multiply authored content. Adult relationships currently use an original anonymous adult contact/state, not a claimed authored NPC roster.
 
-Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Previous runtime 3d1389a is the verified published core; current 0.16.0 verification/publication status is recorded in NEXT_CODEX_TASK.
+Unfinished: 65+ new story moments/150+ new choices, at least twelve new endings for the full first V8 release, forty vocation-specific branches, richer conditional NPC/family/business content, new V8 promotion callbacks, power 11–100, illness/earned longevity, deity goals/trials and 100 endings. Gameplay runtime fcf50a1 and final publication hardening72f2d49 are live. Full CI41004540436 passed134 unit/82 browser cases, content/build/stage/180 character compositions and all SIX live scripts; independent preview/public checks also passed, including all34 retained/current JS/CSS hashes and the previous cached HTML. Exact evidence is in NEXT_CODEX_TASK.
 
 Historical V7 manifest follows.
 

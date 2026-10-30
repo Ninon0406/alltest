@@ -9,6 +9,7 @@ V8 replaces conflicting V7 priorities. Implement the life loop before the old ma
 - [x] Natural ordinary lifespans and four state-conditioned endings, terminal-only archive, no active save or resurrection.
 - [x] Phase 1 core checkpoint published: 125 unit / 78 browser cases, content/build/stage, all SIX independent preview/public verifiers and full CI succeeded. This does not mark the larger V8 content acceptance target complete.
 - [x] Phase 2 first callback cluster: eighteen original family/academic/community-work forks / 54 choices, real delivered-work receivables/partial payment/waiver, conditional research/family/care/work outcomes, four additional natural endings.
+- [x] Published/verified 0.16.0:134 unit/82 browser cases, content/build/stage,180 compositions, all SIX preview/public scripts and full CI41004540436. All34 current/cached JS/CSS hashes survive artifact deployment; actual previous cached HTML still plays. Next is vocation-specific stories/promotion, not rebuilding this release.
 - [ ] Phase 2: 65 new executable stories / 150 actual choices. Current 47 / 141. Add distinctive career-specific consequences and manual promotion next; do not duplicate the completed family/library/receivable chains.
 - [ ] First full V8 release ending target: eight of at least twelve original reachable endings; this is an incremental checkpoint, not full V8 acceptance.
 - [ ] Two new vocation-specific branches for each of 20 careers; migrate relevant existing arcs/promotion into the V8 scheduler.
