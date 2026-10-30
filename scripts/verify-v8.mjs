@@ -7,13 +7,13 @@ import {checkPublishedEquipment} from './published-equipment-check.mjs';
 import {v8Decision} from '../src/engine/v8-model.js';
 import {checkPublishedBuilds} from './published-build-check.mjs';
 const url=process.argv[2]??'http://127.0.0.1:4185/';mkdirSync('work',{recursive:true});
-console.log(`PASS V8 ${url}: ${await checkPublishedBuilds(url)} current/cached JS and CSS files match staged hashes`);
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined),args:['--no-sandbox']});
 const endings=new Set();
 try{
  for(const [index,width]of [320,360,390,768,1024,1366,1920].entries()){
   const page=await browser.newPage({viewport:{width,height:900}}),errors=[];page.setDefaultTimeout(30000);page.on('pageerror',e=>errors.push(e.message));page.on('requestfailed',r=>errors.push(r.url()));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))errors.push(`${r.status()} ${r.url()}`);});
   await startV8(page,{url});await page.getByRole('button',{name:'ข้ามไปเหตุการณ์ถัดไป',exact:true}).click();await waitForCharacterImages(page);await page.locator('.location-image').evaluate(image=>image.decode());
+  if(index===0)console.log(`PASS V8 ${url}: ${await checkPublishedBuilds(page)} current/cached JS and CSS files match staged hashes`);
   const s=await v8Snapshot(page),metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,css:document.styleSheets.length,height:document.querySelector('.play-scene').getBoundingClientRect().height,actionBottom:document.querySelector('.v8-choice').getBoundingClientRect().bottom}));
   if(s.time.absoluteDay!==540||metrics.overflow||!metrics.css||metrics.height>200||metrics.actionBottom>900)throw Error('V8 dashboard failed '+JSON.stringify(metrics));
   await page.getByRole('button',{name:'แผนที่',exact:true}).click();await page.getByRole('combobox',{name:'เลือกสถานที่ที่รู้จัก'}).selectOption({index:1});if(JSON.stringify(await v8Snapshot(page))!==JSON.stringify(s))throw Error('Map changed V8 life');await page.keyboard.press('Escape');
