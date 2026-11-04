@@ -92,3 +92,15 @@ Base3ca8268 working tree clean and latest remote CI passed before work. All earl
 - git diff --check clean. Specs/skills and existing art assets preserved; canonical master spec unchanged.
 
 Remaining acceptance: full party/multi-enemy targeting, mastery/earned levels, boss resistance/phases, chapter endings, full234 VFX visual distinctness and final art. LIGHT dispels VEIL before hit resolution, including a miss; new enemy VEIL counts its current enemy phase and may appear in the log rather than a next-turn chip. Status interpretations are recorded in DECISIONS/BALANCE rather than silently changing the spec.
+
+## 0.2.0 release proof
+
+- Implementation bd6f705; [PR #3](https://github.com/Ninon0406/alltest/pull/3) MERGED at2eec3a1a2322c13b884cb00f70da63a045d7dccc.
+- [PR CI41928767310](https://github.com/Ninon0406/alltest/actions/runs/41928767310) SUCCESS including all current tests/browser cases and artifact upload.
+- [main:/ Pages41929503339](https://github.com/Ninon0406/alltest/actions/runs/41929503339) SUCCESS.
+- Updated verifier first PASS on production preview, then actual public command `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` PASS: touch/start/forest battle/clue/reload/FIRE craft/practice/win/export checksum/import. Output trainingAndFire=true, checksumExport=true, importRoundTrip=true, empty observed page-error/HTTP-failure list.
+- Public JS SHA-25631f46957156b2cd0c6243e964206f01448f9bc496eabb2dcca3db7373e0b80ff equals local staged bytes. Exported State2 contains actual slice_complete/training_won flags and independent canonical save checksum matches. Evidence public-training-390.png and public-battle-390.png.
+
+[Main workflow41929504279](https://github.com/Ninon0406/alltest/actions/runs/41929504279) SUCCESS. Build126922499789 completed all59 unit/integration/balance cases and23 browser cases through the standard scripts; deploy126924282167 completed configure-pages/deploy-pages at2026-11-04 22:59:58 UTC. Later evidence-only edits do not change the game bundle.
+
+Post-Actions public HTML/JS hash gate PASS: same31f46957156b2cd0c6243e964206f01448f9bc496eabb2dcca3db7373e0b80ff. Confirms the Actions-deployed bytes match the production-preview/full-browser and public gameplay/fire/practice/save validation.

@@ -6,6 +6,8 @@ Game state2 migrates actual V1 files/active battles without rerolling; database/
 
 Still first slice: no complete chapter/festival/boss/three endings, final HD art, audio, multiple enemies/party roster or mastery progression.
 
+Published and public-smoke verified at https://ninon0406.github.io/alltest/ · PR #3 /2eec3a1.
+
 ## Earlier releases
 
 # 0.1.1 — ความทรงจำที่กลับมาได้

@@ -1,6 +1,6 @@
 # GODSEED — ความคืบหน้า 0.2.0
 
-2026-11-04 UTC · base `3ca8268` · branch `feat/godseed-elemental-combat`
+2026-11-04 UTC · base `3ca8268` · branch `main` · implementation `bd6f705` · merge `2eec3a1` · [PR #3](https://github.com/Ninon0406/alltest/pull/3) MERGED
 
 อ่านคำสั่งทำต่อและตรวจ main/working tree/CI รุ่นก่อนแล้ว ต่อจากเกมเดิม ระบบเซฟ 0.1.1 และลูปป่ายังอยู่ครบ รอบนี้ GS-016/018/020/022/024: combat effects, UI และการฝึกที่เข้าถึงได้จริง
 
@@ -22,7 +22,7 @@
 
 ## ตรวจสอบ
 
-Typecheck/lint/content 2/2/unit+integration+balance 59/59/build PASS; 600 simulated encounters ชนะทั้งหมด (400 จากทางเลือกจริง, 200 negative zero-MP fixtures ที่ระบุชัด) Focused browser ใหม่4/4 PASS; full browser 23/23 PASS (zero skipped) ดู TEST_REPORT.md; การเผยแพร่รุ่นใหม่รอ CI/merge
+Typecheck/lint/content 2/2/unit+integration+balance 59/59/build PASS; 600 simulated encounters ชนะทั้งหมด (400 จากทางเลือกจริง, 200 negative zero-MP fixtures ที่ระบุชัด) Focused browser ใหม่4/4 PASS; full browser 23/23 PASS (zero skipped) ดู TEST_REPORT.md; PR CI41928767310 และ main build/deploy41929504279 SUCCESS; Pages41929503339 SUCCESS; public training/fire/save roundtrip PASS
 
 ## งานถัดไป
 
@@ -31,3 +31,7 @@ Typecheck/lint/content 2/2/unit+integration+balance 59/59/build PASS; 600 simula
 3. GS-022/023/027/028 ต่อศัตรู B02–B05, boss phases/assist/disable immunity และเทศกาลกับสามบทสรุป
 
 ยังไม่ครบ: multiple enemies/party roster/mastery/level progression, full234 visual distinctness, final HD art, audio, map, PWA, actual Safari/hardware tests, 50/50 measured human pacing ระบบเซฟยังไม่มี cross-tab conflict resolution และไม่รับ versionอนาคตที่ไม่รู้จัก
+
+## เผยแพร่0.2.0
+
+https://ninon0406.github.io/alltest/ ตรวจ touch/start/forest/clue/reload/FIRE craft/practice/win/export checksum/import PASS พร้อม JS SHA-256 31f46957156b2cd0c6243e964206f01448f9bc496eabb2dcca3db7373e0b80ff ตรง build
