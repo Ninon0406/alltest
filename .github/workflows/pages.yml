@@ -1,73 +1,53 @@
-name: Publish REBORN to GitHub Pages
+name: GODSEED checks and Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: godseed-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build:
-    if: "!contains(github.event.head_commit.message, '[site-build]')"
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: GODSEED
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
+          cache-dependency-path: GODSEED/package-lock.json
       - run: npm ci
-      - run: npm test
+      - run: npm run test:all
+      - run: node scripts/stage-site.mjs
       - run: npx playwright install --with-deps chromium
-      - run: npm run build
-      - run: node scripts/verify-character-composition.mjs
       - run: npm run test:e2e
-      - run: npm run content
-      - name: Refresh static files for main branch Pages compatibility
-        run: |
-          node scripts/stage-site.mjs
-          node scripts/verify-interior-assets.mjs .
-          node scripts/verify-equipment-assets.mjs .
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html assets art .nojekyll
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh compiled Pages site [site-build]"
-            git push origin HEAD:main
-          fi
+        env:
+          CHROMIUM_PATH: ''
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: godseed-browser-evidence
+          path: GODSEED/test-results
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: GODSEED/dist
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Deploy
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: npm
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - name: Verify live CSS and gameplay
-        env:
-          SITE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: |
-          for attempt in 1 2 3 4; do
-            node scripts/verify-v8.mjs "$SITE_URL" && node scripts/verify-production.mjs "$SITE_URL" && node scripts/verify-progression.mjs "$SITE_URL" && node scripts/verify-one-life.mjs "$SITE_URL" && node scripts/verify-equipment.mjs "$SITE_URL" && node scripts/verify-power.mjs "$SITE_URL" && exit 0
-            sleep 15
-          done
-          exit 1

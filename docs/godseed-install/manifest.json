@@ -1,0 +1,116 @@
+{
+  "archive": "1-GODSEED_ALL_IN_ONE.zip",
+  "archive_sha256": "3d3b75315e822e0b0a9d23433706ec7d8186bd8f4324594b27c10ccbe1703ab7",
+  "original_agents_sha256": "94a430de5f29df578666f5c9874ef507530bda48775ba79c5b2e78c788081685",
+  "unchanged_readme_sha256": "a1ad55a3185a589185b944078ee9b8171b9ba86ff3f0d11c05269ec815523c97",
+  "files": [
+    {
+      "source": "README_START_HERE_TH.md",
+      "destination": "README_START_HERE_TH.md",
+      "bytes": 4851,
+      "sha256": "db28415b7a285528126f95799458bc81d019482680dc394a7ef72a8c2b288b14"
+    },
+    {
+      "source": "01_CODEX_START.md",
+      "destination": "01_CODEX_START.md",
+      "bytes": 17682,
+      "sha256": "1822d90101984916d180d6b08f0ba737803838f06936b909f4996df4788e7f67"
+    },
+    {
+      "source": "02_GODSEED_MASTER_SPEC.md",
+      "destination": "02_GODSEED_MASTER_SPEC.md",
+      "bytes": 127711,
+      "sha256": "451ce8aa3e95ee291aa3782a74c7037cd1b0196b92837bf03ad7e33ebc44879d"
+    },
+    {
+      "source": "03_CODEX_CONTINUE_FOREVER.md",
+      "destination": "03_CODEX_CONTINUE_FOREVER.md",
+      "bytes": 25316,
+      "sha256": "6a69083ef94a533b8a88ee9523f9180def0e8e48c1fd730ebe00025dafa3a46c"
+    },
+    {
+      "source": "00_SETUP_FROM_PHONE.md",
+      "destination": "00_SETUP_FROM_PHONE.md",
+      "bytes": 11103,
+      "sha256": "e0bce25a0f3946b2fae807cd906184681abaaf4cc3e48ea530885b3386eefe92"
+    },
+    {
+      "source": "GODSEED_INSTALL_ONE_PROMPT.md",
+      "destination": "GODSEED_INSTALL_ONE_PROMPT.md",
+      "bytes": 50526,
+      "sha256": "601634f517ae132dcc4031d36287be58e4263cb2b5aa6344822dbf1321cc6f75"
+    },
+    {
+      "source": "00_COPY_PASTE_IN_CODEX.md",
+      "destination": "00_COPY_PASTE_IN_CODEX.md",
+      "bytes": 8752,
+      "sha256": "670f66c5e31f6bf0119abb4d1362cf484769e69df1857f8a89a90792e15f554e"
+    },
+    {
+      "source": ".agents/skills/godseed-choice-cinematics/SKILL.md",
+      "destination": ".agents/skills/godseed-choice-cinematics/SKILL.md",
+      "bytes": 4591,
+      "sha256": "2ca9c25bc00b632434650cd145db07433c1bc8838f6fb398890c7e3d3a2afa13"
+    },
+    {
+      "source": ".agents/skills/godseed-combat-vfx/SKILL.md",
+      "destination": ".agents/skills/godseed-combat-vfx/SKILL.md",
+      "bytes": 3313,
+      "sha256": "8078f98149b48e1cc4814dc83c43de43bcdbfc649e78a0668daa9dd2cef27ab1"
+    },
+    {
+      "source": ".agents/skills/godseed-continuous-development/SKILL.md",
+      "destination": ".agents/skills/godseed-continuous-development/SKILL.md",
+      "bytes": 2967,
+      "sha256": "8aee74f2acd28e05de82c124b87e85fe0a87e13c6c7eec8e98b134301706ae5c"
+    },
+    {
+      "source": ".agents/skills/godseed-github-pages-delivery/SKILL.md",
+      "destination": ".agents/skills/godseed-github-pages-delivery/SKILL.md",
+      "bytes": 2785,
+      "sha256": "a95135b74f8296a465858d29b7e1eb096354072b4f95f5910a38ef78f37d1df4"
+    },
+    {
+      "source": ".agents/skills/godseed-narrative-memory-ai/SKILL.md",
+      "destination": ".agents/skills/godseed-narrative-memory-ai/SKILL.md",
+      "bytes": 3350,
+      "sha256": "ddd38026813260682823104577c201195727a3e83eab7b65158671c55397cac3"
+    },
+    {
+      "source": ".agents/skills/godseed-pixel-art-director/SKILL.md",
+      "destination": ".agents/skills/godseed-pixel-art-director/SKILL.md",
+      "bytes": 6248,
+      "sha256": "dd7e02bc23c0e458e06de50724f934644837c9238f448bc2ff794c77a6d5bd1f"
+    },
+    {
+      "source": ".agents/skills/godseed-project-director/SKILL.md",
+      "destination": ".agents/skills/godseed-project-director/SKILL.md",
+      "bytes": 6694,
+      "sha256": "cc9fc26db458e327a92267e9fae8adb83733c054b42563a6a9d742438e516aba"
+    },
+    {
+      "source": ".agents/skills/godseed-qa-automation/SKILL.md",
+      "destination": ".agents/skills/godseed-qa-automation/SKILL.md",
+      "bytes": 2800,
+      "sha256": "d4d38acbd36c484b51ad5f0cb77782eca25aff002af1d2d1dcc2763d04b68326"
+    },
+    {
+      "source": ".agents/skills/godseed-responsive-accessibility/SKILL.md",
+      "destination": ".agents/skills/godseed-responsive-accessibility/SKILL.md",
+      "bytes": 3566,
+      "sha256": "49b67b0e01d47289fd7b68354bbd1a7fa1db0d95edef4758a73a9798cb06a57a"
+    },
+    {
+      "source": ".agents/skills/godseed-spell-alchemy/SKILL.md",
+      "destination": ".agents/skills/godseed-spell-alchemy/SKILL.md",
+      "bytes": 3785,
+      "sha256": "c1881166d6df1175361d291f12dce86d5fd5c1f72149b3d87d68161a7112e426"
+    },
+    {
+      "source": "README.md",
+      "destination": "docs/godseed-install/archive/README.md",
+      "bytes": 4042,
+      "sha256": "12cff5d45ffac37e1feece44bc036ec6b5aed218f2551a3a12c30e7686ae089c"
+    }
+  ]
+}

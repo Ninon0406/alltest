@@ -1,0 +1,10 @@
+import {z} from 'zod';
+import {byId} from '../systems/spells';
+import {scenes} from '../content/story';
+const qty=z.number().int().min(0).max(9999);
+const battle=z.object({id:z.enum(['B01_FOREST_SPROUT','BT_TRAINING']),enemyHp:z.number().int().min(1).max(42),turn:z.number().int().min(1),shield:qty,status:z.record(z.string(),qty),checkpoint:z.string(),next:z.string()});
+export const schema=z.object({version:z.literal(1),runId:z.string().min(1),seed:z.number().int(),rng:qty,revision:qty,name:z.string().max(30),scene:z.string().refine(id=>!!scenes[id]),ticks:qty,hp:z.number().int().min(1).max(100),mp:z.number().int().min(0).max(40),inventory:z.record(z.string(),qty),known:z.array(z.string().refine(id=>!!byId[id])),equipped:z.array(z.string()).max(4),flags:z.record(z.string(),z.boolean()),choices:z.array(z.string()),trust:z.record(z.string(),z.number().int().min(-2).max(5)),rewarded:z.array(z.string()),gathered:z.record(z.string(),qty),journal:z.array(z.string()).max(500),battle:battle.optional()}).superRefine((s,ctx)=>{if(new Set(s.known).size!==s.known.length||new Set(s.equipped).size!==s.equipped.length||s.equipped.some(id=>!s.known.includes(id)))ctx.addIssue({code:'custom',message:'สมุดเวทหรือช่องติดตั้งไม่ถูกต้อง'});if(s.battle&&(!scenes[s.battle.next]||!scenes[s.battle.checkpoint]))ctx.addIssue({code:'custom',message:'จุดกลับจากการต่อสู้ไม่ถูกต้อง'});});
+export type State=z.infer<typeof schema>;
+export function fresh(name='อาเรน',seed=12345):State {return schema.parse({version:1,runId:crypto.randomUUID(),seed,rng:0,revision:0,name:name.trim()||'อาเรน',scene:'S00_WAKE',ticks:0,hp:100,mp:40,inventory:{IT_POTION_DEW:2},known:[],equipped:[],flags:{},choices:[],trust:{},rewarded:[],gathered:{},journal:[]});}
+export function random(s:State){let x=(s.seed+s.rng++*2654435761)|0;x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296;}
+export function transact(s:State,fn:(draft:State)=>void){const d=structuredClone(s);fn(d);d.revision++;if(d.journal.length>500)d.journal=d.journal.slice(-500);return schema.parse(d);}
