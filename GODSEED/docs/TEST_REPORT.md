@@ -27,4 +27,4 @@ Not full chapter/boss/endings acceptance. Not 234 behavior/VFX golden render cas
 
 No pageerror or HTTP ≥400 observed in the seven loops or subpath case. Assertions include no horizontal overflow. These are Chromium browser simulations, not real hardware. Phone 360px and desktop 1366px battle screenshots were visually inspected; art is still provisional, not visual-gate accepted. Portrait 430×932, 820×1180 and desktop 1440×900 are not separately tested this round.
 
-Final strict typecheck and lint pass after browser test additions. Content 2/2 and unit/integration 14/14 passed. `git diff --check` passes. Public Pages/remote CI results are separate from these local checks.
+Final strict typecheck and lint pass after browser test additions. Content 2/2 and unit/integration 14/14 passed. Source whitespace check passes. Compiled Phaser vendor license blocks contain upstream trailing spaces; `.gitattributes` excludes only generated bundle JS from whitespace checks. Public Pages/remote CI results are separate from these local checks.

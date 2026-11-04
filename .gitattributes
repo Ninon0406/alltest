@@ -1,0 +1,4 @@
+# Compiled vendor license blocks retain upstream whitespace; review TypeScript source.
+assets/index-*.js -whitespace linguist-generated=true
+assets/index-*.css linguist-generated=true
+GODSEED/public/assets/*.png binary
