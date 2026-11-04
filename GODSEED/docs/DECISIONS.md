@@ -20,3 +20,13 @@
 14. Copy the owner's canonical root master spec to docs/GODSEED_MASTER_SPEC.md byte-for-byte, SHA-256 451ce8aa3e95ee291aa3782a74c7037cd1b0196b92837bf03ad7e33ebc44879d. Preserve original Markdown hard line breaks via a narrowly scoped gitattributes rule. Do not maintain divergent design editions.
 
 15. Final review found a retry edge case: startup inspection failure can hide a valid old run from the session. Archive any different-run primary inside the save transaction itself, so later retry and subsequent autosaves cannot lose that older run. A new failing regression proved this boundary before the fix.
+
+
+## Session 3 — 0.2.0
+
+16. Work on single-enemy combat effects/training now that save reliability is established. Data-drive B01 vs BT_TRAINING before adding bosses. Keep first chapter incomplete until its real paths exist.
+17. State2 is required for per-player status, finite shield lifetime, stable combat log, XP and generic recoveryScene. Validate original V1/checksum before conversion, preserve identity/resources/RNG and save an original raw snapshot. No historical XP backfill; future levels/mastery remain gated work, not implied by displaying XP.
+18. Resolve status ambiguities explicitly: offensive GROUNDED protects the target; enemy RESONANCE is a consumed vulnerability mark. VEIL lowers the affected actor's outgoing accuracy, not an evasion buff. New VEIL counts the immediate enemy phase; SEAR/SWIRL/ROOTED survive until their next relevant player action. Reapplication refreshes bounded duration. See BALANCE for timing.
+19. WET+WIND's speed reduction is represented by skipping the current enemy phase in this single-actor model, with explicit Thai outcome log. This is a bounded implementation interpretation, not a hidden general speed system. Boss disables/immunity must be designed before B05 is enabled.
+20. Add CH0404 training and CH0405 forest-clue handoff as authored workshop options, because canonical training/first fire recipe existed in the spec without implementation. The gift is one-time and must be consumed by real crafting; never give a fake learned spell or repeat resources. Existing scene and choice IDs unchanged.
+21. Training uses the workshop and an explicitly provisional Pip sheet. Fix support VFX recipient, moving shadows and skip/tween cleanup now; do not count this as final art, a new unique enemy sprite, or all234 VFX acceptance.

@@ -1,3 +1,13 @@
+# 0.2.0 — ฝึกเวทกับคุโร
+
+Playable workshop training with actual35HP/power5/rules/rewards, optional surrender and checkpoint recovery. Forest clue handoff supplies a real one-time fire recipe. Elemental status/reaction timing, finite wards, semantic HP/MP,2×2 loadout, status help, intent/log and outcome feedback. Support VFX lands on the player; ground shadows follow movement.
+
+Game state2 migrates actual V1 files/active battles without rerolling; database/file envelope remain1. Original raw V1 stored before first V2 write. New XP has no automatic level/mastery grant or retroactive backfill. Existing0.1.1 save recovery/memory/export/import remains.
+
+Still first slice: no complete chapter/festival/boss/three endings, final HD art, audio, multiple enemies/party roster or mastery progression.
+
+## Earlier releases
+
 # 0.1.1 — ความทรงจำที่กลับมาได้
 
 Fix corrupt-primary propagation into a good backup; atomic backup writes and safe duplicate writes. Recover/import/export directly from title. Restore archived runs preserved before a new game. Checksum exports with backward-compatible raw-v1 imports. Storage denial/quota failures explicitly fall back to a playable memory session with export and retry, including flushing memory-created archives. Shared async lock prevents overlapping save replacements; stable battle snapshots continue after reload.

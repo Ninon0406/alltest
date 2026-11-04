@@ -41,6 +41,7 @@ export async function save(state:State){
   current.onsuccess=()=>{
    try{
     const previous=schema.safeParse(current.result);
+    if(previous.success&&current.result?.version===1)store.put(current.result,'legacy-v1:'+previous.data.runId);
     // A corrupt primary must never replace a valid recovery copy. Duplicate writes
     // also leave the previous action's backup intact. Both puts share one commit.
     if(previous.success&&JSON.stringify(previous.data)!==JSON.stringify(valid)){

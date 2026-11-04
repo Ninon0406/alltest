@@ -1,29 +1,23 @@
-# Architecture
+# GODSEED architecture — 0.2.0
 
-- `src/content/story.ts`: canonical scene subset, stable Choice IDs, prerequisites, reward/trust/flags and presentation cues
-- `src/engine/state.ts`: Zod schema, seeded RNG counter, immutable transaction boundary; serialized state has no Phaser objects
-- `src/engine/save.ts`: isolated `godseed-saves` IndexedDB; current, last-good backup and archived old runs. Write transaction completion required before UI replaces current state
-- `src/systems/spells.ts`: pure legality, naming, mechanics and VFX descriptors generated from 8×6×7; immutable ID identity
-- `src/systems/game.ts`: choice/craft/equip/combat commands; resource validation before mutation; first-win and first-discovery idempotency
-- `src/scenes/world.ts`: Phaser 4 Canvas/WebGL auto renderer; separate sky/stage/actor/particles; presentation accepts committed result; no rules in render loop
-- `src/main.ts`: accessible DOM controls and command queue. Snapshot result → animate/skip → persist → reveal. Input lock synchronously rejects second click. Invalid commands retain old state. Persistence failure commits the computed valid action only into an explicitly marked memory session
-- `scripts/generate-art.mjs`: reproducible PNG stages and 32×48 actor frames; source of every first-party image
-- `scripts/stage-site.mjs`: production output at repository root for existing main:/ Pages; retain old GODSEED hashes for cached HTML
+- `content/story.ts`: stable scene/choice IDs, requirements/locked hints, one-time rewards, authored animation cues
+- `content/encounters.ts`: two distinct encounter stat/reward/escape definitions; no hardcoded training-as-forest behavior
+- `engine/state.ts`: State2 schema and validated V1 conversion, deterministic RNG counter and immutable transactions
+- `systems/game.ts`: choices/craft/equip and re-exports combat API; first successful new craft grants XP10 once
+- `systems/combat.ts`: pure turn resolution, accuracy, reactions, status/ward expiry, checkpoint recovery and reward idempotency; no Phaser dependency
+- `systems/spells.ts`: canonical 336 candidates ->234 legal definitions, stable IDs, mechanics and composed VFX metadata; party-support forms apply to the one currently available player
+- `ui/combat-panel.ts`: accessible HP/MP bars, intent, statuses/help, logs, four slots and legal utility actions; UI cannot grant effects
+- `scenes/world.ts`: layered original procedural stage/actors/particles; presentation accepts resolved commands; skip finishes the same transaction, destroys transient particles, and resets actor tweens. Ground shadows follow positions. Training reuses provisional Pip art
+- `engine/save.ts`: atomic primary/validated-backup, durable run archive, bounded DB open; additionally stores original raw V1 current at `legacy-v1:<runId>` before first V2 write
+- `engine/save-file.ts`: file envelope1 canonical SHA-256 checked against original payload BEFORE state conversion; raw V1 and V2 can be imported with confirmation
+- `engine/storage-session.ts`, `ui/save-controls.ts`: persistent/memory distinction, export/retry/recovery and accessible archived runs from0.1.1 preserved
 
-Vite `base: './'` intentionally supports both project `/alltest/` and preview/subpath hosting without absolute asset references. No client router/history fallback required. CI installs in GODSEED with Node 24, validates/builds/browser-tests, then uploads artifact; deploy only main after successful checks. The root package only delegates commands; authoritative dependency lock is GODSEED/package-lock.json.
+## Versions and compatibility
 
-Schema version 1 is the first GODSEED schema, unrelated to old REBORN saves. Reject malformed imports rather than guessing migration. Next schema change must include explicit migration and fixtures. Save export now uses a versioned SHA-256 envelope; importing earlier raw state-v1 remains supported without rerolling. The game-state/database schema is still version 1.
+Game state is2, IndexedDB database/store is still1 and checksum file envelope is still1. Raw/checked V1 validates with legacy schema before conversion. Preserve runId/seed/rng/revision/HP/MP/items/choices/trust/flags/rewards and battle checkpoint/next/status/shield. Add XP0, recoveryScene default S09, playerStatus{}, empty log and shield lifespan2 if positive (otherwise0). Existing earned progress is neither rerolled nor given assumed historical XP. Once a new action commits, write V2 and retain the raw V1 snapshot. V2 validation rejects a positive shield with zero lifetime.
 
-## Save reliability (0.1.1)
+## Turn order
 
-`engine/save.ts` validates raw state-v1 records and rotates primary/backup in one readwrite transaction. Invalid primary never becomes backup. Duplicate writes keep the earlier backup. Transaction completion is the durability boundary. `inspect` returns valid current, valid backup, corruption indicator and validated archive entries without changing slots. Database opening is bounded, blocked/late connections are closed and version changes close active connections.
+Validate -> spend/resolve player command -> eligible old SEAR DoT -> victory check -> current enemy intent or immediate slow/accuracy result -> expire actor effects -> next stable player-selection state. Only stable complete turns are saved. Newly applied/refreshed enemy effects survive until their next relevant player action. New enemy VEIL affects its immediate outgoing accuracy and expires after that enemy phase. Player defensive effects and shields count the current enemy phase; wards last exactly two phases. See BALANCE/DECISIONS for bounded interpretations and numerical constants.
 
-`engine/save-file.ts` is a pure-format layer plus WebCrypto SHA-256. Stable sorted-key serialization ignores undefined object fields just like JSON; optional completed-combat fields survive round trip. Format envelope v1 differs from game state schema v1. Checksum detects file corruption, not authenticity. Reject unknown format/state versions; legacy raw-v1 files get a visible confirmation notice. No old save migration/reroll is guessed.
-
-`engine/storage-session.ts` coordinates durable vs memory state, warning, recovery and archived runs. When disk fails, keep the actual disk state unchanged if the transaction aborted and show memory mode. Retry writes archived memory runs before current, then confirms durable storage and clears the warning. Memory mode provides no survival guarantee after reload. Multiple-tab last-writer conflicts are not solved in this change.
-
-`ui/save-controls.ts` builds accessible shared title/in-game restore/import/export/archive controls. UI commands share one async lock, and aria-busy remains true until state acceptance completes. No screen can start another replacement during file verification. Import/restore/new game ask for confirmation before replacement; existing current is archived first. Invalid imports never reach storage.
-
-Tests use fake-indexeddb in Node for real transaction semantics and Playwright's actual browser IndexedDB for failures/recovery. Those packages and Node types are development dependencies only.
-
-If a save replaces a different runId, the same transaction also archives the valid old run. This protects an unseen durable run when startup inspection failed and memory play later retries. The additional boundary has a failing-before/passing-after fixture.
+Vite relative base supports /alltest/ and nested previews. Build then stage-site preserves previous GODSEED hashes in root/artifact for cached HTML. CI runs locked install/type/lint/content/unit/balance/build/browser before main deployment. Root package delegates; authoritative dependency lock is GODSEED/package-lock.json.
