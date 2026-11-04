@@ -1,20 +1,13 @@
 {
-  "name": "reborn",
-  "version": "0.17.0",
+  "name": "godseed-repository",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1",
-    "test": "vitest run",
-    "test:e2e": "playwright test",
-    "content": "node scripts/content.mjs"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "pngjs": "^7.0.0",
-    "vite": "^7.3.1",
-    "vitest": "^4.0.18"
+    "dev": "npm --prefix GODSEED run dev",
+    "build": "npm --prefix GODSEED run build && node GODSEED/scripts/stage-site.mjs",
+    "test": "npm --prefix GODSEED test",
+    "typecheck": "npm --prefix GODSEED run typecheck",
+    "lint": "npm --prefix GODSEED run lint",
+    "validate:content": "npm --prefix GODSEED run validate:content",
+    "test:e2e": "npm --prefix GODSEED run test:e2e"
   }
 }

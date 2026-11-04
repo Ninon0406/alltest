@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'tests',testMatch:'browser.spec.ts',workers:1,use:{baseURL:'http://127.0.0.1:4190',headless:true,launchOptions:{executablePath:process.env.CI?undefined:(process.env.CHROMIUM_PATH||'/usr/bin/chromium'),args:['--no-sandbox']}},webServer:[{command:'npm run preview',port:4190,reuseExistingServer:!process.env.CI},{command:'node scripts/preview-subpath.mjs',url:'http://127.0.0.1:4191/alltest/',reuseExistingServer:!process.env.CI}]});
