@@ -64,3 +64,15 @@ Final review added a further regression for a transient startup read failure hid
 After the additional retry archival fix: targeted browser storage **7/7 PASS in 22.7s**. Final typecheck/lint/content 2/unit+integration 28/build passed again after Thai-only recovery wording. `git diff --check` clean. Source counts rechecked: 13 scenes / 39 choices; definitions remain 234.
 
 Final title-form review: preserve the typed name across cancelled import and disable editing during startup/async work. Added the assertion to the legacy-import browser case. Latest typecheck/lint/content 2/unit+integration 28/build PASS; targeted storage suite **7/7 PASS in 23.9s** after this UI adjustment. No additional gameplay rule changes.
+
+## 0.1.1 remote CI and public proof
+
+- Implementation `8a2b08d`, title-input refinement `927fb3e`, PR #2 MERGED at `2c4ba8d4397788ad7598f29d1e13285ffcc23fe6`.
+- [PR CI 41922783511](https://github.com/Ninon0406/alltest/actions/runs/41922783511) SUCCESS including all current browser tests and evidence upload. The earlier run on a superseded commit was cancelled to avoid redundant runner work; it is not counted as passing CI.
+- [main:/ Pages 41923735255](https://github.com/Ninon0406/alltest/actions/runs/41923735255) SUCCESS.
+- Public command `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` PASS: actual touch/start/gather/craft/equip/B01/win/clue/hub/reload/continue, then checksum export and import round trip. Observed page-error/HTTP failure list empty.
+- Public JS SHA-256 `a868db3cf9c4ee9194d40a3ff544c66e9467d5f3dea23a5634de813ba068ce1e`, equal to local staged build. Independent canonical hash of the downloaded save matches its checksum and the save contains the actually completed clue flag. Screenshot test-results/public-battle-390.png.
+
+[Main workflow 41923735832](https://github.com/Ninon0406/alltest/actions/runs/41923735832) SUCCESS. Build job 126902572225 completed the full current suite; deploy job 126904802941 completed configure-pages/deploy-pages at 2026-11-04 22:20:34 UTC. Release-evidence edits after this point do not change the game bundle.
+
+Post-Actions public HTML/JS hash gate PASS: same a868db3cf9c4ee9194d40a3ff544c66e9467d5f3dea23a5634de813ba068ce1e. This confirms the Actions-deployed bundle matches the already validated public gameplay/checksum/import loop.

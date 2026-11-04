@@ -11,6 +11,7 @@
 | Chromium 390×844 recovery cases | corrupt primary, checksum round trip, altered file rejection, raw-v1 import/cancel, new-run archive restore | PASS |
 | Chromium 390×844 and 844×390 memory mode | denied IndexedDB, choices, warning/export, no overflow, no false continue on reload | PASS |
 | Chromium 390×844 write-failure fixture | disk unchanged, memory action once, retry clears warning, reload resumes durable progress | PASS |
+| Public Pages 390×844 Chromium touch | first slice + reload + exported checksum + import round trip + JS byte hash | PASS |
 | Actual iOS/Android/iPad/macOS/Windows hardware and Safari | physical input and performance | NOT TESTED |
 | Full chapter/3 endings/all elemental mechanics/final HD visual gate | future milestones | NOT IMPLEMENTED |
 

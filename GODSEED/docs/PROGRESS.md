@@ -1,6 +1,6 @@
 # GODSEED — ความคืบหน้า 0.1.1
 
-วันที่ 2026-11-04 UTC · base `d0ab140` · branch `feat/godseed-save-recovery`
+วันที่ 2026-11-04 UTC · base `d0ab140` · branch `main` · implementation `927fb3e` · merge `2c4ba8d` · [PR #2](https://github.com/Ninon0406/alltest/pull/2) MERGED
 
 อ่านไฟล์ 03_CODEX_CONTINUE_FOREVER.md ที่แนบมาทั้งหมดแล้ว (ตรงกับฉบับติดตั้ง) ตรวจ working tree สะอาดและ CI รุ่นก่อนสำเร็จ ก่อนแก้ระบบเดิม ไม่เริ่มโปรเจกต์ใหม่ ไม่เปลี่ยนระบบเนื้อเรื่อง/สูตรเวท/การต่อสู้หรือ state schema
 
@@ -25,7 +25,7 @@
 
 Baseline ก่อนแก้: typecheck/lint/content 2/unit 14/build PASS จากนั้น regression ใหม่ FAIL บนโค้ดเดิม และ PASS หลังแก้
 
-ล่าสุด: npm ci, strict typecheck, lint, content 2/2, unit/integration 28/28 และ production build PASS; full browser 19/19 PASS (10 viewports + touch/subpath + 7 storage recovery cases); ตรวจขอบเขต retry เพิ่มก่อน commit ดู TEST_REPORT.md สำหรับรายละเอียดและ GitHub release
+ล่าสุด: npm ci, strict typecheck, lint, content 2/2, unit/integration 28/28 และ production build PASS; full browser 19/19 PASS (10 viewports + touch/subpath + 7 storage recovery cases); targeted storage 7/7 ผ่านหลังแก้ retry และชื่อที่กำลังพิมพ์; PR CI 41922783511 และ main build/deploy 41923735832 SUCCESS ดู TEST_REPORT.md สำหรับรายละเอียด
 
 ## งานต่อไป
 
@@ -34,3 +34,7 @@ Baseline ก่อนแก้: typecheck/lint/content 2/unit 14/build PASS จ�
 3. GS-026/027/028 ขยาย archive/stream/ruins → festival → guardian → สามบทสรุป พร้อม golden paths
 
 ข้อจำกัด: ยังเป็น first slice ภาพ procedural prototype, ยังไม่มีบอส/เทศกาล/สามตอนจบ/เสียง/route map/full settings/PWA; status/target mechanics และ VFX ยังไม่ครบ 234 พฤติกรรม ไม่มี real-hardware/Safari QA หรือการวัดสัดส่วนเวลา 50/50 ระบบเซฟยังไม่มี conflict resolution ระหว่างหลายแท็บ และเมื่อ storage ไม่พร้อมจะพึ่งการส่งออกไฟล์/ retry อย่างชัดเจน
+
+## เผยแพร่ 0.1.1
+
+https://ninon0406.github.io/alltest/ เผยแพร่แล้วผ่าน main:/ Pages run 41923735255 SUCCESS ตรวจ public touch loop → export checksum → import round trip PASS และ JS SHA-256 ตรงกับ local build: a868db3cf9c4ee9194d40a3ff544c66e9467d5f3dea23a5634de813ba068ce1e

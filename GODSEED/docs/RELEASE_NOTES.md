@@ -4,6 +4,8 @@ Fix corrupt-primary propagation into a good backup; atomic backup writes and saf
 
 Game-state schema stays version 1. The first-slice story, combat, recipes and art are preserved; no new chapter content or final visual quality claimed.
 
+Published and public-smoke verified: https://ninon0406.github.io/alltest/ · PR #2 / 2c4ba8d.
+
 ## Earlier release
 
 # 0.1 — เมล็ดแรก
