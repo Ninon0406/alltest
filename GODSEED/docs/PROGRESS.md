@@ -1,40 +1,33 @@
-# GODSEED — ความคืบหน้า 0.1.1
+# GODSEED — ความคืบหน้า 0.2.0
 
-วันที่ 2026-11-04 UTC · base `d0ab140` · branch `main` · implementation `927fb3e` · merge `2c4ba8d` · [PR #2](https://github.com/Ninon0406/alltest/pull/2) MERGED
+2026-11-04 UTC · base `3ca8268` · branch `feat/godseed-elemental-combat`
 
-อ่านไฟล์ 03_CODEX_CONTINUE_FOREVER.md ที่แนบมาทั้งหมดแล้ว (ตรงกับฉบับติดตั้ง) ตรวจ working tree สะอาดและ CI รุ่นก่อนสำเร็จ ก่อนแก้ระบบเดิม ไม่เริ่มโปรเจกต์ใหม่ ไม่เปลี่ยนระบบเนื้อเรื่อง/สูตรเวท/การต่อสู้หรือ state schema
+อ่านคำสั่งทำต่อและตรวจ main/working tree/CI รุ่นก่อนแล้ว ต่อจากเกมเดิม ระบบเซฟ 0.1.1 และลูปป่ายังอยู่ครบ รอบนี้ GS-016/018/020/022/024: combat effects, UI และการฝึกที่เข้าถึงได้จริง
 
-## รอบนี้: GS-005 / GS-035 / GS-040 — ความปลอดภัยของความทรงจำ
+## สิ่งที่ทำ
 
-- พิสูจน์บั๊กเดิมด้วย regression test: primary เสียแล้วบันทึกใหม่ทำให้ backup ที่ดีเสียตาม แก้โดยตรวจของเดิมก่อนหมุนสำเนาและเขียนทั้งสอง slot ใน transaction เดียว
-- duplicate write ไม่กลบสำเนาก่อนหน้า; aborted transaction ไม่เปลี่ยนทั้ง primary/backup
-- กู้สำเนาหรือนำเข้าไฟล์จากหน้าแรกได้ เซฟหลักเสียไม่ต้องเริ่มเกมใหม่เพื่อเข้าหน้าบันทึก
-- เรื่องราวก่อนเริ่มใหม่ถูกเก็บและแสดงให้เล่นต่อ/ส่งออกได้ ทั้งจากดิสก์และใน session ชั่วคราว การแทนที่ต้องยืนยัน
-- ไฟล์ส่งออกมี SHA-256 checksum และ format version; รับไฟล์ raw state-v1 เดิมโดยแจ้งก่อนนำเข้า ไม่เปลี่ยน seed/runId/สถานะเกม; ไม่รับ version ที่ไม่รู้จัก
-- IndexedDB ไม่พร้อมหรือบันทึกล้มเหลว: เล่นต่อใน memory พร้อมแถบเตือนและปุ่มดาวน์โหลด/ลองบันทึกใหม่ ชัดเจนว่า reload อาจทำความคืบหน้าหาย ไม่อ้างว่าบันทึกถาวรสำเร็จ
-- ป้องกันงาน async ซ้อนกันครอบคลุมเริ่มใหม่ กู้คืน นำเข้า ส่งออก และการเลือกเกม; aria-busy ครอบคลุมจนจบการ commit
-- เพิ่ม `docs/GODSEED_MASTER_SPEC.md` เป็นสำเนาตรงทุกไบต์ของต้นฉบับ root ตามไฟล์คำสั่ง ไม่แก้สเปก
+- แยกกฎต่อสู้เป็น pure module และข้อมูล encounter แยก B01 (42HP/7, โจมตีสลับตั้งรับ, แพ้ไฟ) กับ BT_TRAINING (35HP/5 ทุกเทิร์น, ยุติการฝึกได้)
+- เปิดการฝึกหลังผสมเวทแรก มีพื้นหลังโรงช่าง; รางวัลครั้งแรก potion1/XP5 แยกจาก B01 bloom1/XP12 และไม่มีการตั้ง flag ชนะป่าจากการฝึก
+- เพิ่มทางเลือกนำ forest_clue ให้คุโร ได้ CORE_FIRE/FORM_ORB/MOD_SPLIT อย่างละ1 ครั้งเดียว แล้วผสมเวทไฟด้วยวัตถุดิบจริง
+- ทุกธาตุมีผลสถานะใน single-enemy model: DoT, wet/fire, wet/wind, swirl, grounded, gleam/veil, rooted/water, resonance/echo พร้อมระยะเวลาและการใช้ผลครั้งเดียว โล่หมดหลังสองจังหวะศัตรู
+- HP/MP bars, intent, combat log, สถานะแตะอ่านคำอธิบาย, เวท4ช่องแบบ2×2, สรุปผลและรางวัลหลังสู้ เวทสนับสนุนแสดง VFX รอบผู้เล่น และเงาติดตามตัวละคร
+- State schema2 ย้ายจาก V1 โดยคงตัวตน seed/RNG/resources/flags/progress; เก็บ raw V1 snapshot ก่อนเขียน V2 ครั้งแรก Database version1 และ file envelope1 ไม่เปลี่ยน ตรวจ checksum ก่อน migrate
+- XP ใหม่เป็นข้อมูลประสบการณ์ที่ได้รับจริง ยังไม่มีการเลื่อน level/mastery จาก XP อัตโนมัติ ไม่ backfill รางวัลก่อนมีระบบ XP
 
-## เล่นได้ถึงไหน / ปริมาณจริงจาก source
+## เล่นได้ / ปริมาณจาก source
 
-ลูปเดิม: ตื่น → หมู่บ้าน → ลูมิ/มาเรน/คุโร → รับของ → ผสมและติดตั้งเวท → B01 → เก็บโน้ต → กลับหมู่บ้าน พร้อม autosave/continue; เพิ่ม recovery/export/import/memory fallback ให้ลูปนี้
+ลูปเดิม ตื่น → คุโร → ผสมเวท → ป่า → โน้ต → กลับหมู่บ้าน ยังเล่นครบ เพิ่มสวนเพื่อผสม HEAL → ฝึก/ยุติการฝึก → สำรวจหา clue → คุโรให้ส่วนผสม FIRE → ผสม/ติดตั้ง → ฝึกด้วยเวทไฟ → reload กลางเทิร์นที่บันทึกแล้วและเล่นต่อ
 
-13 scenes / 39 choices / NPC มีบทและความสัมพันธ์ 4 ตัว / ศัตรูเข้าถึงได้ 1 ตัว / 234 legal recipe definitions / เส้นทางทดสอบค้นพบและใช้เวทจริง 1 สูตร / 0 chapter endings / 4 stage variants + 6 actor sheets ไม่มีฉากใหม่หรือสูตรใหม่เพิ่มในรอบนี้ BT_TRAINING ยังไม่มีทางเข้า
+13 scenes / 41 story choices / 4 NPC มีบทและความสัมพันธ์ / 2 playable encounters / 234 legal recipes / เส้นทาง browser ใหม่ค้นพบและใช้จริง 3 สูตร / 0 chapter endings / 4 stage variants / 6 actor sheets การฝึกยังใช้ Pip sheet ชั่วคราว ไม่ใช่มอนสเตอร์วาดใหม่ที่ผ่าน art gate
 
-## การตรวจสอบ
+## ตรวจสอบ
 
-Baseline ก่อนแก้: typecheck/lint/content 2/unit 14/build PASS จากนั้น regression ใหม่ FAIL บนโค้ดเดิม และ PASS หลังแก้
+Typecheck/lint/content 2/2/unit+integration+balance 59/59/build PASS; 600 simulated encounters ชนะทั้งหมด (400 จากทางเลือกจริง, 200 negative zero-MP fixtures ที่ระบุชัด) Focused browser ใหม่4/4 PASS; full browser 23/23 PASS (zero skipped) ดู TEST_REPORT.md; การเผยแพร่รุ่นใหม่รอ CI/merge
 
-ล่าสุด: npm ci, strict typecheck, lint, content 2/2, unit/integration 28/28 และ production build PASS; full browser 19/19 PASS (10 viewports + touch/subpath + 7 storage recovery cases); targeted storage 7/7 ผ่านหลังแก้ retry และชื่อที่กำลังพิมพ์; PR CI 41922783511 และ main build/deploy 41923735832 SUCCESS ดู TEST_REPORT.md สำหรับรายละเอียด
+## งานถัดไป
 
-## งานต่อไป
+1. GS-033 ยกระดับ art/props/depth/animation/VFX ให้ผ่าน visual gate ก่อนขยายฉากมากขึ้น
+2. GS-026 เปิด archive/stream/ruins พร้อมวัตถุดิบธาตุที่ยังไม่เข้าถึง, NPC memory และ golden paths
+3. GS-022/023/027/028 ต่อศัตรู B02–B05, boss phases/assist/disable immunity และเทศกาลกับสามบทสรุป
 
-1. GS-016/020 ทำธาตุ/สถานะและระยะเวลาที่เหลือให้มีผลจริง พร้อม battle simulations ก่อนขยายศัตรู
-2. GS-033 ปรับ layers/occlusion เงาที่ติดกับตัวละคร และ action animations ให้ผ่าน visual gate
-3. GS-026/027/028 ขยาย archive/stream/ruins → festival → guardian → สามบทสรุป พร้อม golden paths
-
-ข้อจำกัด: ยังเป็น first slice ภาพ procedural prototype, ยังไม่มีบอส/เทศกาล/สามตอนจบ/เสียง/route map/full settings/PWA; status/target mechanics และ VFX ยังไม่ครบ 234 พฤติกรรม ไม่มี real-hardware/Safari QA หรือการวัดสัดส่วนเวลา 50/50 ระบบเซฟยังไม่มี conflict resolution ระหว่างหลายแท็บ และเมื่อ storage ไม่พร้อมจะพึ่งการส่งออกไฟล์/ retry อย่างชัดเจน
-
-## เผยแพร่ 0.1.1
-
-https://ninon0406.github.io/alltest/ เผยแพร่แล้วผ่าน main:/ Pages run 41923735255 SUCCESS ตรวจ public touch loop → export checksum → import round trip PASS และ JS SHA-256 ตรงกับ local build: a868db3cf9c4ee9194d40a3ff544c66e9467d5f3dea23a5634de813ba068ce1e
+ยังไม่ครบ: multiple enemies/party roster/mastery/level progression, full234 visual distinctness, final HD art, audio, map, PWA, actual Safari/hardware tests, 50/50 measured human pacing ระบบเซฟยังไม่มี cross-tab conflict resolution และไม่รับ versionอนาคตที่ไม่รู้จัก

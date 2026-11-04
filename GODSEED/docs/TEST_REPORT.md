@@ -76,3 +76,19 @@ Final title-form review: preserve the typed name across cancelled import and dis
 [Main workflow 41923735832](https://github.com/Ninon0406/alltest/actions/runs/41923735832) SUCCESS. Build job 126902572225 completed the full current suite; deploy job 126904802941 completed configure-pages/deploy-pages at 2026-11-04 22:20:34 UTC. Release-evidence edits after this point do not change the game bundle.
 
 Post-Actions public HTML/JS hash gate PASS: same a868db3cf9c4ee9194d40a3ff544c66e9467d5f3dea23a5634de813ba068ce1e. This confirms the Actions-deployed bundle matches the already validated public gameplay/checksum/import loop.
+
+# Session 3 — 0.2.0 combat and training (2026-11-04 UTC)
+
+Base3ca8268 working tree clean and latest remote CI passed before work. All earlier session sections describe their own release; current model is State2, database1, checksum envelope1.
+
+- npm ci: PASS (same156 locked dependencies; existing ESLint support warning, no new runtime dependency).
+- Strict TypeScript, lint, content2/2, production build: PASS.
+- Unit/integration/balance **59/59 PASS** across four files; includes 24 combat cases, original save/loop regressions and original raw-V1 snapshot retention. All234 recipes actually craft with explicitly supplied later-material fixtures and resolve a finite meaningful first turn; this does not imply current story access to every ingredient.
+- Reproducible balance tests: **600 victories, zero losses/unfinished**, 100 seeds ×2 encounters ×3 policies.400 runs use actual story collection/crafting;200 explicitly inject MP0 as negative fixtures. See BALANCE.md for max turns/min HP and scope limits.
+- New focused browser suite4/4 PASS in40.5s on phone390, iPad820, desktop1366 plus active-battle V1 restore. Full suite then **23/23 PASS in3.4m**, zero skipped: existing ten-viewports forest loops, keyboard/subpath/touch, seven save-recovery cases, three new HEAL/FIRE/practice/surrender/reload paths and a true V1 IndexedDB battle fixture.
+- V1 fixture preserves runId/seed/rng/revision/resources; status help opens by native details; GUARD commits V2 with only the actual action's changes, and legacy-v1:<runId> still equals the original raw record. Node independently hashes original V1 file envelopes before decoder migration; tampering rejected.
+- Browser upgrade path consumes actual BLOOM/RING/HEAL, sees enemy HP unchanged on healing, obtains one-time forest-clue FIRE/ORB/SPLIT, reloads after a real practice cast and completes with separate training reward/XP. No gameplay state is injected into those three-device paths. Corruption/migration/zero-MP test fixtures are labelled separately.
+- Visually reviewed actual fire-cast-phone.png: Thai text and2×2 loadout fit, workshop/player/provisional spirit visible; art remains prototype. training-{390,820,1366}.png and existing loop/save evidence are uploaded by CI. No actual Safari/hardware/FPS or50/50 pacing claim.
+- git diff --check clean. Specs/skills and existing art assets preserved; canonical master spec unchanged.
+
+Remaining acceptance: full party/multi-enemy targeting, mastery/earned levels, boss resistance/phases, chapter endings, full234 VFX visual distinctness and final art. LIGHT dispels VEIL before hit resolution, including a miss; new enemy VEIL counts its current enemy phase and may appear in the log rather than a next-turn chip. Status interpretations are recorded in DECISIONS/BALANCE rather than silently changing the spec.
