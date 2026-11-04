@@ -1,3 +1,30 @@
+# GODSEED setup — installation only (2026-11-04)
+
+Latest owner instruction: install and prepare GODSEED only. Do not start game development, execute the start/continue prompts, resume the historical REBORN backlog, build/deploy, or change gameplay during this setup task. The existing repository is REBORN V8; preserve its source, generated assets and historical instructions below. Installing GODSEED documents does not authorize replacing that game.
+
+## GODSEED documents and skill usage
+
+For a future authorized GODSEED task, read `01_CODEX_START.md`, `02_GODSEED_MASTER_SPEC.md` (canonical design), and `03_CODEX_CONTINUE_FOREVER.md`. Their start/continue commands are reference material until the owner requests development. Latest owner instructions and actual platform constraints take precedence. Apply historical REBORN policies to REBORN work; do not silently mix its design with GODSEED.
+
+Skills are installed locally at `.agents/skills/<name>/SKILL.md`. Invoke with `$<name>` (for example `$godseed-project-director`) or select by matching task scope. Read the selected SKILL.md before use; load only relevant skills. Availability in the current session UI may require a new session; installation is verified on disk, not by a UI activation test.
+
+| Skill | Use when |
+| --- | --- |
+| [godseed-choice-cinematics](.agents/skills/godseed-choice-cinematics/SKILL.md) | Choices, action animation, scene transitions and consequences |
+| [godseed-combat-vfx](.agents/skills/godseed-combat-vfx/SKILL.md) | Turn-based combat and spell visual effects |
+| [godseed-continuous-development](.agents/skills/godseed-continuous-development/SKILL.md) | Resuming explicitly authorized GODSEED work |
+| [godseed-github-pages-delivery](.agents/skills/godseed-github-pages-delivery/SKILL.md) | CI, Vite paths, GitHub Pages delivery and release checks |
+| [godseed-narrative-memory-ai](.agents/skills/godseed-narrative-memory-ai/SKILL.md) | Thai narrative, NPC memories and optional AI fallback |
+| [godseed-pixel-art-director](.agents/skills/godseed-pixel-art-director/SKILL.md) | Pixel art, sprites, tilemaps, animation and visual review |
+| [godseed-project-director](.agents/skills/godseed-project-director/SKILL.md) | Planning, architecture and resolving master-spec requirements |
+| [godseed-qa-automation](.agents/skills/godseed-qa-automation/SKILL.md) | Unit, content, integration and browser validation |
+| [godseed-responsive-accessibility](.agents/skills/godseed-responsive-accessibility/SKILL.md) | Phone, iPad, desktop, touch and accessibility |
+| [godseed-spell-alchemy](.agents/skills/godseed-spell-alchemy/SKILL.md) | Ingredients, legal recipes, spellbook and spell equipment |
+
+Installation evidence: `docs/godseed-install/INSTALLATION_REPORT_TH.md` and `docs/godseed-install/manifest.json`. Original archive README: `docs/godseed-install/archive/README.md`; repository README is preserved.
+
+---
+
 # Current V8 policy — 0.17.0
 
 The user-attached `docs/v8/REBORN_V8_MASTER_PROMPT.md` is the controlling design and supersedes conflicting V7/legacy instructions. `CODEX_START.md` and `CODEX_CONTINUE.md` are committed alongside it. Read `docs/NEXT_CODEX_TASK.md` first. Do not rebuild the completed V8 core or resume the V7 inventory/dungeon backlog ahead of V8 stories.
