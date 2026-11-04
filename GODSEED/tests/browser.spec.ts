@@ -1,8 +1,8 @@
 import {test,expect} from '@playwright/test';
-for(const [w,h] of [[360,800],[390,844],[768,1024],[1024,768],[1366,768],[1920,1080],[844,390]])test(`real loop and save ${w}x${h}`,async({page})=>{
+for(const [w,h] of [[360,800],[390,844],[430,932],[768,1024],[820,1180],[1024,768],[1366,768],[1440,900],[1920,1080],[844,390]])test(`real loop and save ${w}x${h}`,async({page})=>{
  await page.setViewportSize({width:w,height:h});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
  await page.goto('/');if(w===360)await page.screenshot({path:'test-results/title-360.png',fullPage:true});await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เริ่มการเดินทาง'}).click();
- const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();};
+ const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
  for(const n of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน','ไปโรงช่างของคุโร','ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท'])await click(n);
  await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว'})).toBeVisible();
  await page.getByRole('button',{name:'สมุดเวท',exact:true}).click();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี'})).toBeVisible();
@@ -11,6 +11,7 @@ for(const [w,h] of [[360,800],[390,844],[768,1024],[1024,768],[1366,768],[1920,1
  await expect(page.getByRole('heading',{name:'ต้นอ่อนหลงทาง'})).toBeVisible();if([360,768,1366].includes(w))await page.screenshot({path:`test-results/battle-${w}.png`,fullPage:true});
  for(let i=0;i<10&&await page.getByRole('button',{name:'วายุดารานำวิถี · MP 10',exact:true}).count();i++){
  const b=page.getByRole('button',{name:'วายุดารานำวิถี · MP 10',exact:true});if(await b.isEnabled())await click('วายุดารานำวิถี · MP 10');else await click('ตั้งรับ · ฟื้น MP 6');
+ if(w===360&&i===0){const hud=await page.locator('#hud').innerText(),enemy=await page.getByText(/HP ศัตรู/).innerText();await page.reload();await page.getByRole('button',{name:'เล่นต่อจากความทรงจำ'}).click();await expect(page.locator('#hud')).toHaveText(hud);await expect(page.getByText(/HP ศัตรู/)).toHaveText(enemy);}
  }
  await expect(page.getByRole('heading',{name:'เสียงบนใบไม้'})).toBeVisible();for(const n of ['ลอกลายโน้ตเก็บไว้','เก็บชิ้นส่วนโน้ตเรืองแสง'])await click(n);
  await expect(page.getByText(/จบช่วงทดลองเมล็ดแรก/)).toBeVisible();await page.getByRole('button',{name:'กระเป๋า',exact:true}).click();await expect(page.getByText('โน้ตบนใบไม้ × 1')).toBeVisible();

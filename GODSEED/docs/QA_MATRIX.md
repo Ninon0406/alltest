@@ -1,14 +1,17 @@
-# QA matrix — 2026-11-04
+# QA matrix — 0.1.1 / 2026-11-04 UTC
 
 | Environment | Flow | Result |
 | --- | --- | --- |
-| Chromium 360×800, 390×844 | Full first slice + save/reload + inventory, console/assets | PASS |
-| Chromium 768×1024, 1024×768 | Same real actions | PASS |
-| Chromium 1366×768, 1920×1080 | Same real actions | PASS |
-| Chromium 844×390 | Same, inventory accessible after overflow fix | PASS |
-| Chromium /alltest/ static server | production JS/PNG paths, keyboard, skip, double click, reload | PASS |
-| Chromium mobile context hasTouch | Start/choice by tap, Canvas visible | PASS |
-| Actual iOS/Android/iPad/macOS/Windows hardware | Safari and physical touch/performance | NOT TESTED |
-| Full chapter / 3 endings / all elemental statuses / six distinct VFX render baselines | Future milestone | NOT IMPLEMENTED |
+| Chromium 360×800, 390×844, 430×932 | Full first slice, craft/equip, B01, clue, reload/continue, no horizontal overflow/pageerror/HTTP failures | PASS |
+| Chromium 768×1024, 820×1180, 1024×768 | Same real actions | PASS |
+| Chromium 1366×768, 1440×900, 1920×1080 | Same real actions | PASS |
+| Chromium 844×390 | Same, inventory pointer accessibility | PASS |
+| Chromium /alltest/ static subpath | production paths, keyboard, skip, double click, reload | PASS |
+| Chromium mobile hasTouch | Start and choice by tap | PASS |
+| Chromium 390×844 recovery cases | corrupt primary, checksum round trip, altered file rejection, raw-v1 import/cancel, new-run archive restore | PASS |
+| Chromium 390×844 and 844×390 memory mode | denied IndexedDB, choices, warning/export, no overflow, no false continue on reload | PASS |
+| Chromium 390×844 write-failure fixture | disk unchanged, memory action once, retry clears warning, reload resumes durable progress | PASS |
+| Actual iOS/Android/iPad/macOS/Windows hardware and Safari | physical input and performance | NOT TESTED |
+| Full chapter/3 endings/all elemental mechanics/final HD visual gate | future milestones | NOT IMPLEMENTED |
 
-Evidence paths: test-results/title-360.png, battle-{360,768,1366}.png, loop-<width>x<height>.png. CI uploads evidence. Current P2: tiny actor detail, baked props/limited depth and final animation quality, long scroll in battle portrait. Earlier P1 Canvas overlay on landscape fixed and regression passed. No measured FPS or 50/50 pacing claim.
+Evidence: test-results/save-recovered.png, save-memory-mode-{390,844}.png, title-360.png, battle-{360,768,1366}.png, loop-<width>x<height>.png. CI uploads screenshots. Visually inspected 390px memory warning: readable text/export/retry controls, game and touch controls remain available; scene art is still provisional. Screenshots are actual runtime, not design mockups. No FPS or 50/50 pacing claim.
