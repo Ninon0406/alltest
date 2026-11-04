@@ -18,7 +18,7 @@ Node 24: `npm ci --prefix GODSEED` แล้ว `npm --prefix GODSEED run test:a
 
 ## GitHub Pages
 
-ปลายทางที่มีอยู่คือ https://ninon0406.github.io/alltest/ แต่ GODSEED ยังไม่เผยแพร่จน PR เข้า main ไม่ควรตีความ URL นี้เป็นหลักฐานว่าตัวเกมใหม่ออนไลน์แล้ว
+เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่ GODSEED แล้ว หลังรวม PR #1 เข้า main (`ba3d3ea`) และตรวจลูปเกมบนเว็บจริงพร้อม hash ของ JavaScript ตรงกับ build สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/`
 
 workflow ทดสอบทุก PR และ deploy เมื่อ main ผ่าน checks รองรับ Pages artifact พร้อมไฟล์ root สำหรับ source `main:/` หากเปลี่ยน Source ได้ ให้ใช้ Settings → Pages → Build and deployment → GitHub Actions ผ่านเบราว์เซอร์โทรศัพท์
 

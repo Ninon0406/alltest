@@ -3,7 +3,7 @@
 | ID | Priority | Status | Acceptance / files |
 | --- | --- | --- | --- |
 | GS-001/002 | P0 | DONE | Phaser boot, TS/lint/content/unit/build; package and workflow |
-| GS-003 | P1 | IN_PROGRESS | PR ready; Pages public smoke pending main deployment |
+| GS-003 | P1 | DONE | PR #1 merged, Pages published, public hash + full slice smoke PASS |
 | GS-004 | P0 | DONE | Immutable commands, deterministic combat, resource and reward tests |
 | GS-005 | P1 | IN_PROGRESS | IndexedDB/autosave/backup/export/import; checksum/migration/fallback pending |
 | GS-007/008/009/010 | P2 | IN_PROGRESS | 4 original stage variants, idle/walk/cues/skip; final art/lighting/occlusion and distinct action cycles pending |

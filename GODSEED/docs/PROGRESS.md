@@ -1,6 +1,6 @@
 # GODSEED — ความคืบหน้า 0.1
 
-วันที่ 2026-11-04 UTC · branch `feat/godseed-phase-1` · เริ่มจาก `220e992` (ติดตั้ง Skills) ซึ่ง push ขึ้น branch นี้แล้ว
+วันที่ 2026-11-04 UTC · branch `main` · playable merge `ba3d3ea` · [PR #1](https://github.com/Ninon0406/alltest/pull/1) MERGED · เริ่มจาก `220e992` (ติดตั้ง Skills) ซึ่ง push ขึ้น branch นี้แล้ว
 
 เจ้าของสั่งเพิ่มเติมให้ลบ REBORN ทั้งหมด จึงนำ source, assets, tests, เอกสารและ workflow ของเกมเก่าออกจาก working tree และเปลี่ยน GODSEED เป็นเกมหลัก ไม่แก้ประวัติ Git หรือข้อมูล LocalStorage ของเว็บไซต์เดิมบนอุปกรณ์ผู้เล่น
 
@@ -12,7 +12,7 @@
 
 ## สถานะ
 
-- M0: Phaser 4.2.1 + TS strict + Vite + lockfile + CI พร้อม; การเผยแพร่รอ PR/main
+- M0: Phaser 4.2.1 + TS strict + Vite + lockfile + CI พร้อม; เผยแพร่และตรวจลูปบนเว็บจริงแล้ว
 - M1: ฉาก/idle/walk/pick/cast/talk/rest และ transition ต้นแบบ, การข้ามและลด motion, journal/trust/flags
 - M2: 336 candidates กรองเป็น 234 ตามตาราง SSOT; craft หักครั้งแรก; four-slot loadout; UI เบื้องต้น ไม่ได้ปลดวัตถุดิบครบทุกสูตรใน slice
 - M3: B01 turn-based, intent, MP/HP, guard, item, flee, defeat recovery, first-win reward once; ยังไม่ครบระบบ status/ธาตุ, multiple targets, mastery, assist หรือ B02–B05
@@ -23,7 +23,7 @@
 
 ผลสุดท้าย: npm ci/typecheck/lint/build ผ่าน, content 2/2, unit/integration 14/14, browser 9/9 (7 viewports + subpath/keyboard/skip/double-click + touch), zero skipped ดู TEST_REPORT.md และ QA_MATRIX.md; ไม่ใช่การทดสอบบน hardware จริง
 
-Pages ปัจจุบันใช้ `main:/` แบบ legacy URL ที่มีอยู่คือ https://ninon0406.github.io/alltest/ แต่ยังไม่ได้อ้างว่า GODSEED เผยแพร่แล้ว เตรียม compiled root สำหรับ legacy source และ Actions artifact สำหรับ workflow ไว้ทั้งคู่
+เผยแพร่ที่ https://ninon0406.github.io/alltest/ ผ่าน main:/ Pages run 41917826588 สำเร็จแล้ว; PR CI run 41917050132 สำเร็จ ตรวจลูปผ่านเว็บจริงด้วย Chromium touch 390×844 และ SHA-256 ของ JS ตรง build Actions build+deploy run 41917827558 ผ่านแล้วด้วย ดู TEST_REPORT.md สำหรับหลักฐาน
 
 ## งานถัดไป
 
