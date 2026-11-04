@@ -1,0 +1,39 @@
+import {test,expect,type Page} from '@playwright/test';
+test.use({viewport:{width:390,height:844}});
+const start=async(page:Page)=>{await page.goto('/');await page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true}).click();await expect(page.getByRole('heading',{name:'ตื่นใต้ต้นเมล็ด'})).toBeVisible();};
+const choose=async(page:Page,name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+async function rawCurrent(page:Page){return page.evaluate(()=>new Promise<Record<string,unknown>>(resolve=>{const req=indexedDB.open('godseed-saves',1);req.onsuccess=()=>{const db=req.result,tx=db.transaction('slots');const read=tx.objectStore('slots').get('current');read.onsuccess=()=>resolve(read.result);tx.oncomplete=()=>db.close();};}));}
+function accepted(page:Page){page.once('dialog',dialog=>dialog.accept());}
+test('corrupt primary can recover the genuine prior action from title',async({page})=>{
+ await start(page);await choose(page,'ลุกขึ้นสำรวจรอบตัว');await choose(page,'เก็บขนนกสีฟ้าที่ข้างทางก่อน');
+ await page.evaluate(()=>new Promise<void>(resolve=>{const req=indexedDB.open('godseed-saves',1);req.onsuccess=()=>{const db=req.result,tx=db.transaction('slots','readwrite');tx.objectStore('slots').put({version:99},'current');tx.oncomplete=()=>{db.close();resolve();};};}));
+ await page.reload();await expect(page.getByText(/เซฟหลักเสียหาย/)).toBeVisible();await expect(page.getByRole('button',{name:'เล่นต่อจากความทรงจำ'})).toBeDisabled();accepted(page);await page.getByRole('button',{name:'กู้สำเนาก่อนหน้า'}).click();await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();
+ await choose(page,'เก็บขนนกสีฟ้าที่ข้างทางก่อน');await page.getByRole('button',{name:'กระเป๋า',exact:true}).click();await expect(page.getByText('ขนนกสายลม × 1')).toBeVisible();
+ await page.screenshot({path:'test-results/save-recovered.png',fullPage:true});
+});
+test('checksum export round trip and invalid import do not destroy current progress',async({page})=>{
+ await start(page);await choose(page,'ลุกขึ้นสำรวจรอบตัว');await page.getByRole('button',{name:'บันทึก',exact:true}).click();const downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'ส่งออกเซฟ',exact:true}).click();const download=await downloaded;const stream=await download.createReadStream();const buffers:Buffer[]=[];for await(const part of stream!)buffers.push(Buffer.from(part));const file=Buffer.concat(buffers);const envelope=JSON.parse(file.toString());expect(envelope.format).toBe('GODSEED_SAVE');expect(envelope.checksum).toMatch(/^[a-f0-9]{64}$/);
+ await page.getByRole('button',{name:'เรื่องราว',exact:true}).click();await choose(page,'เก็บขนนกสีฟ้าที่ข้างทางก่อน');const progressed=await rawCurrent(page);
+ await page.getByRole('button',{name:'บันทึก',exact:true}).click();envelope.state.hp=1;await page.getByLabel('นำเข้าเซฟ',{exact:true}).setInputFiles({name:'changed.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(envelope))});await expect(page.getByText(/ไฟล์เซฟเปลี่ยนแปลงหรือเสียหาย/)).toBeVisible();expect(await rawCurrent(page)).toEqual(progressed);
+ accepted(page);await page.getByLabel('นำเข้าเซฟ',{exact:true}).setInputFiles({name:'original.json',mimeType:'application/json',buffer:file});await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();await page.reload();await page.getByRole('button',{name:'เล่นต่อจากความทรงจำ'}).click();await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();
+});
+test('legacy raw state-v1 imports on title and cancelled replacement preserves disk',async({page})=>{
+ await start(page);await choose(page,'ลุกขึ้นสำรวจรอบตัว');const old=await rawCurrent(page);await page.reload();await page.getByPlaceholder('อาเรน').fill('ชื่อที่กำลังพิมพ์');page.once('dialog',dialog=>dialog.dismiss());await page.getByLabel('นำเข้าเซฟ',{exact:true}).setInputFiles({name:'legacy.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(old))});await expect(page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true})).toBeEnabled();expect(await rawCurrent(page)).toEqual(old);await expect(page.getByPlaceholder('อาเรน')).toHaveValue('ชื่อที่กำลังพิมพ์');
+ accepted(page);await page.getByLabel('นำเข้าเซฟ',{exact:true}).setInputFiles({name:'legacy.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(old))});await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();
+});
+for(const [width,height] of [[390,844],[844,390]])test(`unavailable IndexedDB permits memory play and export ${width}x${height}`,async({page})=>{
+ await page.setViewportSize({width,height});
+ await page.addInitScript(()=>Object.defineProperty(window,'indexedDB',{configurable:true,get(){throw new DOMException('Denied','SecurityError');}}));
+ await start(page);await expect(page.getByText(/เล่นชั่วคราวในหน่วยความจำ/)).toBeVisible();await choose(page,'ลุกขึ้นสำรวจรอบตัว');const downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'ดาวน์โหลดสำเนาเซฟ'}).click();expect((await downloaded).suggestedFilename()).toBe('godseed-save.json');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:`test-results/save-memory-mode-${width}.png`,fullPage:true});
+ await page.reload();await expect(page.getByRole('button',{name:'เล่นต่อจากความทรงจำ'})).toBeDisabled();
+});
+test('write failure preserves disk, commits once in memory and retry restores durable progress',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await start(page);const before=await rawCurrent(page);
+ await page.evaluate(()=>{const original=IDBObjectStore.prototype.put;Object.defineProperty(window,'restoreGodseedPut',{value:()=>IDBObjectStore.prototype.put=original});IDBObjectStore.prototype.put=function(){throw new DOMException('Quota','QuotaExceededError');};});
+ await choose(page,'ลุกขึ้นสำรวจรอบตัว');await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();await expect(page.getByText(/เล่นชั่วคราวในหน่วยความจำ/)).toBeVisible();expect(await rawCurrent(page)).toEqual(before);
+ await page.evaluate(()=>{(window as unknown as {restoreGodseedPut:()=>void}).restoreGodseedPut();});await page.getByRole('button',{name:'ลองบันทึกลงอุปกรณ์อีกครั้ง'}).click();await expect(page.getByText('บันทึกลงอุปกรณ์แล้ว',{exact:true})).toBeVisible();await expect(page.locator('#storage')).toBeHidden();const after=await rawCurrent(page);expect(after.revision).toBe(1);expect(errors).toEqual([]);await page.reload();await page.getByRole('button',{name:'เล่นต่อจากความทรงจำ'}).click();await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();
+});
+test('new game preserves an accessible archived run and start cannot create two runs',async({page})=>{
+ await page.goto('/');await page.getByPlaceholder('อาเรน').fill('ดาว');await page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true}).dblclick();await expect(page.getByRole('heading',{name:'ตื่นใต้ต้นเมล็ด'})).toBeVisible();await choose(page,'ลุกขึ้นสำรวจรอบตัว');const old=await rawCurrent(page);await page.reload();await page.getByPlaceholder('อาเรน').fill('แสง');accepted(page);await page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true}).click();await expect(page.getByRole('heading',{name:'ตื่นใต้ต้นเมล็ด'})).toBeVisible();expect((await rawCurrent(page)).runId).not.toBe(old.runId);
+ await page.reload();accepted(page);await page.getByRole('button',{name:'เล่นต่อเรื่องราวของ ดาว',exact:true}).click();await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();expect((await rawCurrent(page)).runId).toBe(old.runId);
+});

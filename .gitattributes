@@ -2,3 +2,5 @@
 assets/index-*.js -whitespace linguist-generated=true
 assets/index-*.css linguist-generated=true
 GODSEED/public/assets/*.png binary
+# Byte-for-byte owner-supplied master spec; retain its Markdown hard line breaks.
+docs/GODSEED_MASTER_SPEC.md -whitespace
