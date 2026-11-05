@@ -104,3 +104,29 @@ Remaining acceptance: full party/multi-enemy targeting, mastery/earned levels, b
 [Main workflow41929504279](https://github.com/Ninon0406/alltest/actions/runs/41929504279) SUCCESS. Build126922499789 completed all59 unit/integration/balance cases and23 browser cases through the standard scripts; deploy126924282167 completed configure-pages/deploy-pages at2026-11-04 22:59:58 UTC. Later evidence-only edits do not change the game bundle.
 
 Post-Actions public HTML/JS hash gate PASS: same31f46957156b2cd0c6243e964206f01448f9bc496eabb2dcca3db7373e0b80ff. Confirms the Actions-deployed bytes match the production-preview/full-browser and public gameplay/fire/practice/save validation.
+
+
+# Session4 — 0.3.0 layered presentation (2026-11-05 UTC)
+
+This section describes the current release; earlier sections retain historical results.
+
+- Base9c71ea7 was clean; prior installation220e992 is an ancestor and all previous releases are on origin/main. No open PR before work. Current changes are presentation/art/tests/docs; engine/content/systems and State2/DB1/file-envelope1 remain unchanged.
+- `npm ci --prefix GODSEED` PASS156 packages; same locked stack, existing ESLint support warning, no new dependency.
+- `npm run test:all --prefix GODSEED` PASS: strict TypeScript/lint, content2/2, unit/integration/balance/art63/63, production build. Four new art tests inspect PNG bounds/layers/alpha/actual animated frames/unused cells/distinct practice silhouette. Previous600 deterministic combat simulations and all59 existing tests retained.
+- `npm run generate:art --prefix GODSEED` independently SHA-256 checked before/after:27PNG identical; no changed/added/removed file and no legacy PNG Git diff. New16 source PNGs occupy approximately256KiB on disk;8 actor sheets include6 retained and2 new.
+- Build after HUD fix PASS: JS1,518.91kB/gzip411.48kB; final CSS6.40kB/gzip2.09kB. Root staging preserves all old compiled hashes. Bundle size is not an FPS/hardware measurement.
+- New targeted visual suite7/7 PASS in49.7s before HUD adjustment. Covers genuine walking→skip→read-only saved revision/choice exactly once→pickup; initial OS reduced motion/frozen ambient/pose and full→reduce mid-action; one intentionally aborted new PNG with Thai fallback and continued choice/save;33 genuine training guard turns→full-motion lethal guard→hit reaction on old workshop→70HP/20MP village recovery/no win reward;3 device art routes and practice victory.
+- First terminal-reaction assertion used slow default polling and missed a real400ms interval; switched to read-only RAF observation registered before the action. Production timing unchanged. No test disabled, no gameplay fixtures injected into these new routes.
+- Actual screenshot review found portrait HUD covering actor feet; changed portrait layout so HUD flows below canvas and can wrap long names. Added bounding-box assertions on village/garden/workshop/practice for390/820px. Full30-case suite is running against the rebuilt production artifact; results follow when complete.
+- Renderer read-only data attributes describe real phase/pose/texture/layers; tests read durable IndexedDB after actions rather than substituting fake gameplay state. Existing explicit storage-corruption/migration/zero-MP fixtures remain labelled negative tests.
+
+Still prototype: final HD/NPC silhouettes/complete VFX234/hardware FPS/Safari and real mobile devices are not certified. No new full chapter/boss/ending or recipe is claimed. Real background-tab behavior is not independently automated in this round; ambient is gated by document visibility and existing Phaser pause, but no hardware background/power claim is made.
+
+
+Full local suite after portrait HUD correction: **30/30 PASS in5.4m**, zero skipped. All ten viewport loops, storage recovery and combat/migration regressions passed with no unexpected observed page/HTTP failures. Phone practice screenshot now shows actor feet and spirit above the separate HUD.
+
+Final manual landscape review exposed a pre-existing aspect-ratio/grid issue:844×390 assigned~411px to the scene but `.world` preferred589px from its331px height; the desk hid the right portion. Explicit short-landscape width100%/aspect-ratio:auto fixes the root sizing. A new31st regression asserts actual scene/canvas bounds rather than relying solely on document scrollWidth. Focused post-fix and final remote results follow.
+
+Final short-landscape correction: focused **9/9 PASS in1.1m**, zero skipped: all8 visual regressions (including new full-canvas boundary case) plus the original real844×390 forest/craft/save loop. TypeScript/lint PASS after final test addition. Final screenshot visual-landscape-844.png visibly contains both actors and the entire stage; phone visual-training-390.png has an unobscured ground lane; desktop training and tablet garden/village reviewed as actual runtime images. Prototype art gate remains open.
+
+Updated production verifier PASS against final preview: touch/start/forest/clue/reload/FIRE crafting/original practice/win/independent save checksum/import; all16 new PNGs hash-equal to sources; observed page/HTTP errors empty. JS SHA-256 `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d`. This is preview proof; public0.3.0 is not claimed until remote publish/verification. PR CI will run the entire final31-case suite.

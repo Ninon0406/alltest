@@ -1,4 +1,4 @@
-# QA matrix — 0.1.1 / 2026-11-04 UTC
+# QA matrix — 0.3.0 / 2026-11-05 UTC
 
 | Environment | Flow | Result |
 | --- | --- | --- |
@@ -22,3 +22,11 @@ Evidence: test-results/save-recovered.png, save-memory-mode-{390,844}.png, title
 Full suite23/23 PASS. All ten viewport loops and0.1.1 recovery checks retained. New phone390×844/iPad820×1180/desktop1366×768 paths craft/use WIND, HEAL and FIRE, surrender practice, resume stable practice turn and win with the correct separate reward. Dedicated original V1 active-battle storage fixture migrates on commit without losing the raw original. State/help bars/log/two-column slots inspected in actual screenshots; CSS flex canvas boundary and moving shadows improved. Real hardware/Safari and final HD visual acceptance still NOT TESTED/PENDING.
 
 Public0.2.0: real Pages touch path passed forest→FIRE crafting→workshop practice→win→State2 checksum export/import; public-training-390.png is actual public evidence. Main build/deploy41929504279 succeeded. This adds no claim of real-device or full-art acceptance.
+
+## 0.3.0 scope
+
+Retain all ten viewport golden paths and save/battle suites. Added genuine skip-on-walk then pickup/read-only durable-save assertions; OS reduced-motion and mid-action toggle; intentionally aborted layered PNG with accessible fallback; actual workshop defeat/reaction before recovery; layered village/garden/workshop and original practice-spirit screenshots at390×844,820×1180,1366×768. No gameplay-state injection in these paths. Missing-network/storage/migration fixtures are explicitly negative tests. Local30/30 PASS5.4m after portrait correction; final focused9/9 PASS1.1m after landscape correction. PR CI runs final31 cases. See TEST_REPORT for release proof. Actual background-tab/hardware/Safari performance is not newly certified.
+
+Portrait HUD now flows below the canvas rather than covering actor feet; bounds are asserted on phone/iPad art routes. Desktop/short landscape layout retains its existing controls.
+
+844×390 original golden path and new canvas/world/desk geometry PASS. Manual review verifies full-stage visibility after removing inherited aspect-ratio grid overflow. All three new visual device routes PASS after both fixes; browser simulation remains distinct from hardware acceptance.

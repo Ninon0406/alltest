@@ -1,37 +1,39 @@
-# GODSEED — ความคืบหน้า 0.2.0
+# GODSEED — ความคืบหน้า 0.3.0
 
-2026-11-04 UTC · base `3ca8268` · branch `main` · implementation `bd6f705` · merge `2eec3a1` · [PR #3](https://github.com/Ninon0406/alltest/pull/3) MERGED
+### Session 4 — 2026-11-05 (UTC)
 
-อ่านคำสั่งทำต่อและตรวจ main/working tree/CI รุ่นก่อนแล้ว ต่อจากเกมเดิม ระบบเซฟ 0.1.1 และลูปป่ายังอยู่ครบ รอบนี้ GS-016/018/020/022/024: combat effects, UI และการฝึกที่เข้าถึงได้จริง
+Base `9c71ea7` · branch `feat/godseed-layered-art` · milestone: first playable slice / visual presentation pass. ตรวจ main, working tree, CI และคำสั่งทำต่อครบก่อนแก้ งานติดตั้ง `220e992` และงานก่อนหน้าอยู่ใน ancestry ของ main แล้ว ไม่มี PR ค้าง ไม่เริ่มโครงการใหม่
 
-## สิ่งที่ทำ
+รอบนี้เลือก GS-007/008/009/010/033 ต่อจาก0.2.0 เน้นภาพและความต่อเนื่องของการกระทำ โดยคง engine/story/กติกา/สูตร/เซฟเดิม
 
-- แยกกฎต่อสู้เป็น pure module และข้อมูล encounter แยก B01 (42HP/7, โจมตีสลับตั้งรับ, แพ้ไฟ) กับ BT_TRAINING (35HP/5 ทุกเทิร์น, ยุติการฝึกได้)
-- เปิดการฝึกหลังผสมเวทแรก มีพื้นหลังโรงช่าง; รางวัลครั้งแรก potion1/XP5 แยกจาก B01 bloom1/XP12 และไม่มีการตั้ง flag ชนะป่าจากการฝึก
-- เพิ่มทางเลือกนำ forest_clue ให้คุโร ได้ CORE_FIRE/FORM_ORB/MOD_SPLIT อย่างละ1 ครั้งเดียว แล้วผสมเวทไฟด้วยวัตถุดิบจริง
-- ทุกธาตุมีผลสถานะใน single-enemy model: DoT, wet/fire, wet/wind, swirl, grounded, gleam/veil, rooted/water, resonance/echo พร้อมระยะเวลาและการใช้ผลครั้งเดียว โล่หมดหลังสองจังหวะศัตรู
-- HP/MP bars, intent, combat log, สถานะแตะอ่านคำอธิบาย, เวท4ช่องแบบ2×2, สรุปผลและรางวัลหลังสู้ เวทสนับสนุนแสดง VFX รอบผู้เล่น และเงาติดตามตัวละคร
-- State schema2 ย้ายจาก V1 โดยคงตัวตน seed/RNG/resources/flags/progress; เก็บ raw V1 snapshot ก่อนเขียน V2 ครั้งแรก Database version1 และ file envelope1 ไม่เปลี่ยน ตรวจ checksum ก่อน migrate
-- XP ใหม่เป็นข้อมูลประสบการณ์ที่ได้รับจริง ยังไม่มีการเลื่อน level/mastery จาก XP อัตโนมัติ ไม่ backfill รางวัลก่อนมีระบบ XP
+## เสร็จจริงในรอบนี้
 
-## เล่นได้ / ปริมาณจาก source
+- ฉาก village/garden/workshop/forest แห่งละ3ชั้น มี prop แยก20ตำแหน่ง, ambient21ตำแหน่ง, parallax เฉพาะชั้นฉาก และจัด depth ตามเท้าตัวละคร ภาพความทรงจำเพิ่มเมื่อช่วยลูมิ/ดูแลสวน/พบเบาะแส
+- Player sheet วาดใหม่56เฟรม/11ท่า: idle, walk, run, interact, pick_up, craft, cast, guard, hit, victory, rest; cue ที่ใช้อยู่เรียกท่าจริง ภูตฝึกมีรูปร่างเฉพาะ13เฟรม/3ท่า แยกจากพิพ
+- Action Director รับผลก่อน/หลังจาก pure engine แล้วแสดงการกระทำ/การตอบสนอง/ชนะ/แพ้ ก่อนเปลี่ยนกลับฉาก ข้าม/ลดการเคลื่อนไหวกลางงานได้ ยกเลิก tween/effect และจบ transaction ครั้งเดียว
+- อ่าน OS reduced-motion ตั้งแต่เริ่มและเมื่อเปลี่ยนค่า หยุด ambient/pose animation ในโหมดลดการเคลื่อนไหว ปิดปุ่มเกมขณะโหลดภาพ และแจ้งภาพสำรองภาษาไทยเมื่อ PNG ชุดใหม่โหลดไม่ครบ
+- Pipeline แยก generator/manifest/layout วาดเอง16PNGใหม่ ส่วนภาพเดิมและ generator เดิมยังอยู่ครบ สร้างซ้ำแล้ว27PNGทั้งหมดมี SHA-256 เดิม
 
-ลูปเดิม ตื่น → คุโร → ผสมเวท → ป่า → โน้ต → กลับหมู่บ้าน ยังเล่นครบ เพิ่มสวนเพื่อผสม HEAL → ฝึก/ยุติการฝึก → สำรวจหา clue → คุโรให้ส่วนผสม FIRE → ผสม/ติดตั้ง → ฝึกด้วยเวทไฟ → reload กลางเทิร์นที่บันทึกแล้วและเล่นต่อ
+ไฟล์หลัก: `src/scenes/{world,visual-plan,actor-art,stage-layout}.ts`, `scripts/generate-{stage,actor}-art.mjs`, `public/assets/art-v2/`, `main.ts`, `tests/{art.test,visual.spec}.ts` ภาพยังเป็น original procedural prototype ไม่ผ่าน final HD/art gate; NPC เดิมและ VFX ยังมีงานต่อ
 
-13 scenes / 41 story choices / 4 NPC มีบทและความสัมพันธ์ / 2 playable encounters / 234 legal recipes / เส้นทาง browser ใหม่ค้นพบและใช้จริง 3 สูตร / 0 chapter endings / 4 stage variants / 6 actor sheets การฝึกยังใช้ Pip sheet ชั่วคราว ไม่ใช่มอนสเตอร์วาดใหม่ที่ผ่าน art gate
+## เล่นอะไรได้จริง
 
-## ตรวจสอบ
+ตื่น → ตัวเลือกเดิน/เก็บของ → คุโร → ผสม/ติดตั้งเวท → ป่า → ต่อสู้ → โน้ต → กลับหมู่บ้าน → reload/เล่นต่อ ยังมีสวน/เวทเยียวยา, นำ clue ให้คุโรรับส่วนผสมไฟครั้งเดียว, ผสมไฟ, ฝึกกับภูต/ยุติการฝึก/ชนะ/แพ้และกลับฉาก เซฟกู้คืน/ส่งออก checksum/นำเข้ายังคงอยู่
 
-Typecheck/lint/content 2/2/unit+integration+balance 59/59/build PASS; 600 simulated encounters ชนะทั้งหมด (400 จากทางเลือกจริง, 200 negative zero-MP fixtures ที่ระบุชัด) Focused browser ใหม่4/4 PASS; full browser 23/23 PASS (zero skipped) ดู TEST_REPORT.md; PR CI41928767310 และ main build/deploy41929504279 SUCCESS; Pages41929503339 SUCCESS; public training/fire/save roundtrip PASS
+Source counts: **13 scenes /41 choices /4 companion NPC /2 encounters /234 legal recipes /3 spells ค้นพบและใช้ใน browser routes /0 chapter endings /4 layered animated stages /8 actor sheets** (6legacy+2new; ไม่ใช่8NPC). ไม่เพิ่มฉาก/สูตรหรือบทสรุปในรอบภาพนี้
+
+## ตรวจสอบ / เผยแพร่
+
+`npm ci` PASS156 packages; typecheck/lint/content2/unit+integration+balance+art63/build PASS. Local browser30/30 PASS5.4m หลังแก้ HUD; หลังแก้ landscape focused9/9 PASS1.1m รวม8 visual+ลูป844×390เดิม Production-preview verifier PASS: hash16PNG, start/forest/FIRE/practice/win/checksum export/import Remote CI/public0.3.0 ยังรอเผยแพร่ ดูหลักฐานล่าสุดใน TEST_REPORT.md
+
+State2 / IndexedDB1 / checksum envelope1 คงเดิม ไม่มี migration ใหม่ ระบบย้าย V1 และเก็บต้นฉบับจาก0.2.0ยังอยู่ การทดสอบอุปกรณ์เป็น Chromium emulation; iOS/Safari/Android และ hardware FPS ยัง NOT TESTED
 
 ## งานถัดไป
 
-1. GS-033 ยกระดับ art/props/depth/animation/VFX ให้ผ่าน visual gate ก่อนขยายฉากมากขึ้น
-2. GS-026 เปิด archive/stream/ruins พร้อมวัตถุดิบธาตุที่ยังไม่เข้าถึง, NPC memory และ golden paths
-3. GS-022/023/027/028 ต่อศัตรู B02–B05, boss phases/assist/disable immunity และเทศกาลกับสามบทสรุป
+1. GS-033/007/018 ขัดเกลา NPC silhouettes/lighting และตัวอย่าง VFX6ชุดให้ผ่านภาพจริงก่อนเรียก final HD
+2. GS-026 เปิด archive/stream/ruins ตามสเปก พร้อมแหล่งวัตถุดิบ, NPC memory และ golden paths
+3. GS-022/023/027/028 ต่อ B02–B05, boss/assist และเทศกาลกับสามบทสรุปเมื่อเส้นทางก่อนหน้าผ่าน
 
-ยังไม่ครบ: multiple enemies/party roster/mastery/level progression, full234 visual distinctness, final HD art, audio, map, PWA, actual Safari/hardware tests, 50/50 measured human pacing ระบบเซฟยังไม่มี cross-tab conflict resolution และไม่รับ versionอนาคตที่ไม่รู้จัก
+Known P2: final art/lighting, full234 VFX, audio, party/mastery, map, measured50/50 pacing. Cross-tab save conflict/PWA และ future schemasยังค้าง ไม่มีสิ่งที่เจ้าของต้องติดตั้งหรือรัน terminal
 
-## เผยแพร่0.2.0
-
-https://ninon0406.github.io/alltest/ ตรวจ touch/start/forest/clue/reload/FIRE craft/practice/win/export checksum/import PASS พร้อม JS SHA-256 31f46957156b2cd0c6243e964206f01448f9bc496eabb2dcca3db7373e0b80ff ตรง build
+Portrait HUD now flows below the canvas rather than covering actor feet; bounds are asserted on phone/iPad art routes. Desktop/short landscape layout retains its existing controls.

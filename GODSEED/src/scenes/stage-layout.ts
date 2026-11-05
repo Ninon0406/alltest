@@ -1,0 +1,30 @@
+export const STAGES=['village','garden','workshop','forest'] as const;
+export type StageId=typeof STAGES[number];
+export type AmbientKind='cloud'|'leaf'|'fire'|'glow';
+export type StageLayout={
+ /** Frame order: well, bench, table, shrub, lantern, planter, banner, rune. Origin .5,1. */
+ props:{frame:number;x:number;y:number}[];
+ /** Each ambient type has four consecutive 32x32 frames: cloud0, leaf4, fire8, glow12. */
+ ambient:{kind:AmbientKind;x:number;y:number}[];
+};
+
+// Actor foot anchors stay player(154,239)/NPC(338,232), with walk154→230.
+// Props are sorted by their foot y; the actor lane has no blocking foreground prop.
+export const stageLayouts:Record<StageId,StageLayout>={
+ village:{
+  props:[{frame:0,x:254,y:194},{frame:1,x:79,y:238},{frame:3,x:407,y:210},{frame:4,x:112,y:185},{frame:5,x:397,y:190},{frame:6,x:296,y:169}],
+  ambient:[{kind:'cloud',x:124,y:33},{kind:'cloud',x:281,y:47},{kind:'leaf',x:30,y:145},{kind:'leaf',x:435,y:151},{kind:'glow',x:254,y:159}],
+ },
+ garden:{
+  props:[{frame:1,x:302,y:192},{frame:3,x:96,y:205},{frame:4,x:128,y:175},{frame:5,x:46,y:219},{frame:5,x:430,y:212}],
+  ambient:[{kind:'cloud',x:155,y:38},{kind:'leaf',x:58,y:169},{kind:'leaf',x:415,y:165},{kind:'glow',x:251,y:112},{kind:'glow',x:367,y:173}],
+ },
+ workshop:{
+  props:[{frame:2,x:78,y:245},{frame:2,x:240,y:176},{frame:5,x:64,y:167},{frame:4,x:347,y:158},{frame:7,x:304,y:173}],
+  ambient:[{kind:'fire',x:408,y:141},{kind:'glow',x:184,y:49},{kind:'glow',x:269,y:94},{kind:'leaf',x:64,y:124},{kind:'glow',x:308,y:143}],
+ },
+ forest:{
+  props:[{frame:3,x:84,y:199},{frame:3,x:417,y:226},{frame:7,x:286,y:190},{frame:3,x:452,y:197}],
+  ambient:[{kind:'cloud',x:230,y:60},{kind:'leaf',x:82,y:147},{kind:'leaf',x:393,y:155},{kind:'glow',x:286,y:160},{kind:'glow',x:364,y:196},{kind:'glow',x:117,y:187}],
+ },
+};

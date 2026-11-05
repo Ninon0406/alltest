@@ -62,7 +62,7 @@ export function combatPanel(content:HTMLElement,s:State,button:ButtonFactory,act
  const utilities=element('div');utilities.className='battle-utilities';
  const actions:[string,string,string][]=[
   ['BASIC_PULSE','ประกายพื้นฐาน · MP 0','cast'],
-  ['GUARD','ตั้งรับ · ฟื้น MP 6','rest'],
+  ['GUARD','ตั้งรับ · ฟื้น MP 6','guard'],
   ['IT_POTION_DEW',`น้ำค้างฟื้นพลัง · ${s.inventory.IT_POTION_DEW||0}`,'rest'],
   ['IT_MANA_LEAF',`ใบฟื้นเวท · ${s.inventory.IT_MANA_LEAF||0}`,'rest']
  ];

@@ -1,3 +1,13 @@
+# 0.3.0 — ฉากที่มีชีวิต
+
+Original village/garden/workshop/forest each use three layers plus depth-sorted props, ambient and restrained parallax. Player has56 frames across11 named cycles; practice has a new original lantern-spirit silhouette/13 frames. Real flags add visible world memories. Walking/pickup/craft/guard/cast/hit/victory cues are driven by the existing resolved game state.
+
+Skip/reduced-motion cancel and settle animation safely; final battle reactions appear before returning to story. OS reduced motion is honored from launch. Loading locks game actions until renderer ready; missing new PNGs use retained original art and a Thai status message. Portrait HUD now sits below the stage; short-landscape canvas fits its own column so the desk cannot hide the foe. All legacy art and existing gameplay are preserved.
+
+Still a first-slice prototype: no new chapter scenes/endings/recipes, final HD certification, NPC silhouette completion or audio. State2/database1/checksum envelope1 unchanged; existing saves remain compatible. Release URL/CI proof is recorded after actual publication in TEST_REPORT.
+
+## Earlier releases
+
 # 0.2.0 — ฝึกเวทกับคุโร
 
 Playable workshop training with actual35HP/power5/rules/rewards, optional surrender and checkpoint recovery. Forest clue handoff supplies a real one-time fire recipe. Elemental status/reaction timing, finite wards, semantic HP/MP,2×2 loadout, status help, intent/log and outcome feedback. Support VFX lands on the player; ground shadows follow movement.
