@@ -153,3 +153,9 @@ Append-only ประวัติการส่งมอบ งานออก�
 Session9 final localgate:54/54PASS10.6m, zero skipped; gameunit96/content2/roadmap6/type/lint/buildPASS. Source77b62e9 andPR#9. Candidate remainsunmerged because VIS-011 all-scene/battleframingreview is outstanding; public0.5.0 retained. Next finishframingacceptance plusNPC/ruins/festival/battles/canon perboard, no additionalDONEcredit fromprototypecore.
 
 Session9 sourceCI42011348567SUCCESS full54 on77b62e9; final evidence-onlydoccommit follows, roadmap6rechecked. KeepPR#9open andVIS-011IN_PROGRESS pendingall-scene/battleframingreview. No permissionblock claimed; this is an unfinishedqualitygate. Public0.5.0 remainsverifiedfromSession8. NextcycleinspectthisPRfirst, finishframingreview beforedeploy; originalsystems/saves/assetsretained.
+
+## Session10 —2026-11-05 UTC —camera target semantics/gallery
+
+Baseebe49f5; continueopenPR#9 onfeat/godseed-camera-director, reuse03/Roadmap/Skills, no newtracker. Fixed a concrete camera flaw: offensivecasts framed the caster. PurecameraFocus now prioritizespath/scenery, framesoffense atfoe, support/crafting atplayer. Added tests for targetsemantics and genuine six-stage gallery on390/820/1024/1366, includingactualtrainingcast rightpan andbounds. Originalsave/content/assets retained.
+
+npmci/test:allPASS: gameunit97/content2/roadmap6/type/lint/build. Newgallery4/4PASS1.0m, actualarchivephone screenshotreviewed. PreviousSession9 full54/CI54 pertains to77b62e9, not this new tree; finalCI now discovers58 cases and is not yetconfirmed. No claimfull58PASS or deployment. VIS-011 remainsIN_PROGRESS (allbattle/VFXframing pending); checklist18/74=24.3%, v118/71=25.4%, problem0/blocked1hardwareSafari. Next: finishPR9battleframing→NPCart→ruins/festival→B03/B04→canon/endings. Public0.5.0 unchanged.

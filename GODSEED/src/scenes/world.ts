@@ -7,7 +7,7 @@ import {playerAnimations,trainingAnimations} from './actor-art';
 import {STAGES,stageLayouts,stageFolder,stageFallback,type StageId} from './stage-layout';
 import {explorationAnimations} from './exploration-art';
 import {directionalWalk,facings,facingFor,walkDuration,type Facing} from './directional-art';
-import {cameraShot,cameraFraming} from './camera-plan';
+import {cameraShot,cameraFraming,cameraFocus} from './camera-plan';
 import {cinematicPath} from './cinematic-paths';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 
@@ -204,7 +204,7 @@ export class World extends Phaser.Scene {
   if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell,target);
   const path=cinematicPath(this.currentStage,cue,command);
   const framed=!reduced&&!!(command||path||spell);
-  if(framed){const focus=path?.points.at(-1)?.x??(cue==='talk'?this.npc.x:target==='scene'?stageLayouts[this.currentStage].spellTarget?.x??240:this.player.x);const shot=cameraShot(focus,false);this.tweens.add({targets:this.cameras.main,scrollX:shot.scrollX,duration:cameraFraming.duration,ease:'Sine.easeInOut'});}
+  if(framed){const focus=cameraFocus({cue,playerX:this.player.x,npcX:this.npc.x,pathX:path?.points.at(-1)?.x,sceneX:target==='scene'?stageLayouts[this.currentStage].spellTarget?.x??240:undefined,offensive:spell?spell.heal===0&&spell.shield===0:command==='BASIC_PULSE'});const shot=cameraShot(focus,false);this.tweens.add({targets:this.cameras.main,scrollX:shot.scrollX,duration:cameraFraming.duration,ease:'Sine.easeInOut'});}
   this.writeMetric('lastPath',path?.id||'none');this.writeMetric('pathPhase',path?'approach':'interaction');
   this.writeMetric('pathProgress',0);
   if(path){

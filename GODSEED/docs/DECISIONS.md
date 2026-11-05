@@ -74,3 +74,5 @@
 44. The old generatedfive-task queue always included the firstID even afterDONE. Derive it from unfinished candidate statuses and prioritize recordedregressions; keep allstatuses/denominators in roadmap.json. Six negative/counting/queue tests support future truthful updates. Hardware/Safari remainsblocked, optionalAI/CH2/CH3 remain outsidev1criticalpath.
 
 45. Session9: develop VIS-011 camera core as a bounded prototype, retaining its IN_PROGRESS status pending full framing acceptance. Use fixedoverscan rather than repeatedzoomjumps; reducedmotion1:1 and skip resets camera immediately. Pan/return ties to resolved story/battle commands, not game state changes or menu-only operations. No new art/story/schema. Preserve previous percentages until complete evidence exists.
+
+46. Session10: finishpreviousPR9 acceptance beforeanotherproject/slice. Correct cameraoffense recipient instead ofcountingexistingwrongfocusascomplete. Six-stagegallery andtrainingoffense broaden evidence; allbattle/VFXreview stilloutstanding, keepVIS-011IN_PROGRESS andpercentunchanged. PreviousCI54 is not new-tree58proof; recordpendinghonestly.

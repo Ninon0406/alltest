@@ -1,0 +1,14 @@
+import {test,expect} from '@playwright/test';
+test.use({hasTouch:true});
+for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`camera gallery six genuine stages ${width}`,async({page})=>{
+ test.setTimeout(180_000);await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('/');const canvas=page.locator('#canvas');await expect(canvas).toHaveAttribute('data-render-status','ready');
+ const tap=async(name:string)=>{const b=page.getByRole('button',{name,exact:true});if(!await b.isVisible()&&await page.locator('.other-routes summary').isVisible())await page.locator('.other-routes summary').tap();await b.tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+ const photo=async(stage:string)=>{await expect(canvas).toHaveAttribute('data-stage',stage);await tap('ลดการเคลื่อนไหว');await page.waitForTimeout(100);const c=JSON.parse((await canvas.getAttribute('data-camera-shot'))!);expect(c.zoom).toBe(1.08);expect(c.left).toBeGreaterThanOrEqual(0);expect(c.right).toBeLessThanOrEqual(480);await canvas.screenshot({path:`test-results/gallery-${stage}-${width}.png`});await tap('ลดการเคลื่อนไหว');};
+ await tap('เริ่มการเดินทาง');await photo('village');for(const n of ['ลุกขึ้นสำรวจรอบตัว','เดินตามป้ายไม้ไปที่จัตุรัส','แวะสวนดอกไม้ของยายมาเรน'])await tap(n);await photo('garden');
+ for(const n of ['ช่วยรดน้ำและเก็บเมล็ด','ไปโรงช่างของคุโร'])await tap(n);await photo('workshop');for(const n of ['ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท','ไปโรงช่างของคุโร','ฝึกต่อสู้กับภูตจำลอง'])await tap(n);
+ await tap('ลดการเคลื่อนไหว');const shot=page.waitForFunction(()=>{const d=document.querySelector<HTMLElement>('#canvas')?.dataset;if(d?.actionPhase!=='action'||!d.cameraShot)return null;const c=JSON.parse(d.cameraShot);return c.x>5?c:null;},null,{polling:'raf'});
+ await page.getByRole('button',{name:'วายุดารานำวิถี · MP 10',exact:true}).tap();const h=await shot;expect((await h.jsonValue()).right).toBeLessThanOrEqual(480);await h.dispose();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await tap('ลดการเคลื่อนไหว');await tap('ยุติการฝึก');
+ for(const n of ['ขอเรียนการผสมเวท','ออกไปหาของเพิ่มเติมก่อน','เข้าหอสมุดของไอรา'])await tap(n);await photo('archive');for(const n of ['ขอดูจารึกเสียงสะท้อน','จดพิกัดโบราณสถาน','สำรวจลำธารสีหยก'])await tap(n);await photo('stream');
+ for(const n of ['กลับหมู่บ้าน','เดินทางสู่ชายป่า'])await tap(n);await photo('forest');expect(errors).toEqual([]);
+});

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "09906d4",
+  "baseCommit": "ebe49f5",
   "phases": [
     {
       "id": 1,
@@ -513,9 +513,10 @@
         "GODSEED/src/main.ts",
         "GODSEED/src/scenes/camera-plan.ts",
         "GODSEED/tests/camera.spec.ts",
-        "GODSEED/tests/camera.test.ts"
+        "GODSEED/tests/camera.test.ts",
+        "GODSEED/tests/camera-gallery.spec.ts"
       ],
-      "evidence": "Session9: bounded12px pan/450ms easing+fixed1.08overscan, return/skip/reduced cancellation; focus4/4PASS12.3s and finalfull54/54PASS10.6m; phone runtime reviewed; all-scene/battle framing acceptance stillpending; sourceCI42011348567SUCCESS on77b62e9/full54; candidatePR9notmerged",
+      "evidence": "Session10: แก้offensivefocus→enemy/support→player/path+sceneoverride; gameunit97/content2/roadmap6/buildPASS; realroutes6stages×4viewports + actualtrainingoffense focus4/4PASS1.0m; allbattle/VFXframing and finalCI58 pending",
       "acceptance": "boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย",
       "legacyIds": [
         "GS-009",
