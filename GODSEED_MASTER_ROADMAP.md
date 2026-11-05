@@ -10,12 +10,12 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 ทุกงานน้ำหนัก1: เปอร์เซ็นต์ = จำนวน✅ ÷ จำนวนงาน ×100; 🟡/⬜/🔴/⛔ได้0 ไม่มีpartialเครดิต ตัวเลขเป็นความคืบหน้าของChecklistเท่านั้น ไม่ใช่เวลาที่เหลือ ปริมาณแรงงาน ความสนุก หรือคุณภาพภาพของเกมทั้งหมด งานขนาดต่างกันและรายการอาจเพิ่มได้ ต้องอ่านพร้อมจำนวนงานและlog
 
-**ความคืบหน้ารวม Checklist: 24.3% (18/74)** · เฉพาะขอบเขต1.0: 25.4% (18/71)
+**ความคืบหน้ารวม Checklist: 23% (17/74)** · เฉพาะขอบเขต1.0: 23.9% (17/71)
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 74 | 18 | 39 | 16 | 0 | 1 | 24.3% |
-| 1.0 | 71 | 18 | 39 | 13 | 0 | 1 | 25.4% |
+| ทั้งโครงการ | 74 | 17 | 39 | 16 | 1 | 1 | 23% |
+| 1.0 | 71 | 17 | 39 | 13 | 1 | 1 | 23.9% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
@@ -26,7 +26,7 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
 | [5 — ระบบต่อสู้](#phase-5) | 3/9 | 4 | 2 | 0 | 0 | 33.3% |
 | [6 — โลกและเนื้อหาขนาดใหญ่](#phase-6) | 0/8 | 5 | 3 | 0 | 0 | 0% |
-| [7 — คุณภาพเกม](#phase-7) | 1/9 | 3 | 4 | 0 | 1 | 11.1% |
+| [7 — คุณภาพเกม](#phase-7) | 0/9 | 3 | 4 | 1 | 1 | 0% |
 | [8 — เกมฉบับสมบูรณ์](#phase-8) | 0/10 | 5 | 5 | 0 | 0 | 0% |
 
 ## กฎสถานะ/หลักฐาน
@@ -490,11 +490,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: nativecontrols/aria/reducedmotionมี; fullaudit/fontscale/settingsยังไม่ครบ
   - เกณฑ์เสร็จ: WCAG2.2AA/44pxtouch/focus/fontscaling/keyboard/สถานะไม่พึ่งสีครบ
 
-- [x] ✅ เสร็จสมบูรณ์ **QA-006 — Automated unit/content/save/balance/browser baseline**
+- [ ] 🔴 มีปัญหา **QA-006 — Automated unit/content/save/balance/browser baseline**
   - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-002, GS-024, GS-031 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, FND-005
   - ไฟล์: [GODSEED/tests/unit.test.ts](GODSEED/tests/unit.test.ts) · [GODSEED/tests/browser.spec.ts](GODSEED/tests/browser.spec.ts) · [.github/workflows/pages.yml](.github/workflows/pages.yml)
-  - หลักฐาน/สถานะจริง: 87unit/content2/browser41 CI0.4.1และbaselineรอบ7ผ่าน · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
+  - หลักฐาน/สถานะจริง: Session8 localfull49PASS/1FAIL: keyboardEnterก่อนstartพร้อมจากPNGloading; PRCI50PASSแต่รอแก้testreadiness/retest · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
   - เกณฑ์เสร็จ: รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-007 — Visual regression golden/diffและ234VFXaudit**

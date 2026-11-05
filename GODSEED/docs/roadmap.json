@@ -1448,7 +1448,7 @@
       "id": "QA-006",
       "phase": 7,
       "title": "Automated unit/content/save/balance/browser baseline",
-      "status": "done",
+      "status": "problem",
       "priority": "P0",
       "dependsOn": [
         "FND-003",
@@ -1459,7 +1459,7 @@
         "GODSEED/tests/browser.spec.ts",
         ".github/workflows/pages.yml"
       ],
-      "evidence": "87unit/content2/browser41 CI0.4.1และbaselineรอบ7ผ่าน",
+      "evidence": "Session8 localfull49PASS/1FAIL: keyboardEnterก่อนstartพร้อมจากPNGloading; PRCI50PASSแต่รอแก้testreadiness/retest",
       "acceptance": "รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว",
       "legacyIds": [
         "GS-002",

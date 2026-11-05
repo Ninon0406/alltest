@@ -26,7 +26,8 @@ test('unsupported status and DONE without actual verification record reject',()=
 });
 
 test('next-work list excludes completed tasks and promotes actual regressions',()=>{
- const d=data();d.tasks.find(t=>t.id==='VIS-003').status='done';
+ const d=data();for(const t of d.tasks)if(t.status==='problem')t.status='in_progress'; // Isolate this queue fixture from current project regressions.
+ d.tasks.find(t=>t.id==='VIS-003').status='done';
  assert.match(board(d),/^1\. VIS-004 /m);
  d.tasks.find(t=>t.id==='CMB-006').status='problem';
  assert.match(board(d),/^1\. CMB-006 /m);

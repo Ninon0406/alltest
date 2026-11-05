@@ -19,7 +19,12 @@ for(const [w,h] of [[360,800],[390,844],[430,932],[768,1024],[820,1180],[1024,76
 });
 test('project Pages subpath loads actual production assets and accepts keyboard/touch without duplicate action',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.url());});
- await page.goto('http://127.0.0.1:4191/alltest/');await page.getByRole('button',{name:'เริ่มการเดินทาง'}).focus();await page.keyboard.press('Enter');
+ // A slow real PNG must not turn an early Enter on a disabled button into
+ // an assumed game start. Keep the real keyboard/subpath/double-click path.
+ await page.route('**/assets/art-v4/hero-walk.png',async route=>{await new Promise(resolve=>setTimeout(resolve,500));await route.continue();});
+ await page.goto('http://127.0.0.1:4191/alltest/');
+ await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','ready');
+ const start=page.getByRole('button',{name:'เริ่มการเดินทาง'});await expect(start).toBeEnabled();await start.focus();await page.keyboard.press('Enter');
  await page.getByRole('button',{name:'ลุกขึ้นสำรวจรอบตัว',exact:true}).click();await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).click();
  await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน'})).toBeVisible();
  await page.getByRole('button',{name:'เก็บขนนกสีฟ้าที่ข้างทางก่อน',exact:true}).dblclick();await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว'})).toBeVisible();

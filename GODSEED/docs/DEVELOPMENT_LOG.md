@@ -119,3 +119,10 @@ Append-only ประวัติการส่งมอบ งานออก�
 - สถานะ: VIS-003DONEหลังหลักฐานเฉพาะงาน; finalchecklist18/74=24.3%, v1 18/71=25.4%, problem0/blocked1QA-009 (ไม่ใช่hardwareacceptance)
 - Sourcebasebda8f51, branchfeat/godseed-directional-hero; source/tests/docsนี้ ผลfull50/CI/public/commitsบันทึกต่อในTEST_REPORTเมื่อรันเสร็จ
 - งานถัดไป5รายการ: VIS-004 NPC → VIS-011 camera → VIS-008 ruins/festivalart → CMB-006 B03/B04ตามdependency → STO-001canonส่วนที่ขาด ก่อนboss/endings
+
+### Session8 verification regression
+
+- PRCI42002997166 full50SUCCESS แต่ localfull49PASS/1FAIL10.0m: Pages keyboardtestส่งEnterก่อนrenderer/storageเปิดปุ่มstart (focusไม่รอenabled) จึงยังอยู่หน้าtitle
+- เกมยังล็อกปุ่มจนพร้อมตามการออกแบบ ไม่แก้ให้ปุ่มรับคำสั่งก่อนโหลดเสร็จ; แก้harnessรอrender-readyและstartenabledก่อนใช้keyboardจริง เพิ่มdelayPNG500msเพื่อครอบคลุมboundaryนี้ ไม่injectstate/ไม่skipcase
+- QA-006เปลี่ยนDONE→problemระหว่างตรวจซ้ำ; nodequeuefixtureแยกcurrentprojectregressionsออกก่อนตั้งสถานะตัวอย่าง เพื่อไม่ให้metadataที่มีproblemอย่างถูกต้องทำให้unitfixtureคาดอันดับผิด
+- ผลfocusedrepeat/remoteheadใหม่และการคืนสถานะหลังผ่านจะเพิ่มในTEST_REPORT; ไม่ใช้greenCIเก่ากลบlocalfailure
