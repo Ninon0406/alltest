@@ -204,7 +204,7 @@ export class World extends Phaser.Scene {
   this.writeMetric('pathPhase','interaction');this.pose(poseFor(cue));
   if(path?.seatDepth&&cue==='rest'){this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
-  if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?800:cue==='cast'?560:600,yoyo:cue==='pick'},token);
+  if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
   if(token!==this.generation)return;
   if(before?.battle&&next){
    this.phase='reaction';this.diagnostics();

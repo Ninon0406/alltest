@@ -59,8 +59,10 @@ test('non-combat stream path remembers listening, then a skipped genuine WIND ca
  const before=await saved(page);await page.getByRole('button',{name:'ลดการเคลื่อนไหว',exact:true}).tap();
  await page.getByRole('button',{name:'ใช้เวทลมพัดหมอก',exact:true}).tap();await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','cast');
  expect(JSON.parse((await page.locator('#canvas').getAttribute('data-spell-target'))!)).toEqual({kind:'scene',x:330,y:150});
- await page.screenshot({path:'test-results/explore-wind-target-390.png',fullPage:true});
+ // Capture the observed target before skipping, but do not spend the finite
+ // skip window waiting for a full-page screenshot on a busy CI runner.
  await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).tap();await settled(page);
+ await page.screenshot({path:'test-results/explore-wind-target-390.png',fullPage:true});
  const next=await saved(page);expect(next.flags).toMatchObject({stream_clean:true,stream_clue:true});expect(next.revision).toBe(before.revision+1);expect(next.mp).toBe(before.mp);expect(next.rewarded).toEqual([]);expect(next.choices.filter(id=>id==='CH1102')).toHaveLength(1);
  await expect(page.locator('#canvas')).toHaveAttribute('data-stream-mist','clear');await expect(page.locator('#canvas')).toHaveAttribute('data-active-effects','0');
  await tap(page,'ปล่อยกระดิ่งไว้และจำจังหวะเสียง');expect((await saved(page)).flags.stream_clean).toBe(true);expect((await saved(page)).inventory.IT_OLD_BELL||0).toBe(0);await tap(page,'ความทรงจำ');await expect(page.getByText('ลำธารกลับมาใส · หมอกใต้สะพานจางลง',{exact:true})).toBeVisible();await expect(page.getByText('ช่วยกระดิ่งจากรากไม้ · เก็บกระดิ่งเก่าไว้แล้ว',{exact:true})).toHaveCount(0);expect(errors).toEqual([]);

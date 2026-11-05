@@ -377,7 +377,7 @@
       "id": "VIS-006",
       "phase": 2,
       "title": "Director: authored paths → interaction → commit/skip",
-      "status": "done",
+      "status": "problem",
       "priority": "P1",
       "dependsOn": [
         "FND-003",
@@ -387,7 +387,7 @@
         "GODSEED/src/scenes/cinematic-paths.ts",
         "GODSEED/tests/cinematics.spec.ts"
       ],
-      "evidence": "cinematics unit3/3; final touch4/4 PASS31.4s หลังseatdepthfix; ภาพphone390/desktop1366ตรวจแล้ว",
+      "evidence": "รอบ7full45พบWINDskip timeout เพราะscreenshotรอจนช่วงskipจบและcast holdสั้นลง; คืนtiming/แก้testorderingแล้ว รอrerun",
       "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
       "legacyIds": [
         "GS-010"

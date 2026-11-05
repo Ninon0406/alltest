@@ -84,3 +84,10 @@ Append-only ประวัติการส่งมอบ งานออก�
 - ผลหลังseatfix/เต็มชุด/CI/public: ดูTEST_REPORT Session7 ซึ่งจะบันทึกเมื่อรันเสร็จ ไม่ถือค่ารอผลเป็นPASS
 - ไฟล์/commit: basef0eb125, branchfeat/godseed-roadmap-cinematics; source/tests/docsรอบ7; commit/PRและผลdeployอ้างในTEST_REPORTเมื่อสร้างจริง
 - งานต่อ5รายการ: VIS-003(สี่ทิศ), VIS-004(NPC), VIS-011(กล้อง), VIS-008(ฉากruins/festival), CMB-006(B03/B04พร้อมภาพตามdependency→story/boss/endings)
+
+### Session7 follow-up regression gate
+
+- Full local suiteพบWINDskipcase timeout: testรอfull-page screenshotก่อนกดskipจนcastจบ; presentationrefactorยังทำให้holdcast/craftสั้นจากเดิมโดยไม่ตั้งใจ
+- เปลี่ยนVIS-006จากDONEเป็นproblemในdatasetระหว่างแก้ (Checklist16/74=21.6%); ไม่ลบหรือskipเทสต์เพื่อให้เขียว
+- คืนcast/crafthold1120/1600msเท่าช่วงรวมเดิม และให้testอ่านactualtarget→skipทันที→ถ่ายภาพหลังsettled แทนพึ่งความเร็วscreenshot
+- ผลrerun/สถานะหลังแก้ต้องอ้างTEST_REPORT; ภาพexplore-wind-targetเป็นภาพหลังsettled ไม่อ้างว่าเป็นmid-cast VFX golden

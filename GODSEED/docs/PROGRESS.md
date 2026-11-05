@@ -35,8 +35,8 @@ Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณ�
 Basef0eb125 · branchfeat/godseed-roadmap-cinematics · M1/M2 polish + GS-041 tracking. ตรวจgit/workingtree/lastCI/เอกสาร03/spec/Skills/โค้ด/PNG/ผลทดสอบก่อนแก้ ไม่เริ่มใหม่และไม่ลบงานเดิม
 
 - FND-009/GS-041 DONE: rootGODSEED_MASTER_ROADMAP.md 8Phases/74งาน, JSONสถานะชุดเดียว, generator/validator5tests+CI, Task Boardเป็นgeneratedview, Development Logย้อนหลัง0–6และรอบ7, append03/AGENTSเดิม
-- VIS-006/GS-010 DONEเฉพาะขอบเขตเส้นทาง: 8choice-specificapproaches/6travel lanes ก่อนinteraction; left/rightfacing/skip/reduced/reload-safe; ยกตัวนั่งบนbenchด้วยsupportdepthโดยคืนdepth/shadowหลังจบ
-- Checklistรวม23.0% =17/74งาน; ✅17 🟡40 ⬜16 🔴0 ⛔1. เฉพาะ1.0=23.9%(17/71). นี่คือChecklistแบบน้ำหนัก1 ไม่ใช่สัดส่วนแรงงาน/เวลา/คุณภาพเกม AI/CH2/CH3แยกscope
+- VIS-006/GS-010 problemระหว่างแก้regression full-suite; ขอบเขตเส้นทาง: 8choice-specificapproaches/6travel lanes ก่อนinteraction; left/rightfacing/skip/reduced/reload-safe; ยกตัวนั่งบนbenchด้วยsupportdepthโดยคืนdepth/shadowหลังจบ
+- Checklistระหว่างแก้regression21.6% =16/74งาน; ✅16 🟡40 ⬜16 🔴1 ⛔1. เฉพาะ1.0=22.5%(16/71). นี่คือChecklistแบบน้ำหนัก1 ไม่ใช่สัดส่วนแรงงาน/เวลา/คุณภาพเกม AI/CH2/CH3แยกscope
 - Baseline npmci/checksผ่าน; finaltype/lint/content2/unit90/buildผ่าน, roadmap5ผ่าน, finaltouch4ผ่าน31.4s. ตรวจภาพphone390/desktop1366หลังแก้benchocclusionจริง Full45/remote/publicproofในTEST_REPORTเมื่อรันเสร็จ
 - ปริมาณจากsourceยัง17scenes/56choices/NPC5/3encounters/234legal/5สูตรทดสอบค้นพบจริง/0endings/6stages/39PNGs; State2/DB1/envelope1เดิม ไม่มีcontent/PNGใหม่
 - ปัญหาที่พบและแก้: screenshotจับได้benchบังrestแม้automatedcheckแรกผ่าน จึงแก้anchor/supportdepthและดูภาพซ้ำ ยังไม่อ้างfinalHDvisualgate
