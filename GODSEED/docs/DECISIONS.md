@@ -55,3 +55,8 @@
 35. Final review corrected story spell endpoints to authored scenery anchors rather than a companion's coordinates. WIND dispels bridge mist at330/150; archive study glows at manuscript240/142. Keep battle recipient rules unchanged and assert the observed WIND endpoint during the genuine skip path.
 
 36. A genuine WATER-first route demonstrated that CH0205 must accept forest_open OR crafted_first, as SSOT specifies. Fix the former single-flag gate and preserve the shared UI/reducer check; add a failing-then-passing real-choice regression. Keep clearing stream mist and rescuing the bell as separate journal facts, tied to stream_clean versus CH1201.
+
+## Session6 — 0.4.1
+
+37. Complete pending GS-015/017 preview/filter/unequip before another large location slice. New materials in0.4 make recipe compatibility feedback useful. Reuse canonical legality/stats; do not change234 definitions or invent unknown names.
+38. Unequip compacts remaining slots to preserve the published State2 array contract; permit zero spells because BASIC_PULSE/GUARD remain available. Recipes are never removed. Reject changes in battle and invalid slots. Filters remain ephemeral and do not mutate saves.

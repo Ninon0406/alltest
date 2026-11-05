@@ -194,3 +194,9 @@ Actual public `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.i
 
 
 Main workflow41961020262 final SUCCESS: build127027131255 completed all checks including the final37-case browser suite; deploy127029578170 completed configure-pages/deploy-pages at2026-11-05 03:28:23 UTC. Post-Actions public HTML/JS/28PNG/renderer gate PASS with the same f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea and empty observed errors. The Actions artifact therefore matches the already verified public old/new gameplay and checksum/import flow. Final evidence-only documentation changes do not alter game code/assets/bundle.
+
+# Session6 —0.4.1 alchemy UI
+
+Clean base09a5c19. Locked install then baseline type/lint/content2/unit81/build PASS (unchanged dependencies). New6 pure rule/view tests cover hidden unknown names, legality/error rejection without loss, known recipes without extra costs, combined discovered-only filters, compact/empty loadout with checksum round trip and invalid/battle rejection. Unit total87/87 PASS. New browser3/3 initially PASS at390/1024/1366: real WIND/BLOOM craft, incompatible/known disabled controls, filters, remove/reload and actual empty-loadout BASIC victory. Current full40-case run and final focused pass follow below. No gameplay fixtures injected in browser routes.
+
+No art/content count increase or save migration. Actual source inspector remains17/56/5NPC/3encounters/234/0endings/6stages. Hardware/Safari/FPS/fullchapter/finalHD remain pending.

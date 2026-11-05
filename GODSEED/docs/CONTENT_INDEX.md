@@ -27,3 +27,5 @@ Session5 adds4scenes/15choices (2hub routes+6archive/research+7stream/result), o
 Five distinct spells are actually discovered/equipped/used across real browser routes: WIND_ORB_SEEK, BLOOM_RING_HEAL, FIRE_ORB_SPLIT, WATER_RING_HEAL, ECHO_ORB_LINGER. This is observed path coverage, not a free starter loadout or all234materials available. Supplied-material unit fixtures still exercise all234 recipes separately.
 
 Clue facts: forest_clue/stream_clue/archive_read/ruins_clue. The fourth remains future ruinstory; no bogus ruins/festival button is exposed.0fullchapterendings; slice_complete marks only the original forest-note milestone.
+
+Session6/0.4.1: counts unchanged; no scenes, choices, NPCs, encounters, spells or artwork added. View-only recipe/book filters and equip/unequip UI actions are not story choices.

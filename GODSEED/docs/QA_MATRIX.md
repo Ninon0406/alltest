@@ -47,3 +47,7 @@ Final local full36/36 PASS6.4m; final focused6/6 PASS1.6m adds actual archive/st
 Public0.4.0 touch route PASS: oldforest/FIRE/practice, archive research, realECHO/WATER crafting, B02 spell/reload/win, bell/clearstream and Eira memory, checked export/import. All28 versioned PNGs and current JS hash match the source; observed error list empty. main:/ Pages41961019875 SUCCESS; mainActions/post-deploy byte proof recorded next inTEST_REPORT.
 
 Main workflow41961020262 build+deploy SUCCESS at2026-11-05 03:28:23 UTC. Final post-Actions assets-only public check PASS: current HTML, same f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea JS and28 versioned PNGs, ready three-layer renderer and empty errors.
+
+## Session6 —0.4.1
+
+New Chromium cases390×844,1024×768,1366×768 use real collection/crafting, invalid/known preview, combined book filters, removal/reload and nine BASIC_PULSE turns to win practice with no equipped spells. Phone screenshot alchemy-390.png reviewed: readable selectors/no overflow, original pixel scene retained. These are browser simulations, not Safari or physical-device acceptance. Final counts/status inTEST_REPORT.
