@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `d4da87a` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `0dc5e59` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -10,18 +10,18 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 ทุกงานน้ำหนัก1: เปอร์เซ็นต์ = จำนวน✅ ÷ จำนวนงาน ×100; 🟡/⬜/🔴/⛔ได้0 ไม่มีpartialเครดิต ตัวเลขเป็นความคืบหน้าของChecklistเท่านั้น ไม่ใช่เวลาที่เหลือ ปริมาณแรงงาน ความสนุก หรือคุณภาพภาพของเกมทั้งหมด งานขนาดต่างกันและรายการอาจเพิ่มได้ ต้องอ่านพร้อมจำนวนงานและlog
 
-**ความคืบหน้ารวม Checklist: 26.3% (20/76)** · เฉพาะขอบเขต1.0: 27.4% (20/73)
+**ความคืบหน้ารวม Checklist: 27.6% (21/76)** · เฉพาะขอบเขต1.0: 28.8% (21/73)
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 76 | 20 | 39 | 16 | 0 | 1 | 26.3% |
-| 1.0 | 73 | 20 | 39 | 13 | 0 | 1 | 27.4% |
+| ทั้งโครงการ | 76 | 21 | 38 | 16 | 0 | 1 | 27.6% |
+| 1.0 | 73 | 21 | 38 | 13 | 0 | 1 | 28.8% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [1 — โครงสร้างพื้นฐาน](#phase-1) | 7/9 | 2 | 0 | 0 | 0 | 77.8% |
-| [2 — งานภาพ Pixel Art HD](#phase-2) | 5/14 | 9 | 0 | 0 | 0 | 35.7% |
+| [2 — งานภาพ Pixel Art HD](#phase-2) | 6/14 | 8 | 0 | 0 | 0 | 42.9% |
 | [3 — ระบบเนื้อเรื่อง](#phase-3) | 1/8 | 5 | 2 | 0 | 0 | 12.5% |
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
 | [5 — ระบบต่อสู้](#phase-5) | 3/9 | 4 | 2 | 0 | 0 | 33.3% |
@@ -49,9 +49,9 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 
 | สถานที่ | ภาพอ้างอิง | โครงสร้าง | วัตถุ/เลเยอร์ | Collision/Anchor | เดิน/Animation | เหตุการณ์ | เอฟเฟกต์ | Chromiumจำลอง | ฉากฉบับสมบูรณ์ |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ลานน้ำพุกลางหมู่บ้าน | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🟡 |
+| ลานน้ำพุกลางหมู่บ้าน | ✅ | ✅ | 🟡 | ✅ | 🟡 | 🟡 | 🟡 | ✅ | 🟡 |
 | ประตูทางเข้าหมู่บ้าน | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| ใต้ต้นไม้ใหญ่ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🟡 |
+| ใต้ต้นไม้ใหญ่ | ✅ | ✅ | 🟡 | ✅ | 🟡 | 🟡 | 🟡 | ✅ | 🟡 |
 | บ้านผู้เล่น | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | บ้านผู้เฒ่าและสวนสมุนไพร | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ถนนสู่ป่า | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -60,7 +60,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 | ศาลเจ้าโบราณ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ลานต่อสู้กลางป่า | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
-- **village_center — ลานน้ำพุกลางหมู่บ้าน**: ต้นแบบตามเกณฑ์ย่อย: generatedlayers/propsจริง, foot-colliders/graph unitผ่าน, focused10/10และfinaltree5/5 ผ่านChromium390/820/1024/1366; เปิดภาพหลังGroundMaskและปรับroutefoot186ให้ผ่านใต้boughจริง; finalHD/ฉากฉบับสมบูรณ์ยังไม่ผ่าน Full63รอผล
+- **village_center — ลานน้ำพุกลางหมู่บ้าน**: มีต้นแบบเล่นจริงและทดสอบChromium390/820/1024/1366ผ่าน; structure/foot-collision/anchorsผ่านในขอบเขตถนนที่สร้างแล้ว ส่วนเลเยอร์/animation/เหตุการณ์/เอฟเฟกต์ระดับฉากสมบูรณ์ยังไม่ครบ (NPC/special poses/รายละเอียดเทียบconceptยังค้าง) ดูVIS-014สำหรับขอบเขตต้นแบบที่ทดสอบ ไม่ใช้ผลย่อยแทนfinalHD/hardware; CI42042658772 full65PASS source0dc5e59; VIS-014DONEเฉพาะต้นแบบ ไม่ทำให้ทั้งสถานที่เสร็จ
   - หลักฐาน: [assets/reference/godseed/references/01_village_center.webp](assets/reference/godseed/references/01_village_center.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts) · [GODSEED/docs/evidence/session12/village-after-390.png](GODSEED/docs/evidence/session12/village-after-390.png) · [GODSEED/docs/TEST_REPORT.md](GODSEED/docs/TEST_REPORT.md)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
@@ -68,7 +68,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน: [assets/reference/godseed/references/02_village_entrance.webp](assets/reference/godseed/references/02_village_entrance.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
-- **under_tree — ใต้ต้นไม้ใหญ่**: ต้นแบบตามเกณฑ์ย่อย: generatedlayers/propsจริง, foot-colliders/graph unitผ่าน, focused10/10และfinaltree5/5 ผ่านChromium390/820/1024/1366; เปิดภาพหลังGroundMaskและปรับroutefoot186ให้ผ่านใต้boughจริง; finalHD/ฉากฉบับสมบูรณ์ยังไม่ผ่าน Full63รอผล
+- **under_tree — ใต้ต้นไม้ใหญ่**: มีต้นแบบเล่นจริงและทดสอบChromium390/820/1024/1366ผ่าน; structure/foot-collision/anchorsผ่านในขอบเขตถนนที่สร้างแล้ว ส่วนเลเยอร์/animation/เหตุการณ์/เอฟเฟกต์ระดับฉากสมบูรณ์ยังไม่ครบ (NPC/special poses/รายละเอียดเทียบconceptยังค้าง) ดูVIS-014สำหรับขอบเขตต้นแบบที่ทดสอบ ไม่ใช้ผลย่อยแทนfinalHD/hardware; CI42042658772 full65PASS source0dc5e59; VIS-014DONEเฉพาะต้นแบบ ไม่ทำให้ทั้งสถานที่เสร็จ
   - หลักฐาน: [assets/reference/godseed/references/03_ancient_tree.webp](assets/reference/godseed/references/03_ancient_tree.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts) · [GODSEED/docs/evidence/session12/tree-after-390.png](GODSEED/docs/evidence/session12/tree-after-390.png) · [GODSEED/docs/TEST_REPORT.md](GODSEED/docs/TEST_REPORT.md)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
@@ -174,7 +174,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-001
   - ไฟล์: [GODSEED/docs/ART_BIBLE.md](GODSEED/docs/ART_BIBLE.md) · [GODSEED/docs/ASSET_LICENSES.md](GODSEED/docs/ASSET_LICENSES.md)
-  - หลักฐาน/สถานะจริง: original generators39PNG; visual gateยังไม่ผ่าน; Session12 เพิ่มต้นแบบหมู่บ้าน/ต้นไม้ตามภาพเจ้าของ ระบบใหม่ยังรอ final gate
+  - หลักฐาน/สถานะจริง: original generators39PNG; visual gateยังไม่ผ่าน; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ
   - เกณฑ์เสร็จ: palette/metrics/rights/lighting/atlasมาตรฐานเดียวและreviewจริงครบฉาก
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-002 — Hero atlas 11 named action cycles**
@@ -202,7 +202,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-002
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts)
-  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 เพิ่มต้นแบบหมู่บ้าน/ต้นไม้ตามภาพเจ้าของ ระบบใหม่ยังรอ final gate
+  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
@@ -223,21 +223,21 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-008, GS-009 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-001
   - ไฟล์: [GODSEED/src/scenes/stage-layout.ts](GODSEED/src/scenes/stage-layout.ts) · [GODSEED/scripts/generate-stage-art.mjs](GODSEED/scripts/generate-stage-art.mjs) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs)
-  - หลักฐาน/สถานะจริง: 6layered stagesจริง; ruins/festivalยังไม่มี; Session12 เพิ่มต้นแบบหมู่บ้าน/ต้นไม้ตามภาพเจ้าของ ระบบใหม่ยังรอ final gate
+  - หลักฐาน/สถานะจริง: 6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ
   - เกณฑ์เสร็จ: ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน
 
 - [ ] 🟡 กำลังพัฒนา **VIS-009 — ฉากมีมิติ แสงเงา และocclusionขั้นสุดท้าย**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-008, GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-008
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/stage-layout.ts](GODSEED/src/scenes/stage-layout.ts)
-  - หลักฐาน/สถานะจริง: มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 เพิ่มต้นแบบหมู่บ้าน/ต้นไม้ตามภาพเจ้าของ ระบบใหม่ยังรอ final gate
+  - หลักฐาน/สถานะจริง: มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ
   - เกณฑ์เสร็จ: reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก
 
 - [ ] 🟡 กำลังพัฒนา **VIS-010 — สิ่งแวดล้อมเคลื่อนไหวและpresetลดกราฟิก**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-012, GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-008
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/exploration-art.ts](GODSEED/src/scenes/exploration-art.ts)
-  - หลักฐาน/สถานะจริง: water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 เพิ่มต้นแบบหมู่บ้าน/ต้นไม้ตามภาพเจ้าของ ระบบใหม่ยังรอ final gate
+  - หลักฐาน/สถานะจริง: water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ
   - เกณฑ์เสร็จ: อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-011 — กล้อง Cinematic และtransitionตามทิศทาง**
@@ -261,11 +261,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: ตรวจZIPจริง/13originalfiles/SHA256ตรง/10WebP+manifest+README+ContactSheet เปิดContactSheet10และfull01/03; SSOT9ด้านต่อ10สถานที่; validate:referencesหลังbuildและstage-site PASS0conceptfilesในpublic/dist · roadmap7/7 PASS; validate:references PASS10WebP/13checksums; งานนี้รับรองการนำเข้า/การติดตาม/packagingเท่านั้น ไม่ใช่คุณภาพฉาก
   - เกณฑ์เสร็จ: ตรวจ13ไฟล์ตรงSHA/10WebP+manifest/readme/contactsheet; SSOT9ด้านต่อ10สถานที่ ไม่มีreferencesในdistหลังstage-site
 
-- [ ] 🟡 กำลังพัฒนา **VIS-014 — ต้นแบบหมู่บ้าน/ใต้ต้นไม้: Anchor routes/idleทิศ/ท่านั่งคงอยู่**
+- [x] ✅ เสร็จสมบูรณ์ **VIS-014 — ต้นแบบหมู่บ้าน/ใต้ต้นไม้: Anchor routes/idleทิศ/ท่านั่งคงอยู่**
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-043 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-006
-  - ไฟล์: [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/scripts/generate-idle-art.mjs](GODSEED/scripts/generate-idle-art.mjs) · [GODSEED/tests/scene-definitions.test.ts](GODSEED/tests/scene-definitions.test.ts) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts)
-  - หลักฐาน/สถานะจริง: focused10/10 PASS2.4m; finalocclusion/revisit5/5 PASS1.1m; game105/content2/build PASS; runtimeภาพหลังmaskและroutefoot186เปิดตรวจแล้ว; full63และCIรอผล
+  - ไฟล์: [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/scripts/generate-idle-art.mjs](GODSEED/scripts/generate-idle-art.mjs) · [GODSEED/tests/scene-definitions.test.ts](GODSEED/tests/scene-definitions.test.ts) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts) · [GODSEED/tests/arrival.spec.ts](GODSEED/tests/arrival.spec.ts)
+  - หลักฐาน/สถานะจริง: Source0dc5e59: game105/content2/roadmap7/type/lint/build/packagingPASS; localtarget16/16 PASS3.9m; PRCI42042658772 SUCCESS full65 รวมarrival/import/continuoussit/repeatedbench/revisit/4directions/3battles/oldsave; runtimeภาพสองสถานที่เปิดตรวจแล้ว · รับรองเฉพาะต้นแบบ2สถานที่/เส้นทางที่สร้าง: footcolliders+anchors/4-viewidle/routefollowing/นั่งต่อเนื่อง/เซฟreload-safe; ไม่ใช่finalHD/15actions/NPCหรือ10สถานที่สมบูรณ์
   - เกณฑ์เสร็จ: ต้นแบบ2สถานที่ originallayers/propdepth/footcolliders; choiceเดินถึงน้ำพุหันเหนือ/พักใต้ต้นไม้+ใบไม้/ยืนทิศเดิม/เซฟreload/skip/reduced ผ่าน4viewport และ full regression; ไม่ใช่finalHDหรือแปลงครบ10ฉาก
 
 
@@ -565,7 +565,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-002, GS-024, GS-031 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, FND-005
   - ไฟล์: [GODSEED/tests/unit.test.ts](GODSEED/tests/unit.test.ts) · [GODSEED/tests/browser.spec.ts](GODSEED/tests/browser.spec.ts) · [.github/workflows/pages.yml](.github/workflows/pages.yml)
-  - หลักฐาน/สถานะจริง: Source44bde3c localfull63/63 PASS14.9m และ PRCI42037332359 SUCCESS; helpertimeout5s regressionแก้แล้วด้วยbounded12s/zero-step; มีเพิ่มarrival/import renderer gateอีก1caseในsourceต่อมา รอCI64 ไม่อ้างว่า63รวมcaseใหม่ · คืนDONEของautomatedtest infrastructureจากfull63ที่ผ่านจริง; latestarrival/location6casesและCI64บันทึกแยก ไม่ปิดบังfirstinterruptedfailure
+  - หลักฐาน/สถานะจริง: PRCI42042658772 SUCCESS full65 บนsource0dc5e59; localtarget16PASS3.9m และbaseline44b full63PASS14.9m/CI42037332359SUCCESS บันทึกinitialhelper5s failureและการแก้12s/zero-stepไว้ ไม่skipหรือลบassertion · automatedgateกลับมาผ่านแล้ว; latest65ครอบคลุมposehandoff/import/repeatbenchเพิ่มเติม ไม่อ้าง63เก่ารวมcaseใหม่
   - เกณฑ์เสร็จ: รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-007 — Visual regression golden/diffและ234VFXaudit**

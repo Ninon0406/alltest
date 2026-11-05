@@ -1,35 +1,34 @@
 # Test report — current0.6.0 / 2026-11-05 UTC
 
-## Session12 — References / village / ancient tree
-
-Base d4da87a; source branch feat/godseed-village-references. แยกผลรุ่นนี้จากบันทึก0.5.xด้านล่าง
+## Session12 — ผลยืนยันของ source0dc5e59 / PR#10
 
 | Gate | ผลจริง |
 | --- | --- |
-| npm ci | PASS,156packages; locked stack, no new dependency |
-| typecheck / lint | PASS |
-| validate:content | PASS2;18scenes/60uniquechoices, old transitions intact |
-| game unit/integration | PASS105 รวมใหม่6route/collision/save+2art tests |
-| Roadmap | PASS7 รวมnegative testสถานที่ขาดช่อง/IDซ้ำ/readyก่อนผ่านทุกช่อง |
-| Reference integrity | PASS10WebP/13SHA records; zip b3d3f742…9f56f |
-| Build / stage-site / validate:references | PASS;0concept filesในpublic/distหลังstaging; retainedhashedclients |
-| Initial focused locations | PASS4/4,56.6s;390/820/1024/1366; beforefinalGroundMask |
-| Final local full browser | RUNNING63;ไม่อ้างผ่านก่อนผลจบ |
-| PR CI / main CI / public0.6.0 | NOT YET VERIFIED |
+| npm ci / typecheck / lint | PASS;156packages, ไม่มีdependencyใหม่ |
+| Content | PASS2;18scenes/60uniquechoices,17Scene IDsเดิมคงอยู่ |
+| Game unit/integration | PASS105;234legalrecipes/transactions/battle/save/route/atlas |
+| Roadmap | PASS7;ID/dependency/evidence/staleness/locationnegativecases |
+| Reference integrity | PASS10WebP/13checksums;zip b3d3f742…9f56f |
+| Art reproduction | PASS50PNGbyte-identical;40PNGเดิมไม่เปลี่ยน;10ใหม่185,199bytes |
+| Build + staging + reference exclusion | PASS;0conceptfilesในpublic/distหลังstage-site |
+| Local latest targeted | PASS16/16,3.9m; arrival/import/continuoussit/repeatedbench/4directions/4viewports/skip/reduced/fallback |
+| Latest PR CI | [SUCCESS full65](https://github.com/Ninon0406/alltest/actions/runs/42042658772);source0dc5e59/job127297687098 |
+| Historical local full | PASS63/63,14.9mที่44bde3c;ไม่รวม2casehandoffใหม่ |
+| Historical Preview full flow | PASSที่73d4a97,5สูตร/3battles/archive/stream/save;ไม่ใช้แทนpublic |
+| Latest Preview assets/renderer | PASS39versionedPNG/JS dd41d83f…bf96516/0conceptrequests/0errors |
+| Main CI / actual public0.6.0 | รอmerge/deployและตรวจจริง |
 
-การทดสอบใหม่กดตัวเลือกจริง อ่านเซฟจากIndexedDBและdiagnosticsแบบread-only ไม่injectstate: เปิดS00ในtree location, เดิน4ทิศใต้กิ่ง (depth198<tree201), นั่งseat79/193 supportdepth239, leaftriggerหลังmemoryflag, ลดmotionหยุดambient, reloadcontinueคงท่านั่งและrevision, พักซ้ำไม่farmtrust, ลุกออกเดินตามgraph, รับCORE_WIND, ไปน้ำพุโดยอ้อมcolliderและหันidle-north, reloadน้ำพุแล้วทิศ/ตำแหน่งยังถูกต้อง
+ทดสอบกดUIจริง อ่านIndexedDB/diagnosticsแบบread-only ไม่มีstate injection: เดินทุกทิศ/เงาตามเท้า, treepathfoot186อยู่หลังbranch201และมีpixeloverlapจริง, seat79/193 depth239, ใบไม้หลังtree_memory, ลดmotionหยุดambient, reloadคงท่านั่ง/revision, เข้าต้นไม้จากเซฟHubเดิมแล้วกลับได้, พักซ้ำไม่เพิ่มtrust/ไม่มีwalkbeatถ้าอยู่seatแล้ว, CORE_WINDเพิ่มถูกต้อง, fountain_front254/231และidle-north, importไฟล์ส่งออกS01จริงแล้วกลับentry154/219แทนตำแหน่งน้ำพุเดิม
 
-Unitตรวจทุกauthoredlink/anchor, footprint10×4ทุก2px, ทุกvillageanchorไปfountainได้, rejectทางตัน/เริ่มในsolid/targetหายโดยไม่มีteleport, treecurveผ่านหลังbranchไม่ผ่านtrunk, benchlegsไม่ถูกเดินตัด; oldsaveไม่มีflagsใหม่ก็parseได้ Restเพิ่มflagsทั่วไปโดยไม่เปลี่ยนschema
+MutationObserverตรวจว่าหลังนั่งแล้วไม่มีidleแทรกจนcontentปลดbusyหลังdurable-save ตรวจเส้นทางจากทุกvillageanchorไปทั้งน้ำพุ/ม้านั่งด้วยfootprint10×4ทุก2px ทางตัน/targetหาย/จุดเริ่มในsolidต้องไม่เดินลัด
 
-Visual inspectionก่อนmaskfixพบพื้นทับผนังบ้าน (แม้initialbrowserผ่าน) จึงแก้alpha maskตามfootprintและเพิ่มpixel regressionในart test ภาพหลังแก้จะตรวจซ้ำก่อนacceptance เก็บภาพruntimeที่docs/evidence/session12 และ test-results; Contact Sheet/ref01/ref03เปิดจริง งานยังต้นแบบ ไม่รับรองfinalHD/อุปกรณ์จริง/234VFX
+ประวัติfailureไม่ถูกซ่อน: localชุดแรกหยุดหลังdirectionalhelper5s timeout เนื่องจากเส้นทางจริงจากseatยาวขึ้น แก้bounded12sตาม8×900ms+interaction/camera และตัดzero-distancebeats Finalfull63+CI65ผ่าน โดยไม่skip/ลบassertions ภาพแรกพบGroundทับผนังจึงเพิ่มalpha mask/pixel regression; depth-onlyภาพยังไม่ทับกิ่งจึงขยับทาง186และเปิดดูภาพซ้ำ
 
-Explicit open coverage: ค่าการบังใช้depthจริง+ภาพที่จับได้ ต้องดูภาพด้วยไม่ใช่assertdepthอย่างเดียว; browserจำลองไม่เท่ากับiOS/Safari/Android/iPadเครื่องจริง ไม่มีFPS/memoryhardwarebenchmark การกระทำพิเศษทุกทิศ/เนื้อเรื่องครบสามจบยังไม่ได้สร้าง
+ภาพruntimeที่evidence/session12: before0.5.1และafter0.6.0คนละจังหวะการเล่น ไม่เรียกpixel-diffbaseline ภาพหลังจากชุดtargeted0dcเปิดตรวจแล้ว รูปแบบยังproceduralprototype ต่ำกว่าconceptfinalHD
 
-ก่อน final run พบ directional browser timeout5s เมื่อเดินจากม้านั่งที่คงตำแหน่งแล้วไปทางออก8ช่วง (ไม่ได้resetกลับกลางฉาก) หยุดรอบนั้นและเก็บ failure ไว้ใน /tmp/gs12-e2e.log แก้ helperรอแบบbounded12sตาม8×900ms+interaction/camera และตัด zero-distance graph beats ที่ไม่ควรเปลี่ยนทิศ ไม่มีการskip/ลบ assertion ตรวจ direction จริง รอ focused10 และ full63ใหม่บนbuildสุดท้าย
+ข้อจำกัด: Chromiumจำลองไม่ใช่iOS/Android/iPadOS/Safariเครื่องจริง ไม่มีFPS/thermal/hardwarebenchmark ยังไม่ครบ15actions/NPC/234VFX/10scenes/fullchapter QA-009คงblocked
 
-Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
-
-Final renderer gate: targeted arrival+locations7/7 PASS1.3m บนbuildใหม่ ครอบคลุมหยุดเดินเป็นidleเมื่อถึงAnchor, importเซฟS01จริงแล้วresetตำแหน่ง และตรวจด้วยMutationObserverว่าท่านั่งไม่เปลี่ยนเป็นidleตลอดกล้องกลับ→บันทึกเสร็จ รักษาเงาพื้นให้กลับเมื่อยืน Sourceล่าสุดมี65browsercases; CI65ยังรอผล ส่วนเกม105/content2/type/lint/build/packagingผ่านแล้ว ไม่ใช้เลข63อ้างcaseใหม่
+Pages admin API PUTworkflowถูกปฏิเสธ403 ไม่ใช่automaticapprovalrejectionและไม่มีการเปลี่ยนSetting dist/Actionsartifactไม่มีreferences; legacyrepositoryarchiveอาจมีไฟล์ต้นฉบับที่เกมไม่โหลด การตั้งSourceเดียวทำผ่านSettings→Pages→Source→GitHub Actionsบนโทรศัพท์ได้
 
 ---
 

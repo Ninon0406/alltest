@@ -1,16 +1,19 @@
 # QA matrix — 0.6.0 / 2026-11-05 UTC
 
-Session12 targeted living-location checks: Chromium hasTouch390×844,820×1180,1024×768,1366×768 PASS4/4ก่อนfinalGroundMask; full63กำลังตรวจรุ่นสุดท้าย ผลเด็ดขาดในTEST_REPORT
+Source0dc5e59: [PR CI full65SUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42042658772), game105/content2/roadmap7/type/lint/build/referencepackingPASS. Localtarget16/16PASS3.9m; baseline44b localfull63/63PASS14.9m
 
-เพิ่มการตรวจ: เดินสี่ทิศ/ตัวละครหลังbranch201/ถึงseatและคงท่านั่ง/reload/restซ้ำ/leafเฉพาะflag/ReducedMotion/รับไอเทม/ไปfountain_frontหันnorth/เซฟrestore/ไม่มีhorizontaloverflowหรือpageerror/assetHTTPfailure ครบสี่viewport
+| สภาพแวดล้อม | สิ่งที่ตรวจ | ผล |
+| --- | --- | --- |
+| Chromium hasTouch390×844,820×1180,1024×768,1366×768 | เดิน4ทิศ/Anchor/กิ่งบัง/นั่งคงอยู่/leaf/reload/revisit/fountain/skip/reduced/PNGfallback | PASS |
+| Chromium390×844 | importไฟล์ส่งออกS01จริงคืนAnchor; MutationObserverท่านั่งผ่านcamera+save; พักbenchซ้ำไม่เดิน | PASS |
+| Chromium360/390/430,768/820/1024,1366/1440/1920,844×390 | originalrealflow/craft/battle/reload/viewport containment ในfull65 | PASS |
+| /alltest/ preview | relativepaths/keyboard/double input/ไม่มี404 | PASS |
+| IndexedDB denied/corrupt/writefailure/V1import+activebattle | กู้/ส่งออก/memorymode/ข้อมูลเดิม/once-onlycommit | PASS |
+| Preview39versionedPNG/JS | SHAตรงbuild/0Conceptrequests/0consoleerrors | PASS |
+| Actualpublic0.6.0 / main CI | หลังmergeและdeploy | PENDING |
+| Safari/iOS/Android/iPadจริง, hardwareFPS/memory/thermal | ไม่มีอุปกรณ์ในenvironmentนี้ | NOT TESTED / QA-009blocked |
 
-การแก้GroundMaskมาจากการเปิดภาพruntimeจริง ไม่ใช่อ่านโค้ดอย่างเดียว หลังแก้ต้องดูภาพอีกครั้ง ภาพdevelopmentrefsทั้งชุดไม่ได้ถูกโหลดในเกม public/distมี0references ตรวจหลังstage-siteด้วย
-
-Phone/iPad/desktopข้างต้นคือChromiumจำลอง; Safari/iOS/Android/iPadOSจริง, measuredFPS/thermal/memory ยังไม่ทดสอบ QA-009คงblocked ไม่ใช่ข้อผิดพลาดที่พิสูจน์ว่าเกมพัง
-
-Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
-
-Final renderer gate: targeted arrival+locations7/7 PASS1.3m บนbuildใหม่ ครอบคลุมหยุดเดินเป็นidleเมื่อถึงAnchor, importเซฟS01จริงแล้วresetตำแหน่ง และตรวจด้วยMutationObserverว่าท่านั่งไม่เปลี่ยนเป็นidleตลอดกล้องกลับ→บันทึกเสร็จ รักษาเงาพื้นให้กลับเมื่อยืน Sourceล่าสุดมี65browsercases; CI65ยังรอผล ส่วนเกม105/content2/type/lint/build/packagingผ่านแล้ว ไม่ใช้เลข63อ้างcaseใหม่
+เปิดดูภาพจริงphone390/desktop1366หลังแก้GroundMask/routefoot186; รูปอื่นในCI Artifactพร้อมตรวจ ยังไม่รับรองfinalHDหรือvisual-regressionbaseline การผ่านส่วนย่อยต้นแบบไม่ทำให้movement/story/effectsระดับฉากครบตามreference
 
 ---
 

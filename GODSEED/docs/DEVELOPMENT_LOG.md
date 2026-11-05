@@ -189,3 +189,6 @@ Baseline44bde3c full63/63PASS14.9m; PRCI42037332359SUCCESS. คืนQA-006DONE�
 Final pose handoff: คงท่าrestตั้งแต่ขึ้นseatผ่านcamera-returnและdurable-save ไม่แทรกidleหนึ่งเฟรม; คืนvisibilityเงาตอนยืน เพิ่มread-only MutationObserver regression (ไม่เขียนstate) ในarrival.spec targeted7/7PASS1.3m, game105/type/lint/build/packagingPASS; expectedfullCI65. No further runtime/art scope changes planned this batch.
 
 พบเส้นทางม้านั่งเดิมอ้างจุดเริ่มตายตัว จึงอาจตัดขาม้านั่งเมื่อพักซ้ำหลังเพิ่มการคงตำแหน่ง แก้ CH0210 ให้ใช้ road graph/bench_seat เหมือนน้ำพุ ทดสอบเส้นทางจากทุกAnchorและพักซ้ำที่seatแล้วไม่มีwalk beat คืนค่าsupport depthตามpostureใหม่ทุกshow ไม่แก้inventory/time/trust สูตรหรือdamage เกมunit105/content2/type/lint/build/packagingผ่าน targeted16กำลังตรวจ CI65รอsourceชุดนี้
+
+
+Session12 acceptance — source0dc5e59 / PR#10: CI42042658772SUCCESS full65, localtarget16/16PASS3.9m, unit105/content2/roadmap7/type/lint/build/referencepackingPASS. VIS-013/014DONEเฉพาะนำเข้า/ต้นแบบ2ฉากที่ทดสอบ QA-006คืนDONEหลังแก้failure; Checklist21/76=27.6%, v121/73=28.8%. Matrixยังคงlayers/movement/story/effects/readyของสองแห่งเป็นin_progressตามเกณฑ์ฉากสมบูรณ์ อีก8conceptยังไม่แปลง จึงไม่ใช้ต้นแบบเพิ่มสถานะfinalHD. Metadata/evidencecommitหลังนี้ไม่แก้runtime; public0.6.0รอผลmerge/main/deploy.

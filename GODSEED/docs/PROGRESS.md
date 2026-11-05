@@ -1,34 +1,30 @@
 # GODSEED — ความคืบหน้า 0.6.0
 
-### Session12 — 2026-11-05 UTC · World visual expansion (ต้นแบบสองสถานที่)
+### Session12 — 2026-11-05 UTC · ต้นแบบหมู่บ้านและใต้ต้นเมล็ด
 
-Base d4da87a บน feat/godseed-village-references; ตรวจ main/PR9 ที่รวมแล้ว ไม่ทิ้ง commit220e992 และไม่เริ่มโปรเจกต์ใหม่ อ่าน03/SSOT/Roadmap/Skillsเดิมก่อนพัฒนาตามคำสั่งภาพอ้างอิงล่าสุด
+เริ่มจากmain d4da87a/0.5.1 พัฒนาบน feat/godseed-village-references ไม่เริ่มใหม่และรักษา17Scene IDsเดิม/commit220e992ไว้ Sourceที่ผ่านCIคือ0dc5e59, PR#10
 
-- นำเข้า ZIP เจ้าของ 13ไฟล์:10WebP+manifest+README+Contact Sheet ที่ assets/reference/godseed พร้อม SHA provenance เปิด Contact Sheetครบ10แห่ง และภาพ01/03แบบเต็ม ไม่ใช้ภาพเต็มเป็นพื้นหลังเกม
-- สร้าง10PNGต้นฉบับ185,199bytes: หมู่บ้าน/ต้นไม้rear-ground-front, fountain6frames, tree432×208, leaves8frames, directionalidle4views; รักษา40PNGเดิม byte-identical ภาพใหม่ยัง procedural prototype ต่ำกว่าความละเอียด/งานศิลป์ finalHD ของconcept
-- Anchor/collider/roadgraphใน scene-definitions.ts เป็นพิกัดเท้าบนแผนที่ที่วาดเอง; ตรวจfootprint10×4ทุก2px/Dijkstraเฉพาะถนนที่แต่งไว้ ไม่มีfree-roam ทางขาดหยุดพร้อมข้อความ ไม่ตัดผ่านวัตถุ
-- CH0201เดินอ้อมฐานน้ำพุ→fountain_frontแล้วหันเหนือ; CH0004ใหม่เดินใต้กิ่ง→seat→นั่งคงอยู่/ใบไม้ตามtree_memory/เพื่อนPipจดจำหนึ่งครั้ง; ข้าม/ลดการเคลื่อนไหว/reloadใช้transactionเดิม Restใช้+15HP/+10MPและเวลา1tickเหมือนระบบเดิม ไม่มีของซ้ำ
-- แก้จุดเดิมที่resetทุกshow: คงตำแหน่งเมื่อเป็นrun/stage/location/battlemodeเดิม; idleใช้ทิศล่าสุด ไม่ใช่side-facingทุกครั้ง ท่านั่ง/น้ำพุrestoreจากflags+sceneanchor ไม่เพิ่มserializedพิกัด ไม่เปลี่ยนState2/DB1/envelope1
-- Roadmapยัง SSOTเดิม เพิ่มlocations9ด้าน×10แห่งแยกจากคะแนนหลัก และงานVIS-013/014ตามขอบเขตเจ้าของใหม่ รวม76งาน ไม่มีการนับ90ช่องซ้ำ คำสั่ง03เดิมไม่ถูกลบ
-- แก้stage-siteเดิมที่คัดลอกroot/assetsทั้งหมดจนเสี่ยงเอาreferenceเข้าartifact: เก็บเฉพาะhashedJS/CSSเก่าสำหรับcachedHTML; public runtimePNGครบเหมือนเดิม validate:referencesตรวจอีกครั้งหลังstaging
+- นำเข้า10ภาพเจ้าของ+manifest+README+Contact Sheet รวม13ไฟล์พร้อมSHA เปิดContact Sheetครบ10และภาพ01/03แบบเต็ม ใช้เป็นArt Direction ไม่ใช้ภาพเต็มเป็นพื้นหลังเกม
+- สร้าง10PNGต้นฉบับ185,199bytes: สองฉาก×3เลเยอร์, fountain6frames, tree432×208, leaves8frames, idle4ทิศ รักษา40PNGเดิมbyte-identical รวม50PNG/39versioned
+- Fixed road graph/footprint10×4/Anchorบนแผนที่ที่วาดเอง เดินถึงน้ำพุหันเหนือ เดินใต้กิ่งจริงแล้วนั่ง/ใบไม้ตามmemory พักซ้ำไม่เดินตัดขาม้านั่งหรือให้trustซ้ำ
+- คงตำแหน่งเมื่อทำactionต่อในmapเดิม; import/restore/continueใช้Anchorที่ถูกต้อง หยุดเดินเป็นidleเมื่อถึงจุด ท่านั่งไม่แทรกidleระหว่างกล้องกลับและautosave
+- เพิ่มS02_TREEและทางไปกลับจากHubให้เซฟเดิมใช้ได้ โดยไม่เริ่มใหม่ State2/DB1/envelope1เดิม ระบบวัตถุดิบ/234สูตร/Turn-Basedไม่เปลี่ยน
+- RoadmapSSOTเดิมเพิ่มตาราง9ด้านต่อ10สถานที่และVIS-013/014 ส่วนสถานที่ฉบับสมบูรณ์/ท่าพิเศษ/NPC/เอฟเฟกต์ขั้นสุดท้ายยัง🟡 ภาพอ้างอิงพร้อมไม่ใช่ฉากเสร็จ
+- stage-siteเก็บเฉพาะhashedclientเก่า ไม่คัดลอกreferencesเข้าdist; ตรวจซ้ำหลังstagingในCI เกมไม่โหลดConcept Files
 
-ปริมาณจาก inspect:content: 18scenes/60choices/NPC5/3encounters/234legal/0endings/6stageIDs และ7location presentations (villageมีcenter/tree);50PNG/39versionedPNG ไม่มีBattle Glade/Crystal Clearingฉบับใหม่ แปดreferenceที่เหลือยังไม่แปลง
+Checklist 27.6% (21/76) · v1 28.8% (21/73) · ✅21 🟡38 ⬜16 🔴0 ⛔1 นับจำนวนงานเท่านั้น ไม่ใช่ปริมาณแรงงานหรือคุณภาพเกม
 
-ผลปัจจุบัน: npmci/type/lint/content2/game105/roadmap7/build/PACKAGING PASS; focused4viewportผ่านก่อนGroundMaskแก้ครั้งสุดท้าย Full63และภาพหลังแก้กำลังตรวจ ดู TEST_REPORT/Development Log ก่อนถือว่าสถานะVIS-013/014ผ่าน Publicยัง0.5.1จนกว่าbranchนี้ผ่านและเผยแพร่จริง
+ปริมาณจากsource:18scenes/60choices/NPC5/3encounters/234legal/0endings/6Stage IDs/7location presentations มีต้นแบบตามreferenceสองแห่ง อีกแปดconceptยังไม่แปลง
 
-ข้อจำกัด: NPC/actionนอกwalk/idleยังไม่ครบทุกทิศ; run/kneel/stand beatsยังต้นแบบ; ยังไม่มีเส้นทางhouse→gate→village, crystal collect/workshop art/battle gladeใหม่, low-devicepreset/lazyloading, sound/finalHD/Safarihardware ส่วนเนื้อเรื่องruins/festival/boss/สามตอนจบยังค้าง
+ผลจริง: npmci/type/lint/content2/game105/roadmap7/build/packagingPASS; localtarget16/16PASS3.9m; baselinefull63PASS14.9m; [latestPRCI full65SUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42042658772) ตรงsource0dc5e59 รูป50PNGสร้างซ้ำตรงทุกbyte Actualpublic0.6.0ยังรอmerge/deploy ไม่ใช้ผลPreviewแทนเว็บจริง
 
-งานถัดไป: gateภาพสองฉากและpublish → house/gate routes → crystal+workshop → battle glade/recipeVFX → NPCposes/ruinsเนื้อเรื่องตามdependencies ไม่ขยายทั้ง10แบบหยาบ
+ปัญหาที่พบและแก้: groundทับผนังบ้าน, ทางdepthถูกแต่ไม่ซ้อนกิ่งจริง, idleหันเดิม/resetตำแหน่ง, ท่านั่งสะดุดตอนcommit, importเซฟเก่าคงตำแหน่งใหม่, พักซ้ำตัดขาม้านั่ง, helper5sสั้นกว่าเส้นทางจริง ทั้งหมดมีผลทดสอบหลังแก้ ไม่ลบ/skipกรณีที่ล้ม
 
-เพิ่ม S02_TREE และ CH0211/CH02T1/CH02T2 สำหรับเซฟที่ผ่านฉากเปิดแล้ว: เมนูสถานที่อื่น→แวะใต้ต้นเมล็ด→พัก→กลับจัตุรัส ไม่ต้องเริ่มเกมใหม่ ไม่ให้วัตถุดิบ/trustซ้ำ
+ค้าง: finalHD/NPC/15actions, บ้าน→ประตู→หมู่บ้าน, Crystal/Workshop/Battle Gladeและอีก8concept, lowpreset/lazyloading/audio/Safarihardware/ruins/festival/boss/สามตอนจบ QA-009ยังblocked
 
-ผล focused ล่าสุด: direction+location10/10 PASS2.4m; หลังปรับให้ภาพตัวละครซ้อนกิ่งจริง (foot186) location5/5 PASS1.1m ภาพหลังแก้เปิดตรวจแล้ว ขณะนี้ full63 บน source44bde3c กำลังตรวจ ไม่ใช้ผลก่อนแก้แทนผลปลายรอบ
+Pages Source APIถูกปฏิเสธ403 จึงยังlegacy main:/ WorkflowActionsยังใช้ได้ การแยกreferenceออกArtifactรับรองเฉพาะdist/Actions; เกมไม่โหลดconcept เจ้าของเปลี่ยนSourceเป็นActionsจากโทรศัพท์ได้ตามREADME
 
-GitHub Pages: APIแก้ Source เป็น Actions ถูกปฏิเสธ403 จึงยังเป็นlegacy main:/ ไม่เปลี่ยนค่าโดยอ้างสำเร็จ Workflowเดิมยัง deployได้ แต่การกันreferenceออกArtifactรับรองเฉพาะActions/dist เกมไม่โหลดConceptFiles ส่วนการตั้งค่าให้เหลือSourceเดียวเจ้าของทำจากโทรศัพท์ได้ตามREADME
-
-Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
-
-Final renderer gate: targeted arrival+locations7/7 PASS1.3m บนbuildใหม่ ครอบคลุมหยุดเดินเป็นidleเมื่อถึงAnchor, importเซฟS01จริงแล้วresetตำแหน่ง และตรวจด้วยMutationObserverว่าท่านั่งไม่เปลี่ยนเป็นidleตลอดกล้องกลับ→บันทึกเสร็จ รักษาเงาพื้นให้กลับเมื่อยืน Sourceล่าสุดมี65browsercases; CI65ยังรอผล ส่วนเกม105/content2/type/lint/build/packagingผ่านแล้ว ไม่ใช้เลข63อ้างcaseใหม่
+งานต่อ: VIS-008ปรับภาพสองฉาก/บ้านและประตู → Crystal/Workshop → VIS-004/005ท่าNPC/ผู้เล่น → Battle Glade/VFX → เนื้อเรื่องruinsตามdependencies หลักฐานภาพที่evidence/session12/README.md
 
 ---
 
