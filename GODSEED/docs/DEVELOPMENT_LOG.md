@@ -274,3 +274,9 @@ Roadmapหลัก20/76=26.3% (v120/73=27.4%) จากเดิม21/76 เพ
 ขอบเขตจริงยัง18Scene/60Choice/5NPC/3Encounters/234legal/5สูตรจากrouteที่ทดสอบ/0Endings/6Stages ภาพยังต้นแบบ AIไม่จำเป็นต่อการเล่น ความสนุกประเมินภายใน ยังไม่มีhumanplaytest
 
 งานต่อ: 1)Safari/iOS/Androidfiledownload/uploadจริง 2)ปรับภาพสวน/CollisionตามReference05เต็มฉาก 3)ท่าพิเศษNPCที่เหลือ 4)Workshop/VFX 5)Ruins/B03ตามdependencies; checkpointปลายรอบต้องเก็บผลCI/Pagesจริงก่อนจบ
+
+### ตรวจซ้ำด้วย Build ที่คงที่
+
+Initial full run พบtestโหลดไฟล์เร็วกว่าปุ่มพร้อมในsubpathที่จงใจหน่วงPNG; แก้helperให้รอinputenabledก่อนใช้setInputFiles (ซึ่งautomationสามารถข้ามdisabledได้) แล้วtargeted1/1ผ่าน11.4s เพิ่มCSSซ่อนnativefileinputเพื่อให้มีปุ่มโหลดเพียงปุ่มเดียว และassertจำนวนปุ่มบนmobile
+
+ระหว่างแก้CSSมีการBuildลงdistที่previewกำลังใช้ ทำให้caseกล้อง1024ได้รับHTTP404ชั่วคราว จึงหยุดfullrunนั้นและเริ่มชุด85ใหม่จากBuildคงที่ ไม่กรอง404หรือลบAssertion ไม่ใช้ผลrunที่ถูกขัดจังหวะแทนผลสุดท้าย

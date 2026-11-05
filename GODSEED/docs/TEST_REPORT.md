@@ -414,3 +414,9 @@ Icon patch7c5f455/PR#13แก้favicon404ที่พบจากstrictconsolea
 ตรวจ https://ninon0406.github.io/alltest/ จริง: ก่อนรดน้ำเซฟยังไม่เปลี่ยน → รดน้ำ → รับของ/trustครั้งเดียว → กลับสวนดอกบานและมาเรนจำได้ → reload คงผล ผ่าน เส้นทางหลัก/ผสม5สูตร/ต่อสู้3แบบ/ส่งออก–นำเข้าเซฟผ่าน ตรวจหลังActionsdeployซ้ำ 42versionedPNG และ JavaScript SHA256 `3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70` ตรงBuild, 0Conceptrequests/0ConsoleErrors ในเส้นทางที่ตรวจ ภาพ actualpublic ก่อน/ระหว่าง/หลังอยู่ในevidence/session14
 
 Checklist21/76=27.6%คงเดิม ไม่มีการรับรองfinalHD/อุปกรณ์จริง/Safari/FPSหรือความสนุกจากผู้เล่นจริง ปรับขอบเขตรอบนี้ให้ส่งมอบด้วยBrowser EmulationและPagesได้ครบ โดยคงQA-009เป็นreleasegateที่ยังไม่ยืนยัน
+
+### ตรวจซ้ำด้วย Build ที่คงที่
+
+Initial full run พบtestโหลดไฟล์เร็วกว่าปุ่มพร้อมในsubpathที่จงใจหน่วงPNG; แก้helperให้รอinputenabledก่อนใช้setInputFiles (ซึ่งautomationสามารถข้ามdisabledได้) แล้วtargeted1/1ผ่าน11.4s เพิ่มCSSซ่อนnativefileinputเพื่อให้มีปุ่มโหลดเพียงปุ่มเดียว และassertจำนวนปุ่มบนmobile
+
+ระหว่างแก้CSSมีการBuildลงdistที่previewกำลังใช้ ทำให้caseกล้อง1024ได้รับHTTP404ชั่วคราว จึงหยุดfullrunนั้นและเริ่มชุด85ใหม่จากBuildคงที่ ไม่กรอง404หรือลบAssertion ไม่ใช้ผลrunที่ถูกขัดจังหวะแทนผลสุดท้าย
