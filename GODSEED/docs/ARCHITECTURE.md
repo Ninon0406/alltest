@@ -1,4 +1,4 @@
-# GODSEED architecture — 0.4.0
+# GODSEED architecture — 0.5.0
 
 - `content/story.ts`: stable scene/choice IDs, requirements/locked hints, one-time rewards, authored animation cues
 - `content/encounters.ts`: three distinct encounter stat/reward/escape/actor/stage definitions; no hardcoded training-as-forest behavior

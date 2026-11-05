@@ -1,6 +1,6 @@
-# QA matrix — 0.4.2 / 2026-11-05 UTC
+# QA matrix — 0.5.0 / 2026-11-05 UTC
 
-Current0.4.2: final45-case local/PR browser checks SUCCESS, gameunit90/roadmap5/content2/type/lint/build PASS, actual public gameplay/save/28PNG/JS gate PASS. Main41998656125/full45/build/deploy and post-Actions byte/renderer verification PASS. Physical hardware/Safari remains blockedQA-009; final HD acceptance remains pending. Earlier sections retain historical results.
+Current0.5.0: gameunit94/roadmap6/content2/type/lint/buildPASS, focused17+keyboard3 localPASS, finalPR42004666730 full50SUCCESS and actualpublicplay/save/29PNG/hashPASS. Main42005831839 full50/build/deploySUCCESS + post-Actions29PNG/JS/rendererPASS. Initiallocalfull49/1 startupkeyboard race preserved with its correction. Physicalhardware/Safari remainsblockedQA-009 and finalHD acceptancepending.
 
 | Environment | Flow | Result |
 | --- | --- | --- |
@@ -67,3 +67,7 @@ Main41998656125SUCCESS/deploy09:06:55UTC; post-Actionsassets-onlyPASS withsame23
 ## Session8 —0.5.0
 
 New phone390×844/iPad820×1180+1024×768/desktop1366×768 touch routes observe real south/east/west/north walking texture/animation/depth/contactshadow, then reload archive research. No gameplay/animation injection. Runtimephone-north/desktopp-east screenshots and original24-frame atlas reviewed. Missing art-v4PNG is intentionally aborted in a separate negativefallback case. Previous ten-size/skip/reduced/bench/save/battle cases retained. Final fullsuite/CI/public evidence inTEST_REPORT. PhysicalSafari/hardware/FPS/finalHD remain unconfirmed/blockedQA-009.
+
+0.5.0 actualpublicPASS: touch/start/forest/FIRE/training/archive/ECHO/WATER/B02/reload/worldmemory/checksumexport/import; same41dd67354a5c542ef792c877e83a1282e6ab32250175313354f7b06296c24579 JS and29PNG sourcehashes; no observedpageerror/HTTPfailure. Four-view geometry/newPNGfallback are covered infinalsame-bundlePR50; publicflowusesretainedgoldenroutes.
+
+Session8finalmain42005831839SUCCESS at2026-11-05 10:00:21UTC; post-Actionsassets-onlyPASS same41dd6735…/29PNG/readyrenderer/emptyerrors. Localinitial49/1 is recordedasfailure beforetestfix; focused17+keyboard3 and finalPR/main50 verify the correction, no localfull50PASSclaim. Physicalhardware/Safari/FPS/finalHDstillnotcertified.

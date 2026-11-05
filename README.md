@@ -20,7 +20,9 @@ Node 24: `npm ci --prefix GODSEED` แล้ว `npm --prefix GODSEED run test:a
 
 ## GitHub Pages
 
-เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่รุ่น 0.4.2 หลังรวม PR #7 เข้า main (`7279cea`) เพิ่มเส้นทางเดินก่อนเก็บของ/ปฏิสัมพันธ์/นั่งม้านั่ง และMaster Roadmapที่คำนวณจากสถานะจริง คงตัวอย่างสูตร ตัวกรอง และถอดเวทเดิม Final PR CI45กรณีผ่าน และตรวจเล่นจริงทั้งป่า/เวทไฟ/ฝึกกับคุโร/หอสมุด/เวทน้ำและเสียงสะท้อน/ต่อสู้ลำธาร/โลกจดจำ/เซฟ พร้อม hash JavaScript และภาพเวอร์ชันใหม่28PNG ตรง build สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` (`--assets-only` ตรวจไฟล์และrendererหลังdeploy) mainActions41998656125/full45/build/deployและpost-Actionsbyte/rendererผ่าน หลักฐานในTEST_REPORT
+เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่รุ่น0.5.0 หลังรวมPR#8เข้าmain (`3b62a2f`) ผู้เล่นเดินสี่ทิศด้วย24เฟรมต้นฉบับและเวลาเดินสัมพันธ์กับระยะ คงระบบตัวเลือก ผสมเวท สมุดเวท ต่อสู้ และเซฟเดิม FinalPRCI50กรณีผ่าน พร้อมตรวจเว็บจริงป่า/เวทไฟ/การฝึก/หอสมุด/เวทน้ำและเสียงสะท้อน/ลำธาร/โลกจดจำ/ส่งออก–นำเข้าเซฟ JavaScriptและ29ภาพเวอร์ชันใหม่ตรงbuild
+
+สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` (`--assets-only` ตรวจไฟล์/rendererหลังdeploy) mainActions42005831839 full50/build/deployและpost-Actions29PNG/JS/rendererผ่าน หลักฐานในTEST_REPORT
 
 workflow ทดสอบทุก PR และ deploy เมื่อ main ผ่าน checks รองรับ Pages artifact พร้อมไฟล์ root สำหรับ source `main:/` หากเปลี่ยน Source ได้ ให้ใช้ Settings → Pages → Build and deployment → GitHub Actions ผ่านเบราว์เซอร์โทรศัพท์
 

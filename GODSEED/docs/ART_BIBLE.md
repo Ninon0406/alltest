@@ -1,6 +1,6 @@
-# Sunlit Memory Fantasy — art bible0.4.0
+# Sunlit Memory Fantasy — art bible0.5.0
 
-Current:6layered stages,10actor sheets including retainedlegacy alternatives; all remain original procedural prototype art. The versioned notes below describe earlier states separately.
+Current:6layered stages,11actor sheets including retainedlegacy alternatives; all remain original procedural prototype art. The versioned notes below describe earlier states separately.
 
 ## 0.4.0 archive/stream studies
 

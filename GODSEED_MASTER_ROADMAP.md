@@ -10,12 +10,12 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 ทุกงานน้ำหนัก1: เปอร์เซ็นต์ = จำนวน✅ ÷ จำนวนงาน ×100; 🟡/⬜/🔴/⛔ได้0 ไม่มีpartialเครดิต ตัวเลขเป็นความคืบหน้าของChecklistเท่านั้น ไม่ใช่เวลาที่เหลือ ปริมาณแรงงาน ความสนุก หรือคุณภาพภาพของเกมทั้งหมด งานขนาดต่างกันและรายการอาจเพิ่มได้ ต้องอ่านพร้อมจำนวนงานและlog
 
-**ความคืบหน้ารวม Checklist: 23% (17/74)** · เฉพาะขอบเขต1.0: 23.9% (17/71)
+**ความคืบหน้ารวม Checklist: 24.3% (18/74)** · เฉพาะขอบเขต1.0: 25.4% (18/71)
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 74 | 17 | 39 | 16 | 1 | 1 | 23% |
-| 1.0 | 71 | 17 | 39 | 13 | 1 | 1 | 23.9% |
+| ทั้งโครงการ | 74 | 18 | 39 | 16 | 0 | 1 | 24.3% |
+| 1.0 | 71 | 18 | 39 | 13 | 0 | 1 | 25.4% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
@@ -26,7 +26,7 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
 | [5 — ระบบต่อสู้](#phase-5) | 3/9 | 4 | 2 | 0 | 0 | 33.3% |
 | [6 — โลกและเนื้อหาขนาดใหญ่](#phase-6) | 0/8 | 5 | 3 | 0 | 0 | 0% |
-| [7 — คุณภาพเกม](#phase-7) | 0/9 | 3 | 4 | 1 | 1 | 0% |
+| [7 — คุณภาพเกม](#phase-7) | 1/9 | 3 | 4 | 0 | 1 | 11.1% |
 | [8 — เกมฉบับสมบูรณ์](#phase-8) | 0/10 | 5 | 5 | 0 | 0 | 0% |
 
 ## กฎสถานะ/หลักฐาน
@@ -106,7 +106,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-041 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003
   - ไฟล์: [GODSEED/scripts/roadmap.mjs](GODSEED/scripts/roadmap.mjs) · [GODSEED/docs/roadmap.json](GODSEED/docs/roadmap.json)
-  - หลักฐาน/สถานะจริง: roadmap6/6 PASS รวมnegative metadata/counting/queue; DONEไม่กลับไปห้างานถัดไปและregressionsขึ้นก่อน; same74taskdataset · generatedchecklistตรง18/74; integratedtest:all/CI; 03/AGENTS/devlogเดิมใช้ต่อไม่สร้างซ้ำ
+  - หลักฐาน/สถานะจริง: roadmap6/6 PASS รวมnegative metadata/counting/queue; DONEไม่กลับไปห้างานถัดไปและregressionsขึ้นก่อน; same74taskdataset · roadmap6/6PASS และPRCI42004666730SUCCESS; generatedchecklistตรง18/74 และqueueคืนงานunfinishedหลังปิดregression; mainCI42005831839SUCCESS; finalroadmap:check6PASS afterevidenceupdate
   - เกณฑ์เสร็จ: ID/dependency/evidence valid ไม่มีcycle เอกสารไม่stale ตรวจในCI มีlogทุกsession
 
 
@@ -131,7 +131,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-002
   - ไฟล์: [GODSEED/scripts/generate-directional-art.mjs](GODSEED/scripts/generate-directional-art.mjs) · [GODSEED/src/scenes/directional-art.ts](GODSEED/src/scenes/directional-art.ts) · [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/tests/directional.spec.ts](GODSEED/tests/directional.spec.ts) · [GODSEED/tests/art.test.ts](GODSEED/tests/art.test.ts)
-  - หลักฐาน/สถานะจริง: 24originalframes/fourviews; gameunit94/94, focus17/17 PASS2.4m รวม4viewports/reload/skip/reduced/newPNGfallback; phone/desktopruntime reviewed · facing/foot/depth/shadowจากactualUIchoices ตรวจครบ4ทิศ ไม่มีflipแทนหน้า/หลัง; regenerate40PNGผ่าน old39byte-identical; ไม่ใช่finalHDหรือNPCacceptance
+  - หลักฐาน/สถานะจริง: 24originalframes/fourviews; gameunit94/94, focus17/17 PASS2.4m รวม4viewports/reload/skip/reduced/newPNGfallback; phone/desktopruntime reviewed · facing/foot/depth/shadowจากactualUIchoices ตรวจครบ4ทิศ ไม่มีflipแทนหน้า/หลัง; regenerate40PNGผ่าน old39byte-identical; ไม่ใช่finalHDหรือNPCacceptance; finalPRCI42004666730 SUCCESS full50 บนcd24b9c/merge3b62a2f; mainCI42005831839 full50/deploySUCCESS and public/post29PNG/JS/rendererPASS
   - เกณฑ์เสร็จ: สี่ทิศมีoriginalframesตามเส้นทาง ไม่ใช้flipแทนหน้า/หลัง ตรวจบนสามกลุ่มจอ
 
 - [ ] 🟡 กำลังพัฒนา **VIS-004 — NPC/ศัตรู silhouette และท่าพิเศษครบ**
@@ -490,11 +490,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: nativecontrols/aria/reducedmotionมี; fullaudit/fontscale/settingsยังไม่ครบ
   - เกณฑ์เสร็จ: WCAG2.2AA/44pxtouch/focus/fontscaling/keyboard/สถานะไม่พึ่งสีครบ
 
-- [ ] 🔴 มีปัญหา **QA-006 — Automated unit/content/save/balance/browser baseline**
+- [x] ✅ เสร็จสมบูรณ์ **QA-006 — Automated unit/content/save/balance/browser baseline**
   - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-002, GS-024, GS-031 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, FND-005
   - ไฟล์: [GODSEED/tests/unit.test.ts](GODSEED/tests/unit.test.ts) · [GODSEED/tests/browser.spec.ts](GODSEED/tests/browser.spec.ts) · [.github/workflows/pages.yml](.github/workflows/pages.yml)
-  - หลักฐาน/สถานะจริง: Session8 localfull49PASS/1FAIL: keyboardEnterก่อนstartพร้อมจากPNGloading; PRCI50PASSแต่รอแก้testreadiness/retest · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
+  - หลักฐาน/สถานะจริง: Session8 readiness-boundaryแก้แล้ว; focusedkeyboard3/3PASS21.9s + finalPRCI42004666730 full50SUCCESS; เกมunit94/roadmap6/content2/buildPASS · ไม่skipหรือลบcase; รอrenderer/startenabledก่อนEnter + realPNG500ms delay; รายงานinitiallocal49/1และcorrectionในTEST_REPORT; mainCI42005831839 full50SUCCESS; actualpublicplay/save and post-Actionsassets gatePASS
   - เกณฑ์เสร็จ: รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-007 — Visual regression golden/diffและ234VFXaudit**

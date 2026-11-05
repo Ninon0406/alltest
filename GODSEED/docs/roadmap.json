@@ -254,7 +254,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "generatedchecklistตรง18/74; integratedtest:all/CI; 03/AGENTS/devlogเดิมใช้ต่อไม่สร้างซ้ำ",
+      "verification": "roadmap6/6PASS และPRCI42004666730SUCCESS; generatedchecklistตรง18/74 และqueueคืนงานunfinishedหลังปิดregression; mainCI42005831839SUCCESS; finalroadmap:check6PASS afterevidenceupdate",
       "evidenceFiles": [
         "GODSEED/scripts/roadmap.test.mjs",
         "GODSEED/docs/DEVELOPMENT_LOG.md"
@@ -331,7 +331,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "facing/foot/depth/shadowจากactualUIchoices ตรวจครบ4ทิศ ไม่มีflipแทนหน้า/หลัง; regenerate40PNGผ่าน old39byte-identical; ไม่ใช่finalHDหรือNPCacceptance",
+      "verification": "facing/foot/depth/shadowจากactualUIchoices ตรวจครบ4ทิศ ไม่มีflipแทนหน้า/หลัง; regenerate40PNGผ่าน old39byte-identical; ไม่ใช่finalHDหรือNPCacceptance; finalPRCI42004666730 SUCCESS full50 บนcd24b9c/merge3b62a2f; mainCI42005831839 full50/deploySUCCESS and public/post29PNG/JS/rendererPASS",
       "evidenceFiles": [
         "GODSEED/tests/directional.test.ts",
         "GODSEED/tests/directional.spec.ts",
@@ -1448,7 +1448,7 @@
       "id": "QA-006",
       "phase": 7,
       "title": "Automated unit/content/save/balance/browser baseline",
-      "status": "problem",
+      "status": "done",
       "priority": "P0",
       "dependsOn": [
         "FND-003",
@@ -1459,7 +1459,7 @@
         "GODSEED/tests/browser.spec.ts",
         ".github/workflows/pages.yml"
       ],
-      "evidence": "Session8 localfull49PASS/1FAIL: keyboardEnterก่อนstartพร้อมจากPNGloading; PRCI50PASSแต่รอแก้testreadiness/retest",
+      "evidence": "Session8 readiness-boundaryแก้แล้ว; focusedkeyboard3/3PASS21.9s + finalPRCI42004666730 full50SUCCESS; เกมunit94/roadmap6/content2/buildPASS",
       "acceptance": "รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว",
       "legacyIds": [
         "GS-002",
@@ -1468,7 +1468,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "verification": "ไม่skipหรือลบcase; รอrenderer/startenabledก่อนEnter + realPNG500ms delay; รายงานinitiallocal49/1และcorrectionในTEST_REPORT; mainCI42005831839 full50SUCCESS; actualpublicplay/save and post-Actionsassets gatePASS",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
       ]

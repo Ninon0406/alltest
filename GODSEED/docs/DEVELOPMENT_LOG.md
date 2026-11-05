@@ -126,3 +126,18 @@ Append-only ประวัติการส่งมอบ งานออก�
 - เกมยังล็อกปุ่มจนพร้อมตามการออกแบบ ไม่แก้ให้ปุ่มรับคำสั่งก่อนโหลดเสร็จ; แก้harnessรอrender-readyและstartenabledก่อนใช้keyboardจริง เพิ่มdelayPNG500msเพื่อครอบคลุมboundaryนี้ ไม่injectstate/ไม่skipcase
 - QA-006เปลี่ยนDONE→problemระหว่างตรวจซ้ำ; nodequeuefixtureแยกcurrentprojectregressionsออกก่อนตั้งสถานะตัวอย่าง เพื่อไม่ให้metadataที่มีproblemอย่างถูกต้องทำให้unitfixtureคาดอันดับผิด
 - ผลfocusedrepeat/remoteheadใหม่และการคืนสถานะหลังผ่านจะเพิ่มในTEST_REPORT; ไม่ใช้greenCIเก่ากลบlocalfailure
+
+### Session8 acceptance after readiness correction
+
+- FinalPRCI42004666730 full50SUCCESS oncd24b9c after localkeyboard3/3PASS21.9s; initiallocal49/1 retainedasfailurehistory, not relabeledfullPASS. Gameunit94/roadmap6/content2/type/lint/buildPASS. Preliminary42002997166SUCCESS50 is not the finalheadgate
+- Productionpreview fullold/newflow/checksum/import/29versionedart/JSgatePASS, hash41dd67354a5c542ef792c877e83a1282e6ab32250175313354f7b06296c24579; previewserverstopped
+- QA-006problem→DONE after actualacceptance. FinalChecklist18/74=24.3%, v1 18/71=25.4%, ✅18 🟡39 ⬜16 🔴0 ⛔1; nextqueueagaincontainsunfinishedwork only
+- PR#8 merged3b62a2f; main:/ Pages42005830950SUCCESS; mainActions/publicproof inTEST_REPORT when complete. Source/frames allpreserved; finalevidence-onlydocs will not changeclientbundle
+
+
+### Session8 final release —2026-11-05 UTC
+
+- Main42005831839SUCCESS, deploy10:00:21UTC; main:/ Pages42005830950SUCCESS. Actualpublic https://ninon0406.github.io/alltest/ fullretainedloops/save/checksum/import/29PNG/JSproofPASS and post-Actionsassets/rendererPASS, emptyobservederrors
+- SameJS41dd67354a5c542ef792c877e83a1282e6ab32250175313354f7b06296c24579; originalnewPNG989721… matches source. FinalPR/mainfull50PASS, gameunit94/content2/roadmap6/type/lint/buildPASS. Localsubset17+keyboard3pass; initiallocal49/1 preserved with rootcause/fix, not rewrittenasfullPASS
+- Source11a6ec1+cd24b9c/PR#8/merge3b62a2f; finalevidence-onlydocs/status update does not changeclientbytes. FinalChecklist18/74=24.3%, v1 18/71=25.4%, problem0/blocked1QA-009. Percentagesnotgamequality/laborestimates
+- Nextfive: VIS-004 NPCcycles → VIS-011camera → VIS-008ruins/festivalart → CMB-006B03/B04 → STO-001canon/completion accordingdependencies. Nonwalkingfourviews/mastery/audio/fullchapter/3endings/physicalSafari/FPS/finalHDremainunfinished. Noowneractionneeded; no workcontinuesinbackground aftersession

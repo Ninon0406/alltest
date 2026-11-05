@@ -2,17 +2,17 @@
 
 ### Session8 —2026-11-05 UTC
 
-Basebda8f51 · branchfeat/godseed-directional-hero · M1art/Cinematic polish. ใช้Master Roadmap/03/Skillsเดิมหลังตรวจsource/asset/CI ไม่เริ่มใหม่ ไม่เพิ่มtrackerซ้ำ
+Basebda8f51 · พัฒนาในfeat/godseed-directional-hero รวมPR#8เข้าmain3b62a2f · M1art/Cinematic polish. ใช้Master Roadmap/03/Skillsเดิมหลังตรวจsource/asset/CI ไม่เริ่มใหม่ ไม่เพิ่มtrackerซ้ำ
 
 - VIS-003 DONEเฉพาะplayerwalk: 24originalframes/4views, dominant-axisfacing, distance-pacedlegs, feet/depth/shadowตามground; VIS-006integrationคงskip/reduced/once-onlysave พร้อมfallbackภาพเดิม
 - FND-009ปรับห้างานถัดไปให้ตัดDONE/blockedและยกproblemก่อน; same74taskdataset/6validator tests ไม่เพิ่มงานเพื่อเพิ่มเปอร์เซ็นต์
-- Checklistระหว่างตรวจQAregression17/74=23.0%: ✅17 🟡39 ⬜16 🔴1 ⛔1; v1 17/71=23.9%. เป็นจำนวนงาน ไม่ใช่สัดส่วนแรงงาน/คุณภาพเกม
-- Baseline install/checks90unit/content2/buildผ่าน; currentgameunit94/roadmap6/type/lint/content2/buildPASS; focused17/17 PASS2.4m รวมfourdevices, missingPNGfallback, skip/reduced/bench/defeat. Finalfull50/CI/publicproofจะบันทึกในTEST_REPORTเมื่อเสร็จ
+- Checklist18/74=24.3%: ✅18 🟡39 ⬜16 🔴0 ⛔1; v1 18/71=25.4%. เป็นจำนวนงาน ไม่ใช่สัดส่วนแรงงาน/คุณภาพเกม
+- Baseline install/checks90unit/content2/buildผ่าน; currentgameunit94/roadmap6/type/lint/content2/buildPASS; focused17/17 PASS2.4m รวมfourdevices, missingPNGfallback, skip/reduced/bench/defeat. FinalPRCI42004666730 full50ผ่าน; mainCI42005831839 full50/build/deploySUCCESS, actualpublic/save/29PNG/hash and post-ActionsrendererPASS
 - Regenerateทั้งหมดผ่าน newPNG19,427bytes deterministic old39byte-identical; runtimephone-north/desktop-eastและatlasตรวจจริง ยังไม่อ้างfinalHD/hardwareFPS
 - ปริมาณเดิม17scenes/56choices/NPC5/3encounters/234legal/5สูตรค้นพบใช้จริงในtests/0endings/6stages; newonePNG→40ทั้งหมด/29versioned. State2/DB1/envelope1เดิม ไม่มีการเปลี่ยนengine/rewards/storyIDs
-- LocalfullพบkeyboardharnessกดEnterก่อนstartพร้อม; แก้readiness+slowPNG500msแล้ว focusedrepeat3/3PASS21.9s รอfinalremote50ก่อนคืนQA-006DONE ไม่ใช่เกมรับคำสั่งระหว่างloading; QA-009ยังblockedSafari/physicalhardware. NPC/actionทุกทิศ/camera/ruins/festival/boss/endings/audio/masteryยังไม่ครบ
+- LocalfullพบkeyboardharnessกดEnterก่อนstartพร้อม; แก้readiness+slowPNG500msแล้ว focusedrepeat3/3PASS21.9s finalPRCI42004666730ผ่านfull50แล้ว จึงคืนQA-006DONE ไม่ใช่เกมรับคำสั่งระหว่างloading; QA-009ยังblockedSafari/physicalhardware. NPC/actionทุกทิศ/camera/ruins/festival/boss/endings/audio/masteryยังไม่ครบ
 - ห้างานถัดไปตามgeneratedboard: VIS-004 → VIS-011 → VIS-008 → CMB-006 → STO-001 (B03/B04รอฉาก, canonและboss/endingsต่อจากนั้น)
-- Ownerไม่ต้องตั้งค่า/รันTerminal; 0.5.0ยังรอactualdeploymentproofในTEST_REPORTก่อนอ้างเผยแพร่
+- Ownerไม่ต้องตั้งค่า/รันTerminal; 0.5.0เผยแพร่และactualpublicgameplay/save/29PNG/JSผ่านแล้ว mainActions42005831839และpost-Actionsgateผ่านแล้ว หลักฐานในTEST_REPORT
 
 ## ประวัติก่อนรอบนี้
 
