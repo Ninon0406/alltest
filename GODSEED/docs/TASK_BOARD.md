@@ -37,3 +37,7 @@ Session4 batch acceptance PASS locally: art4, content2, totalunit63, browser30 +
 Four canonical scenes and15 choices; preserve all oldIDs. Acceptance: all9 archive branches unlock essential facts, stream known-element/OR gates are enforced, no-combat and battle routes, consume real ingredients for WATER/ECHO, single rewards/day limits, checkpoint recovery and oldState2 preservation, layered2new stages/original Eira+wisp, three viewport real routes plus missing-PNG fallback. Full final quality checks/public deployment pending.
 
 Session5 local acceptance: all81 unit/integration/balance/art and2 content checks,900 balance wins, retained full36 browser run and final6 new-path cases PASS. Final CI suite37 cases. Final source fixes cover stage spell anchors, canonical first-craft forest OR gate and truthful mist-versus-bell journal facts. Whole IDs remain IN_PROGRESS where broader chapter/art/map work is pending.
+
+Final PR CI41960028362 SUCCESS with all37 browser cases; PR#5 merged asf35b2ad. Main/public release proof is tracked in TEST_REPORT.
+
+Session5 delivered: main build/deploy41961020262 SUCCESS, full37-case CI and actual public old/new route/save/hash proof PASS. This bounded batch is complete; broader unfinished chapter/art/map tasks retain their IN_PROGRESS/TODO status.

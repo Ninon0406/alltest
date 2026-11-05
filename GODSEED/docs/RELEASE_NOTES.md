@@ -2,7 +2,7 @@
 
 Explore Eira's archive and the jade stream through four canonical scenes/fifteenchoices. Research has three approaches with stable one-time gifts and remembered trust. New actual ingredient sources let players craft WATER_RING_HEAL and ECHO_ORB_LINGER within the unchanged234recipe rules. The stream offers battle, learned-WIND and gentle listening/helping paths. Cleaning reveals the world change; Eira/Maren remember witnessed events. Journal shows saved clues and local next hints; new routes sit under“สถานที่อื่น”.
 
-B02_STREAM_WISP has52HP/8power/WINDweakness, pre-announced low-HP mist, own rewards and logical flee/loss/retry. Original layered archive/stream art,6frame water, mist, Eira and water-spirit animation are included as prototype studies. Oldergameplay/art/saves remain. State2/DB1/envelope1; no new mandatory save fields or migration. Ruins/festival/boss/three endings and finalHD/hardwareQA remain pending. Publish proof follows inTEST_REPORT.
+B02_STREAM_WISP has52HP/8power/WINDweakness, pre-announced low-HP mist, own rewards and logical flee/loss/retry. Original layered archive/stream art,6frame water, mist, Eira and water-spirit animation are included as prototype studies. Oldergameplay/art/saves remain. State2/DB1/envelope1; no new mandatory save fields or migration. Ruins/festival/boss/three endings and finalHD/hardwareQA remain pending. Published and public-gameplay/art/save verified at https://ninon0406.github.io/alltest/ · PR#5 /f35b2ad. PR CI41960028362, main:/ Pages41961019875 and main checks/deploy41961020262 SUCCESS; post-Actions byte proof also passed. Detailed proof in TEST_REPORT.
 
 ## Earlier releases
 

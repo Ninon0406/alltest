@@ -1,5 +1,7 @@
 # Test report — current0.4.0 /2026-11-05 UTC
 
+Latest release0.4.0: **81/81 unit/integration/balance/art, content2/2, production build, final37-case PR/main browser CI and public gameplay/save/art verification PASS**. Main build/deploy succeeded. Earlier sections preserve historical releases; Session5 below contains current evidence and limitations.
+
 # # Verified local checks
 
 - `npm ci --prefix GODSEED`: PASS (153 packages). Dependency warning: ESLint 9 vendor support status is deprecated; build/lint works with the locked stack, future dependency maintenance needed.
@@ -179,3 +181,16 @@ The public verifier now uses the OS reduced-motion preference consistently acros
 Final tree checks: strict TypeScript/ESLint/content2/unit+integration+balance+art **81/81**/production build PASS. Final focused **6/6 PASS in1.6m** after all source fixes (phone390, iPad820/1024, desktop1366, noncombat/actual scene target/skip/truthful journal and missing-PNG fallback). The new first-craft regression now passes in the unfiltered81-case run.
 
 Final production-preview verifier PASS against the staged release: actual touch/start/WIND/forest/clue/reload/FIRE/practice/win/archive/ECHO/WATER/B02/reload/win/bell/cleanup/Eira-memory/checksum export/import. All28 versioned art PNGs match source, current JS SHA-256 `f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea` matches staged bytes; observed pageerror/HTTP failure list empty. Final bundle1,533.36kB/415.36kB gzip. Public0.4/remote37-case proof pending before publication claims.
+
+
+## 0.4.0 remote release proof
+
+Implementation `d65aadd`; [PR #5](https://github.com/Ninon0406/alltest/pull/5) MERGED at `f35b2ad1ef0c7aa02f334ae3c599b05fed686cf8`. Merge tree equals the validated implementation. [PR workflow41960028362](https://github.com/Ninon0406/alltest/actions/runs/41960028362) SUCCESS: install, test:all (81 cases/content2/build), staging, full37-case browser suite and both evidence/artifact uploads all successful. PR deploy job skipped by its intended main-only condition; no browser cases disabled. Remote status/step conclusions inspected through GitHub API; local per-case timings are reported separately.
+
+[main:/ Pages41961019875](https://github.com/Ninon0406/alltest/actions/runs/41961019875) SUCCESS. [Main checks/deploy41961020262](https://github.com/Ninon0406/alltest/actions/runs/41961020262) SUCCESS.
+
+
+Actual public `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` PASS: touch/start/craft/forest/clue/reload/FIRE/practice/win/archive/ECHO/WATER/B02/reload/win/bell/clean stream/Eira memory/checksum export/import. Observed pageerror/HTTP failures empty. All28 versioned PNGs and JS SHA-256 `f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea` match the staged release. Exported State2 has actual archive_read, stream_clean, battle_B02_done and old slice/training flags; ECHO/WATER recipes were learned through real materials. Independent canonical checksum matches and import restores the archive scene. Evidence public-stream-390.png and public-archive-390.png plus retained public forest/training captures. Browser touch simulation, not hardware certification.
+
+
+Main workflow41961020262 final SUCCESS: build127027131255 completed all checks including the final37-case browser suite; deploy127029578170 completed configure-pages/deploy-pages at2026-11-05 03:28:23 UTC. Post-Actions public HTML/JS/28PNG/renderer gate PASS with the same f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea and empty observed errors. The Actions artifact therefore matches the already verified public old/new gameplay and checksum/import flow. Final evidence-only documentation changes do not alter game code/assets/bundle.

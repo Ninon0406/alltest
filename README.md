@@ -20,7 +20,7 @@ Node 24: `npm ci --prefix GODSEED` แล้ว `npm --prefix GODSEED run test:a
 
 ## GitHub Pages
 
-เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่ GODSEED แล้ว รุ่น 0.3.0 หลังรวม PR #4 เข้า main (`255e79f`) และตรวจลูปป่า/ผสมเวทไฟ/ฝึกกับภูตชุดใหม่/ส่งออก checksum/นำเข้าไฟล์บนเว็บจริง พร้อม hash JavaScript และภาพใหม่16PNG ตรงกับ build สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/`
+เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่รุ่น 0.4.0 หลังรวม PR #5 เข้า main (`f35b2ad`) และตรวจเล่นจริงทั้งป่า/เวทไฟ/ฝึกกับคุโร/หอสมุด/เวทน้ำและเสียงสะท้อน/ต่อสู้ลำธาร/โลกจดจำ/เซฟ พร้อม hash JavaScript และภาพเวอร์ชันใหม่28PNG ตรง build สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` (`--assets-only` ตรวจไฟล์และrendererหลังdeploy)
 
 workflow ทดสอบทุก PR และ deploy เมื่อ main ผ่าน checks รองรับ Pages artifact พร้อมไฟล์ root สำหรับ source `main:/` หากเปลี่ยน Source ได้ ให้ใช้ Settings → Pages → Build and deployment → GitHub Actions ผ่านเบราว์เซอร์โทรศัพท์
 

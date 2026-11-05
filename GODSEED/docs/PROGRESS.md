@@ -2,7 +2,7 @@
 
 ## # Session5 — 2026-11-05 (UTC)
 
-Base `3dc997f` · branch `feat/godseed-archive-stream` · milestone M3/M4: archive/stream exploration slice. ก่อนทำ: working tree สะอาด, main ตรง origin, ไม่มี PR ค้าง; Pages41952409283 และ main checks/deploy41951619885 SUCCESS. อ่านคำสั่ง03/01/สเปกหลัก/เอกสารและSkillsก่อนแก้ คงงาน0.3.0ทุกระบบและไม่เริ่มใหม่
+Base `3dc997f` · branch `main` · implementation `d65aadd` · merge `f35b2ad` · [PR#5](https://github.com/Ninon0406/alltest/pull/5) MERGED · milestone M3/M4: archive/stream exploration slice. ก่อนทำ: working tree สะอาด, main ตรง origin, ไม่มี PR ค้าง; Pages41952409283 และ main checks/deploy41951619885 SUCCESS. อ่านคำสั่ง03/01/สเปกหลัก/เอกสารและSkillsก่อนแก้ คงงาน0.3.0ทุกระบบและไม่เริ่มใหม่
 
 Batch **GS-009/011/022/026/029**: เนื้อเรื่องหอสมุด/ลำธารเชื่อมเวทกับการตัดสินใจ เพิ่มภาพและศัตรูเท่าที่ลูปต้องใช้
 
@@ -24,7 +24,7 @@ Batch **GS-009/011/022/026/029**: เนื้อเรื่องหอสม�
 
 Baseline install/type/lint/content2/unit63/build PASS. Final type/lint/content2/unit+integration+balance+art81/build PASS;900 deterministic simulationsชนะทั้งหมด(600เส้นทางจริง+300explicit zero-MP fixtures). ภาพ39PNGสร้างซ้ำแล้วhashตรงทุกไฟล์ ไม่มีภาพเดิมเปลี่ยน
 
-Focused browserใหม่5/5 PASS1.5m: phone390/iPad820/desktop1366, genuine craftedWATER/ECHO/activeB02reload/win/memory, noncombat/WINDskip และmissing-PNG fallback ภาพจริงอ่านได้และHUDไม่บังตัวละคร Full36/36 PASS6.4m; เพิ่มiPadlandscape1024และfinalfocused6/6 PASS1.6m ชุดสุดท้าย37กรณีรอCI finalfocused6/6 PASSหลังแก้ครบ; production-previewรวมลูปเดิม/ใหม่/checksum/import/28PNG PASS พร้อมJS SHA-256 f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea; public/remoteCIกำลังตรวจ ดูTEST_REPORTก่อนอ้างผลสุดท้าย
+Focused browserใหม่5/5 PASS1.5m: phone390/iPad820/desktop1366, genuine craftedWATER/ECHO/activeB02reload/win/memory, noncombat/WINDskip และmissing-PNG fallback ภาพจริงอ่านได้และHUDไม่บังตัวละคร Full36/36 PASS6.4m; เพิ่มiPadlandscape1024และfinalfocused6/6 PASS1.6m ชุดสุดท้าย37กรณีผ่านPR/mainCIแล้ว finalfocused6/6 PASSหลังแก้ครบ; production-previewรวมลูปเดิม/ใหม่/checksum/import/28PNG PASS พร้อมJS SHA-256 f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea; PR CI41960028362ชุด37กรณีSUCCESS; Pages41961019875 SUCCESS; public0.4.0ครบลูปเดิม/ใหม่/เซฟ/28PNG/JS PASS; main Actions41961020262 build/deploy SUCCESS; หลังActionsตรวจHTML/JS/28PNG/rendererซ้ำPASS ดูTEST_REPORTก่อนอ้างผลสุดท้าย
 
 State2/IndexedDB1/envelope1เดิม: ไม่เพิ่มfieldบังคับและไม่แปลงเซฟใหม่ V1historicalbattle validatorเดิม, State2เพิ่มB02/HPสูงสุดตามencounter ตรวจold0.3State2ทุกfieldเท่าเดิมและcheckedB02roundtrip; ไม่รับรองdowngradeไปเกมรุ่นเก่าที่ไม่รู้จักฉากใหม่
 
@@ -38,4 +38,8 @@ State2/IndexedDB1/envelope1เดิม: ไม่เพิ่มfieldบัง�
 2. GS-027/028/023: เตรียมเทศกาล→ปมเสียง→guardian/assist→สามบทสรุป เมื่อเส้นทางก่อนหน้าผ่าน
 3. GS-007/018/033/031: ขัดเกลาNPC/VFX6ชุด/lighting และตรวจSafari/อุปกรณ์จริง
 
-ไม่มีสิ่งที่เจ้าของต้องติดตั้งหรือรันTerminal รอบนี้ยังรอหลักฐานเผยแพร่0.4.0ก่อนระบุว่าเว็บเป็นรุ่นใหม่
+ไม่มีสิ่งที่เจ้าของต้องติดตั้งหรือรันTerminal เผยแพร่0.4.0และตรวจเล่นจริงที่ https://ninon0406.github.io/alltest/ แล้ว main Actionsและการตรวจไฟล์หลังdeployผ่านแล้ว
+
+## เผยแพร่0.4.0
+
+https://ninon0406.github.io/alltest/ · PR#5 MERGED/f35b2ad · PR CI41960028362, Pages41961019875 และmain build/deploy41961020262 SUCCESS เว็บจริงเล่นลูปเดิม+หอสมุด/เวทน้ำ/ECHO/B02/reload/ช่วยกระดิ่ง/โลกจดจำ/export/importผ่าน หลังActionsตรวจJSและภาพ28ไฟล์ตรงbuildซ้ำ SHA-256 f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea ไม่มีสิ่งที่เจ้าของต้องตั้งค่าหรือรันคำสั่ง

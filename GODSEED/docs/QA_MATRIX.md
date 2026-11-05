@@ -1,5 +1,7 @@
 # QA matrix — 0.4.0 / 2026-11-05 UTC
 
+Current0.4.0: PR/main full37-case browser checks SUCCESS, local81/content2/build PASS, public old/new gameplay/save flow and post-Actions28PNG/JS/renderer gate PASS. Physical hardware/Safari and final art acceptance remain NOT TESTED/PENDING. Earlier version sections retain their historical results.
+
 | Environment | Flow | Result |
 | --- | --- | --- |
 | Chromium 360×800, 390×844, 430×932 | Full first slice, craft/equip, B01, clue, reload/continue, no horizontal overflow/pageerror/HTTP failures | PASS |
@@ -41,3 +43,7 @@ Main workflow41951619885 build+deploy SUCCESS (2026-11-05 02:00:36 UTC). Final f
 Focused new5/5 PASS1.5m:390×844/820×1180/1366×768 actual touch/archive/materials/ECHO+WATER/B02/reload/full durable snapshot/win/bell/cleanedstream/Eira-memory/cluejournal; no pageerror/HTTPfailure in positive paths. Canvas/HUD bounds checked at390/820. Noncombat path and actual skippedWIND cast commit once; failednewPNG deliberately aborted for fallback test (not counted as positive network success). Real hardware/Safari/FPS remain NOTTESTED. Full36andnew public verifier results pending; release proof inTEST_REPORT.
 
 Final local full36/36 PASS6.4m; final focused6/6 PASS1.6m adds actual archive/stream/WATER/ECHO/B02/memory at iPad landscape1024×768. Both iPad orientations now have the new genuine path. ECHO hit/miss assertions follow intended accuracy and heal assertions verify MP/benefit. No app change after full run; CI runs final37 cases.
+
+Public0.4.0 touch route PASS: oldforest/FIRE/practice, archive research, realECHO/WATER crafting, B02 spell/reload/win, bell/clearstream and Eira memory, checked export/import. All28 versioned PNGs and current JS hash match the source; observed error list empty. main:/ Pages41961019875 SUCCESS; mainActions/post-deploy byte proof recorded next inTEST_REPORT.
+
+Main workflow41961020262 build+deploy SUCCESS at2026-11-05 03:28:23 UTC. Final post-Actions assets-only public check PASS: current HTML, same f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea JS and28 versioned PNGs, ready three-layer renderer and empty errors.
