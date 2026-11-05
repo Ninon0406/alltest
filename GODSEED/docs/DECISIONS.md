@@ -30,3 +30,13 @@
 19. WET+WIND's speed reduction is represented by skipping the current enemy phase in this single-actor model, with explicit Thai outcome log. This is a bounded implementation interpretation, not a hidden general speed system. Boss disables/immunity must be designed before B05 is enabled.
 20. Add CH0404 training and CH0405 forest-clue handoff as authored workshop options, because canonical training/first fire recipe existed in the spec without implementation. The gift is one-time and must be consumed by real crafting; never give a fake learned spell or repeat resources. Existing scene and choice IDs unchanged.
 21. Training uses the workshop and an explicitly provisional Pip sheet. Fix support VFX recipient, moving shadows and skip/tween cleanup now; do not count this as final art, a new unique enemy sprite, or all234 VFX acceptance.
+
+## Session4 — 0.3.0 (2026-11-05 UTC)
+
+22. Prioritize GS-007/008/009/010/033 because final art/depth/action identity is the current presentation gap. Add no new gameplay or save fields. Keep remaining chapter scenes/endings explicitly incomplete.
+23. Generate independently layered original assets with local pixel drawing code, editable layouts/manifests and a distinct training creature. Preserve legacy originals as fallback. This supersedes decision21's temporary Pip reuse; it does not certify final HD art.
+24. The renderer observes resolved states and commands; it never grants resources, changes RNG or invents outcomes. Animate the final battle on its old stage before committing/showing the new state. Token cancellation plus settle-once promises make skip/reduced/show cleanup deterministic.
+25. Respect OS motion initially and when changed; reduced idle/ambient holds still. Disable actions until rendering is ready. Missing new-art files fall back to old originals with a Thai notice. Broader loading retry/offline support remains open.
+26. Read-only renderer diagnostics support assertions of real poses/texture/layers, alongside actual UI actions and durable IndexedDB reads. No golden route gameplay writes or fake exposed game state. Visual assets stay provisional until full manual/device art gates pass.
+
+27. Manual844×390 review caught an inherited grid/aspect-ratio preferred-width bug despite the old overflow test passing. Constrain short-landscape world to its grid width and remove its preferred ratio; preserve the canvas16:9 ratio inside. Add geometry assertions for canvas/scene/desk boundaries so hidden clipping cannot masquerade as responsive acceptance.

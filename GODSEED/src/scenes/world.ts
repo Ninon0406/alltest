@@ -2,59 +2,133 @@ import Phaser from 'phaser';
 import {scenes} from '../content/story';
 import type {State} from '../engine/state';
 import type {Spell} from '../systems/spells';
+import {playerAnimations,trainingAnimations} from './actor-art';
+import {STAGES,stageLayouts,type StageId} from './stage-layout';
+import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 
 export class World extends Phaser.Scene {
  player!:Phaser.GameObjects.Sprite;
  npc!:Phaser.GameObjects.Sprite;
  stage!:Phaser.GameObjects.Image;
+ private rear!:Phaser.GameObjects.TileSprite;
+ private ground!:Phaser.GameObjects.Image;
+ private front!:Phaser.GameObjects.TileSprite;
  private playerShadow!:Phaser.GameObjects.Ellipse;
  private npcShadow!:Phaser.GameObjects.Ellipse;
+ private props:Phaser.GameObjects.Sprite[]=[];
+ private ambient:Phaser.GameObjects.Sprite[]=[];
  private effects=new Set<Phaser.GameObjects.Rectangle>();
- private finishTween?:()=>void;
+ private settlers=new Set<()=>void>();
+ private generation=0;
+ private parallax={value:0};
  private npcHomeX=338;
- motes:Phaser.GameObjects.Rectangle[]=[];
+ private npcKey='pip';
+ private currentStage:StageId='village';
+ private phase='idle';
+ private playerAction='idle';
+ private lastCue='idle';
+ private lastOutcome:Outcome='none';
+ private assetErrors:string[]=[];
+ private layered=false;
+ private ambientTime=0;
+ private memoryProps=0;
+ private visibilityChanged=()=>this.diagnostics();
  ready=false;
  motion=true;
- constructor(){super('world');}
+ constructor(private host:HTMLElement){super('world');this.host.dataset.renderStatus='loading';document.addEventListener('visibilitychange',this.visibilityChanged);}
+ private writeMetric(key:string,value:string|number){const text=String(value);if(this.host.dataset[key]!==text)this.host.dataset[key]=text;}
+ private diagnostics(){
+  this.writeMetric('renderStatus',!this.ready?'loading':this.assetErrors.length?'degraded':'ready');this.writeMetric('stage',this.currentStage);
+  this.writeMetric('stageLayers',this.layered?3:1);this.writeMetric('npc',this.npcKey);this.writeMetric('playerAction',this.playerAction);
+  this.writeMetric('actionPhase',this.phase);this.writeMetric('actionSequence',this.generation);this.writeMetric('activeEffects',this.effects.size);
+  this.writeMetric('motion',this.motion?'full':'reduced');this.writeMetric('visibility',document.hidden?'hidden':'visible');
+  this.writeMetric('assetErrors',this.assetErrors.length);this.writeMetric('lastOutcome',this.lastOutcome);this.writeMetric('lastCue',this.lastCue);
+  this.writeMetric('ambientTick',Math.floor(this.ambientTime/200));this.writeMetric('propCount',this.props.length);this.writeMetric('memoryProps',this.memoryProps);
+  if(this.player){this.writeMetric('heroFrame',this.player.frame.name);if(this.phase==='idle')this.writeMetric('playerAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth}));}
+ }
  preload(){
   const base=import.meta.env.BASE_URL+'assets/';
+  this.load.on('loaderror',(file:{key:string})=>{this.assetErrors.push(file.key);});
   for(const name of ['sky','village','garden','workshop','forest'])this.load.image(name,base+name+'.png');
   for(const name of ['player','pip','lumi','maren','koro','sprout'])this.load.spritesheet(name,base+name+'.png',{frameWidth:32,frameHeight:48});
+  for(const name of STAGES)for(const layer of ['rear','ground','front'])this.load.image(`${name}-${layer}-v2`,`${base}art-v2/${name}-${layer}.png`);
+  this.load.spritesheet('props-v2',base+'art-v2/props.png',{frameWidth:64,frameHeight:96});
+  this.load.spritesheet('ambient-v2',base+'art-v2/ambient.png',{frameWidth:32,frameHeight:32});
+  this.load.spritesheet('hero-v2',base+'art-v2/player.png',{frameWidth:32,frameHeight:48});
+  this.load.spritesheet('training-v2',base+'art-v2/training.png',{frameWidth:32,frameHeight:48});
  }
  create(){
-  this.add.image(240,135,'sky');this.stage=this.add.image(240,135,'village');
-  for(const name of ['player','pip','lumi','maren','koro','sprout'])this.anims.create({key:name+'-idle',frames:this.anims.generateFrameNumbers(name,{frames:[0,1,2,1]}),frameRate:5,repeat:-1});
-  this.playerShadow=this.add.ellipse(154,238,29,7,0x263f42,.23);
-  this.npcShadow=this.add.ellipse(338,232,29,7,0x263f42,.23);
-  this.player=this.add.sprite(154,219,'player').play('player-idle');
-  this.npc=this.add.sprite(338,212,'pip').play('pip-idle');
-  for(let i=0;i<16;i++)this.motes.push(this.add.rectangle((i*37)%480,110+(i*19)%110,2,2,i%2?0xffe3a0:0xe0f1b8,.7));
-  this.anims.create({key:'player-walk',frames:this.anims.generateFrameNumbers('player',{frames:[0,1,2,1,0,2]}),frameRate:10,repeat:-1});
-  this.ready=true;this.game.events.emit('world-ready');
+  this.add.image(240,135,'sky').setDepth(-1200);this.stage=this.add.image(240,135,'village').setDepth(-1100);
+  this.rear=this.add.tileSprite(240,135,480,270,'village').setDepth(-1000).setVisible(false);
+  this.ground=this.add.image(240,135,'village').setDepth(-900).setVisible(false);
+  this.front=this.add.tileSprite(240,135,480,270,'village').setDepth(1000).setVisible(false);
+  for(const name of ['player','pip','lumi','maren','koro','sprout'])if(this.textures.exists(name))this.anims.create({key:name+'-idle',frames:this.anims.generateFrameNumbers(name,{frames:[0,1,2,1]}),frameRate:5,repeat:-1});
+  this.anims.create({key:'legacy-walk',frames:this.anims.generateFrameNumbers('player',{frames:[0,1,2,1,0,2]}),frameRate:10,repeat:-1});
+  if(this.textures.exists('hero-v2'))for(const [name,config] of Object.entries(playerAnimations))this.anims.create({key:'hero-'+name,frames:this.anims.generateFrameNumbers('hero-v2',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});
+  if(this.textures.exists('training-v2'))for(const [name,config] of Object.entries(trainingAnimations))this.anims.create({key:'training-'+name,frames:this.anims.generateFrameNumbers('training-v2',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});
+  if(this.textures.exists('ambient-v2'))for(const [row,name] of ['cloud','leaf','fire','glow'].entries())this.anims.create({key:'ambient-'+name,frames:this.anims.generateFrameNumbers('ambient-v2',{start:row*4,end:row*4+3}),frameRate:4,repeat:-1});
+  this.playerShadow=this.add.ellipse(154,239,27,6,0x233e3a,.25);
+  this.npcShadow=this.add.ellipse(338,232,26,6,0x233e3a,.22);
+  this.player=this.add.sprite(154,219,this.textures.exists('hero-v2')?'hero-v2':'player');
+  this.npc=this.add.sprite(338,212,'pip');
+  this.ready=true;this.show(null);
+  this.events.once('shutdown',()=>{this.finishAction();document.removeEventListener('visibilitychange',this.visibilityChanged);});
+  this.game.events.emit('world-ready');
+  if(this.assetErrors.length)this.game.events.emit('art-warning','ภาพบางส่วนโหลดไม่ครบ ใช้ภาพสำรองขณะนี้ คุณยังเล่นและบันทึกเกมได้');
  }
- update(time:number){
+ update(_time:number,delta:number){
   if(!this.ready)return;
-  this.playerShadow.setPosition(Math.round(this.player.x),Math.round(this.player.y+20));
-  this.npcShadow.setPosition(Math.round(this.npc.x),Math.round(this.npc.y+20));
+  this.playerShadow.setPosition(Math.round(this.player.x),Math.round(this.player.y+20)).setDepth(this.player.y+19);
+  this.npcShadow.setPosition(Math.round(this.npc.x),Math.round(this.npc.y+20)).setDepth(this.npc.y+19);
+  this.player.setDepth(this.player.y+20);this.npc.setDepth(this.npc.y+20);
   this.player.anims.timeScale=this.motion?1:0;this.npc.anims.timeScale=this.motion?1:0;
-  this.motes.forEach((m,i)=>{m.y=120+((time/(this.motion?55:100000)+i*19)%110);m.x=(i*37+Math.sin(time/2000+i)*(this.motion?8:0))%480;});
+  if(this.motion&&!document.hidden)this.ambientTime+=Math.min(delta,100);
+  this.rear.tilePositionX=this.motion?this.parallax.value*.3:0;this.front.tilePositionX=this.motion?this.parallax.value*.8:0;
+  this.ambient.forEach((sprite,i)=>{sprite.anims.timeScale=this.motion?1:0;const origin=sprite.getData('anchor') as {x:number;y:number;kind:string};
+   const t=this.ambientTime/1000;
+   sprite.setPosition(Math.round(origin.x+(origin.kind==='cloud'?Math.sin(t*.16+i)*14:Math.sin(t+i)*2)),Math.round(origin.y+(origin.kind==='leaf'?Math.sin(t*1.3+i)*3:0)));
+  });
+  this.diagnostics();
  }
+ private pose(name:string){
+  this.playerAction=name;
+  if(this.player.texture.key==='hero-v2'&&this.anims.exists('hero-'+name)){this.player.play('hero-'+name);if(!this.motion)this.player.setFrame(playerAnimations[name as keyof typeof playerAnimations]?.frames[0]||0);}
+  else{if(name==='walk'||name==='run')this.player.play('legacy-walk');else if(name==='idle')this.player.play('player-idle');else this.player.stop().setFrame(name==='cast'?3:4);}
+  this.diagnostics();
+ }
+ private npcIdle(){const key=this.npcKey==='training-v2'?'training-idle':this.npcKey+'-idle';if(this.anims.exists(key))this.npc.play(key);this.npc.clearTint().setAlpha(1);}
  show(state:State|null){
-  if(!this.ready)return;
+  if(!this.ready)return;this.finishAction();
   const scene=state?scenes[state.scene]:null,training=state?.battle?.id==='BT_TRAINING';
-  this.tweens.killTweensOf(this.npc);this.tweens.killTweensOf(this.player);
-  this.stage.setTexture(training?'workshop':scene?.stage||'village');
-  // Pip is a provisional simulated practice spirit until a unique sheet is authored.
-  const actor=state?.battle?(training?'pip':'sprout'):state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip';
-  this.npc.setTexture(actor).play(actor+'-idle').clearTint().setAlpha(1);
-  this.player.setPosition(state?.battle?130:154,219).clearTint().setAlpha(1);
-  this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);
+  this.currentStage=training?'workshop':scene?.stage||'village';
+  this.layered=['rear','ground','front'].every(layer=>this.textures.exists(`${this.currentStage}-${layer}-v2`));
+  this.stage.setTexture(this.currentStage).setVisible(!this.layered);
+  this.rear.setVisible(this.layered);this.ground.setVisible(this.layered);this.front.setVisible(this.layered);
+  if(this.layered){this.rear.setTexture(this.currentStage+'-rear-v2');this.ground.setTexture(this.currentStage+'-ground-v2');this.front.setTexture(this.currentStage+'-front-v2');}
+  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;
+  const addProp=(frame:number,x:number,y:number)=>{if(this.textures.exists('props-v2')){const prop=this.add.sprite(x,y,'props-v2',frame).setOrigin(.5,1).setDepth(y);this.props.push(prop);return true;}return false;};
+  if(this.layered){for(const prop of stageLayouts[this.currentStage].props)addProp(prop.frame,prop.x,prop.y);
+   if(this.textures.exists('ambient-v2'))for(const anchor of stageLayouts[this.currentStage].ambient){const sprite=this.add.sprite(anchor.x,anchor.y,'ambient-v2').setDepth(anchor.kind==='cloud'?-950:800);sprite.setData('anchor',anchor).play('ambient-'+anchor.kind);this.ambient.push(sprite);}
+   if(state?.flags.lumi_helped&&this.currentStage==='village'){if(addProp(6,246,172))this.memoryProps++;}
+   if(state?.flags.garden_tended&&this.currentStage==='garden'){if(addProp(5,264,205))this.memoryProps++;}
+   if(state?.flags.forest_clue&&this.currentStage==='forest'){if(addProp(7,281,210))this.memoryProps++;}
+  }
+  this.npcKey=state?.battle?(training?(this.textures.exists('training-v2')?'training-v2':'pip'):'sprout'):state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip';
+  this.npc.setTexture(this.npcKey);this.npcIdle();this.player.setPosition(state?.battle?130:154,219).clearTint().setAlpha(1);
+  this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose('idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
  }
  finishAction(){
+  this.generation++;
   if(!this.ready)return;
-  this.tweens.killTweensOf(this.player);this.player.play('player-idle');
-  for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}
-  this.effects.clear();this.finishTween?.();this.finishTween=undefined;
+  this.tweens.killTweensOf(this.player);this.tweens.killTweensOf(this.npc);this.tweens.killTweensOf(this.parallax);
+  for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
+  for(const settle of [...this.settlers])settle();this.settlers.clear();
+  this.player.clearTint().setAlpha(1);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();this.pose('idle');this.phase='idle';this.parallax.value=0;this.diagnostics();
+ }
+ setReduced(reduced:boolean){this.motion=!reduced;if(this.ready&&reduced)this.finishAction();this.diagnostics();}
+ private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
+  if(token!==this.generation)return Promise.resolve();
+  return new Promise(resolve=>{let done=false;const settle=()=>{if(done)return;done=true;this.settlers.delete(settle);resolve();};this.settlers.add(settle);this.tweens.add({...properties,targets:target,onComplete:settle});});
  }
  private castEffect(reduced:boolean,spell?:Spell){
   const color=spell?.vfx.color||0xffdf90,shape=spell?.form||'ORB',modifier=spell?.mod||'SEEK';
@@ -89,36 +163,38 @@ export class World extends Phaser.Scene {
    this.tweens.add({targets:particle,x:Math.round(endX),y:Math.round(endY),alpha:0,scale:modifier==='AMPLIFY'?2.5:1,duration:reduced?100:modifier==='LINGER'?650+i*4:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
   }
  }
- async action(cue:string,reduced:boolean,spell?:Spell){
+ async action(cue:string,reduced:boolean,spell?:Spell,before?:State,next?:State,command?:string){
   if(!this.ready)return;
-  this.tweens.killTweensOf(this.npc);this.tweens.killTweensOf(this.player);
-  this.npc.setX(this.npcHomeX).clearTint().setAlpha(1);this.player.clearTint().setAlpha(1);
-  this.motion=!reduced;this.player.stop().setFrame(cue==='cast'?3:4);
-  if(cue==='walk')this.player.play('player-walk');
-  if(spell||cue==='cast')this.castEffect(reduced,spell);
-  await new Promise<void>(resolve=>{
-   this.finishTween=resolve;
-   this.tweens.add({targets:this.player,x:cue==='walk'?230:this.player.x,y:cue==='pick'?224:219,duration:reduced?60:500,yoyo:cue!=='walk',onComplete:()=>{this.finishTween=undefined;resolve();}});
-  });
-  this.player.play('player-idle');
- }
- /** Reactions read an already resolved turn and never alter game state. */
- react(previous:State,next:State,reduced:boolean){
-  if(!this.ready||reduced||!previous.battle||!next.battle)return;
-  const enemyX=this.npc.x;
-  if(next.battle.enemyHp<previous.battle.enemyHp){
-   this.npc.setTint(0xffe3b6);
-   this.tweens.add({targets:this.npc,alpha:.72,duration:100,yoyo:true,onComplete:()=>this.npc.clearTint()});
+  this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));
+  if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell);
+  const destination=cue==='walk'?(command==='FLEE'?80:230):cue==='pick'?182:this.player.x;
+  if(!reduced&&cue==='walk')this.tweens.add({targets:this.parallax,value:6,duration:480});
+  await this.beat(this.player,{x:destination,y:cue==='pick'?223:219,duration:reduced?55:cue==='craft'?800:cue==='cast'?560:480,yoyo:cue!=='walk'},token);
+  if(token!==this.generation)return;
+  if(before?.battle&&next){
+   this.phase='reaction';this.diagnostics();
+   if(next.hp<before.hp){this.pose('hit');this.player.setTint(0xf2b193);}
+   if(next.battle&&next.battle.enemyHp<before.battle.enemyHp||this.lastOutcome==='win'){
+    if(this.npcKey==='training-v2')this.npc.play('training-hit');this.npc.setTint(0xffe3b6);
+   }
+   if(next.battle?.log.some(line=>line.includes(' โจมตี ')||line.includes('โจมตีพลาด'))){
+    if(this.npcKey==='training-v2')this.npc.play('training-attack');
+    await this.beat(this.npc,{x:this.npcHomeX-10,duration:reduced?20:120,yoyo:true},token);
+   }
+   if(token!==this.generation)return;
+   if(this.lastOutcome==='win'){
+    await this.beat(this.npc,{alpha:0,duration:reduced?25:200},token);
+    if(token!==this.generation)return;this.pose('victory');
+    await this.beat(this.player,{y:reduced?219:216,duration:reduced?25:350,yoyo:true},token);
+   }else if(this.lastOutcome==='lose'){
+    this.pose('hit');await this.beat(this.player,{alpha:.65,duration:reduced?25:200,yoyo:true},token);
+   }
   }
-  if(next.battle.log.some(line=>line.includes(' โจมตี ')||line.includes('โจมตีพลาด')))this.tweens.add({targets:this.npc,x:enemyX-12,duration:100,yoyo:true});
-  if(next.hp<previous.hp){
-   this.player.setTint(0xf2b193);
-   this.tweens.add({targets:this.player,alpha:.75,duration:120,yoyo:true,onComplete:()=>this.player.clearTint()});
-  }
+  if(token===this.generation){this.pose('idle');this.phase='idle';this.diagnostics();}
  }
 }
 export function startWorld(parent:HTMLElement){
- const world=new World();
- const game=new Phaser.Game({type:Phaser.AUTO,parent,width:480,height:270,backgroundColor:'#a5d6d0',pixelArt:true,roundPixels:true,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[world],audio:{noAudio:true}});
+ const world=new World(parent);
+ const game=new Phaser.Game({type:Phaser.AUTO,parent,width:480,height:270,backgroundColor:'#a5d6d0',pixelArt:true,roundPixels:true,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[world],audio:{noAudio:true},loader:{timeout:8000}});
  return {world,game};
 }

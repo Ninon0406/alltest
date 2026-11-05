@@ -1,4 +1,4 @@
-# GODSEED 0.2.0
+# GODSEED 0.3.0
 
 ดูคู่มือ [README หลัก](../README.md) และ [สถานะ](docs/PROGRESS.md)
 
