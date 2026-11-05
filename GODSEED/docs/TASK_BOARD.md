@@ -2,12 +2,12 @@
 
 Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ
 
-Checklist 21.6% · ✅16 🟡40 ⬜16 🔴1 ⛔1 · ทั้งหมด74
+Checklist 23% · ✅17 🟡40 ⬜16 🔴0 ⛔1 · ทั้งหมด74
 
 | Phase | งานที่เสร็จ | งานที่เหลือ (ID: สถานะ) |
 | --- | --- | --- |
 | 1 โครงสร้างพื้นฐาน | FND-001, FND-002, FND-003, FND-005, FND-007, FND-008, FND-009 | FND-004: 🟡, FND-006: 🟡 |
-| 2 งานภาพ Pixel Art HD | VIS-002 | VIS-001: 🟡, VIS-003: 🟡, VIS-004: 🟡, VIS-005: 🟡, VIS-006: 🔴, VIS-007: 🟡, VIS-008: 🟡, VIS-009: 🟡, VIS-010: 🟡, VIS-011: 🟡, VIS-012: 🟡 |
+| 2 งานภาพ Pixel Art HD | VIS-002, VIS-006 | VIS-001: 🟡, VIS-003: 🟡, VIS-004: 🟡, VIS-005: 🟡, VIS-007: 🟡, VIS-008: 🟡, VIS-009: 🟡, VIS-010: 🟡, VIS-011: 🟡, VIS-012: 🟡 |
 | 3 ระบบเนื้อเรื่อง | STO-002 | STO-001: 🟡, STO-003: 🟡, STO-004: 🟡, STO-005: 🟡, STO-006: ⬜, STO-007: 🟡, STO-008: ⬜ |
 | 4 ระบบเวทมนตร์ | MAG-003, MAG-004, MAG-005 | MAG-001: 🟡, MAG-002: 🟡, MAG-006: 🟡, MAG-007: 🟡, MAG-008: 🟡, MAG-009: 🟡 |
 | 5 ระบบต่อสู้ | CMB-001, CMB-003, CMB-005 | CMB-002: 🟡, CMB-004: 🟡, CMB-006: ⬜, CMB-007: ⬜, CMB-008: 🟡, CMB-009: 🟡 |

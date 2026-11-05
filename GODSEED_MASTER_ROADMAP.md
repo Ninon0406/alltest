@@ -10,18 +10,18 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 ทุกงานน้ำหนัก1: เปอร์เซ็นต์ = จำนวน✅ ÷ จำนวนงาน ×100; 🟡/⬜/🔴/⛔ได้0 ไม่มีpartialเครดิต ตัวเลขเป็นความคืบหน้าของChecklistเท่านั้น ไม่ใช่เวลาที่เหลือ ปริมาณแรงงาน ความสนุก หรือคุณภาพภาพของเกมทั้งหมด งานขนาดต่างกันและรายการอาจเพิ่มได้ ต้องอ่านพร้อมจำนวนงานและlog
 
-**ความคืบหน้ารวม Checklist: 21.6% (16/74)** · เฉพาะขอบเขต1.0: 22.5% (16/71)
+**ความคืบหน้ารวม Checklist: 23% (17/74)** · เฉพาะขอบเขต1.0: 23.9% (17/71)
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 74 | 16 | 40 | 16 | 1 | 1 | 21.6% |
-| 1.0 | 71 | 16 | 40 | 13 | 1 | 1 | 22.5% |
+| ทั้งโครงการ | 74 | 17 | 40 | 16 | 0 | 1 | 23% |
+| 1.0 | 71 | 17 | 40 | 13 | 0 | 1 | 23.9% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [1 — โครงสร้างพื้นฐาน](#phase-1) | 7/9 | 2 | 0 | 0 | 0 | 77.8% |
-| [2 — งานภาพ Pixel Art HD](#phase-2) | 1/12 | 10 | 0 | 1 | 0 | 8.3% |
+| [2 — งานภาพ Pixel Art HD](#phase-2) | 2/12 | 10 | 0 | 0 | 0 | 16.7% |
 | [3 — ระบบเนื้อเรื่อง](#phase-3) | 1/8 | 5 | 2 | 0 | 0 | 12.5% |
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
 | [5 — ระบบต่อสู้](#phase-5) | 3/9 | 4 | 2 | 0 | 0 | 33.3% |
@@ -106,7 +106,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-041 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003
   - ไฟล์: [GODSEED/scripts/roadmap.mjs](GODSEED/scripts/roadmap.mjs) · [GODSEED/docs/roadmap.json](GODSEED/docs/roadmap.json)
-  - หลักฐาน/สถานะจริง: roadmap:check 5/5 PASS รวมnegative duplicate/dependency/cycle/invalidstatus/missingproof; generated8Phases/74tasksตรวจผ่าน · npm --prefix GODSEED run roadmap:check PASS; เชื่อมtest:all/CIและ03/AGENTSแล้ว
+  - หลักฐาน/สถานะจริง: roadmap:check 5/5 PASS รวมnegative duplicate/dependency/cycle/invalidstatus/missingproof; generated8Phases/74tasksตรวจผ่าน · roadmap5/5 + PRCI41997711472/mainCI41998656125 SUCCESS; generatedchecklistตรง17/74; 03/AGENTS/devlogเชื่อมแล้ว
   - เกณฑ์เสร็จ: ID/dependency/evidence valid ไม่มีcycle เอกสารไม่stale ตรวจในCI มีlogทุกsession
 
 
@@ -148,11 +148,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
-- [ ] 🔴 มีปัญหา **VIS-006 — Director: authored paths → interaction → commit/skip**
+- [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, VIS-002
   - ไฟล์: [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/tests/cinematics.spec.ts](GODSEED/tests/cinematics.spec.ts)
-  - หลักฐาน/สถานะจริง: รอบ7full45พบWINDskip timeout เพราะscreenshotรอจนช่วงskipจบและcast holdสั้นลง; คืนtiming/แก้testorderingแล้ว รอrerun · 8authoredroutes/6lanes: approachก่อนinteraction, skip/reloadcommitonce; ไม่ใช่fullcamera/4directions/HDgate
+  - หลักฐาน/สถานะจริง: คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip · Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS
   - เกณฑ์เสร็จ: เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop
 
 - [ ] 🟡 กำลังพัฒนา **VIS-007 — Fixed Map และเมนูเส้นทาง/ตำแหน่งที่ปลดล็อก**

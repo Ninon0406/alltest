@@ -254,7 +254,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "npm --prefix GODSEED run roadmap:check PASS; เชื่อมtest:all/CIและ03/AGENTSแล้ว",
+      "verification": "roadmap5/5 + PRCI41997711472/mainCI41998656125 SUCCESS; generatedchecklistตรง17/74; 03/AGENTS/devlogเชื่อมแล้ว",
       "evidenceFiles": [
         "GODSEED/scripts/roadmap.test.mjs",
         "GODSEED/docs/DEVELOPMENT_LOG.md"
@@ -377,7 +377,7 @@
       "id": "VIS-006",
       "phase": 2,
       "title": "Director: authored paths → interaction → commit/skip",
-      "status": "problem",
+      "status": "done",
       "priority": "P1",
       "dependsOn": [
         "FND-003",
@@ -387,14 +387,14 @@
         "GODSEED/src/scenes/cinematic-paths.ts",
         "GODSEED/tests/cinematics.spec.ts"
       ],
-      "evidence": "รอบ7full45พบWINDskip timeout เพราะscreenshotรอจนช่วงskipจบและcast holdสั้นลง; คืนtiming/แก้testorderingแล้ว รอrerun",
+      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip",
       "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
       "legacyIds": [
         "GS-010"
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "8authoredroutes/6lanes: approachก่อนinteraction, skip/reloadcommitonce; ไม่ใช่fullcamera/4directions/HDgate",
+      "verification": "Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS",
       "evidenceFiles": [
         "GODSEED/tests/cinematics.test.ts",
         "GODSEED/tests/cinematics.spec.ts",

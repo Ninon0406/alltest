@@ -55,3 +55,7 @@ Recipe preview shows compatibility, missing materials and result costs without r
 Characters approach authored feather/seed/dew/book/bell/bench anchors before interacting; six stage travel lanes bend with the ground and movement faces the destination. Raised bench rest no longer hides behind the prop and its ground shadow is suppressed until standing again. Skip/reduced-motion keep the same once-only effects/save behavior. No new story scenes, PNGs, recipes or state schema.
 
 Eight-phase Master Roadmap/Task Board now derive from a shared audited dataset with deterministic checklist percentages, dependency/evidence validation and CI stale checks. Development Log reconstructs earlier shipped batches with source references and records every new batch. OptionalAI/CH2/CH3 are separate scope; finalHD/fullchapter/hardware gates remain pending. Publication proof recorded only after actual release inTEST_REPORT.
+
+0.4.2 published at https://ninon0406.github.io/alltest/ afterPR#7/7279cea; final45-case PRCI/local PASS, main:/ Pages41998655321SUCCESS and actualpublicgameplay/save/28PNG/JSverificationPASS. Full-main/post-ActionsreleaseproofinTEST_REPORT.
+
+Mainchecks/deploy41998656125SUCCESS withfull45browser suite; post-Actions public byte/renderer gatePASS. Evidence-onlystatusupdate finalizesRoadmap17/74(23.0%), withallgamecode/assetsunchanged.

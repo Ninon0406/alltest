@@ -1,6 +1,6 @@
-# Test report — current0.4.1 /2026-11-05 UTC
+# Test report — current0.4.2 /2026-11-05 UTC
 
-Latest0.4.1: **87/87 unit/integration/balance/art, content2/2, production build, final41-case PR/main browser CI and public gameplay/save/art verification PASS**. Main:/ Pages and main Actions build/deploy succeeded; post-Actions byte/renderer gate passed. Earlier sections preserve historical releases; Session6 contains current evidence and limitations.
+Latest0.4.2: **gameunit90/90, roadmap5/5, content2/2, type/lint/build, final45-case local/PR/main browser CI and actual public gameplay/save/art verification PASS**. Main:/ Pages and main Actions build/deploy succeeded; post-Actions byte/renderer gate PASS. Earlier sections preserve historical results; Session7 contains current evidence and limitations.
 
 ## Verified local checks
 
@@ -226,3 +226,16 @@ Final full45-case browser suite, preview/public release and remoteCI results fol
 Full-suite regression: WIND skip case timed out waiting for a skip button after its pre-skip full-page screenshot. Presentation refactor had also unintentionally shortened cast/craft holds by removing their original no-distance yoyo. Reproduce/snapshot confirms the game already committed to stream result, not a gameplay deadlock. Restore original total cast/craft holds1120/1600ms; inspect target then tap skip before taking the settled screenshot. No test removed or skipped. VIS-006 was moved to problem during correction; final full rerun is required before restoring DONE. The WIND screenshot is now after settling, not proof of a mid-cast render.
 
 Initial full45 result44PASS/1FAIL8.3m (the WIND skip timing case above), zero skipped. After correction, roadmap5/type/lint/content2/gameunit90/build PASS again; final staged JS is index-vaSgvZ5Q.js (~1,539.26kB/417.52kBgzip). Full45 rerun on that final bundle is in progress; earlier preview proof belongs to the superseded index-A1R1SRl4.js and is not final-release proof.
+
+Final local full browser suite **45/45 PASS8.4m**, zero skipped, on final index-vaSgvZ5Q.js. The formerly failing WINDskip case now PASS11.6s with actual target, immediate skip, one revision and durable world-memory assertions retained. Four new real-touch cinematic cases and every old save/visual/ten-viewport/encounter route passed on the corrected tree. Game unit90/content2/type/lint/build and roadmap5 all PASS. VIS-006 restored toDONE only after these results and final PR CI success.
+
+## 0.4.2 remote release proof
+
+Implementation7c9ce03, correction/staged95c3637; [PR#7](https://github.com/Ninon0406/alltest/pull/7) merged at7279cea2461df9244afdcc751a1f4236d1b48a04. Merge tree equals the final validated PR tree. [PR CI41997711472](https://github.com/Ninon0406/alltest/actions/runs/41997711472) SUCCESS: locked install, test:all (roadmap5/gameunit90/content2/type/lint/build), staging, full45-browser suite and evidence/artifact uploads. Deploy correctlyskipped onPR. Earlier CI41996970778 was automaticallycancelled after the corrective push; it is not counted as passing. Final JS SHA-256 `2372e79842a5d35ab3534c7eaf9d074a98f3bac91fa1ecc4f348e739c485d301`. Main/public proof follows when available.
+
+[main:/ Pages41998655321](https://github.com/Ninon0406/alltest/actions/runs/41998655321) SUCCESS. Actual public command `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` PASS on final staged JS: real touch/start/WIND/forest/clue/reload/FIRE/practice/win/archive/ECHO/WATER/B02/reload/win/world memory/checked export/import. All28versioned PNGs match source; JS SHA-256 `2372e79842a5d35ab3534c7eaf9d074a98f3bac91fa1ecc4f348e739c485d301` equals staged bytes; observed pageerror/HTTPfailure list empty. Export checksum independently matches and import restores the actual run. New cinematic approach/bench/skip cases are validated by four-device browser tests/PRCI on those identical bytes. No realhardware/Safari/FPS/finalart certification.
+
+
+[Main workflow41998656125](https://github.com/Ninon0406/alltest/actions/runs/41998656125) SUCCESS. Build127148071558 completed allroadmap5/gameunit90/content2/type/lint/build/full45browser checks; deploy127151442768 completed configure-pages/deploy-pages at2026-11-05 09:06:55UTC. Post-Actions public `--assets-only` PASS: actualHTML/JS/all28versioned PNGs/ready layered renderer match staged release, same2372e79842a5d35ab3534c7eaf9d074a98f3bac91fa1ecc4f348e739c485d301 and empty observed errors. The Actions artifact matches the already validated public gameplay/checksum/import flow. Final evidence/status-only documentation changes do not alter gameplay, tests, assets or bundle.
+
+Final roadmap acceptance: 74tasks across8phases,17DONE/40inprogress/16notstarted/0problem/1blocked=23.0% checklist; v1 17/71=23.9%. Final roadmap:check5tests+staleness/reference/acyclicvalidation PASS after evidence update. This is metadata/checklist completion, not fullgame/HD quality or estimated remaining effort. PhysicalSafari/hardware remains explicitlyblockedQA-009; no owner setup action needed.

@@ -1,6 +1,6 @@
-# QA matrix — 0.4.1 / 2026-11-05 UTC
+# QA matrix — 0.4.2 / 2026-11-05 UTC
 
-Current0.4.1: final PR/main full41-case browser checks SUCCESS, local87/content2/build PASS, public old/new gameplay/save flow and post-Actions28PNG/JS/renderer gate PASS. Physical hardware/Safari and final art acceptance remain NOT TESTED/PENDING. Earlier version sections retain their historical results.
+Current0.4.2: final45-case local/PR browser checks SUCCESS, gameunit90/roadmap5/content2/type/lint/build PASS, actual public gameplay/save/28PNG/JS gate PASS. Main41998656125/full45/build/deploy and post-Actions byte/renderer verification PASS. Physical hardware/Safari remains blockedQA-009; final HD acceptance remains pending. Earlier sections retain historical results.
 
 | Environment | Flow | Result |
 | --- | --- | --- |
@@ -59,3 +59,7 @@ Final PR41991912483 and main41992926513 SUCCESS with full41 cases. Actual public
 ## Session7 —0.4.2
 
 Final focused authored-path touch4/4 PASS31.4s at390×844,820×1180,1024×768,1366×768 after support-depth fix. Real start/feather/bench/skip/workshop/reload, no injected gameplay state. Assertions observe actual interaction coordinates/depth and read durableIndexedDB revision/items. Screenshot review found an initial seating occlusion that tests alone missed; corrected/reviewed phone+desktop. Baseline focused visual+path12/12 PASS before this final correction; full final45-case suite recorded inTEST_REPORT. Real hardware/Safari remains blockedQA-009, not a reproducible game bug. Existing ten-viewport regressions retained.
+
+Final full45/45 PASS8.4m after timing/skip-order correction; finalPR41997711472SUCCESS, PR#7 merged7279cea. Publicactualtouch/old+newroutes/checksum/import/28PNG/hashPASS on2372e79842a5d35ab3534c7eaf9d074a98f3bac91fa1ecc4f348e739c485d301. Newpathcoveragecomesfromsame-bundlefourtouchcases/CI; publicverifiercoversretainedforest/training/archive/streamloops. Main/post-ActionsproofinTEST_REPORT.
+
+Main41998656125SUCCESS/deploy09:06:55UTC; post-Actionsassets-onlyPASS withsame2372e798…/28PNG/readyrenderer/emptyerrors. Finalfull45 passed in bothPR/main. PhysicalSafari/hardware/FPS/HDgate stillnotcertified.

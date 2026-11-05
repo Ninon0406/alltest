@@ -1,5 +1,22 @@
 # GODSEED — ความคืบหน้า 0.4.2
 
+### Session7 —2026-11-05 UTC
+
+Basef0eb125 · พัฒนาในfeat/godseed-roadmap-cinematics รวมPR#7เข้าmain7279ceaแล้ว · M1/M2 polish + GS-041 tracking. ตรวจgit/workingtree/lastCI/เอกสาร03/spec/Skills/โค้ด/PNG/ผลทดสอบก่อนแก้ ไม่เริ่มใหม่และไม่ลบงานเดิม
+
+- FND-009/GS-041 DONE: rootGODSEED_MASTER_ROADMAP.md 8Phases/74งาน, JSONสถานะชุดเดียว, generator/validator5tests+CI, Task Boardเป็นgeneratedview, Development Logย้อนหลัง0–6และรอบ7, append03/AGENTSเดิม
+- VIS-006/GS-010 DONEหลังแก้และทดสอบregression full-suite; เฉพาะขอบเขตเส้นทาง: 8choice-specificapproaches/6travel lanes ก่อนinteraction; left/rightfacing/skip/reduced/reload-safe; ยกตัวนั่งบนbenchด้วยsupportdepthโดยคืนdepth/shadowหลังจบ
+- Checklistรวม23.0% =17/74งาน; ✅17 🟡40 ⬜16 🔴0 ⛔1. เฉพาะ1.0=23.9%(17/71). นี่คือChecklistแบบน้ำหนัก1 ไม่ใช่สัดส่วนแรงงาน/เวลา/คุณภาพเกม AI/CH2/CH3แยกscope
+- Baseline npmci/checksผ่าน; finaltype/lint/content2/unit90/buildผ่าน, roadmap5ผ่าน, finaltouch4ผ่าน31.4s. ตรวจภาพphone390/desktop1366หลังแก้benchocclusionจริง Final full45/45 PASS8.4m และPR CI41997711472 SUCCESS; mainCI41998656125/full45/build/deploy SUCCESS; actualpublicgameplay/save/28PNG/JSและpost-Actionsrenderer gatePASS
+- ปริมาณจากsourceยัง17scenes/56choices/NPC5/3encounters/234legal/5สูตรทดสอบค้นพบจริง/0endings/6stages/39PNGs; State2/DB1/envelope1เดิม ไม่มีcontent/PNGใหม่
+- ปัญหาที่พบและแก้: screenshotจับได้benchบังrestแม้automatedcheckแรกผ่าน จึงแก้anchor/supportdepthและดูภาพซ้ำ ยังไม่อ้างfinalHDvisualgate
+- งานค้างตามRoadmap: สี่ทิศ/NPC/camera/ฉากruins+festivalก่อนB03–05/storyendings; catalyst/mastery/audio/234VFX/hardwareQAยังไม่ครบ QA-009ติดข้อจำกัดSafari/physicaldevicesที่environmentไม่มี ไม่เท่ากับเกมมีregressionที่พิสูจน์แล้ว
+- ห้างานถัดไป: VIS-003 → VIS-004 → VIS-011; VIS-008 → CMB-006 ตามdependencyและคำสั่งล่าสุดที่ให้เน้นงานภาพ/Cinematicก่อน งานSTO-001/สามบทสรุปต่อจากsliceนั้น
+- เจ้าของไม่ต้องรันTerminalหรือตั้งค่าใหม่; เผยแพร่รุ่น0.4.2และตรวจactualpublicgameplay/save/hashผ่านแล้ว MainActions41998656125และpost-Actionsassets/rendererผ่านแล้ว หลักฐานในTEST_REPORT
+
+
+## ประวัติก่อนรอบนี้
+
 ### Session 6 — 2026-11-05 UTC
 
 Base09a5c19 · GS-015/017 (M2 polish). พัฒนาใน feat/godseed-alchemy-ui แล้วรวม PR#6 เข้า main ที่ f57ab5c. Working treeสะอาดก่อนเริ่ม ต่อจาก0.4.0 ไม่เริ่มใหม่ ใช้Skills Spell Alchemy/Responsive/QA/Pages; อ่านคำสั่ง03และตรวจระบบเดิมก่อนแก้
@@ -28,18 +45,3 @@ Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณ�
 3. GS-018/033/031 VFX/NPC artและSafari/อุปกรณ์จริง
 
 ภาพยังต้นแบบ; ยังไม่ทดสอบฮาร์ดแวร์จริง/FPS/Safari; ยังไม่มีboss/endings/audio/mastery/party/mapเต็ม เว็บจริง https://ninon0406.github.io/alltest/ ตรวจ0.4.1ผ่านแล้ว ไม่ต้องให้เจ้าของตั้งค่าหรือรันคำสั่งเพิ่ม
-
-
-### Session7 —2026-11-05 UTC
-
-Basef0eb125 · branchfeat/godseed-roadmap-cinematics · M1/M2 polish + GS-041 tracking. ตรวจgit/workingtree/lastCI/เอกสาร03/spec/Skills/โค้ด/PNG/ผลทดสอบก่อนแก้ ไม่เริ่มใหม่และไม่ลบงานเดิม
-
-- FND-009/GS-041 DONE: rootGODSEED_MASTER_ROADMAP.md 8Phases/74งาน, JSONสถานะชุดเดียว, generator/validator5tests+CI, Task Boardเป็นgeneratedview, Development Logย้อนหลัง0–6และรอบ7, append03/AGENTSเดิม
-- VIS-006/GS-010 problemระหว่างแก้regression full-suite; ขอบเขตเส้นทาง: 8choice-specificapproaches/6travel lanes ก่อนinteraction; left/rightfacing/skip/reduced/reload-safe; ยกตัวนั่งบนbenchด้วยsupportdepthโดยคืนdepth/shadowหลังจบ
-- Checklistระหว่างแก้regression21.6% =16/74งาน; ✅16 🟡40 ⬜16 🔴1 ⛔1. เฉพาะ1.0=22.5%(16/71). นี่คือChecklistแบบน้ำหนัก1 ไม่ใช่สัดส่วนแรงงาน/เวลา/คุณภาพเกม AI/CH2/CH3แยกscope
-- Baseline npmci/checksผ่าน; finaltype/lint/content2/unit90/buildผ่าน, roadmap5ผ่าน, finaltouch4ผ่าน31.4s. ตรวจภาพphone390/desktop1366หลังแก้benchocclusionจริง Full45/remote/publicproofในTEST_REPORTเมื่อรันเสร็จ
-- ปริมาณจากsourceยัง17scenes/56choices/NPC5/3encounters/234legal/5สูตรทดสอบค้นพบจริง/0endings/6stages/39PNGs; State2/DB1/envelope1เดิม ไม่มีcontent/PNGใหม่
-- ปัญหาที่พบและแก้: screenshotจับได้benchบังrestแม้automatedcheckแรกผ่าน จึงแก้anchor/supportdepthและดูภาพซ้ำ ยังไม่อ้างfinalHDvisualgate
-- งานค้างตามRoadmap: สี่ทิศ/NPC/camera/ฉากruins+festivalก่อนB03–05/storyendings; catalyst/mastery/audio/234VFX/hardwareQAยังไม่ครบ QA-009ติดข้อจำกัดSafari/physicaldevicesที่environmentไม่มี ไม่เท่ากับเกมมีregressionที่พิสูจน์แล้ว
-- ห้างานถัดไป: VIS-003 → VIS-004 → VIS-011; VIS-008 → CMB-006 ตามdependencyและคำสั่งล่าสุดที่ให้เน้นงานภาพ/Cinematicก่อน งานSTO-001/สามบทสรุปต่อจากsliceนั้น
-- เจ้าของไม่ต้องรันTerminalหรือตั้งค่าใหม่; publicationรุ่น0.4.2รอactualproofในTEST_REPORTก่อนอ้างเผยแพร่

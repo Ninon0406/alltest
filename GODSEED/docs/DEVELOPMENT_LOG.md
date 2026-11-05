@@ -91,3 +91,18 @@ Append-only ประวัติการส่งมอบ งานออก�
 - เปลี่ยนVIS-006จากDONEเป็นproblemในdatasetระหว่างแก้ (Checklist16/74=21.6%); ไม่ลบหรือskipเทสต์เพื่อให้เขียว
 - คืนcast/crafthold1120/1600msเท่าช่วงรวมเดิม และให้testอ่านactualtarget→skipทันที→ถ่ายภาพหลังsettled แทนพึ่งความเร็วscreenshot
 - ผลrerun/สถานะหลังแก้ต้องอ้างTEST_REPORT; ภาพexplore-wind-targetเป็นภาพหลังsettled ไม่อ้างว่าเป็นmid-cast VFX golden
+
+### Session7 acceptance after correction
+
+- Final full45/45 PASS8.4m, WINDskip11.6sPASS, zero skipped; roadmap5/gameunit90/content2/strict/lint/buildPASS. PR CI41997711472SUCCESS on95c3637; older41996970778cancelled by supersedingpush, not a pass.
+- RestoreVIS-006 toDONE after actual acceptance; finalChecklist17/74=23.0%, v1 17/71=23.9%, problems0/blocked1(Safarihardware). Percentages remain task-count metrics only.
+- PR#7 merged7279cea; main/publicrelease proof linked fromTEST_REPORT when completed. Original03preserved and oldsave/art/content untouched.
+
+
+### Session7 final release — 2026-11-05 UTC
+
+- Main41998656125SUCCESS, deploy09:06:55UTC; main:/ Pages41998655321SUCCESS. เว็บจริง https://ninon0406.github.io/alltest/ gameplay/save/checksum/importPASS และpost-ActionsHTML/JS/28PNG/rendererPASS พร้อมemptyerrors
+- JS2372e79842a5d35ab3534c7eaf9d074a98f3bac91fa1ecc4f348e739c485d301ตรงfinalbuild; game90/roadmap5/content2/browser45/productionผ่าน รายละเอียด/linksในTEST_REPORT
+- Source7c9ce03+95c3637, PR#7/merge7279cea; finaldocs/status-onlycommitไม่เปลี่ยนbundle ทุกรอบถัดไปเริ่มจากRoadmap/Logนี้ ไม่มีงานเบื้องหลังต่อหลังจบsession
+- ปัญหาจังหวะskipและbenchocclusionปิดหลังทดสอบจริง; ปัญหาเปิด0 ข้อจำกัด1QA-009/Safarihardware ยังไม่ใช่เกม1.0/ภาพfinalHD ไม่มีการเริ่มโปรเจกต์ใหม่/ลบระบบหรือเซฟเดิม
+- งานถัดไป: VIS-003→VIS-004→VIS-011 และVIS-008→CMB-006ตามdependency/คำสั่งให้เน้นภาพ+Cinematic; ต่อไปเชื่อมSTO-001/บอส/สามบทสรุป
