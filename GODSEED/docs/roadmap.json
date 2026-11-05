@@ -372,9 +372,11 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/src/scenes/cinematic-paths.ts"
+        "GODSEED/src/scenes/cinematic-paths.ts",
+        "GODSEED/src/scenes/gathering-props.ts",
+        "GODSEED/tests/gathering.spec.ts"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; full70CIรอผล งานใหญ่ยังin_progress",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
@@ -771,9 +773,11 @@
       ],
       "files": [
         "GODSEED/src/content/story.ts",
-        "GODSEED/tests/exploration.test.ts"
+        "GODSEED/tests/exploration.test.ts",
+        "GODSEED/src/scenes/gathering-props.ts",
+        "GODSEED/tests/gathering.spec.ts"
       ],
-      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess",
+      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; full70CIรอผล งานใหญ่ยังin_progress",
       "acceptance": "essentialmaterialsมีrouteไม่grind daily/rare/endgameหาได้ ตรวจscriptreachability",
       "legacyIds": [
         "GS-013",
@@ -1382,9 +1386,11 @@
       ],
       "files": [
         "GODSEED/docs/ART_BIBLE.md",
-        "GODSEED/tests/visual.spec.ts"
+        "GODSEED/tests/visual.spec.ts",
+        "GODSEED/src/scenes/gathering-props.ts",
+        "GODSEED/tests/gathering.spec.ts"
       ],
-      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน",
+      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; full70CIรอผล งานใหญ่ยังin_progress",
       "acceptance": "ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน",
       "legacyIds": [
         "GS-033"

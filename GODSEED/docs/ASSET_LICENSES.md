@@ -14,3 +14,5 @@ Phaser 4.2.1 MIT; Vite MIT; Zod MIT. Runtime package license text remains in dep
 0.6.0 adds10locallyauthoredoriginalart-v5PNG via generate-village-art.mjs /generate-idle-art.mjs, usingeditablepixelrasterinstructions (185,199bytes). Prior40PNGsretainedbyte-for-byte. Newdrawingsuseownerconceptsonlyasartdirection; noimagepixels/characterartarecopied.
 
 Owner-supplied GODSEED_Location_References_10_Scenes.zip SHA256 b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f is preservedat assets/reference/godseed with13filechecksums. Conceptpack is developmentinput, notindependentlylicensedthirdpartyart; do notclaimrightsverificationortreatitasfinalsprites. It is excludedfrompublic/dist/Pagesartifactandruntimeimports. Noaddedfont/music/thirdpartyassettodownload.
+
+0.6.1: art-v6/gathering.png original24x24 drawings in generate-gathering-art.mjs, 3distinctsilhouettes/4subtleglintframes each. No copied/reference pixels, fonts or audio. Procedural prototype, not finalHD acceptance.
