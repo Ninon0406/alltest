@@ -255,3 +255,22 @@ Icon patch7c5f455/PR#13แก้favicon404ที่พบจากstrictconsolea
 ตรวจ https://ninon0406.github.io/alltest/ จริง: ก่อนรดน้ำเซฟยังไม่เปลี่ยน → รดน้ำ → รับของ/trustครั้งเดียว → กลับสวนดอกบานและมาเรนจำได้ → reload คงผล ผ่าน เส้นทางหลัก/ผสม5สูตร/ต่อสู้3แบบ/ส่งออก–นำเข้าเซฟผ่าน ตรวจหลังActionsdeployซ้ำ 42versionedPNG และ JavaScript SHA256 `3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70` ตรงBuild, 0Conceptrequests/0ConsoleErrors ในเส้นทางที่ตรวจ ภาพ actualpublic ก่อน/ระหว่าง/หลังอยู่ในevidence/session14
 
 Checklist21/76=27.6%คงเดิม ไม่มีการรับรองfinalHD/อุปกรณ์จริง/Safari/FPSหรือความสนุกจากผู้เล่นจริง ปรับขอบเขตรอบนี้ให้ส่งมอบด้วยBrowser EmulationและPagesได้ครบ โดยคงQA-009เป็นreleasegateที่ยังไม่ยืนยัน
+
+
+## Session15 — 2026-11-05 UTC — candidate0.7.0 / Manual File Save + Maren listening
+
+Base2126f88บนmainสะอาด; branchfeat/godseed-manual-file-save. Owner V2เปลี่ยนข้อกำหนดเซฟเป็นRAM/file-onlyก่อนเริ่มงานภาพต่อ ถอดbackendsave.ts/storage-session.tsและfake-indexeddbจากdependency ระบบเดิมอยู่ในGit ไม่อ่าน/ลบDBของรุ่นเก่า
+
+ทำจริง: ManualSession RAM; explicit .godseed export/file2พร้อมchecksumครอบmetadata+State2; V1envelope/rawfile migrateในRAM; validateIDs/ขนาด/extension/version/prototypekeys; previewชื่อไฟล์/ตัวละคร/ฉาก/HP/MP/XP/เวลา/เวทก่อนconfirm; dirtyexitสามทาง/nativebeforeunload; safe-boundarydisable; คำแนะนำFiles/Downloadsและให้ผู้เล่นยืนยันเองหลังตรวจไฟล์ ไม่อ้างOSdownloadsuccess
+
+ต่อ VIS-004/VIS-005/STO-003: CH0602เดินอ้อมแปลงไปนั่งม้านั่ง312/197 support243 มาเรนฮัมเพลงจริงด้วยoriginal8frames32×48 (idle/hum) ผมมวยสีเงิน/ผ้าคลุมพีช/กระโปรงพลัม; NPCยืน365/212เพื่อไม่ซ้อนม้านั่ง กลับสวนมีคำตอบจากmaren_listened/song_memory_hint และfile roundtripรักษาความทรงจำ ไม่เพิ่มของ/สูตร/ศัตรู/ฉากใหม่
+
+ผลเบื้องต้น: baseline0.6.2checksผ่าน; currentUnit115/Content2/Roadmap8/type/lint/build/manual-sourcegateผ่าน; Focus15/15ผ่าน1.4m รวมfiveviewports (phoneportrait/landscape,iPadสองแนว,desktop), malformed/oversize/extension/cancel/legacy/dirtyexit/beforeunload/no-progress-storage/no-upload และMaren/listen/fileload ภาพเปิดตรวจจริงแล้ว Full85E2Eกำลังตรวจ ยังไม่อ้างผ่านหรือเผยแพร่ก่อนผลจริง
+
+ปรับtestsตามownercontractใหม่: เปลี่ยนการอ่านIDBเป็นการดาวน์โหลดไฟล์จริง; refreshต้องเห็นหน้าเริ่มก่อนเลือกไฟล์เอง backenddisk/recoverytestsเดิมถูกแทนด้วยfile/volatile/audit tests ไม่ลบgameplay assertions สูตร234/การต่อสู้/ทิศ/กล้องคงอยู่ แก้expectlegacyEnvelopeเป็นรุ่นเก่าและFileVersion2ตามสเปกใหม่
+
+Roadmapหลัก20/76=26.3% (v120/73=27.4%) จากเดิม21/76 เพราะFND-005ที่เคยDONEตามเกณฑ์autosaveต้องเปิดประเมินใหม่ตามV2 งานSAVE14ข้อเป็นsubtasks ไม่นับเพิ่มในตัวหารหลัก หลักฐานมือถือจริง/Safariยังไม่ยืนยัน จึงSAVE-011/012in_progress/QA-009blocked ไม่ใช่อ้างโค้ดเกมพัง
+
+ขอบเขตจริงยัง18Scene/60Choice/5NPC/3Encounters/234legal/5สูตรจากrouteที่ทดสอบ/0Endings/6Stages ภาพยังต้นแบบ AIไม่จำเป็นต่อการเล่น ความสนุกประเมินภายใน ยังไม่มีhumanplaytest
+
+งานต่อ: 1)Safari/iOS/Androidfiledownload/uploadจริง 2)ปรับภาพสวน/CollisionตามReference05เต็มฉาก 3)ท่าพิเศษNPCที่เหลือ 4)Workshop/VFX 5)Ruins/B03ตามdependencies; checkpointปลายรอบต้องเก็บผลCI/Pagesจริงก่อนจบ

@@ -1,6 +1,6 @@
-import {test,expect,type Page} from '@playwright/test';
-import type {State} from '../src/engine/state';
-const snapshot=(page:Page)=>page.evaluate(()=>new Promise<State>(resolve=>{const request=indexedDB.open('godseed-saves',1);request.onsuccess=()=>{const db=request.result,tx=db.transaction('slots');const read=tx.objectStore('slots').get('current');read.onsuccess=()=>resolve(read.result);tx.oncomplete=()=>db.close();};}));
+import {reloadFromFile,exportedState,loadFile} from './file-helpers';
+import {test,expect} from '@playwright/test';
+const snapshot=exportedState;
 for(const [width,height] of [[390,844],[820,1180],[1366,768]])test(`training, healing, fire crafting and resumed combat ${width}`,async({page})=>{
  test.setTimeout(60000);await page.setViewportSize({width,height});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.url());});
  await page.goto('/');await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();
@@ -16,16 +16,16 @@ for(const [width,height] of [[390,844],[820,1180],[1366,768]])test(`training, he
  for(const label of ['ออกไปหาของเพิ่มเติมก่อน','ไปโรงช่างของคุโร','ฝึกต่อสู้กับภูตจำลอง'])await click(label);
  if(width===390){await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เพลิงดาราพันประกาย · MP 11',exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeVisible();await page.waitForTimeout(180);await page.screenshot({path:'test-results/fire-cast-phone.png',fullPage:true});await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();}else await click('เพลิงดาราพันประกาย · MP 11');
  const casting=await snapshot(page);expect(casting.mp).toBe(healed.mp-11);expect(casting.known).toHaveLength(3);expect(casting.version).toBe(2);
- await page.reload();await click('เล่นต่อจากความทรงจำ');const restored=await snapshot(page);expect(restored).toEqual(casting);await expect(page.getByText(`HP ศัตรู ${casting.battle!.enemyHp}/35`,{exact:true})).toBeVisible();
+ await reloadFromFile(page);const restored=await snapshot(page);expect(restored).toEqual(casting);await expect(page.getByText(`HP ศัตรู ${casting.battle!.enemyHp}/35`,{exact:true})).toBeVisible();
  for(let n=0;(await snapshot(page)).battle&&n<12;n++)await click('ประกายพื้นฐาน · MP 0');
  const won=await snapshot(page);expect(won.battle).toBeUndefined();expect(won.scene).toBe('S04_KORO');expect(won.xp).toBe(15);expect(won.flags.battle_B01_done).not.toBe(true);expect(won.inventory.IT_POTION_DEW).toBe(3);expect(won.inventory.CORE_BLOOM).toBe(0);expect(won.rewarded).toEqual(['win:BT_TRAINING']);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:`test-results/training-${width}.png`,fullPage:true});expect(errors).toEqual([]);
 });
-test('a real stored V1 battle resumes with status help and keeps its original snapshot',async({page})=>{
+test('an explicitly loaded V1 battle resumes with status help and keeps its original file',async({page})=>{
  const old={version:1,runId:'v1-browser-fixture',seed:9876,rng:19,revision:42,name:'ความทรงจำเดิม',scene:'S09_FOREST',ticks:12,hp:61,mp:19,inventory:{IT_POTION_DEW:1},known:['SPELL_WIND_ORB_SEEK'],equipped:['SPELL_WIND_ORB_SEEK'],flags:{crafted_first:true},choices:['CH0001'],trust:{KORO:2},rewarded:[],gathered:{},journal:['ก่อนอัปเดต'],battle:{id:'B01_FOREST_SPROUT',enemyHp:17,turn:4,shield:9,status:{SEAR:1},checkpoint:'S09_FOREST',next:'S10_FOREST_RESULT'}};
  await page.goto('/');await expect(page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true})).toBeEnabled();
- await page.evaluate(old=>new Promise<void>(resolve=>{const request=indexedDB.open('godseed-saves',1);request.onsuccess=()=>{const db=request.result,tx=db.transaction('slots','readwrite');tx.objectStore('slots').put(old,'current');tx.oncomplete=()=>{db.close();resolve();};};}),old);
- await page.reload();await page.getByRole('button',{name:'เล่นต่อจากความทรงจำ'}).click();await expect(page.getByText('HP ศัตรู 17/42',{exact:true})).toBeVisible();await page.locator('summary').filter({hasText:'เพลิงคุกรุ่น'}).click();await expect(page.getByText('รับผลเพลิง 3 HP หลังการกระทำในแต่ละเทิร์นที่เหลือ',{exact:true})).toBeVisible();
+ const originalFile=Buffer.from(JSON.stringify(old));await loadFile(page,originalFile,'legacy.json');
+ await reloadFromFile(page);await expect(page.getByText('HP ศัตรู 17/42',{exact:true})).toBeVisible();await page.locator('summary').filter({hasText:'เพลิงคุกรุ่น'}).click();await expect(page.getByText('รับผลเพลิง 3 HP หลังการกระทำในแต่ละเทิร์นที่เหลือ',{exact:true})).toBeVisible();
  await page.getByRole('button',{name:'ตั้งรับ · ฟื้น MP 6',exact:true}).click();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');const next=await snapshot(page);expect(next).toMatchObject({version:2,runId:old.runId,seed:9876,rng:19,revision:43,hp:61,mp:25,xp:0,battle:{enemyHp:14,turn:5,shield:9,shieldTurns:1}});
- const original=await page.evaluate(()=>new Promise(resolve=>{const req=indexedDB.open('godseed-saves',1);req.onsuccess=()=>{const db=req.result,tx=db.transaction('slots');const read=tx.objectStore('slots').get('legacy-v1:v1-browser-fixture');read.onsuccess=()=>resolve(read.result);tx.oncomplete=()=>db.close();};}));expect(original).toEqual(old);
+ expect(JSON.parse(originalFile.toString())).toEqual(old);
 });

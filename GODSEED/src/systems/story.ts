@@ -24,6 +24,7 @@ export function nextHint(state:State){
 /** Authored facts only. Rendering cannot invent progress or grant rewards. */
 export function rememberedLines(state:State,scene:StoryScene):string[]{
  if((scene.id==='S00_WAKE'||scene.id==='S02_TREE')&&state.flags.tree_memory)return ['ใบไม้หมุนลงตรงปลายเท้า พิพส่งเสียงตอบเบา ๆ คุณจำช่วงเงียบที่มีเพื่อนอยู่ข้าง ๆ ได้อีกครั้ง'];
+ if(scene.id==='S06_GARDEN'&&state.flags.maren_listened)return ['มาเรนเคาะจังหวะเพลงเดิมให้คุณจำ “ถ้าทำนองไหนหายไป ลองฟังช่วงเงียบระหว่างโน้ตดูนะ” เธอขยับที่บนม้านั่งราวกับจำได้ว่าคุณเคยนั่งฟังอยู่ตรงนั้น'];
  if(scene.id==='S06_GARDEN'&&state.flags.garden_tended)return ['ดอกไม้ที่คุณช่วยรดน้ำชูช่ออยู่ข้างทาง มาเรนยิ้ม “เห็นไหม พวกมันจำมือที่อ่อนโยนได้ เมล็ดที่ได้ไป ลองนำไปผสมเวทเยียวยาดูสิ”'];
  if(scene.id==='S03B_MAREN'&&state.choices.includes('CH1203'))return ['มาเรนรับหยดน้ำอย่างระวัง “น้ำยังจำจังหวะของกระดิ่งได้ ขอบใจที่นำเสียงของลำธารมาฝากนะ”'];
  if(scene.id==='S07_ARCHIVE'){

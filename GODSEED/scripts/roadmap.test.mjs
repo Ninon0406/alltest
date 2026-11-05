@@ -10,7 +10,7 @@ test('counts only DONE, including zero/all and each non-done state',()=>{
 });
 test('current audit has valid references, deterministic checklist and checked boxes only for DONE',()=>{
  const d=validate(data());assert.equal(render(d),render(structuredClone(d)));
- assert.equal((render(d).match(/- \[x\]/g)||[]).length,totals(d.tasks).done);
+ const all=[...d.tasks,...(d.tasks.find(t=>t.id==='FND-005')?.subtasks||[])];assert.equal((render(d).match(/- \[x\]/g)||[]).length,totals(all).done);
 });
 test('duplicate and unknown dependency IDs reject',()=>{
  const d=data();d.tasks.push(d.tasks[0]);assert.throws(()=>validate(d),/duplicate/);
@@ -29,7 +29,8 @@ test('next-work list excludes completed tasks and promotes actual regressions',(
  const d=data();for(const t of d.tasks)if(t.status==='problem')t.status='in_progress'; // Isolate this queue fixture from current project regressions.
  d.tasks.find(t=>t.id==='VIS-003').status='done';
  d.tasks.find(t=>t.id==='VIS-014').status='done';d.tasks.find(t=>t.id==='VIS-008').status='in_progress';
- assert.match(board(d),/^1\. VIS-008 /m);
+ assert.match(board(d),/^1\. FND-005 /m);
+ d.tasks.find(t=>t.id==='FND-005').status='done';assert.match(board(d),/^1\. VIS-008 /m);
  d.tasks.find(t=>t.id==='CMB-006').status='problem';
  assert.match(board(d),/^1\. CMB-006 /m);
 });
@@ -38,4 +39,10 @@ test('location records reject missing aspects, duplicate locations and premature
  const d=data();delete d.locations[0].readiness.collision;assert.throws(()=>validate(d),/location readiness/);
  const e=data();e.locations[1].id=e.locations[0].id;assert.throws(()=>validate(e),/unique location/);
  const f=data();f.locations[0].readiness.ready='done';f.locations[0].readiness.effects='in_progress';assert.throws(()=>validate(f),/requires every aspect/);
+});
+
+test('manual save subtasks have stable IDs, evidence and do not inflate the main denominator',()=>{
+ const d=data(),parent=d.tasks.find(t=>t.id==='FND-005');assert.equal(parent.subtasks.length,14);assert.equal(totals(d.tasks).total,76);
+ const bad=data();bad.tasks.find(t=>t.id==='FND-005').subtasks[0].id='SAVE-002';assert.throws(()=>validate(bad),/SAVE/);
+ const premature=data(),parentFixture=premature.tasks.find(t=>t.id==='FND-005');parentFixture.status='done';parentFixture.verification='fixture';parentFixture.evidenceFiles=['GODSEED/docs/TEST_REPORT.md'];assert.throws(()=>validate(premature),/rollup/);
 });

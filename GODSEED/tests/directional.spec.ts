@@ -1,3 +1,4 @@
+import {reloadFromFile} from './file-helpers';
 import {test,expect,type Page} from '@playwright/test';
 test.use({hasTouch:true});
 // A real road from the retained bench position has up to eight bounded legs;
@@ -22,11 +23,11 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`f
  await tap(page,'เข้าหอสมุดของไอรา');const north=observe(page,'north');await page.getByRole('button',{name:'ขอดูจารึกเสียงสะท้อน',exact:true}).tap();const n=await north;expect((await n.jsonValue()).animation).toBe('hero-walk-north');await n.dispose();
  await page.locator('#canvas').screenshot({path:`test-results/directional-north-${width}.png`});await stable(page);
  await expect(page.locator('#canvas')).toHaveAttribute('data-walk-trace','east,north');await expect(page.getByRole('heading',{name:'ร่องรอยบนหน้ากระดาษ',exact:true})).toBeVisible();
- await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');await expect(page.getByRole('heading',{name:'ร่องรอยบนหน้ากระดาษ',exact:true})).toBeVisible();
+ await reloadFromFile(page);await expect(page.getByRole('heading',{name:'ร่องรอยบนหน้ากระดาษ',exact:true})).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
 test('missing directional PNG falls back to existing hero and keeps choices/save working',async({page})=>{
  await page.route('**/assets/art-v4/hero-walk.png',route=>route.abort());await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','degraded');await tap(page,'เริ่มการเดินทาง');
  const moving=observe(page,'south','hero-v2');await page.getByRole('button',{name:'ลุกขึ้นสำรวจรอบตัว',exact:true}).tap();const h=await moving;expect((await h.jsonValue()).animation).toBe('hero-walk');await h.dispose();await stable(page);
- await expect(page.locator('#render-notice')).toContainText('ใช้ภาพสำรอง');await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();
+ await expect(page.locator('#render-notice')).toContainText('ใช้ภาพสำรอง');await reloadFromFile(page);await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();
 });

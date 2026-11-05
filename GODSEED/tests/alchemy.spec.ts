@@ -1,3 +1,4 @@
+import {reloadFromFile} from './file-helpers';
 import {test,expect} from '@playwright/test';
 test.use({hasTouch:true});
 for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`recipe preview, filtered book and empty loadout ${width}`,async({page})=>{
@@ -12,6 +13,6 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`r
  await page.getByLabel('กรองประเภท',{exact:true}).selectOption('heal');await expect(page.getByRole('heading',{name:'พฤกษาวงแหวนชีวา',exact:true})).toBeVisible();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี',exact:true})).toHaveCount(0);
  await click('ถอดเวทช่อง 1');await expect(page.getByRole('heading',{name:'สมุดเวทมนตร์',exact:true})).toBeVisible();await expect(page.getByLabel('กรองประเภท',{exact:true})).toHaveValue('heal');await expect(page.getByText('ช่อง 1: พฤกษาวงแหวนชีวา',{exact:true})).toBeVisible();await click('ถอดเวทช่อง 1');
  await page.getByLabel('กรอง MP',{exact:true}).selectOption('10');await expect(page.getByText('ยังไม่มีเวทที่ตรงกับตัวกรอง',{exact:true})).toBeVisible();await page.screenshot({path:`test-results/alchemy-${width}.png`,fullPage:true});
- await page.reload();await click('เล่นต่อจากความทรงจำ');await click('สมุดเวท');await expect(page.getByText('ช่อง 1: ว่าง',{exact:true})).toBeVisible();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี',exact:true})).toBeVisible();
+ await reloadFromFile(page);await click('สมุดเวท');await expect(page.getByText('ช่อง 1: ว่าง',{exact:true})).toBeVisible();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี',exact:true})).toBeVisible();
  for(const label of ['เรื่องราว','ไปโรงช่างของคุโร','ฝึกต่อสู้กับภูตจำลอง'])await click(label);for(let n=0;n<9;n++)await click('ประกายพื้นฐาน · MP 0');await expect(page.getByRole('heading',{name:'โรงช่างที่กลิ่นเหล็กกับดอกไม้',exact:true})).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });

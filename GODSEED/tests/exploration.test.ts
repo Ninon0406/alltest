@@ -112,9 +112,9 @@ describe('stream encounter telegraph, rewards and compatible saves',()=>{
   const retry=choose(lost,'CH2801');expect(retry.scene).toBe('S11_STREAM');expect(retry.inventory).toEqual(initial.inventory);
   expect(retry).toMatchObject({hp:70,mp:20});expect(retry.rewarded).toEqual([]);
  });
- it('round-trips a stable B02 turn with schema2/database1/envelope1 and rejects invalid HP',async()=>{
+ it('round-trips a stable B02 turn with state2/file2 with no database and rejects invalid HP',async()=>{
   const s=fight(stream(),'SPELL_WIND_ORB_SEEK'),encoded=await encodeSave(s),loaded=await decodeSave(encoded);
-  expect(loaded.state).toEqual(s);expect(JSON.parse(encoded).formatVersion).toBe(1);expect(s.version).toBe(2);
+  expect(loaded.state).toEqual(s);expect(JSON.parse(encoded).formatVersion).toBe(2);expect(s.version).toBe(2);
   const invalid=structuredClone(s);invalid.battle!.enemyHp=53;expect(schema.safeParse(invalid).success).toBe(false);
  });
  it('preserves every field of an original published State2 battle',()=>{

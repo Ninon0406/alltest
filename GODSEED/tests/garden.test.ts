@@ -34,3 +34,8 @@ it('the fixed garden exit and pickup lanes never cross the raised-bed footprint'
   }
  }
 });
+
+it('listening uses the real bench support and remembers the song without inventing loot',()=>{
+ const route=choicePaths.CH0602;expect(route.points.at(-1)).toEqual({x:312,y:197});expect(route.seatDepth).toBe(243);expect(route.facing).toBe('east');
+ let s=fresh();for(const id of ['CH0001','CH0101','CH0203'])s=choose(s,id);const inventory=structuredClone(s.inventory);const next=choose(s,'CH0602');expect(next.inventory).toEqual(inventory);expect(next.flags.maren_listened).toBe(true);expect(next.flags.song_memory_hint).toBe(true);expect(rememberedLines({...next,scene:'S06_GARDEN'},scenes.S06_GARDEN).join()).toContain('เคยนั่งฟัง');
+});

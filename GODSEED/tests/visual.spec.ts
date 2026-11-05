@@ -1,20 +1,7 @@
+import {exportedState} from './file-helpers';
 import {test,expect,type Page} from '@playwright/test';
 
-type SavedSnapshot={revision:number;scene:string;choices:string[];inventory:Record<string,number>;hp:number;mp:number;rewarded:string[]};
-async function savedSnapshot(page:Page):Promise<SavedSnapshot>{
- // Read the real durable save; no test hooks or gameplay-state writes are used.
- return page.evaluate(()=>new Promise<SavedSnapshot>((resolve,reject)=>{
-  const request=indexedDB.open('godseed-saves',1);
-  request.onerror=()=>reject(request.error);
-  request.onsuccess=()=>{
-   const db=request.result,transaction=db.transaction('slots','readonly');
-   const current=transaction.objectStore('slots').get('current');
-   current.onsuccess=()=>resolve(current.result as SavedSnapshot);
-   current.onerror=()=>reject(current.error);
-   transaction.oncomplete=()=>db.close();
-  };
- }));
-}
+const savedSnapshot=exportedState;
 async function settled(page:Page){
  await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');
  await expect(page.locator('#skip')).toBeHidden();
