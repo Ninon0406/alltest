@@ -1,4 +1,4 @@
-# Test report — current0.6.0 / 2026-11-05 UTC
+# Test report — current0.6.1 / 2026-11-05 UTC
 
 ## Session13 — 2026-11-05 UTC — วัตถุดิบที่มองเห็นและเก็บได้จริง
 
@@ -6,7 +6,7 @@ Base43fdf78/0.6.0; branchfeat/godseed-visible-gathering, candidate0.6.1 งา�
 
 ตำแหน่งpropอ่านจากchoicePaths endpointเดียวกับตัวละคร (feet=centerY+20), depth=feet-1 จึงอยู่ใต้ตัวละครขณะหยิบ Rendererอ่านchoices/gathered/ticksเพื่อแสดงของครั้งแรกและรายวัน ไม่อ่านจำนวนinventoryมาตัดสิน ไม่มีการเขียนstateจากrenderer เมื่อภาพขาดแสดงdegradednoticeและยังเลือก/เซฟต่อได้ ReducedMotionหยุดanimationผ่านระบบpropsเดิม
 
-ผล: npmci/type/lint/content2/game109/build/referencechecksPASS; browserfocus5/5PASS24.2s บน390/820/1024/1366พร้อมtouch/reload/assetfallback เปิดดูภาพfeather/garden390จริงแล้ว Initialtestเลือกข้อความเมล็ดไปตรงeditionที่ซ่อนบนมือถือ จึงจำกัดlocatorใน#content ไม่ลบassertion Full70CIยังรอ ไม่รายงานว่าpublish0.6.1แล้ว
+ผล: npmci/type/lint/content2/game109/build/referencechecksPASS; browserfocus5/5PASS24.2s บน390/820/1024/1366พร้อมtouch/reload/assetfallback เปิดดูภาพfeather/garden390จริงแล้ว Initialtestเลือกข้อความเมล็ดไปตรงeditionที่ซ่อนบนมือถือ จึงจำกัดlocatorใน#content ไม่ลบassertion ผลสุดท้ายfull70CIผ่านและเผยแพร่0.6.1แล้ว ดูหลักฐานยืนยันด้านล่าง
 
 Roadmap27.6%(21/76)คงเดิม งานใหญ่3IDยังin_progress ไม่มีเพิ่มคะแนนจากภาพย่อยหรือสเปก ความสนุกยังเป็นการประเมินภายใน ไม่มีผู้เล่นจริงทดสอบ รอบนี้ไม่เพิ่มเนื้อเรื่อง/ศัตรู/สูตร/จำนวนวัตถุดิบ รักษา18Scene/60Choice/234legal/3encounters/0endings ภาพยังต้นแบบ/hardwareSafariยังไม่ทดสอบ
 
@@ -350,3 +350,12 @@ Session11 main42020164244 SUCCESS: build127221309698 full58/type/lint/gameunit97
 Session12 final focused evidence: after adding hub revisit, direction+locations10/10PASS2.4m. Actualimage review found the initialbehind-branch lane could satisfydepth198<201 without enoughpixeloverlap; moved authored behind_branch/tree_path tofoot186 andwaitedforfoot<=188 in thecapture. Final location5/5PASS1.1m, opening/revisitrest/reload/fountain retained. Inspected new390occlusion,390fountain and390/1366seat captures; GroundMask nowkeepsfrontwallsvisible. Full63onfrozen44bde3c sourcecurrentlyrunning. QA-006 temporarily problem until full gate restored; do not hide the first timeout.
 
 Pages administration: readAPI reports build_type=legacy, source main:/. PUT build_type=workflow attempted under existing deployment authorization but GitHub integration returned403 Resource not accessible by integration. No setting changed. Existing Actions deployment remains available as before; reference exclusion is guaranteed for Vite dist / Actions artifact, not for the legacy repository-wide archive. Runtime does not import/fetch the concepts. Optional owner phone action to keep one publish pipeline: repository Settings→Pages→Build and deployment→Source→GitHub Actions. This is a permissions limit, not an automatic approval rejection.
+
+
+### ผลยืนยันรอบ13 — 0.6.1
+
+Source da15539 / PR#11 / main mergeff09683. PRCI42053446169 full70SUCCESS; mainCI42056090200 full70/build/deploySUCCESS. Local: game109/content2/roadmap7/type/lint/build PASS; focus5/5PASS24.2s (390/820/1024/1366+PNGfallback). 51PNGสร้างซ้ำตรงbyte รวมatlasใหม่4,140bytes
+
+เว็บจริง https://ninon0406.github.io/alltest/ PASSทั้ง3gatheringtargets/รับรางวัล/5สูตร/3การต่อสู้/archive/stream/save/checksum/import และpost-Actionsassets+renderer. 40versionedPNG/JS SHA256 `f895af40b707e49f9f4ab0cf650f2730bf621cf75f7688f63a3e3fcb211f1097` ตรงbuild,0Conceptrequests/0ConsoleErrors. Browserจำลอง ไม่ใช่อุปกรณ์จริง ความสนุกประเมินภายใน ไม่ใช่ผลhumanplaytest
+
+Checklist21/76=27.6%(v121/73=28.8%)คงเดิม VIS-005/MAG-002/QA-002ยังin_progressเพราะแก้ส่วนย่อย3จุด ไม่ใช่fullanimation/materials/finalHD ไม่มีการเปลี่ยนสูตร/การต่อสู้/เนื้อเรื่อง/State2/DB1/envelope1. ภาพหลัก/ท่ารดน้ำ/NPC/บอส/สามตอนจบและhardwareยังค้าง

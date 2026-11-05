@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `0dc5e59` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `da15539` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -202,7 +202,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-002
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts)
-  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; full70CIรอผล งานใหญ่ยังin_progress
+  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
@@ -343,7 +343,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-013, GS-026 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: MAG-001, STO-001
   - ไฟล์: [GODSEED/src/content/story.ts](GODSEED/src/content/story.ts) · [GODSEED/tests/exploration.test.ts](GODSEED/tests/exploration.test.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts)
-  - หลักฐาน/สถานะจริง: จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; full70CIรอผล งานใหญ่ยังin_progress
+  - หลักฐาน/สถานะจริง: จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress
   - เกณฑ์เสร็จ: essentialmaterialsมีrouteไม่grind daily/rare/endgameหาได้ ตรวจscriptreachability
 
 - [x] ✅ เสร็จสมบูรณ์ **MAG-003 — ตัวสร้าง/validatorสูตร234 stableIDs**
@@ -537,7 +537,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-003, VIS-004, VIS-009, MAG-007
   - ไฟล์: [GODSEED/docs/ART_BIBLE.md](GODSEED/docs/ART_BIBLE.md) · [GODSEED/tests/visual.spec.ts](GODSEED/tests/visual.spec.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts)
-  - หลักฐาน/สถานะจริง: runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; full70CIรอผล งานใหญ่ยังin_progress
+  - หลักฐาน/สถานะจริง: runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress
   - เกณฑ์เสร็จ: ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-003 — ประสิทธิภาพมือถือ/coldload/FPS/graphics profiles**
