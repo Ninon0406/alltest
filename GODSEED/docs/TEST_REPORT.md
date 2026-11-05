@@ -1,6 +1,6 @@
-# Test report — current0.4.0 /2026-11-05 UTC
+# Test report — current0.4.1 /2026-11-05 UTC
 
-Latest release0.4.0: **81/81 unit/integration/balance/art, content2/2, production build, final37-case PR/main browser CI and public gameplay/save/art verification PASS**. Main build/deploy succeeded. Earlier sections preserve historical releases; Session5 below contains current evidence and limitations.
+Latest0.4.1: **87/87 unit/integration/balance/art, content2/2, production build, final41-case PR/main browser CI and public gameplay/save/art verification PASS**. Main:/ Pages and main Actions build/deploy succeeded; post-Actions byte/renderer gate passed. Earlier sections preserve historical releases; Session6 contains current evidence and limitations.
 
 ## Verified local checks
 
@@ -204,3 +204,11 @@ No art/content count increase or save migration. Actual source inspector remains
 Local full40/40 PASS7.9m. Final UI feedback polish hides missing-material warnings for known recipes, disables ingredient selectors during transactions and explains compacting slots. Final strict typecheck/lint and focused3/3 PASS35.7s after rebuilding/staging; full production-preview verifier PASS old/new story/craft/three encounters/reload/checksum export/import,28PNG hashes, no observed errors. Final JS1,537.18kB/416.94kB gzip; CSS7.05kB. Additional real-touch/iPad portrait case expands final CI suite to41; final touch results follow. No art/recipe/save/content change.
 
 Final real-touch4/4 PASS54.5s at390×844,820×1180,1024×768,1366×768. All controls operate through taps/native selects; no pageerrors or horizontal overflow. Source/State2/DB1/envelope1 unchanged after these checks. Final CI runs41 cases. Preview JS SHA-2569c99776baba4c985e62661668e6ef9940a20b85d5f57591cb4fa77ed22e65730, all28versioned PNGs unchanged/matched.
+
+## 0.4.1 remote release proof
+
+Implementation `bb15214`, staged release `196ed16`; [PR #6](https://github.com/Ninon0406/alltest/pull/6) merged at `f57ab5c277b2424082b1a172aa6130d43cf27030`. Merge tree is identical to the validated PR tree. [Final PR workflow41991912483](https://github.com/Ninon0406/alltest/actions/runs/41991912483) SUCCESS: install, test:all (87 cases/content2/build), staging, full41-case browser suite and artifact/evidence uploads. PR deploy correctly skipped by main-only condition; no tests disabled. Earlier preliminary40-case PR run41990978478 also succeeded but final41-case run is the release gate.
+
+[Main:/ Pages41992926258](https://github.com/Ninon0406/alltest/actions/runs/41992926258) SUCCESS. Actual public `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` PASS: touch/start/WIND/forest/clue/reload/FIRE/practice/win/archive/ECHO/WATER/B02/reload/win/world memory/checked export/import. Observed pageerror/HTTP failure list empty; independent save checksum and import round trip pass. All28 versioned PNGs and JS SHA-256 `9c99776baba4c985e62661668e6ef9940a20b85d5f57591cb4fa77ed22e65730` match staged bytes. Public browser covers retained gameplay/save routes; new preview/filter/unequip paths are covered by final real-touch cases and remote41-case CI on the same bundle. Physical hardware/Safari/FPS remain NOT TESTED.
+
+[Main workflow41992926513](https://github.com/Ninon0406/alltest/actions/runs/41992926513) SUCCESS: build127129200466 completed all87/content2/build/full41 browser gates; deploy127132307241 completed configure-pages/deploy-pages at2026-11-05 08:22:11 UTC. Post-Actions public `--assets-only` PASS: current HTML/JS, all28 PNGs and ready layered renderer, unchanged `9c99776baba4c985e62661668e6ef9940a20b85d5f57591cb4fa77ed22e65730`, empty observed errors. The Actions artifact matches the already verified actual public gameplay/save loop. Final release-evidence documentation edits do not change code, assets or bundle.

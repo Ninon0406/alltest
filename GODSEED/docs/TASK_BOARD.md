@@ -9,7 +9,7 @@
 | GS-007/008/009/010 | P2 | IN_PROGRESS | 0.4 layered6 stages, original Eira/wisp and water6frames, hero11states; skip/reduced/old+new fallback tests. Final NPC silhouettes/HD lighting pending |
 | GS-011/025 | P1 | IN_PROGRESS | 0.4 IN_PROGRESS: add S07/S14/S11/S12 and canonical15 choices, data-driven conditions/entry flags; remaining intro/ruins/festival pending |
 | GS-014 | P1 | DONE | Generator 234 legal/336 candidates with independent per-mod count assertions |
-| GS-015/017 | P1 | IN_PROGRESS | preview/compatibility/missing quantities, combined discovered-only filters and validated unequip implemented; final local/remote acceptance below. Ingredient origins/icons/reveal polish remain |
+| GS-015/017 | P1 | IN_PROGRESS | preview/compatibility/missing quantities, combined discovered-only filters and validated unequip delivered in PR#6 with41-case PR CI/public proof. Ingredient origins/icons/reveal polish remain |
 | GS-016/018/020 | P1 | IN_PROGRESS | Single-enemy statuses/turns/ward expiry and support targeting implemented; mastery/multiple targets/full234 VFX remain |
 | GS-019/021 | P1 | IN_PROGRESS | B01 command loop/guard/items/flee/recovery; all other encounter rules pending |
 | GS-022 | P1 | IN_PROGRESS | 0.4 IN_PROGRESS: B02 with distinct rules/art/52HP/telegraph/flee/recovery; B03–B04 pending |
@@ -46,4 +46,4 @@ Session5 delivered: main build/deploy41961020262 SUCCESS, full37-case CI and act
 
 Acceptance: invalid/known recipes cannot spend items through UI; unknown names remain hidden; filters combine without changing state; unequip compacts/permits0 and preserves recipes/checksum saves; battle cannot change slots; actual empty-loadout training victory. Unit6 and three-device browser coverage. Full/remote proof pending.
 
-Session6 local: type/lint/content2/unit87/build PASS; full40 PASS; finaltouch4 PASS54.5s and production-preview full flow/checksum/import/hash PASS. CI41/public verification pending.
+Session6 local: type/lint/content2/unit87/build PASS; full40 PASS; finaltouch4 PASS54.5s and production-preview full flow/checksum/import/hash PASS. Final PR CI41991912483 and main checks/deploy41992926513 SUCCESS with41 browser cases; PR#6 merged f57ab5c. Main:/ Pages41992926258 SUCCESS, public full gameplay/save/hash and post-Actions asset/renderer gates PASS. This bounded batch is complete; wider ingredient-origin/icon/reveal scope remains IN_PROGRESS.

@@ -2,7 +2,7 @@
 
 ### Session 6 — 2026-11-05 UTC
 
-Base09a5c19 · branch feat/godseed-alchemy-ui · GS-015/017 (M2 polish). Working treeสะอาดก่อนเริ่ม ต่อจาก0.4.0 ไม่เริ่มใหม่ ใช้Skills Spell Alchemy/Responsive/QA/Pages; อ่านคำสั่ง03และตรวจระบบเดิมก่อนแก้
+Base09a5c19 · GS-015/017 (M2 polish). พัฒนาใน feat/godseed-alchemy-ui แล้วรวม PR#6 เข้า main ที่ f57ab5c. Working treeสะอาดก่อนเริ่ม ต่อจาก0.4.0 ไม่เริ่มใหม่ ใช้Skills Spell Alchemy/Responsive/QA/Pages; อ่านคำสั่ง03และตรวจระบบเดิมก่อนแก้
 
 ## ทำจริง
 
@@ -13,11 +13,13 @@ Base09a5c19 · branch feat/godseed-alchemy-ui · GS-015/017 (M2 polish). Working
 
 ## ตรวจสอบ
 
-Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณี รวมทั้งหมด87/87 PASS; browserใหม่3ขนาด390/1024/1366 ทดสอบสูตรผิด/สูตรซ้ำ/filter/ถอด/reload/สู้ชนะด้วยชุดเวทว่างผ่าน ชุดเต็ม40/40 PASS7.9m; finaltouch4/4 PASS54.5s (เพิ่มiPadportrait820), finaltype/lint/buildและproduction-previewทั้งลูป/เซฟ/28PNGผ่าน รอCIชุด41กรณีและเผยแพร่ ผลจริงดูTEST_REPORT
+Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณี รวมทั้งหมด87/87 PASS; browserทดสอบสูตรผิด/สูตรซ้ำ/filter/ถอด/reload/สู้ชนะด้วยชุดเวทว่าง ชุดเต็ม40/40 PASS7.9m ก่อนfinal UI feedback polish; finaltouch4/4 PASS54.5s (390/820/1024/1366), finaltype/lint/buildและproduction-previewทั้งลูป/เซฟ/28PNGผ่าน Final PR CI41991912483 และmain checks/deploy41992926513 PASS รวม41 browser cases; main:/ Pages41992926258 SUCCESS. เว็บจริงเล่นทั้งเส้นทางเดิม/หอสมุด/ลำธาร/เซฟและ28PNG/hashผ่าน รวมpost-Actions byte/renderer gate ผลละเอียดดูTEST_REPORT
 
 ## ปริมาณ / ความเข้ากันได้
 
-17ฉาก/56ตัวเลือก/NPC5/encounters3/234สูตร/0บทสรุป/6ฉากภาพเคลื่อนไหว เหมือน0.4.0 ไม่มีเนื้อเรื่องหรือภาพใหม่ ไม่เปลี่ยนState2/DB1/envelope1 รูปแบบequippedยังเป็นarrayไม่เกิน4ช่องที่ไม่มีช่องโหว่
+17ฉาก/56ตัวเลือก/NPC5/encounters3/234สูตร/0บทสรุป/6ฉากภาพเคลื่อนไหว เหมือน0.4.0 ไม่มีเนื้อเรื่องหรือภาพใหม่ ทดสอบค้นพบ/ติดตั้ง/ใช้จริง5สูตรผ่านเส้นทางที่เล่นได้ (ไม่ใช่มอบ234สูตรให้ผู้เล่น) ไม่เปลี่ยนState2/DB1/envelope1 รูปแบบequippedยังเป็นarrayไม่เกิน4ช่องที่ไม่มีช่องโหว่
+
+ไม่พบบั๊กP0/P1ใหม่จากการตรวจรอบนี้ งานค้างที่ทราบ: ingredient origins/icons/reveal, เนื้อเรื่อง/บอส/บทสรุป, ภาพ/VFXขั้นสุดท้าย และการตรวจSafari/ฮาร์ดแวร์จริง ตัวเลือกเนื้อเรื่องส่วนที่ยังไม่สร้างยังไม่เปิดให้ผู้เล่นเข้าทางตัน
 
 ## งานถัดไป
 
@@ -25,4 +27,4 @@ Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณ�
 2. GS-027/023/028 เทศกาล/guardian/สามบทสรุป
 3. GS-018/033/031 VFX/NPC artและSafari/อุปกรณ์จริง
 
-ภาพยังต้นแบบ; ยังไม่ทดสอบฮาร์ดแวร์จริง/FPS/Safari; ยังไม่มีboss/endings/audio/mastery/party/mapเต็ม ระบบใหม่ในbranchยังไม่อ้างว่าเผยแพร่จนตรวจเว็บจริง
+ภาพยังต้นแบบ; ยังไม่ทดสอบฮาร์ดแวร์จริง/FPS/Safari; ยังไม่มีboss/endings/audio/mastery/party/mapเต็ม เว็บจริง https://ninon0406.github.io/alltest/ ตรวจ0.4.1ผ่านแล้ว ไม่ต้องให้เจ้าของตั้งค่าหรือรันคำสั่งเพิ่ม

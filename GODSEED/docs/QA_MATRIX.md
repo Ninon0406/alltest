@@ -1,6 +1,6 @@
-# QA matrix — 0.4.0 / 2026-11-05 UTC
+# QA matrix — 0.4.1 / 2026-11-05 UTC
 
-Current0.4.0: PR/main full37-case browser checks SUCCESS, local81/content2/build PASS, public old/new gameplay/save flow and post-Actions28PNG/JS/renderer gate PASS. Physical hardware/Safari and final art acceptance remain NOT TESTED/PENDING. Earlier version sections retain their historical results.
+Current0.4.1: final PR/main full41-case browser checks SUCCESS, local87/content2/build PASS, public old/new gameplay/save flow and post-Actions28PNG/JS/renderer gate PASS. Physical hardware/Safari and final art acceptance remain NOT TESTED/PENDING. Earlier version sections retain their historical results.
 
 | Environment | Flow | Result |
 | --- | --- | --- |
@@ -53,3 +53,5 @@ Main workflow41961020262 build+deploy SUCCESS at2026-11-05 03:28:23 UTC. Final p
 New Chromium cases390×844,1024×768,1366×768 use real collection/crafting, invalid/known preview, combined book filters, removal/reload and nine BASIC_PULSE turns to win practice with no equipped spells. Phone screenshot alchemy-390.png reviewed: readable selectors/no overflow, original pixel scene retained. These are browser simulations, not Safari or physical-device acceptance. Final counts/status inTEST_REPORT.
 
 Final touch cases4/4 PASS54.5s also include iPad portrait820×1180. Full40 local PASS7.9m before final UI feedback polish; final focused/build/preview verify that polish. Final remote suite41 cases.
+
+Final PR41991912483 and main41992926513 SUCCESS with full41 cases. Actual public gameplay/checksum/import and post-Actions JS/28PNG/renderer gate PASS, same9c99776baba4c985e62661668e6ef9940a20b85d5f57591cb4fa77ed22e65730 bundle. Touch alchemy tests cover phone390, iPad820portrait/1024landscape and desktop1366; retained full-suite golden paths still cover all ten required sizes. Hardware/Safari/FPS remain NOT TESTED.

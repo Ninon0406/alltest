@@ -48,4 +48,4 @@ Published and smoke-verified at https://ninon0406.github.io/alltest/ (PR #1 / ba
 
 ## 0.4.1 — จัดเวทก่อนออกเดินทาง
 
-Recipe preview shows compatibility, missing materials and result costs without revealing unknown spell names; invalid/known recipes disable confirmation. Spellbook filters combine element/type/MP. Unequip any spell outside battle, preserve discovered recipes and compact slots, including an empty loadout. Existing save format and zero-MP basic/guard actions preserved. Source/QA proof inTEST_REPORT; publication not claimed before verification.
+Recipe preview shows compatibility, missing materials and result costs without revealing unknown spell names; invalid/known recipes disable confirmation. Spellbook filters combine element/type/MP. Unequip any spell outside battle, preserve discovered recipes and compact slots, including an empty loadout. Existing save format and zero-MP basic/guard actions preserved. PR#6 merged f57ab5c; final41-case PR CI and actual public gameplay/save/28PNG/JS verification PASS. Published at https://ninon0406.github.io/alltest/; final main Actions proof in TEST_REPORT. Full chapter and final art remain unfinished.
