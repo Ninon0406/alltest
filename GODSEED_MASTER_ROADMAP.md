@@ -186,8 +186,8 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 - [ ] 🟡 กำลังพัฒนา **VIS-011 — กล้อง Cinematic และtransitionตามทิศทาง**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-009, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-006
-  - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/main.ts](GODSEED/src/main.ts)
-  - หลักฐาน/สถานะจริง: Session9: bounded12px pan/450ms easing+fixed1.08overscan, reset/skip/reduced cancellation; focused4/4PASS12.3s, phone screenshotreview; full54/CI/全scene acceptance pending
+  - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/main.ts](GODSEED/src/main.ts) · [GODSEED/src/scenes/camera-plan.ts](GODSEED/src/scenes/camera-plan.ts) · [GODSEED/tests/camera.spec.ts](GODSEED/tests/camera.spec.ts) · [GODSEED/tests/camera.test.ts](GODSEED/tests/camera.test.ts)
+  - หลักฐาน/สถานะจริง: Session9: bounded12px pan/450ms easing+fixed1.08overscan, return/skip/reduced cancellation; focus4/4PASS12.3s and finalfull54/54PASS10.6m; phone runtime reviewed; all-scene/battle framing acceptance stillpending; sourceCI42011348567SUCCESS on77b62e9/full54; candidatePR9notmerged
   - เกณฑ์เสร็จ: boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย
 
 - [ ] 🟡 กำลังพัฒนา **VIS-012 — Pixel Art UI/icons/logo/spell revealครบ**

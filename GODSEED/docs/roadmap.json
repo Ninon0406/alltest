@@ -510,9 +510,12 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/src/main.ts"
+        "GODSEED/src/main.ts",
+        "GODSEED/src/scenes/camera-plan.ts",
+        "GODSEED/tests/camera.spec.ts",
+        "GODSEED/tests/camera.test.ts"
       ],
-      "evidence": "Session9: bounded12px pan/450ms easing+fixed1.08overscan, reset/skip/reduced cancellation; focused4/4PASS12.3s, phone screenshotreview; full54/CI/全scene acceptance pending",
+      "evidence": "Session9: bounded12px pan/450ms easing+fixed1.08overscan, return/skip/reduced cancellation; focus4/4PASS12.3s and finalfull54/54PASS10.6m; phone runtime reviewed; all-scene/battle framing acceptance stillpending; sourceCI42011348567SUCCESS on77b62e9/full54; candidatePR9notmerged",
       "acceptance": "boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย",
       "legacyIds": [
         "GS-009",

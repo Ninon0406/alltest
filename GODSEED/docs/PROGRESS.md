@@ -65,3 +65,7 @@ Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณ�
 ### Session9 —2026-11-05 UTC
 
 Camera Director prototype: VIS-011 remainsIN_PROGRESS. Added12px boundedpan/450ms ease, fixedoverscan/fullmotion andoriginal1:1reducedframing, cancellation/returncenter withonce-only saves. Camera pure2 tests; game96/content2/roadmap6/type/lint/buildPASS, focus4PASS12.3s; full54/CI pending. ExistingRoadmap/03 workflow reused, percentages24.3% unchanged. No newassets/story/schema. SeeTEST_REPORT/DEVELOPMENT_LOG for exactgates and nexttasks.
+
+Session9 localfull54/54PASS10.6m afterfinalscopeguard. Source77b62e9/PR#9 readyforreview, notmerged/published because all-scenevisualacceptance remains. Public0.5.0 preserved. Camera core works; VIS-011 and percentages remainunchanged, nextowneractionnotrequired.
+
+SourceCI42011348567SUCCESS full54 on77b62e9. Finalcommitupdatesonlyevidence/docs; no0.5.1deployclaim. ContinuefromPR#9 nextcycle and finishvisualframingacceptance beforemerge. Checklist18/74 remains24.3%; no additionalDONEstatus fromprototype.

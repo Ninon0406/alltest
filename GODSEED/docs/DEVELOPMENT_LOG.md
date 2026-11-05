@@ -149,3 +149,7 @@ Append-only ประวัติการส่งมอบ งานออก�
 - New purecamera2tests+focused4touchcases, bounds/reduced-cancellation/reload and actualphone screenshot reviewed. No PNG/scene/recipe/schema changes. Full acceptance stillpending; VIS-011 staysIN_PROGRESS, percentagesunchanged24.3%(18/74)/v125.4%
 - Setupissue: an earlycheck overlapped npmci and could notfindtsc; install completed then checks rerun sequentially. An initialfocusedrun cancelled while refining focus limits, not countedPASS. FourfocuscasesPASS12.3s on refinedpan; finalmenu-scopeguard then receivesfullsuite/CI
 - Remaining: allscene/battle/camera visualacceptance, NPCs/ruins/festival/boss/endings/audio/hardwareSafari. NextVIS-004/VIS-011/VIS-008/CMB-006/STO-001. Actualfinalresults/commit/PR inTEST_REPORT
+
+Session9 final localgate:54/54PASS10.6m, zero skipped; gameunit96/content2/roadmap6/type/lint/buildPASS. Source77b62e9 andPR#9. Candidate remainsunmerged because VIS-011 all-scene/battleframingreview is outstanding; public0.5.0 retained. Next finishframingacceptance plusNPC/ruins/festival/battles/canon perboard, no additionalDONEcredit fromprototypecore.
+
+Session9 sourceCI42011348567SUCCESS full54 on77b62e9; final evidence-onlydoccommit follows, roadmap6rechecked. KeepPR#9open andVIS-011IN_PROGRESS pendingall-scene/battleframingreview. No permissionblock claimed; this is an unfinishedqualitygate. Public0.5.0 remainsverifiedfromSession8. NextcycleinspectthisPRfirst, finishframingreview beforedeploy; originalsystems/saves/assetsretained.
