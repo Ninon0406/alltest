@@ -37,3 +37,7 @@ Hero256×528 atlas,32×48 cells,8 columns:11 named cycles with56 used frames; un
 Actual runtime screenshots: visual-{village,garden,workshop}-{390,820,1366}.png and visual-training-{390,820,1366}.png, plus forest loops and cast evidence. They document prototype improvement, not final HD acceptance. Reduced motion holds idle poses/ambient and uses brief bounded transitions; skip removes transient particles and cancels stale animation work. Final lighting, NPC cohesion, terrain polish, VFX6 representative/all234 distinctness and physical-device performance remain open.
 
 Portrait HUD now flows below the canvas rather than covering actor feet; bounds are asserted on phone/iPad art routes. Desktop/short landscape layout retains its existing controls.
+
+## 0.4.2 route/support-height study
+
+No new PNG/third-party art. Six authored travel lanes and eight prop approaches reuse original cycles, flip horizontal facing and maintain moving shadows. Bench resting uses hero rest animation at center79/193, foot213, support depth239 above bench238; shadow is hidden during the raised/cross-legged pose and restored on cancellation/scene change. Initial screenshot showed occlusion from ordinary depth and triggered a correction. Final cinematic-bench-{390,820,1024,1366}.png documents actual runtime; phone390 and desktop1366 manually reviewed. Still a procedural prototype: this is not four-direction front/back art, a final sitting animation library, complete NPC art, or final HD visual approval.

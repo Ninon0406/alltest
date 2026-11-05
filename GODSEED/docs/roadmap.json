@@ -1,0 +1,1760 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-05",
+  "baseCommit": "f0eb125",
+  "phases": [
+    {
+      "id": 1,
+      "title": "โครงสร้างพื้นฐาน"
+    },
+    {
+      "id": 2,
+      "title": "งานภาพ Pixel Art HD"
+    },
+    {
+      "id": 3,
+      "title": "ระบบเนื้อเรื่อง"
+    },
+    {
+      "id": 4,
+      "title": "ระบบเวทมนตร์"
+    },
+    {
+      "id": 5,
+      "title": "ระบบต่อสู้"
+    },
+    {
+      "id": 6,
+      "title": "โลกและเนื้อหาขนาดใหญ่"
+    },
+    {
+      "id": 7,
+      "title": "คุณภาพเกม"
+    },
+    {
+      "id": 8,
+      "title": "เกมฉบับสมบูรณ์"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "FND-001",
+      "phase": 1,
+      "title": "โครงสร้าง Phaser/TypeScript/Vite แยกชั้นระบบ",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [],
+      "files": [
+        "GODSEED/package.json",
+        "GODSEED/src/main.ts"
+      ],
+      "evidence": "test:all รุ่น0.4.1 และbaselineรอบ7ผ่าน",
+      "acceptance": "ติดตั้งจากlockfile typecheck/lint/buildได้ และแยกengine/content/systems/scenes/ui",
+      "legacyIds": [
+        "GS-001",
+        "GS-002"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "FND-002",
+      "phase": 1,
+      "title": "เริ่มเกมใหม่ เล่นต่อ และตั้งชื่อ",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/src/main.ts",
+        "GODSEED/tests/browser.spec.ts"
+      ],
+      "evidence": "browser golden paths และstorage tests ผ่านในCI41992926513",
+      "acceptance": "เริ่ม/เล่นต่อ/ยืนยันเริ่มใหม่ได้ ไม่ลบเซฟเงียบ",
+      "legacyIds": [
+        "GS-001"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "FND-003",
+      "phase": 1,
+      "title": "Scene/Choice engine และตรวจgraphของเนื้อหาที่มี",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/tests/content.test.ts"
+      ],
+      "evidence": "content2 และ56unique choices/17scenes ตรวจจากinspect:content",
+      "acceptance": "IDsไม่ซ้ำ targetมีจริง เงื่อนไขUI/reducerตรงกัน ฉากที่เปิดไม่มีทางตัน",
+      "legacyIds": [
+        "GS-004",
+        "GS-011"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "FND-004",
+      "phase": 1,
+      "title": "Asset loader/fallback/retry และแบ่งโหลดตามสถานที่",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/tests/visual.spec.ts"
+      ],
+      "evidence": "มีPNG fallbackและwarning ทดสอบabortedPNG; ยังpreloadทั้งหมดไม่มีretryครบ",
+      "acceptance": "โหลดผิดพลาดกู้ได้ไม่deadlock วัดbudget cold/warm และแบ่งโหลดอย่างปลอดภัย",
+      "legacyIds": [
+        "GS-001",
+        "GS-012"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "FND-005",
+      "phase": 1,
+      "title": "IndexedDB autosave/recovery/import/export/migration",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/src/engine/save.ts",
+        "GODSEED/tests/save.test.ts",
+        "GODSEED/tests/storage.spec.ts"
+      ],
+      "evidence": "save regression/storage/checksum/V1 roundtrip ผ่าน; TEST_REPORT Session2–6",
+      "acceptance": "transaction atomic เซฟเสียใช้backup quotaใช้memoryพร้อมexport เก็บV1ต้นฉบับ",
+      "legacyIds": [
+        "GS-005",
+        "GS-035"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "FND-006",
+      "phase": 1,
+      "title": "Responsive phone/iPad/desktop touch/keyboard",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-002"
+      ],
+      "files": [
+        "GODSEED/src/styles/game.css",
+        "GODSEED/tests/browser.spec.ts"
+      ],
+      "evidence": "สิบviewport Chromiumผ่าน; Safari/อุปกรณ์จริงยังไม่ยืนยัน",
+      "acceptance": "ทุกอุปกรณ์เป้าหมายและสองแนวใช้ได้ safe area/font/touch/focus ไม่ล้นหรือบังคับหมุน",
+      "legacyIds": [
+        "GS-006",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "FND-007",
+      "phase": 1,
+      "title": "GitHub Actions และ Pages base path",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        ".github/workflows/pages.yml",
+        "GODSEED/scripts/verify-public.mjs"
+      ],
+      "evidence": "main41992926513/public0.4.1 byte+gameplay proof",
+      "acceptance": "CIกั้นdeployเมื่อfail /alltest/และเว็บจริงโหลด/เล่น/เซฟได้",
+      "legacyIds": [
+        "GS-002",
+        "GS-003"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "FND-008",
+      "phase": 1,
+      "title": "Deterministic RNG และ immutable transactions",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/src/engine/state.ts",
+        "GODSEED/tests/unit.test.ts"
+      ],
+      "evidence": "unit/combat rollbackและseed testsผ่าน",
+      "acceptance": "ผลเหมือนเดิมเมื่อseed/actionsเหมือนกัน invalid commandไม่เปลี่ยนstate",
+      "legacyIds": [
+        "GS-004"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "FND-009",
+      "phase": 1,
+      "title": "Roadmap คำนวณได้ เชื่อมบอร์ดและDevelopment Log",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-003"
+      ],
+      "files": [
+        "GODSEED/scripts/roadmap.mjs",
+        "GODSEED/docs/roadmap.json"
+      ],
+      "evidence": "roadmap:check 5/5 PASS รวมnegative duplicate/dependency/cycle/invalidstatus/missingproof; generated8Phases/74tasksตรวจผ่าน",
+      "acceptance": "ID/dependency/evidence valid ไม่มีcycle เอกสารไม่stale ตรวจในCI มีlogทุกsession",
+      "legacyIds": [
+        "GS-041"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "npm --prefix GODSEED run roadmap:check PASS; เชื่อมtest:all/CIและ03/AGENTSแล้ว",
+      "evidenceFiles": [
+        "GODSEED/scripts/roadmap.test.mjs",
+        "GODSEED/docs/DEVELOPMENT_LOG.md"
+      ]
+    },
+    {
+      "id": "VIS-001",
+      "phase": 2,
+      "title": "Art Bible/palette/pixel grid/สิทธิ์ครบ",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/docs/ART_BIBLE.md",
+        "GODSEED/docs/ASSET_LICENSES.md"
+      ],
+      "evidence": "original generators39PNG; visual gateยังไม่ผ่าน",
+      "acceptance": "palette/metrics/rights/lighting/atlasมาตรฐานเดียวและreviewจริงครบฉาก",
+      "legacyIds": [
+        "GS-007",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-002",
+      "phase": 2,
+      "title": "Hero atlas 11 named action cycles",
+      "status": "done",
+      "priority": "P2",
+      "dependsOn": [
+        "FND-001"
+      ],
+      "files": [
+        "GODSEED/src/scenes/actor-art.ts",
+        "GODSEED/tests/art.test.ts"
+      ],
+      "evidence": "56frames/11cycles alpha/bounds/uniqueposesผ่านในart tests",
+      "acceptance": "idle/walk/run/interact/pick/craft/cast/guard/hit/victory/restมีเฟรมจริง runtimeใช้manifest",
+      "legacyIds": [
+        "GS-007"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "VIS-003",
+      "phase": 2,
+      "title": "การเดินสี่ทิศทางพร้อมturn/foot alignment",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-002"
+      ],
+      "files": [
+        "GODSEED/scripts/generate-actor-art.mjs",
+        "GODSEED/src/scenes/world.ts"
+      ],
+      "evidence": "มีwalk sheetและflipซ้าย/ขวา; ยังไม่มีatlasหน้า/หลัง",
+      "acceptance": "สี่ทิศมีoriginalframesตามเส้นทาง ไม่ใช้flipแทนหน้า/หลัง ตรวจบนสามกลุ่มจอ",
+      "legacyIds": [
+        "GS-007",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-004",
+      "phase": 2,
+      "title": "NPC/ศัตรู silhouette และท่าพิเศษครบ",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-001"
+      ],
+      "files": [
+        "GODSEED/src/scenes/exploration-art.ts",
+        "GODSEED/scripts/generate-exploration-art.mjs"
+      ],
+      "evidence": "Eira/wisp/trainingมีoriginalcycles; NPCเก่ายังsharedbase",
+      "acceptance": "Lumi/Maren/Koro/Pip/Eira/Sentinelมีidle/walk/talk/emote/handและspecialตามspec",
+      "legacyIds": [
+        "GS-007",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-005",
+      "phase": 2,
+      "title": "ยืน วิ่ง นั่ง และปฏิสัมพันธ์ตามวัตถุ",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-002"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/src/scenes/cinematic-paths.ts"
+      ],
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ",
+      "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
+      "legacyIds": [
+        "GS-007",
+        "GS-010"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-006",
+      "phase": 2,
+      "title": "Director: authored paths → interaction → commit/skip",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-003",
+        "VIS-002"
+      ],
+      "files": [
+        "GODSEED/src/scenes/cinematic-paths.ts",
+        "GODSEED/tests/cinematics.spec.ts"
+      ],
+      "evidence": "cinematics unit3/3; final touch4/4 PASS31.4s หลังseatdepthfix; ภาพphone390/desktop1366ตรวจแล้ว",
+      "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
+      "legacyIds": [
+        "GS-010"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "8authoredroutes/6lanes: approachก่อนinteraction, skip/reloadcommitonce; ไม่ใช่fullcamera/4directions/HDgate",
+      "evidenceFiles": [
+        "GODSEED/tests/cinematics.test.ts",
+        "GODSEED/tests/cinematics.spec.ts",
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "VIS-007",
+      "phase": 2,
+      "title": "Fixed Map และเมนูเส้นทาง/ตำแหน่งที่ปลดล็อก",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "FND-003",
+        "VIS-006"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/src/ui/memory-panel.ts"
+      ],
+      "evidence": "มีhub/สถานที่อื่น/scene IDs; ยังไม่มีroute map",
+      "acceptance": "แสดงแผนที่คงที่+เส้นทางที่รู้จัก ล็อกมีเหตุผลและไปกลับได้ด้วยtouch",
+      "legacyIds": [
+        "GS-029"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-008",
+      "phase": 2,
+      "title": "ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "VIS-001"
+      ],
+      "files": [
+        "GODSEED/src/scenes/stage-layout.ts",
+        "GODSEED/scripts/generate-stage-art.mjs"
+      ],
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี",
+      "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
+      "legacyIds": [
+        "GS-008",
+        "GS-009"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-009",
+      "phase": 2,
+      "title": "ฉากมีมิติ แสงเงา และocclusionขั้นสุดท้าย",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-008"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/src/scenes/stage-layout.ts"
+      ],
+      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ",
+      "acceptance": "reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก",
+      "legacyIds": [
+        "GS-008",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-010",
+      "phase": 2,
+      "title": "สิ่งแวดล้อมเคลื่อนไหวและpresetลดกราฟิก",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-008"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/src/scenes/exploration-art.ts"
+      ],
+      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี",
+      "acceptance": "อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด",
+      "legacyIds": [
+        "GS-012",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-011",
+      "phase": 2,
+      "title": "กล้อง Cinematic และtransitionตามทิศทาง",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-006"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/src/main.ts"
+      ],
+      "evidence": "มีfadeและparallax6px; ยังไม่ใช่กล้องpanตามSSOT",
+      "acceptance": "boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย",
+      "legacyIds": [
+        "GS-009",
+        "GS-010"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-012",
+      "phase": 2,
+      "title": "Pixel Art UI/icons/logo/spell revealครบ",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-001"
+      ],
+      "files": [
+        "GODSEED/src/styles/game.css",
+        "GODSEED/src/ui/alchemy-panel.ts"
+      ],
+      "evidence": "DOMไทยใช้ได้ แต่inventory/textlogo/nativecontrolsยังไม่ใช่งานภาพUIครบ",
+      "acceptance": "icons/panels/title/reveal original cohesive อ่านชัด ไม่แทนaccessibilityด้วยภาพ",
+      "legacyIds": [
+        "GS-013",
+        "GS-015",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-001",
+      "phase": 3,
+      "title": "เนื้อเรื่องหลักบท1ตามScene/Choice canonครบ",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-003"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด",
+      "acceptance": "canonicalchapter1ครบมีทางเล่นจบและกลับสำรวจ ทุกทางหลักผ่านgraph/golden paths",
+      "legacyIds": [
+        "GS-025",
+        "GS-026",
+        "GS-027",
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-002",
+      "phase": 3,
+      "title": "Branch conditions/effects ที่มีผลจริง",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-003",
+        "FND-008"
+      ],
+      "files": [
+        "GODSEED/src/engine/conditions.ts",
+        "GODSEED/tests/exploration.test.ts"
+      ],
+      "evidence": "WIND bypass/ORgate/allarchivebranches/one-time rewardผ่าน",
+      "acceptance": "conditions/effectsร่วมกัน ไม่มีให้ของฟรีซ้ำ เลือกต่างแล้วflags/trust/worldตอบจริง",
+      "legacyIds": [
+        "GS-004",
+        "GS-011"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "STO-003",
+      "phase": 3,
+      "title": "NPC memories/ความสัมพันธ์ตลอดบท",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-002"
+      ],
+      "files": [
+        "GODSEED/src/systems/story.ts",
+        "GODSEED/src/engine/state.ts"
+      ],
+      "evidence": "มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ",
+      "acceptance": "เหตุการณ์สำคัญถูกจำหลังreload trustมีทางเลือกและสะท้อนdialogue/worldทั้งบท",
+      "legacyIds": [
+        "GS-011",
+        "GS-039"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-004",
+      "phase": 3,
+      "title": "เหตุการณ์ตามสถานที่/เวลา/ทางเลือก",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "STO-002"
+      ],
+      "files": [
+        "GODSEED/src/systems/game.ts",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ticks3/day/dailygatheringมี; schedule/lighting/ทุกeventยังไม่ครบ",
+      "acceptance": "rulepriority/time/locationถูกต้อง mainquestไม่ติดschedule และvisualตามช่วงเวลา",
+      "legacyIds": [
+        "GS-011",
+        "GS-030"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-005",
+      "phase": 3,
+      "title": "หลายเส้นทาง puzzle/mercy/battleถึงบอส",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-001",
+        "CMB-006"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/tests/exploration.spec.ts"
+      ],
+      "evidence": "ป่า/ธารมีbypass; ruins/echo/bossยังไม่มี",
+      "acceptance": "mainquestมีทั้งหลบB01–B04และชนะทั้งหมดจนB05 ไม่softlock",
+      "legacyIds": [
+        "GS-026",
+        "GS-027"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-006",
+      "phase": 3,
+      "title": "สามตอนจบ FAMILY/COMMUNITY/ARCHIVE",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-007",
+        "STO-001"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "มีเฉพาะspec S23–S27; โค้ด0endings",
+      "acceptance": "state/scene/art/choiceของ3endingsและepilogueจริง export/importคงending",
+      "legacyIds": [
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-007",
+      "phase": 3,
+      "title": "Journal/recap/Thai pacingและfact audit",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "STO-003"
+      ],
+      "files": [
+        "GODSEED/src/ui/memory-panel.ts",
+        "GODSEED/src/systems/story.ts"
+      ],
+      "evidence": "clues/hints/bell-vs-mistจริง; map/recap/50:50humanplayยังไม่ยืนยัน",
+      "acceptance": "บันทึกเฉพาะfactที่เกิด ข้อความไทยproofread recapครบ วัดpacing45–90min/50:50",
+      "legacyIds": [
+        "GS-029",
+        "GS-030"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "STO-008",
+      "phase": 3,
+      "title": "Optional AI ขอบเขตชัด/opt-in/localfallback",
+      "status": "not_started",
+      "priority": "P3",
+      "dependsOn": [
+        "REL-001",
+        "REL-002"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "ไม่มีAIruntime/API key; เกมหลักเล่นlocal",
+      "acceptance": "AIเปลี่ยนเฉพาะภาษา outputvalidate/timeout/fallback ไม่มีstatewrite/keysในclient",
+      "legacyIds": [
+        "GS-034"
+      ],
+      "scope": "optional",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "MAG-001",
+      "phase": 4,
+      "title": "Catalog8core/6form/7modพร้อมตัวเร่ง5และหมวดกระเป๋า",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-003"
+      ],
+      "files": [
+        "GODSEED/src/systems/spells.ts",
+        "GODSEED/src/main.ts"
+      ],
+      "evidence": "8/6/7catalogมี; catalyst/ไอคอน/หมวดยังไม่ครบ",
+      "acceptance": "ทุกรายการชื่อ/description/source/rarity/icon/categoryรวม5catalystsไม่ใช้questitemผิด",
+      "legacyIds": [
+        "GS-013"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "MAG-002",
+      "phase": 4,
+      "title": "แหล่งวัตถุดิบ/ค้นพบ/reachabilityทั้งบท",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-001",
+        "STO-001"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/tests/exploration.test.ts"
+      ],
+      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess",
+      "acceptance": "essentialmaterialsมีrouteไม่grind daily/rare/endgameหาได้ ตรวจscriptreachability",
+      "legacyIds": [
+        "GS-013",
+        "GS-026"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "MAG-003",
+      "phase": 4,
+      "title": "ตัวสร้าง/validatorสูตร234 stableIDs",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-008"
+      ],
+      "files": [
+        "GODSEED/src/systems/spells.ts",
+        "GODSEED/tests/unit.test.ts"
+      ],
+      "evidence": "336candidates234legal/unique/permodcountsผ่าน",
+      "acceptance": "คำนวณกฎตามSSOTครบ rejectillegal ไม่เขียนชื่อ234สูตรหลอก",
+      "legacyIds": [
+        "GS-014"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "MAG-004",
+      "phase": 4,
+      "title": "Craft transaction/preview/consume-once",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-003",
+        "FND-005"
+      ],
+      "files": [
+        "GODSEED/src/ui/alchemy-panel.ts",
+        "GODSEED/tests/alchemy.test.ts",
+        "GODSEED/tests/alchemy.spec.ts"
+      ],
+      "evidence": "87unit/41browserCI0.4.1; invalid/knownไม่consume",
+      "acceptance": "ตรวจของครบก่อนใช้ ชื่อunknownซ่อน พลัง/MP/ของขาดถูกต้อง กดซ้ำไม่เสียของ",
+      "legacyIds": [
+        "GS-015"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "MAG-005",
+      "phase": 4,
+      "title": "สมุดเวทกรองธาตุ/ประเภท/MPและ4ช่องequip/unequip",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-004"
+      ],
+      "files": [
+        "GODSEED/src/ui/alchemy-panel.ts",
+        "GODSEED/tests/alchemy.spec.ts"
+      ],
+      "evidence": "realtouch/filter/emptyloadout/reload/checksumผ่าน",
+      "acceptance": "แสดงเฉพาะknown ไม่ซ้ำ4ช่อง เปลี่ยนนอกbattle ถอดไม่ลืมสูตร เซฟเข้ากันได้",
+      "legacyIds": [
+        "GS-017"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "MAG-006",
+      "phase": 4,
+      "title": "Core/Form/Mod behavior/mastery/targetsครบ",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-003",
+        "CMB-001"
+      ],
+      "files": [
+        "GODSEED/src/systems/spells.ts",
+        "GODSEED/src/systems/combat.ts"
+      ],
+      "evidence": "234finite single-targetfixtureผ่าน; mastery/party/multitargetไม่มี",
+      "acceptance": "category/power/MP/status/ward/multi-targetตามspec mastery0–3มีearnedupgrade/migrationtests",
+      "legacyIds": [
+        "GS-016",
+        "GS-020"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "MAG-007",
+      "phase": 4,
+      "title": "VFX composerแยกตามสูตรและtarget",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "MAG-006",
+        "VIS-009"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/tests/visual.spec.ts"
+      ],
+      "evidence": "color/form/modparticlesและsupport/sceneanchorsมี; ยังไม่มี234distinctnessgate",
+      "acceptance": "6representativegoldensและ234descriptor/renderaudit แยกSPLIT/SEEK/AMPLIFY/statusชัดในbudget",
+      "legacyIds": [
+        "GS-018",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "MAG-008",
+      "phase": 4,
+      "title": "ใช้เวทแก้เหตุการณ์เนื้อเรื่องครบ",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-005",
+        "STO-002"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/tests/exploration.spec.ts"
+      ],
+      "evidence": "knownWINDclearmist+sceneVFXจริง; shrineCH1302ยังขาด",
+      "acceptance": "WIND/BLOOM/ECHO/รูนตามcanonicalconditionsมีeffectsจริง fallbackไม่ติด",
+      "legacyIds": [
+        "GS-026"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "MAG-009",
+      "phase": 4,
+      "title": "สมดุลเวทตลอดบทและแหล่งเติมMP",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-006",
+        "CMB-007"
+      ],
+      "files": [
+        "GODSEED/tests/balance.test.ts",
+        "GODSEED/docs/BALANCE.md"
+      ],
+      "evidence": "900earlyloop wins3encounters; ไม่ครอบคลุมB03–05/mastery",
+      "acceptance": "seedpoliciesทั้งบทใช้หลายประเภทได้ไม่softlock MP0 viable curvesรายงานไม่ใช้fixtureแทนrouteจริง",
+      "legacyIds": [
+        "GS-016",
+        "GS-024"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "CMB-001",
+      "phase": 5,
+      "title": "Turn-based reducer HP/MP/guard/basic",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-008"
+      ],
+      "files": [
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/combat.test.ts"
+      ],
+      "evidence": "singleenemy turns/status/finiteward/MP0ผ่าน",
+      "acceptance": "แต่ละcommandใช้เทิร์นถูกต้อง ค่าไม่ติดลบ guard/basicให้ทางรอด เซฟระหว่างเทิร์นได้",
+      "legacyIds": [
+        "GS-019",
+        "GS-020"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "CMB-002",
+      "phase": 5,
+      "title": "ความสามารถ/XP/level/party supportตามscope",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-001",
+        "MAG-006"
+      ],
+      "files": [
+        "GODSEED/src/engine/state.ts",
+        "GODSEED/src/systems/combat.ts"
+      ],
+      "evidence": "XPมีแต่ยังไม่level/mastery; playerเดี่ยว",
+      "acceptance": "earnedlevels/stats/caps/targetingของformตรงspec migrationรักษาXPเก่า",
+      "legacyIds": [
+        "GS-016",
+        "GS-020"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "CMB-003",
+      "phase": 5,
+      "title": "AIเชิงกฎ intent/telegraphของBT/B01/B02",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-001"
+      ],
+      "files": [
+        "GODSEED/src/content/encounters.ts",
+        "GODSEED/tests/combat.test.ts"
+      ],
+      "evidence": "B02mistprelocked/turnrulesและintent testsผ่าน",
+      "acceptance": "แสดงก่อนเลือก ผลตรงintentไม่มีsurprise threshold override",
+      "legacyIds": [
+        "GS-020",
+        "GS-022"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "CMB-004",
+      "phase": 5,
+      "title": "ใช้เวท4ช่อง/ธาตุ/status interactionsทั้งหมด",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-005",
+        "CMB-001"
+      ],
+      "files": [
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/combat.test.ts"
+      ],
+      "evidence": "SEAR/WET/WIND/LIGHT/VEIL/wardsมี; multipleenemiesยังไม่มี",
+      "acceptance": "ทุกform/mod/coreและexpiry/immunity/targetsตามspec มีcounterที่เข้าถึงได้",
+      "legacyIds": [
+        "GS-016",
+        "GS-018",
+        "GS-020"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "CMB-005",
+      "phase": 5,
+      "title": "ไอเทม หนี ยอมแพ้ recoveryของencountersที่เปิด",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "CMB-001",
+        "FND-005"
+      ],
+      "files": [
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/training.spec.ts"
+      ],
+      "evidence": "potion/mana/flee/surrender/defeat/checkpoint/reloadผ่าน",
+      "acceptance": "ตามกฎencounter consumeครั้งเดียว rewardไม่ซ้ำ lossกลับเตรียมตัวได้",
+      "legacyIds": [
+        "GS-019",
+        "GS-021"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "CMB-006",
+      "phase": 5,
+      "title": "B03/B04พร้อมAI/rules/art/rewards/conditionalflee",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-003",
+        "VIS-008"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "spec66/76HPและrulesมี โค้ดcatalogยังไม่มี",
+      "acceptance": "B03wardturn3/B04copytelegraph EIRAconditionalflee balance/truepathsผ่าน",
+      "legacyIds": [
+        "GS-022",
+        "GS-026",
+        "GS-027"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "CMB-007",
+      "phase": 5,
+      "title": "B05 guardian3phases/assist25%/immunity",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-006",
+        "MAG-005"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "150HP/3phasesออกแบบแล้ว ยังไม่มีbosscode",
+      "acceptance": "ครบscript/phase warning/disablelimit/assist/retry/rewards เชื่อมS23หลังชนะ",
+      "legacyIds": [
+        "GS-023"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "CMB-008",
+      "phase": 5,
+      "title": "Battle animation/defeat/reactionไม่text-only",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-004",
+        "CMB-001"
+      ],
+      "files": [
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/tests/visual.spec.ts"
+      ],
+      "evidence": "hero/foeattack/hit/win/loss/sceneanchoredมี; finalVFX/enemiesยังต้นแบบ",
+      "acceptance": "ทุกencounterมีwarn/attack/react/defeatตามผลจริง supportยิงถูกฝ่าย visualgateผ่าน",
+      "legacyIds": [
+        "GS-007",
+        "GS-018",
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "CMB-009",
+      "phase": 5,
+      "title": "ผลชนะ/แพ้/เลี่ยงเชื่อมเรื่องทั้งบท",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-005",
+        "CMB-007"
+      ],
+      "files": [
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/exploration.spec.ts"
+      ],
+      "evidence": "3encountersกลับstory flags/rewardsจริง",
+      "acceptance": "B01–B05และbypassทุกทางกลับcanon flags/trust/endingถูกต้องไม่ซ้ำรางวัล",
+      "legacyIds": [
+        "GS-021",
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-001",
+      "phase": 6,
+      "title": "สถานที่/เส้นทางบท1ครบและย้อนกลับได้",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-001",
+        "VIS-008"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "17scenes/6stagesจริง; ruins/festival/sealยังขาด",
+      "acceptance": "S00–S29ตามSSOT mainlocationsมีroutes/sceneart/revisit ไม่มีplaceholderให้เข้า",
+      "legacyIds": [
+        "GS-025",
+        "GS-026",
+        "GS-027",
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-002",
+      "phase": 6,
+      "title": "NPC history/relationship/กิจวัตรครบcanon",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "STO-003",
+        "VIS-004"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/src/systems/story.ts"
+      ],
+      "evidence": "5NPCdialogue/trustมี; Sentinel/ทุกmemorytagยังขาด",
+      "acceptance": "NPCcanon6ตัวและspecialreactions มีบท/ประวัติไม่ขัดcanonและเวลาไม่blockquest",
+      "legacyIds": [
+        "GS-011",
+        "GS-039"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-003",
+      "phase": 6,
+      "title": "Main/sidequests Q_MAIN/Q_STREAM/Q_PIP/Q_ARCHIVE",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-001",
+        "MAG-002"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/src/ui/memory-panel.ts"
+      ],
+      "evidence": "stream/bell/notesfactsมี; queststate/Pipfruit/S17ยังไม่ครบ",
+      "acceptance": "active/completed/rewards/nextobjectiveครบ4quests เซฟ/ย้อนกลับไม่ซ้ำ",
+      "legacyIds": [
+        "GS-026",
+        "GS-028",
+        "GS-029"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-004",
+      "phase": 6,
+      "title": "ความลับโลก/cluesและเหตุการณ์เฉพาะทางเลือก",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "STO-002"
+      ],
+      "files": [
+        "GODSEED/src/systems/story.ts",
+        "GODSEED/src/scenes/world.ts"
+      ],
+      "evidence": "forest/stream/archivecluesและmemorypropsมี; ruinsยังไม่มี",
+      "acceptance": "4cluesและallbranchfactsเปิดความลับ/worldreactionsจริง journalไม่แต่งเหตุการณ์",
+      "legacyIds": [
+        "GS-026",
+        "GS-029"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-005",
+      "phase": 6,
+      "title": "เวลา/สภาพอากาศ/แสงตามบท",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "STO-004",
+        "VIS-010"
+      ],
+      "files": [
+        "GODSEED/src/systems/game.ts",
+        "GODSEED/src/scenes/world.ts"
+      ],
+      "evidence": "ticks/dayมี; weather/lightingvariantsยังไม่ทำ",
+      "acceptance": "morning/afternoon/eveningและauthoredweatherเปลี่ยนภาพ/ข้อความ ไม่ขัดsave/quest",
+      "legacyIds": [
+        "GS-009",
+        "GS-012"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-006",
+      "phase": 6,
+      "title": "บทแรกตั้งแต่เริ่มจนจบและชีวิตหลังบท",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-006",
+        "WRD-003"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "S27/ending/postchapterยังเฉพาะspec",
+      "acceptance": "3ending→epilogue→revisit/recap/newrunconfirmจริง ไม่resetflagsเก่า",
+      "legacyIds": [
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-007",
+      "phase": 6,
+      "title": "CH2 หอนาฬิกาดาว/เขตเมือง/ดันเจี้ยนใหม่",
+      "status": "not_started",
+      "priority": "P3",
+      "dependsOn": [
+        "REL-010"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "M7/CH2canonoutlineเท่านั้น ไม่มีimplementation",
+      "acceptance": "กำหนดboundedchapterใหม่พร้อมstory/art/puzzles/battle/save/goldenpaths หลังv1",
+      "legacyIds": [
+        "GS-036",
+        "GS-037"
+      ],
+      "scope": "post-v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "WRD-008",
+      "phase": 6,
+      "title": "CH3 หอจารึกเหนือเมฆและบทสรุปโลก",
+      "status": "not_started",
+      "priority": "P3",
+      "dependsOn": [
+        "WRD-007"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "M8/CH3outlineเท่านั้น",
+      "acceptance": "chapter3ครบbranches/theme/ending/art/migrationและrealplay QA",
+      "legacyIds": [
+        "GS-038"
+      ],
+      "scope": "post-v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-001",
+      "phase": 7,
+      "title": "UX Thai/dialogue/recipe hints/pacingครบ",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "STO-007",
+        "VIS-012"
+      ],
+      "files": [
+        "GODSEED/src/main.ts",
+        "GODSEED/tests/alchemy.spec.ts"
+      ],
+      "evidence": "nativeThai/touch/filterผ่าน; humanplay/pacingยังไม่วัด",
+      "acceptance": "proofreadไทย มีnextobjective ใช้เวลา45–90minสมดุล50:50จากplaytest",
+      "legacyIds": [
+        "GS-030",
+        "GS-040"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-002",
+      "phase": 7,
+      "title": "Animation/art consistency/finalvisualreview",
+      "status": "in_progress",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-003",
+        "VIS-004",
+        "VIS-009",
+        "MAG-007"
+      ],
+      "files": [
+        "GODSEED/docs/ART_BIBLE.md",
+        "GODSEED/tests/visual.spec.ts"
+      ],
+      "evidence": "runtime screenshotsตรวจแล้วบางฉาก; HDgateยังไม่ผ่าน",
+      "acceptance": "ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน",
+      "legacyIds": [
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-003",
+      "phase": 7,
+      "title": "ประสิทธิภาพมือถือ/coldload/FPS/graphics profiles",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-004",
+        "VIS-010"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "ไม่มีmeasuredFPS/framebudget/loadprofile; bundle~417kBgzipไม่ใช่FPSproof",
+      "acceptance": "วัดcold/warm/memory/longsessionFpsตามSSOTบนphysicalmidrange ลดgraphicsได้",
+      "legacyIds": [
+        "GS-012",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-004",
+      "phase": 7,
+      "title": "เสียง/SFX/musicสิทธิ์/mute/mobileunlock",
+      "status": "not_started",
+      "priority": "P2",
+      "dependsOn": [
+        "VIS-001"
+      ],
+      "files": [
+        "GODSEED/docs/ASSET_LICENSES.md",
+        "GODSEED/src/scenes/world.ts"
+      ],
+      "evidence": "audio:noAudio:true ไม่มีเสียงproduction",
+      "acceptance": "original/licensed/musicambient/cues มีmute/captions usergestureunlock ไม่เล่นก่อนอนุญาต",
+      "legacyIds": [
+        "GS-032"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-005",
+      "phase": 7,
+      "title": "Accessibility contrast/focus/font/settings",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-006"
+      ],
+      "files": [
+        "GODSEED/src/styles/game.css",
+        "GODSEED/src/main.ts"
+      ],
+      "evidence": "nativecontrols/aria/reducedmotionมี; fullaudit/fontscale/settingsยังไม่ครบ",
+      "acceptance": "WCAG2.2AA/44pxtouch/focus/fontscaling/keyboard/สถานะไม่พึ่งสีครบ",
+      "legacyIds": [
+        "GS-040",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-006",
+      "phase": 7,
+      "title": "Automated unit/content/save/balance/browser baseline",
+      "status": "done",
+      "priority": "P0",
+      "dependsOn": [
+        "FND-003",
+        "FND-005"
+      ],
+      "files": [
+        "GODSEED/tests/unit.test.ts",
+        "GODSEED/tests/browser.spec.ts",
+        ".github/workflows/pages.yml"
+      ],
+      "evidence": "87unit/content2/browser41 CI0.4.1และbaselineรอบ7ผ่าน",
+      "acceptance": "รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว",
+      "legacyIds": [
+        "GS-002",
+        "GS-024",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
+      "evidenceFiles": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "QA-007",
+      "phase": 7,
+      "title": "Visual regression golden/diffและ234VFXaudit",
+      "status": "not_started",
+      "priority": "P2",
+      "dependsOn": [
+        "QA-002"
+      ],
+      "files": [
+        "GODSEED/tests/visual.spec.ts",
+        "GODSEED/tests/art.test.ts"
+      ],
+      "evidence": "มีscreenshots/assetchecks ไม่ใช่toHaveScreenshotgoldendiff",
+      "acceptance": "baselineapproved pinbrowser/font diffthreshold ตรวจlayout/canvas/VFXและreviewchanges",
+      "legacyIds": [
+        "GS-033",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-008",
+      "phase": 7,
+      "title": "End-to-endสามตอนจบ/allbattles/recovery",
+      "status": "not_started",
+      "priority": "P0",
+      "dependsOn": [
+        "WRD-006",
+        "CMB-009"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "currenttestsจบsliceเท่านั้น ไม่ใช่chapter",
+      "acceptance": "PATH_FAMILY/COMMUNITY/ARCHIVE/BATTLE_FULL/RECOVERYจริงไม่injectstate",
+      "legacyIds": [
+        "GS-028",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "QA-009",
+      "phase": 7,
+      "title": "Safari/iOS/Android/iPad/desktop physical QA",
+      "status": "blocked",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-006"
+      ],
+      "files": [
+        "GODSEED/docs/QA_MATRIX.md"
+      ],
+      "evidence": "environmentนี้มีChromiumจำลอง ไม่มีอุปกรณ์จริงหรือSafari; ไม่ใช่บั๊กเกมที่พิสูจน์แล้ว",
+      "acceptance": "มีอุปกรณ์/runnerเป้าหมายและบันทึกactualinput/font/audio/storage/performanceครบ",
+      "legacyIds": [
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-001",
+      "phase": 8,
+      "title": "เนื้อเรื่องบท1และ3endingครบตามscope1.0",
+      "status": "not_started",
+      "priority": "P0",
+      "dependsOn": [
+        "WRD-006",
+        "QA-008"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "spec§1.1/§16; source0endings",
+      "acceptance": "releasegateยืนยันcanonicalchapter1ครบทุกending/epilogue ไม่มีblockedmainroute",
+      "legacyIds": [
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-002",
+      "phase": 8,
+      "title": "ระบบหลักครบ234recipes/mastery/quests/boss/save",
+      "status": "in_progress",
+      "priority": "P0",
+      "dependsOn": [
+        "MAG-006",
+        "CMB-007",
+        "WRD-003",
+        "FND-005"
+      ],
+      "files": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ],
+      "evidence": "มีverticalslice/234definitions ไม่ใช่fullsystemsacceptance",
+      "acceptance": "mechanics/targets/quest/level/mastery/saveทั้งหมดผ่านacceptancetests ไม่เปิดAIก็จบได้",
+      "legacyIds": [
+        "GS-016",
+        "GS-023"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-003",
+      "phase": 8,
+      "title": "ภาพ/VFXผ่านมาตรฐานHD Pixel Art",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "QA-002",
+        "QA-007"
+      ],
+      "files": [
+        "GODSEED/docs/ART_BIBLE.md"
+      ],
+      "evidence": "ต้นแบบlayeredจริง ไม่ได้finalHDapproved",
+      "acceptance": "finalrubricทุกscene/actor/UI/effectครบไม่มีplaceholderหลัก",
+      "legacyIds": [
+        "GS-033"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-004",
+      "phase": 8,
+      "title": "ไม่มีบั๊กP0/P1ที่ทราบและregressionคงเขียว",
+      "status": "in_progress",
+      "priority": "P0",
+      "dependsOn": [
+        "QA-008",
+        "QA-009"
+      ],
+      "files": [
+        "GODSEED/docs/TEST_REPORT.md"
+      ],
+      "evidence": "current87/41ผ่าน ไม่พบP0/P1ในslice ไม่ครอบคลุมfullgame",
+      "acceptance": "issueaudit/repro/แก้bugsทั้งหมดcritical และtestsreleasecandidateผ่าน",
+      "legacyIds": [
+        "GS-002",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-005",
+      "phase": 8,
+      "title": "เล่นตั้งแต่เริ่มจนจบจากcleaninstall/oldsave",
+      "status": "not_started",
+      "priority": "P0",
+      "dependsOn": [
+        "REL-001",
+        "REL-002"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "ยังจบบทไม่ได้",
+      "acceptance": "human+automatedfullruns/oldsaveupgrade/reloadทุกcriticalboundaryผ่าน",
+      "legacyIds": [
+        "GS-028",
+        "GS-035"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-006",
+      "phase": 8,
+      "title": "รองรับphone/iPad/desktopreleaseacceptance",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "QA-003",
+        "QA-005",
+        "QA-009"
+      ],
+      "files": [
+        "GODSEED/docs/QA_MATRIX.md"
+      ],
+      "evidence": "สิบChromiumsizesผ่าน; physical/safariยังblocked",
+      "acceptance": "supportedbrowser/device/orientationทุกกลุ่มผ่านreleasechecklist",
+      "legacyIds": [
+        "GS-031",
+        "GS-040"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-007",
+      "phase": 8,
+      "title": "Production Build/lockfile/dependencies releasecandidate",
+      "status": "in_progress",
+      "priority": "P0",
+      "dependsOn": [
+        "REL-002",
+        "REL-003"
+      ],
+      "files": [
+        "GODSEED/package-lock.json",
+        ".github/workflows/pages.yml"
+      ],
+      "evidence": "0.4.1productionผ่าน แต่ยังไม่ใช่1.0RC",
+      "acceptance": "1.0RC npmci/type/lint/content/unit/e2e/buildผ่าน bundlebudget/licensechecked",
+      "legacyIds": [
+        "GS-002"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-008",
+      "phase": 8,
+      "title": "เผยแพร่1.0 GitHub Pagesพร้อมrollback",
+      "status": "not_started",
+      "priority": "P0",
+      "dependsOn": [
+        "REL-007",
+        "REL-004"
+      ],
+      "files": [
+        ".github/workflows/pages.yml"
+      ],
+      "evidence": "0.4.1เผยแพร่แล้ว; ไม่มี1.0tag/artifact",
+      "acceptance": "tag1.0+greenCI/artifact/pages สำรองreleaseก่อนหน้าและวิธีrollbackไม่ลบเซฟ",
+      "legacyIds": [
+        "GS-003"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-009",
+      "phase": 8,
+      "title": "ตรวจเวอร์ชัน1.0บนเว็บจริง/endings/save/art",
+      "status": "not_started",
+      "priority": "P0",
+      "dependsOn": [
+        "REL-008",
+        "REL-005",
+        "REL-006"
+      ],
+      "files": [
+        "GODSEED/scripts/verify-public.mjs"
+      ],
+      "evidence": "publicverifierใช้กับslice; fullchapterpublicยังไม่มี",
+      "acceptance": "verifypublichash/assets/gameplay/endings/saveและphysicalacceptanceบน1.0URL",
+      "legacyIds": [
+        "GS-003",
+        "GS-031"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    },
+    {
+      "id": "REL-010",
+      "phase": 8,
+      "title": "พร้อม1.0และhandoff/knownissues/release notes",
+      "status": "not_started",
+      "priority": "P0",
+      "dependsOn": [
+        "REL-001",
+        "REL-002",
+        "REL-003",
+        "REL-004",
+        "REL-005",
+        "REL-006",
+        "REL-007",
+        "REL-008",
+        "REL-009",
+        "QA-004"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md"
+      ],
+      "evidence": "ยังไม่ใช่1.0; AI/CH2/CH3ไม่ใช่gate1.0",
+      "acceptance": "gates1.0ครบ reviewscope/credits/ownerphoneinstructions/knownissues/log/docsตรงrelease",
+      "legacyIds": [
+        "GS-003",
+        "GS-028"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05"
+    }
+  ]
+}

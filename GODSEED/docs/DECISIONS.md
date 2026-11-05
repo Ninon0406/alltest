@@ -60,3 +60,9 @@
 
 37. Complete pending GS-015/017 preview/filter/unequip before another large location slice. New materials in0.4 make recipe compatibility feedback useful. Reuse canonical legality/stats; do not change234 definitions or invent unknown names.
 38. Unequip compacts remaining slots to preserve the published State2 array contract; permit zero spells because BASIC_PULSE/GUARD remain available. Recipes are never removed. Reject changes in battle and invalid slots. Filters remain ephemeral and do not mutate saves.
+
+## Session7 —0.4.2
+
+39. Latest owner adds an eight-phase Master Roadmap alongside continued art/Cinematic development. Single human-reviewed status dataset generates both full checklist and the old Task Board view. Preserve GS IDs as cross-references and historical status in Git/TEST_REPORT rather than competing boards or double-counting. Count DONE/tasks without partial credit; distinguish checklist progress from labor/game quality. Version1.0 scope remains chapter1 perSSOT; optionalAI/CH2/CH3 do not silently become launch requirements.
+40. Select GS-041 and GS-010 as a bounded batch. Routes are authored presentation-only points, not open-world navigation, saved positions or new story rewards. Actual animation precedes the existing once-only transaction persistence. All state/DB/file versions and existing scene/choice/spell counts stay unchanged.
+41. Real screenshots exposed a seating occlusion bug after automated assertions initially passed. Fix seat anchor/support-depth and hide ground shadow during seated rest; retain true foot-Y sorting elsewhere. Reviewed phone/desktop runtime after correction. Mark only bounded path director complete; whole art, four-direction sprite, NPC, camera and HD gates remain incomplete.

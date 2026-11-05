@@ -29,3 +29,5 @@ Five distinct spells are actually discovered/equipped/used across real browser r
 Clue facts: forest_clue/stream_clue/archive_read/ruins_clue. The fourth remains future ruinstory; no bogus ruins/festival button is exposed.0fullchapterendings; slice_complete marks only the original forest-note milestone.
 
 Session6/0.4.1: counts unchanged; no scenes, choices, NPCs, encounters, spells or artwork added. View-only recipe/book filters and equip/unequip UI actions are not story choices.
+
+Session7/0.4.2: inspector rerun; content counts unchanged17/56/5/3/234/0endings/6stages. Eight choice-specific cinematic paths and six travel lanes are presentation data, not new SceneIDs/ChoiceIDs/materials/spells. No PNG additions; same39 original PNGs (28versioned files checked by public verifier).

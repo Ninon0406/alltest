@@ -1,49 +1,30 @@
-# Task board
+# GODSEED Task Board
 
-| ID | Priority | Status | Acceptance / files |
-| --- | --- | --- | --- |
-| GS-001/002 | P0 | DONE | Phaser boot, TS/lint/content/unit/build; package and workflow |
-| GS-003 | P1 | DONE | PR #1 merged, Pages published, public hash + full slice smoke PASS |
-| GS-004 | P0 | DONE | Immutable commands, deterministic combat, resource and reward tests |
-| GS-005 | P0 | DONE | Atomic validated backup, title recovery, checksum files, memory fallback/retry and accessible archived runs; regression + browser tests |
-| GS-007/008/009/010 | P2 | IN_PROGRESS | 0.4 layered6 stages, original Eira/wisp and water6frames, hero11states; skip/reduced/old+new fallback tests. Final NPC silhouettes/HD lighting pending |
-| GS-011/025 | P1 | IN_PROGRESS | 0.4 IN_PROGRESS: add S07/S14/S11/S12 and canonical15 choices, data-driven conditions/entry flags; remaining intro/ruins/festival pending |
-| GS-014 | P1 | DONE | Generator 234 legal/336 candidates with independent per-mod count assertions |
-| GS-015/017 | P1 | IN_PROGRESS | preview/compatibility/missing quantities, combined discovered-only filters and validated unequip delivered in PR#6 with41-case PR CI/public proof. Ingredient origins/icons/reveal polish remain |
-| GS-016/018/020 | P1 | IN_PROGRESS | Single-enemy statuses/turns/ward expiry and support targeting implemented; mastery/multiple targets/full234 VFX remain |
-| GS-019/021 | P1 | IN_PROGRESS | B01 command loop/guard/items/flee/recovery; all other encounter rules pending |
-| GS-022 | P1 | IN_PROGRESS | 0.4 IN_PROGRESS: B02 with distinct rules/art/52HP/telegraph/flee/recovery; B03–B04 pending |
-| GS-023 | P1 | TODO | B05 boss phases/assist/disable immunity |
-| GS-024 | P1 | DONE | 900 early-loop balance runs/100 seeds ×9 policies across3 encounters; all victories, explicit zero-MP fixtures labelled |
-| GS-026 | P1 | IN_PROGRESS | Archive/stream four-scene loop, WATER/ECHO sources and no-combat paths; ruins next |
-| GS-027/028 | P1 | TODO | Festival, guardian setup and all3 actual endings/golden paths |
-| GS-029 | P1 | IN_PROGRESS | Clue facts, local next hints, Eira/Maren memory, visible stream change; full route map/recap later |
-| GS-031/033 | P2 | IN_PROGRESS | 0.4 layered runtime phone/iPad/desktop, anchored depths/shadows, Eira/stream/B02 reactions; real Safari/iOS and final visual gate pending |
-| GS-032/034 | P3 | TODO | Audio and optional AI |
-| GS-035 | P1 | IN_PROGRESS | V1→V2 battle migration, original snapshot and checksum-before-conversion tested; future schemas/PWA pending |
-| GS-040 | P1 | IN_PROGRESS | Save UI input lock, aria-busy, keyboard/touch recovery; broader settings/accessibility work remains |
+Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ
 
-## Session4 acceptance — GS-007/008/009/010/033
+Checklist 23% · ✅17 🟡40 ⬜16 🔴0 ⛔1 · ทั้งหมด74
 
-- Deliver original stage/actor source and reproducible PNGs: `generate:art`, independent27-file SHA audit PASS; legacy assets unchanged.
-- Layer/depth/runtime shape: `art.test.ts`4 tests; genuine village/garden/workshop/forest routes and practice spirit; screenshots on phone/iPad/desktop.
-- Action lifecycle: actual walking/pickup/crafting/guard/cast/hit/victory + save, skip commits once, OS reduced/mid-action toggle, missing-layer fallback, defeat reaction before recovery.
-- Changes remain presentation-only; State2/database1/envelope1 and existing13scenes/41choices/234recipes preserved. Whole GS tasks stay IN_PROGRESS where final-spec work remains.
+| Phase | งานที่เสร็จ | งานที่เหลือ (ID: สถานะ) |
+| --- | --- | --- |
+| 1 โครงสร้างพื้นฐาน | FND-001, FND-002, FND-003, FND-005, FND-007, FND-008, FND-009 | FND-004: 🟡, FND-006: 🟡 |
+| 2 งานภาพ Pixel Art HD | VIS-002, VIS-006 | VIS-001: 🟡, VIS-003: 🟡, VIS-004: 🟡, VIS-005: 🟡, VIS-007: 🟡, VIS-008: 🟡, VIS-009: 🟡, VIS-010: 🟡, VIS-011: 🟡, VIS-012: 🟡 |
+| 3 ระบบเนื้อเรื่อง | STO-002 | STO-001: 🟡, STO-003: 🟡, STO-004: 🟡, STO-005: 🟡, STO-006: ⬜, STO-007: 🟡, STO-008: ⬜ |
+| 4 ระบบเวทมนตร์ | MAG-003, MAG-004, MAG-005 | MAG-001: 🟡, MAG-002: 🟡, MAG-006: 🟡, MAG-007: 🟡, MAG-008: 🟡, MAG-009: 🟡 |
+| 5 ระบบต่อสู้ | CMB-001, CMB-003, CMB-005 | CMB-002: 🟡, CMB-004: 🟡, CMB-006: ⬜, CMB-007: ⬜, CMB-008: 🟡, CMB-009: 🟡 |
+| 6 โลกและเนื้อหาขนาดใหญ่ | — | WRD-001: 🟡, WRD-002: 🟡, WRD-003: 🟡, WRD-004: 🟡, WRD-005: 🟡, WRD-006: ⬜, WRD-007: ⬜, WRD-008: ⬜ |
+| 7 คุณภาพเกม | QA-006 | QA-001: 🟡, QA-002: 🟡, QA-003: ⬜, QA-004: ⬜, QA-005: 🟡, QA-007: ⬜, QA-008: ⬜, QA-009: ⛔ |
+| 8 เกมฉบับสมบูรณ์ | — | REL-001: ⬜, REL-002: 🟡, REL-003: 🟡, REL-004: 🟡, REL-005: ⬜, REL-006: 🟡, REL-007: 🟡, REL-008: ⬜, REL-009: ⬜, REL-010: ⬜ |
 
-Session4 batch acceptance PASS locally: art4, content2, totalunit63, browser30 + finalfocused9, production-preview asset/gameplay/save proof; final full31 PR CI41950932784 SUCCESS; PR#4 merged255e79f. GS-007/008/009/010/033 broader final-spec work remains IN_PROGRESS.
+## ห้างานถัดไปตามpriorityและdependency
 
-## Session5 — active batch GS-009/011/022/026/029
+1. VIS-003 (GS-007/GS-033) การเดินสี่ทิศทางพร้อมturn/foot alignment — ต้องมี VIS-002
+2. VIS-004 (GS-007/GS-033) NPC/ศัตรู silhouette และท่าพิเศษครบ — ต้องมี VIS-001
+3. VIS-011 (GS-009/GS-010) กล้อง Cinematic และtransitionตามทิศทาง — ต้องมี VIS-006
+4. VIS-008 (GS-008/GS-009) ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล — ต้องมี VIS-001
+5. CMB-006 (GS-022/GS-026/GS-027) B03/B04พร้อมAI/rules/art/rewards/conditionalflee — ต้องมี CMB-003, VIS-008
 
-Four canonical scenes and15 choices; preserve all oldIDs. Acceptance: all9 archive branches unlock essential facts, stream known-element/OR gates are enforced, no-combat and battle routes, consume real ingredients for WATER/ECHO, single rewards/day limits, checkpoint recovery and oldState2 preservation, layered2new stages/original Eira+wisp, three viewport real routes plus missing-PNG fallback. Full final quality checks/public deployment pending.
+เมื่อพบP0/P1 regressionให้แทรกก่อนรายการนี้ ไม่เปิดเส้นทางโบราณสถานจนภาพ/rules/save/testsพร้อม; บอส/เทศกาล/ตอนจบรอdependenciesตามMaster Roadmap
 
-Session5 local acceptance: all81 unit/integration/balance/art and2 content checks,900 balance wins, retained full36 browser run and final6 new-path cases PASS. Final CI suite37 cases. Final source fixes cover stage spell anchors, canonical first-craft forest OR gate and truthful mist-versus-bell journal facts. Whole IDs remain IN_PROGRESS where broader chapter/art/map work is pending.
+QA-009 ติดข้อจำกัดอุปกรณ์จริง/Safari; Chromiumจำลองช่วยพัฒนาต่อได้ แต่ไม่ใช้เป็นhardwareacceptance. เส้นทาง1.0สำคัญ: CMB-006 → CMB-007 → STO-006 → WRD-006 → QA-008 → REL gates
 
-Final PR CI41960028362 SUCCESS with all37 browser cases; PR#5 merged asf35b2ad. Main/public release proof is tracked in TEST_REPORT.
-
-Session5 delivered: main build/deploy41961020262 SUCCESS, full37-case CI and actual public old/new route/save/hash proof PASS. This bounded batch is complete; broader unfinished chapter/art/map tasks retain their IN_PROGRESS/TODO status.
-
-## Session6 — GS-015/017
-
-Acceptance: invalid/known recipes cannot spend items through UI; unknown names remain hidden; filters combine without changing state; unequip compacts/permits0 and preserves recipes/checksum saves; battle cannot change slots; actual empty-loadout training victory. Unit6 and three-device browser coverage. Full/remote proof pending.
-
-Session6 local: type/lint/content2/unit87/build PASS; full40 PASS; finaltouch4 PASS54.5s and production-preview full flow/checksum/import/hash PASS. Final PR CI41991912483 and main checks/deploy41992926513 SUCCESS with41 browser cases; PR#6 merged f57ab5c. Main:/ Pages41992926258 SUCCESS, public full gameplay/save/hash and post-Actions asset/renderer gates PASS. This bounded batch is complete; wider ingredient-origin/icon/reveal scope remains IN_PROGRESS.
+ประวัติ: [DEVELOPMENT_LOG](DEVELOPMENT_LOG.md) · สถานะรอบ: [PROGRESS](PROGRESS.md) · หลักฐานทดสอบ: [TEST_REPORT](TEST_REPORT.md)

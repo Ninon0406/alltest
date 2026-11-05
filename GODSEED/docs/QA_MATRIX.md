@@ -55,3 +55,7 @@ New Chromium cases390×844,1024×768,1366×768 use real collection/crafting, inv
 Final touch cases4/4 PASS54.5s also include iPad portrait820×1180. Full40 local PASS7.9m before final UI feedback polish; final focused/build/preview verify that polish. Final remote suite41 cases.
 
 Final PR41991912483 and main41992926513 SUCCESS with full41 cases. Actual public gameplay/checksum/import and post-Actions JS/28PNG/renderer gate PASS, same9c99776baba4c985e62661668e6ef9940a20b85d5f57591cb4fa77ed22e65730 bundle. Touch alchemy tests cover phone390, iPad820portrait/1024landscape and desktop1366; retained full-suite golden paths still cover all ten required sizes. Hardware/Safari/FPS remain NOT TESTED.
+
+## Session7 —0.4.2
+
+Final focused authored-path touch4/4 PASS31.4s at390×844,820×1180,1024×768,1366×768 after support-depth fix. Real start/feather/bench/skip/workshop/reload, no injected gameplay state. Assertions observe actual interaction coordinates/depth and read durableIndexedDB revision/items. Screenshot review found an initial seating occlusion that tests alone missed; corrected/reviewed phone+desktop. Baseline focused visual+path12/12 PASS before this final correction; full final45-case suite recorded inTEST_REPORT. Real hardware/Safari remains blockedQA-009, not a reproducible game bug. Existing ten-viewport regressions retained.
