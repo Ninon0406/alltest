@@ -28,6 +28,8 @@ GitHub Pages: APIแก้ Source เป็น Actions ถูกปฏิเส�
 
 Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
 
+Final renderer gate: targeted arrival+locations7/7 PASS1.3m บนbuildใหม่ ครอบคลุมหยุดเดินเป็นidleเมื่อถึงAnchor, importเซฟS01จริงแล้วresetตำแหน่ง และตรวจด้วยMutationObserverว่าท่านั่งไม่เปลี่ยนเป็นidleตลอดกล้องกลับ→บันทึกเสร็จ รักษาเงาพื้นให้กลับเมื่อยืน Sourceล่าสุดมี65browsercases; CI65ยังรอผล ส่วนเกม105/content2/type/lint/build/packagingผ่านแล้ว ไม่ใช้เลข63อ้างcaseใหม่
+
 ---
 
 Session11 latest: PR9 merged; camera acceptance forcurrent6stages/3encounters complete. Checklist19/74=25.7%(v126.8%). Public0.5.1 verified; finalmainCI proof inTEST_REPORT. Previoussessions below retain historicalstates.

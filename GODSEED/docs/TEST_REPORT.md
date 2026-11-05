@@ -29,6 +29,8 @@ Explicit open coverage: ค่าการบังใช้depthจริง+�
 
 Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
 
+Final renderer gate: targeted arrival+locations7/7 PASS1.3m บนbuildใหม่ ครอบคลุมหยุดเดินเป็นidleเมื่อถึงAnchor, importเซฟS01จริงแล้วresetตำแหน่ง และตรวจด้วยMutationObserverว่าท่านั่งไม่เปลี่ยนเป็นidleตลอดกล้องกลับ→บันทึกเสร็จ รักษาเงาพื้นให้กลับเมื่อยืน Sourceล่าสุดมี65browsercases; CI65ยังรอผล ส่วนเกม105/content2/type/lint/build/packagingผ่านแล้ว ไม่ใช้เลข63อ้างcaseใหม่
+
 ---
 
 Latest0.5.0: **gameunit94/94, roadmap6/6, content2/2, type/lint/build, focused17 + keyboard3 local checks, final50-case PR/main browser CI and actual public gameplay/save/29PNG/JS verification PASS**. Main:/ Pages and mainActionsbuild/deploySUCCESS; post-Actionsbytes/rendererPASS. Earlier sections preserve historical results; Session8 explicitly records the initial local49/1 failure and corrected verification.

@@ -185,3 +185,5 @@ Session12 follow-up: source checkpoint c9d9bab / draft PR#10. Added revisitable 
 Finalvisualfollow-up: inspected realframes aftermaskfix. Depth-only proof was insufficient; shiftedtreepath tofoot186 sohead/boughactuallyoverlap, capturedruntime andran5/5PASS1.1m. Source44bde3c. Frozen full63 nowrunning. QA-006 moved temporarily toproblem until fullgate passes. PagesSource APIupdate returned403; no setting changed. dist/Actionsartifact excludesrefs; runtime neverloadsconcepts.
 
 Baseline44bde3c full63/63PASS14.9m; PRCI42037332359SUCCESS. คืนQA-006DONEตามผลจริง หลังจากนั้นเติมidle-on-arrivalและexplicitcontinuityสำหรับactionเท่านั้น ป้องกันimportเซฟเก่าบนmapเดียวคงตำแหน่งน้ำพุผิดฉาก; arrival.specใช้ไฟล์ส่งออกจริงจากS01เพื่อนำเข้ากลับ ไม่injectstate. LatestCIมี64cases รอผลก่อนVIS-014DONE.
+
+Final pose handoff: คงท่าrestตั้งแต่ขึ้นseatผ่านcamera-returnและdurable-save ไม่แทรกidleหนึ่งเฟรม; คืนvisibilityเงาตอนยืน เพิ่มread-only MutationObserver regression (ไม่เขียนstate) ในarrival.spec targeted7/7PASS1.3m, game105/type/lint/build/packagingPASS; expectedfullCI65. No further runtime/art scope changes planned this batch.

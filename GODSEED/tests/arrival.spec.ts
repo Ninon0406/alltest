@@ -16,3 +16,17 @@ test('arrival stops the gait during the camera return and imported saves reset s
  await tap(page,'บันทึก');page.once('dialog',d=>d.accept());await page.getByLabel('นำเข้าเซฟ',{exact:true}).setInputFiles({name:'earlier-s01.json',mimeType:'application/json',buffer:Buffer.concat(chunks)});await stable(page);
  await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();expect(JSON.parse((await canvas.getAttribute('data-player-anchor'))!)).toMatchObject({x:154,y:219});expect(errors).toEqual([]);
 });
+
+test('seated rest holds through camera completion and the durable save',async({page})=>{
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','ready');await tap(page,'เริ่มการเดินทาง');
+ const maintained=page.evaluate(()=>new Promise<string[]>(resolve=>{
+  const canvas=document.querySelector<HTMLElement>('#canvas')!,content=document.querySelector('#content')!,unexpected:string[]=[];let seated=false;
+  const observer=new MutationObserver(()=>{
+   const d=canvas.dataset;if(d.pathPhase==='interaction'&&d.playerAction==='rest')seated=true;
+   if(seated&&d.playerAction!=='rest')unexpected.push(d.playerAction||'missing');
+   if(seated&&content.getAttribute('aria-busy')==='false'){observer.disconnect();resolve(unexpected);}
+  });
+  observer.observe(canvas,{attributes:true,attributeFilter:['data-player-action','data-path-phase']});observer.observe(content,{attributes:true,attributeFilter:['aria-busy']});
+ }));
+ await page.getByRole('button',{name:'นั่งพักใต้ต้นเมล็ด',exact:true}).tap();expect(await maintained).toEqual([]);await stable(page);await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','rest');
+});

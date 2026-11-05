@@ -182,6 +182,7 @@ export class World extends Phaser.Scene {
    if(scene?.id==='S03_LUMI'&&!state?.battle){const anchor=sceneDefinitions.village_center.anchors.fountain_front;this.player.setPosition(anchor.x,anchor.y-20);this.facing=anchor.facing!;}
   }
   this.resting=!state?.battle&&this.currentStage==='village'&&!!(this.location==='under_tree'?state?.flags.rest_under_tree:state?.flags.rest_bench);
+  this.playerShadow.setVisible(!this.resting);
   if(this.resting){this.player.setPosition(79,193);this.actionDepth=239;this.playerShadow.setVisible(false);this.facing='south';}
   this.shown=state?{runId:state.runId,battle:!!state.battle}:undefined;
   this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
@@ -267,7 +268,7 @@ export class World extends Phaser.Scene {
   this.writeMetric('targetAnchor',path?.targetAnchor||'none');
   // Arrival ends the gait immediately, while the camera returns to center.
   this.writeMetric('pathPhase','interaction');this.pose(cue==='walk'?'idle':poseFor(cue));
-  if(path?.seatDepth&&cue==='rest'){this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
+  if(path?.seatDepth&&cue==='rest'){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
   if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
   if(token!==this.generation)return;
@@ -294,7 +295,7 @@ export class World extends Phaser.Scene {
    }
   }
   if(token===this.generation&&framed){this.tweens.killTweensOf(this.cameras.main);await this.beat(this.cameras.main,{scrollX:0,duration:cameraFraming.duration,ease:'Sine.easeInOut'},token);}
-  if(token===this.generation){this.pose('idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.diagnostics();}
+  if(token===this.generation){this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.diagnostics();}
  }
 }
 export function startWorld(parent:HTMLElement){
