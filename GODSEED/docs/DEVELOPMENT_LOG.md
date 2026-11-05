@@ -187,3 +187,5 @@ Finalvisualfollow-up: inspected realframes aftermaskfix. Depth-only proof was in
 Baseline44bde3c full63/63PASS14.9m; PRCI42037332359SUCCESS. คืนQA-006DONEตามผลจริง หลังจากนั้นเติมidle-on-arrivalและexplicitcontinuityสำหรับactionเท่านั้น ป้องกันimportเซฟเก่าบนmapเดียวคงตำแหน่งน้ำพุผิดฉาก; arrival.specใช้ไฟล์ส่งออกจริงจากS01เพื่อนำเข้ากลับ ไม่injectstate. LatestCIมี64cases รอผลก่อนVIS-014DONE.
 
 Final pose handoff: คงท่าrestตั้งแต่ขึ้นseatผ่านcamera-returnและdurable-save ไม่แทรกidleหนึ่งเฟรม; คืนvisibilityเงาตอนยืน เพิ่มread-only MutationObserver regression (ไม่เขียนstate) ในarrival.spec targeted7/7PASS1.3m, game105/type/lint/build/packagingPASS; expectedfullCI65. No further runtime/art scope changes planned this batch.
+
+พบเส้นทางม้านั่งเดิมอ้างจุดเริ่มตายตัว จึงอาจตัดขาม้านั่งเมื่อพักซ้ำหลังเพิ่มการคงตำแหน่ง แก้ CH0210 ให้ใช้ road graph/bench_seat เหมือนน้ำพุ ทดสอบเส้นทางจากทุกAnchorและพักซ้ำที่seatแล้วไม่มีwalk beat คืนค่าsupport depthตามpostureใหม่ทุกshow ไม่แก้inventory/time/trust สูตรหรือdamage เกมunit105/content2/type/lint/build/packagingผ่าน targeted16กำลังตรวจ CI65รอsourceชุดนี้

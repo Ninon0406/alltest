@@ -1,6 +1,6 @@
 import {it,expect} from 'vitest';
 import {sceneDefinitions,routeTo,clearSegment,walkable} from '../src/scenes/scene-definitions';
-import {cinematicPath,choicePaths} from '../src/scenes/cinematic-paths';
+import {cinematicPath} from '../src/scenes/cinematic-paths';
 import {fresh,schema} from '../src/engine/state';
 import {choose} from '../src/systems/game';
 
@@ -36,9 +36,13 @@ it('tree route changes axes, passes behind an overhead branch and stays clear of
  const exit=cinematicPath('village','walk','CH0001',{x:79,y:193},'under_tree')!;
  for(let i=1;i<exit.points.length;i++)expect(clearSegment(def,{x:exit.points[i-1].x,y:exit.points[i-1].y+20},{x:exit.points[i].x,y:exit.points[i].y+20})).toBe(true);
 });
-it('legacy bench approach avoids its legs, and unreachable graph links never teleport',()=>{
- const def=sceneDefinitions.village_center,points=[{x:154,y:219},...choicePaths.CH0210.points];
- for(let i=1;i<points.length;i++)expect(clearSegment(def,{x:points[i-1].x,y:points[i-1].y+20},{x:points[i].x,y:points[i].y+20})).toBe(true);
+it('bench approaches avoid their legs from every arrival anchor, including a repeated seated rest',()=>{
+ const def=sceneDefinitions.village_center;
+ for(const start of Object.values(def.anchors)){
+  const points=cinematicPath('village','rest','CH0210',{x:start.x,y:start.y-20})!.points;
+  for(let i=1;i<points.length;i++)expect(clearSegment(def,{x:points[i-1].x,y:points[i-1].y+20},{x:points[i].x,y:points[i].y+20})).toBe(true);
+ }
+ expect(cinematicPath('village','rest','CH0210',{x:79,y:193})!.points).toEqual([{x:79,y:193}]);
  expect(routeTo({...def,links:[]},def.anchors.village_road,'fountain_front')).toBeUndefined();
 });
 it('rest flags survive the existing save schema, grant memory/trust once and clear when leaving',()=>{

@@ -29,4 +29,6 @@ test('seated rest holds through camera completion and the durable save',async({p
   observer.observe(canvas,{attributes:true,attributeFilter:['data-player-action','data-path-phase']});observer.observe(content,{attributes:true,attributeFilter:['aria-busy']});
  }));
  await page.getByRole('button',{name:'นั่งพักใต้ต้นเมล็ด',exact:true}).tap();expect(await maintained).toEqual([]);await stable(page);await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','rest');
+ for(const name of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน','พักผ่อนที่ม้านั่ง','พักผ่อนที่ม้านั่ง'])await tap(page,name);
+ await expect(page.locator('#canvas')).toHaveAttribute('data-walk-trace','');await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','rest');
 });

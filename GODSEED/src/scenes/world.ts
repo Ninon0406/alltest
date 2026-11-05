@@ -182,6 +182,7 @@ export class World extends Phaser.Scene {
    if(scene?.id==='S03_LUMI'&&!state?.battle){const anchor=sceneDefinitions.village_center.anchors.fountain_front;this.player.setPosition(anchor.x,anchor.y-20);this.facing=anchor.facing!;}
   }
   this.resting=!state?.battle&&this.currentStage==='village'&&!!(this.location==='under_tree'?state?.flags.rest_under_tree:state?.flags.rest_bench);
+  this.actionDepth=this.resting?239:undefined;
   this.playerShadow.setVisible(!this.resting);
   if(this.resting){this.player.setPosition(79,193);this.actionDepth=239;this.playerShadow.setVisible(false);this.facing='south';}
   this.shown=state?{runId:state.runId,battle:!!state.battle}:undefined;
