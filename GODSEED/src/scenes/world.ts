@@ -11,6 +11,7 @@ import {locationFor,sceneDefinitions,type LocationId} from './scene-definitions'
 import {cameraShot,cameraFraming,cameraFocus} from './camera-plan';
 import {cinematicPath} from './cinematic-paths';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
+import {gatheringProps} from './gathering-props';
 
 export class World extends Phaser.Scene {
  player!:Phaser.GameObjects.Sprite;
@@ -81,6 +82,7 @@ export class World extends Phaser.Scene {
   this.load.image('ancient-tree-v5',base+'art-v5/ancient-tree.png');
   this.load.spritesheet('fountain-v5',base+'art-v5/fountain.png',{frameWidth:96,frameHeight:112});
   this.load.spritesheet('leaves-v5',base+'art-v5/leaves.png',{frameWidth:16,frameHeight:16});
+  this.load.spritesheet('gathering-v6',base+'art-v6/gathering.png',{frameWidth:24,frameHeight:24});
   this.load.spritesheet('hero-v2',base+'art-v2/player.png',{frameWidth:32,frameHeight:48});
   this.load.image('stream-mist-v3',base+'art-v3/stream-mist.png');
   this.load.spritesheet('water-v3',base+'art-v3/water.png',{frameWidth:32,frameHeight:32});
@@ -88,6 +90,7 @@ export class World extends Phaser.Scene {
   this.load.spritesheet('training-v2',base+'art-v2/training.png',{frameWidth:32,frameHeight:48});
  }
  create(){
+  if(this.textures.exists('gathering-v6'))for(let kind=0;kind<3;kind++)this.anims.create({key:'gathering-'+kind,frames:this.anims.generateFrameNumbers('gathering-v6',{start:kind*4,end:kind*4+3}),frameRate:3,repeat:-1});
   this.add.image(240,135,'sky').setDepth(-1200);this.stage=this.add.image(240,135,'village').setDepth(-1100);
   this.rear=this.add.tileSprite(240,135,480,270,'village').setDepth(-1000).setVisible(false);
   this.ground=this.add.image(240,135,'village').setDepth(-900).setVisible(false);
@@ -173,6 +176,8 @@ export class World extends Phaser.Scene {
    if(state?.flags.forest_clue&&this.currentStage==='forest'){if(addProp(7,281,210))this.memoryProps++;}
   }
   this.leafFall=this.currentStage==='village'&&this.location==='under_tree'&&!!state?.flags.tree_memory;
+  const gatherable=this.textures.exists('gathering-v6')?gatheringProps(state):[];this.writeMetric('gatheringProps',gatherable.map(p=>p.choice).join(','));
+  if(this.textures.exists('gathering-v6'))for(const item of gatherable)this.props.push(this.add.sprite(item.x,item.y,'gathering-v6',item.kind*4).setOrigin(.5,1).setDepth(item.y-1).play('gathering-'+item.kind));
   if(this.leafFall&&this.textures.exists('leaves-v5'))for(let i=0;i<6;i++){const leaf=this.add.sprite(62+i*7,117,'leaves-v5').setDepth(810).play('falling-leaf');leaf.setData('anchor',{x:62+i*7,y:117,kind:'fall'});this.ambient.push(leaf);}
   this.npcKey=encounter?.actor||(state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip');
   if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');

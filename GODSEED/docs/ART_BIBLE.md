@@ -72,3 +72,16 @@ Generator ใหม่ `generate-village-art.mjs` และ `generate-idle-art.m
 แก้ Anchor/Collision ได้ใน `scene-definitions.ts` พื้นที่เท้า10×4ตรวจทุก2px ถนนเป็น Fixed Graph ไม่ใช่ Open World ไม่มีการเดาพิกัดจากภาพ concept ต้นไม้บังตามฐานเท้า201และทางหลังต้นไม้186 หลังตรวจภาพครั้งแรกว่าทาง198ให้ค่า depth ถูกแต่ตัวละครยังไม่ทับกิ่งพอ
 
 เปิดตรวจภาพ runtime390pxและ1366pxหลังแก้ Ground Mask และเส้นทางแล้ว หลักฐานใน [Session12](evidence/session12/README.md) ส่วน820/1024อยู่ในผลทดสอบและ CI Artifact ยังไม่มี Low Device Preset, Lazy Loading, FPS/thermal/hardware benchmark หรือการรับรอง Safari
+
+
+## Session13 — 2026-11-05 UTC — วัตถุดิบที่มองเห็นและเก็บได้จริง
+
+Base43fdf78/0.6.0; branchfeat/godseed-visible-gathering, candidate0.6.1 งานVIS-005/MAG-002/QA-002: ขนนก เมล็ดผลิบาน และน้ำค้างเคยให้รางวัลแต่ไม่มีวัตถุในภาพ เพิ่มoriginal24×24atlas3แบบ×4เฟรมเรืองแสงเบา ๆ แยกจากconcept ไม่เปลี่ยนสูตรเวท/การต่อสู้/State2/DB1
+
+ตำแหน่งpropอ่านจากchoicePaths endpointเดียวกับตัวละคร (feet=centerY+20), depth=feet-1 จึงอยู่ใต้ตัวละครขณะหยิบ Rendererอ่านchoices/gathered/ticksเพื่อแสดงของครั้งแรกและรายวัน ไม่อ่านจำนวนinventoryมาตัดสิน ไม่มีการเขียนstateจากrenderer เมื่อภาพขาดแสดงdegradednoticeและยังเลือก/เซฟต่อได้ ReducedMotionหยุดanimationผ่านระบบpropsเดิม
+
+ผล: npmci/type/lint/content2/game109/build/referencechecksPASS; browserfocus5/5PASS24.2s บน390/820/1024/1366พร้อมtouch/reload/assetfallback เปิดดูภาพfeather/garden390จริงแล้ว Initialtestเลือกข้อความเมล็ดไปตรงeditionที่ซ่อนบนมือถือ จึงจำกัดlocatorใน#content ไม่ลบassertion Full70CIยังรอ ไม่รายงานว่าpublish0.6.1แล้ว
+
+Roadmap27.6%(21/76)คงเดิม งานใหญ่3IDยังin_progress ไม่มีเพิ่มคะแนนจากภาพย่อยหรือสเปก ความสนุกยังเป็นการประเมินภายใน ไม่มีผู้เล่นจริงทดสอบ รอบนี้ไม่เพิ่มเนื้อเรื่อง/ศัตรู/สูตร/จำนวนวัตถุดิบ รักษา18Scene/60Choice/234legal/3encounters/0endings ภาพยังต้นแบบ/hardwareSafariยังไม่ทดสอบ
+
+งานถัดไป5:1)ผูกวัตถุเก็บอื่นกับAnchor/ผลจริง 2)ปรับรายละเอียด2ฉากหลักตามreference 3)บ้าน–ประตูเชื่อมถนน 4)Crystal/WorkshopและVFX 5)NPCท่าพิเศษและQAอุปกรณ์จริง คำสั่งรอบถัดไป:ตรวจRoadmapแล้วพัฒนาต้นแบบสถานที่ต่อจากจุดที่ทดสอบผ่าน ห้ามรีเซ็ตเกมหรือเพิ่มสูตรเกิน234

@@ -38,3 +38,5 @@ Session8/0.5.0 inspector confirms unchanged17scenes/56choices/5NPC/3encounters/2
 Session12/0.6.0: CH0004 optionalrestunderseedtree (S00→S00) addsonechoice, preservingall17sceneIDs/oldbranches/3encounters/234spells/0endings. tree_memory andrest_under_tree flagsdriveleaf/posememory; rest_benchrestoresCH0210pose. 6stageIDs,7locationpresentations asvillage nowhascenter+tree. Originalart50PNGtotal/39versioned;10newPNG185,199bytes/40oldbyte-identical. Referencepack10concepts is not10finishedgameplaymaps.
 
 Session12 final extension: S02_TREE is reachable from hub via CH0211 and returns via CH02T2; CH02T1 rests there without extra gifts/trust. Old17sceneIDs remain, currenttotal18/60. Existinghub saves visitwithoutrestarting.
+
+Session13: counts unchanged18/60/5NPC/3encounters/234legal/0endings/6stageIDs. Added3gatheringvisuals for existingCH0102/CH0601/CH0603, not newitems/recipes/choices;51runtimePNGtotal.

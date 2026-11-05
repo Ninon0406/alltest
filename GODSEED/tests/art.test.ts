@@ -6,6 +6,11 @@ import {describe,expect,it} from 'vitest';
 import {actorFrame,playerAnimations,trainingAnimations} from '../src/scenes/actor-art';
 import {STAGES,stageLayouts,stageFolder} from '../src/scenes/stage-layout';
 
+it('gathering atlas has three distinct grounded silhouettes and four real glint frames',()=>{
+ const sheet=image('art-v6/gathering.png');expect([sheet.width,sheet.height]).toEqual([96,72]);const kinds=[];
+ for(let kind=0;kind<3;kind++){const hashes=[];for(let f=0;f<4;f++){const pixels=frame(sheet,kind*4+f,24,24);expect(visible(pixels)).toBeGreaterThan(30);hashes.push(digest(pixels));}expect(new Set(hashes).size).toBe(4);kinds.push(hashes[0]);}expect(new Set(kinds).size).toBe(3);
+});
+
 type PixelImage={width:number;height:number;data:Buffer};
 const {PNG}=createRequire(import.meta.url)('pngjs') as {PNG:{sync:{read:(source:Buffer)=>PixelImage}}};
 function image(relative:string):PixelImage {
