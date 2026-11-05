@@ -67,3 +67,5 @@ The player now walks with four original six-frame views (front/back/left/right),
 Roadmap/Task Board continue from the existing dataset; completed work leaves the next-task queue and recorded regressions take precedence. No new chapter scenes/spells or finalHD claim. Realhardware/Safari/NPC/camera/fullchapter work remains unfinished. Published at https://ninon0406.github.io/alltest/ afterPR#8/main3b62a2f, final50-casePRCI and actualpublicgameplay/save/29PNG/JSverificationPASS. Main42005831839 full50/build/deploySUCCESS; post-ActionsHTML/JS/29PNG/rendererPASS. Proof inTEST_REPORT.
 
 0.5.1 candidate: bounded camera focus/return and reduced/skip cleanup. Existing art/gameplay/saves retained. VIS-011 prototype, fullregression/CI/releasepending; public0.5.0 unchanged until merge/deploy.
+
+0.5.1 published afterPR9/e470fe8 + test-only570091b. Camera acceptance forcurrent6stages/3encounters: offense/support targets, boundedpan/easing, centeredreturn andskip/reducedcleanup. Noassets/story/saveformatchanges. Actualpublicgameplay/save/29PNG/JSproofPASS; currentmainCIproofinTEST_REPORT. FinalHD/all234VFX/futureboss/hardwareQAremainunfinished.

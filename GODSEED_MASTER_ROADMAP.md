@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `ebe49f5` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `e76c3e4` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -10,18 +10,18 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 ทุกงานน้ำหนัก1: เปอร์เซ็นต์ = จำนวน✅ ÷ จำนวนงาน ×100; 🟡/⬜/🔴/⛔ได้0 ไม่มีpartialเครดิต ตัวเลขเป็นความคืบหน้าของChecklistเท่านั้น ไม่ใช่เวลาที่เหลือ ปริมาณแรงงาน ความสนุก หรือคุณภาพภาพของเกมทั้งหมด งานขนาดต่างกันและรายการอาจเพิ่มได้ ต้องอ่านพร้อมจำนวนงานและlog
 
-**ความคืบหน้ารวม Checklist: 24.3% (18/74)** · เฉพาะขอบเขต1.0: 25.4% (18/71)
+**ความคืบหน้ารวม Checklist: 25.7% (19/74)** · เฉพาะขอบเขต1.0: 26.8% (19/71)
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 74 | 18 | 39 | 16 | 0 | 1 | 24.3% |
-| 1.0 | 71 | 18 | 39 | 13 | 0 | 1 | 25.4% |
+| ทั้งโครงการ | 74 | 19 | 38 | 16 | 0 | 1 | 25.7% |
+| 1.0 | 71 | 19 | 38 | 13 | 0 | 1 | 26.8% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [1 — โครงสร้างพื้นฐาน](#phase-1) | 7/9 | 2 | 0 | 0 | 0 | 77.8% |
-| [2 — งานภาพ Pixel Art HD](#phase-2) | 3/12 | 9 | 0 | 0 | 0 | 25% |
+| [2 — งานภาพ Pixel Art HD](#phase-2) | 4/12 | 8 | 0 | 0 | 0 | 33.3% |
 | [3 — ระบบเนื้อเรื่อง](#phase-3) | 1/8 | 5 | 2 | 0 | 0 | 12.5% |
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
 | [5 — ระบบต่อสู้](#phase-5) | 3/9 | 4 | 2 | 0 | 0 | 33.3% |
@@ -183,11 +183,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี
   - เกณฑ์เสร็จ: อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด
 
-- [ ] 🟡 กำลังพัฒนา **VIS-011 — กล้อง Cinematic และtransitionตามทิศทาง**
+- [x] ✅ เสร็จสมบูรณ์ **VIS-011 — กล้อง Cinematic และtransitionตามทิศทาง**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-009, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-006
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/main.ts](GODSEED/src/main.ts) · [GODSEED/src/scenes/camera-plan.ts](GODSEED/src/scenes/camera-plan.ts) · [GODSEED/tests/camera.spec.ts](GODSEED/tests/camera.spec.ts) · [GODSEED/tests/camera.test.ts](GODSEED/tests/camera.test.ts) · [GODSEED/tests/camera-gallery.spec.ts](GODSEED/tests/camera-gallery.spec.ts)
-  - หลักฐาน/สถานะจริง: Session10: แก้offensivefocus→enemy/support→player/path+sceneoverride; gameunit97/content2/roadmap6/buildPASS; realroutes6stages×4viewports + actualtrainingoffense focus4/4PASS1.0m; allbattle/VFXframing and finalCI58 pending
+  - หลักฐาน/สถานะจริง: Session11: sixstages/threecurrentlyplayableencounters across4viewports; offense/supportfocus/returncenter/skip/reduced and bounds checked, gallery4/4PASS2.1m; forestphone/streamdesktopruntime reviewed; PRCI42015617056 full58SUCCESS · Bounded12px/450ms camera for current6stages/3encounters; scope excludesfutureunimplementedstages/finalHD/all234VFX/hardware; runtimecodeunchanged fromacceptedPR9/e76c3e4
   - เกณฑ์เสร็จ: boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย
 
 - [ ] 🟡 กำลังพัฒนา **VIS-012 — Pixel Art UI/icons/logo/spell revealครบ**

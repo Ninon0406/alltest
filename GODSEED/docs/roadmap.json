@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "ebe49f5",
+  "baseCommit": "e76c3e4",
   "phases": [
     {
       "id": 1,
@@ -503,7 +503,7 @@
       "id": "VIS-011",
       "phase": 2,
       "title": "กล้อง Cinematic และtransitionตามทิศทาง",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P2",
       "dependsOn": [
         "VIS-006"
@@ -516,14 +516,21 @@
         "GODSEED/tests/camera.test.ts",
         "GODSEED/tests/camera-gallery.spec.ts"
       ],
-      "evidence": "Session10: แก้offensivefocus→enemy/support→player/path+sceneoverride; gameunit97/content2/roadmap6/buildPASS; realroutes6stages×4viewports + actualtrainingoffense focus4/4PASS1.0m; allbattle/VFXframing and finalCI58 pending",
+      "evidence": "Session11: sixstages/threecurrentlyplayableencounters across4viewports; offense/supportfocus/returncenter/skip/reduced and bounds checked, gallery4/4PASS2.1m; forestphone/streamdesktopruntime reviewed; PRCI42015617056 full58SUCCESS",
       "acceptance": "boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย",
       "legacyIds": [
         "GS-009",
         "GS-010"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "verification": "Bounded12px/450ms camera for current6stages/3encounters; scope excludesfutureunimplementedstages/finalHD/all234VFX/hardware; runtimecodeunchanged fromacceptedPR9/e76c3e4",
+      "evidenceFiles": [
+        "GODSEED/tests/camera-gallery.spec.ts",
+        "GODSEED/tests/camera.test.ts",
+        "GODSEED/tests/camera.spec.ts",
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
     },
     {
       "id": "VIS-012",

@@ -159,3 +159,11 @@ Session9 sourceCI42011348567SUCCESS full54 on77b62e9; final evidence-onlydoccomm
 Baseebe49f5; continueopenPR#9 onfeat/godseed-camera-director, reuse03/Roadmap/Skills, no newtracker. Fixed a concrete camera flaw: offensivecasts framed the caster. PurecameraFocus now prioritizespath/scenery, framesoffense atfoe, support/crafting atplayer. Added tests for targetsemantics and genuine six-stage gallery on390/820/1024/1366, includingactualtrainingcast rightpan andbounds. Originalsave/content/assets retained.
 
 npmci/test:allPASS: gameunit97/content2/roadmap6/type/lint/build. Newgallery4/4PASS1.0m, actualarchivephone screenshotreviewed. PreviousSession9 full54/CI54 pertains to77b62e9, not this new tree; finalCI now discovers58 cases and is not yetconfirmed. No claimfull58PASS or deployment. VIS-011 remainsIN_PROGRESS (allbattle/VFXframing pending); checklist18/74=24.3%, v118/71=25.4%, problem0/blocked1hardwareSafari. Next: finishPR9battleframing→NPCart→ruins/festival→B03/B04→canon/endings. Public0.5.0 unchanged.
+
+## Session11 —2026-11-05 UTC —finish PR9 acceptance
+
+Basee76c3e4, cleanbranch; PR9sourceCI42015617056 full58SUCCESS verified before work. Reuse03/74-taskRoadmap andskills. Extendgenuinegallery through B01forest andB02stream offensivecasts, actualBLOOMheal/supportpan, returncenter/wins andprevioussixstages/training onfourviewports. npmci/test:allPASS97gameunit/content2/roadmap6/type/lint/build; extendedgallery4PASS2.1m, actualforestphone/streamdesktopframingreviewed. No newruntimecode/art/story/schema; tests use actualmaterials/craft/battles, no injectedstate.
+
+VIS-011DONE for currentlyauthored6stages/3encounters after acceptance; this is not finalHD/all234VFX/futureboss/hardwarecertification. Same74tasks→19DONE/38inprogress/16notstarted/0problem/1blocked=25.7%, v119/71=26.8%. PR9 merged e470fe8; addedtests94d1f36 preserved onbranch thencherry-pickedas570091b onmain; no reset/force/delete. FinalmainCI/publicproof followsinTEST_REPORT. NextNPC→ruins/festival→B03/B04→canon/boss/endings, deviceQAremainsblocked.
+
+Session11 delivery: main42020164244SUCCESS/full58 anddeploy11:48:41UTC; publicfullflow +post-Actionsassets/rendererPASS samea09bffd7…/29PNGs. Sourcecamera acceptedforcurrentcontent, noadditional1.0/finalart/hardwareclaim. Evidencecommit concludescamera batch before newowner locationreference expansion.

@@ -280,3 +280,13 @@ Final local production fullsuite **54/54 PASS10.6m**, zero skipped, aftermenu-sc
 # Session10 — camera targets and six-stage gallery
 
 Baseebe49f5/openPR9. Fixedoffensivefocus formerlydefaultingplayer; support/craft remainplayer, path/scene anchorsoverride. Test:allPASS (97gameunit,2content,6roadmap,strict/lint/build). Newgenuinegallery4/4PASS1.0m: sixreachable stages at390/820/1024/1366, fullmotionframingbounds/screenshots andactualtraining offensivecast observedrightpan. No stateinjection; all navigation/materials/craft viaUI. Actualarchive390captureviewed. Newtreefullsuite58/CIpending, prior54evidence remainshistorical. No0.5.1publication orfullbattle/VFXacceptanceclaim. Existing40PNG/17scenes/56choices/234recipes/State2DB1envelope1unchanged.
+
+# Session11 — PR9 acceptance
+
+Sourcee76c3e4 PRCI42015617056 SUCCESS(full58) inspected. npmci/test:allPASS(gameunit97/content2/roadmap6/strict/lint/build). Extendedcurrentgallery4/4PASS2.1m: genuine6stages +BT/B01/B02, offensiveWINDfocusright/supportBLOOMHEALfocusleft, viewportbounds/returncenter andactualwins at390/820/1024/1366. Forestphone/streamdesktopcapturesreviewed. No newruntimebyte/PNG/scene/recipe/schema; current40PNGs/17scenes/56choices/3encounters/234recipes/0endings remain. VIS-011DONE only for currentlyauthoredcontent, not all234VFX/finalHD/futurestages/hardware.
+
+PR9 merged e470fe8 (acceptedruntime identicale76c3e4), test-only570091b onmain reruns58 cases includingexpandedgallery. MainCI/publicproof pendingbelow; earlier58CI is not currenttest-treegate. Dataset19/74=25.7% checklist(v119/71=26.8%).
+
+Actualpublic0.5.1 commandverify-public.mjs PASS after main:/ Pages42020162612SUCCESS: touch/start/craft/forest/FIRE/training/archive/ECHO/WATER/B02/reload/worldmemory/checksumexport/import. All29versionedPNGbytesandJS a09bffd741f46a7fc88dd2b9e31030c3182dff4dc71f19f6e12492a4886bbfc0 match stagedrelease, observederrors empty. Publicflow reducedmotion; fullmotioncameraacceptance comesfrom genuinegallery4+sourcePRCI58 onidenticalruntimebytes. Mainlatest42020164244 pending; no fullcurrent-main58PASSclaim yet. Merge-parentworkflow superseded after test-onlymainupdate, not countedfinalgate.
+
+Session11 main42020164244 SUCCESS: build127221309698 full58/type/lint/gameunit97/content2/roadmap6/buildPASS; deploy127226559506 finished2026-11-05 11:48:41UTC. Post-Actionsassets-onlyPASS samea09bffd741f46a7fc88dd2b9e31030c3182dff4dc71f19f6e12492a4886bbfc0/29PNG/readyrenderer/emptyerrors. Confirms Actions bytes match the verifiedpublicgameplay/save loop. Finalmetadata-onlyevidence update does not alterclientbytes. Supersededmerge-parent workflow is not thefinalgate.

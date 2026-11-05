@@ -1,4 +1,6 @@
-# GODSEED — ความคืบหน้า 0.5.0
+# GODSEED — ความคืบหน้า 0.5.1
+
+Session11 latest: PR9 merged; camera acceptance forcurrent6stages/3encounters complete. Checklist19/74=25.7%(v126.8%). Public0.5.1 verified; finalmainCI proof inTEST_REPORT. Previoussessions below retain historicalstates.
 
 ### Session8 —2026-11-05 UTC
 
@@ -73,3 +75,7 @@ SourceCI42011348567SUCCESS full54 on77b62e9. Finalcommitupdatesonlyevidence/docs
 ### Session10 —2026-11-05 UTC
 
 ContinuePR9/baseebe49f5. Fixedcameraoffense→foe vs support/craft→player, retainingpath/scenelocations. Addedgenuine6stagegallery/actualtrainingpan onfourviewports:4/4PASS1.0m; unit97/content2/roadmap6/type/lint/buildPASS. Full58CIpending, nofull58claim. VIS-011IN_PROGRESS andChecklist24.3%unchanged; finalbattle/VFXreview remains. Noassets/story/saveformat change, public0.5.0 preserved. NextfinishPR9 beforeNPC/ruins/battles/canon.
+
+### Session11 —2026-11-05 UTC
+
+ClosedPR9cameraacceptance forcurrent6stages/3encounters: gallery4PASS2.1m includingrealoffensive/supportcasts/battlewins, plus97unit/content2/roadmap6/type/lint/buildPASS. SourcePRCI58SUCCESS; mergee470fe8/test-only570091bmain. No runtime/art/story/schema changes thissession. VIS-011DONE scopedcurrentcontent; checklist19/74=25.7%, v119/71=26.8%, ✅19 🟡38 ⬜16 🔴0 ⛔1. FullcurrentmainCI/publicproofinTEST_REPORT whencomplete. Futureboss/newstagecameraQA/finalHD/all234VFX/Safarihardware stillnotaccepted. NextVIS-004/VIS-008/CMB-006/STO-001/QA-009.

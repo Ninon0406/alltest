@@ -76,3 +76,5 @@
 45. Session9: develop VIS-011 camera core as a bounded prototype, retaining its IN_PROGRESS status pending full framing acceptance. Use fixedoverscan rather than repeatedzoomjumps; reducedmotion1:1 and skip resets camera immediately. Pan/return ties to resolved story/battle commands, not game state changes or menu-only operations. No new art/story/schema. Preserve previous percentages until complete evidence exists.
 
 46. Session10: finishpreviousPR9 acceptance beforeanotherproject/slice. Correct cameraoffense recipient instead ofcountingexistingwrongfocusascomplete. Six-stagegallery andtrainingoffense broaden evidence; allbattle/VFXreview stilloutstanding, keepVIS-011IN_PROGRESS andpercentunchanged. PreviousCI54 is not new-tree58proof; recordpendinghonestly.
+
+47. Session11 completesPR9 current-contentcameraacceptance beforeanotherfeature. MarkVIS-011DONE only for6currentstages/3encounters after genuinegallery+battlecoverage andruntime review. Newfuturecontent needs its own framingregressions; do not equatecameraDONE withfinalHD/234VFX/hardware approval. No newtasks/denominatorinflation, no runtime/state changes for acceptance-onlybatch.

@@ -70,3 +70,5 @@ Public verifier also hashes art-v4 (29versioned PNGs total). Task Board's five-w
 camera-plan.ts defines fixed1.08 full-motion overscan and ±12px/450ms focus. Phaser zooms around viewport center; margin17.78px permits12px scroll without exposing artwork edges. Reduced useszoom1/scroll0. Genuine choice/battle/spell actions focus then return center; menu-only loadout operations do not. Camera tween cancellation joins generation-token cleanup/settlers. No state/DB/file-format change. All-scene final framing remains a VIS-011 acceptance gap.
 
 Session10: purecameraFocus definespath→scenery→semanticactor priority; offensivecast framesNPC, supportive/craft framesplayer. World passes resolvedspell category, never grants effects fromcamera. camera-gallery.spec navigates genuine six-stage paths andobservesactualtrainingoffensepan onfourviewportgroups; no rendererstateinjection.
+
+Session11 acceptance: camera-gallery coversall6currentstages and3encounters, includingoffensive/supportrecipient/returncenter. Futurestage/bossadditions must extendframing tests. Runtime unchanged sincee76c3e4; tests-only570091b improvesacceptancecoverage.
