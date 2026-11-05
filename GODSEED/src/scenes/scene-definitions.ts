@@ -32,7 +32,7 @@ export const sceneDefinitions:Record<LocationId,SceneDefinition>={
  },
  under_tree:{id:'under_tree',reference:'03_ancient_tree.webp',
   anchors:{tree_entrance:{x:154,y:239},exit_south:{x:154,y:257},exit_path:{x:190,y:257},tree_front:{x:184,y:257},
-   behind_branch:{x:184,y:198},tree_path:{x:121,y:198},seat_approach:{x:121,y:226},
+   behind_branch:{x:184,y:186},tree_path:{x:121,y:186},seat_approach:{x:121,y:226},
    under_tree_seat:{x:79,y:213,facing:'south'},resting_bench:{x:79,y:213,facing:'south'},leaf_fall_area:{x:79,y:213}},
   links:[['tree_entrance','exit_south'],['exit_south','exit_path'],['exit_path','tree_front'],['tree_front','behind_branch'],
    ['behind_branch','tree_path'],['tree_path','seat_approach'],['seat_approach','under_tree_seat']],

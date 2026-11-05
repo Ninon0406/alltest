@@ -9,7 +9,7 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`l
  await page.goto('/');const canvas=page.locator('#canvas');await expect(canvas).toHaveAttribute('data-render-status','ready');await tap(page,'เริ่มการเดินทาง');
  await expect(canvas).toHaveAttribute('data-location','under_tree');await expect(canvas).toHaveAttribute('data-leaf-fall','inactive');await expect(canvas).toHaveAttribute('data-idle-animation','hero-idle-east');
  const before=await snapshot(page);
- const behind=page.waitForFunction(()=>{const d=document.querySelector<HTMLElement>('#canvas')?.dataset;if(d?.pathPhase!=='approach'||!d.walkSample)return null;const p=JSON.parse(d.walkSample);return p.feetY<201&&p.x>160&&p.x<185&&p.depth<Number(d.occluderDepth)?p:null;},null,{polling:'raf'});
+ const behind=page.waitForFunction(()=>{const d=document.querySelector<HTMLElement>('#canvas')?.dataset;if(d?.pathPhase!=='approach'||!d.walkSample)return null;const p=JSON.parse(d.walkSample);return p.feetY<=188&&p.x>160&&p.x<185&&p.depth<Number(d.occluderDepth)?p:null;},null,{polling:'raf'});
  await page.getByRole('button',{name:'นั่งพักใต้ต้นเมล็ด',exact:true}).tap();const h=await behind;expect((await h.jsonValue()).depth).toBeLessThan(201);await h.dispose();await canvas.screenshot({path:`test-results/tree-occlusion-${width}.png`});await stable(page);
  for(const direction of ['east','west','north','south'])expect((await canvas.getAttribute('data-walk-trace'))!.split(',')).toContain(direction);
  await expect(canvas).toHaveAttribute('data-player-action','rest');await expect(canvas).toHaveAttribute('data-leaf-fall','active');
