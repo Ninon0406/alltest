@@ -22,6 +22,12 @@ Base d4da87a บน feat/godseed-village-references; ตรวจ main/PR9 ท�
 
 เพิ่ม S02_TREE และ CH0211/CH02T1/CH02T2 สำหรับเซฟที่ผ่านฉากเปิดแล้ว: เมนูสถานที่อื่น→แวะใต้ต้นเมล็ด→พัก→กลับจัตุรัส ไม่ต้องเริ่มเกมใหม่ ไม่ให้วัตถุดิบ/trustซ้ำ
 
+ผล focused ล่าสุด: direction+location10/10 PASS2.4m; หลังปรับให้ภาพตัวละครซ้อนกิ่งจริง (foot186) location5/5 PASS1.1m ภาพหลังแก้เปิดตรวจแล้ว ขณะนี้ full63 บน source44bde3c กำลังตรวจ ไม่ใช้ผลก่อนแก้แทนผลปลายรอบ
+
+GitHub Pages: APIแก้ Source เป็น Actions ถูกปฏิเสธ403 จึงยังเป็นlegacy main:/ ไม่เปลี่ยนค่าโดยอ้างสำเร็จ Workflowเดิมยัง deployได้ แต่การกันreferenceออกArtifactรับรองเฉพาะActions/dist เกมไม่โหลดConceptFiles ส่วนการตั้งค่าให้เหลือSourceเดียวเจ้าของทำจากโทรศัพท์ได้ตามREADME
+
+Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
+
 ---
 
 Session11 latest: PR9 merged; camera acceptance forcurrent6stages/3encounters complete. Checklist19/74=25.7%(v126.8%). Public0.5.1 verified; finalmainCI proof inTEST_REPORT. Previoussessions below retain historicalstates.

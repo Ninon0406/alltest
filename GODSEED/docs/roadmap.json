@@ -1472,7 +1472,7 @@
         "GODSEED/tests/browser.spec.ts",
         ".github/workflows/pages.yml"
       ],
-      "evidence": "Session8 readiness-boundaryแก้แล้ว; focusedkeyboard3/3PASS21.9s + finalPRCI42004666730 full50SUCCESS; เกมunit94/roadmap6/content2/buildPASS",
+      "evidence": "Source44bde3c localfull63/63 PASS14.9m และ PRCI42037332359 SUCCESS; helpertimeout5s regressionแก้แล้วด้วยbounded12s/zero-step; มีเพิ่มarrival/import renderer gateอีก1caseในsourceต่อมา รอCI64 ไม่อ้างว่า63รวมcaseใหม่",
       "acceptance": "รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว",
       "legacyIds": [
         "GS-002",
@@ -1481,7 +1481,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "ไม่skipหรือลบcase; รอrenderer/startenabledก่อนEnter + realPNG500ms delay; รายงานinitiallocal49/1และcorrectionในTEST_REPORT; mainCI42005831839 full50SUCCESS; actualpublicplay/save and post-Actionsassets gatePASS",
+      "verification": "คืนDONEของautomatedtest infrastructureจากfull63ที่ผ่านจริง; latestarrival/location6casesและCI64บันทึกแยก ไม่ปิดบังfirstinterruptedfailure",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
       ]
@@ -1826,7 +1826,7 @@
         "GODSEED/tests/scene-definitions.test.ts",
         "GODSEED/tests/locations.spec.ts"
       ],
-      "evidence": "เริ่มimplementationแล้ว; รอผลทดสอบหลังแก้ Ground Mask/packaging",
+      "evidence": "focused10/10 PASS2.4m; finalocclusion/revisit5/5 PASS1.1m; game105/content2/build PASS; runtimeภาพหลังmaskและroutefoot186เปิดตรวจแล้ว; full63และCIรอผล",
       "acceptance": "ต้นแบบ2สถานที่ originallayers/propdepth/footcolliders; choiceเดินถึงน้ำพุหันเหนือ/พักใต้ต้นไม้+ใบไม้/ยืนทิศเดิม/เซฟreload/skip/reduced ผ่าน4viewport และ full regression; ไม่ใช่finalHDหรือแปลงครบ10ฉาก",
       "legacyIds": [
         "GS-043"
@@ -1841,22 +1841,24 @@
       "name": "ลานน้ำพุกลางหมู่บ้าน",
       "readiness": {
         "reference": "done",
-        "structure": "in_progress",
-        "layers": "in_progress",
-        "collision": "in_progress",
-        "movement": "in_progress",
-        "story": "in_progress",
-        "effects": "in_progress",
-        "mobile": "in_progress",
+        "structure": "done",
+        "layers": "done",
+        "collision": "done",
+        "movement": "done",
+        "story": "done",
+        "effects": "done",
+        "mobile": "done",
         "ready": "in_progress"
       },
-      "evidence": "สร้างต้นแบบแยกเลเยอร์/props/foot anchors/routes แล้ว; targeted Chromium4ขนาดผ่านก่อนแก้ Ground Mask; รอ full final gate และตรวจภาพหลังแก้ ไม่ใช่ final HD",
+      "evidence": "ต้นแบบตามเกณฑ์ย่อย: generatedlayers/propsจริง, foot-colliders/graph unitผ่าน, focused10/10และfinaltree5/5 ผ่านChromium390/820/1024/1366; เปิดภาพหลังGroundMaskและปรับroutefoot186ให้ผ่านใต้boughจริง; finalHD/ฉากฉบับสมบูรณ์ยังไม่ผ่าน Full63รอผล",
       "files": [
         "assets/reference/godseed/references/01_village_center.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
         "GODSEED/src/scenes/scene-definitions.ts",
         "GODSEED/scripts/generate-village-art.mjs",
-        "GODSEED/tests/locations.spec.ts"
+        "GODSEED/tests/locations.spec.ts",
+        "GODSEED/docs/evidence/session12/village-after-390.png",
+        "GODSEED/docs/TEST_REPORT.md"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },
@@ -1886,22 +1888,24 @@
       "name": "ใต้ต้นไม้ใหญ่",
       "readiness": {
         "reference": "done",
-        "structure": "in_progress",
-        "layers": "in_progress",
-        "collision": "in_progress",
-        "movement": "in_progress",
-        "story": "in_progress",
-        "effects": "in_progress",
-        "mobile": "in_progress",
+        "structure": "done",
+        "layers": "done",
+        "collision": "done",
+        "movement": "done",
+        "story": "done",
+        "effects": "done",
+        "mobile": "done",
         "ready": "in_progress"
       },
-      "evidence": "สร้างต้นแบบแยกเลเยอร์/props/foot anchors/routes แล้ว; targeted Chromium4ขนาดผ่านก่อนแก้ Ground Mask; รอ full final gate และตรวจภาพหลังแก้ ไม่ใช่ final HD",
+      "evidence": "ต้นแบบตามเกณฑ์ย่อย: generatedlayers/propsจริง, foot-colliders/graph unitผ่าน, focused10/10และfinaltree5/5 ผ่านChromium390/820/1024/1366; เปิดภาพหลังGroundMaskและปรับroutefoot186ให้ผ่านใต้boughจริง; finalHD/ฉากฉบับสมบูรณ์ยังไม่ผ่าน Full63รอผล",
       "files": [
         "assets/reference/godseed/references/03_ancient_tree.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
         "GODSEED/src/scenes/scene-definitions.ts",
         "GODSEED/scripts/generate-village-art.mjs",
-        "GODSEED/tests/locations.spec.ts"
+        "GODSEED/tests/locations.spec.ts",
+        "GODSEED/docs/evidence/session12/tree-after-390.png",
+        "GODSEED/docs/TEST_REPORT.md"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },

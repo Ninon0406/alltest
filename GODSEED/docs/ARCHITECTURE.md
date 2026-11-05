@@ -1,18 +1,32 @@
 # GODSEED architecture — 0.6.0
 
-## Living location slice (Session12)
+## ระบบสถานที่และ Cinematic รอบ12
 
-`scene-definitions.ts` owns authored foot-coordinate anchors, named road links, colliders and occluder depths for village_center/under_tree. These are locations within existing village stage; sixstageIDs and all17older scene IDs stay stable; S02_TREE is added for revisits. `locationFor(S00_WAKE/S02_TREE)` selects tree; other village scenes use center. No coordinates are derived from concept pixels and no free movement controls are introduced.
+`scene-definitions.ts` เก็บ Anchor แบบพิกัดเท้า ถนนที่เชื่อมกัน Collision และระดับวัตถุที่บังตัวละครของ `village_center` กับ `under_tree` พิกัดมาจากแผนที่ต้นฉบับที่สร้างเอง ทั้งสองสถานที่ใช้ Stage ID `village` เดิม ส่วน `locationFor` แยกภาพตาม Story Scene: `S00_WAKE` และ `S02_TREE` ใช้ต้นไม้ ฉากหมู่บ้านอื่นใช้ลานน้ำพุ
 
-`routeTo` uses Dijkstra on explicit links; each segment samples the10×4footprint every2sourcepixels. Entry attaches only to a visible reachable road junction. Missing/blocked graph targets returnundefined; cinematicPath throws a readable error rather than bypassing collision. CH0201/CH0004 and village exits use actual current feet; old other-stage paths remain. Bench's center is a support mount; groundcolliders cover its legs, supportdepth239 carries the seated pose abovebench238.
+`routeTo` ใช้ Dijkstra เฉพาะเส้นถนนที่เขียนไว้ ตรวจพื้นที่เท้า10×4pxทุกระยะไม่เกิน2px จุดเริ่มเชื่อมกับ Junction ที่เดินถึงได้และไม่ถูกวัตถุขวาง ถ้าจุดหมายหรือทางเดินใช้ไม่ได้จะคืน `undefined`; Director แจ้งข้อผิดพลาดและไม่บันทึกผลตัวเลือก ไม่มีทางลัดเส้นตรงผ่านวัตถุและไม่มีระบบเดินอิสระ
 
-World preserves actor position/facing across show in the same run/stage/location/battlemode. On reload it uses stable scene anchors, rest_under_tree/rest_benchflags or existing entrypoints; arbitrary movement positions are not serialized. New flags are optional under State2. `choose` clears bothrest flags before setting the current resting choice; tree_memory persists, first-choice trust is granted once. Numeric HP/MP/time use existingrest rules. CH0004 adds one optional openingrest without rewriting oldtransitions.
+Director ส่งตำแหน่งปัจจุบันให้เส้นทาง CH0201/CH0004/CH02T1 และทางออกหมู่บ้าน CH0211 ใช้ `tree_path` เพื่อเดินไปทางต้นไม้ก่อนเปลี่ยนสถานที่ CH02T2 เดินออกจากใต้ต้นไม้กลับจัตุรัส ทางในฉากอื่นยังใช้ข้อมูลเดิม ข้ามจุดที่ระยะเป็นศูนย์เพื่อไม่สร้างท่าเดินหรือทิศปลอม
 
-Newidle texture uses four independent32×48views,3frames/view at3fps; existingwalk24frames@10fps remains byteidentical. Legacyactions/fallbacks stay. Tree is a432×208 prop at276/201, footdepth201; fountain96×112sixframes at254/204depth204. Nearobjects usefootY; staticrear/ground/front remain -1000/-900/1000. Treebranch is overheadocclusion, not a groundsolid. Activeleafmemory creates exactly6recycled leafsprites; allprops/leafambient pause withReducedMotion. Scene replacement destroysoldinstances.
+Renderer คงตำแหน่งและทิศเฉพาะเมื่อ main ส่ง continuity=true หลัง action ที่ทำเสร็จหรือข้าม และเป็น run/stage/location/battle mode เดิม เมื่อ import/restore/continue จะส่ง continuity=false และใช้ Anchor ประจำฉากและ flags `rest_under_tree` / `rest_bench` เพื่อคืนท่านั่ง; ไม่เพิ่มพิกัดตัวละครลงเซฟ คำสั่ง `choose` เคลียร์ท่าพักเดิมก่อนตั้งท่าของตัวเลือกปัจจุบัน `tree_memory` เก็บถาวรและให้ใบไม้/ข้อความความทรงจำ รางวัลความสัมพันธ์จาก CH0004 ให้ครั้งแรกเท่านั้น CH02T1 ไม่ให้ของหรือ trust เพิ่ม ใช้กฎพักเดิม HP+15, MP+10, เวลา1tick
 
-Referencepack stays under root/assets/reference/godseed, with13SHA records and10locationmanifest. It is development input only. Vite public contains originalruntimePNGs; stage-site retains old index-hash.js/css files rather than copyingtheentireroot/assets backintodist. `validate:references` checksbothpublic/dist and runs in test:all andafterstaging. No recipe/combatdamage/VFXtiming rules are changed.
+`S02_TREE` เป็นฉากเนื้อเรื่องใหม่ที่เข้าได้จากเมนูสถานที่อื่น เพื่อให้เซฟเดิมที่ผ่านฉากเปิดไปแล้วกลับมาพักได้ 17Scene IDsเดิมยังอยู่ ปัจจุบันรวม18ฉาก/60ตัวเลือก State2/IndexedDB1/file envelope1ไม่เปลี่ยน เพราะ flags ใหม่เป็นข้อมูลทางเลือกใน schema เดิม
 
-Roadmap locations/readiness is stored in the existing roadmap.json; render appends the10×9matrix with evidence. It expands existingVIS-008/009/010 rather than counting90newtasks. VIS-013/014 are bounded new deliverytasks for the owner's reference/sceneimplementation scope, mapped to GS-042/043. Allotherphase/statushistory remains.
+## ภาพและทรัพยากร
+
+ท่ายืนใหม่มี4ทิศ ทิศละ3เฟรม ขนาด32×48 ที่3fps การเดินเดิม24เฟรม/4ทิศที่10fpsยังใช้ไฟล์เดิม การกระทำอื่นยังใช้ Hero Atlas เดิมและยังไม่ครบทุกมุม
+
+ต้นไม้เป็น Prop432×208 ที่ตำแหน่ง276/201, depth201 น้ำพุเป็น Atlas96×112ต่อเฟรม รวม6เฟรม ที่254/204, depth204 ทุกวัตถุเรียงตามเท้า ตัวละครใช้ y+20 เงาใช้ y+19 กิ่งไม้เหนือหัวบังภาพแต่ไม่เป็นสิ่งกีดขวางบนพื้น ขาม้านั่งเป็น Collision และท่านั่งใช้ support depth239 เหนือม้านั่ง238 ทางหลังต้นไม้ใช้ foot186 หลังตรวจภาพจริงว่าค่า depth อย่างเดียวไม่พอให้เกิดการซ้อนภาพ
+
+เลเยอร์เดิมยังเป็น rear-1000 / ground-900 / foreground1000 Ground มี alpha mask ตามฐานอาคารเพื่อไม่ทับผนังหน้า ใบไม้ใช้6Spriteวนซ้ำเมื่อมี tree_memory และหยุดเมื่อ Reduced Motion; Prop และ Ambient เดิมถูกทำลายเมื่อเปลี่ยนฉาก
+
+ภาพอ้างอิงเจ้าของเก็บที่ `assets/reference/godseed/` พร้อม13SHA records และ manifest10สถานที่ ไม่มีการ import concept เข้าเกม ภาพ runtime อยู่ใน `public/assets` และสร้างจาก Generator ต้นฉบับ `stage-site.mjs` คงไฟล์ index-hash.js/css เก่าเพื่อรองรับ HTML ที่ cache โดยไม่คัดลอก development references กลับเข้า dist `validate:references` ตรวจ public/dist และทำงานซ้ำหลัง staging ใน CI
+
+Pages Source ยังเป็น legacy main:/ เพราะ integration ไม่มีสิทธิ์แก้ Settings (API403) Workflow Actions เดิมยังเผยแพร่ได้ แต่การรับรองว่าไม่มี reference ใน Artifact หมายถึง Vite dist/Actions เท่านั้น Legacy archive อาจมีไฟล์ต้นฉบับของ Repository; เกมไม่ร้องขอไฟล์เหล่านั้น เจ้าของเปลี่ยน Source เป็น GitHub Actions จากโทรศัพท์ได้เพื่อให้เหลือเส้นทางเผยแพร่เดียว
+
+## ข้อมูลความคืบหน้า
+
+Roadmap ใช้ `roadmap.json` เดิม มีตาราง9ด้านต่อ10สถานที่ พร้อมหลักฐานและเกณฑ์ ไม่มีการนับ90ช่องเพิ่มในตัวหารหลัก VIS-013/014 เป็นงานส่งมอบใหม่ตามขอบเขตของเจ้าของและเชื่อม GS-042/043 สถานะฉากฉบับสมบูรณ์ยังรอ final art; การมี concept หรือผ่านองค์ประกอบต้นแบบไม่ทำให้ทั้งฉากเสร็จ
 
 ---
 

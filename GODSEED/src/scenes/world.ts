@@ -146,13 +146,13 @@ export class World extends Phaser.Scene {
  }
  private npcPose(pose:string){const key=this.npcKey==='training-v2'?'training-'+pose:this.npcKey+'-'+pose;if(this.anims.exists(key))this.npc.play(key);}
  private npcIdle(){const key=this.npcKey==='training-v2'?'training-idle':this.npcKey+'-idle';if(this.anims.exists(key))this.npc.play(key);this.npc.clearTint().setAlpha(1);}
- show(state:State|null){
+ show(state:State|null,continuity=false){
   if(!this.ready)return;this.finishAction();
   const scene=state?scenes[state.scene]:null,encounter=state?.battle?encounters[state.battle.id]:null;
   const previousStage=this.currentStage,previousLocation=this.location;
   this.currentStage=encounter?.stage||scene?.stage||'village';
   this.location=locationFor(scene?.id);
-  const preserve=!!state&&this.shown?.runId===state.runId&&this.shown.battle===!!state.battle&&previousStage===this.currentStage&&previousLocation===this.location;
+  const preserve=continuity&&!!state&&this.shown?.runId===state.runId&&this.shown.battle===!!state.battle&&previousStage===this.currentStage&&previousLocation===this.location;
   const layerKey=(layer:string)=>this.currentStage==='village'&&this.location==='under_tree'?`tree-${layer}-v5`:`${this.currentStage}-${layer}-v2`;
   this.layered=['rear','ground','front'].every(layer=>this.textures.exists(layerKey(layer)));
   this.stage.setTexture(this.currentStage).setVisible(!this.layered);
@@ -265,7 +265,8 @@ export class World extends Phaser.Scene {
   if(token!==this.generation)return;
   if(path?.facing)this.facing=path.facing;
   this.writeMetric('targetAnchor',path?.targetAnchor||'none');
-  this.writeMetric('pathPhase','interaction');this.pose(poseFor(cue));
+  // Arrival ends the gait immediately, while the camera returns to center.
+  this.writeMetric('pathPhase','interaction');this.pose(cue==='walk'?'idle':poseFor(cue));
   if(path?.seatDepth&&cue==='rest'){this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
   if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);

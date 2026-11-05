@@ -181,3 +181,7 @@ Session11 delivery: main42020164244SUCCESS/full58 anddeploy11:48:41UTC; publicfu
 - ต่อไป: completegate/publish → gate+cottage routes → crystal/workshopinteractions → battle glade+VFX → NPC/storyruinsdependencies
 
 Session12 follow-up: source checkpoint c9d9bab / draft PR#10. Added revisitable S02_TREE for existing hub saves (18scenes/60choices), no extra trust/material gifts. First local full run interrupted after directional helper5s timeout on the longer real road from retained bench; fixes remove zero-length beats and allow bounded12s wait. Initial104unit is superseded by105 after revisit regression. Final focused10 and full63 required before VIS-014 acceptance/merge.
+
+Finalvisualfollow-up: inspected realframes aftermaskfix. Depth-only proof was insufficient; shiftedtreepath tofoot186 sohead/boughactuallyoverlap, capturedruntime andran5/5PASS1.1m. Source44bde3c. Frozen full63 nowrunning. QA-006 moved temporarily toproblem until fullgate passes. PagesSource APIupdate returned403; no setting changed. dist/Actionsartifact excludesrefs; runtime neverloadsconcepts.
+
+Baseline44bde3c full63/63PASS14.9m; PRCI42037332359SUCCESS. คืนQA-006DONEตามผลจริง หลังจากนั้นเติมidle-on-arrivalและexplicitcontinuityสำหรับactionเท่านั้น ป้องกันimportเซฟเก่าบนmapเดียวคงตำแหน่งน้ำพุผิดฉาก; arrival.specใช้ไฟล์ส่งออกจริงจากS01เพื่อนำเข้ากลับ ไม่injectstate. LatestCIมี64cases รอผลก่อนVIS-014DONE.

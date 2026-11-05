@@ -49,9 +49,9 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 
 | สถานที่ | ภาพอ้างอิง | โครงสร้าง | วัตถุ/เลเยอร์ | Collision/Anchor | เดิน/Animation | เหตุการณ์ | เอฟเฟกต์ | Chromiumจำลอง | ฉากฉบับสมบูรณ์ |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ลานน้ำพุกลางหมู่บ้าน | ✅ | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
+| ลานน้ำพุกลางหมู่บ้าน | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🟡 |
 | ประตูทางเข้าหมู่บ้าน | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| ใต้ต้นไม้ใหญ่ | ✅ | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 |
+| ใต้ต้นไม้ใหญ่ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🟡 |
 | บ้านผู้เล่น | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | บ้านผู้เฒ่าและสวนสมุนไพร | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ถนนสู่ป่า | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -60,16 +60,16 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 | ศาลเจ้าโบราณ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ลานต่อสู้กลางป่า | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
-- **village_center — ลานน้ำพุกลางหมู่บ้าน**: สร้างต้นแบบแยกเลเยอร์/props/foot anchors/routes แล้ว; targeted Chromium4ขนาดผ่านก่อนแก้ Ground Mask; รอ full final gate และตรวจภาพหลังแก้ ไม่ใช่ final HD
-  - หลักฐาน: [assets/reference/godseed/references/01_village_center.webp](assets/reference/godseed/references/01_village_center.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts)
+- **village_center — ลานน้ำพุกลางหมู่บ้าน**: ต้นแบบตามเกณฑ์ย่อย: generatedlayers/propsจริง, foot-colliders/graph unitผ่าน, focused10/10และfinaltree5/5 ผ่านChromium390/820/1024/1366; เปิดภาพหลังGroundMaskและปรับroutefoot186ให้ผ่านใต้boughจริง; finalHD/ฉากฉบับสมบูรณ์ยังไม่ผ่าน Full63รอผล
+  - หลักฐาน: [assets/reference/godseed/references/01_village_center.webp](assets/reference/godseed/references/01_village_center.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts) · [GODSEED/docs/evidence/session12/village-after-390.png](GODSEED/docs/evidence/session12/village-after-390.png) · [GODSEED/docs/TEST_REPORT.md](GODSEED/docs/TEST_REPORT.md)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
 - **village_entrance — ประตูทางเข้าหมู่บ้าน**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง
   - หลักฐาน: [assets/reference/godseed/references/02_village_entrance.webp](assets/reference/godseed/references/02_village_entrance.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
-- **under_tree — ใต้ต้นไม้ใหญ่**: สร้างต้นแบบแยกเลเยอร์/props/foot anchors/routes แล้ว; targeted Chromium4ขนาดผ่านก่อนแก้ Ground Mask; รอ full final gate และตรวจภาพหลังแก้ ไม่ใช่ final HD
-  - หลักฐาน: [assets/reference/godseed/references/03_ancient_tree.webp](assets/reference/godseed/references/03_ancient_tree.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts)
+- **under_tree — ใต้ต้นไม้ใหญ่**: ต้นแบบตามเกณฑ์ย่อย: generatedlayers/propsจริง, foot-colliders/graph unitผ่าน, focused10/10และfinaltree5/5 ผ่านChromium390/820/1024/1366; เปิดภาพหลังGroundMaskและปรับroutefoot186ให้ผ่านใต้boughจริง; finalHD/ฉากฉบับสมบูรณ์ยังไม่ผ่าน Full63รอผล
+  - หลักฐาน: [assets/reference/godseed/references/03_ancient_tree.webp](assets/reference/godseed/references/03_ancient_tree.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts) · [GODSEED/docs/evidence/session12/tree-after-390.png](GODSEED/docs/evidence/session12/tree-after-390.png) · [GODSEED/docs/TEST_REPORT.md](GODSEED/docs/TEST_REPORT.md)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
 - **player_home — บ้านผู้เล่น**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง
@@ -265,7 +265,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-043 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-006
   - ไฟล์: [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/scripts/generate-idle-art.mjs](GODSEED/scripts/generate-idle-art.mjs) · [GODSEED/tests/scene-definitions.test.ts](GODSEED/tests/scene-definitions.test.ts) · [GODSEED/tests/locations.spec.ts](GODSEED/tests/locations.spec.ts)
-  - หลักฐาน/สถานะจริง: เริ่มimplementationแล้ว; รอผลทดสอบหลังแก้ Ground Mask/packaging
+  - หลักฐาน/สถานะจริง: focused10/10 PASS2.4m; finalocclusion/revisit5/5 PASS1.1m; game105/content2/build PASS; runtimeภาพหลังmaskและroutefoot186เปิดตรวจแล้ว; full63และCIรอผล
   - เกณฑ์เสร็จ: ต้นแบบ2สถานที่ originallayers/propdepth/footcolliders; choiceเดินถึงน้ำพุหันเหนือ/พักใต้ต้นไม้+ใบไม้/ยืนทิศเดิม/เซฟreload/skip/reduced ผ่าน4viewport และ full regression; ไม่ใช่finalHDหรือแปลงครบ10ฉาก
 
 
@@ -565,7 +565,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-002, GS-024, GS-031 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, FND-005
   - ไฟล์: [GODSEED/tests/unit.test.ts](GODSEED/tests/unit.test.ts) · [GODSEED/tests/browser.spec.ts](GODSEED/tests/browser.spec.ts) · [.github/workflows/pages.yml](.github/workflows/pages.yml)
-  - หลักฐาน/สถานะจริง: Session8 readiness-boundaryแก้แล้ว; focusedkeyboard3/3PASS21.9s + finalPRCI42004666730 full50SUCCESS; เกมunit94/roadmap6/content2/buildPASS · ไม่skipหรือลบcase; รอrenderer/startenabledก่อนEnter + realPNG500ms delay; รายงานinitiallocal49/1และcorrectionในTEST_REPORT; mainCI42005831839 full50SUCCESS; actualpublicplay/save and post-Actionsassets gatePASS
+  - หลักฐาน/สถานะจริง: Source44bde3c localfull63/63 PASS14.9m และ PRCI42037332359 SUCCESS; helpertimeout5s regressionแก้แล้วด้วยbounded12s/zero-step; มีเพิ่มarrival/import renderer gateอีก1caseในsourceต่อมา รอCI64 ไม่อ้างว่า63รวมcaseใหม่ · คืนDONEของautomatedtest infrastructureจากfull63ที่ผ่านจริง; latestarrival/location6casesและCI64บันทึกแยก ไม่ปิดบังfirstinterruptedfailure
   - เกณฑ์เสร็จ: รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-007 — Visual regression golden/diffและ234VFXaudit**

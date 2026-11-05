@@ -71,7 +71,7 @@ export function render(data){
 }
 export function board(data){
  const s=totals(data.tasks);
- const candidates=['VIS-003','VIS-004','VIS-011','VIS-008','CMB-006','STO-001','MAG-006'];
+ const candidates=['VIS-014','VIS-008','VIS-004','VIS-005','CMB-006','STO-001','MAG-006'];
  const regressions=data.tasks.filter(t=>t.status==='problem').sort((a,b)=>a.priority.localeCompare(b.priority)).map(t=>t.id);
  const next=[...new Set([...regressions,...candidates])].filter(id=>{const t=data.tasks.find(t=>t.id===id);return t&&t.status!=='done'&&t.status!=='blocked';}).slice(0,5);
  return ['# GODSEED Task Board','', 'Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ',

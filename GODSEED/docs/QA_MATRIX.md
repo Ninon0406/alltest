@@ -8,6 +8,8 @@ Session12 targeted living-location checks: Chromium hasTouch390×844,820×1180,1
 
 Phone/iPad/desktopข้างต้นคือChromiumจำลอง; Safari/iOS/Android/iPadOSจริง, measuredFPS/thermal/memory ยังไม่ทดสอบ QA-009คงblocked ไม่ใช่ข้อผิดพลาดที่พิสูจน์ว่าเกมพัง
 
+Full baseline source44bde3c: local63/63 PASS14.9m และ PRCI42037332359 SUCCESS ยืนยันแก้helpertimeoutแล้ว คืนQA-006DONE จากนั้นเพิ่มRenderer guardสองจุด: หยุดเดินเป็นidleทันทีระหว่างกล้องกลับ และให้import/restoreไม่เก็บตำแหน่งจากฉากก่อน ทดสอบarrival+locations6กรณีบนbuildใหม่ รอCIเต็ม64ของsourceสุดท้าย ไม่รวมcaseใหม่ในตัวเลข63ย้อนหลัง
+
 ---
 
 Current0.5.0: gameunit94/roadmap6/content2/type/lint/buildPASS, focused17+keyboard3 localPASS, finalPR42004666730 full50SUCCESS and actualpublicplay/save/29PNG/hashPASS. Main42005831839 full50/build/deploySUCCESS + post-Actions29PNG/JS/rendererPASS. Initiallocalfull49/1 startupkeyboard race preserved with its correction. Physicalhardware/Safari remainsblockedQA-009 and finalHD acceptancepending.

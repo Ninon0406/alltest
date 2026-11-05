@@ -17,11 +17,11 @@ Checklist 26.3% · ✅20 🟡39 ⬜16 🔴0 ⛔1 · ทั้งหมด76
 
 ## ห้างานถัดไปตามpriorityและdependency
 
-1. VIS-004 (GS-007/GS-033) NPC/ศัตรู silhouette และท่าพิเศษครบ — ต้องมี VIS-001
+1. VIS-014 (GS-043) ต้นแบบหมู่บ้าน/ใต้ต้นไม้: Anchor routes/idleทิศ/ท่านั่งคงอยู่ — ต้องมี VIS-006
 2. VIS-008 (GS-008/GS-009) ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล — ต้องมี VIS-001
-3. CMB-006 (GS-022/GS-026/GS-027) B03/B04พร้อมAI/rules/art/rewards/conditionalflee — ต้องมี CMB-003, VIS-008
-4. STO-001 (GS-025/GS-026/GS-027/GS-028) เนื้อเรื่องหลักบท1ตามScene/Choice canonครบ — ต้องมี FND-003
-5. MAG-006 (GS-016/GS-020) Core/Form/Mod behavior/mastery/targetsครบ — ต้องมี MAG-003, CMB-001
+3. VIS-004 (GS-007/GS-033) NPC/ศัตรู silhouette และท่าพิเศษครบ — ต้องมี VIS-001
+4. VIS-005 (GS-007/GS-010) ยืน วิ่ง นั่ง และปฏิสัมพันธ์ตามวัตถุ — ต้องมี VIS-002
+5. CMB-006 (GS-022/GS-026/GS-027) B03/B04พร้อมAI/rules/art/rewards/conditionalflee — ต้องมี CMB-003, VIS-008
 
 เมื่อพบP0/P1 regressionให้แทรกก่อนรายการนี้ ไม่เปิดเส้นทางโบราณสถานจนภาพ/rules/save/testsพร้อม; บอส/เทศกาล/ตอนจบรอdependenciesตามMaster Roadmap
 

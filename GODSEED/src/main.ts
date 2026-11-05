@@ -17,7 +17,7 @@ async function exclusive(operation:()=>Promise<void>){
  try{await operation();}catch(error){msg(error instanceof Error?error.message:'ดำเนินการไม่สำเร็จ');}
  finally{busy=false;render();}
 }
-function showState(next:State){state=next;saved=next;screen=next.battle?'battle':'story';world.show(next);}
+function showState(next:State,continuity=false){state=next;saved=next;screen=next.battle?'battle':'story';world.show(next,continuity);}
 function controls(){saveControls(content,{current:state||saved,recovery:storage.recovery,archives:storage.archives,busy:busy||!world.ready,button,
  restore:next=>{void exclusive(async()=>{if(!confirm('แทนที่เซฟปัจจุบันด้วยความทรงจำที่เลือก?'))return;await storage.archiveCurrent();await storage.persist(next);showState(next);});},
  download:next=>{void exclusive(()=>downloadSave(next));},
@@ -39,7 +39,7 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
  }
  await storage.persist(next);
  if(world.ready&&(next.scene!==previous.scene||!!next.battle!==!!previous.battle))world.cameras.main.fadeIn(reduced?60:350,20,48,40);
- showState(next);if(previousScreen==='book'&&!next.battle)screen='book';
+ showState(next,true);if(previousScreen==='book'&&!next.battle)screen='book';
  if(previous.battle&&!next.battle)msg(next.journal.at(-1)||'จบการต่อสู้แล้ว');
 
  });}

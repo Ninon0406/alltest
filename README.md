@@ -43,3 +43,12 @@ workflow ทดสอบทุก PR และ deploy เมื่อ main ผ�
 ผู้พัฒนาแก้สถานะหลังทดสอบแล้วใช้ `npm --prefix GODSEED run roadmap:update` และ `npm --prefix GODSEED run roadmap:check` (CIตรวจด้วย) เปอร์เซ็นต์นับเฉพาะงาน✅ เป็นChecklist ไม่ใช่สัดส่วนเวลา/คุณภาพเกม; AIเสริมและCH2/CH3แยกขอบเขตจาก1.0
 
 รุ่นโค้ด0.5.0เพิ่มท่าเดินผู้เล่นสี่ทิศ24เฟรม เลือกท่าและเวลาเดินตามเส้นทางอัตโนมัติ ภาพเดิมและเซฟยังใช้ได้ หากPNGใหม่โหลดไม่ได้ใช้ภาพสำรองพร้อมแจ้งเตือน งานNPC/กล้อง/บทแรกเต็มยังพัฒนาต่อ
+
+
+### ชุดภาพอ้างอิงและสถานที่ (รอบ12)
+
+ภาพอ้างอิงเจ้าของ10แห่งอยู่ใน `assets/reference/godseed/` สำหรับพัฒนาเท่านั้น Asset ในเกมวาดใหม่ที่ `GODSEED/public/assets/art-v5/` ไม่ใช้ภาพเต็มเป็นพื้นหลัง เลือกดู [หลักฐานภาพก่อน–หลัง](GODSEED/docs/evidence/session12/README.md) และตาราง9ด้านต่อสถานที่ใน Master Roadmap
+
+ตรวจด้วย `npm --prefix GODSEED run validate:references` รวมใน CI และตรวจซ้ำหลัง staging; Vite dist/Actions Artifact ไม่มี Concept Files รักษาไฟล์ Client รุ่นเก่าไว้สำหรับ HTML ที่ cache
+
+การตั้งค่า Pages Source ปัจจุบันยังเป็น legacy `main:/` Integration อ่านค่าได้แต่แก้เป็น `workflow` ไม่ได้ (GitHub API403) Workflow เผยแพร่เดิมยังใช้งานได้ การรับรองว่าแยก References ออกจาก Artifact หมายถึง Actions/Vite; Legacy Archive อาจมีไฟล์จาก Repository ที่เกมไม่ได้โหลด หากต้องการให้มีเส้นทางเผยแพร่เดียว: GitHub บนโทรศัพท์ → Repository → Settings → Pages → Build and deployment → Source → GitHub Actions ไม่ต้องรัน Terminal
