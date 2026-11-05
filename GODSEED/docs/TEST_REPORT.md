@@ -378,3 +378,9 @@ Source da15539 / PR#11 / main mergeff09683. PRCI42053446169 full70SUCCESS; mainC
 เว็บจริง https://ninon0406.github.io/alltest/ PASSทั้ง3gatheringtargets/รับรางวัล/5สูตร/3การต่อสู้/archive/stream/save/checksum/import และpost-Actionsassets+renderer. 40versionedPNG/JS SHA256 `f895af40b707e49f9f4ab0cf650f2730bf621cf75f7688f63a3e3fcb211f1097` ตรงbuild,0Conceptrequests/0ConsoleErrors. Browserจำลอง ไม่ใช่อุปกรณ์จริง ความสนุกประเมินภายใน ไม่ใช่ผลhumanplaytest
 
 Checklist21/76=27.6%(v121/73=28.8%)คงเดิม VIS-005/MAG-002/QA-002ยังin_progressเพราะแก้ส่วนย่อย3จุด ไม่ใช่fullanimation/materials/finalHD ไม่มีการเปลี่ยนสูตร/การต่อสู้/เนื้อเรื่อง/State2/DB1/envelope1. ภาพหลัก/ท่ารดน้ำ/NPC/บอส/สามตอนจบและhardwareยังค้าง
+
+### รอบ14 — strict console audit: Pages favicon
+
+การตรวจเว็บจริงเพิ่ม console.error listener พบ404ของ `https://ninon0406.github.io/favicon.ico` แม้เกม/เหตุการณ์รดน้ำ/เซฟผ่าน แก้ด้วย original SVG mark และ HTML BASE_URL เพิ่ม SVG MIME ใน subpath preview; verify-public จับ console.error ด้วย ไม่กรอง404ทิ้ง
+
+Icon patch ไม่เปลี่ยน JavaScript เกม: hashยัง3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70 Build/reference packing ผ่าน และ Chromium `/alltest/` เปิดไอคอน200/image/svg+xml/เริ่มเกม/0ConsoleErrorsผ่าน การตรวจเว็บจริงหลังpatchจะบันทึกในหลักฐานปิดรอบ Full77เป็นผลของgame source3862287 ไม่ใช่การอ้างว่ารัน77ใหม่กับmetadataทุกครั้ง
