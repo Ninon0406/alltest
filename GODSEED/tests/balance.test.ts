@@ -4,7 +4,7 @@ import {choose,craft,fight} from '../src/systems/game';
 import {byId} from '../src/systems/spells';
 
 type Strategy='story-wind'|'story-support-pulse'|'zero-mp-fixture';
-type Encounter='BT_TRAINING'|'B01_FOREST_SPROUT';
+type Encounter='BT_TRAINING'|'B01_FOREST_SPROUT'|'B02_STREAM_WISP';
 const windId='SPELL_WIND_ORB_SEEK';
 const windCost=byId[windId].mp;
 const strategies:ReadonlyArray<{id:Strategy;label:string}>=[
@@ -27,14 +27,14 @@ function storyCraftedStart(seed:number,supportOnly:boolean):State {
 }
 
 function enterEncounter(state:State,encounter:Encounter):State {
- const path=encounter==='BT_TRAINING'?['CH0202','CH0404']:['CH0205','CH0801','CH0901'];
+ const path=encounter==='BT_TRAINING'?['CH0202','CH0404']:encounter==='B02_STREAM_WISP'?['CH0206','CH1101']:['CH0205','CH0801','CH0901'];
  for(const choice of path)state=choose(state,choice);
  expect(state.battle?.id).toBe(encounter);
  return state;
 }
 
 describe('100-seed playable-route balance regression',()=>{
- for(const encounter of ['BT_TRAINING','B01_FOREST_SPROUT'] as const){
+ for(const encounter of ['BT_TRAINING','B01_FOREST_SPROUT','B02_STREAM_WISP'] as const){
   for(const strategy of strategies){
    it(`${encounter}: ${strategy.label}`,()=>{
     let victories=0,maxTurns=0,minEndingHp=100;
@@ -53,7 +53,7 @@ describe('100-seed playable-route balance regression',()=>{
      }
      const context=`${encounter}, ${strategy.label}, seed ${seed}`;
      expect(state.battle,context).toBeUndefined();
-     expect(state.scene,context).toBe(encounter==='BT_TRAINING'?'S04_KORO':'S10_FOREST_RESULT');
+     expect(state.scene,context).toBe(encounter==='BT_TRAINING'?'S04_KORO':encounter==='B02_STREAM_WISP'?'S12_STREAM_RESULT':'S10_FOREST_RESULT');
      expect(state.rewarded,context).toContain(`win:${encounter}`);
      expect(turns,context).toBeLessThan(30);
      expect(state.hp,context).toBeGreaterThan(0);

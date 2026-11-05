@@ -9,14 +9,19 @@ export const statusSummary=(statuses:Record<string,number>)=>Object.entries(stat
 export const enemyName=(s:State)=>s.battle?encounters[s.battle.id].name:'';
 export const enemyMaxHp=(s:State)=>s.battle?encounters[s.battle.id].hp:0;
 export const battleRules=(s:State)=>s.battle?encounters[s.battle.id]:{canFlee:false,canSurrender:false};
-export function intent(s:State){if(!s.battle)return '';return s.battle.id==='BT_TRAINING'?'ประกายฝึกหัด — โจมตี 5':s.battle.turn%2===0?'หุบใบป้องกัน — ลดความเสียหายครึ่งหนึ่ง':'ลูกศรใบไม้ — โจมตี 7';}
+function plannedIntent(b:Battle):'pulse'|'leaf'|'curl'|'splash'|'mist'{
+ if(b.id==='BT_TRAINING')return 'pulse';
+ if(b.id==='B02_STREAM_WISP')return b.enemyHp<=26&&b.turn%2===0?'mist':'splash';
+ return b.turn%2===0?'curl':'leaf';
+}
+export function intent(s:State){if(!s.battle)return '';return ({pulse:'ประกายฝึกหัด — โจมตี 5',leaf:'ลูกศรใบไม้ — โจมตี 7',curl:'หุบใบป้องกัน — ลดความเสียหายครึ่งหนึ่ง',splash:'ละอองน้ำ — โจมตี 8',mist:'ม่านหมอก — ลดความแม่นยำคุณ 10% ในเทิร์นถัดไป ไม่มีการโจมตี'})[plannedIntent(s.battle)];}
 export function createBattle(id:EncounterId,checkpoint:string,next:string):Battle{return {id,enemyHp:encounters[id].hp,turn:1,shield:0,shieldTurns:0,status:{},playerStatus:{},log:[],checkpoint,next};}
 function tick(statuses:Record<string,number>,fresh=new Set<string>()){for(const key of Object.keys(statuses)){if(!fresh.has(key))statuses[key]--;if(statuses[key]<=0)delete statuses[key];}}
 function finish(d:State,b:Battle){
  const encounter=encounters[b.id],key='win:'+b.id;const first=!d.rewarded.includes(key);
  if(first){d.rewarded.push(key);d.inventory[encounter.reward]=(d.inventory[encounter.reward]||0)+1;d.xp+=encounter.xp;}
- if(b.id==='B01_FOREST_SPROUT'){d.flags.first_battle_won=true;d.flags.battle_B01_done=true;}else d.flags.training_won=true;
- d.scene=b.next;d.battle=undefined;d.journal.push((b.id==='BT_TRAINING'?'ผ่านการฝึกกับภูตจำลองแล้ว':'ต้นอ่อนสงบลงแล้ว')+(first?` · ประสบการณ์ ${encounter.xp} และ ${itemNames[encounter.reward]} 1 ชิ้น`:' · เคยรับรางวัลครั้งแรกแล้ว'));
+ if(b.id==='B01_FOREST_SPROUT'){d.flags.first_battle_won=true;d.flags.battle_B01_done=true;}else if(b.id==='BT_TRAINING')d.flags.training_won=true;else d.flags.battle_B02_done=true;
+ d.scene=b.next;d.battle=undefined;d.journal.push((b.id==='BT_TRAINING'?'ผ่านการฝึกกับภูตจำลองแล้ว':b.id==='B02_STREAM_WISP'?'ละอองธาราสงบลงแล้ว':'ต้นอ่อนสงบลงแล้ว')+(first?` · ประสบการณ์ ${encounter.xp} และ ${itemNames[encounter.reward]} 1 ชิ้น`:' · เคยรับรางวัลครั้งแรกแล้ว'));
 }
 function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
  const log=(text:string)=>b.log.push(text);
@@ -60,7 +65,7 @@ function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
 }
 export function fight(state:State,action:string){return transact(state,d=>{
  const b=d.battle;if(!b)throw Error('ไม่มีการต่อสู้');
- const encounter=encounters[b.id];const fresh=new Set<string>();const burning=b.status.SEAR>0;let guarding=false;b.log=[];
+ const encounter=encounters[b.id],plan=plannedIntent(b);const fresh=new Set<string>();const burning=b.status.SEAR>0;let guarding=false;b.log=[];
  if(action==='FLEE'||action==='SURRENDER'){
   if(action==='SURRENDER'?!encounter.canSurrender:!encounter.canFlee)throw Error('ออกจากการต่อสู้ด้วยวิธีนี้ไม่ได้');
   d.scene=b.checkpoint;d.battle=undefined;d.ticks++;d.journal.push(action==='FLEE'?'ถอยออกมาเตรียมตัว':'ยุติการฝึกอย่างปลอดภัย');return;
@@ -76,15 +81,16 @@ export function fight(state:State,action:string){return transact(state,d=>{
  }
  if(burning&&b.enemyHp>0){b.enemyHp=Math.max(0,b.enemyHp-3);b.log.push('เพลิงคุกรุ่นกระทบ 3');}
  if(b.enemyHp===0){d.journal.push(...b.log);finish(d,b);return;}
- const attack=b.id==='BT_TRAINING'||b.turn%2===1;
+ const attack=plan!=='curl'&&plan!=='mist';let misted=false;
  if(b.status.SLOWED){b.log.push('ศัตรูเสียจังหวะ จึงเลื่อนการกระทำครั้งนี้');delete b.status.SLOWED;}
  else if(attack){
   if(b.status.VEIL&&random(d)>=.9)b.log.push('ม่านเงาทำให้ศัตรูโจมตีพลาด');
   else {let incoming:number=encounter.power;if(guarding)incoming=Math.ceil(incoming*.6);if(b.playerStatus.GROUNDED)incoming=Math.max(0,incoming-2);
    const absorbed=Math.min(b.shield,incoming);b.shield-=absorbed;incoming-=absorbed;d.hp-=incoming;b.log.push(`${encounter.name} โจมตี ${incoming}${absorbed?` · โล่รับ ${absorbed}`:''}`);
   }
- }else b.log.push('ต้นอ่อนหุบใบป้องกัน');
- fresh.delete('VEIL');tick(b.status,fresh);tick(b.playerStatus);
+ }else if(plan==='mist'){b.playerStatus.VEIL=1;misted=true;b.log.push('ม่านหมอกบดบังสายตา ลดความแม่นยำ 10% ในเทิร์นถัดไป');}
+ else b.log.push('ต้นอ่อนหุบใบป้องกัน');
+ fresh.delete('VEIL');tick(b.status,fresh);tick(b.playerStatus,misted?new Set(['VEIL']):undefined);
  if(b.shieldTurns>0&&--b.shieldTurns===0){b.shield=0;b.log.push('โล่เวทหมดเวลา');}
  b.turn++;b.log=b.log.slice(-12);d.journal.push(...b.log);
  if(d.hp<=0){d.hp=70;d.mp=20;d.recoveryScene=b.checkpoint;d.scene='S28_RECOVER';d.battle=undefined;d.journal.push('พิพพากลับมาพักอย่างปลอดภัย');}

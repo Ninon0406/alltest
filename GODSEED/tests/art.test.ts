@@ -4,7 +4,7 @@ import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {describe,expect,it} from 'vitest';
 import {actorFrame,playerAnimations,trainingAnimations} from '../src/scenes/actor-art';
-import {STAGES,stageLayouts} from '../src/scenes/stage-layout';
+import {STAGES,stageLayouts,stageFolder} from '../src/scenes/stage-layout';
 
 type PixelImage={width:number;height:number;data:Buffer};
 const {PNG}=createRequire(import.meta.url)('pngjs') as {PNG:{sync:{read:(source:Buffer)=>PixelImage}}};
@@ -22,11 +22,11 @@ const visible=(pixels:Buffer)=>{let count=0;for(let i=3;i<pixels.length;i+=4)if(
 
 describe('original layered-stage assets and layout bounds',()=>{
  it('contains three distinct nonempty full-size layers for each reachable stage',()=>{
-  expect([...STAGES].sort()).toEqual(['forest','garden','village','workshop']);
+  expect([...STAGES].sort()).toEqual(['archive','forest','garden','stream','village','workshop']);
   for(const stage of STAGES){
    const hashes=[];
    for(const layer of ['rear','ground','front']){
-    const picture=image(`art-v2/${stage}-${layer}.png`);
+    const picture=image(`${stageFolder(stage)}/${stage}-${layer}.png`);
     expect([picture.width,picture.height],`${stage}-${layer}`).toEqual([480,270]);
     expect(visible(picture.data),`${stage}-${layer}`).toBeGreaterThan(100);
     if(layer==='front')expect(visible(picture.data),`${stage} foreground permits actor visibility`).toBeLessThan(480*270);
@@ -94,4 +94,32 @@ describe('original actor sheets and animation manifest',()=>{
   for(let i=3;i<spirit.length;i+=4)if((spirit[i]>0)!==(pip[i]>0))silhouetteDifference++;
   expect(silhouetteDifference,'a new spirit requires more than recoloring Pip').toBeGreaterThan(20);
  });
+});
+
+it('new archive/stream fallback images and mist/water atlas have usable alpha and real motion',()=>{
+ for(const stage of ['archive','stream']){
+  const fallback=image(`art-v3/${stage}-fallback.png`);
+  expect([fallback.width,fallback.height]).toEqual([480,270]);expect(visible(fallback.data)).toBe(480*270);
+ }
+ const mist=image('art-v3/stream-mist.png');expect([mist.width,mist.height]).toEqual([480,270]);
+ expect(visible(mist.data)).toBeGreaterThan(1000);expect(visible(mist.data)).toBeLessThan(480*270/3);
+ const water=image('art-v3/water.png');expect([water.width,water.height]).toEqual([192,32]);
+ const hashes=[];for(let index=0;index<6;index++){const cell=frame(water,index,32,32);expect(visible(cell)).toBeGreaterThan(10);hashes.push(digest(cell));}
+ expect(new Set(hashes).size).toBe(6);
+});
+
+it('Eira and the water spirit are original animated silhouettes with transparent unused cells',async()=>{
+ const {explorationAnimations}=await import('../src/scenes/exploration-art');
+ for(const [texture,animations] of Object.entries(explorationAnimations)){
+  const name=texture.replace('-v3',''),sheet=image(`art-v3/${name}.png`),used=new Set<number>();
+  expect([sheet.width,sheet.height]).toEqual([256,name==='eira'?96:144]);
+  for(const animation of Object.values(animations)){
+   const hashes=[];for(const index of animation.frames){used.add(index);const cell=frame(sheet,index,32,48);expect(visible(cell)).toBeGreaterThan(20);hashes.push(digest(cell));}
+   expect(new Set(hashes).size).toBeGreaterThan(1);
+  }
+  for(let i=0;i<sheet.width/32*sheet.height/48;i++)if(!used.has(i))expect(visible(frame(sheet,i,32,48))).toBe(0);
+  const actual=frame(sheet,0,32,48),legacy=frame(image(name==='eira'?'maren.png':'sprout.png'),0,32,48);let difference=0;
+  for(let i=3;i<actual.length;i+=4)if((actual[i]>0)!==(legacy[i]>0))difference++;
+  expect(difference,'new art must change the silhouette, not just its palette').toBeGreaterThan(20);
+ }
 });

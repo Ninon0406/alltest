@@ -1,6 +1,6 @@
 import type {State} from '../engine/state';
 import {battleRules,enemyMaxHp,enemyName,intent,statusSummary,statusHelp} from '../systems/combat';
-import {byId} from '../systems/spells';
+import {byId,cores,coreNames} from '../systems/spells';
 
 type ButtonFactory=(label:string,action:()=>void,disabled?:boolean)=>HTMLButtonElement;
 type CombatAction=(id:string,cue:string,spellId?:string)=>void;
@@ -41,6 +41,7 @@ export function combatPanel(content:HTMLElement,s:State,button:ButtonFactory,act
  statusInfo(enemy,battle.status,'สถานะศัตรู');
  stats.append(player,enemy);content.append(stats);
  const telegraph=element('p',`การเคลื่อนไหวถัดไป: ${intent(s)}`);telegraph.className='battle-intent';content.append(telegraph);
+ const rules=battleRules(s);if('weakness' in rules&&rules.weakness)content.append(element('p',`จุดอ่อน: ธาตุ${coreNames[cores.indexOf(rules.weakness)]} · แรงขึ้น 20%`));
 
  const log=element('section');log.className='battle-log';log.setAttribute('aria-label','ผลของเทิร์นล่าสุด');
  log.append(element('h2','ผลของเทิร์นล่าสุด'));
@@ -67,7 +68,7 @@ export function combatPanel(content:HTMLElement,s:State,button:ButtonFactory,act
   ['IT_MANA_LEAF',`ใบฟื้นเวท · ${s.inventory.IT_MANA_LEAF||0}`,'rest']
  ];
  for(const [id,label,cue] of actions)utilities.append(button(label,()=>action(id,cue),id.startsWith('IT_')&&!s.inventory[id]));
- const rules=battleRules(s);
+
  if(rules.canFlee)utilities.append(button('ถอยออกมาเตรียมตัว',()=>action('FLEE','walk')));
  else{const reason=element('p','การต่อสู้นี้ถอยไม่ได้');reason.className='action-detail';utilities.append(reason);}
  if(rules.canSurrender)utilities.append(button('ยุติการฝึก',()=>action('SURRENDER','rest')));

@@ -1,3 +1,11 @@
+# 0.4.0 — ทำนองในสายน้ำ
+
+Explore Eira's archive and the jade stream through four canonical scenes/fifteenchoices. Research has three approaches with stable one-time gifts and remembered trust. New actual ingredient sources let players craft WATER_RING_HEAL and ECHO_ORB_LINGER within the unchanged234recipe rules. The stream offers battle, learned-WIND and gentle listening/helping paths. Cleaning reveals the world change; Eira/Maren remember witnessed events. Journal shows saved clues and local next hints; new routes sit under“สถานที่อื่น”.
+
+B02_STREAM_WISP has52HP/8power/WINDweakness, pre-announced low-HP mist, own rewards and logical flee/loss/retry. Original layered archive/stream art,6frame water, mist, Eira and water-spirit animation are included as prototype studies. Oldergameplay/art/saves remain. State2/DB1/envelope1; no new mandatory save fields or migration. Ruins/festival/boss/three endings and finalHD/hardwareQA remain pending. Publish proof follows inTEST_REPORT.
+
+## Earlier releases
+
 # 0.3.0 — ฉากที่มีชีวิต
 
 Original village/garden/workshop/forest each use three layers plus depth-sorted props, ambient and restrained parallax. Player has56 frames across11 named cycles; practice has a new original lantern-spirit silhouette/13 frames. Real flags add visible world memories. Walking/pickup/craft/guard/cast/hit/victory cues are driven by the existing resolved game state.
@@ -6,7 +14,7 @@ Skip/reduced-motion cancel and settle animation safely; final battle reactions a
 
 Still a first-slice prototype: no new chapter scenes/endings/recipes, final HD certification, NPC silhouette completion or audio. State2/database1/checksum envelope1 unchanged; existing saves remain compatible. Published and public-gameplay/art/save verified at https://ninon0406.github.io/alltest/ · PR#4 /255e79f. PR CI41950932784 and main:/ Pages41951619769 SUCCESS. Full proof in TEST_REPORT.
 
-## Earlier releases
+# # Earlier releases
 
 # 0.2.0 — ฝึกเวทกับคุโร
 
@@ -18,7 +26,7 @@ Still first slice: no complete chapter/festival/boss/three endings, final HD art
 
 Published and public-smoke verified at https://ninon0406.github.io/alltest/ · PR #3 /2eec3a1.
 
-## Earlier releases
+# # Earlier releases
 
 # 0.1.1 — ความทรงจำที่กลับมาได้
 
@@ -28,7 +36,7 @@ Game-state schema stays version 1. The first-slice story, combat, recipes and ar
 
 Published and public-smoke verified: https://ninon0406.github.io/alltest/ · PR #2 / 2c4ba8d.
 
-## Earlier release
+# # Earlier release
 
 # 0.1 — เมล็ดแรก
 
