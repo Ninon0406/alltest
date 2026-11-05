@@ -84,7 +84,7 @@ test('OS reduced motion is reflected initially and toggling it during an action 
  await expect(canvas).toHaveAttribute('data-motion','full');
  await page.getByRole('button',{name:'เก็บขนนกสีฟ้าที่ข้างทางก่อน',exact:true}).click();
  await expect(canvas).toHaveAttribute('data-action-phase','action');
- await expect(canvas).toHaveAttribute('data-player-action','pick_up');
+ await expect(canvas).toHaveAttribute('data-player-action','walk');
  await motion.click();
  await settled(page);
  await expect(motion).toHaveAttribute('aria-pressed','true');

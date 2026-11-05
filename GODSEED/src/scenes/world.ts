@@ -6,6 +6,7 @@ import type {Spell} from '../systems/spells';
 import {playerAnimations,trainingAnimations} from './actor-art';
 import {STAGES,stageLayouts,stageFolder,stageFallback,type StageId} from './stage-layout';
 import {explorationAnimations} from './exploration-art';
+import {cinematicPath} from './cinematic-paths';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 
 export class World extends Phaser.Scene {
@@ -23,6 +24,7 @@ export class World extends Phaser.Scene {
  private settlers=new Set<()=>void>();
  private generation=0;
  private parallax={value:0};
+ private actionDepth?:number;
  private npcHomeX=338;
  private npcKey='pip';
  private currentStage:StageId='village';
@@ -89,7 +91,7 @@ export class World extends Phaser.Scene {
   if(!this.ready)return;
   this.playerShadow.setPosition(Math.round(this.player.x),Math.round(this.player.y+20)).setDepth(this.player.y+19);
   this.npcShadow.setPosition(Math.round(this.npc.x),Math.round(this.npc.y+20)).setDepth(this.npc.y+19);
-  this.player.setDepth(this.player.y+20);this.npc.setDepth(this.npc.y+20);
+  this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);
   this.player.anims.timeScale=this.motion?1:0;this.npc.anims.timeScale=this.motion?1:0;
   if(this.motion&&!document.hidden)this.ambientTime+=Math.min(delta,100);
   this.rear.tilePositionX=this.motion?this.parallax.value*.3:0;this.front.tilePositionX=this.motion?this.parallax.value*.8:0;
@@ -128,16 +130,17 @@ export class World extends Phaser.Scene {
   this.npcKey=encounter?.actor||(state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip');
   if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
   this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
-  this.npc.setTexture(this.npcKey);this.npcIdle();this.player.setPosition(state?.battle?130:154,219).clearTint().setAlpha(1);
-  this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose('idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
+  this.npc.setTexture(this.npcKey);this.npcIdle();this.player.setFlipX(false).setPosition(state?.battle?130:154,219).clearTint().setAlpha(1);
+  this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose('idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
  }
  finishAction(){
-  this.generation++;
+  this.generation++;this.actionDepth=undefined;
   if(!this.ready)return;
+  this.playerShadow.setVisible(true);
   this.tweens.killTweensOf(this.player);this.tweens.killTweensOf(this.npc);this.tweens.killTweensOf(this.parallax);
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
-  this.player.clearTint().setAlpha(1);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();this.pose('idle');this.phase='idle';this.parallax.value=0;this.diagnostics();
+  this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();this.pose('idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.parallax.value=0;this.diagnostics();
  }
  setReduced(reduced:boolean){this.motion=!reduced;if(this.ready&&reduced)this.finishAction();this.diagnostics();}
  private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
@@ -183,9 +186,25 @@ export class World extends Phaser.Scene {
   if(!this.ready)return;
   this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));if(cue==='talk'||cue==='pick')this.npcPose('talk');
   if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell,target);
-  const destination=cue==='walk'?(command==='FLEE'?80:230):cue==='pick'?182:this.player.x;
-  if(!reduced&&cue==='walk')this.tweens.add({targets:this.parallax,value:6,duration:480});
-  await this.beat(this.player,{x:destination,y:cue==='pick'?223:219,duration:reduced?55:cue==='craft'?800:cue==='cast'?560:480,yoyo:cue!=='walk'},token);
+  const path=cinematicPath(this.currentStage,cue,command);
+  this.writeMetric('lastPath',path?.id||'none');this.writeMetric('pathPhase',path?'approach':'interaction');
+  this.writeMetric('pathProgress',0);
+  if(path){
+   const points=reduced?[path.points[path.points.length-1]]:path.points;
+   for(const [index,point] of points.entries()){
+    if(token!==this.generation)return;
+    this.pose('walk');this.player.setFlipX(point.x<this.player.x);
+    if(!reduced)this.tweens.add({targets:this.parallax,value:point.x<154?-6:6,duration:240});
+    await this.beat(this.player,{x:point.x,y:point.y,duration:reduced?20:260,ease:'Linear'},token);
+    if(token!==this.generation)return;
+    this.writeMetric('pathProgress',index+1);
+   }
+  }
+  if(token!==this.generation)return;
+  this.writeMetric('pathPhase','interaction');this.pose(poseFor(cue));
+  if(path?.seatDepth&&cue==='rest'){this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
+  this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
+  if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
   if(token!==this.generation)return;
   if(before?.battle&&next){
    this.phase='reaction';this.diagnostics();
@@ -209,7 +228,7 @@ export class World extends Phaser.Scene {
     this.pose('hit');await this.beat(this.player,{alpha:.65,duration:reduced?25:200,yoyo:true},token);
    }
   }
-  if(token===this.generation){this.pose('idle');this.phase='idle';this.diagnostics();}
+  if(token===this.generation){this.pose('idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.diagnostics();}
  }
 }
 export function startWorld(parent:HTMLElement){

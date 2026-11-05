@@ -49,3 +49,9 @@ Published and smoke-verified at https://ninon0406.github.io/alltest/ (PR #1 / ba
 ## 0.4.1 — จัดเวทก่อนออกเดินทาง
 
 Recipe preview shows compatibility, missing materials and result costs without revealing unknown spell names; invalid/known recipes disable confirmation. Spellbook filters combine element/type/MP. Unequip any spell outside battle, preserve discovered recipes and compact slots, including an empty loadout. Existing save format and zero-MP basic/guard actions preserved. PR#6 merged f57ab5c; final41-case PR CI and actual public gameplay/save/28PNG/JS verification PASS. Published at https://ninon0406.github.io/alltest/; final main Actions proof in TEST_REPORT. Full chapter and final art remain unfinished.
+
+## 0.4.2 — เดินไปลงมือทำ
+
+Characters approach authored feather/seed/dew/book/bell/bench anchors before interacting; six stage travel lanes bend with the ground and movement faces the destination. Raised bench rest no longer hides behind the prop and its ground shadow is suppressed until standing again. Skip/reduced-motion keep the same once-only effects/save behavior. No new story scenes, PNGs, recipes or state schema.
+
+Eight-phase Master Roadmap/Task Board now derive from a shared audited dataset with deterministic checklist percentages, dependency/evidence validation and CI stale checks. Development Log reconstructs earlier shipped batches with source references and records every new batch. OptionalAI/CH2/CH3 are separate scope; finalHD/fullchapter/hardware gates remain pending. Publication proof recorded only after actual release inTEST_REPORT.
