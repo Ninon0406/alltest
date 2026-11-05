@@ -170,3 +170,10 @@ it('original fountain water animates independently of opaque map and depth-sorte
  for(let i=0;i<8;i++)expect(visible(frame(leaves,i,16,16))).toBeGreaterThan(10);
  for(const stage of ['village','tree']){const ground=image(`art-v5/${stage}-ground.png`);expect(ground.data[(170*480+70)*4+3]).toBe(0);expect(ground.data[(240*480+200)*4+3]).toBe(255);}
 });
+
+it('garden buds, wet soil and blooms differ; held-can poses keep the original planted soles',()=>{
+ const bed=image('art-v7/garden-bed.png'),hero=image('art-v7/hero-water.png');expect([bed.width,bed.height]).toEqual([192,48]);expect([hero.width,hero.height]).toEqual([256,48]);
+ expect(new Set([0,1,2].map(i=>digest(frame(bed,i,64,48)))).size).toBe(3);
+ expect(new Set([0,1,2,3].map(i=>digest(frame(hero,i,64,48)))).size).toBeGreaterThanOrEqual(3);
+ for(let i=0;i<4;i++){const p=frame(hero,i,64,48);expect(visible(p)).toBeGreaterThan(300);expect(visible(p.subarray(45*64*4))).toBe(0);expect(visible(p.subarray(44*64*4,45*64*4))).toBeGreaterThan(0);}
+});

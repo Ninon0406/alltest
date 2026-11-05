@@ -40,3 +40,5 @@ Session12/0.6.0: CH0004 optionalrestunderseedtree (S00→S00) addsonechoice, pre
 Session12 final extension: S02_TREE is reachable from hub via CH0211 and returns via CH02T2; CH02T1 rests there without extra gifts/trust. Old17sceneIDs remain, currenttotal18/60. Existinghub saves visitwithoutrestarting.
 
 Session13: counts unchanged18/60/5NPC/3encounters/234legal/0endings/6stageIDs. Added3gatheringvisuals for existingCH0102/CH0601/CH0603, not newitems/recipes/choices;51runtimePNGtotal.
+
+รอบ14 / 0.6.2: ตรวจ source อีกครั้ง 18Scene/60Choice/5NPC/3Encounters/234legal/0Endings/6Stages เท่าเดิม; 53runtimePNG, 42versionedPNG รวมแปลงและท่ารดน้ำใหม่ 2 ไฟล์ การผสมที่ทดสอบจากของจริงยัง 5 สูตร ไม่ใช่การเข้าถึง234สูตรทั้งหมดจากเนื้อเรื่อง

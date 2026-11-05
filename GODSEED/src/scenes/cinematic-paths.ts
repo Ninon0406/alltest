@@ -7,7 +7,7 @@ export type CinematicPath={id:string;stage:StageId;points:readonly Point[];seatD
 // these routes are presentation data, never free-roam or serialized progress.
 export const travelPaths:Record<StageId,readonly Point[]>={
  village:[{x:154,y:237},{x:190,y:227},{x:230,y:219}],
- garden:[{x:185,y:228},{x:230,y:219}],
+ garden:[{x:185,y:228},{x:205,y:238},{x:282,y:238},{x:303,y:219}],
  workshop:[{x:190,y:230},{x:230,y:219}],
  forest:[{x:184,y:229},{x:230,y:219}],
  archive:[{x:187,y:224},{x:230,y:219}],

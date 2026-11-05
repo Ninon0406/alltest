@@ -12,6 +12,7 @@ import {cameraShot,cameraFraming,cameraFocus} from './camera-plan';
 import {cinematicPath} from './cinematic-paths';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 import {gatheringProps} from './gathering-props';
+import {gardenPresentation,wateringPlan,wateringFrames} from './garden-staging';
 
 export class World extends Phaser.Scene {
  player!:Phaser.GameObjects.Sprite;
@@ -46,6 +47,7 @@ export class World extends Phaser.Scene {
  private layered=false;
  private ambientTime=0;
  private memoryProps=0;
+ private gardenBed?:Phaser.GameObjects.Sprite;
  private mist?:Phaser.GameObjects.Image;
  private visibilityChanged=()=>this.diagnostics();
  ready=false;
@@ -82,6 +84,8 @@ export class World extends Phaser.Scene {
   this.load.image('ancient-tree-v5',base+'art-v5/ancient-tree.png');
   this.load.spritesheet('fountain-v5',base+'art-v5/fountain.png',{frameWidth:96,frameHeight:112});
   this.load.spritesheet('leaves-v5',base+'art-v5/leaves.png',{frameWidth:16,frameHeight:16});
+  this.load.spritesheet('garden-bed-v7',base+'art-v7/garden-bed.png',{frameWidth:64,frameHeight:48});
+  this.load.spritesheet('hero-water-v7',base+'art-v7/hero-water.png',{frameWidth:64,frameHeight:48});
   this.load.spritesheet('gathering-v6',base+'art-v6/gathering.png',{frameWidth:24,frameHeight:24});
   this.load.spritesheet('hero-v2',base+'art-v2/player.png',{frameWidth:32,frameHeight:48});
   this.load.image('stream-mist-v3',base+'art-v3/stream-mist.png');
@@ -90,6 +94,7 @@ export class World extends Phaser.Scene {
   this.load.spritesheet('training-v2',base+'art-v2/training.png',{frameWidth:32,frameHeight:48});
  }
  create(){
+  if(this.textures.exists('hero-water-v7'))this.anims.create({key:'hero-water',frames:this.anims.generateFrameNumbers('hero-water-v7',{frames:wateringFrames}),frameRate:5,repeat:0});
   if(this.textures.exists('gathering-v6'))for(let kind=0;kind<3;kind++)this.anims.create({key:'gathering-'+kind,frames:this.anims.generateFrameNumbers('gathering-v6',{start:kind*4,end:kind*4+3}),frameRate:3,repeat:-1});
   this.add.image(240,135,'sky').setDepth(-1200);this.stage=this.add.image(240,135,'village').setDepth(-1100);
   this.rear=this.add.tileSprite(240,135,480,270,'village').setDepth(-1000).setVisible(false);
@@ -134,7 +139,9 @@ export class World extends Phaser.Scene {
  }
  private pose(name:string){
   this.playerAction=name;
-  if(name==='idle'&&this.textures.exists('hero-idle-v5')){
+  if(name==='water'&&this.textures.exists('hero-water-v7')){
+   this.player.setTexture('hero-water-v7').setFlipX(false).play('hero-water');if(!this.motion)this.player.setFrame(1);
+  }else if(name==='idle'&&this.textures.exists('hero-idle-v5')){
    this.player.setTexture('hero-idle-v5').setFlipX(false).play('hero-idle-'+this.facing);
    if(!this.motion)this.player.setFrame(directionalIdle[this.facing].frames[0]);
   }else if(name==='walk'&&this.textures.exists('hero-walk-v4')){
@@ -161,7 +168,9 @@ export class World extends Phaser.Scene {
   this.stage.setTexture(this.currentStage).setVisible(!this.layered);
   this.rear.setVisible(this.layered);this.ground.setVisible(this.layered);this.front.setVisible(this.layered);
   if(this.layered){this.rear.setTexture(layerKey('rear'));this.ground.setTexture(layerKey('ground'));this.front.setTexture(layerKey('front'));}
-  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;
+  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;this.gardenBed=undefined;this.writeMetric('gardenBeat','idle');
+  const garden=gardenPresentation(state);this.writeMetric('gardenGrowth',garden?.frame===2?'bloom':garden?'buds':'none');
+  if(garden&&this.textures.exists('garden-bed-v7')){this.gardenBed=this.add.sprite(garden.bed.x,garden.bed.y,'garden-bed-v7',garden.frame).setOrigin(.5,1).setDepth(garden.bed.depth);this.props.push(this.gardenBed);}
   const addProp=(frame:number,x:number,y:number)=>{if(this.textures.exists('props-v2')){const prop=this.add.sprite(x,y,'props-v2',frame).setOrigin(.5,1).setDepth(y);this.props.push(prop);return true;}return false;};
   if(this.layered){for(const prop of stageLayouts[this.currentStage].props){if(this.currentStage==='village'&&prop.frame===0&&this.textures.exists('fountain-v5'))continue;addProp(prop.frame,prop.x,prop.y);}
    if(this.currentStage==='village'){
@@ -202,7 +211,7 @@ export class World extends Phaser.Scene {
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
   this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();
-  if(this.resting){this.actionDepth=239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.parallax.value=0;this.diagnostics();
+  if(this.resting){this.actionDepth=239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.parallax.value=0;this.diagnostics();
  }
  setReduced(reduced:boolean){this.motion=!reduced;if(this.ready){if(reduced)this.finishAction();this.cameras.main.setZoom(reduced?1:cameraFraming.zoom).setScroll(0,0);}this.diagnostics();}
  private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
@@ -273,7 +282,18 @@ export class World extends Phaser.Scene {
   if(path?.facing)this.facing=path.facing;
   this.writeMetric('targetAnchor',path?.targetAnchor||'none');
   // Arrival ends the gait immediately, while the camera returns to center.
-  this.writeMetric('pathPhase','interaction');this.pose(cue==='walk'?'idle':poseFor(cue));
+  this.writeMetric('pathPhase','interaction');
+  const watering=wateringPlan(this.currentStage,command);
+  if(watering){
+   this.facing=watering.facing;this.pose('water');this.writeMetric('gardenBeat','watering');
+   await this.beat(this.player,{alpha:1,duration:reduced?75:1200},token);
+   if(token!==this.generation)return;
+   this.gardenBed?.setFrame(1);this.writeMetric('gardenGrowth','watered');
+   await this.beat(this.player,{alpha:1,duration:reduced?30:250},token);
+   if(token!==this.generation)return;
+   this.gardenBed?.setFrame(2);this.writeMetric('gardenGrowth','bloom');this.writeMetric('gardenBeat','collecting');
+  }
+  this.pose(cue==='walk'?'idle':poseFor(cue));
   if(path?.seatDepth&&cue==='rest'){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
   if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);

@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `da15539` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `0498235` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -53,7 +53,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 | ประตูทางเข้าหมู่บ้าน | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ใต้ต้นไม้ใหญ่ | ✅ | ✅ | 🟡 | ✅ | 🟡 | 🟡 | 🟡 | ✅ | 🟡 |
 | บ้านผู้เล่น | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| บ้านผู้เฒ่าและสวนสมุนไพร | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| บ้านผู้เฒ่าและสวนสมุนไพร | ✅ | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | 🟡 | ⬜ |
 | ถนนสู่ป่า | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ลานผลึกเวทมนตร์ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | ห้องผสมเวทมนตร์ | ✅ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -76,8 +76,8 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน: [assets/reference/godseed/references/04_player_cottage.webp](assets/reference/godseed/references/04_player_cottage.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
-- **elder_garden — บ้านผู้เฒ่าและสวนสมุนไพร**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้
-  - หลักฐาน: [assets/reference/godseed/references/05_elder_herb_garden.webp](assets/reference/godseed/references/05_elder_herb_garden.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json)
+- **elder_garden — บ้านผู้เฒ่าและสวนสมุนไพร**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready
+  - หลักฐาน: [assets/reference/godseed/references/05_elder_herb_garden.webp](assets/reference/godseed/references/05_elder_herb_garden.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/scripts/generate-garden-art.mjs](GODSEED/scripts/generate-garden-art.mjs) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
 - **forest_road — ถนนสู่ป่า**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้
@@ -201,8 +201,8 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 - [ ] 🟡 กำลังพัฒนา **VIS-005 — ยืน วิ่ง นั่ง และปฏิสัมพันธ์ตามวัตถุ**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-002
-  - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts)
-  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress
+  - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md)
+  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, full77กำลังตรวจ; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
@@ -222,8 +222,8 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 - [ ] 🟡 กำลังพัฒนา **VIS-008 — ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล**
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-008, GS-009 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-001
-  - ไฟล์: [GODSEED/src/scenes/stage-layout.ts](GODSEED/src/scenes/stage-layout.ts) · [GODSEED/scripts/generate-stage-art.mjs](GODSEED/scripts/generate-stage-art.mjs) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs)
-  - หลักฐาน/สถานะจริง: 6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ
+  - ไฟล์: [GODSEED/src/scenes/stage-layout.ts](GODSEED/src/scenes/stage-layout.ts) · [GODSEED/scripts/generate-stage-art.mjs](GODSEED/scripts/generate-stage-art.mjs) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md)
+  - หลักฐาน/สถานะจริง: 6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, full77กำลังตรวจ; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่
   - เกณฑ์เสร็จ: ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน
 
 - [ ] 🟡 กำลังพัฒนา **VIS-009 — ฉากมีมิติ แสงเงา และocclusionขั้นสุดท้าย**
@@ -289,8 +289,8 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 - [ ] 🟡 กำลังพัฒนา **STO-003 — NPC memories/ความสัมพันธ์ตลอดบท**
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-011, GS-039 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: STO-002
-  - ไฟล์: [GODSEED/src/systems/story.ts](GODSEED/src/systems/story.ts) · [GODSEED/src/engine/state.ts](GODSEED/src/engine/state.ts)
-  - หลักฐาน/สถานะจริง: มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ
+  - ไฟล์: [GODSEED/src/systems/story.ts](GODSEED/src/systems/story.ts) · [GODSEED/src/engine/state.ts](GODSEED/src/engine/state.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md)
+  - หลักฐาน/สถานะจริง: มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, full77กำลังตรวจ; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่
   - เกณฑ์เสร็จ: เหตุการณ์สำคัญถูกจำหลังreload trustมีทางเลือกและสะท้อนdialogue/worldทั้งบท
 
 - [ ] 🟡 กำลังพัฒนา **STO-004 — เหตุการณ์ตามสถานที่/เวลา/ทางเลือก**
