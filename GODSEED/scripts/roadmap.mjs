@@ -20,6 +20,12 @@ export function validate(data,fileExists=path=>existsSync(resolve(root,path))){
   if(!t.files?.length||t.files.some(p=>p.startsWith('/')||p.split('/').includes('..')||!fileExists(p)))fail('missing/unsafe source file '+t.id);
   if(t.status==='done'&&(!t.verification?.trim()||!t.evidenceFiles?.length||t.evidenceFiles.some(p=>!t.files.includes(p)&&!fileExists(p))))fail('DONE requires verification and existing evidence '+t.id);
  }
+ const parent=data.tasks.find(t=>t.id==='FND-005');
+ if(parent?.subtasks){
+  if(parent.subtasks.length!==14||parent.subtasks.some((t,i)=>t.id!==`SAVE-${String(i+1).padStart(3,'0')}`))fail('expected SAVE-001..014 under FND-005');
+  if(parent.status==='done'&&parent.subtasks.some(t=>t.status!=='done'))fail('manual save rollup cannot be DONE before its subtasks');
+  validate({...data,tasks:[...data.tasks.map(t=>{const copy={...t};delete copy.subtasks;return copy;}),...parent.subtasks]},fileExists);
+ }
  const byId=Object.fromEntries(data.tasks.map(t=>[t.id,t]));
  for(const t of data.tasks)for(const id of t.dependsOn)if(!ids.has(id)||id===t.id)fail('unknown/self dependency '+t.id+' -> '+id);
  const active=new Set(),visited=new Set();
@@ -54,6 +60,14 @@ export function render(data){
  '', 'ตรวจRoadmap/โค้ด/เซฟ/CI → เลือกงานตามpriority+dependency → ทำโค้ด/ภาพ → ทดสอบ → อัปเดตJSONพร้อมหลักฐาน → สร้างRoadmap/Task Boardใหม่ → เพิ่มDevelopment Log → ตรวจroadmap:check → commit/PR/deployตามสิทธิ์ → บันทึกผลเว็บจริง ห้ามแก้เปอร์เซ็นต์หรือไฟล์generatedด้วยมือ',
  '', 'บอร์ดเดิมเชื่อมผ่าน legacy GS IDs ด้านล่าง ไม่ใช้บอร์ดสองชุดเป็นตัวหารซ้ำ ประวัติเดิมคงในGitและTEST_REPORT; [TASK_BOARD](GODSEED/docs/TASK_BOARD.md)เป็นมุมมองย่อจากข้อมูลชุดเดียว',
  ];
+ const saveTasks=data.tasks.find(t=>t.id==='FND-005')?.subtasks;
+ if(saveTasks){const s=totals(saveTasks);lines.push('','## Manual File Save — งานย่อย FND-005 (Owner V2)','',
+  `Checklist เซฟ ${s.percent}% (${s.done}/${s.total}) แยกจากตัวหารหลัก งานSAVE14ข้ออยู่ภายใต้FND-005 ไม่นับซ้ำเป็น14milestones เปลี่ยนข้อกำหนดแล้วจึงตรวจสถานะFND-005ใหม่ ไม่ใช้ผลIndexedDBรุ่นเก่าแทนหลักฐานปัจจุบัน`,
+  '',...saveTasks.flatMap(t=>[`- [${t.status==='done'?'x':' '}] ${statuses[t.status]} **${t.id} — ${t.title}**`,
+   `  - ความสำคัญ: ${t.priority} · ต้องมี: ${t.dependsOn.join(', ')||'ไม่มี'} · ตรวจ: ${t.reviewed}`,
+   `  - ไฟล์: ${t.files.map(f=>`[${f}](${f})`).join(' · ')}`,
+   `  - หลักฐาน: ${t.evidence}${t.verification?' · '+t.verification:''}`,
+   `  - เกณฑ์เสร็จ: ${t.acceptance}`,'']));}
  lines.push('','## สถานที่ตามภาพอ้างอิง 10 แห่ง','',
   'ตารางย่อยนี้ขยาย VIS-008/009/010/014 ไม่เพิ่ม90งานในตัวหารหลัก ✅ในระบบย่อยหมายถึงผ่านเกณฑ์เฉพาะต้นแบบที่มีหลักฐาน ไม่ใช่finalHD ทั้งฉาก ต้องรอคอลัมน์ฉบับสมบูรณ์ ภาพอ้างอิงอย่างเดียวให้เครดิตเฉพาะคอลัมน์แรก Chromiumจำลองไม่ใช่Safari/อุปกรณ์จริง (QA-009)',
   '',`| สถานที่ | ${Object.values(locationAspects).join(' | ')} |`,'| --- |'+Object.keys(locationAspects).map(()=>' --- |').join(''),
@@ -71,7 +85,7 @@ export function render(data){
 }
 export function board(data){
  const s=totals(data.tasks);
- const candidates=['VIS-014','VIS-008','VIS-004','VIS-005','CMB-006','STO-001','MAG-006'];
+ const candidates=['FND-005','VIS-014','VIS-008','VIS-004','VIS-005','CMB-006','STO-001','MAG-006'];
  const regressions=data.tasks.filter(t=>t.status==='problem').sort((a,b)=>a.priority.localeCompare(b.priority)).map(t=>t.id);
  const next=[...new Set([...regressions,...candidates])].filter(id=>{const t=data.tasks.find(t=>t.id===id);return t&&t.status!=='done'&&t.status!=='blocked';}).slice(0,5);
  return ['# GODSEED Task Board','', 'Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ',

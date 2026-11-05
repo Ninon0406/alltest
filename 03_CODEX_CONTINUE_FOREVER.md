@@ -1,4 +1,13 @@
 # GODSEED — คำสั่งพัฒนาต่ออัตโนมัติแบบใช้ซ้ำสำหรับ Codex
+
+## Owner V2 — Manual File Save only (2026-11-05)
+
+ข้อกำหนดล่าสุดแทนที่คำสั่ง autosave / IndexedDB / automatic recovery ทั้งหมดในเอกสารประวัติด้านล่าง: เก็บ Game State เฉพาะ RAM บันทึกไฟล์ .godseed เมื่อผู้เล่นกดเอง โหลดผ่านการเลือกไฟล์และยืนยันเท่านั้น ห้ามอ่าน/เขียนความคืบหน้าผ่าน LocalStorage, SessionStorage, IndexedDB, Cookies, Cloud/Server หรือ Service Worker ห้ามอัปโหลดเซฟหรือสร้างไฟล์ลับหลังผู้เล่น รีเฟรชต้องกลับหน้าเริ่ม ไม่มีปุ่มเล่นต่อจากเซฟเบราว์เซอร์
+
+ไฟล์รุ่นเดิมโหลดและ migrate ใน RAM ได้เมื่อผู้เล่นเลือกเอง ไม่อ่านหรือลบฐานข้อมูลเบราว์เซอร์เก่าโดยอัตโนมัติ ใช้ checkpoint ที่เสถียร (story choice / battle turn) ปิดปุ่มระหว่าง animation/transition ตรวจ extension/size/version/checksum/reference และแสดง summary ก่อนยืนยัน เตือนก่อนเริ่มใหม่/ออกด้วยsave/continue/discard และ native beforeunloadเมื่อทำได้ ไม่อ้างว่าOSเก็บสำเร็จจากการเริ่มdownload
+
+สถานะ SAVE-001..SAVE-014 อยู่ใต้FND-005ในRoadmap SSOT ไม่เพิ่มตัวหารหลักซ้ำ Runtime gate: `npm --prefix GODSEED run validate:manual-save` พร้อมbrowser audit/no-upload/empty-reload/round-trip tests ตามข้อกำหนดใหม่ หลักฐานIndexedDBรุ่นก่อนเป็นประวัติ ไม่ใช่การรับรองระบบปัจจุบัน
+
 ## CONTINUE / RECOVER / POLISH / EXPAND — ใช้ส่งเป็นคำสั่งใหม่ได้ทุกครั้ง
 
 > **วิธีใช้:** ทุกครั้งที่ Codex หยุดทำงานเพราะหมดรอบงาน, ทำเสร็จตามที่สั่ง, พบข้อผิดพลาด หรือเจ้าของอยากให้พัฒนาต่อ ให้แนบหรือวาง **ข้อความไฟล์นี้ทั้งไฟล์** ในงาน Codex ถัดไปที่เชื่อมกับ GitHub repository เดิม โดยไม่ต้องคิดคำสั่งใหม่ ผู้ใช้ทำทุกอย่างผ่าน **โทรศัพท์** และทดสอบเกมจาก URL GitHub Pages บนโทรศัพท์/iPad/คอมพิวเตอร์

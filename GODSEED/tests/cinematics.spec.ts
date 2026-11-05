@@ -1,7 +1,8 @@
+import {exportedState,reloadFromFile} from './file-helpers';
 import {test,expect,type Page} from '@playwright/test';
 async function stable(page:Page){await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');}
 async function choice(page:Page,name:string){await page.getByRole('button',{name,exact:true}).tap();await stable(page);}
-async function snapshot(page:Page){return page.evaluate(()=>new Promise<{revision:number;choices:string[];inventory:Record<string,number>}>(resolve=>{const r=indexedDB.open('godseed-saves',1);r.onsuccess=()=>{const db=r.result,tx=db.transaction('slots','readonly'),g=tx.objectStore('slots').get('current');g.onsuccess=()=>resolve(g.result);tx.oncomplete=()=>db.close();};}));}
+const snapshot=exportedState;
 test.use({hasTouch:true});
 for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`authored approach, seated rest and skip ${width}x${height}`,async({page})=>{
  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'no-preference'});
@@ -22,6 +23,6 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`a
  await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).tap();await stable(page);
  const after=await snapshot(page);expect(after.revision).toBe(before.revision+1);expect(after.choices.filter(id=>id==='CH0202')).toHaveLength(1);
  await expect(canvas).toHaveAttribute('data-stage','workshop');await expect(canvas).toHaveAttribute('data-path-phase','idle');
- await page.reload();await choice(page,'เล่นต่อจากความทรงจำ');expect((await snapshot(page)).revision).toBe(after.revision);
+ await reloadFromFile(page);expect((await snapshot(page)).revision).toBe(after.revision);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });

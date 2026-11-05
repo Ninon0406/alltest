@@ -1,8 +1,9 @@
+import {exportedState,reloadFromFile} from './file-helpers';
 import {test,expect,type Page} from '@playwright/test';
 test.use({hasTouch:true});
 const stable=async(page:Page)=>expect(page.locator('#content')).toHaveAttribute('aria-busy','false',{timeout:12_000});
 const tap=async(page:Page,name:string)=>{await page.getByRole('button',{name,exact:true}).tap();await stable(page);};
-const snapshot=async(page:Page)=>page.evaluate(()=>new Promise<{revision:number;flags:Record<string,boolean>;trust:Record<string,number>}>(resolve=>{const r=indexedDB.open('godseed-saves',1);r.onsuccess=()=>{const db=r.result,tx=db.transaction('slots','readonly'),g=tx.objectStore('slots').get('current');g.onsuccess=()=>resolve(g.result);tx.oncomplete=()=>db.close();};}));
+const snapshot=exportedState;
 for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`living tree, persistent seat and collision-aware fountain ${width}`,async({page})=>{
  test.setTimeout(80_000);await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'no-preference'});
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
@@ -17,23 +18,23 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`l
  const saved=await snapshot(page);expect(saved.revision).toBe(before.revision+1);expect(saved.flags.rest_under_tree).toBe(true);expect(saved.trust.PIP).toBe(1);
  await page.screenshot({path:`test-results/tree-rest-${width}.png`,fullPage:true});
  await tap(page,'ลดการเคลื่อนไหว');const tick=await canvas.getAttribute('data-ambient-tick');await page.waitForTimeout(250);await expect(canvas).toHaveAttribute('data-ambient-tick',tick!);await expect(canvas).toHaveAttribute('data-player-action','rest');
- await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');await expect(canvas).toHaveAttribute('data-player-action','rest');expect((await snapshot(page)).revision).toBe(saved.revision);
+ await reloadFromFile(page);await expect(canvas).toHaveAttribute('data-player-action','rest');expect((await snapshot(page)).revision).toBe(saved.revision);
  await tap(page,'ลดการเคลื่อนไหว');await tap(page,'นั่งพักใต้ต้นเมล็ด');expect((await snapshot(page)).trust.PIP).toBe(1);
  for(const name of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน'])await tap(page,name);
  await expect(canvas).toHaveAttribute('data-location','village_center');await tap(page,'ลดการเคลื่อนไหว');await tap(page,'ไปหาลูมิที่บ่อน้ำ');
  await expect(canvas).toHaveAttribute('data-target-anchor','fountain_front');await expect(canvas).toHaveAttribute('data-idle-animation','hero-idle-north');
  const anchor=JSON.parse((await canvas.getAttribute('data-player-anchor'))!);expect(anchor).toMatchObject({x:254,y:211,feetY:231});
  await page.screenshot({path:`test-results/village-fountain-${width}.png`,fullPage:true});
- await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');await expect(canvas).toHaveAttribute('data-idle-animation','hero-idle-north');
+ await reloadFromFile(page);await expect(canvas).toHaveAttribute('data-idle-animation','hero-idle-north');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
 
 test('a continued hub save visits and leaves the tree without replacing the run',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','ready');
  for(const name of ['เริ่มการเดินทาง','ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน'])await tap(page,name);
- const before=await snapshot(page);await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');await page.locator('.other-routes summary').tap();
+ const before=await snapshot(page);await reloadFromFile(page);await page.locator('.other-routes summary').tap();
  for(const name of ['แวะใต้ต้นเมล็ด','นั่งพักใต้ต้นเมล็ด'])await tap(page,name);
- await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','rest');await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');
+ await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','rest');await reloadFromFile(page);
  await expect(page.getByRole('heading',{name:'ความทรงจำใต้ต้นเมล็ด',exact:true})).toBeVisible();await expect(page.locator('#canvas')).toHaveAttribute('data-player-action','rest');
  await tap(page,'เดินกลับจัตุรัส');await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว',exact:true})).toBeVisible();
  const after=await snapshot(page);expect(after.revision).toBe(before.revision+3);expect(after.flags.tree_memory).toBe(true);expect(after.flags.rest_under_tree).toBe(false);

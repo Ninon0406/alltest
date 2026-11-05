@@ -11,3 +11,6 @@
 .other-routes{margin-top:16px;border-top:1px solid #476756;padding-top:10px}.other-routes summary{min-height:48px;padding:10px;cursor:pointer;color:#f5dfa1}.story-hint{padding:10px 12px;border-left:3px solid #9dbb94;background:#25483b;font-size:14px}.choices>p{margin:0 4px;font-size:13px;color:#c4d8bf}
 
 .recipe-preview{padding:12px;border:1px solid #78967c;border-radius:10px;margin:14px 0}.recipe-preview h2{margin:0}.book-filters{display:grid;gap:8px}.book-filters label{margin:4px 0}[aria-label='เวทที่ค้นพบ'] button,[aria-label='ช่องเวทที่ติดตั้ง'] button{display:block;width:100%;margin:8px 0}
+
+#storage{max-width:1380px;margin:6px auto;padding:8px 12px;font-size:14px;line-height:1.65;overflow-wrap:anywhere}#storage[data-dirty="false"]{background:#224b40;border-color:#7b9b7c}#storage button{font-size:14px;min-height:44px;padding:4px 10px;margin-left:8px}.save-help{font-size:14px;overflow-wrap:anywhere}@media(max-width:900px){#storage{margin:6px 10px}}
+input[type="file"][hidden]{display:none!important}

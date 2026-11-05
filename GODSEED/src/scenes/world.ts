@@ -84,6 +84,7 @@ export class World extends Phaser.Scene {
   this.load.image('ancient-tree-v5',base+'art-v5/ancient-tree.png');
   this.load.spritesheet('fountain-v5',base+'art-v5/fountain.png',{frameWidth:96,frameHeight:112});
   this.load.spritesheet('leaves-v5',base+'art-v5/leaves.png',{frameWidth:16,frameHeight:16});
+  this.load.spritesheet('maren-v8',base+'art-v8/maren.png',{frameWidth:32,frameHeight:48});
   this.load.spritesheet('garden-bed-v7',base+'art-v7/garden-bed.png',{frameWidth:64,frameHeight:48});
   this.load.spritesheet('hero-water-v7',base+'art-v7/hero-water.png',{frameWidth:64,frameHeight:48});
   this.load.spritesheet('gathering-v6',base+'art-v6/gathering.png',{frameWidth:24,frameHeight:24});
@@ -94,6 +95,7 @@ export class World extends Phaser.Scene {
   this.load.spritesheet('training-v2',base+'art-v2/training.png',{frameWidth:32,frameHeight:48});
  }
  create(){
+  if(this.textures.exists('maren-v8'))for(const [name,frames] of Object.entries({idle:[0,1,2,3],talk:[4,5,6,7],hum:[4,5,6,7]}))this.anims.create({key:'maren-v8-'+name,frames:this.anims.generateFrameNumbers('maren-v8',{frames}),frameRate:4,repeat:-1});
   if(this.textures.exists('hero-water-v7'))this.anims.create({key:'hero-water',frames:this.anims.generateFrameNumbers('hero-water-v7',{frames:wateringFrames}),frameRate:5,repeat:0});
   if(this.textures.exists('gathering-v6'))for(let kind=0;kind<3;kind++)this.anims.create({key:'gathering-'+kind,frames:this.anims.generateFrameNumbers('gathering-v6',{start:kind*4,end:kind*4+3}),frameRate:3,repeat:-1});
   this.add.image(240,135,'sky').setDepth(-1200);this.stage=this.add.image(240,135,'village').setDepth(-1100);
@@ -189,6 +191,7 @@ export class World extends Phaser.Scene {
   if(this.textures.exists('gathering-v6'))for(const item of gatherable)this.props.push(this.add.sprite(item.x,item.y,'gathering-v6',item.kind*4).setOrigin(.5,1).setDepth(item.y-1).play('gathering-'+item.kind));
   if(this.leafFall&&this.textures.exists('leaves-v5'))for(let i=0;i<6;i++){const leaf=this.add.sprite(62+i*7,117,'leaves-v5').setDepth(810).play('falling-leaf');leaf.setData('anchor',{x:62+i*7,y:117,kind:'fall'});this.ambient.push(leaf);}
   this.npcKey=encounter?.actor||(state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip');
+  if(this.npcKey==='maren'&&this.textures.exists('maren-v8'))this.npcKey='maren-v8';
   if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
   this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
   this.npc.setTexture(this.npcKey);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
@@ -200,10 +203,10 @@ export class World extends Phaser.Scene {
   this.playerShadow.setVisible(!this.resting);
   if(this.resting){this.player.setPosition(79,193);this.actionDepth=239;this.playerShadow.setVisible(false);this.facing='south';}
   this.shown=state?{runId:state.runId,battle:!!state.battle}:undefined;
-  this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
+  this.npcHomeX=state?.battle?350:this.currentStage==='garden'?365:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
  }
  finishAction(){
-  this.generation++;this.actionDepth=undefined;
+  const support=this.actionDepth;this.generation++;this.actionDepth=undefined;
   if(!this.ready)return;
   this.tweens.killTweensOf(this.cameras.main);this.cameras.main.setZoom(this.motion?cameraFraming.zoom:1).setScroll(0,0);
   this.playerShadow.setVisible(true);
@@ -211,7 +214,7 @@ export class World extends Phaser.Scene {
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
   this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();
-  if(this.resting){this.actionDepth=239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.parallax.value=0;this.diagnostics();
+  if(this.resting){this.actionDepth=support??239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.parallax.value=0;this.diagnostics();
  }
  setReduced(reduced:boolean){this.motion=!reduced;if(this.ready){if(reduced)this.finishAction();this.cameras.main.setZoom(reduced?1:cameraFraming.zoom).setScroll(0,0);}this.diagnostics();}
  private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
@@ -293,10 +296,12 @@ export class World extends Phaser.Scene {
    if(token!==this.generation)return;
    this.gardenBed?.setFrame(2);this.writeMetric('gardenGrowth','bloom');this.writeMetric('gardenBeat','collecting');
   }
-  this.pose(cue==='walk'?'idle':poseFor(cue));
-  if(path?.seatDepth&&cue==='rest'){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
+  const listening=this.currentStage==='garden'&&command==='CH0602';
+  this.pose(listening?'rest':cue==='walk'?'idle':poseFor(cue));
+  if(listening){this.npcPose('hum');this.writeMetric('gardenBeat','listening');}
+  if(path?.seatDepth&&(cue==='rest'||listening)){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
-  if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
+  if(cue!=='walk')await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:listening?1800:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
   if(token!==this.generation)return;
   if(before?.battle&&next){
    this.phase='reaction';this.diagnostics();

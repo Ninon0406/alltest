@@ -1,11 +1,8 @@
+import {exportedState,reloadFromFile} from './file-helpers';
 import {test,expect,type Page} from '@playwright/test';
-import type {State} from '../src/engine/state';
 
 test.use({hasTouch:true});
-const saved=(page:Page)=>page.evaluate(()=>new Promise<State>((resolve,reject)=>{
- const request=indexedDB.open('godseed-saves',1);request.onerror=()=>reject(request.error);
- request.onsuccess=()=>{const db=request.result,tx=db.transaction('slots','readonly'),read=tx.objectStore('slots').get('current');read.onsuccess=()=>resolve(read.result);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};
-}));
+const saved=exportedState;
 async function settled(page:Page){await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await expect(page.locator('#skip')).toBeHidden();}
 async function tap(page:Page,name:string){
  const button=page.getByRole('button',{name,exact:true});
@@ -37,7 +34,7 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`a
  await expect(page.locator('#canvas')).toHaveAttribute('data-npc','wisp-v3');await photo(page,'stream-battle',width);
  await tap(page,'เสียงสะท้อนดาราเนิ่นนาน · MP 14');const checkpoint=await saved(page);
  expect(checkpoint.mp).toBe(26);expect(checkpoint.battle!.turn).toBe(2);if(checkpoint.battle!.log.includes('เวทคลาดเป้า'))expect(checkpoint.battle!.enemyHp).toBe(52);else expect(checkpoint.battle!.enemyHp).toBeLessThan(52);expect(checkpoint.known).toHaveLength(3);
- await page.reload();await tap(page,'เล่นต่อจากความทรงจำ');expect(await saved(page)).toEqual(checkpoint);
+ await reloadFromFile(page);expect(await saved(page)).toEqual(checkpoint);
  await tap(page,'ธาราวงแหวนชีวา · MP 14');const healed=await saved(page);expect(healed.battle!.enemyHp).toBe(checkpoint.battle!.enemyHp);expect(healed.battle!.log.join(' ')).toContain('ฟื้น HP');expect(healed.mp).toBe(checkpoint.mp-14);expect(healed.hp).toBeGreaterThan(checkpoint.hp-8);
  await tap(page,'วายุดารานำวิถี · MP 10');for(let turn=0;(await saved(page)).battle&&turn<16;turn++)await tap(page,'ประกายพื้นฐาน · MP 0');
  const won=await saved(page);expect(won.scene).toBe('S12_STREAM_RESULT');expect(won.rewarded).toEqual(['win:B02_STREAM_WISP']);expect(won.xp).toBe(24);expect(won.flags.training_won).not.toBe(true);

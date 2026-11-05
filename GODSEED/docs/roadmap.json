@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "3862287",
+  "baseCommit": "2126f88",
   "phases": [
     {
       "id": 1,
@@ -137,28 +137,450 @@
     {
       "id": "FND-005",
       "phase": 1,
-      "title": "IndexedDB autosave/recovery/import/export/migration",
-      "status": "done",
+      "title": "Manual File Save: RAM only / .godseed / import / validation",
+      "status": "in_progress",
       "priority": "P0",
       "dependsOn": [
         "FND-001"
       ],
       "files": [
-        "GODSEED/src/engine/save.ts",
-        "GODSEED/tests/save.test.ts",
-        "GODSEED/tests/storage.spec.ts"
+        "GODSEED/src/engine/manual-session.ts",
+        "GODSEED/src/engine/save-file.ts",
+        "GODSEED/src/ui/save-controls.ts",
+        "GODSEED/tests/storage.spec.ts",
+        "GODSEED/scripts/validate-manual-save.mjs"
       ],
-      "evidence": "save regression/storage/checksum/V1 roundtrip ผ่าน; TEST_REPORT Session2–6",
-      "acceptance": "transaction atomic เซฟเสียใช้backup quotaใช้memoryพร้อมexport เก็บV1ต้นฉบับ",
+      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า",
+      "acceptance": "RAM only; explicit .godseed export/import/preview/validation/migration; safe-boundary controls/dirty-exit guard; no persistent progress or save upload; mobilebrowser QA ตามSAVE tasks โดยhardwareแยกQA-009",
       "legacyIds": [
         "GS-005",
         "GS-035"
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
-      "evidenceFiles": [
-        "GODSEED/docs/TEST_REPORT.md"
+      "subtasks": [
+        {
+          "id": "SAVE-001",
+          "phase": 1,
+          "title": "ตรวจสอบระบบเซฟเดิม",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "ระบุทุกstartup/action/recoverywriteและแผนแทนที่ที่ไม่อ่านฐานเก่า",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-002",
+          "phase": 1,
+          "title": "ยกเลิก Auto Save",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "ทุกactionเปลี่ยนเฉพาะRAM ไม่สร้างไฟล์เอง",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-003",
+          "phase": 1,
+          "title": "ยกเลิก Persistent Browser Game State",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "ไม่มีprogressAPIในsrcและruntimeauditไม่มีwrites",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-004",
+          "phase": 1,
+          "title": "Export Save เป็น .godseed",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "สร้างSnapshotถูกต้องเมื่อผู้เล่นกด ชื่อวันที่.godseedและไม่อ้างว่าOSเก็บสำเร็จ",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-005",
+          "phase": 1,
+          "title": "Import Save พร้อมสรุปและยืนยัน",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "เลือกรายการไฟล์ ตรวจข้อมูล แสดงsummary ยืนยันก่อนแทนRAM cancel/failเก็บเกมเดิม",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-006",
+          "phase": 1,
+          "title": "Save File Schema ครบระบบที่มีจริง",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "เก็บStateจริงครบmetadata checkpoint/RNG/flags/trust/inventory/known/loadout/battle ไม่สร้างLevelหรือgearที่ยังไม่มี",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-007",
+          "phase": 1,
+          "title": "Save Version และ Migration ไฟล์เดิม",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "file2/state2และV1envelope/rawfile migrateในRAM ไม่อ่านDB",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-008",
+          "phase": 1,
+          "title": "ตรวจไฟล์/ขนาด/Checksum/Scene Item Spell NPC",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "rejectoversize/extension/version/checksum/references/prototypekeys",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-009",
+          "phase": 1,
+          "title": "UI บันทึกและโหลดด้วย Touch/Keyboard",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "โหลดและบันทึกเข้าถึงได้จากหน้าเริ่ม/เมนู safe-boundaryและเหตุผลdisabled",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-010",
+          "phase": 1,
+          "title": "เตือนก่อนทิ้ง RAM/BeforeUnload",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "สามตัวเลือกsave/continue/discardพร้อมnativebeforeunload ไม่มีhiddenwrite",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-011",
+          "phase": 1,
+          "title": "ทดสอบดาวน์โหลดบนมือถือ",
+          "status": "in_progress",
+          "priority": "P1",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "DownloadจริงในSafari/iOSและChrome/Android รวมคำแนะนำFiles/Downloads",
+          "evidence": "Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน"
+        },
+        {
+          "id": "SAVE-012",
+          "phase": 1,
+          "title": "ทดสอบเลือกไฟล์บนมือถือ",
+          "status": "in_progress",
+          "priority": "P1",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "เลือกไฟล์จริงในSafari/iOSและChrome/Android ไม่บังคับเมาส์",
+          "evidence": "Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน"
+        },
+        {
+          "id": "SAVE-013",
+          "phase": 1,
+          "title": "Save/Load Round Trip รวมต่อสู้และความทรงจำ",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "fullstateเท่ากันก่อน/หลังfile2/V1และdeterministicnextturn",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        },
+        {
+          "id": "SAVE-014",
+          "phase": 1,
+          "title": "ตรวจไม่มี Auto Save/Persistent State/Save Upload",
+          "status": "done",
+          "priority": "P0",
+          "scope": "v1",
+          "reviewed": "2026-11-05",
+          "dependsOn": [
+            "SAVE-001"
+          ],
+          "files": [
+            "GODSEED/src/engine/manual-session.ts",
+            "GODSEED/src/engine/save-file.ts",
+            "GODSEED/src/ui/save-controls.ts",
+            "GODSEED/tests/storage.spec.ts",
+            "GODSEED/scripts/validate-manual-save.mjs",
+            "GODSEED/tests/save.test.ts",
+            "GODSEED/docs/evidence/session15/README.md"
+          ],
+          "legacyIds": [
+            "GS-005"
+          ],
+          "acceptance": "sourcegate+browserhook+networkaudit ไม่progressstorageหรือupload ไม่มีcontinueหลังrefresh",
+          "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
+          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "evidenceFiles": [
+            "GODSEED/docs/TEST_REPORT.md",
+            "GODSEED/docs/evidence/session15/README.md"
+          ]
+        }
       ]
     },
     {
@@ -350,9 +772,11 @@
       ],
       "files": [
         "GODSEED/src/scenes/exploration-art.ts",
-        "GODSEED/scripts/generate-exploration-art.mjs"
+        "GODSEED/scripts/generate-exploration-art.mjs",
+        "GODSEED/tests/maren.spec.ts",
+        "GODSEED/scripts/generate-maren-art.mjs"
       ],
-      "evidence": "Eira/wisp/trainingมีoriginalcycles; NPCเก่ายังsharedbase",
+      "evidence": "Eira/wisp/trainingมีoriginalcycles; NPCเก่ายังsharedbase; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่",
       "acceptance": "Lumi/Maren/Koro/Pip/Eira/Sentinelมีidle/walk/talk/emote/handและspecialตามspec",
       "legacyIds": [
         "GS-007",
@@ -377,9 +801,11 @@
         "GODSEED/tests/gathering.spec.ts",
         "GODSEED/src/scenes/garden-staging.ts",
         "GODSEED/tests/garden.spec.ts",
-        "GODSEED/docs/evidence/session14/README.md"
+        "GODSEED/docs/evidence/session14/README.md",
+        "GODSEED/tests/maren.spec.ts",
+        "GODSEED/scripts/generate-maren-art.mjs"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
@@ -629,9 +1055,11 @@
         "GODSEED/src/engine/state.ts",
         "GODSEED/src/scenes/garden-staging.ts",
         "GODSEED/tests/garden.spec.ts",
-        "GODSEED/docs/evidence/session14/README.md"
+        "GODSEED/docs/evidence/session14/README.md",
+        "GODSEED/tests/maren.spec.ts",
+        "GODSEED/scripts/generate-maren-art.mjs"
       ],
-      "evidence": "มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่",
+      "evidence": "มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่",
       "acceptance": "เหตุการณ์สำคัญถูกจำหลังreload trustมีทางเลือกและสะท้อนdialogue/worldทั้งบท",
       "legacyIds": [
         "GS-011",

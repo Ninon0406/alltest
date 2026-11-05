@@ -30,7 +30,7 @@ export const stageLayouts:Record<StageId,StageLayout>={
   ambient:[{kind:'cloud',x:124,y:33},{kind:'cloud',x:281,y:47},{kind:'leaf',x:30,y:145},{kind:'leaf',x:435,y:151},{kind:'glow',x:254,y:159}],
  },
  garden:{
-  props:[{frame:1,x:302,y:192},{frame:3,x:96,y:205},{frame:4,x:128,y:175},{frame:5,x:46,y:219},{frame:5,x:430,y:212}],
+  props:[{frame:1,x:312,y:242},{frame:3,x:96,y:205},{frame:4,x:128,y:175},{frame:5,x:46,y:219},{frame:5,x:430,y:212}],
   ambient:[{kind:'cloud',x:155,y:38},{kind:'leaf',x:58,y:169},{kind:'leaf',x:415,y:165},{kind:'glow',x:251,y:112},{kind:'glow',x:367,y:173}],
  },
  workshop:{

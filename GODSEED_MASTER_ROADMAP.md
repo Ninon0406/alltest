@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `3862287` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `2126f88` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -10,17 +10,17 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 ทุกงานน้ำหนัก1: เปอร์เซ็นต์ = จำนวน✅ ÷ จำนวนงาน ×100; 🟡/⬜/🔴/⛔ได้0 ไม่มีpartialเครดิต ตัวเลขเป็นความคืบหน้าของChecklistเท่านั้น ไม่ใช่เวลาที่เหลือ ปริมาณแรงงาน ความสนุก หรือคุณภาพภาพของเกมทั้งหมด งานขนาดต่างกันและรายการอาจเพิ่มได้ ต้องอ่านพร้อมจำนวนงานและlog
 
-**ความคืบหน้ารวม Checklist: 27.6% (21/76)** · เฉพาะขอบเขต1.0: 28.8% (21/73)
+**ความคืบหน้ารวม Checklist: 26.3% (20/76)** · เฉพาะขอบเขต1.0: 27.4% (20/73)
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 76 | 21 | 38 | 16 | 0 | 1 | 27.6% |
-| 1.0 | 73 | 21 | 38 | 13 | 0 | 1 | 28.8% |
+| ทั้งโครงการ | 76 | 20 | 39 | 16 | 0 | 1 | 26.3% |
+| 1.0 | 73 | 20 | 39 | 13 | 0 | 1 | 27.4% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [1 — โครงสร้างพื้นฐาน](#phase-1) | 7/9 | 2 | 0 | 0 | 0 | 77.8% |
+| [1 — โครงสร้างพื้นฐาน](#phase-1) | 6/9 | 3 | 0 | 0 | 0 | 66.7% |
 | [2 — งานภาพ Pixel Art HD](#phase-2) | 6/14 | 8 | 0 | 0 | 0 | 42.9% |
 | [3 — ระบบเนื้อเรื่อง](#phase-3) | 1/8 | 5 | 2 | 0 | 0 | 12.5% |
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
@@ -42,6 +42,95 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 ตรวจRoadmap/โค้ด/เซฟ/CI → เลือกงานตามpriority+dependency → ทำโค้ด/ภาพ → ทดสอบ → อัปเดตJSONพร้อมหลักฐาน → สร้างRoadmap/Task Boardใหม่ → เพิ่มDevelopment Log → ตรวจroadmap:check → commit/PR/deployตามสิทธิ์ → บันทึกผลเว็บจริง ห้ามแก้เปอร์เซ็นต์หรือไฟล์generatedด้วยมือ
 
 บอร์ดเดิมเชื่อมผ่าน legacy GS IDs ด้านล่าง ไม่ใช้บอร์ดสองชุดเป็นตัวหารซ้ำ ประวัติเดิมคงในGitและTEST_REPORT; [TASK_BOARD](GODSEED/docs/TASK_BOARD.md)เป็นมุมมองย่อจากข้อมูลชุดเดียว
+
+## Manual File Save — งานย่อย FND-005 (Owner V2)
+
+Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลัก งานSAVE14ข้ออยู่ภายใต้FND-005 ไม่นับซ้ำเป็น14milestones เปลี่ยนข้อกำหนดแล้วจึงตรวจสถานะFND-005ใหม่ ไม่ใช้ผลIndexedDBรุ่นเก่าแทนหลักฐานปัจจุบัน
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-001 — ตรวจสอบระบบเซฟเดิม**
+  - ความสำคัญ: P0 · ต้องมี: ไม่มี · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: ระบุทุกstartup/action/recoverywriteและแผนแทนที่ที่ไม่อ่านฐานเก่า
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-002 — ยกเลิก Auto Save**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: ทุกactionเปลี่ยนเฉพาะRAM ไม่สร้างไฟล์เอง
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-003 — ยกเลิก Persistent Browser Game State**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: ไม่มีprogressAPIในsrcและruntimeauditไม่มีwrites
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-004 — Export Save เป็น .godseed**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: สร้างSnapshotถูกต้องเมื่อผู้เล่นกด ชื่อวันที่.godseedและไม่อ้างว่าOSเก็บสำเร็จ
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-005 — Import Save พร้อมสรุปและยืนยัน**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: เลือกรายการไฟล์ ตรวจข้อมูล แสดงsummary ยืนยันก่อนแทนRAM cancel/failเก็บเกมเดิม
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-006 — Save File Schema ครบระบบที่มีจริง**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: เก็บStateจริงครบmetadata checkpoint/RNG/flags/trust/inventory/known/loadout/battle ไม่สร้างLevelหรือgearที่ยังไม่มี
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-007 — Save Version และ Migration ไฟล์เดิม**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: file2/state2และV1envelope/rawfile migrateในRAM ไม่อ่านDB
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-008 — ตรวจไฟล์/ขนาด/Checksum/Scene Item Spell NPC**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: rejectoversize/extension/version/checksum/references/prototypekeys
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-009 — UI บันทึกและโหลดด้วย Touch/Keyboard**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: โหลดและบันทึกเข้าถึงได้จากหน้าเริ่ม/เมนู safe-boundaryและเหตุผลdisabled
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-010 — เตือนก่อนทิ้ง RAM/BeforeUnload**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: สามตัวเลือกsave/continue/discardพร้อมnativebeforeunload ไม่มีhiddenwrite
+
+- [ ] 🟡 กำลังพัฒนา **SAVE-011 — ทดสอบดาวน์โหลดบนมือถือ**
+  - ความสำคัญ: P1 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน
+  - เกณฑ์เสร็จ: DownloadจริงในSafari/iOSและChrome/Android รวมคำแนะนำFiles/Downloads
+
+- [ ] 🟡 กำลังพัฒนา **SAVE-012 — ทดสอบเลือกไฟล์บนมือถือ**
+  - ความสำคัญ: P1 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน
+  - เกณฑ์เสร็จ: เลือกไฟล์จริงในSafari/iOSและChrome/Android ไม่บังคับเมาส์
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-013 — Save/Load Round Trip รวมต่อสู้และความทรงจำ**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: fullstateเท่ากันก่อน/หลังfile2/V1และdeterministicnextturn
+
+- [x] ✅ เสร็จสมบูรณ์ **SAVE-014 — ตรวจไม่มี Auto Save/Persistent State/Save Upload**
+  - ความสำคัญ: P0 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
+  - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15
+  - เกณฑ์เสร็จ: sourcegate+browserhook+networkaudit ไม่progressstorageหรือupload ไม่มีcontinueหลังrefresh
+
 
 ## สถานที่ตามภาพอ้างอิง 10 แห่ง
 
@@ -131,12 +220,12 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: มีPNG fallbackและwarning ทดสอบabortedPNG; ยังpreloadทั้งหมดไม่มีretryครบ
   - เกณฑ์เสร็จ: โหลดผิดพลาดกู้ได้ไม่deadlock วัดbudget cold/warm และแบ่งโหลดอย่างปลอดภัย
 
-- [x] ✅ เสร็จสมบูรณ์ **FND-005 — IndexedDB autosave/recovery/import/export/migration**
+- [ ] 🟡 กำลังพัฒนา **FND-005 — Manual File Save: RAM only / .godseed / import / validation**
   - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-005, GS-035 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-001
-  - ไฟล์: [GODSEED/src/engine/save.ts](GODSEED/src/engine/save.ts) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts)
-  - หลักฐาน/สถานะจริง: save regression/storage/checksum/V1 roundtrip ผ่าน; TEST_REPORT Session2–6 · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
-  - เกณฑ์เสร็จ: transaction atomic เซฟเสียใช้backup quotaใช้memoryพร้อมexport เก็บV1ต้นฉบับ
+  - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs)
+  - หลักฐาน/สถานะจริง: Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า
+  - เกณฑ์เสร็จ: RAM only; explicit .godseed export/import/preview/validation/migration; safe-boundary controls/dirty-exit guard; no persistent progress or save upload; mobilebrowser QA ตามSAVE tasks โดยhardwareแยกQA-009
 
 - [ ] 🟡 กำลังพัฒนา **FND-006 — Responsive phone/iPad/desktop touch/keyboard**
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-006, GS-031 · ตรวจล่าสุด: 2026-11-05
@@ -194,15 +283,15 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 - [ ] 🟡 กำลังพัฒนา **VIS-004 — NPC/ศัตรู silhouette และท่าพิเศษครบ**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-001
-  - ไฟล์: [GODSEED/src/scenes/exploration-art.ts](GODSEED/src/scenes/exploration-art.ts) · [GODSEED/scripts/generate-exploration-art.mjs](GODSEED/scripts/generate-exploration-art.mjs)
-  - หลักฐาน/สถานะจริง: Eira/wisp/trainingมีoriginalcycles; NPCเก่ายังsharedbase
+  - ไฟล์: [GODSEED/src/scenes/exploration-art.ts](GODSEED/src/scenes/exploration-art.ts) · [GODSEED/scripts/generate-exploration-art.mjs](GODSEED/scripts/generate-exploration-art.mjs) · [GODSEED/tests/maren.spec.ts](GODSEED/tests/maren.spec.ts) · [GODSEED/scripts/generate-maren-art.mjs](GODSEED/scripts/generate-maren-art.mjs)
+  - หลักฐาน/สถานะจริง: Eira/wisp/trainingมีoriginalcycles; NPCเก่ายังsharedbase; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่
   - เกณฑ์เสร็จ: Lumi/Maren/Koro/Pip/Eira/Sentinelมีidle/walk/talk/emote/handและspecialตามspec
 
 - [ ] 🟡 กำลังพัฒนา **VIS-005 — ยืน วิ่ง นั่ง และปฏิสัมพันธ์ตามวัตถุ**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-002
-  - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md)
-  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่
+  - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md) · [GODSEED/tests/maren.spec.ts](GODSEED/tests/maren.spec.ts) · [GODSEED/scripts/generate-maren-art.mjs](GODSEED/scripts/generate-maren-art.mjs)
+  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
@@ -289,8 +378,8 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
 - [ ] 🟡 กำลังพัฒนา **STO-003 — NPC memories/ความสัมพันธ์ตลอดบท**
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-011, GS-039 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: STO-002
-  - ไฟล์: [GODSEED/src/systems/story.ts](GODSEED/src/systems/story.ts) · [GODSEED/src/engine/state.ts](GODSEED/src/engine/state.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md)
-  - หลักฐาน/สถานะจริง: มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่
+  - ไฟล์: [GODSEED/src/systems/story.ts](GODSEED/src/systems/story.ts) · [GODSEED/src/engine/state.ts](GODSEED/src/engine/state.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md) · [GODSEED/tests/maren.spec.ts](GODSEED/tests/maren.spec.ts) · [GODSEED/scripts/generate-maren-art.mjs](GODSEED/scripts/generate-maren-art.mjs)
+  - หลักฐาน/สถานะจริง: มีtrustและEira/Marenrememberedlines; ยังไม่ครบทุกNPC/ตอนจบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่
   - เกณฑ์เสร็จ: เหตุการณ์สำคัญถูกจำหลังreload trustมีทางเลือกและสะท้อนdialogue/worldทั้งบท
 
 - [ ] 🟡 กำลังพัฒนา **STO-004 — เหตุการณ์ตามสถานที่/เวลา/ทางเลือก**

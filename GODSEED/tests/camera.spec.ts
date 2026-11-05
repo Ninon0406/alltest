@@ -1,3 +1,4 @@
+import {reloadFromFile} from './file-helpers';
 import {test,expect} from '@playwright/test';
 test.use({hasTouch:true});
 for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`camera focus and reduced cancellation ${width}x${height}`,async({page})=>{
@@ -10,5 +11,5 @@ for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`c
  await page.locator('#canvas').screenshot({path:`test-results/camera-${width}.png`});
  await page.getByRole('button',{name:'ลดการเคลื่อนไหว',exact:true}).tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');
  const settled=JSON.parse((await canvas.getAttribute('data-camera-shot'))!);expect(settled.zoom).toBe(1);expect(settled.x).toBe(0);
- await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();await page.reload();await tap('เล่นต่อจากความทรงจำ');await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();expect(errors).toEqual([]);
+ await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();await reloadFromFile(page);await expect(page.getByRole('heading',{name:'เส้นทางสู่หมู่บ้าน',exact:true})).toBeVisible();expect(errors).toEqual([]);
 });

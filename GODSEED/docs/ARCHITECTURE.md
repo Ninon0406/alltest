@@ -1,4 +1,21 @@
-# GODSEED architecture — 0.6.2
+# GODSEED architecture — 0.7.0
+
+## Owner V2 — Manual File Save only (2026-11-05)
+
+ข้อกำหนดล่าสุดแทนที่คำสั่ง autosave / IndexedDB / automatic recovery ทั้งหมดในเอกสารประวัติด้านล่าง: เก็บ Game State เฉพาะ RAM บันทึกไฟล์ .godseed เมื่อผู้เล่นกดเอง โหลดผ่านการเลือกไฟล์และยืนยันเท่านั้น ห้ามอ่าน/เขียนความคืบหน้าผ่าน LocalStorage, SessionStorage, IndexedDB, Cookies, Cloud/Server หรือ Service Worker ห้ามอัปโหลดเซฟหรือสร้างไฟล์ลับหลังผู้เล่น รีเฟรชต้องกลับหน้าเริ่ม ไม่มีปุ่มเล่นต่อจากเซฟเบราว์เซอร์
+
+ไฟล์รุ่นเดิมโหลดและ migrate ใน RAM ได้เมื่อผู้เล่นเลือกเอง ไม่อ่านหรือลบฐานข้อมูลเบราว์เซอร์เก่าโดยอัตโนมัติ ใช้ checkpoint ที่เสถียร (story choice / battle turn) ปิดปุ่มระหว่าง animation/transition ตรวจ extension/size/version/checksum/reference และแสดง summary ก่อนยืนยัน เตือนก่อนเริ่มใหม่/ออกด้วยsave/continue/discard และ native beforeunloadเมื่อทำได้ ไม่อ้างว่าOSเก็บสำเร็จจากการเริ่มdownload
+
+สถานะ SAVE-001..SAVE-014 อยู่ใต้FND-005ในRoadmap SSOT ไม่เพิ่มตัวหารหลักซ้ำ Runtime gate: `npm --prefix GODSEED run validate:manual-save` พร้อมbrowser audit/no-upload/empty-reload/round-trip tests ตามข้อกำหนดใหม่ หลักฐานIndexedDBรุ่นก่อนเป็นประวัติ ไม่ใช่การรับรองระบบปัจจุบัน
+
+## Current file/RAM boundary
+
+`ManualSession` owns validated RAM snapshots and an in-memory generation counter. `act` still runs a pure transaction first, plays/skips the Director, then commits exactly once to RAM. Startup creates no state. No storage backend is imported. Import holds a validated pending snapshot until explicit confirmation; errors/cancel never replace current state. A generated export does not clear dirty until the player confirms keeping the file; subsequent progress invalidates that acknowledgement. Native beforeunload only warns, never serializes.
+
+`save-file.ts`: state schema2 preserved. File2 hashes canonical metadata+state, including gameVersion/exportedAt/chapter/checkpoint. File1 hashes its original raw state before migration. RawV1/V2JSON remains opt-in compatibility only. Imported scene/item/spell/choice/NPC/battle references are checked against current catalogs; own-property lookup rejects prototype keys. New levels/gear not implemented in gameplay are not fabricated in saves. Scene boundary and rest flags restore safe authored staging; active battles resume stable turn state and RNG.
+
+SAVE14subtasks live inside FND-005; renderer/validator checks stableIDs/evidence/parentrollup and never adds them to overalldenominator. Actualdevice acceptance remainsseparate. `tests/file-helpers.ts` observesprogress only by player-initiated downloads, never by storage or injectedgameState.
+
 
 ## รอบ 14 — 2026-11-05 UTC — รดน้ำแล้วโลกจดจำ (0.6.2)
 

@@ -177,3 +177,9 @@ it('garden buds, wet soil and blooms differ; held-can poses keep the original pl
  expect(new Set([0,1,2,3].map(i=>digest(frame(hero,i,64,48)))).size).toBeGreaterThanOrEqual(3);
  for(let i=0;i<4;i++){const p=frame(hero,i,64,48);expect(visible(p)).toBeGreaterThan(300);expect(visible(p.subarray(45*64*4))).toBe(0);expect(visible(p.subarray(44*64*4,45*64*4))).toBeGreaterThan(0);}
 });
+
+it('Maren has an original elder silhouette, grounded feet and a real humming cycle',()=>{
+ const maren=image('art-v8/maren.png');expect([maren.width,maren.height]).toEqual([128,96]);const hashes=[];
+ for(let i=0;i<8;i++){const p=frame(maren,i,32,48);expect(visible(p)).toBeGreaterThan(250);expect(visible(p.subarray(45*32*4))).toBe(0);hashes.push(digest(p));}
+ expect(new Set(hashes.slice(4)).size).toBe(4);expect(hashes[0]).not.toBe(digest(frame(image('maren.png'),0,32,48)));
+});

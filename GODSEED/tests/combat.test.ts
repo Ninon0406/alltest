@@ -270,7 +270,7 @@ describe('non-destructive version 1 save migration',()=>{
   const old=legacyFixture();
   const envelope={format:'GODSEED_SAVE',formatVersion:1,state:old,checksum:createHash('sha256').update(sortedJson(old)).digest('hex')};
   const loaded=await decodeSave(JSON.stringify(envelope));
-  expect(loaded.legacy).toBe(false);expect(loaded.state).toEqual(schema.parse(old));
+  expect(loaded.legacy).toBe(true);expect(loaded.state).toEqual(schema.parse(old));
   expect((await decodeSave(await encodeSave(loaded.state))).state).toEqual(loaded.state);
   expect((await decodeSave(JSON.stringify(old))).state).toEqual(loaded.state);
   envelope.state.hp=62;
