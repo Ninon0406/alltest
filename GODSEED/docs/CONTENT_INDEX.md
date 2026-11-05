@@ -31,3 +31,5 @@ Clue facts: forest_clue/stream_clue/archive_read/ruins_clue. The fourth remains 
 Session6/0.4.1: counts unchanged; no scenes, choices, NPCs, encounters, spells or artwork added. View-only recipe/book filters and equip/unequip UI actions are not story choices.
 
 Session7/0.4.2: inspector rerun; content counts unchanged17/56/5/3/234/0endings/6stages. Eight choice-specific cinematic paths and six travel lanes are presentation data, not new SceneIDs/ChoiceIDs/materials/spells. No PNG additions; same39 original PNGs (28versioned files checked by public verifier).
+
+Session8/0.5.0 inspector confirms unchanged17scenes/56choices/5NPC/3encounters/234legal/0endings/6stages,5spellsobservedthroughrealroutes. Player movement adds24originalframes/onePNG; total40PNGs,29versioned files audited by publicverifier. SameScene/ChoiceIDs/materials/rewards; authored movement paths are presentation data. State2/database1/envelope1 unchanged.

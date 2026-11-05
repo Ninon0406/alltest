@@ -106,3 +106,16 @@ Append-only ประวัติการส่งมอบ งานออก�
 - Source7c9ce03+95c3637, PR#7/merge7279cea; finaldocs/status-onlycommitไม่เปลี่ยนbundle ทุกรอบถัดไปเริ่มจากRoadmap/Logนี้ ไม่มีงานเบื้องหลังต่อหลังจบsession
 - ปัญหาจังหวะskipและbenchocclusionปิดหลังทดสอบจริง; ปัญหาเปิด0 ข้อจำกัด1QA-009/Safarihardware ยังไม่ใช่เกม1.0/ภาพfinalHD ไม่มีการเริ่มโปรเจกต์ใหม่/ลบระบบหรือเซฟเดิม
 - งานถัดไป: VIS-003→VIS-004→VIS-011 และVIS-008→CMB-006ตามdependency/คำสั่งให้เน้นภาพ+Cinematic; ต่อไปเชื่อมSTO-001/บอส/สามบทสรุป
+
+## Session8 —2026-11-05 UTC —0.5.0 four-view player
+
+- เป้าหมาย: VIS-003/GS-007/033 ต่อภาพผู้เล่นและVIS-006/GS-010integration; FND-009ใช้Roadmapเดิมต่อและปรับqueueให้ไม่เลือกงานDONEซ้ำ
+- ทำจริง: art-v4/hero-walk.pngต้นฉบับ24frames/fourviews+generator/manifest/purefacing/speed; Directorเลือกท่าตามwaypoint ไม่ใช่free-roam; รักษาoldactioncycles/skip/reduced/save และfallbackเมื่อPNGใหม่ขาด
+- ทำtrackerจริง: sixmetadata/count/queuechecksต่อCI ตัวเลขจาก74tasksเดิม ไม่เขียนเปอร์เซ็นต์มือ ไม่append03คำสั่งเดิมซ้ำ
+- ปัญหาที่พบ: queueเก่าแสดงVIS-003ซ้ำได้แม้DONE; แก้กรองสถานะและpromoteactualregressionsพร้อมnegativefixture test. แหล่งภาพเดิมยังเก็บไว้ทุกไฟล์
+- ยังไม่เสร็จ: NPCsilhouettes/สี่ทิศของnonwalkingposes/camera/ruins+festival/B03–05/endings/audio/mastery/physicalSafari/finalHD
+- ผลก่อนfull: baseline npmci/90unit/content2/buildPASS; gameunit94/roadmap6/type/lint/content2/buildPASS; focused17PASS2.4m รวมfourtouchsizes/fallback/skip/reduced/bench/defeat/reload
+- ภาพ: regenerate40PNGผ่าน old39SHAเท่าbase; new24framePNG19,427bytes; atlasและruntimephone-north/desktop-eastดูแล้ว เงา/เท้าตามตัว ยังเป็นoriginalproceduralprototype
+- สถานะ: VIS-003DONEหลังหลักฐานเฉพาะงาน; finalchecklist18/74=24.3%, v1 18/71=25.4%, problem0/blocked1QA-009 (ไม่ใช่hardwareacceptance)
+- Sourcebasebda8f51, branchfeat/godseed-directional-hero; source/tests/docsนี้ ผลfull50/CI/public/commitsบันทึกต่อในTEST_REPORTเมื่อรันเสร็จ
+- งานถัดไป5รายการ: VIS-004 NPC → VIS-011 camera → VIS-008 ruins/festivalart → CMB-006 B03/B04ตามdependency → STO-001canonส่วนที่ขาด ก่อนboss/endings

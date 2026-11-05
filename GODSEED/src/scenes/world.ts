@@ -6,6 +6,7 @@ import type {Spell} from '../systems/spells';
 import {playerAnimations,trainingAnimations} from './actor-art';
 import {STAGES,stageLayouts,stageFolder,stageFallback,type StageId} from './stage-layout';
 import {explorationAnimations} from './exploration-art';
+import {directionalWalk,facings,facingFor,walkDuration,type Facing} from './directional-art';
 import {cinematicPath} from './cinematic-paths';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 
@@ -30,6 +31,8 @@ export class World extends Phaser.Scene {
  private currentStage:StageId='village';
  private phase='idle';
  private playerAction='idle';
+ private facing:Facing='east';
+ private walkTrace:Facing[]=[];
  private lastCue='idle';
  private lastOutcome:Outcome='none';
  private assetErrors:string[]=[];
@@ -48,6 +51,8 @@ export class World extends Phaser.Scene {
   this.writeMetric('actionPhase',this.phase);this.writeMetric('actionSequence',this.generation);this.writeMetric('activeEffects',this.effects.size);
   this.writeMetric('motion',this.motion?'full':'reduced');this.writeMetric('visibility',document.hidden?'hidden':'visible');
   this.writeMetric('assetErrors',this.assetErrors.length);this.writeMetric('lastOutcome',this.lastOutcome);this.writeMetric('lastCue',this.lastCue);
+  this.writeMetric('walkFacing',this.facing);this.writeMetric('walkTrace',this.walkTrace.join(','));
+  if(this.player){this.writeMetric('playerTexture',this.player.texture.key);if(this.phase==='action'&&this.playerAction==='walk')this.writeMetric('walkSample',JSON.stringify({x:this.player.x,y:this.player.y,feetY:Math.round(this.player.y+20),shadowX:this.playerShadow.x,shadowY:this.playerShadow.y,depth:this.player.depth,animation:this.player.anims.currentAnim?.key,texture:this.player.texture.key}));}
   this.writeMetric('ambientTick',Math.floor(this.ambientTime/200));this.writeMetric('propCount',this.props.length);this.writeMetric('memoryProps',this.memoryProps);
   if(this.player){this.writeMetric('heroFrame',this.player.frame.name);if(this.phase==='idle')this.writeMetric('playerAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth}));}
  }
@@ -59,6 +64,7 @@ export class World extends Phaser.Scene {
   for(const name of STAGES)for(const layer of ['rear','ground','front'])this.load.image(`${name}-${layer}-v2`,`${base}${stageFolder(name)}/${name}-${layer}.png`);
   this.load.spritesheet('props-v2',base+'art-v2/props.png',{frameWidth:64,frameHeight:96});
   this.load.spritesheet('ambient-v2',base+'art-v2/ambient.png',{frameWidth:32,frameHeight:32});
+  this.load.spritesheet('hero-walk-v4',base+'art-v4/hero-walk.png',{frameWidth:32,frameHeight:48});
   this.load.spritesheet('hero-v2',base+'art-v2/player.png',{frameWidth:32,frameHeight:48});
   this.load.image('stream-mist-v3',base+'art-v3/stream-mist.png');
   this.load.spritesheet('water-v3',base+'art-v3/water.png',{frameWidth:32,frameHeight:32});
@@ -73,6 +79,7 @@ export class World extends Phaser.Scene {
   for(const name of ['player','pip','lumi','maren','koro','sprout'])if(this.textures.exists(name))this.anims.create({key:name+'-idle',frames:this.anims.generateFrameNumbers(name,{frames:[0,1,2,1]}),frameRate:5,repeat:-1});
   this.anims.create({key:'legacy-walk',frames:this.anims.generateFrameNumbers('player',{frames:[0,1,2,1,0,2]}),frameRate:10,repeat:-1});
   if(this.textures.exists('hero-v2'))for(const [name,config] of Object.entries(playerAnimations))this.anims.create({key:'hero-'+name,frames:this.anims.generateFrameNumbers('hero-v2',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});
+  if(this.textures.exists('hero-walk-v4'))for(const direction of facings){const config=directionalWalk[direction];this.anims.create({key:'hero-walk-'+direction,frames:this.anims.generateFrameNumbers('hero-walk-v4',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});}
   if(this.textures.exists('training-v2'))for(const [name,config] of Object.entries(trainingAnimations))this.anims.create({key:'training-'+name,frames:this.anims.generateFrameNumbers('training-v2',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});
   if(this.textures.exists('ambient-v2'))for(const [row,name] of ['cloud','leaf','fire','glow'].entries())this.anims.create({key:'ambient-'+name,frames:this.anims.generateFrameNumbers('ambient-v2',{start:row*4,end:row*4+3}),frameRate:4,repeat:-1});
   if(this.textures.exists('water-v3'))this.anims.create({key:'ambient-water',frames:this.anims.generateFrameNumbers('water-v3',{start:0,end:5}),frameRate:6,repeat:-1});
@@ -103,8 +110,14 @@ export class World extends Phaser.Scene {
  }
  private pose(name:string){
   this.playerAction=name;
-  if(this.player.texture.key==='hero-v2'&&this.anims.exists('hero-'+name)){this.player.play('hero-'+name);if(!this.motion)this.player.setFrame(playerAnimations[name as keyof typeof playerAnimations]?.frames[0]||0);}
-  else{if(name==='walk'||name==='run')this.player.play('legacy-walk');else if(name==='idle')this.player.play('player-idle');else this.player.stop().setFrame(name==='cast'?3:4);}
+  if(name==='walk'&&this.textures.exists('hero-walk-v4')){
+   this.player.setTexture('hero-walk-v4').setFlipX(false).play('hero-walk-'+this.facing);
+   if(!this.motion)this.player.setFrame(directionalWalk[this.facing].frames[0]);
+  }else{
+   const texture=this.textures.exists('hero-v2')?'hero-v2':'player';this.player.setTexture(texture).setFlipX(name==='walk'&&this.facing==='west');
+   if(texture==='hero-v2'&&this.anims.exists('hero-'+name)){this.player.play('hero-'+name);if(!this.motion)this.player.setFrame(playerAnimations[name as keyof typeof playerAnimations]?.frames[0]||0);}
+   else{if(name==='walk'||name==='run')this.player.play('legacy-walk');else if(name==='idle')this.player.play('player-idle');else this.player.stop().setFrame(name==='cast'?3:4);}
+  }
   this.diagnostics();
  }
  private npcPose(pose:string){const key=this.npcKey==='training-v2'?'training-'+pose:this.npcKey+'-'+pose;if(this.anims.exists(key))this.npc.play(key);}
@@ -184,7 +197,7 @@ export class World extends Phaser.Scene {
  }
  async action(cue:string,reduced:boolean,spell?:Spell,before?:State,next?:State,command?:string,target?:'scene'){
   if(!this.ready)return;
-  this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));if(cue==='talk'||cue==='pick')this.npcPose('talk');
+  this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.walkTrace=[];this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));if(cue==='talk'||cue==='pick')this.npcPose('talk');
   if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell,target);
   const path=cinematicPath(this.currentStage,cue,command);
   this.writeMetric('lastPath',path?.id||'none');this.writeMetric('pathPhase',path?'approach':'interaction');
@@ -193,9 +206,10 @@ export class World extends Phaser.Scene {
    const points=reduced?[path.points[path.points.length-1]]:path.points;
    for(const [index,point] of points.entries()){
     if(token!==this.generation)return;
-    this.pose('walk');this.player.setFlipX(point.x<this.player.x);
+    const duration=walkDuration(point.x-this.player.x,point.y-this.player.y);
+    this.facing=facingFor(point.x-this.player.x,point.y-this.player.y,this.facing);this.walkTrace.push(this.facing);this.pose('walk');
     if(!reduced)this.tweens.add({targets:this.parallax,value:point.x<154?-6:6,duration:240});
-    await this.beat(this.player,{x:point.x,y:point.y,duration:reduced?20:260,ease:'Linear'},token);
+    await this.beat(this.player,{x:point.x,y:point.y,duration:reduced?20:duration,ease:'Linear'},token);
     if(token!==this.generation)return;
     this.writeMetric('pathProgress',index+1);
    }

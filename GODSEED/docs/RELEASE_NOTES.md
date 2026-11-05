@@ -59,3 +59,9 @@ Eight-phase Master Roadmap/Task Board now derive from a shared audited dataset w
 0.4.2 published at https://ninon0406.github.io/alltest/ afterPR#7/7279cea; final45-case PRCI/local PASS, main:/ Pages41998655321SUCCESS and actualpublicgameplay/save/28PNG/JSverificationPASS. Full-main/post-ActionsreleaseproofinTEST_REPORT.
 
 Mainchecks/deploy41998656125SUCCESS withfull45browser suite; post-Actions public byte/renderer gatePASS. Evidence-onlystatusupdate finalizesRoadmap17/74(23.0%), withallgamecode/assetsunchanged.
+
+## 0.5.0 — ก้าวที่มีทิศทาง
+
+The player now walks with four original six-frame views (front/back/left/right), selected automatically for each authored path leg. Travel timing follows distance; shadows and depth follow the same foot anchor. Existing pickup/rest/cast/combat cycles and once-only saves remain. Village travel and archive book approach use clearer lanes. If the new PNG fails, existing art keeps the game playable with a notice.
+
+Roadmap/Task Board continue from the existing dataset; completed work leaves the next-task queue and recorded regressions take precedence. No new chapter scenes/spells or finalHD claim. Realhardware/Safari/NPC/camera/fullchapter work remains unfinished. Publication proof follows inTEST_REPORT after actual release.

@@ -4,7 +4,7 @@ export type CinematicPath={id:string;stage:StageId;points:readonly Point[];seatD
 // Sprite centers, foot anchor y+20. Authored lanes avoid solid prop bases;
 // these routes are presentation data, never free-roam or serialized progress.
 export const travelPaths:Record<StageId,readonly Point[]>={
- village:[{x:184,y:225},{x:230,y:219}],
+ village:[{x:154,y:237},{x:190,y:227},{x:230,y:219}],
  garden:[{x:185,y:228},{x:230,y:219}],
  workshop:[{x:190,y:230},{x:230,y:219}],
  forest:[{x:184,y:229},{x:230,y:219}],
@@ -17,7 +17,7 @@ export const choicePaths:Record<string,CinematicPath>={
  CH0601:{id:'garden-seeds',stage:'garden',points:[{x:179,y:227},{x:214,y:220}]},
  CH0603:{id:'garden-dew',stage:'garden',points:[{x:126,y:228},{x:98,y:218}]},
  CH0701:{id:'archive-manuscript',stage:'archive',points:[{x:187,y:217},{x:212,y:184}]},
- CH0703:{id:'archive-books',stage:'archive',points:[{x:123,y:226},{x:99,y:224}]},
+ CH0703:{id:'archive-books',stage:'archive',points:[{x:154,y:237},{x:123,y:233},{x:99,y:225}]},
  CH1401:{id:'archive-notes',stage:'archive',points:[{x:187,y:217},{x:212,y:184}]},
  CH1201:{id:'stream-bell',stage:'stream',points:[{x:195,y:231},{x:248,y:226}]},
 };
