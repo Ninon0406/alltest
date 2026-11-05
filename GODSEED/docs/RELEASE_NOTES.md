@@ -1,6 +1,6 @@
 # 0.6.0 — ต้นไม้ที่รอให้คุณนั่งฟัง
 
-Release candidate;ยังไม่ยืนยันเผยแพร่รุ่นนี้จนกว่าCI/public gateจบ
+เผยแพร่0.6.0แล้วที่ https://ninon0406.github.io/alltest/ · PR#10/merge1563ba4 · PR/mainCI full65และเว็บจริงflow/save/39PNG/JS/post-ActionsPASS · [หลักฐาน](https://github.com/Ninon0406/alltest/actions/runs/42045246025)
 
 เพิ่มฉากเริ่มใต้ต้นเมล็ดและหมู่บ้านต้นแบบตามชุดconceptของเจ้าของ โดยวาดlayer/propsใหม่แยกจากภาพอ้างอิง น้ำพุไหล กิ่งไม้บังตัวละครตามตำแหน่ง และเดินไปหาลูมิโดยอ้อมวัตถุ ท่ายืนเก็บทิศล่าสุด
 

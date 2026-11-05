@@ -15,3 +15,8 @@
 Art Direction จาก [ภาพ01](../../../../assets/reference/godseed/references/01_village_center.webp) และ [ภาพ03](../../../../assets/reference/godseed/references/03_ancient_tree.webp): สีอบอุ่น หลังคาฟ้า/แดง หินครีม น้ำสีหยก ดอกไม้ และเงาต้นไม้ ภาพเกมเป็น original procedural prototype ที่รายละเอียด/รูปทรง/แสงยังต่ำกว่า concept อย่างชัดเจน ไม่ใช่ final HD acceptance และไม่ได้ใช้ภาพ concept ทั้งใบเป็นพื้นหลัง
 
 Testsสร้างภาพครบ390×844,820×1180,1024×768,1366×768ใน test-results และ CI artifact ชุดที่เลือกเก็บในGitนี้เปิดตรวจจริงแล้ว Browserจำลองไม่ได้ยืนยัน Safari หรือประสิทธิภาพบนโทรศัพท์/iPadเครื่องจริง
+
+
+## เว็บที่เผยแพร่จริง
+
+[public-tree-390.png](public-tree-390.png) และ [public-fountain-390.png](public-fountain-390.png) จับจาก https://ninon0406.github.io/alltest/ หลังPR#10/merge1563ba4 เผยแพร่จริง ใช้ChromiumhasTouch390×844/ReducedMotion ไม่ใช่ภาพจำลองจากDesign; fullflow/save/checksum/39PNG/JSและpost-Actionsrendererผ่าน รายละเอียดในREPORT_TH/TEST_REPORT ยังไม่ใช่hardwareหรือfinalHDapproval

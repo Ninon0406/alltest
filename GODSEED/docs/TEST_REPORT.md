@@ -16,7 +16,7 @@
 | Historical local full | PASS63/63,14.9mที่44bde3c;ไม่รวม2casehandoffใหม่ |
 | Historical Preview full flow | PASSที่73d4a97,5สูตร/3battles/archive/stream/save;ไม่ใช้แทนpublic |
 | Latest Preview assets/renderer | PASS39versionedPNG/JS dd41d83f…bf96516/0conceptrequests/0errors |
-| Main CI / actual public0.6.0 | รอmerge/deployและตรวจจริง |
+| Main CI / actual public0.6.0 | SUCCESS full65 / publicflow + post-Actionsassets PASS; [run42045246025](https://github.com/Ninon0406/alltest/actions/runs/42045246025) |
 
 ทดสอบกดUIจริง อ่านIndexedDB/diagnosticsแบบread-only ไม่มีstate injection: เดินทุกทิศ/เงาตามเท้า, treepathfoot186อยู่หลังbranch201และมีpixeloverlapจริง, seat79/193 depth239, ใบไม้หลังtree_memory, ลดmotionหยุดambient, reloadคงท่านั่ง/revision, เข้าต้นไม้จากเซฟHubเดิมแล้วกลับได้, พักซ้ำไม่เพิ่มtrust/ไม่มีwalkbeatถ้าอยู่seatแล้ว, CORE_WINDเพิ่มถูกต้อง, fountain_front254/231และidle-north, importไฟล์ส่งออกS01จริงแล้วกลับentry154/219แทนตำแหน่งน้ำพุเดิม
 
@@ -29,6 +29,15 @@ MutationObserverตรวจว่าหลังนั่งแล้วไม�
 ข้อจำกัด: Chromiumจำลองไม่ใช่iOS/Android/iPadOS/Safariเครื่องจริง ไม่มีFPS/thermal/hardwarebenchmark ยังไม่ครบ15actions/NPC/234VFX/10scenes/fullchapter QA-009คงblocked
 
 Pages admin API PUTworkflowถูกปฏิเสธ403 ไม่ใช่automaticapprovalrejectionและไม่มีการเปลี่ยนSetting dist/Actionsartifactไม่มีreferences; legacyrepositoryarchiveอาจมีไฟล์ต้นฉบับที่เกมไม่โหลด การตั้งSourceเดียวทำผ่านSettings→Pages→Source→GitHub Actionsบนโทรศัพท์ได้
+
+
+### ผลเผยแพร่จริงรอบ12 — 0.6.0
+
+PR#10รวมเข้าmainที่1563ba4 เวลา2026-11-05 14:27:48UTC Source0dc5e59ผ่านPRCI42042658772 full65แล้ว [mainActions42045246025](https://github.com/Ninon0406/alltest/actions/runs/42045246025) full65/build/job127306317476/deploy/job127313366342 SUCCESS; deployจบ2026-11-05T14:40:21Z LegacyPages42045245307SUCCESSด้วย
+
+เว็บจริง https://ninon0406.github.io/alltest/ ผ่านการเล่นต้นไม้/น้ำพุ/ผสมWIND/FIRE/BLOOM/WATER/ECHO/ป่า/การฝึก/หอสมุด/ลำธาร/โลกจดจำ/กลับต้นไม้จากHub/โหลดท่านั่ง/ส่งออกchecksum/นำเข้าเซฟ ไม่พบconsole/page/HTTPerror JavaScriptตรงbuildSHA256 `dd41d83f0ac6a39d12a83c0d52442a6f99937633a9ae22eac784e42e1bf96516` และ39versionedPNGตรงทุกไฟล์ 0requestsไปdevelopmentreferences หลังActionsdeployตรวจassets/rendererซ้ำPASS ไม่ใช้ผลPreviewแทนเว็บจริง
+
+ภาพเว็บจริงอยู่ที่evidence/session12/public-tree-390.pngและpublic-fountain-390.png เป็นChromiumhasTouch390×844 ไม่ใช่โทรศัพท์เครื่องจริง ภาพยังต้นแบบและQA-009/hardwareยังblocked PagesSourceSettingsยังlegacyเพราะAPI403 ไม่ได้อ้างว่าเปลี่ยนเป็นActionsสำเร็จ
 
 ---
 

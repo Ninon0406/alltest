@@ -16,7 +16,7 @@ Checklist 27.6% (21/76) · v1 28.8% (21/73) · ✅21 🟡38 ⬜16 🔴0 ⛔1 น
 
 ปริมาณจากsource:18scenes/60choices/NPC5/3encounters/234legal/0endings/6Stage IDs/7location presentations มีต้นแบบตามreferenceสองแห่ง อีกแปดconceptยังไม่แปลง
 
-ผลจริง: npmci/type/lint/content2/game105/roadmap7/build/packagingPASS; localtarget16/16PASS3.9m; baselinefull63PASS14.9m; [latestPRCI full65SUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42042658772) ตรงsource0dc5e59 รูป50PNGสร้างซ้ำตรงทุกbyte Actualpublic0.6.0ยังรอmerge/deploy ไม่ใช้ผลPreviewแทนเว็บจริง
+ผลจริง: npmci/type/lint/content2/game105/roadmap7/build/packagingPASS; localtarget16/16PASS3.9m; baselinefull63PASS14.9m; [latestPRCI full65SUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42042658772) ตรงsource0dc5e59 รูป50PNGสร้างซ้ำตรงทุกbyte Actualpublic0.6.0ตรวจผ่านแล้วทั้งflow/save/39PNG/JS; ผลด้านล่างเป็นเว็บจริง ไม่ใช่Preview
 
 ปัญหาที่พบและแก้: groundทับผนังบ้าน, ทางdepthถูกแต่ไม่ซ้อนกิ่งจริง, idleหันเดิม/resetตำแหน่ง, ท่านั่งสะดุดตอนcommit, importเซฟเก่าคงตำแหน่งใหม่, พักซ้ำตัดขาม้านั่ง, helper5sสั้นกว่าเส้นทางจริง ทั้งหมดมีผลทดสอบหลังแก้ ไม่ลบ/skipกรณีที่ล้ม
 
@@ -25,6 +25,15 @@ Checklist 27.6% (21/76) · v1 28.8% (21/73) · ✅21 🟡38 ⬜16 🔴0 ⛔1 น
 Pages Source APIถูกปฏิเสธ403 จึงยังlegacy main:/ WorkflowActionsยังใช้ได้ การแยกreferenceออกArtifactรับรองเฉพาะdist/Actions; เกมไม่โหลดconcept เจ้าของเปลี่ยนSourceเป็นActionsจากโทรศัพท์ได้ตามREADME
 
 งานต่อ: VIS-008ปรับภาพสองฉาก/บ้านและประตู → Crystal/Workshop → VIS-004/005ท่าNPC/ผู้เล่น → Battle Glade/VFX → เนื้อเรื่องruinsตามdependencies หลักฐานภาพที่evidence/session12/README.md
+
+
+### ผลเผยแพร่จริงรอบ12 — 0.6.0
+
+PR#10รวมเข้าmainที่1563ba4 เวลา2026-11-05 14:27:48UTC Source0dc5e59ผ่านPRCI42042658772 full65แล้ว [mainActions42045246025](https://github.com/Ninon0406/alltest/actions/runs/42045246025) full65/build/job127306317476/deploy/job127313366342 SUCCESS; deployจบ2026-11-05T14:40:21Z LegacyPages42045245307SUCCESSด้วย
+
+เว็บจริง https://ninon0406.github.io/alltest/ ผ่านการเล่นต้นไม้/น้ำพุ/ผสมWIND/FIRE/BLOOM/WATER/ECHO/ป่า/การฝึก/หอสมุด/ลำธาร/โลกจดจำ/กลับต้นไม้จากHub/โหลดท่านั่ง/ส่งออกchecksum/นำเข้าเซฟ ไม่พบconsole/page/HTTPerror JavaScriptตรงbuildSHA256 `dd41d83f0ac6a39d12a83c0d52442a6f99937633a9ae22eac784e42e1bf96516` และ39versionedPNGตรงทุกไฟล์ 0requestsไปdevelopmentreferences หลังActionsdeployตรวจassets/rendererซ้ำPASS ไม่ใช้ผลPreviewแทนเว็บจริง
+
+ภาพเว็บจริงอยู่ที่evidence/session12/public-tree-390.pngและpublic-fountain-390.png เป็นChromiumhasTouch390×844 ไม่ใช่โทรศัพท์เครื่องจริง ภาพยังต้นแบบและQA-009/hardwareยังblocked PagesSourceSettingsยังlegacyเพราะAPI403 ไม่ได้อ้างว่าเปลี่ยนเป็นActionsสำเร็จ
 
 ---
 

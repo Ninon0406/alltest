@@ -192,3 +192,14 @@ Final pose handoff: คงท่าrestตั้งแต่ขึ้นseatผ�
 
 
 Session12 acceptance — source0dc5e59 / PR#10: CI42042658772SUCCESS full65, localtarget16/16PASS3.9m, unit105/content2/roadmap7/type/lint/build/referencepackingPASS. VIS-013/014DONEเฉพาะนำเข้า/ต้นแบบ2ฉากที่ทดสอบ QA-006คืนDONEหลังแก้failure; Checklist21/76=27.6%, v121/73=28.8%. Matrixยังคงlayers/movement/story/effects/readyของสองแห่งเป็นin_progressตามเกณฑ์ฉากสมบูรณ์ อีก8conceptยังไม่แปลง จึงไม่ใช้ต้นแบบเพิ่มสถานะfinalHD. Metadata/evidencecommitหลังนี้ไม่แก้runtime; public0.6.0รอผลmerge/main/deploy.
+
+
+### ผลเผยแพร่จริงรอบ12 — 0.6.0
+
+PR#10รวมเข้าmainที่1563ba4 เวลา2026-11-05 14:27:48UTC Source0dc5e59ผ่านPRCI42042658772 full65แล้ว [mainActions42045246025](https://github.com/Ninon0406/alltest/actions/runs/42045246025) full65/build/job127306317476/deploy/job127313366342 SUCCESS; deployจบ2026-11-05T14:40:21Z LegacyPages42045245307SUCCESSด้วย
+
+เว็บจริง https://ninon0406.github.io/alltest/ ผ่านการเล่นต้นไม้/น้ำพุ/ผสมWIND/FIRE/BLOOM/WATER/ECHO/ป่า/การฝึก/หอสมุด/ลำธาร/โลกจดจำ/กลับต้นไม้จากHub/โหลดท่านั่ง/ส่งออกchecksum/นำเข้าเซฟ ไม่พบconsole/page/HTTPerror JavaScriptตรงbuildSHA256 `dd41d83f0ac6a39d12a83c0d52442a6f99937633a9ae22eac784e42e1bf96516` และ39versionedPNGตรงทุกไฟล์ 0requestsไปdevelopmentreferences หลังActionsdeployตรวจassets/rendererซ้ำPASS ไม่ใช้ผลPreviewแทนเว็บจริง
+
+ภาพเว็บจริงอยู่ที่evidence/session12/public-tree-390.pngและpublic-fountain-390.png เป็นChromiumhasTouch390×844 ไม่ใช่โทรศัพท์เครื่องจริง ภาพยังต้นแบบและQA-009/hardwareยังblocked PagesSourceSettingsยังlegacyเพราะAPI403 ไม่ได้อ้างว่าเปลี่ยนเป็นActionsสำเร็จ
+
+รอบ12จบด้วยevidence-only checkpoint ไม่เปลี่ยนruntimeหลังsource0dc5e59/CI65 ภาพReferenceและงานค้างตรงRoadmap21/76=27.6% ไม่บังคับเจ้าของเริ่มใหม่หรือรันTerminal งานถัดไปVIS-008→VIS-004/005→CMB-006ตามdependencies

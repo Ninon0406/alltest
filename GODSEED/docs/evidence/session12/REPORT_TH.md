@@ -91,4 +91,8 @@ PagesSettings API403 ทำให้Sourceยังlegacy main:/ Actionsworkflow
 
 ## 10. สถานะพร้อมเล่น
 
-Buildผ่านและsourceผ่านCI65 **เว็บ0.6.0ยังรอmerge/deployและการทดสอบURLจริง** ก่อนหน้านี้เว็บ0.5.1เล่นได้ ผลเผยแพร่จริงจะเพิ่มหลังตรวจ [URLเกม](https://ninon0406.github.io/alltest/)
+**Buildผ่าน เผยแพร่0.6.0และตรวจเว็บจริงแล้ว**: [เล่นเกม](https://ninon0406.github.io/alltest/) · [PR#10](https://github.com/Ninon0406/alltest/pull/10) merged1563ba4 · [mainCI full65/build/deploySUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42045246025)
+
+ทดสอบเว็บจริงผ่านทั้งต้นไม้/น้ำพุ/กลับมาเยี่ยมจากHub/5สูตร/3การต่อสู้/หอสมุด/ลำธาร/โหลดเซฟ/ส่งออกchecksum/นำเข้า 39versionedPNGและJS `dd41d83f0ac6a39d12a83c0d52442a6f99937633a9ae22eac784e42e1bf96516` ตรงbuild 0Conceptrequests/0errors หลังActionsdeployตรวจassets/rendererซ้ำผ่าน ไม่ใช่การอ้างเผยแพร่จากPreview
+
+หลักฐานเว็บจริง: [ต้นไม้](public-tree-390.png) · [น้ำพุ](public-fountain-390.png) Browserเป็นChromiumจำลอง;ยังไม่รับรองSafariหรือฮาร์ดแวร์จริง โครงการยังไม่ใช่1.0/เนื้อเรื่องครบ/finalHD
