@@ -1,7 +1,8 @@
 import {test,expect} from '@playwright/test';
-for(const [width,height] of [[390,844],[1024,768],[1366,768]])test(`recipe preview, filtered book and empty loadout ${width}`,async({page})=>{
+test.use({hasTouch:true});
+for(const [width,height] of [[390,844],[820,1180],[1024,768],[1366,768]])test(`recipe preview, filtered book and empty loadout ${width}`,async({page})=>{
  test.setTimeout(60000);await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
- const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+ const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
  for(const label of ['เริ่มการเดินทาง','ลุกขึ้นสำรวจรอบตัว','เดินตามป้ายไม้ไปที่จัตุรัส','ไปโรงช่างของคุโร','ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี'])await click(label);
  await expect(page.getByRole('heading',{name:'เวทยังไม่ค้นพบ',exact:true})).toBeVisible();await page.getByLabel('แก่นธาตุ',{exact:true}).selectOption('FIRE');await page.getByLabel('ตัวปรับ',{exact:true}).selectOption('HEAL');await expect(page.getByRole('button',{name:'ผสมและค้นพบเวท',exact:true})).toBeDisabled();await expect(page.getByLabel('ตัวอย่างสูตร')).toContainText('เยียวยา');
  await page.getByLabel('แก่นธาตุ',{exact:true}).selectOption('WIND');await page.getByLabel('ตัวปรับ',{exact:true}).selectOption('SEEK');await click('ผสมและค้นพบเวท');

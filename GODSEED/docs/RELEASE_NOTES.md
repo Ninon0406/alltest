@@ -14,7 +14,7 @@ Skip/reduced-motion cancel and settle animation safely; final battle reactions a
 
 Still a first-slice prototype: no new chapter scenes/endings/recipes, final HD certification, NPC silhouette completion or audio. State2/database1/checksum envelope1 unchanged; existing saves remain compatible. Published and public-gameplay/art/save verified at https://ninon0406.github.io/alltest/ · PR#4 /255e79f. PR CI41950932784 and main:/ Pages41951619769 SUCCESS. Full proof in TEST_REPORT.
 
-# # Earlier releases
+## Earlier releases
 
 # 0.2.0 — ฝึกเวทกับคุโร
 
@@ -26,7 +26,7 @@ Still first slice: no complete chapter/festival/boss/three endings, final HD art
 
 Published and public-smoke verified at https://ninon0406.github.io/alltest/ · PR #3 /2eec3a1.
 
-# # Earlier releases
+## Earlier releases
 
 # 0.1.1 — ความทรงจำที่กลับมาได้
 
@@ -36,7 +36,7 @@ Game-state schema stays version 1. The first-slice story, combat, recipes and ar
 
 Published and public-smoke verified: https://ninon0406.github.io/alltest/ · PR #2 / 2c4ba8d.
 
-# # Earlier release
+## Earlier release
 
 # 0.1 — เมล็ดแรก
 

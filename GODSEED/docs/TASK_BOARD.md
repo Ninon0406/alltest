@@ -23,7 +23,7 @@
 | GS-035 | P1 | IN_PROGRESS | V1→V2 battle migration, original snapshot and checksum-before-conversion tested; future schemas/PWA pending |
 | GS-040 | P1 | IN_PROGRESS | Save UI input lock, aria-busy, keyboard/touch recovery; broader settings/accessibility work remains |
 
-# # Session4 acceptance — GS-007/008/009/010/033
+## Session4 acceptance — GS-007/008/009/010/033
 
 - Deliver original stage/actor source and reproducible PNGs: `generate:art`, independent27-file SHA audit PASS; legacy assets unchanged.
 - Layer/depth/runtime shape: `art.test.ts`4 tests; genuine village/garden/workshop/forest routes and practice spirit; screenshots on phone/iPad/desktop.
@@ -32,7 +32,7 @@
 
 Session4 batch acceptance PASS locally: art4, content2, totalunit63, browser30 + finalfocused9, production-preview asset/gameplay/save proof; final full31 PR CI41950932784 SUCCESS; PR#4 merged255e79f. GS-007/008/009/010/033 broader final-spec work remains IN_PROGRESS.
 
-# # Session5 — active batch GS-009/011/022/026/029
+## Session5 — active batch GS-009/011/022/026/029
 
 Four canonical scenes and15 choices; preserve all oldIDs. Acceptance: all9 archive branches unlock essential facts, stream known-element/OR gates are enforced, no-combat and battle routes, consume real ingredients for WATER/ECHO, single rewards/day limits, checkpoint recovery and oldState2 preservation, layered2new stages/original Eira+wisp, three viewport real routes plus missing-PNG fallback. Full final quality checks/public deployment pending.
 
@@ -45,3 +45,5 @@ Session5 delivered: main build/deploy41961020262 SUCCESS, full37-case CI and act
 ## Session6 — GS-015/017
 
 Acceptance: invalid/known recipes cannot spend items through UI; unknown names remain hidden; filters combine without changing state; unequip compacts/permits0 and preserves recipes/checksum saves; battle cannot change slots; actual empty-loadout training victory. Unit6 and three-device browser coverage. Full/remote proof pending.
+
+Session6 local: type/lint/content2/unit87/build PASS; full40 PASS; finaltouch4 PASS54.5s and production-preview full flow/checksum/import/hash PASS. CI41/public verification pending.

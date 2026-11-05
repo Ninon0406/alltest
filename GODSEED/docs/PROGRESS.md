@@ -13,7 +13,7 @@ Base09a5c19 · branch feat/godseed-alchemy-ui · GS-015/017 (M2 polish). Working
 
 ## ตรวจสอบ
 
-Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณี รวมทั้งหมด87/87 PASS; browserใหม่3ขนาด390/1024/1366 ทดสอบสูตรผิด/สูตรซ้ำ/filter/ถอด/reload/สู้ชนะด้วยชุดเวทว่างผ่าน ชุดเต็ม40และตรวจขั้นสุดท้ายกำลังรัน ผลจริงดูTEST_REPORT
+Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณี รวมทั้งหมด87/87 PASS; browserใหม่3ขนาด390/1024/1366 ทดสอบสูตรผิด/สูตรซ้ำ/filter/ถอด/reload/สู้ชนะด้วยชุดเวทว่างผ่าน ชุดเต็ม40/40 PASS7.9m; finaltouch4/4 PASS54.5s (เพิ่มiPadportrait820), finaltype/lint/buildและproduction-previewทั้งลูป/เซฟ/28PNGผ่าน รอCIชุด41กรณีและเผยแพร่ ผลจริงดูTEST_REPORT
 
 ## ปริมาณ / ความเข้ากันได้
 

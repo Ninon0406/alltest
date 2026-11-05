@@ -2,7 +2,7 @@
 
 Latest release0.4.0: **81/81 unit/integration/balance/art, content2/2, production build, final37-case PR/main browser CI and public gameplay/save/art verification PASS**. Main build/deploy succeeded. Earlier sections preserve historical releases; Session5 below contains current evidence and limitations.
 
-# # Verified local checks
+## Verified local checks
 
 - `npm ci --prefix GODSEED`: PASS (153 packages). Dependency warning: ESLint 9 vendor support status is deprecated; build/lint works with the locked stack, future dependency maintenance needed.
 - `npm run typecheck --prefix GODSEED`: PASS, strict TypeScript
@@ -13,17 +13,17 @@ Latest release0.4.0: **81/81 unit/integration/balance/art, content2/2, productio
 
 Checks cover 336 candidates / 234 unique legal recipes and per-modifier counts, finite definitions, transaction rejection without material loss, first discovery, starter no-farm, duplicate equipment rejection, opening-to-forest-to-hub path, deterministic combat, zero-MP fallback, defeat checkpoint, items and repeat-win reward idempotency. Unit tests explicitly use boundary fixtures for zero-MP/low-HP negatives; the golden browser flow uses real actions without injected gameplay state.
 
-# # Browser verification
+## Browser verification
 
 Initial production run: six portrait/tablet/desktop cases passed; 844×390 failed because Canvas overflow intercepted the inventory click. Fixed world overflow containment and desk stacking, with world canvas pointer events disabled because player input is DOM choices. Full final rerun recorded below when complete.
 
 Screenshots: `test-results/title-360.png`, `battle-360.png`, `battle-768.png`, `battle-1366.png`, `loop-<width>x<height>.png`; CI uploads these as `godseed-browser-evidence`. Local test-results is intentionally ignored by Git.
 
-# # Explicit limitations
+## Explicit limitations
 
 Not full chapter/boss/endings acceptance. Not 234 behavior/VFX golden render cases. No actual iOS/iPad Safari/Android/Windows/macOS hardware tests or measured 50/50 play duration. No audio. No imported old GODSEED versions exist; next schema needs migration tests. No claim public deployment before main merge. Save/export/import exists; automated browser coverage currently emphasizes stable-boundary autosave/reload rather than every failure/import path.
 
-# # Final rerun: PASS
+## Final rerun: PASS
 
 `npm run test:e2e --prefix GODSEED`: **9/9 passed in 2.0 minutes**, zero skipped. Seven real start→gather→craft→auto-equip→battle→win→clue→village→inventory→save/reload paths at 360×800, 390×844, 768×1024, 1024×768, 1366×768, 1920×1080, 844×390. Extra tests cover actual /alltest/ static subpath assets, keyboard Enter, skip, double click without duplicate feather, reload/continue, and touchscreen tap.
 
@@ -31,7 +31,7 @@ No pageerror or HTTP ≥400 observed in the seven loops or subpath case. Asserti
 
 Final strict typecheck and lint pass after browser test additions. Content 2/2 and unit/integration 14/14 passed. Source whitespace check passes. Compiled Phaser vendor license blocks contain upstream trailing spaces; `.gitattributes` excludes only generated bundle JS from whitespace checks. Public Pages/remote CI results are separate from these local checks.
 
-# # GitHub and public release proof
+## GitHub and public release proof
 
 - Installation `220e992` preserved in the PR ancestry and pushed; implementation `74b37c4`, source-check notes `dc7191b`; PR #1 merged into main at `ba3d3eabe40524e7c9570adec9c3d9c2113170cd`.
 - PR CI [41917050132](https://github.com/Ninon0406/alltest/actions/runs/41917050132) SUCCESS including browser checks and uploaded evidence.
@@ -67,7 +67,7 @@ After the additional retry archival fix: targeted browser storage **7/7 PASS in 
 
 Final title-form review: preserve the typed name across cancelled import and disable editing during startup/async work. Added the assertion to the legacy-import browser case. Latest typecheck/lint/content 2/unit+integration 28/build PASS; targeted storage suite **7/7 PASS in 23.9s** after this UI adjustment. No additional gameplay rule changes.
 
-# # 0.1.1 remote CI and public proof
+## 0.1.1 remote CI and public proof
 
 - Implementation `8a2b08d`, title-input refinement `927fb3e`, PR #2 MERGED at `2c4ba8d4397788ad7598f29d1e13285ffcc23fe6`.
 - [PR CI 41922783511](https://github.com/Ninon0406/alltest/actions/runs/41922783511) SUCCESS including all current browser tests and evidence upload. The earlier run on a superseded commit was cancelled to avoid redundant runner work; it is not counted as passing CI.
@@ -95,7 +95,7 @@ Base3ca8268 working tree clean and latest remote CI passed before work. All earl
 
 Remaining acceptance: full party/multi-enemy targeting, mastery/earned levels, boss resistance/phases, chapter endings, full234 VFX visual distinctness and final art. LIGHT dispels VEIL before hit resolution, including a miss; new enemy VEIL counts its current enemy phase and may appear in the log rather than a next-turn chip. Status interpretations are recorded in DECISIONS/BALANCE rather than silently changing the spec.
 
-# # 0.2.0 release proof
+## 0.2.0 release proof
 
 - Implementation bd6f705; [PR #3](https://github.com/Ninon0406/alltest/pull/3) MERGED at2eec3a1a2322c13b884cb00f70da63a045d7dccc.
 - [PR CI41928767310](https://github.com/Ninon0406/alltest/actions/runs/41928767310) SUCCESS including all current tests/browser cases and artifact upload.
@@ -134,7 +134,7 @@ Final short-landscape correction: focused **9/9 PASS in1.1m**, zero skipped: all
 Updated production verifier PASS against final preview: touch/start/forest/clue/reload/FIRE crafting/original practice/win/independent save checksum/import; all16 new PNGs hash-equal to sources; observed page/HTTP errors empty. JS SHA-256 `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d`. This is preview proof; public0.3.0 is not claimed until remote publish/verification. PR CI will run the entire final31-case suite.
 
 
-# # 0.3.0 remote release proof
+## 0.3.0 remote release proof
 
 - Implementation00462f9; [PR#4](https://github.com/Ninon0406/alltest/pull/4) MERGED at255e79f4fef2c36d02c03e192ccba47fd4400d1b. Merge tree equals the validated implementation tree.
 - [PR workflow41950932784](https://github.com/Ninon0406/alltest/actions/runs/41950932784) SUCCESS: locked install/test:all/stage/Chromium/full browser/evidence upload/Pages artifact upload all steps successful. Final browser suite contains31 cases and no skipped/fixme declarations. Remote run and step statuses were read through GitHub API; raw log archive download returned403, so no remote per-case timing is asserted.
@@ -200,3 +200,7 @@ Main workflow41961020262 final SUCCESS: build127027131255 completed all checks i
 Clean base09a5c19. Locked install then baseline type/lint/content2/unit81/build PASS (unchanged dependencies). New6 pure rule/view tests cover hidden unknown names, legality/error rejection without loss, known recipes without extra costs, combined discovered-only filters, compact/empty loadout with checksum round trip and invalid/battle rejection. Unit total87/87 PASS. New browser3/3 initially PASS at390/1024/1366: real WIND/BLOOM craft, incompatible/known disabled controls, filters, remove/reload and actual empty-loadout BASIC victory. Current full40-case run and final focused pass follow below. No gameplay fixtures injected in browser routes.
 
 No art/content count increase or save migration. Actual source inspector remains17/56/5NPC/3encounters/234/0endings/6stages. Hardware/Safari/FPS/fullchapter/finalHD remain pending.
+
+Local full40/40 PASS7.9m. Final UI feedback polish hides missing-material warnings for known recipes, disables ingredient selectors during transactions and explains compacting slots. Final strict typecheck/lint and focused3/3 PASS35.7s after rebuilding/staging; full production-preview verifier PASS old/new story/craft/three encounters/reload/checksum export/import,28PNG hashes, no observed errors. Final JS1,537.18kB/416.94kB gzip; CSS7.05kB. Additional real-touch/iPad portrait case expands final CI suite to41; final touch results follow. No art/recipe/save/content change.
+
+Final real-touch4/4 PASS54.5s at390×844,820×1180,1024×768,1366×768. All controls operate through taps/native selects; no pageerrors or horizontal overflow. Source/State2/DB1/envelope1 unchanged after these checks. Final CI runs41 cases. Preview JS SHA-2569c99776baba4c985e62661668e6ef9940a20b85d5f57591cb4fa77ed22e65730, all28versioned PNGs unchanged/matched.
