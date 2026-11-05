@@ -1,9 +1,11 @@
 import Phaser from 'phaser';
 import {scenes} from '../content/story';
+import {encounters} from '../content/encounters';
 import type {State} from '../engine/state';
 import type {Spell} from '../systems/spells';
 import {playerAnimations,trainingAnimations} from './actor-art';
-import {STAGES,stageLayouts,type StageId} from './stage-layout';
+import {STAGES,stageLayouts,stageFolder,stageFallback,type StageId} from './stage-layout';
+import {explorationAnimations} from './exploration-art';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 
 export class World extends Phaser.Scene {
@@ -32,6 +34,7 @@ export class World extends Phaser.Scene {
  private layered=false;
  private ambientTime=0;
  private memoryProps=0;
+ private mist?:Phaser.GameObjects.Image;
  private visibilityChanged=()=>this.diagnostics();
  ready=false;
  motion=true;
@@ -39,7 +42,7 @@ export class World extends Phaser.Scene {
  private writeMetric(key:string,value:string|number){const text=String(value);if(this.host.dataset[key]!==text)this.host.dataset[key]=text;}
  private diagnostics(){
   this.writeMetric('renderStatus',!this.ready?'loading':this.assetErrors.length?'degraded':'ready');this.writeMetric('stage',this.currentStage);
-  this.writeMetric('stageLayers',this.layered?3:1);this.writeMetric('npc',this.npcKey);this.writeMetric('playerAction',this.playerAction);
+  this.writeMetric('stageLayers',this.layered?3:1);this.writeMetric('streamMist',this.mist?.visible?'visible':'clear');this.writeMetric('npc',this.npcKey);this.writeMetric('playerAction',this.playerAction);
   this.writeMetric('actionPhase',this.phase);this.writeMetric('actionSequence',this.generation);this.writeMetric('activeEffects',this.effects.size);
   this.writeMetric('motion',this.motion?'full':'reduced');this.writeMetric('visibility',document.hidden?'hidden':'visible');
   this.writeMetric('assetErrors',this.assetErrors.length);this.writeMetric('lastOutcome',this.lastOutcome);this.writeMetric('lastCue',this.lastCue);
@@ -49,12 +52,15 @@ export class World extends Phaser.Scene {
  preload(){
   const base=import.meta.env.BASE_URL+'assets/';
   this.load.on('loaderror',(file:{key:string})=>{this.assetErrors.push(file.key);});
-  for(const name of ['sky','village','garden','workshop','forest'])this.load.image(name,base+name+'.png');
+  this.load.image('sky',base+'sky.png');for(const name of STAGES)this.load.image(name,base+stageFallback(name));
   for(const name of ['player','pip','lumi','maren','koro','sprout'])this.load.spritesheet(name,base+name+'.png',{frameWidth:32,frameHeight:48});
-  for(const name of STAGES)for(const layer of ['rear','ground','front'])this.load.image(`${name}-${layer}-v2`,`${base}art-v2/${name}-${layer}.png`);
+  for(const name of STAGES)for(const layer of ['rear','ground','front'])this.load.image(`${name}-${layer}-v2`,`${base}${stageFolder(name)}/${name}-${layer}.png`);
   this.load.spritesheet('props-v2',base+'art-v2/props.png',{frameWidth:64,frameHeight:96});
   this.load.spritesheet('ambient-v2',base+'art-v2/ambient.png',{frameWidth:32,frameHeight:32});
   this.load.spritesheet('hero-v2',base+'art-v2/player.png',{frameWidth:32,frameHeight:48});
+  this.load.image('stream-mist-v3',base+'art-v3/stream-mist.png');
+  this.load.spritesheet('water-v3',base+'art-v3/water.png',{frameWidth:32,frameHeight:32});
+  for(const name of ['eira','wisp'])this.load.spritesheet(name+'-v3',base+'art-v3/'+name+'.png',{frameWidth:32,frameHeight:48});
   this.load.spritesheet('training-v2',base+'art-v2/training.png',{frameWidth:32,frameHeight:48});
  }
  create(){
@@ -67,6 +73,9 @@ export class World extends Phaser.Scene {
   if(this.textures.exists('hero-v2'))for(const [name,config] of Object.entries(playerAnimations))this.anims.create({key:'hero-'+name,frames:this.anims.generateFrameNumbers('hero-v2',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});
   if(this.textures.exists('training-v2'))for(const [name,config] of Object.entries(trainingAnimations))this.anims.create({key:'training-'+name,frames:this.anims.generateFrameNumbers('training-v2',{frames:config.frames}),frameRate:config.frameRate,repeat:config.repeat});
   if(this.textures.exists('ambient-v2'))for(const [row,name] of ['cloud','leaf','fire','glow'].entries())this.anims.create({key:'ambient-'+name,frames:this.anims.generateFrameNumbers('ambient-v2',{start:row*4,end:row*4+3}),frameRate:4,repeat:-1});
+  if(this.textures.exists('water-v3'))this.anims.create({key:'ambient-water',frames:this.anims.generateFrameNumbers('water-v3',{start:0,end:5}),frameRate:6,repeat:-1});
+  for(const [name,animations] of Object.entries(explorationAnimations))if(this.textures.exists(name))for(const [action,config] of Object.entries(animations))this.anims.create({key:name+'-'+action,frames:this.anims.generateFrameNumbers(name,{frames:[...config.frames]}),frameRate:config.frameRate,repeat:config.repeat});
+  if(this.textures.exists('stream-mist-v3'))this.mist=this.add.image(240,135,'stream-mist-v3').setDepth(700).setVisible(false);
   this.playerShadow=this.add.ellipse(154,239,27,6,0x233e3a,.25);
   this.npcShadow=this.add.ellipse(338,232,26,6,0x233e3a,.22);
   this.player=this.add.sprite(154,219,this.textures.exists('hero-v2')?'hero-v2':'player');
@@ -96,11 +105,12 @@ export class World extends Phaser.Scene {
   else{if(name==='walk'||name==='run')this.player.play('legacy-walk');else if(name==='idle')this.player.play('player-idle');else this.player.stop().setFrame(name==='cast'?3:4);}
   this.diagnostics();
  }
+ private npcPose(pose:string){const key=this.npcKey==='training-v2'?'training-'+pose:this.npcKey+'-'+pose;if(this.anims.exists(key))this.npc.play(key);}
  private npcIdle(){const key=this.npcKey==='training-v2'?'training-idle':this.npcKey+'-idle';if(this.anims.exists(key))this.npc.play(key);this.npc.clearTint().setAlpha(1);}
  show(state:State|null){
   if(!this.ready)return;this.finishAction();
-  const scene=state?scenes[state.scene]:null,training=state?.battle?.id==='BT_TRAINING';
-  this.currentStage=training?'workshop':scene?.stage||'village';
+  const scene=state?scenes[state.scene]:null,encounter=state?.battle?encounters[state.battle.id]:null;
+  this.currentStage=encounter?.stage||scene?.stage||'village';
   this.layered=['rear','ground','front'].every(layer=>this.textures.exists(`${this.currentStage}-${layer}-v2`));
   this.stage.setTexture(this.currentStage).setVisible(!this.layered);
   this.rear.setVisible(this.layered);this.ground.setVisible(this.layered);this.front.setVisible(this.layered);
@@ -108,12 +118,16 @@ export class World extends Phaser.Scene {
   this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;
   const addProp=(frame:number,x:number,y:number)=>{if(this.textures.exists('props-v2')){const prop=this.add.sprite(x,y,'props-v2',frame).setOrigin(.5,1).setDepth(y);this.props.push(prop);return true;}return false;};
   if(this.layered){for(const prop of stageLayouts[this.currentStage].props)addProp(prop.frame,prop.x,prop.y);
-   if(this.textures.exists('ambient-v2'))for(const anchor of stageLayouts[this.currentStage].ambient){const sprite=this.add.sprite(anchor.x,anchor.y,'ambient-v2').setDepth(anchor.kind==='cloud'?-950:800);sprite.setData('anchor',anchor).play('ambient-'+anchor.kind);this.ambient.push(sprite);}
+   if(this.textures.exists('ambient-v2'))for(const anchor of stageLayouts[this.currentStage].ambient){const sprite=this.add.sprite(anchor.x,anchor.y,anchor.kind==='water'&&this.textures.exists('water-v3')?'water-v3':'ambient-v2').setDepth(anchor.kind==='cloud'?-950:800);sprite.setData('anchor',anchor).play('ambient-'+(anchor.kind==='water'&&!this.textures.exists('water-v3')?'glow':anchor.kind));this.ambient.push(sprite);}
+   if(state?.flags.archive_read&&this.currentStage==='archive'){if(addProp(7,278,179))this.memoryProps++;}
+   if(state?.flags.stream_clean&&this.currentStage==='stream'){if(addProp(5,411,222))this.memoryProps++;}
    if(state?.flags.lumi_helped&&this.currentStage==='village'){if(addProp(6,246,172))this.memoryProps++;}
    if(state?.flags.garden_tended&&this.currentStage==='garden'){if(addProp(5,264,205))this.memoryProps++;}
    if(state?.flags.forest_clue&&this.currentStage==='forest'){if(addProp(7,281,210))this.memoryProps++;}
   }
-  this.npcKey=state?.battle?(training?(this.textures.exists('training-v2')?'training-v2':'pip'):'sprout'):state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip';
+  this.npcKey=encounter?.actor||(state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip');
+  if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
+  this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
   this.npc.setTexture(this.npcKey);this.npcIdle();this.player.setPosition(state?.battle?130:154,219).clearTint().setAlpha(1);
   this.npcHomeX=state?.battle?350:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose('idle');this.parallax.value=0;this.phase='idle';this.diagnostics();
  }
@@ -130,11 +144,13 @@ export class World extends Phaser.Scene {
   if(token!==this.generation)return Promise.resolve();
   return new Promise(resolve=>{let done=false;const settle=()=>{if(done)return;done=true;this.settlers.delete(settle);resolve();};this.settlers.add(settle);this.tweens.add({...properties,targets:target,onComplete:settle});});
  }
- private castEffect(reduced:boolean,spell?:Spell){
+ private castEffect(reduced:boolean,spell?:Spell,target?:'scene'){
   const color=spell?.vfx.color||0xffdf90,shape=spell?.form||'ORB',modifier=spell?.mod||'SEEK';
-  const support=!!spell&&(spell.heal>0||spell.shield>0);
+  const support=target!=='scene'&&!!spell&&(spell.heal>0||spell.shield>0);
   const sourceX=this.player.x,sourceY=this.player.y-12;
-  const targetX=support?this.player.x:this.npc.x,targetY=(support?this.player.y:this.npc.y)-8;
+  const scenery=target==='scene'?stageLayouts[this.currentStage].spellTarget:undefined;
+  const targetX=scenery?.x??(support?this.player.x:this.npc.x),targetY=scenery?.y??((support?this.player.y:this.npc.y)-8);
+  this.writeMetric('spellTarget',JSON.stringify({kind:scenery?'scene':support?'player':'npc',x:targetX,y:targetY}));
   const count=reduced?8:24;
   for(let i=0;i<count;i++){
    const fraction=i/count,angle=fraction*Math.PI*2;
@@ -163,10 +179,10 @@ export class World extends Phaser.Scene {
    this.tweens.add({targets:particle,x:Math.round(endX),y:Math.round(endY),alpha:0,scale:modifier==='AMPLIFY'?2.5:1,duration:reduced?100:modifier==='LINGER'?650+i*4:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
   }
  }
- async action(cue:string,reduced:boolean,spell?:Spell,before?:State,next?:State,command?:string){
+ async action(cue:string,reduced:boolean,spell?:Spell,before?:State,next?:State,command?:string,target?:'scene'){
   if(!this.ready)return;
-  this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));
-  if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell);
+  this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));if(cue==='talk'||cue==='pick')this.npcPose('talk');
+  if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell,target);
   const destination=cue==='walk'?(command==='FLEE'?80:230):cue==='pick'?182:this.player.x;
   if(!reduced&&cue==='walk')this.tweens.add({targets:this.parallax,value:6,duration:480});
   await this.beat(this.player,{x:destination,y:cue==='pick'?223:219,duration:reduced?55:cue==='craft'?800:cue==='cast'?560:480,yoyo:cue!=='walk'},token);
@@ -175,10 +191,13 @@ export class World extends Phaser.Scene {
    this.phase='reaction';this.diagnostics();
    if(next.hp<before.hp){this.pose('hit');this.player.setTint(0xf2b193);}
    if(next.battle&&next.battle.enemyHp<before.battle.enemyHp||this.lastOutcome==='win'){
-    if(this.npcKey==='training-v2')this.npc.play('training-hit');this.npc.setTint(0xffe3b6);
+    this.npcPose('hit');this.npc.setTint(0xffe3b6);
+   }
+   if(next.battle?.playerStatus.VEIL&&!before.battle.playerStatus.VEIL){
+    this.npcPose('attack');await this.beat(this.npc,{alpha:.7,duration:reduced?20:120,yoyo:true},token);
    }
    if(next.battle?.log.some(line=>line.includes(' โจมตี ')||line.includes('โจมตีพลาด'))){
-    if(this.npcKey==='training-v2')this.npc.play('training-attack');
+    this.npcPose('attack');
     await this.beat(this.npc,{x:this.npcHomeX-10,duration:reduced?20:120,yoyo:true},token);
    }
    if(token!==this.generation)return;

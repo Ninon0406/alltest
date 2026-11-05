@@ -1,6 +1,6 @@
-# Test report — 2026-11-04 UTC
+# Test report — current0.4.0 /2026-11-05 UTC
 
-## Verified local checks
+# # Verified local checks
 
 - `npm ci --prefix GODSEED`: PASS (153 packages). Dependency warning: ESLint 9 vendor support status is deprecated; build/lint works with the locked stack, future dependency maintenance needed.
 - `npm run typecheck --prefix GODSEED`: PASS, strict TypeScript
@@ -11,17 +11,17 @@
 
 Checks cover 336 candidates / 234 unique legal recipes and per-modifier counts, finite definitions, transaction rejection without material loss, first discovery, starter no-farm, duplicate equipment rejection, opening-to-forest-to-hub path, deterministic combat, zero-MP fallback, defeat checkpoint, items and repeat-win reward idempotency. Unit tests explicitly use boundary fixtures for zero-MP/low-HP negatives; the golden browser flow uses real actions without injected gameplay state.
 
-## Browser verification
+# # Browser verification
 
 Initial production run: six portrait/tablet/desktop cases passed; 844×390 failed because Canvas overflow intercepted the inventory click. Fixed world overflow containment and desk stacking, with world canvas pointer events disabled because player input is DOM choices. Full final rerun recorded below when complete.
 
 Screenshots: `test-results/title-360.png`, `battle-360.png`, `battle-768.png`, `battle-1366.png`, `loop-<width>x<height>.png`; CI uploads these as `godseed-browser-evidence`. Local test-results is intentionally ignored by Git.
 
-## Explicit limitations
+# # Explicit limitations
 
 Not full chapter/boss/endings acceptance. Not 234 behavior/VFX golden render cases. No actual iOS/iPad Safari/Android/Windows/macOS hardware tests or measured 50/50 play duration. No audio. No imported old GODSEED versions exist; next schema needs migration tests. No claim public deployment before main merge. Save/export/import exists; automated browser coverage currently emphasizes stable-boundary autosave/reload rather than every failure/import path.
 
-## Final rerun: PASS
+# # Final rerun: PASS
 
 `npm run test:e2e --prefix GODSEED`: **9/9 passed in 2.0 minutes**, zero skipped. Seven real start→gather→craft→auto-equip→battle→win→clue→village→inventory→save/reload paths at 360×800, 390×844, 768×1024, 1024×768, 1366×768, 1920×1080, 844×390. Extra tests cover actual /alltest/ static subpath assets, keyboard Enter, skip, double click without duplicate feather, reload/continue, and touchscreen tap.
 
@@ -29,7 +29,7 @@ No pageerror or HTTP ≥400 observed in the seven loops or subpath case. Asserti
 
 Final strict typecheck and lint pass after browser test additions. Content 2/2 and unit/integration 14/14 passed. Source whitespace check passes. Compiled Phaser vendor license blocks contain upstream trailing spaces; `.gitattributes` excludes only generated bundle JS from whitespace checks. Public Pages/remote CI results are separate from these local checks.
 
-## GitHub and public release proof
+# # GitHub and public release proof
 
 - Installation `220e992` preserved in the PR ancestry and pushed; implementation `74b37c4`, source-check notes `dc7191b`; PR #1 merged into main at `ba3d3eabe40524e7c9570adec9c3d9c2113170cd`.
 - PR CI [41917050132](https://github.com/Ninon0406/alltest/actions/runs/41917050132) SUCCESS including browser checks and uploaded evidence.
@@ -65,7 +65,7 @@ After the additional retry archival fix: targeted browser storage **7/7 PASS in 
 
 Final title-form review: preserve the typed name across cancelled import and disable editing during startup/async work. Added the assertion to the legacy-import browser case. Latest typecheck/lint/content 2/unit+integration 28/build PASS; targeted storage suite **7/7 PASS in 23.9s** after this UI adjustment. No additional gameplay rule changes.
 
-## 0.1.1 remote CI and public proof
+# # 0.1.1 remote CI and public proof
 
 - Implementation `8a2b08d`, title-input refinement `927fb3e`, PR #2 MERGED at `2c4ba8d4397788ad7598f29d1e13285ffcc23fe6`.
 - [PR CI 41922783511](https://github.com/Ninon0406/alltest/actions/runs/41922783511) SUCCESS including all current browser tests and evidence upload. The earlier run on a superseded commit was cancelled to avoid redundant runner work; it is not counted as passing CI.
@@ -93,7 +93,7 @@ Base3ca8268 working tree clean and latest remote CI passed before work. All earl
 
 Remaining acceptance: full party/multi-enemy targeting, mastery/earned levels, boss resistance/phases, chapter endings, full234 VFX visual distinctness and final art. LIGHT dispels VEIL before hit resolution, including a miss; new enemy VEIL counts its current enemy phase and may appear in the log rather than a next-turn chip. Status interpretations are recorded in DECISIONS/BALANCE rather than silently changing the spec.
 
-## 0.2.0 release proof
+# # 0.2.0 release proof
 
 - Implementation bd6f705; [PR #3](https://github.com/Ninon0406/alltest/pull/3) MERGED at2eec3a1a2322c13b884cb00f70da63a045d7dccc.
 - [PR CI41928767310](https://github.com/Ninon0406/alltest/actions/runs/41928767310) SUCCESS including all current tests/browser cases and artifact upload.
@@ -132,7 +132,7 @@ Final short-landscape correction: focused **9/9 PASS in1.1m**, zero skipped: all
 Updated production verifier PASS against final preview: touch/start/forest/clue/reload/FIRE crafting/original practice/win/independent save checksum/import; all16 new PNGs hash-equal to sources; observed page/HTTP errors empty. JS SHA-256 `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d`. This is preview proof; public0.3.0 is not claimed until remote publish/verification. PR CI will run the entire final31-case suite.
 
 
-## 0.3.0 remote release proof
+# # 0.3.0 remote release proof
 
 - Implementation00462f9; [PR#4](https://github.com/Ninon0406/alltest/pull/4) MERGED at255e79f4fef2c36d02c03e192ccba47fd4400d1b. Merge tree equals the validated implementation tree.
 - [PR workflow41950932784](https://github.com/Ninon0406/alltest/actions/runs/41950932784) SUCCESS: locked install/test:all/stage/Chromium/full browser/evidence upload/Pages artifact upload all steps successful. Final browser suite contains31 cases and no skipped/fixme declarations. Remote run and step statuses were read through GitHub API; raw log archive download returned403, so no remote per-case timing is asserted.
@@ -143,3 +143,39 @@ Updated production verifier PASS against final preview: touch/start/forest/clue/
 
 
 Main workflow41951619885 final SUCCESS: build126996643097 completed all checks including full31-case browser suite; deploy126998774927 completed configure-pages/deploy-pages at2026-11-05 02:00:36 UTC. Post-Actions public HTML/JS and all16 PNG byte-hash gate PASS with the same `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d`, actual renderer ready/3layers, and empty observed error list. This confirms the Actions artifact matches the already validated public gameplay/fire/practice/checksum/import flow. Final evidence-only documentation changes do not change game source/assets/bundle.
+
+
+# Session 5 — 0.4.0 archive and stream (2026-11-05 UTC)
+
+Earlier sections retain historical release results. Base `3dc997f` was clean and matched origin/main, with successful previous CI/Pages and no open PR. Owner documents, canonical spec, ten Skills and all previous assets remain. Locked install completed with the same 156 packages and existing ESLint support warning; no dependency added. Baseline typecheck/lint/content2/unit63/build passed before edits.
+
+- Final `npm run test:all --prefix GODSEED`: PASS strict TypeScript, ESLint, content **2/2**, unit/integration/balance/art **81/81**, production build and root staging. JS 1,533.36 kB / 415.36 kB gzip; CSS 6.70 kB / 2.17 kB gzip. File size is not a measured loading-time/FPS result.
+- Thirteen new exploration tests cover all nine archive branches, shared UI/reducer eligibility, repeat gifts/trust, daily rewards, real WATER/ECHO crafting, cleanup persistence, fact-based memory, B02 telegraph/status/reward/escape/recovery and save compatibility. Two art tests validate new PNG/fallback/alpha/atlas/silhouette behavior. Three new balance cases add 300 simulations; the previous 63 cases remain.
+- **900 simulations: 900 wins, zero losses/unfinished**, seeds1–100 across three encounters and three policies. 600 use actual authored collection/crafting; 300 explicitly set MP0 as negative fixtures. Independent verbose balance output gives B02 maximum turns 3/13/8 and minimum ending HP84/28/59. Older encounter results unchanged; see BALANCE.md.
+- `generate:art` SHA-256 audit: all **39 PNGs byte-identical** before/after regeneration. Twelve new art-v3 files; no old PNG or original generator changed. Six layered stages, new opaque fallbacks, bounded transparent mist, six water frames and distinct Eira/wisp sheets are validated.
+- New focused browser **5/5 PASS in 1.5m**. Three real touch routes at390×844,820×1180,1366×768: archive → materials → craft/equip ECHO_ORB_LINGER and WATER_RING_HEAL → B02 → Echo → reload/compare complete saved snapshot → heal/WIND/basic → win → bell → clean stream → Eira reaction → clue journal. No gameplay-state writes or engine hooks; IndexedDB reads are read-only. Positive paths observed no pageerror/HTTP failures; canvas/HUD bounds asserted at390/820.
+- Separate non-combat route hears the bell, learns WIND, then skips a genuine full-motion cast. Revision/choice commit once, MP unchanged, no battle reward, mist clears, and listening cannot undo cleanup. A deliberately aborted archive-rear PNG proves readable fallback and continued choices/save; expected resource failure is not counted as a clean positive-network test.
+- Two test-authoring mistakes were corrected without weakening rules: a real return walk crossed a day boundary, so the setup now rests to align two collections within one day; ECHO+RAY+LINGER is canonically illegal, so the route obtains Koro's extra ORB and crafts legal ECHO_ORB_LINGER. Rejection/consume-once assertions remain. The source inspector initially raced an unnecessary Vite HTML dependency scan; disabling that scan only in the headless inspector yields clean JSON/stderr.
+- Actual phone archive/battle screenshots reviewed: grounded actors, readable Thai, full stage and HUD below canvas. Evidence `explore-{archive,stream-fog,stream-battle,stream-clean}-{390,820,1366}.png`. CI uploads the full-suite evidence. Art remains a prototype rather than final HD acceptance.
+
+Source inspector: **17 scenes / 56 unique choices / 5 companion NPC / 3 reachable encounters / 234 unique legal spells / 0 chapter endings / 6 stages**. Ten actor sheets include legacy alternatives. Five distinct spells are learned/used across real browser routes; new games start with an empty book. State2/DB1/envelope1 unchanged. Current battle validation accepts B02; an explicit published0.3 State2 fixture retains every field, checked B02 files round-trip, and old V1 tests still pass. No new required fields/migration or downgrade guarantee.
+
+Full36-case production browser and updated preview/public verifier results remain pending at this checkpoint. Real Safari/iOS/Android/physical iPad/Windows/macOS hardware, FPS and measured50/50 human pacing are NOT TESTED. Ruins/festival/B03–B05/three endings, final NPC/VFX art, audio, party and mastery remain unfinished.
+
+
+Full production browser suite **36/36 PASS in6.4m**, zero skipped, after the final gameplay/renderer/UI build. All old viewport/save/animation/combat cases and new routes passed. Then expanded new route to iPad landscape1024×768 and made ECHO's browser assertion validate both legitimate95% hit/5% miss outcomes against HP/log, with no seed override; added explicit healing MP/HP benefit assertions. Final typecheck/lint and focused **6/6 PASS in1.6m** cover phone390, iPad820/1024 and desktop1366 plus noncombat/fallback. Final configured full suite is37 cases for CI. A final scene-target presentation correction is recorded below; CI will run all37 cases on that final tree.
+
+Updated preview verifier initially checked for a collapsed hub menu during the asynchronous new-game commit. This was a verifier wait-order error; it now waits for the stable busy=false boundary and only opens an existing summary. Gameplay and prior browser results were unaffected. Preview rerun follows.
+
+
+Final presentation review found story spell endpoints were still using the NPC position. Added data-driven stage spellTarget anchors: stream bridge330/150 and archive manuscript240/142. Battle/support targeting keeps its existing actor coordinates. The WIND skip case now checks the actual rendered endpoint through read-only diagnostics and captures explore-wind-target-390.png. No gameplay/save change. Final test:all/focused6/production verifier rerun results follow.
+
+
+Additional real-path regression reproduced a canonical gate bug: a player can craft WATER_RING_HEAL before visiting Koro, but CH0205 still required forest_open alone. A targeted new test failed on the old condition; the shared predicate now accepts forest_open OR crafted_first as prescribed by SSOT. The full unit suite now has81 cases (13 exploration cases); no case disabled. Journal wording also separates clearing mist from retrieving the bell: only CH1201 records the bell rescue. The non-combat WIND browser case checks that it has no bell item/rescue entry.
+
+The public verifier now uses the OS reduced-motion preference consistently across reloads, asserts the matching UI state, and keeps the same real gameplay/save/hash checks. Full-motion/skip/scenery-target behavior is separately covered by the browser suite. This changes verification pace, not game rules. Final current results follow.
+
+
+Final tree checks: strict TypeScript/ESLint/content2/unit+integration+balance+art **81/81**/production build PASS. Final focused **6/6 PASS in1.6m** after all source fixes (phone390, iPad820/1024, desktop1366, noncombat/actual scene target/skip/truthful journal and missing-PNG fallback). The new first-craft regression now passes in the unfiltered81-case run.
+
+Final production-preview verifier PASS against the staged release: actual touch/start/WIND/forest/clue/reload/FIRE/practice/win/archive/ECHO/WATER/B02/reload/win/bell/cleanup/Eira-memory/checksum export/import. All28 versioned art PNGs match source, current JS SHA-256 `f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea` matches staged bytes; observed pageerror/HTTP failure list empty. Final bundle1,533.36kB/415.36kB gzip. Public0.4/remote37-case proof pending before publication claims.

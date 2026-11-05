@@ -1,4 +1,4 @@
-# QA matrix — 0.3.0 / 2026-11-05 UTC
+# QA matrix — 0.4.0 / 2026-11-05 UTC
 
 | Environment | Flow | Result |
 | --- | --- | --- |
@@ -17,13 +17,13 @@
 
 Evidence: test-results/save-recovered.png, save-memory-mode-{390,844}.png, title-360.png, battle-{360,768,1366}.png, loop-<width>x<height>.png. CI uploads screenshots. Visually inspected 390px memory warning: readable text/export/retry controls, game and touch controls remain available; scene art is still provisional. Screenshots are actual runtime, not design mockups. No FPS or 50/50 pacing claim.
 
-## 0.2.0 update
+# # 0.2.0 update
 
 Full suite23/23 PASS. All ten viewport loops and0.1.1 recovery checks retained. New phone390×844/iPad820×1180/desktop1366×768 paths craft/use WIND, HEAL and FIRE, surrender practice, resume stable practice turn and win with the correct separate reward. Dedicated original V1 active-battle storage fixture migrates on commit without losing the raw original. State/help bars/log/two-column slots inspected in actual screenshots; CSS flex canvas boundary and moving shadows improved. Real hardware/Safari and final HD visual acceptance still NOT TESTED/PENDING.
 
 Public0.2.0: real Pages touch path passed forest→FIRE crafting→workshop practice→win→State2 checksum export/import; public-training-390.png is actual public evidence. Main build/deploy41929504279 succeeded. This adds no claim of real-device or full-art acceptance.
 
-## 0.3.0 scope
+# # 0.3.0 scope
 
 Retain all ten viewport golden paths and save/battle suites. Added genuine skip-on-walk then pickup/read-only durable-save assertions; OS reduced-motion and mid-action toggle; intentionally aborted layered PNG with accessible fallback; actual workshop defeat/reaction before recovery; layered village/garden/workshop and original practice-spirit screenshots at390×844,820×1180,1366×768. No gameplay-state injection in these paths. Missing-network/storage/migration fixtures are explicitly negative tests. Local30/30 PASS5.4m after portrait correction; final focused9/9 PASS1.1m after landscape correction. PR CI41950932784 SUCCESS with final31-case suite. See TEST_REPORT for release proof. Actual background-tab/hardware/Safari performance is not newly certified.
 
@@ -34,3 +34,10 @@ Portrait HUD now flows below the canvas rather than covering actor feet; bounds 
 Public0.3.0 Pages PASS: actual touch/forest/FIRE/practice/win/reload/checked save export-import, all16 new PNG hashes and current JS hash, layered3 stages and original training texture. Observed error list empty. Main:/ deployment41951619769 succeeded; main Actions final gate recorded in TEST_REPORT.
 
 Main workflow41951619885 build+deploy SUCCESS (2026-11-05 02:00:36 UTC). Final full31 browser suite successful; post-Actions public HTML/JS/16PNG hash+renderer gate PASS, same verified bundle.
+
+
+## Session5 —0.4.0
+
+Focused new5/5 PASS1.5m:390×844/820×1180/1366×768 actual touch/archive/materials/ECHO+WATER/B02/reload/full durable snapshot/win/bell/cleanedstream/Eira-memory/cluejournal; no pageerror/HTTPfailure in positive paths. Canvas/HUD bounds checked at390/820. Noncombat path and actual skippedWIND cast commit once; failednewPNG deliberately aborted for fallback test (not counted as positive network success). Real hardware/Safari/FPS remain NOTTESTED. Full36andnew public verifier results pending; release proof inTEST_REPORT.
+
+Final local full36/36 PASS6.4m; final focused6/6 PASS1.6m adds actual archive/stream/WATER/ECHO/B02/memory at iPad landscape1024×768. Both iPad orientations now have the new genuine path. ECHO hit/miss assertions follow intended accuracy and heal assertions verify MP/benefit. No app change after full run; CI runs final37 cases.

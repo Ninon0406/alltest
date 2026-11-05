@@ -19,4 +19,4 @@ export const allSpells=cores.flatMap(c=>forms.flatMap(f=>mods.filter(m=>legal(c,
 export const byId=Object.fromEntries(allSpells.map(s=>[s.id,s]));
 export type Spell=ReturnType<typeof spell>;
 export const itemNames:Record<string,string> = Object.fromEntries([...cores.map((c,i)=>[`CORE_${c}`,['ถ่านอรุณ','หยดธาราหยก','ขนนกสายลม','หินหัวใจดิน','เกสรอรุณ','แร่ม่านค่ำ','เมล็ดผลิบาน','เศษเสียงสะท้อน'][i]]),...forms.map((f,i)=>[`FORM_${f}`,['ลูกแก้วมณี','เส้นใยดารา','ห่วงใบไม้เงิน','ละอองเมฆ','แผ่นตราผนึก','ข้อเชื่อมประกาย'][i]]),...mods.map((m,i)=>[`MOD_${m}`,['ผงแยกดาว','เข็มทิศแมลงแสง','เปลือกเกราะเถา','น้ำค้างเยียวยา','เขี้ยวผลึกเจาะ','ทรายเวลาอ่อน','ประกายขยายเสียง'][i]])]);
-Object.assign(itemNames,{IT_MANA_LEAF:'ใบฟื้นเวท',IT_POTION_DEW:'น้ำค้างฟื้นพลัง',IT_NOTE_LEAF:'โน้ตบนใบไม้',IT_MUSICBOX:'กล่องดนตรี',IT_FOREST_FRUIT:'ผลไม้ป่า'});
+Object.assign(itemNames,{IT_MANA_LEAF:'ใบฟื้นเวท',IT_POTION_DEW:'น้ำค้างฟื้นพลัง',IT_NOTE_LEAF:'โน้ตบนใบไม้',IT_MUSICBOX:'กล่องดนตรี',IT_FOREST_FRUIT:'ผลไม้ป่า',IT_OLD_BELL:'กระดิ่งเก่าจากลำธาร'});

@@ -2,22 +2,24 @@ import {createBattle} from './combat';
 import {scenes} from '../content/story';
 import {transact,type State} from '../engine/state';
 import {spell,type Core,type Form,type Mod} from './spells';
+import {choiceAvailability} from './story';
 export function choose(s:State,id:string){return transact(s,d=>{
  if(d.battle)throw Error('กรุณาจบการต่อสู้ก่อน');
- const c=scenes[d.scene].choices.find(c=>c.id===id);if(!c||c.requires&&!d.flags[c.requires])throw Error('ยังเลือกเส้นทางนี้ไม่ได้');
- const first=!d.choices.includes(id);const day=Math.floor(d.ticks/3);const daily=['CH0601','CH0603','CH0802'].includes(id);const reward=daily?d.gathered[id]!==day:first;
+ const c=scenes[d.scene].choices.find(c=>c.id===id);if(!c||!choiceAvailability(d,c).enabled)throw Error('ยังเลือกเส้นทางนี้ไม่ได้');
+ const first=!d.choices.includes(id);const day=Math.floor(d.ticks/3);const daily=!!c.daily;const reward=daily?d.gathered[id]!==day:first;
  if(c.flags)c.flags.forEach(f=>d.flags[f]=true);
  if(c.items&&reward)for(const [i,n] of Object.entries(c.items))d.inventory[i]=(d.inventory[i]||0)+n;
- if(reward&&c.trust)d.trust[c.trust]=Math.min(5,(d.trust[c.trust]||0)+(id==='CH0301'||id==='CH03B1'?2:1));
+ if(reward&&c.trust)d.trust[c.trust]=Math.min(5,(d.trust[c.trust]||0)+(c.trustAmount??(id==='CH0301'||id==='CH03B1'?2:1)));
  if(daily)d.gathered[id]=day;
  if(first)d.choices.push(id);
- d.journal.push(c.label);d.ticks+=c.cue==='walk'||c.cue==='rest'?1:0;
+ d.journal.push(c.label);if(daily&&!reward)d.journal.push('เก็บวัตถุดิบที่นี่แล้ววันนี้ กลับมาใหม่ในวันถัดไปได้');d.ticks+=c.cue==='walk'||c.cue==='rest'?1:0;
  if(c.cue==='rest'){d.hp=Math.min(100,d.hp+15);d.mp=Math.min(40,d.mp+10);}
  const prev=d.scene;d.scene=c.next;if(id==='CH2801')d.scene=d.recoveryScene;
  if(d.scene==='S02_HUB'&&!d.flags.intro_grant){if(!d.inventory.CORE_WIND)d.inventory.CORE_WIND=1;d.flags.intro_grant=true;}
  if(d.scene==='S03_LUMI')d.flags.lumi_met=true;
  if(d.scene==='S04_KORO')d.flags.forest_open=true;
  if(d.scene==='S05_CRAFT_TUTORIAL'&&!d.flags.starter_grant){for(const i of ['CORE_WIND','FORM_ORB','MOD_SEEK'])d.inventory[i]=Math.max(1,d.inventory[i]||0);d.flags.starter_grant=true;}
+ for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;
  if(c.battle){d.battle=createBattle(c.battle,prev,c.next);d.scene=prev;}
  });}
 export function craft(s:State,c:Core,f:Form,m:Mod){return transact(s,d=>{

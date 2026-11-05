@@ -10,7 +10,7 @@
 8. Relative base is chosen to support existing project Pages root and nested previews. Must be verified under /alltest/ before release.
 
 
-## Session 2 — 0.1.1
+# # Session 2 — 0.1.1
 
 9. Prioritize concrete P0/P1 save loss/unplayable storage failures before adding more narrative or art. Existing first-slice rules and all 234 recipe definitions are preserved.
 10. Proved corruption propagation with a failing regression on the original implementation; one validated atomic transaction replaces the earlier read-then-write pair. Preserve last-good backup when primary is invalid, rather than saving corrupt input as recovery.
@@ -22,7 +22,7 @@
 15. Final review found a retry edge case: startup inspection failure can hide a valid old run from the session. Archive any different-run primary inside the save transaction itself, so later retry and subsequent autosaves cannot lose that older run. A new failing regression proved this boundary before the fix.
 
 
-## Session 3 — 0.2.0
+# # Session 3 — 0.2.0
 
 16. Work on single-enemy combat effects/training now that save reliability is established. Data-drive B01 vs BT_TRAINING before adding bosses. Keep first chapter incomplete until its real paths exist.
 17. State2 is required for per-player status, finite shield lifetime, stable combat log, XP and generic recoveryScene. Validate original V1/checksum before conversion, preserve identity/resources/RNG and save an original raw snapshot. No historical XP backfill; future levels/mastery remain gated work, not implied by displaying XP.
@@ -31,7 +31,7 @@
 20. Add CH0404 training and CH0405 forest-clue handoff as authored workshop options, because canonical training/first fire recipe existed in the spec without implementation. The gift is one-time and must be consumed by real crafting; never give a fake learned spell or repeat resources. Existing scene and choice IDs unchanged.
 21. Training uses the workshop and an explicitly provisional Pip sheet. Fix support VFX recipient, moving shadows and skip/tween cleanup now; do not count this as final art, a new unique enemy sprite, or all234 VFX acceptance.
 
-## Session4 — 0.3.0 (2026-11-05 UTC)
+# # Session4 — 0.3.0 (2026-11-05 UTC)
 
 22. Prioritize GS-007/008/009/010/033 because final art/depth/action identity is the current presentation gap. Add no new gameplay or save fields. Keep remaining chapter scenes/endings explicitly incomplete.
 23. Generate independently layered original assets with local pixel drawing code, editable layouts/manifests and a distinct training creature. Preserve legacy originals as fallback. This supersedes decision21's temporary Pip reuse; it does not certify final HD art.
@@ -40,3 +40,18 @@
 26. Read-only renderer diagnostics support assertions of real poses/texture/layers, alongside actual UI actions and durable IndexedDB reads. No golden route gameplay writes or fake exposed game state. Visual assets stay provisional until full manual/device art gates pass.
 
 27. Manual844×390 review caught an inherited grid/aspect-ratio preferred-width bug despite the old overflow test passing. Constrain short-landscape world to its grid width and remove its preferred ratio; preserve the canvas16:9 ratio inside. Add geometry assertions for canvas/scene/desk boundaries so hidden clipping cannot masquerade as responsive acceptance.
+
+
+## Session5 —0.4.0(2026-11-05 UTC)
+
+28. ChooseGS-009/011/022/026/029 after a clean0.3baseline. Deliver the bounded archive/stream loop; preserve first forest milestone and all older actions rather than claiming a complete chapter. Ruins/festival/boss remain a documented next slice.
+29. Share declarative condition evaluation between UI/reducer; known-WIND story use must be actually discovered, while Lumi OR crafting opens the stream. Scene-target animation uses the known spell descriptor. Canon story use has no listedMPcost, so it is not billed as a battle cast.
+30. S14's every exit unlocks archive_read/ruins_open; rare Echo/Ray/Linger grants and trust stay one-time. Q_STREAM_CLEAN bell choice grants canonical Water reward once; listening never resets a prior cleanup. New story facts fit existing bool flags/choices and need no new mandatory save fields.
+31. Keep State2/DB1/envelope1; widen only current battle catalog/HP for B02. Preserve strict historicalV1battle rules. An explicit0.3V2 fixture stays byte-equivalent by field and stable B02 checked files round-trip. Forward releases load old saves; downgrade to an old game that lacks new scenes is not promised.
+32. B02 HP52/power8/WIND+20% asSSOT. At<=26HP on even turns it announces a no-damage mist that applies playerVEIL for the next action. Lock this plan before the player moves; crossing the threshold cannot retroactively change a displayed intent. SEEK/BASIC stay reliable counters. Simulations and timing tests cover these rules.
+33. Add original archive/stream3layers+fallbacks and distinct Eira/water-spirit silhouettes. Retain all old art; water6frames and fog/planter show actual cleanup. Prototype quality remains explicit; no finalHD orhardwareFPS certification.
+34. Clue journal/hints and Eira/Maren lines depend only on witnessed flags/choices. OptionalAI still absent. Collapse only the two new hub locations under semantic“สถานที่อื่น”; preserve access to all existing primary choices. Record coordinates for the next ruins slice without advertising a nonfunctional travel button. Festival readiness/event staging is deferred until its real route exists.
+
+35. Final review corrected story spell endpoints to authored scenery anchors rather than a companion's coordinates. WIND dispels bridge mist at330/150; archive study glows at manuscript240/142. Keep battle recipient rules unchanged and assert the observed WIND endpoint during the genuine skip path.
+
+36. A genuine WATER-first route demonstrated that CH0205 must accept forest_open OR crafted_first, as SSOT specifies. Fix the former single-flag gate and preserve the shared UI/reducer check; add a failing-then-passing real-choice regression. Keep clearing stream mist and rescuing the bell as separate journal facts, tied to stream_clean versus CH1201.
