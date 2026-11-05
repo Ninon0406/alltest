@@ -1,0 +1,53 @@
+{
+  "version": "0.7.0",
+  "source": "0676719",
+  "pr": 14,
+  "merge": "8b610f3",
+  "prCI": 42113575343,
+  "mainCI": 42116389685,
+  "gameUnit": 115,
+  "contentTests": 2,
+  "roadmapTests": 8,
+  "localE2E": 85,
+  "focusedE2E": 15,
+  "public": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 43,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "53e61c12e64e90d82fddaa3efb851c12de7da4cfae171c573a4df174c14cedc2",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+  },
+  "manualAndMaren": {
+    "result": "PASS",
+    "version": "0.7.0",
+    "manualFiles": true,
+    "nativePicker": true,
+    "formatVersion": 2,
+    "emptyReload": true,
+    "noHiddenDownload": true,
+    "marenListening": true,
+    "gardenBloom": true,
+    "exactRoundTrip": true,
+    "storageCalls": 0,
+    "uploads": 0,
+    "errors": []
+  },
+  "postDeploy": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "assetsOnly": true,
+    "jsSha256": "53e61c12e64e90d82fddaa3efb851c12de7da4cfae171c573a4df174c14cedc2",
+    "layeredArtFiles": 43,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": []
+  },
+  "hardware": "NOT_TESTED"
+}

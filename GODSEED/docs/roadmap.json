@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "2126f88",
+  "baseCommit": "0676719",
   "phases": [
     {
       "id": 1,
@@ -150,7 +150,7 @@
         "GODSEED/tests/storage.spec.ts",
         "GODSEED/scripts/validate-manual-save.mjs"
       ],
-      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า",
+      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน",
       "acceptance": "RAM only; explicit .godseed export/import/preview/validation/migration; safe-boundary controls/dirty-exit guard; no persistent progress or save upload; mobilebrowser QA ตามSAVE tasks โดยhardwareแยกQA-009",
       "legacyIds": [
         "GS-005",
@@ -182,10 +182,10 @@
           ],
           "acceptance": "ระบุทุกstartup/action/recoverywriteและแผนแทนที่ที่ไม่อ่านฐานเก่า",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -213,10 +213,10 @@
           ],
           "acceptance": "ทุกactionเปลี่ยนเฉพาะRAM ไม่สร้างไฟล์เอง",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -244,10 +244,10 @@
           ],
           "acceptance": "ไม่มีprogressAPIในsrcและruntimeauditไม่มีwrites",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -275,10 +275,10 @@
           ],
           "acceptance": "สร้างSnapshotถูกต้องเมื่อผู้เล่นกด ชื่อวันที่.godseedและไม่อ้างว่าOSเก็บสำเร็จ",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -306,10 +306,10 @@
           ],
           "acceptance": "เลือกรายการไฟล์ ตรวจข้อมูล แสดงsummary ยืนยันก่อนแทนRAM cancel/failเก็บเกมเดิม",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -337,10 +337,10 @@
           ],
           "acceptance": "เก็บStateจริงครบmetadata checkpoint/RNG/flags/trust/inventory/known/loadout/battle ไม่สร้างLevelหรือgearที่ยังไม่มี",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -368,10 +368,10 @@
           ],
           "acceptance": "file2/state2และV1envelope/rawfile migrateในRAM ไม่อ่านDB",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -399,10 +399,10 @@
           ],
           "acceptance": "rejectoversize/extension/version/checksum/references/prototypekeys",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -430,10 +430,10 @@
           ],
           "acceptance": "โหลดและบันทึกเข้าถึงได้จากหน้าเริ่ม/เมนู safe-boundaryและเหตุผลdisabled",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -461,10 +461,10 @@
           ],
           "acceptance": "สามตัวเลือกsave/continue/discardพร้อมnativebeforeunload ไม่มีhiddenwrite",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -544,10 +544,10 @@
           ],
           "acceptance": "fullstateเท่ากันก่อน/หลังfile2/V1และdeterministicnextturn",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         },
         {
@@ -575,10 +575,10 @@
           ],
           "acceptance": "sourcegate+browserhook+networkaudit ไม่progressstorageหรือupload ไม่มีcontinueหลังrefresh",
           "evidence": "Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า",
-          "verification": "Unit/file-schema/migration tests and explicit-download browser audit passed; ดู TEST_REPORT Session15",
+          "verification": "Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS",
           "evidenceFiles": [
-            "GODSEED/docs/TEST_REPORT.md",
-            "GODSEED/docs/evidence/session15/README.md"
+            "GODSEED/docs/evidence/session15/verification.json",
+            "GODSEED/docs/TEST_REPORT.md"
           ]
         }
       ]
@@ -2396,7 +2396,7 @@
         "mobile": "in_progress",
         "ready": "not_started"
       },
-      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready",
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก",
       "files": [
         "assets/reference/godseed/references/05_elder_herb_garden.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",

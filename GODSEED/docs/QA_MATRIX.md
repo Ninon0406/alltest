@@ -8,7 +8,7 @@ Base2126f88บนmainสะอาด; branchfeat/godseed-manual-file-save. Owner
 
 ต่อ VIS-004/VIS-005/STO-003: CH0602เดินอ้อมแปลงไปนั่งม้านั่ง312/197 support243 มาเรนฮัมเพลงจริงด้วยoriginal8frames32×48 (idle/hum) ผมมวยสีเงิน/ผ้าคลุมพีช/กระโปรงพลัม; NPCยืน365/212เพื่อไม่ซ้อนม้านั่ง กลับสวนมีคำตอบจากmaren_listened/song_memory_hint และfile roundtripรักษาความทรงจำ ไม่เพิ่มของ/สูตร/ศัตรู/ฉากใหม่
 
-ผลเบื้องต้น: baseline0.6.2checksผ่าน; currentUnit115/Content2/Roadmap8/type/lint/build/manual-sourcegateผ่าน; Focus15/15ผ่าน1.4m รวมfiveviewports (phoneportrait/landscape,iPadสองแนว,desktop), malformed/oversize/extension/cancel/legacy/dirtyexit/beforeunload/no-progress-storage/no-upload และMaren/listen/fileload ภาพเปิดตรวจจริงแล้ว Full85E2Eกำลังตรวจ ยังไม่อ้างผ่านหรือเผยแพร่ก่อนผลจริง
+ผลเบื้องต้น: baseline0.6.2checksผ่าน; currentUnit115/Content2/Roadmap8/type/lint/build/manual-sourcegateผ่าน; Focus15/15ผ่าน1.4m รวมfiveviewports (phoneportrait/landscape,iPadสองแนว,desktop), malformed/oversize/extension/cancel/legacy/dirtyexit/beforeunload/no-progress-storage/no-upload และMaren/listen/fileload ภาพเปิดตรวจจริงแล้ว Full85E2Eผ่านทั้งlocal/PR/main และเผยแพร่0.7.0แล้ว ดูหลักฐานปิดรอบด้านล่าง
 
 ปรับtestsตามownercontractใหม่: เปลี่ยนการอ่านIDBเป็นการดาวน์โหลดไฟล์จริง; refreshต้องเห็นหน้าเริ่มก่อนเลือกไฟล์เอง backenddisk/recoverytestsเดิมถูกแทนด้วยfile/volatile/audit tests ไม่ลบgameplay assertions สูตร234/การต่อสู้/ทิศ/กล้องคงอยู่ แก้expectlegacyEnvelopeเป็นรุ่นเก่าและFileVersion2ตามสเปกใหม่
 
@@ -174,3 +174,12 @@ Icon patch7c5f455/PR#13แก้favicon404ที่พบจากstrictconsolea
 ตรวจ https://ninon0406.github.io/alltest/ จริง: ก่อนรดน้ำเซฟยังไม่เปลี่ยน → รดน้ำ → รับของ/trustครั้งเดียว → กลับสวนดอกบานและมาเรนจำได้ → reload คงผล ผ่าน เส้นทางหลัก/ผสม5สูตร/ต่อสู้3แบบ/ส่งออก–นำเข้าเซฟผ่าน ตรวจหลังActionsdeployซ้ำ 42versionedPNG และ JavaScript SHA256 `3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70` ตรงBuild, 0Conceptrequests/0ConsoleErrors ในเส้นทางที่ตรวจ ภาพ actualpublic ก่อน/ระหว่าง/หลังอยู่ในevidence/session14
 
 Checklist21/76=27.6%คงเดิม ไม่มีการรับรองfinalHD/อุปกรณ์จริง/Safari/FPSหรือความสนุกจากผู้เล่นจริง ปรับขอบเขตรอบนี้ให้ส่งมอบด้วยBrowser EmulationและPagesได้ครบ โดยคงQA-009เป็นreleasegateที่ยังไม่ยืนยัน
+
+
+### หลักฐานปิด Session15 — 0.7.0
+
+Source `0676719` / PR#14 / merge `8b610f3`. Local85/85PASS; PR CI42113575343 full85/build SUCCESS; main CI42116389685 full85/build/deploy SUCCESS. Unit115/Content2/Roadmap8/type/lint/build/manual-sourcegate/referencechecksPASS; focused15/15PASS1.4m; ทดสอบปุ่มโหลดพร้อมใช้งาน 1/1 PASS11.4s; 54PNGสร้างซ้ำตรงbyte มาเรนใหม่7,039bytes
+
+เว็บจริง https://ninon0406.github.io/alltest/ ผ่านexplicit.godseed download/nativefilechooser/summary-confirm/exact-state-roundtrip/emptyrefresh/beforeunload/nohiddendownload/no-browserprogressstorage/no-saveupload; รับของ/ผสม5สูตร/3การต่อสู้/โหลดกลางเทิร์น/ความทรงจำครบตามrouteเดิม และCH0602นั่งฟังMaren/bloomจากfileผ่าน ตรวจหลังActionsdeploy43versionedPNG+JSตรงBuild `53e61c12e64e90d82fddaa3efb851c12de7da4cfae171c573a4df174c14cedc2` ไม่มีConceptrequests/ConsoleErrorsในเส้นทางตรวจ
+
+SAVE12/14=85.7%สำหรับงานย่อย (SAVE-011/SAVE-012 อุปกรณ์จริงยัง in_progress) FND-005จึงยังin_progress Checklistหลัก20/76=26.3%, scope1.020/73=27.4% ไม่เพิ่มSAVE14เข้าdenominatorซ้ำ ไม่มีhardwareSafari/FPS/humanfunacceptance ภาพยังprototype ไม่อ้าง1.0หรือRef05ครบฉาก

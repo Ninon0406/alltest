@@ -265,7 +265,7 @@ Base2126f88บนmainสะอาด; branchfeat/godseed-manual-file-save. Owner
 
 ต่อ VIS-004/VIS-005/STO-003: CH0602เดินอ้อมแปลงไปนั่งม้านั่ง312/197 support243 มาเรนฮัมเพลงจริงด้วยoriginal8frames32×48 (idle/hum) ผมมวยสีเงิน/ผ้าคลุมพีช/กระโปรงพลัม; NPCยืน365/212เพื่อไม่ซ้อนม้านั่ง กลับสวนมีคำตอบจากmaren_listened/song_memory_hint และfile roundtripรักษาความทรงจำ ไม่เพิ่มของ/สูตร/ศัตรู/ฉากใหม่
 
-ผลเบื้องต้น: baseline0.6.2checksผ่าน; currentUnit115/Content2/Roadmap8/type/lint/build/manual-sourcegateผ่าน; Focus15/15ผ่าน1.4m รวมfiveviewports (phoneportrait/landscape,iPadสองแนว,desktop), malformed/oversize/extension/cancel/legacy/dirtyexit/beforeunload/no-progress-storage/no-upload และMaren/listen/fileload ภาพเปิดตรวจจริงแล้ว Full85E2Eกำลังตรวจ ยังไม่อ้างผ่านหรือเผยแพร่ก่อนผลจริง
+ผลเบื้องต้น: baseline0.6.2checksผ่าน; currentUnit115/Content2/Roadmap8/type/lint/build/manual-sourcegateผ่าน; Focus15/15ผ่าน1.4m รวมfiveviewports (phoneportrait/landscape,iPadสองแนว,desktop), malformed/oversize/extension/cancel/legacy/dirtyexit/beforeunload/no-progress-storage/no-upload และMaren/listen/fileload ภาพเปิดตรวจจริงแล้ว Full85E2Eผ่านทั้งlocal/PR/main และเผยแพร่0.7.0แล้ว ดูหลักฐานปิดรอบด้านล่าง
 
 ปรับtestsตามownercontractใหม่: เปลี่ยนการอ่านIDBเป็นการดาวน์โหลดไฟล์จริง; refreshต้องเห็นหน้าเริ่มก่อนเลือกไฟล์เอง backenddisk/recoverytestsเดิมถูกแทนด้วยfile/volatile/audit tests ไม่ลบgameplay assertions สูตร234/การต่อสู้/ทิศ/กล้องคงอยู่ แก้expectlegacyEnvelopeเป็นรุ่นเก่าและFileVersion2ตามสเปกใหม่
 
@@ -280,3 +280,12 @@ Roadmapหลัก20/76=26.3% (v120/73=27.4%) จากเดิม21/76 เพ
 Initial full run พบtestโหลดไฟล์เร็วกว่าปุ่มพร้อมในsubpathที่จงใจหน่วงPNG; แก้helperให้รอinputenabledก่อนใช้setInputFiles (ซึ่งautomationสามารถข้ามdisabledได้) แล้วtargeted1/1ผ่าน11.4s เพิ่มCSSซ่อนnativefileinputเพื่อให้มีปุ่มโหลดเพียงปุ่มเดียว และassertจำนวนปุ่มบนmobile
 
 ระหว่างแก้CSSมีการBuildลงdistที่previewกำลังใช้ ทำให้caseกล้อง1024ได้รับHTTP404ชั่วคราว จึงหยุดfullrunนั้นและเริ่มชุด85ใหม่จากBuildคงที่ ไม่กรอง404หรือลบAssertion ไม่ใช้ผลrunที่ถูกขัดจังหวะแทนผลสุดท้าย
+
+
+### หลักฐานปิด Session15 — 0.7.0
+
+Source `0676719` / PR#14 / merge `8b610f3`. Local85/85PASS; PR CI42113575343 full85/build SUCCESS; main CI42116389685 full85/build/deploy SUCCESS. Unit115/Content2/Roadmap8/type/lint/build/manual-sourcegate/referencechecksPASS; focused15/15PASS1.4m; ทดสอบปุ่มโหลดพร้อมใช้งาน 1/1 PASS11.4s; 54PNGสร้างซ้ำตรงbyte มาเรนใหม่7,039bytes
+
+เว็บจริง https://ninon0406.github.io/alltest/ ผ่านexplicit.godseed download/nativefilechooser/summary-confirm/exact-state-roundtrip/emptyrefresh/beforeunload/nohiddendownload/no-browserprogressstorage/no-saveupload; รับของ/ผสม5สูตร/3การต่อสู้/โหลดกลางเทิร์น/ความทรงจำครบตามrouteเดิม และCH0602นั่งฟังMaren/bloomจากfileผ่าน ตรวจหลังActionsdeploy43versionedPNG+JSตรงBuild `53e61c12e64e90d82fddaa3efb851c12de7da4cfae171c573a4df174c14cedc2` ไม่มีConceptrequests/ConsoleErrorsในเส้นทางตรวจ
+
+SAVE12/14=85.7%สำหรับงานย่อย (SAVE-011/SAVE-012 อุปกรณ์จริงยัง in_progress) FND-005จึงยังin_progress Checklistหลัก20/76=26.3%, scope1.020/73=27.4% ไม่เพิ่มSAVE14เข้าdenominatorซ้ำ ไม่มีhardwareSafari/FPS/humanfunacceptance ภาพยังprototype ไม่อ้าง1.0หรือRef05ครบฉาก
