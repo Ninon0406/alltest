@@ -78,3 +78,14 @@
 46. Session10: finishpreviousPR9 acceptance beforeanotherproject/slice. Correct cameraoffense recipient instead ofcountingexistingwrongfocusascomplete. Six-stagegallery andtrainingoffense broaden evidence; allbattle/VFXreview stilloutstanding, keepVIS-011IN_PROGRESS andpercentunchanged. PreviousCI54 is not new-tree58proof; recordpendinghonestly.
 
 47. Session11 completesPR9 current-contentcameraacceptance beforeanotherfeature. MarkVIS-011DONE only for6currentstages/3encounters after genuinegallery+battlecoverage andruntime review. Newfuturecontent needs its own framingregressions; do not equatecameraDONE withfinalHD/234VFX/hardware approval. No newtasks/denominatorinflation, no runtime/state changes for acceptance-onlybatch.
+
+
+## Session12 — 0.6.0 /2026-11-05 — owner visual expansion
+
+- Latestowner references override earlier visualstudies, not story/crafting/combatcontracts. Importexact13originalfiles withSHA256provenance; viewed10-locationContactSheet and full01/03. Referenceavailability is separate from playable/finalsceneacceptance. No independentthirdpartylicense asserted for ownerconcepts.
+- Choose a complete, bounded village/treeprototype; keep8referenceconversionsunstarted. ReusevillageStageID with locationdefinitions, preserving17storyIDs. Add optionalCH0004restattheopening; canonotherwiseunchanged, no newcombat or rewardgift.
+- Rootcauseofmostlyright-facingstops is legacyidletexture and unconditionalpositionreset onshow, not absentfourviewwalking. Supplyoriginalidleviews and preserveposition/facing withinthesamemap; restorestableanchors/restflags onreload. No requiredsavefields/migration. Generalpositionpersistenceacrossallbattle/reloadroutes remainsfuturework.
+- Usefixedroadgraph+sampledfootprintvalidation ratherthan open-worldA*. Overheadboughs sortatfoot201 but do notblockfloor; benchlegs aregroundsolids andseat usesraiseddepth239. Allcoordinatesauthoredonthegeneratedmap.
+- RefineGroundLayeralphamaskafterbrowserreviewcaughtwallscoveredbygrass; addregressionpixels. Art remains belowfinalHDconceptquality andspecialnonwalkposesstilllegacy.
+- ProtectPagesartifact fromrootreferencecopy: stage-site retains onlyprevioushashedclientJS/CSS; old40PNGsourceoutputs stillpublic andbyteidentical. Developmentconcepts are neverimportedbyruntime.
+- ExtendexistingSSOTwith9aspect/locationmatrix, not a secondtracker/90globaltasks; add2boundedtasks becauseownerexpandedactualscope. Percentage maydecreasewithnewdenominator beforetestscomplete; no inventedpartialcredit.

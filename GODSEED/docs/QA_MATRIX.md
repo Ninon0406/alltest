@@ -1,4 +1,14 @@
-# QA matrix — 0.5.0 / 2026-11-05 UTC
+# QA matrix — 0.6.0 / 2026-11-05 UTC
+
+Session12 targeted living-location checks: Chromium hasTouch390×844,820×1180,1024×768,1366×768 PASS4/4ก่อนfinalGroundMask; full62กำลังตรวจรุ่นสุดท้าย ผลเด็ดขาดในTEST_REPORT
+
+เพิ่มการตรวจ: เดินสี่ทิศ/ตัวละครหลังbranch201/ถึงseatและคงท่านั่ง/reload/restซ้ำ/leafเฉพาะflag/ReducedMotion/รับไอเทม/ไปfountain_frontหันnorth/เซฟrestore/ไม่มีhorizontaloverflowหรือpageerror/assetHTTPfailure ครบสี่viewport
+
+การแก้GroundMaskมาจากการเปิดภาพruntimeจริง ไม่ใช่อ่านโค้ดอย่างเดียว หลังแก้ต้องดูภาพอีกครั้ง ภาพdevelopmentrefsทั้งชุดไม่ได้ถูกโหลดในเกม public/distมี0references ตรวจหลังstage-siteด้วย
+
+Phone/iPad/desktopข้างต้นคือChromiumจำลอง; Safari/iOS/Android/iPadOSจริง, measuredFPS/thermal/memory ยังไม่ทดสอบ QA-009คงblocked ไม่ใช่ข้อผิดพลาดที่พิสูจน์ว่าเกมพัง
+
+---
 
 Current0.5.0: gameunit94/roadmap6/content2/type/lint/buildPASS, focused17+keyboard3 localPASS, finalPR42004666730 full50SUCCESS and actualpublicplay/save/29PNG/hashPASS. Main42005831839 full50/build/deploySUCCESS + post-Actions29PNG/JS/rendererPASS. Initiallocalfull49/1 startupkeyboard race preserved with its correction. Physicalhardware/Safari remainsblockedQA-009 and finalHD acceptancepending.
 

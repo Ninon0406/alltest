@@ -1,0 +1,20 @@
+{
+  "source": "Owner supplied GODSEED_Location_References_10_Scenes.zip",
+  "zipSha256": "b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f",
+  "use": "Development concept references only; excluded from production; no independent third-party license claimed",
+  "files": {
+    "README.md": "ec4e005664deb60e0a558eaad6884c3efbb35f6d6e127ef65c18d3e54b724ce6",
+    "CONTACT_SHEET.jpg": "9466ba5927039fc56f32c845ed6363c7cb2e720382368816919b739ec09caed3",
+    "GODSEED_LOCATIONS_MANIFEST.json": "b149dfb076e1f37c005c832103c78d536ec0eca6cc69b7fa0c1689c1504a062e",
+    "references/03_ancient_tree.webp": "400a4132be20181f733be685e27ac0d5e8ff6c672d05a35ca30fdcf28e741e74",
+    "references/05_elder_herb_garden.webp": "1704250a3ee5790f6b323afdd8ee68f6167708ba6168ab8ebf67800ee0b2d1ae",
+    "references/08_spell_workshop.webp": "b893ea5fef198337108fe0bab4a12d3bcdd2d7c53122bc846bba283435841d93",
+    "references/04_player_cottage.webp": "4f6a8878f9a405aed027b545abead30fdbbf297b1694c8b653c34356edd530dc",
+    "references/09_ancient_shrine.webp": "e27a26b5f5c7d8987a91803463fbc13b612eeae667ebbd78b95ef83c9ffb0e51",
+    "references/06_forest_road.webp": "015f929fb8e72e842c3b53f5d4f22705fb6e6a7ab1fc30ed5a661de14ebc5051",
+    "references/07_crystal_clearing.webp": "56889cd6f6d7047c68ac48150b14e71669ccee8c8b1dc892b71c81744af40797",
+    "references/01_village_center.webp": "7619967985467e55a3289972d436adf84525cd2321f246b6c795b9cd91b0a5a0",
+    "references/10_battle_glade.webp": "56ee33a76cdc6b0d2bb39f3f51361a52255e2b896d30920c092f79cc79c2fa23",
+    "references/02_village_entrance.webp": "a81273d3ed962c6a54eead84af54291485bee29aa182d8bf09df41f401d70d2b"
+  }
+}

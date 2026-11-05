@@ -1,4 +1,14 @@
-# 0.4.0 — ทำนองในสายน้ำ
+# 0.6.0 — ต้นไม้ที่รอให้คุณนั่งฟัง
+
+Release candidate;ยังไม่ยืนยันเผยแพร่รุ่นนี้จนกว่าCI/public gateจบ
+
+เพิ่มฉากเริ่มใต้ต้นเมล็ดและหมู่บ้านต้นแบบตามชุดconceptของเจ้าของ โดยวาดlayer/propsใหม่แยกจากภาพอ้างอิง น้ำพุไหล กิ่งไม้บังตัวละครตามตำแหน่ง และเดินไปหาลูมิโดยอ้อมวัตถุ ท่ายืนเก็บทิศล่าสุด
+
+เลือก “นั่งพักใต้ต้นเมล็ด” เพื่อเดินไปนั่ง มีใบไม้ตกและความทรงจำกับพิพ บันทึก/โหลดกลับมาในท่านั่งได้ การพักม้านั่งเดิมคงท่าหลังจบตัวเลือกด้วย ระบบวัตถุดิบ/234สูตร/ต่อสู้/เซฟเดิมยังอยู่
+
+Roadmapแสดง9ด้านของ10สถานที่ ภาพอ้างอิงพร้อมทั้งหมดแต่ทำต้นแบบรอบนี้สองแห่ง ภาพยัง procedural prototype ไม่ใช่finalHD ครบ10ฉาก บ้าน/ประตู/ผลึก/สวน/ป่า/ห้องเวท/ศาล/ลานสู้ตามconceptยังรอการแปลง
+
+---
 
 Explore Eira's archive and the jade stream through four canonical scenes/fifteenchoices. Research has three approaches with stable one-time gifts and remembered trust. New actual ingredient sources let players craft WATER_RING_HEAL and ECHO_ORB_LINGER within the unchanged234recipe rules. The stream offers battle, learned-WIND and gentle listening/helping paths. Cleaning reveals the world change; Eira/Maren remember witnessed events. Journal shows saved clues and local next hints; new routes sit under“สถานที่อื่น”.
 

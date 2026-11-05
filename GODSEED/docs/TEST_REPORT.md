@@ -1,4 +1,31 @@
-# Test report — current0.5.0 /2026-11-05 UTC
+# Test report — current0.6.0 / 2026-11-05 UTC
+
+## Session12 — References / village / ancient tree
+
+Base d4da87a; source branch feat/godseed-village-references. แยกผลรุ่นนี้จากบันทึก0.5.xด้านล่าง
+
+| Gate | ผลจริง |
+| --- | --- |
+| npm ci | PASS,156packages; locked stack, no new dependency |
+| typecheck / lint | PASS |
+| validate:content | PASS2;17scenes/57uniquechoices, old transitions intact |
+| game unit/integration | PASS104 รวมใหม่5route/collision/save+2art tests |
+| Roadmap | PASS7 รวมnegative testสถานที่ขาดช่อง/IDซ้ำ/readyก่อนผ่านทุกช่อง |
+| Reference integrity | PASS10WebP/13SHA records; zip b3d3f742…9f56f |
+| Build / stage-site / validate:references | PASS;0concept filesในpublic/distหลังstaging; retainedhashedclients |
+| Initial focused locations | PASS4/4,56.6s;390/820/1024/1366; beforefinalGroundMask |
+| Final local full browser | RUNNING62;ไม่อ้างผ่านก่อนผลจบ |
+| PR CI / main CI / public0.6.0 | NOT YET VERIFIED |
+
+การทดสอบใหม่กดตัวเลือกจริง อ่านเซฟจากIndexedDBและdiagnosticsแบบread-only ไม่injectstate: เปิดS00ในtree location, เดิน4ทิศใต้กิ่ง (depth198<tree201), นั่งseat79/193 supportdepth239, leaftriggerหลังmemoryflag, ลดmotionหยุดambient, reloadcontinueคงท่านั่งและrevision, พักซ้ำไม่farmtrust, ลุกออกเดินตามgraph, รับCORE_WIND, ไปน้ำพุโดยอ้อมcolliderและหันidle-north, reloadน้ำพุแล้วทิศ/ตำแหน่งยังถูกต้อง
+
+Unitตรวจทุกauthoredlink/anchor, footprint10×4ทุก2px, ทุกvillageanchorไปfountainได้, rejectทางตัน/เริ่มในsolid/targetหายโดยไม่มีteleport, treecurveผ่านหลังbranchไม่ผ่านtrunk, benchlegsไม่ถูกเดินตัด; oldsaveไม่มีflagsใหม่ก็parseได้ Restเพิ่มflagsทั่วไปโดยไม่เปลี่ยนschema
+
+Visual inspectionก่อนmaskfixพบพื้นทับผนังบ้าน (แม้initialbrowserผ่าน) จึงแก้alpha maskตามfootprintและเพิ่มpixel regressionในart test ภาพหลังแก้จะตรวจซ้ำก่อนacceptance เก็บภาพruntimeที่docs/evidence/session12 และ test-results; Contact Sheet/ref01/ref03เปิดจริง งานยังต้นแบบ ไม่รับรองfinalHD/อุปกรณ์จริง/234VFX
+
+Explicit open coverage: ค่าการบังใช้depthจริง+ภาพที่จับได้ ต้องดูภาพด้วยไม่ใช่assertdepthอย่างเดียว; browserจำลองไม่เท่ากับiOS/Safari/Android/iPadเครื่องจริง ไม่มีFPS/memoryhardwarebenchmark การกระทำพิเศษทุกทิศ/เนื้อเรื่องครบสามจบยังไม่ได้สร้าง
+
+---
 
 Latest0.5.0: **gameunit94/94, roadmap6/6, content2/2, type/lint/build, focused17 + keyboard3 local checks, final50-case PR/main browser CI and actual public gameplay/save/29PNG/JS verification PASS**. Main:/ Pages and mainActionsbuild/deploySUCCESS; post-Actionsbytes/rendererPASS. Earlier sections preserve historical results; Session8 explicitly records the initial local49/1 failure and corrected verification.
 

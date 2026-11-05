@@ -32,3 +32,9 @@ test('next-work list excludes completed tasks and promotes actual regressions',(
  d.tasks.find(t=>t.id==='CMB-006').status='problem';
  assert.match(board(d),/^1\. CMB-006 /m);
 });
+
+test('location records reject missing aspects, duplicate locations and premature final readiness',()=>{
+ const d=data();delete d.locations[0].readiness.collision;assert.throws(()=>validate(d),/location readiness/);
+ const e=data();e.locations[1].id=e.locations[0].id;assert.throws(()=>validate(e),/unique location/);
+ const f=data();f.locations[0].readiness.ready='done';f.locations[0].readiness.effects='in_progress';assert.throws(()=>validate(f),/requires every aspect/);
+});

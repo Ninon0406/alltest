@@ -167,3 +167,15 @@ Basee76c3e4, cleanbranch; PR9sourceCI42015617056 full58SUCCESS verified before w
 VIS-011DONE for currentlyauthored6stages/3encounters after acceptance; this is not finalHD/all234VFX/futureboss/hardwarecertification. Same74tasks→19DONE/38inprogress/16notstarted/0problem/1blocked=25.7%, v119/71=26.8%. PR9 merged e470fe8; addedtests94d1f36 preserved onbranch thencherry-pickedas570091b onmain; no reset/force/delete. FinalmainCI/publicproof followsinTEST_REPORT. NextNPC→ruins/festival→B03/B04→canon/boss/endings, deviceQAremainsblocked.
 
 Session11 delivery: main42020164244SUCCESS/full58 anddeploy11:48:41UTC; publicfullflow +post-Actionsassets/rendererPASS samea09bffd7…/29PNGs. Sourcecamera acceptedforcurrentcontent, noadditional1.0/finalart/hardwareclaim. Evidencecommit concludescamera batch before newowner locationreference expansion.
+
+
+## Session12 — 2026-11-05 — 0.6.0 references / living village and tree
+
+- เป้าหมาย: latestowner10-referencevisualmission; ให้สองสถานที่ต้นแบบเดิน/นั่ง/โต้ตอบตรงบท พร้อมติดตามครบ10แห่ง
+- ทำจริง: import13files/SHA, original10PNG, fourdirectionidle, footanchors/solids/Dijkstrafixedroads, CH0004rest/leafmemory/posepersist, CH0201fountainapproach, no-reset same-mapshow, matrix10×9ในSSOT, productionreferenceexclusion
+- ปัญหาพบ: legacyidleหันขวา/resetตำแหน่งทุกshow; groundทับผนังบ้านในruntime; oldstage-siteคัดลอกdevelopmentreferencesเข้าartifactได้
+- วิธีแก้: directionalidle/preserve+stableloadanchors/restflags, authoredalpha masks+pixelregression, retainhashedclientsเฉพาะJS/CSS; ไม่มีสูตร/คำนวณcombat/schemaเปลี่ยน
+- ผลทดสอบ: baselinefocused4PASS56.6s; final104unit/content2/roadmap7/type/lint/build/PACKAGINGPASS; full62กำลังตรวจ ยังไม่อ้างCI/public0.6.0
+- ยังไม่เสร็จ:8referenceconversions, finalHD/individualNPC/special4viewposes/house-gatewalk/crystal/workshop/battleglade/VFX234/lowpreset/lazyload/Safarihardware และremainingchapter/boss/endings
+- ไฟล์/commit: base d4da87a; feat/godseed-village-references; source/evidenceในTEST_REPORT; commit/PR/deployบันทึกเมื่อมีผลจริง
+- ต่อไป: completegate/publish → gate+cottage routes → crystal/workshopinteractions → battle glade+VFX → NPC/storyruinsdependencies

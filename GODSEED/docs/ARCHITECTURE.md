@@ -1,4 +1,20 @@
-# GODSEED architecture — 0.5.0
+# GODSEED architecture — 0.6.0
+
+## Living location slice (Session12)
+
+`scene-definitions.ts` owns authored foot-coordinate anchors, named road links, colliders and occluder depths for village_center/under_tree. These are locations within existing village stage; sixstageIDs and all17sceneIDs stay stable. `locationFor(S00_WAKE)` selects tree; other village scenes use center. No coordinates are derived from concept pixels and no free movement controls are introduced.
+
+`routeTo` uses Dijkstra on explicit links; each segment samples the10×4footprint every2sourcepixels. Entry attaches only to a visible reachable road junction. Missing/blocked graph targets returnundefined; cinematicPath throws a readable error rather than bypassing collision. CH0201/CH0004 and village exits use actual current feet; old other-stage paths remain. Bench's center is a support mount; groundcolliders cover its legs, supportdepth239 carries the seated pose abovebench238.
+
+World preserves actor position/facing across show in the same run/stage/location/battlemode. On reload it uses stable scene anchors, rest_under_tree/rest_benchflags or existing entrypoints; arbitrary movement positions are not serialized. New flags are optional under State2. `choose` clears bothrest flags before setting the current resting choice; tree_memory persists, first-choice trust is granted once. Numeric HP/MP/time use existingrest rules. CH0004 adds one optional openingrest without rewriting oldtransitions.
+
+Newidle texture uses four independent32×48views,3frames/view at3fps; existingwalk24frames@10fps remains byteidentical. Legacyactions/fallbacks stay. Tree is a432×208 prop at276/201, footdepth201; fountain96×112sixframes at254/204depth204. Nearobjects usefootY; staticrear/ground/front remain -1000/-900/1000. Treebranch is overheadocclusion, not a groundsolid. Activeleafmemory creates exactly6recycled leafsprites; allprops/leafambient pause withReducedMotion. Scene replacement destroysoldinstances.
+
+Referencepack stays under root/assets/reference/godseed, with13SHA records and10locationmanifest. It is development input only. Vite public contains originalruntimePNGs; stage-site retains old index-hash.js/css files rather than copyingtheentireroot/assets backintodist. `validate:references` checksbothpublic/dist and runs in test:all andafterstaging. No recipe/combatdamage/VFXtiming rules are changed.
+
+Roadmap locations/readiness is stored in the existing roadmap.json; render appends the10×9matrix with evidence. It expands existingVIS-008/009/010 rather than counting90newtasks. VIS-013/014 are bounded new deliverytasks for the owner's reference/sceneimplementation scope, mapped to GS-042/043. Allotherphase/statushistory remains.
+
+---
 
 - `content/story.ts`: stable scene/choice IDs, requirements/locked hints, one-time rewards, authored animation cues
 - `content/encounters.ts`: three distinct encounter stat/reward/escape/actor/stage definitions; no hardcoded training-as-forest behavior

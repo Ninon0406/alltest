@@ -9,3 +9,8 @@ Phaser 4.2.1 MIT; Vite MIT; Zod MIT. Runtime package license text remains in dep
 0.4.0 adds12 locally authored original PNGs underpublic/assets/art-v3 via scripts/generate-exploration-art.mjs, no external source or copied character. Sources include editable raster drawing code, atlas manifests, fallback compositions,6water frames and original Eira/wisp silhouettes. Existing27PNGs retained byte-for-byte; no new font/audio/download dependency. Prototype provenance does not assert final art acceptance.
 
 0.5.0 adds one original art-v4/hero-walk.png authored locally in scripts/generate-directional-art.mjs,24frames/fourviews. No imported/traced/resized game artwork, font, music or external download. Source palette/grid matches existing GODSEED studies; all39 priorPNGs retained unchanged,40total. Reproduction and alpha/pose/grounding checks are recorded inTEST_REPORT. Provenance does not certify finalHD quality.
+
+
+0.6.0 adds10locallyauthoredoriginalart-v5PNG via generate-village-art.mjs /generate-idle-art.mjs, usingeditablepixelrasterinstructions (185,199bytes). Prior40PNGsretainedbyte-for-byte. Newdrawingsuseownerconceptsonlyasartdirection; noimagepixels/characterartarecopied.
+
+Owner-supplied GODSEED_Location_References_10_Scenes.zip SHA256 b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f is preservedat assets/reference/godseed with13filechecksums. Conceptpack is developmentinput, notindependentlylicensedthirdpartyart; do notclaimrightsverificationortreatitasfinalsprites. It is excludedfrompublic/dist/Pagesartifactandruntimeimports. Noaddedfont/music/thirdpartyassettodownload.

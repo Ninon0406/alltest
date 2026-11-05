@@ -259,3 +259,5 @@ Select **the highest priority area**, then rotate to next weak area after it pas
 - รายงาน `GODSEED DEVELOPMENT REPORT` เป็นภาษาไทย: Checklist%/จำนวนสถานะ งานรอบนี้ งานกำลังทำ งานค้างPhase1–8 ปัญหา/ข้อจำกัด ผลทดสอบ 5งานถัดไปตามpriority/dependencies และbuild/play/deployจริง แยกChromiumจำลองกับฮาร์ดแวร์จริง
 - นับ✅/งานทั้งหมดแบบน้ำหนัก1จนมีข้อมูลประเมินน้ำหนักที่พิสูจน์ได้; นี่เป็นเปอร์เซ็นต์Checklist ไม่ใช่ปริมาณงานหรือคุณภาพทั้งเกม แสดงscope1.0แยกAIเสริม/CH2/CH3หลัง1.0ตามSSOT
 - Roadmapเป็นภารกิจเพิ่มเติม ต้องพัฒนาเกม/ภาพ/Cinematic Story Directorต่อ ไม่จบรอบด้วยเอกสารอย่างเดียวเมื่อมีงานที่ทำได้ปลอดภัย
+
+- งานภาพตามชุด10สถานที่ให้ตรวจตาราง9ด้านของแต่ละlocationในRoadmap/roadmap.jsonก่อนลงมือ ภาพอ้างอิงพร้อมไม่เท่ากับฉากเกมพร้อม ห้ามนับ90ช่องซ้ำในเปอร์เซ็นต์หลัก แยกChromiumจำลอง/อุปกรณ์จริง และตรวจว่าstage-siteไม่ส่งdevelopmentreferencesเข้าProduction

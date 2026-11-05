@@ -96,7 +96,7 @@ test('OS reduced motion is reflected initially and toggling it during an action 
 
 test('a missing layered PNG shows a readable fallback and keeps choices/save playable',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});
- await page.route('**/assets/art-v2/village-rear.png',route=>route.abort());
+ await page.route('**/assets/art-v5/village-rear.png',route=>route.abort());
  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
  await page.goto('/');
  const canvas=page.locator('#canvas');
@@ -179,8 +179,8 @@ for(const [width,height] of [[390,844],[820,1180],[1366,768]]){
   page.on('pageerror',error=>errors.push(error.message));
   page.on('response',response=>{if(response.status()>=400)errors.push(`${response.status()} ${response.url()}`);});
   await start(page);
-  await photographStage(page,'village',width);
-  for(const name of ['ลุกขึ้นสำรวจรอบตัว','เดินตามป้ายไม้ไปที่จัตุรัส','แวะสวนดอกไม้ของยายมาเรน'])await clickAndWait(page,name);
+  await clickAndWait(page,'ลุกขึ้นสำรวจรอบตัว');await photographStage(page,'village',width);
+  for(const name of ['เดินตามป้ายไม้ไปที่จัตุรัส','แวะสวนดอกไม้ของยายมาเรน'])await clickAndWait(page,name);
   await photographStage(page,'garden',width);
   for(const name of ['ช่วยรดน้ำและเก็บเมล็ด','ไปโรงช่างของคุโร'])await clickAndWait(page,name);
   await photographStage(page,'workshop',width);

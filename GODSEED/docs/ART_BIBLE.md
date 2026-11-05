@@ -47,3 +47,16 @@ No new PNG/third-party art. Six authored travel lanes and eight prop approaches 
 Original generator `generate-directional-art.mjs` adds one256×192PNG underart-v4, eight32×48columns ×fourrows (south/west/east/north), sixframes@10fps each and transparent unused cells. Front has a visible face; rear has hair/scarf/backstrap; side heads have authored profiles and the asymmetric satchel stays consistent. These are actual drawings on the source grid, not rotations/scaled pictures or a front/back flip. All24frames animate; the planted sole remains onrow44. Foot/depth/shadow metrics retain worldy+20.19,427bytes; deterministicSHA9897218761283fcf21747fbce0cb91a1c2652bbf2264ad7ddba37fdccacaaf87.
 
 Directional runtime captures: directional-east-{390,820,1024,1366}.png and directional-north-{390,820,1024,1366}.png; phone390north and desktop1366east reviewed against actual movement, plus original atlas review. New tests observe south/east/west/north texture/animation and contact geometry through genuine choices, not injected animation commands. Remaining debt: individual NPC silhouettes/cycles, four-view non-walking poses, camera staging, advanced lighting, finalHD approval and physical performance. Existing39PNGs are byte-identical toGitbase after full regeneration.
+
+
+## 0.6.0 — reference-driven village/tree prototype
+
+Ownerreferencepack is in assets/reference/godseed withoriginalmanifest/readme/contactsheet/provenance; reviewedContactSheet10 and full01/03. Neworiginalpixelrasterdrawingsusewarmstone/cobble/jade/cream/lavenderflowers, red/bluepitchedroofs, recessedwindows, upperleftsun/castshadows. They do notsample/crop/resizeconceptpixels. Detail/organictreeforms/NPCqualitystillfallshortoffinalHD; twoimplementedprototypes are nottencompletedscenes.
+
+Visualconsistency: retained480×270logicalmap/16pxplanninggrid/32×48hero(sourcefoot44→worldcenter+20); sourcepixels1:1nearest, PhaserFIT withroundPixels andexistingresponsiveDOM. Structures usecommon3/4front+sidevolume/materialcolors; props anchoredbyfootY andactorfoot-sorted. Rear-1000/ground-900/foreground1000, fountain204, tree201, bench238; seatedsupport239. Groundalpha masks followstructurefootprints sofrontwallsremainvisible.
+
+Newdeterministicsources generate-village-art.mjs andgenerate-idle-art.mjs produce10PNG: two3layerstudies(480×270each), fountain576×112six96×112cells@6fps, tree432×208, leaf128×16eight16×16cells@6fps, idle96×192four3-frame32×48views@3fps. Legacywalk24frames@10fps and40oldPNGsretainedbyte-identical. Existingactions11cyclesremain; kneel/stand/full4viewinteractionsnotfinished. Noaddedreferencefilesinproduction.
+
+Fixedroadgraphanchors/collidersareeditedin scene-definitions.ts; footprints10×4sampleevery2px. Roadmovement~70px/swith200–900mslegs,interaction600ms,cast1120/craft1600 unchanged. Exactly6recycledstoryleavesaftertree_memory; pausedwhenReducedMotion. Noautodetectlowperformancepreset/lazyloadingorhardwareFPSclaim.
+
+Actualbrowsercaptures/defects: see docs/evidence/session12/README.md and TEST_REPORT. Initialreviewfoundgroundoverbuildingwallsandledtoamaskfix; finalreviewmustverifythefixbeforemarkingvisualsliceaccepted.

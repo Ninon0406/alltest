@@ -1,4 +1,26 @@
-# GODSEED — ความคืบหน้า 0.5.1
+# GODSEED — ความคืบหน้า 0.6.0
+
+### Session12 — 2026-11-05 UTC · World visual expansion (ต้นแบบสองสถานที่)
+
+Base d4da87a บน feat/godseed-village-references; ตรวจ main/PR9 ที่รวมแล้ว ไม่ทิ้ง commit220e992 และไม่เริ่มโปรเจกต์ใหม่ อ่าน03/SSOT/Roadmap/Skillsเดิมก่อนพัฒนาตามคำสั่งภาพอ้างอิงล่าสุด
+
+- นำเข้า ZIP เจ้าของ 13ไฟล์:10WebP+manifest+README+Contact Sheet ที่ assets/reference/godseed พร้อม SHA provenance เปิด Contact Sheetครบ10แห่ง และภาพ01/03แบบเต็ม ไม่ใช้ภาพเต็มเป็นพื้นหลังเกม
+- สร้าง10PNGต้นฉบับ185,199bytes: หมู่บ้าน/ต้นไม้rear-ground-front, fountain6frames, tree432×208, leaves8frames, directionalidle4views; รักษา40PNGเดิม byte-identical ภาพใหม่ยัง procedural prototype ต่ำกว่าความละเอียด/งานศิลป์ finalHD ของconcept
+- Anchor/collider/roadgraphใน scene-definitions.ts เป็นพิกัดเท้าบนแผนที่ที่วาดเอง; ตรวจfootprint10×4ทุก2px/Dijkstraเฉพาะถนนที่แต่งไว้ ไม่มีfree-roam ทางขาดหยุดพร้อมข้อความ ไม่ตัดผ่านวัตถุ
+- CH0201เดินอ้อมฐานน้ำพุ→fountain_frontแล้วหันเหนือ; CH0004ใหม่เดินใต้กิ่ง→seat→นั่งคงอยู่/ใบไม้ตามtree_memory/เพื่อนPipจดจำหนึ่งครั้ง; ข้าม/ลดการเคลื่อนไหว/reloadใช้transactionเดิม Restใช้+15HP/+10MPและเวลา1tickเหมือนระบบเดิม ไม่มีของซ้ำ
+- แก้จุดเดิมที่resetทุกshow: คงตำแหน่งเมื่อเป็นrun/stage/location/battlemodeเดิม; idleใช้ทิศล่าสุด ไม่ใช่side-facingทุกครั้ง ท่านั่ง/น้ำพุrestoreจากflags+sceneanchor ไม่เพิ่มserializedพิกัด ไม่เปลี่ยนState2/DB1/envelope1
+- Roadmapยัง SSOTเดิม เพิ่มlocations9ด้าน×10แห่งแยกจากคะแนนหลัก และงานVIS-013/014ตามขอบเขตเจ้าของใหม่ รวม76งาน ไม่มีการนับ90ช่องซ้ำ คำสั่ง03เดิมไม่ถูกลบ
+- แก้stage-siteเดิมที่คัดลอกroot/assetsทั้งหมดจนเสี่ยงเอาreferenceเข้าartifact: เก็บเฉพาะhashedJS/CSSเก่าสำหรับcachedHTML; public runtimePNGครบเหมือนเดิม validate:referencesตรวจอีกครั้งหลังstaging
+
+ปริมาณจาก inspect:content: 17scenes/57choices/NPC5/3encounters/234legal/0endings/6stageIDs และ7location presentations (villageมีcenter/tree);50PNG/39versionedPNG ไม่มีBattle Glade/Crystal Clearingฉบับใหม่ แปดreferenceที่เหลือยังไม่แปลง
+
+ผลปัจจุบัน: npmci/type/lint/content2/game104/roadmap7/build/PACKAGING PASS; focused4viewportผ่านก่อนGroundMaskแก้ครั้งสุดท้าย Full62และภาพหลังแก้กำลังตรวจ ดู TEST_REPORT/Development Log ก่อนถือว่าสถานะVIS-013/014ผ่าน Publicยัง0.5.1จนกว่าbranchนี้ผ่านและเผยแพร่จริง
+
+ข้อจำกัด: NPC/actionนอกwalk/idleยังไม่ครบทุกทิศ; run/kneel/stand beatsยังต้นแบบ; ยังไม่มีเส้นทางhouse→gate→village, crystal collect/workshop art/battle gladeใหม่, low-devicepreset/lazyloading, sound/finalHD/Safarihardware ส่วนเนื้อเรื่องruins/festival/boss/สามตอนจบยังค้าง
+
+งานถัดไป: gateภาพสองฉากและpublish → house/gate routes → crystal+workshop → battle glade/recipeVFX → NPCposes/ruinsเนื้อเรื่องตามdependencies ไม่ขยายทั้ง10แบบหยาบ
+
+---
 
 Session11 latest: PR9 merged; camera acceptance forcurrent6stages/3encounters complete. Checklist19/74=25.7%(v126.8%). Public0.5.1 verified; finalmainCI proof inTEST_REPORT. Previoussessions below retain historicalstates.
 

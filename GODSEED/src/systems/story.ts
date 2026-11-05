@@ -23,6 +23,7 @@ export function nextHint(state:State){
 }
 /** Authored facts only. Rendering cannot invent progress or grant rewards. */
 export function rememberedLines(state:State,scene:StoryScene):string[]{
+ if(scene.id==='S00_WAKE'&&state.flags.tree_memory)return ['ใบไม้หมุนลงตรงปลายเท้า พิพส่งเสียงตอบเบา ๆ ความเงียบใต้ต้นเมล็ดจึงกลายเป็นความทรงจำแรกที่มีเพื่อนอยู่ข้าง ๆ'];
  if(scene.id==='S03B_MAREN'&&state.choices.includes('CH1203'))return ['มาเรนรับหยดน้ำอย่างระวัง “น้ำยังจำจังหวะของกระดิ่งได้ ขอบใจที่นำเสียงของลำธารมาฝากนะ”'];
  if(scene.id==='S07_ARCHIVE'){
   if(state.flags.stream_clean)return ['ไอราปิดสมุดเล่มเล็ก “เธอช่วยให้ลำธารกลับมาใสแล้ว กระดิ่งคงได้หายใจอีกครั้ง”'];
