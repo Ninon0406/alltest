@@ -28,4 +28,4 @@
 - Action lifecycle: actual walking/pickup/crafting/guard/cast/hit/victory + save, skip commits once, OS reduced/mid-action toggle, missing-layer fallback, defeat reaction before recovery.
 - Changes remain presentation-only; State2/database1/envelope1 and existing13scenes/41choices/234recipes preserved. Whole GS tasks stay IN_PROGRESS where final-spec work remains.
 
-Session4 batch acceptance PASS locally: art4, content2, totalunit63, browser30 + finalfocused9, production-preview asset/gameplay/save proof; final full31 remote CI is pending before merge. GS-007/008/009/010/033 broader final-spec work remains IN_PROGRESS.
+Session4 batch acceptance PASS locally: art4, content2, totalunit63, browser30 + finalfocused9, production-preview asset/gameplay/save proof; final full31 PR CI41950932784 SUCCESS; PR#4 merged255e79f. GS-007/008/009/010/033 broader final-spec work remains IN_PROGRESS.

@@ -2,7 +2,7 @@
 
 ### Session 4 — 2026-11-05 (UTC)
 
-Base `9c71ea7` · branch `feat/godseed-layered-art` · milestone: first playable slice / visual presentation pass. ตรวจ main, working tree, CI และคำสั่งทำต่อครบก่อนแก้ งานติดตั้ง `220e992` และงานก่อนหน้าอยู่ใน ancestry ของ main แล้ว ไม่มี PR ค้าง ไม่เริ่มโครงการใหม่
+Base `9c71ea7` · branch `main` · implementation `00462f9` · merge `255e79f` · [PR#4](https://github.com/Ninon0406/alltest/pull/4) MERGED · milestone: first playable slice / visual presentation pass. ตรวจ main, working tree, CI และคำสั่งทำต่อครบก่อนแก้ งานติดตั้ง `220e992` และงานก่อนหน้าอยู่ใน ancestry ของ main แล้ว ไม่มี PR ค้าง ไม่เริ่มโครงการใหม่
 
 รอบนี้เลือก GS-007/008/009/010/033 ต่อจาก0.2.0 เน้นภาพและความต่อเนื่องของการกระทำ โดยคง engine/story/กติกา/สูตร/เซฟเดิม
 
@@ -24,7 +24,7 @@ Source counts: **13 scenes /41 choices /4 companion NPC /2 encounters /234 legal
 
 ## ตรวจสอบ / เผยแพร่
 
-`npm ci` PASS156 packages; typecheck/lint/content2/unit+integration+balance+art63/build PASS. Local browser30/30 PASS5.4m หลังแก้ HUD; หลังแก้ landscape focused9/9 PASS1.1m รวม8 visual+ลูป844×390เดิม Production-preview verifier PASS: hash16PNG, start/forest/FIRE/practice/win/checksum export/import Remote CI/public0.3.0 ยังรอเผยแพร่ ดูหลักฐานล่าสุดใน TEST_REPORT.md
+`npm ci` PASS156 packages; typecheck/lint/content2/unit+integration+balance+art63/build PASS. Local browser30/30 PASS5.4m หลังแก้ HUD; หลังแก้ landscape focused9/9 PASS1.1m รวม8 visual+ลูป844×390เดิม Production-preview verifier PASS: hash16PNG, start/forest/FIRE/practice/win/checksum export/import PR CI41950932784 PASS ชุดสุดท้าย31กรณี; Pages41951619769 SUCCESS; public0.3.0 PASS (gameplay/16PNG/JS hash/เซฟ) main Actions41951619885 build/deploy SUCCESS; หลัง Actions ตรวจ HTML/JS/16PNG ซ้ำ PASS ดูหลักฐานล่าสุดใน TEST_REPORT.md
 
 State2 / IndexedDB1 / checksum envelope1 คงเดิม ไม่มี migration ใหม่ ระบบย้าย V1 และเก็บต้นฉบับจาก0.2.0ยังอยู่ การทดสอบอุปกรณ์เป็น Chromium emulation; iOS/Safari/Android และ hardware FPS ยัง NOT TESTED
 
@@ -37,3 +37,7 @@ State2 / IndexedDB1 / checksum envelope1 คงเดิม ไม่มี migr
 Known P2: final art/lighting, full234 VFX, audio, party/mastery, map, measured50/50 pacing. Cross-tab save conflict/PWA และ future schemasยังค้าง ไม่มีสิ่งที่เจ้าของต้องติดตั้งหรือรัน terminal
 
 Portrait HUD now flows below the canvas rather than covering actor feet; bounds are asserted on phone/iPad art routes. Desktop/short landscape layout retains its existing controls.
+
+## เผยแพร่0.3.0
+
+https://ninon0406.github.io/alltest/ ตรวจ touch/start/forest/FIRE craft/practice/win/reload/checksum export/import PASS, original practice spirit และภาพหลายชั้นถูกโหลดจริง JS SHA-256 `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d` ตรง build และภาพใหม่16PNG hashตรงต้นฉบับ

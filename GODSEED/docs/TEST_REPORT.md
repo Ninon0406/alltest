@@ -130,3 +130,16 @@ Final manual landscape review exposed a pre-existing aspect-ratio/grid issue:844
 Final short-landscape correction: focused **9/9 PASS in1.1m**, zero skipped: all8 visual regressions (including new full-canvas boundary case) plus the original real844×390 forest/craft/save loop. TypeScript/lint PASS after final test addition. Final screenshot visual-landscape-844.png visibly contains both actors and the entire stage; phone visual-training-390.png has an unobscured ground lane; desktop training and tablet garden/village reviewed as actual runtime images. Prototype art gate remains open.
 
 Updated production verifier PASS against final preview: touch/start/forest/clue/reload/FIRE crafting/original practice/win/independent save checksum/import; all16 new PNGs hash-equal to sources; observed page/HTTP errors empty. JS SHA-256 `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d`. This is preview proof; public0.3.0 is not claimed until remote publish/verification. PR CI will run the entire final31-case suite.
+
+
+## 0.3.0 remote release proof
+
+- Implementation00462f9; [PR#4](https://github.com/Ninon0406/alltest/pull/4) MERGED at255e79f4fef2c36d02c03e192ccba47fd4400d1b. Merge tree equals the validated implementation tree.
+- [PR workflow41950932784](https://github.com/Ninon0406/alltest/actions/runs/41950932784) SUCCESS: locked install/test:all/stage/Chromium/full browser/evidence upload/Pages artifact upload all steps successful. Final browser suite contains31 cases and no skipped/fixme declarations. Remote run and step statuses were read through GitHub API; raw log archive download returned403, so no remote per-case timing is asserted.
+- [main:/ Pages41951619769](https://github.com/Ninon0406/alltest/actions/runs/41951619769) SUCCESS. [Main workflow41951619885](https://github.com/Ninon0406/alltest/actions/runs/41951619885) SUCCESS.
+
+- Actual public command `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/` PASS: touch/start/craft/forest/clue/reload/FIRE craft/original practice spirit/win/export checksum/import. All16 new PNG hashes equal source; layered stage3 and training-v2 asserted. Independent canonical checksum matches exported State2 with slice_complete/training_won flags. No observed pageerror/HTTP failures.
+- Public JS SHA-256 `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d` matches final staged local build. Evidence `test-results/public-battle-390.png` and `public-training-390.png`. Browser simulation; real hardware remains untested.
+
+
+Main workflow41951619885 final SUCCESS: build126996643097 completed all checks including full31-case browser suite; deploy126998774927 completed configure-pages/deploy-pages at2026-11-05 02:00:36 UTC. Post-Actions public HTML/JS and all16 PNG byte-hash gate PASS with the same `d6fd27d74c3531dc620cb8fb06a2f5ec2d5352314c51eea8fe81da0da8b1025d`, actual renderer ready/3layers, and empty observed error list. This confirms the Actions artifact matches the already validated public gameplay/fire/practice/checksum/import flow. Final evidence-only documentation changes do not change game source/assets/bundle.

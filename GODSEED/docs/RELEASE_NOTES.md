@@ -4,7 +4,7 @@ Original village/garden/workshop/forest each use three layers plus depth-sorted 
 
 Skip/reduced-motion cancel and settle animation safely; final battle reactions appear before returning to story. OS reduced motion is honored from launch. Loading locks game actions until renderer ready; missing new PNGs use retained original art and a Thai status message. Portrait HUD now sits below the stage; short-landscape canvas fits its own column so the desk cannot hide the foe. All legacy art and existing gameplay are preserved.
 
-Still a first-slice prototype: no new chapter scenes/endings/recipes, final HD certification, NPC silhouette completion or audio. State2/database1/checksum envelope1 unchanged; existing saves remain compatible. Release URL/CI proof is recorded after actual publication in TEST_REPORT.
+Still a first-slice prototype: no new chapter scenes/endings/recipes, final HD certification, NPC silhouette completion or audio. State2/database1/checksum envelope1 unchanged; existing saves remain compatible. Published and public-gameplay/art/save verified at https://ninon0406.github.io/alltest/ · PR#4 /255e79f. PR CI41950932784 and main:/ Pages41951619769 SUCCESS. Full proof in TEST_REPORT.
 
 ## Earlier releases
 

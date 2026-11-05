@@ -20,10 +20,10 @@ Node 24: `npm ci --prefix GODSEED` แล้ว `npm --prefix GODSEED run test:a
 
 ## GitHub Pages
 
-เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่ GODSEED แล้ว รุ่น 0.2.0 หลังรวม PR #3 เข้า main (`2eec3a1`) และตรวจลูปป่า/ผสมเวทไฟ/ฝึกกับคุโร/ส่งออก checksum/นำเข้าไฟล์บนเว็บจริง พร้อม hash ของ JavaScript ตรงกับ build สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/`
+เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่ GODSEED แล้ว รุ่น 0.3.0 หลังรวม PR #4 เข้า main (`255e79f`) และตรวจลูปป่า/ผสมเวทไฟ/ฝึกกับภูตชุดใหม่/ส่งออก checksum/นำเข้าไฟล์บนเว็บจริง พร้อม hash JavaScript และภาพใหม่16PNG ตรงกับ build สคริปต์ตรวจซ้ำ: `node GODSEED/scripts/verify-public.mjs https://ninon0406.github.io/alltest/`
 
 workflow ทดสอบทุก PR และ deploy เมื่อ main ผ่าน checks รองรับ Pages artifact พร้อมไฟล์ root สำหรับ source `main:/` หากเปลี่ยน Source ได้ ให้ใช้ Settings → Pages → Build and deployment → GitHub Actions ผ่านเบราว์เซอร์โทรศัพท์
 
 โปรเจกต์ REBORN ถูกนำออกจาก working tree ตามคำสั่งเจ้าของล่าสุด ไม่ใช่ระบบเซฟเดียวกับ GODSEED
 
-รุ่น0.2.0 ใช้เซฟเกม schema2 โดยย้ายจากV1และเก็บต้นฉบับก่อนเขียนครั้งแรก ตัวตน/seed/ความคืบหน้าไม่ถูกสุ่มใหม่ XP ที่แสดงยังไม่ใช่ระบบเลื่อนระดับอัตโนมัติ
+เซฟเกมใช้ schema2 (ตั้งแต่รุ่น0.2.0) โดยย้ายจากV1และเก็บต้นฉบับก่อนเขียนครั้งแรก ตัวตน/seed/ความคืบหน้าไม่ถูกสุ่มใหม่ XP ที่แสดงยังไม่ใช่ระบบเลื่อนระดับอัตโนมัติ

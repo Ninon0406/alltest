@@ -25,8 +25,12 @@ Public0.2.0: real Pages touch path passed forest→FIRE crafting→workshop prac
 
 ## 0.3.0 scope
 
-Retain all ten viewport golden paths and save/battle suites. Added genuine skip-on-walk then pickup/read-only durable-save assertions; OS reduced-motion and mid-action toggle; intentionally aborted layered PNG with accessible fallback; actual workshop defeat/reaction before recovery; layered village/garden/workshop and original practice-spirit screenshots at390×844,820×1180,1366×768. No gameplay-state injection in these paths. Missing-network/storage/migration fixtures are explicitly negative tests. Local30/30 PASS5.4m after portrait correction; final focused9/9 PASS1.1m after landscape correction. PR CI runs final31 cases. See TEST_REPORT for release proof. Actual background-tab/hardware/Safari performance is not newly certified.
+Retain all ten viewport golden paths and save/battle suites. Added genuine skip-on-walk then pickup/read-only durable-save assertions; OS reduced-motion and mid-action toggle; intentionally aborted layered PNG with accessible fallback; actual workshop defeat/reaction before recovery; layered village/garden/workshop and original practice-spirit screenshots at390×844,820×1180,1366×768. No gameplay-state injection in these paths. Missing-network/storage/migration fixtures are explicitly negative tests. Local30/30 PASS5.4m after portrait correction; final focused9/9 PASS1.1m after landscape correction. PR CI41950932784 SUCCESS with final31-case suite. See TEST_REPORT for release proof. Actual background-tab/hardware/Safari performance is not newly certified.
 
 Portrait HUD now flows below the canvas rather than covering actor feet; bounds are asserted on phone/iPad art routes. Desktop/short landscape layout retains its existing controls.
 
 844×390 original golden path and new canvas/world/desk geometry PASS. Manual review verifies full-stage visibility after removing inherited aspect-ratio grid overflow. All three new visual device routes PASS after both fixes; browser simulation remains distinct from hardware acceptance.
+
+Public0.3.0 Pages PASS: actual touch/forest/FIRE/practice/win/reload/checked save export-import, all16 new PNG hashes and current JS hash, layered3 stages and original training texture. Observed error list empty. Main:/ deployment41951619769 succeeded; main Actions final gate recorded in TEST_REPORT.
+
+Main workflow41951619885 build+deploy SUCCESS (2026-11-05 02:00:36 UTC). Final full31 browser suite successful; post-Actions public HTML/JS/16PNG hash+renderer gate PASS, same verified bundle.
