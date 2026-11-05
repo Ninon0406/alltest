@@ -61,3 +61,7 @@ Baseline npmci/type/lint/content2/unit81/build PASS. Unitใหม่6กรณ�
 3. GS-018/033/031 VFX/NPC artและSafari/อุปกรณ์จริง
 
 ภาพยังต้นแบบ; ยังไม่ทดสอบฮาร์ดแวร์จริง/FPS/Safari; ยังไม่มีboss/endings/audio/mastery/party/mapเต็ม เว็บจริง https://ninon0406.github.io/alltest/ ตรวจ0.4.1ผ่านแล้ว ไม่ต้องให้เจ้าของตั้งค่าหรือรันคำสั่งเพิ่ม
+
+### Session9 —2026-11-05 UTC
+
+Camera Director prototype: VIS-011 remainsIN_PROGRESS. Added12px boundedpan/450ms ease, fixedoverscan/fullmotion andoriginal1:1reducedframing, cancellation/returncenter withonce-only saves. Camera pure2 tests; game96/content2/roadmap6/type/lint/buildPASS, focus4PASS12.3s; full54/CI pending. ExistingRoadmap/03 workflow reused, percentages24.3% unchanged. No newassets/story/schema. SeeTEST_REPORT/DEVELOPMENT_LOG for exactgates and nexttasks.

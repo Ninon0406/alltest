@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `bda8f51` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `09906d4` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -187,7 +187,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-009, GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-006
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/main.ts](GODSEED/src/main.ts)
-  - หลักฐาน/สถานะจริง: มีfadeและparallax6px; ยังไม่ใช่กล้องpanตามSSOT
+  - หลักฐาน/สถานะจริง: Session9: bounded12px pan/450ms easing+fixed1.08overscan, reset/skip/reduced cancellation; focused4/4PASS12.3s, phone screenshotreview; full54/CI/全scene acceptance pending
   - เกณฑ์เสร็จ: boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย
 
 - [ ] 🟡 กำลังพัฒนา **VIS-012 — Pixel Art UI/icons/logo/spell revealครบ**

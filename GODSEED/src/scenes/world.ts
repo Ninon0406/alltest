@@ -7,6 +7,7 @@ import {playerAnimations,trainingAnimations} from './actor-art';
 import {STAGES,stageLayouts,stageFolder,stageFallback,type StageId} from './stage-layout';
 import {explorationAnimations} from './exploration-art';
 import {directionalWalk,facings,facingFor,walkDuration,type Facing} from './directional-art';
+import {cameraShot,cameraFraming} from './camera-plan';
 import {cinematicPath} from './cinematic-paths';
 import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 
@@ -51,6 +52,7 @@ export class World extends Phaser.Scene {
   this.writeMetric('actionPhase',this.phase);this.writeMetric('actionSequence',this.generation);this.writeMetric('activeEffects',this.effects.size);
   this.writeMetric('motion',this.motion?'full':'reduced');this.writeMetric('visibility',document.hidden?'hidden':'visible');
   this.writeMetric('assetErrors',this.assetErrors.length);this.writeMetric('lastOutcome',this.lastOutcome);this.writeMetric('lastCue',this.lastCue);
+  if(this.ready){const c=this.cameras.main;this.writeMetric('cameraShot',JSON.stringify({zoom:c.zoom,x:c.scrollX,y:c.scrollY,left:c.worldView.x,right:c.worldView.right,top:c.worldView.y,bottom:c.worldView.bottom}));}
   this.writeMetric('walkFacing',this.facing);this.writeMetric('walkTrace',this.walkTrace.join(','));
   if(this.player){this.writeMetric('playerTexture',this.player.texture.key);if(this.phase==='action'&&this.playerAction==='walk')this.writeMetric('walkSample',JSON.stringify({x:this.player.x,y:this.player.y,feetY:Math.round(this.player.y+20),shadowX:this.playerShadow.x,shadowY:this.playerShadow.y,depth:this.player.depth,animation:this.player.anims.currentAnim?.key,texture:this.player.texture.key}));}
   this.writeMetric('ambientTick',Math.floor(this.ambientTime/200));this.writeMetric('propCount',this.props.length);this.writeMetric('memoryProps',this.memoryProps);
@@ -149,13 +151,14 @@ export class World extends Phaser.Scene {
  finishAction(){
   this.generation++;this.actionDepth=undefined;
   if(!this.ready)return;
+  this.tweens.killTweensOf(this.cameras.main);this.cameras.main.setZoom(this.motion?cameraFraming.zoom:1).setScroll(0,0);
   this.playerShadow.setVisible(true);
   this.tweens.killTweensOf(this.player);this.tweens.killTweensOf(this.npc);this.tweens.killTweensOf(this.parallax);
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
   this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();this.pose('idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.parallax.value=0;this.diagnostics();
  }
- setReduced(reduced:boolean){this.motion=!reduced;if(this.ready&&reduced)this.finishAction();this.diagnostics();}
+ setReduced(reduced:boolean){this.motion=!reduced;if(this.ready){if(reduced)this.finishAction();this.cameras.main.setZoom(reduced?1:cameraFraming.zoom).setScroll(0,0);}this.diagnostics();}
  private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
   if(token!==this.generation)return Promise.resolve();
   return new Promise(resolve=>{let done=false;const settle=()=>{if(done)return;done=true;this.settlers.delete(settle);resolve();};this.settlers.add(settle);this.tweens.add({...properties,targets:target,onComplete:settle});});
@@ -200,6 +203,8 @@ export class World extends Phaser.Scene {
   this.finishAction();this.motion=!reduced;const token=this.generation;this.phase='action';this.walkTrace=[];this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));if(cue==='talk'||cue==='pick')this.npcPose('talk');
   if(spell||cue==='cast'||cue==='craft')this.castEffect(reduced,spell,target);
   const path=cinematicPath(this.currentStage,cue,command);
+  const framed=!reduced&&!!(command||path||spell);
+  if(framed){const focus=path?.points.at(-1)?.x??(cue==='talk'?this.npc.x:target==='scene'?stageLayouts[this.currentStage].spellTarget?.x??240:this.player.x);const shot=cameraShot(focus,false);this.tweens.add({targets:this.cameras.main,scrollX:shot.scrollX,duration:cameraFraming.duration,ease:'Sine.easeInOut'});}
   this.writeMetric('lastPath',path?.id||'none');this.writeMetric('pathPhase',path?'approach':'interaction');
   this.writeMetric('pathProgress',0);
   if(path){
@@ -242,6 +247,7 @@ export class World extends Phaser.Scene {
     this.pose('hit');await this.beat(this.player,{alpha:.65,duration:reduced?25:200,yoyo:true},token);
    }
   }
+  if(token===this.generation&&framed){this.tweens.killTweensOf(this.cameras.main);await this.beat(this.cameras.main,{scrollX:0,duration:cameraFraming.duration,ease:'Sine.easeInOut'},token);}
   if(token===this.generation){this.pose('idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.diagnostics();}
  }
 }

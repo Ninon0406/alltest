@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "bda8f51",
+  "baseCommit": "09906d4",
   "phases": [
     {
       "id": 1,
@@ -512,7 +512,7 @@
         "GODSEED/src/scenes/world.ts",
         "GODSEED/src/main.ts"
       ],
-      "evidence": "มีfadeและparallax6px; ยังไม่ใช่กล้องpanตามSSOT",
+      "evidence": "Session9: bounded12px pan/450ms easing+fixed1.08overscan, reset/skip/reduced cancellation; focused4/4PASS12.3s, phone screenshotreview; full54/CI/全scene acceptance pending",
       "acceptance": "boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย",
       "legacyIds": [
         "GS-009",
