@@ -19,13 +19,13 @@ Current0.4.0: PR/main full37-case browser checks SUCCESS, local81/content2/build
 
 Evidence: test-results/save-recovered.png, save-memory-mode-{390,844}.png, title-360.png, battle-{360,768,1366}.png, loop-<width>x<height>.png. CI uploads screenshots. Visually inspected 390px memory warning: readable text/export/retry controls, game and touch controls remain available; scene art is still provisional. Screenshots are actual runtime, not design mockups. No FPS or 50/50 pacing claim.
 
-# # 0.2.0 update
+## 0.2.0 update
 
 Full suite23/23 PASS. All ten viewport loops and0.1.1 recovery checks retained. New phone390×844/iPad820×1180/desktop1366×768 paths craft/use WIND, HEAL and FIRE, surrender practice, resume stable practice turn and win with the correct separate reward. Dedicated original V1 active-battle storage fixture migrates on commit without losing the raw original. State/help bars/log/two-column slots inspected in actual screenshots; CSS flex canvas boundary and moving shadows improved. Real hardware/Safari and final HD visual acceptance still NOT TESTED/PENDING.
 
 Public0.2.0: real Pages touch path passed forest→FIRE crafting→workshop practice→win→State2 checksum export/import; public-training-390.png is actual public evidence. Main build/deploy41929504279 succeeded. This adds no claim of real-device or full-art acceptance.
 
-# # 0.3.0 scope
+## 0.3.0 scope
 
 Retain all ten viewport golden paths and save/battle suites. Added genuine skip-on-walk then pickup/read-only durable-save assertions; OS reduced-motion and mid-action toggle; intentionally aborted layered PNG with accessible fallback; actual workshop defeat/reaction before recovery; layered village/garden/workshop and original practice-spirit screenshots at390×844,820×1180,1366×768. No gameplay-state injection in these paths. Missing-network/storage/migration fixtures are explicitly negative tests. Local30/30 PASS5.4m after portrait correction; final focused9/9 PASS1.1m after landscape correction. PR CI41950932784 SUCCESS with final31-case suite. See TEST_REPORT for release proof. Actual background-tab/hardware/Safari performance is not newly certified.
 
@@ -47,3 +47,9 @@ Final local full36/36 PASS6.4m; final focused6/6 PASS1.6m adds actual archive/st
 Public0.4.0 touch route PASS: oldforest/FIRE/practice, archive research, realECHO/WATER crafting, B02 spell/reload/win, bell/clearstream and Eira memory, checked export/import. All28 versioned PNGs and current JS hash match the source; observed error list empty. main:/ Pages41961019875 SUCCESS; mainActions/post-deploy byte proof recorded next inTEST_REPORT.
 
 Main workflow41961020262 build+deploy SUCCESS at2026-11-05 03:28:23 UTC. Final post-Actions assets-only public check PASS: current HTML, same f28e1bea53a80bd676c004411d3dec7dc7d85cb96d50ee755a70c6e45276c1ea JS and28 versioned PNGs, ready three-layer renderer and empty errors.
+
+## Session6 —0.4.1
+
+New Chromium cases390×844,1024×768,1366×768 use real collection/crafting, invalid/known preview, combined book filters, removal/reload and nine BASIC_PULSE turns to win practice with no equipped spells. Phone screenshot alchemy-390.png reviewed: readable selectors/no overflow, original pixel scene retained. These are browser simulations, not Safari or physical-device acceptance. Final counts/status inTEST_REPORT.
+
+Final touch cases4/4 PASS54.5s also include iPad portrait820×1180. Full40 local PASS7.9m before final UI feedback polish; final focused/build/preview verify that polish. Final remote suite41 cases.

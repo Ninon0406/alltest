@@ -29,3 +29,5 @@ export function craft(s:State,c:Core,f:Form,m:Mod){return transact(s,d=>{
  });}
 export function equip(s:State,id:string,slot:number){return transact(s,d=>{if(d.battle||!d.known.includes(id)||slot<0||slot>3||d.equipped.includes(id))throw Error('ติดตั้งเวทนี้ไม่ได้');if(slot>d.equipped.length)throw Error('เลือกช่องว่างแรกก่อน');d.equipped[slot]=id;});}
 export {fight,enemyName,intent} from './combat';
+
+export function unequip(s:State,slot:number){return transact(s,d=>{if(d.battle||!Number.isInteger(slot)||slot<0||slot>=d.equipped.length)throw Error('ถอดเวทช่องนี้ไม่ได้');d.equipped.splice(slot,1);});}
