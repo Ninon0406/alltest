@@ -47,3 +47,10 @@ it('rest flags survive the existing save schema, grant memory/trust once and cle
  expect(schema.parse(rested)).toEqual(rested);const again=choose(rested,'CH0004');expect(again.trust.PIP).toBe(1);
  expect(choose(again,'CH0001').flags.rest_under_tree).toBe(false);expect(old.flags).toEqual({});
 });
+it('existing progressed saves can visit the tree from the hub without restarting or farming gifts',()=>{
+ let s=fresh();for(const id of ['CH0001','CH0102'])s=choose(s,id);
+ const previous=structuredClone(s);s=choose(s,'CH0211');expect(s.scene).toBe('S02_TREE');
+ s=choose(s,'CH02T1');expect(s.flags.rest_under_tree).toBe(true);expect(s.flags.tree_memory).toBe(true);
+ expect(s.inventory).toEqual(previous.inventory);expect(s.trust).toEqual(previous.trust);
+ s=choose(s,'CH02T2');expect(s.scene).toBe('S02_HUB');expect(s.flags.rest_under_tree).toBe(false);expect(s.runId).toBe(previous.runId);
+});

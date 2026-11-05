@@ -179,3 +179,5 @@ Session11 delivery: main42020164244SUCCESS/full58 anddeploy11:48:41UTC; publicfu
 - ยังไม่เสร็จ:8referenceconversions, finalHD/individualNPC/special4viewposes/house-gatewalk/crystal/workshop/battleglade/VFX234/lowpreset/lazyload/Safarihardware และremainingchapter/boss/endings
 - ไฟล์/commit: base d4da87a; feat/godseed-village-references; source/evidenceในTEST_REPORT; commit/PR/deployบันทึกเมื่อมีผลจริง
 - ต่อไป: completegate/publish → gate+cottage routes → crystal/workshopinteractions → battle glade+VFX → NPC/storyruinsdependencies
+
+Session12 follow-up: source checkpoint c9d9bab / draft PR#10. Added revisitable S02_TREE for existing hub saves (18scenes/60choices), no extra trust/material gifts. First local full run interrupted after directional helper5s timeout on the longer real road from retained bench; fixes remove zero-length beats and allow bounded12s wait. Initial104unit is superseded by105 after revisit regression. Final focused10 and full63 required before VIS-014 acceptance/merge.

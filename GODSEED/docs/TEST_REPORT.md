@@ -8,13 +8,13 @@ Base d4da87a; source branch feat/godseed-village-references. แยกผลร�
 | --- | --- |
 | npm ci | PASS,156packages; locked stack, no new dependency |
 | typecheck / lint | PASS |
-| validate:content | PASS2;17scenes/57uniquechoices, old transitions intact |
-| game unit/integration | PASS104 รวมใหม่5route/collision/save+2art tests |
+| validate:content | PASS2;18scenes/60uniquechoices, old transitions intact |
+| game unit/integration | PASS105 รวมใหม่6route/collision/save+2art tests |
 | Roadmap | PASS7 รวมnegative testสถานที่ขาดช่อง/IDซ้ำ/readyก่อนผ่านทุกช่อง |
 | Reference integrity | PASS10WebP/13SHA records; zip b3d3f742…9f56f |
 | Build / stage-site / validate:references | PASS;0concept filesในpublic/distหลังstaging; retainedhashedclients |
 | Initial focused locations | PASS4/4,56.6s;390/820/1024/1366; beforefinalGroundMask |
-| Final local full browser | RUNNING62;ไม่อ้างผ่านก่อนผลจบ |
+| Final local full browser | RUNNING63;ไม่อ้างผ่านก่อนผลจบ |
 | PR CI / main CI / public0.6.0 | NOT YET VERIFIED |
 
 การทดสอบใหม่กดตัวเลือกจริง อ่านเซฟจากIndexedDBและdiagnosticsแบบread-only ไม่injectstate: เปิดS00ในtree location, เดิน4ทิศใต้กิ่ง (depth198<tree201), นั่งseat79/193 supportdepth239, leaftriggerหลังmemoryflag, ลดmotionหยุดambient, reloadcontinueคงท่านั่งและrevision, พักซ้ำไม่farmtrust, ลุกออกเดินตามgraph, รับCORE_WIND, ไปน้ำพุโดยอ้อมcolliderและหันidle-north, reloadน้ำพุแล้วทิศ/ตำแหน่งยังถูกต้อง
@@ -24,6 +24,8 @@ Unitตรวจทุกauthoredlink/anchor, footprint10×4ทุก2px, ทุ
 Visual inspectionก่อนmaskfixพบพื้นทับผนังบ้าน (แม้initialbrowserผ่าน) จึงแก้alpha maskตามfootprintและเพิ่มpixel regressionในart test ภาพหลังแก้จะตรวจซ้ำก่อนacceptance เก็บภาพruntimeที่docs/evidence/session12 และ test-results; Contact Sheet/ref01/ref03เปิดจริง งานยังต้นแบบ ไม่รับรองfinalHD/อุปกรณ์จริง/234VFX
 
 Explicit open coverage: ค่าการบังใช้depthจริง+ภาพที่จับได้ ต้องดูภาพด้วยไม่ใช่assertdepthอย่างเดียว; browserจำลองไม่เท่ากับiOS/Safari/Android/iPadเครื่องจริง ไม่มีFPS/memoryhardwarebenchmark การกระทำพิเศษทุกทิศ/เนื้อเรื่องครบสามจบยังไม่ได้สร้าง
+
+ก่อน final run พบ directional browser timeout5s เมื่อเดินจากม้านั่งที่คงตำแหน่งแล้วไปทางออก8ช่วง (ไม่ได้resetกลับกลางฉาก) หยุดรอบนั้นและเก็บ failure ไว้ใน /tmp/gs12-e2e.log แก้ helperรอแบบbounded12sตาม8×900ms+interaction/camera และตัด zero-distance graph beats ที่ไม่ควรเปลี่ยนทิศ ไม่มีการskip/ลบ assertion ตรวจ direction จริง รอ focused10 และ full63ใหม่บนbuildสุดท้าย
 
 ---
 

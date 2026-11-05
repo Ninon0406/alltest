@@ -1,6 +1,6 @@
 # QA matrix — 0.6.0 / 2026-11-05 UTC
 
-Session12 targeted living-location checks: Chromium hasTouch390×844,820×1180,1024×768,1366×768 PASS4/4ก่อนfinalGroundMask; full62กำลังตรวจรุ่นสุดท้าย ผลเด็ดขาดในTEST_REPORT
+Session12 targeted living-location checks: Chromium hasTouch390×844,820×1180,1024×768,1366×768 PASS4/4ก่อนfinalGroundMask; full63กำลังตรวจรุ่นสุดท้าย ผลเด็ดขาดในTEST_REPORT
 
 เพิ่มการตรวจ: เดินสี่ทิศ/ตัวละครหลังbranch201/ถึงseatและคงท่านั่ง/reload/restซ้ำ/leafเฉพาะflag/ReducedMotion/รับไอเทม/ไปfountain_frontหันnorth/เซฟrestore/ไม่มีhorizontaloverflowหรือpageerror/assetHTTPfailure ครบสี่viewport
 

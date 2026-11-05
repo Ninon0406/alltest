@@ -247,7 +247,11 @@ export class World extends Phaser.Scene {
   this.writeMetric('lastPath',path?.id||'none');this.writeMetric('pathPhase',path?'approach':'interaction');
   this.writeMetric('pathProgress',0);
   if(path){
-   const points=reduced?[path.points[path.points.length-1]]:path.points;
+   // Graph paths include their starting anchor. Do not invent a walk beat or
+   // facing change for a zero-distance step, including an already seated rest.
+   const points=(reduced?[path.points[path.points.length-1]]:path.points).filter((point,index,all)=>{
+    const previous=index?all[index-1]:this.player;return Math.hypot(point.x-previous.x,point.y-previous.y)>.01;
+   });
    for(const [index,point] of points.entries()){
     if(token!==this.generation)return;
     const duration=walkDuration(point.x-this.player.x,point.y-this.player.y);

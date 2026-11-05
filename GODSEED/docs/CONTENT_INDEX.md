@@ -2,15 +2,15 @@
 
 Computed with `npm run inspect:content` (`scripts/inspect-content.mjs` imports actual typed source through Vite SSR; no browser/gameplay writes).
 
-17scenes /57choices /57uniqueChoiceIDs /5companionNPC /3reachable encounters /234legal spells /234uniqueSpellIDs /0authored chapter ending scenes /6stage IDs. Catalog8cores/6forms/7mods; stateVersion2.
+18scenes /60choices /60uniqueChoiceIDs /5companionNPC /3reachable encounters /234legal spells /234uniqueSpellIDs /0authored chapter ending scenes /6stage IDs. Catalog8cores/6forms/7mods; stateVersion2.
 
 ## Scene IDs
 
-`S00_WAKE`, `S01_FIRST_STEPS`, `S02_HUB`, `S03_LUMI`, `S03B_MAREN`, `S04_KORO`, `S05_CRAFT_TUTORIAL`, `S06_GARDEN`, `S07_ARCHIVE`, `S14_RESEARCH`, `S11_STREAM`, `S12_STREAM_RESULT`, `S08_FOREST_GATE`, `S09_FOREST`, `S10_FOREST_RESULT`, `S13_FOREST_SHRINE`, `S28_RECOVER`
+`S00_WAKE`, `S01_FIRST_STEPS`, `S02_HUB`, `S02_TREE`, `S03_LUMI`, `S03B_MAREN`, `S04_KORO`, `S05_CRAFT_TUTORIAL`, `S06_GARDEN`, `S07_ARCHIVE`, `S14_RESEARCH`, `S11_STREAM`, `S12_STREAM_RESULT`, `S08_FOREST_GATE`, `S09_FOREST`, `S10_FOREST_RESULT`, `S13_FOREST_SHRINE`, `S28_RECOVER`
 
 ## Choice IDs
 
-`CH0001`, `CH0002`, `CH0003`, `CH0004`, `CH0101`, `CH0102`, `CH0103`, `CH0201`, `CH0202`, `CH0203`, `CH0204`, `CH0206`, `CH0205`, `CH0209`, `CH0210`, `CH0301`, `CH0302`, `CH0303`, `CH03B1`, `CH03B2`, `CH03B3`, `CH0401`, `CH0402`, `CH0403`, `CH0404`, `CH0405`, `CH0501`, `CH0502`, `CH0503`, `CH0601`, `CH0602`, `CH0603`, `CH0701`, `CH0702`, `CH0703`, `CH1401`, `CH1402`, `CH1403`, `CH1101`, `CH1102`, `CH1103`, `CH1104`, `CH1201`, `CH1202`, `CH1203`, `CH0801`, `CH0802`, `CH0803`, `CH0901`, `CH0903`, `CH0904`, `CH1001`, `CH1002`, `CH1301`, `CH1303`, `CH2801`, `CH2802`
+`CH0001`, `CH0002`, `CH0003`, `CH0004`, `CH0101`, `CH0102`, `CH0103`, `CH0201`, `CH0202`, `CH0203`, `CH0204`, `CH0206`, `CH0205`, `CH0209`, `CH0210`, `CH0211`, `CH02T1`, `CH02T2`, `CH0301`, `CH0302`, `CH0303`, `CH03B1`, `CH03B2`, `CH03B3`, `CH0401`, `CH0402`, `CH0403`, `CH0404`, `CH0405`, `CH0501`, `CH0502`, `CH0503`, `CH0601`, `CH0602`, `CH0603`, `CH0701`, `CH0702`, `CH0703`, `CH1401`, `CH1402`, `CH1403`, `CH1101`, `CH1102`, `CH1103`, `CH1104`, `CH1201`, `CH1202`, `CH1203`, `CH0801`, `CH0802`, `CH0803`, `CH0901`, `CH0903`, `CH0904`, `CH1001`, `CH1002`, `CH1301`, `CH1303`, `CH2801`, `CH2802`
 
 ## Actors, encounters and stages
 
@@ -36,3 +36,5 @@ Session8/0.5.0 inspector confirms unchanged17scenes/56choices/5NPC/3encounters/2
 
 
 Session12/0.6.0: CH0004 optionalrestunderseedtree (S00→S00) addsonechoice, preservingall17sceneIDs/oldbranches/3encounters/234spells/0endings. tree_memory andrest_under_tree flagsdriveleaf/posememory; rest_benchrestoresCH0210pose. 6stageIDs,7locationpresentations asvillage nowhascenter+tree. Originalart50PNGtotal/39versioned;10newPNG185,199bytes/40oldbyte-identical. Referencepack10concepts is not10finishedgameplaymaps.
+
+Session12 final extension: S02_TREE is reachable from hub via CH0211 and returns via CH02T2; CH02T1 rests there without extra gifts/trust. Old17sceneIDs remain, currenttotal18/60. Existinghub saves visitwithoutrestarting.

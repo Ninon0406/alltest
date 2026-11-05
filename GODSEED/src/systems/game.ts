@@ -9,7 +9,7 @@ export function choose(s:State,id:string){return transact(s,d=>{
  const first=!d.choices.includes(id);const day=Math.floor(d.ticks/3);const daily=!!c.daily;const reward=daily?d.gathered[id]!==day:first;
  if(c.flags)c.flags.forEach(f=>d.flags[f]=true);
  // Stable, backwards-compatible flags restore resting poses after a reload.
- d.flags.rest_under_tree=id==='CH0004';d.flags.rest_bench=id==='CH0210';
+ d.flags.rest_under_tree=id==='CH0004'||id==='CH02T1';d.flags.rest_bench=id==='CH0210';
  if(c.items&&reward)for(const [i,n] of Object.entries(c.items))d.inventory[i]=(d.inventory[i]||0)+n;
  if(reward&&c.trust)d.trust[c.trust]=Math.min(5,(d.trust[c.trust]||0)+(c.trustAmount??(id==='CH0301'||id==='CH03B1'?2:1)));
  if(daily)d.gathered[id]=day;

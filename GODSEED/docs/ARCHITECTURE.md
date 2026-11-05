@@ -2,7 +2,7 @@
 
 ## Living location slice (Session12)
 
-`scene-definitions.ts` owns authored foot-coordinate anchors, named road links, colliders and occluder depths for village_center/under_tree. These are locations within existing village stage; sixstageIDs and all17sceneIDs stay stable. `locationFor(S00_WAKE)` selects tree; other village scenes use center. No coordinates are derived from concept pixels and no free movement controls are introduced.
+`scene-definitions.ts` owns authored foot-coordinate anchors, named road links, colliders and occluder depths for village_center/under_tree. These are locations within existing village stage; sixstageIDs and all17older scene IDs stay stable; S02_TREE is added for revisits. `locationFor(S00_WAKE/S02_TREE)` selects tree; other village scenes use center. No coordinates are derived from concept pixels and no free movement controls are introduced.
 
 `routeTo` uses Dijkstra on explicit links; each segment samples the10×4footprint every2sourcepixels. Entry attaches only to a visible reachable road junction. Missing/blocked graph targets returnundefined; cinematicPath throws a readable error rather than bypassing collision. CH0201/CH0004 and village exits use actual current feet; old other-stage paths remain. Bench's center is a support mount; groundcolliders cover its legs, supportdepth239 carries the seated pose abovebench238.
 

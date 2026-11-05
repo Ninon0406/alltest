@@ -89,3 +89,6 @@
 - RefineGroundLayeralphamaskafterbrowserreviewcaughtwallscoveredbygrass; addregressionpixels. Art remains belowfinalHDconceptquality andspecialnonwalkposesstilllegacy.
 - ProtectPagesartifact fromrootreferencecopy: stage-site retains onlyprevioushashedclientJS/CSS; old40PNGsourceoutputs stillpublic andbyteidentical. Developmentconcepts are neverimportedbyruntime.
 - ExtendexistingSSOTwith9aspect/locationmatrix, not a secondtracker/90globaltasks; add2boundedtasks becauseownerexpandedactualscope. Percentage maydecreasewithnewdenominator beforetestscomplete; no inventedpartialcredit.
+
+- Add revisitable S02_TREE with CH0211/CH02T1/CH02T2 so existing saves can experience the new location without restarting. Opening CH0004 remains optional; revisit rest grants no new trust/material reward. Old 17 scene IDs are preserved; total is18/60.
+- Initial directional browser wait assumed a reset entry point and timed out at5s on the retained bench→exit road. Keep genuine road traversal; wait up to12s (eight bounded900ms legs + interaction/camera), and remove zero-distance graph steps rather than fabricating a walk/facing change. Rerun final focused/full gates; preserve the initial failure in the report.

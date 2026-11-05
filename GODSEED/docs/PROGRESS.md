@@ -12,13 +12,15 @@ Base d4da87a บน feat/godseed-village-references; ตรวจ main/PR9 ท�
 - Roadmapยัง SSOTเดิม เพิ่มlocations9ด้าน×10แห่งแยกจากคะแนนหลัก และงานVIS-013/014ตามขอบเขตเจ้าของใหม่ รวม76งาน ไม่มีการนับ90ช่องซ้ำ คำสั่ง03เดิมไม่ถูกลบ
 - แก้stage-siteเดิมที่คัดลอกroot/assetsทั้งหมดจนเสี่ยงเอาreferenceเข้าartifact: เก็บเฉพาะhashedJS/CSSเก่าสำหรับcachedHTML; public runtimePNGครบเหมือนเดิม validate:referencesตรวจอีกครั้งหลังstaging
 
-ปริมาณจาก inspect:content: 17scenes/57choices/NPC5/3encounters/234legal/0endings/6stageIDs และ7location presentations (villageมีcenter/tree);50PNG/39versionedPNG ไม่มีBattle Glade/Crystal Clearingฉบับใหม่ แปดreferenceที่เหลือยังไม่แปลง
+ปริมาณจาก inspect:content: 18scenes/60choices/NPC5/3encounters/234legal/0endings/6stageIDs และ7location presentations (villageมีcenter/tree);50PNG/39versionedPNG ไม่มีBattle Glade/Crystal Clearingฉบับใหม่ แปดreferenceที่เหลือยังไม่แปลง
 
-ผลปัจจุบัน: npmci/type/lint/content2/game104/roadmap7/build/PACKAGING PASS; focused4viewportผ่านก่อนGroundMaskแก้ครั้งสุดท้าย Full62และภาพหลังแก้กำลังตรวจ ดู TEST_REPORT/Development Log ก่อนถือว่าสถานะVIS-013/014ผ่าน Publicยัง0.5.1จนกว่าbranchนี้ผ่านและเผยแพร่จริง
+ผลปัจจุบัน: npmci/type/lint/content2/game105/roadmap7/build/PACKAGING PASS; focused4viewportผ่านก่อนGroundMaskแก้ครั้งสุดท้าย Full63และภาพหลังแก้กำลังตรวจ ดู TEST_REPORT/Development Log ก่อนถือว่าสถานะVIS-013/014ผ่าน Publicยัง0.5.1จนกว่าbranchนี้ผ่านและเผยแพร่จริง
 
 ข้อจำกัด: NPC/actionนอกwalk/idleยังไม่ครบทุกทิศ; run/kneel/stand beatsยังต้นแบบ; ยังไม่มีเส้นทางhouse→gate→village, crystal collect/workshop art/battle gladeใหม่, low-devicepreset/lazyloading, sound/finalHD/Safarihardware ส่วนเนื้อเรื่องruins/festival/boss/สามตอนจบยังค้าง
 
 งานถัดไป: gateภาพสองฉากและpublish → house/gate routes → crystal+workshop → battle glade/recipeVFX → NPCposes/ruinsเนื้อเรื่องตามdependencies ไม่ขยายทั้ง10แบบหยาบ
+
+เพิ่ม S02_TREE และ CH0211/CH02T1/CH02T2 สำหรับเซฟที่ผ่านฉากเปิดแล้ว: เมนูสถานที่อื่น→แวะใต้ต้นเมล็ด→พัก→กลับจัตุรัส ไม่ต้องเริ่มเกมใหม่ ไม่ให้วัตถุดิบ/trustซ้ำ
 
 ---
 

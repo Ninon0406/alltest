@@ -24,11 +24,12 @@ export const choicePaths:Record<string,CinematicPath>={
  CH1201:{id:'stream-bell',stage:'stream',points:[{x:195,y:231},{x:248,y:226}]},
 };
 export function cinematicPath(stage:StageId,cue:string,command?:string,start?:Point,location:LocationId='village_center'):CinematicPath|undefined {
- if(stage==='village'&&(command==='CH0201'&&location==='village_center'||command==='CH0004'&&location==='under_tree'||start&&command&&cue==='walk')){
-  const targetAnchor=command==='CH0004'?'under_tree_seat':command==='CH0201'?'fountain_front':location==='under_tree'?'exit_path':'village_exit',definition=sceneDefinitions[location];
+ const treeRest=command==='CH0004'||command==='CH02T1';
+ if(stage==='village'&&(command==='CH0201'&&location==='village_center'||treeRest&&location==='under_tree'||start&&command?.startsWith('CH')&&cue==='walk')){
+  const targetAnchor=treeRest?'under_tree_seat':command==='CH0201'?'fountain_front':command==='CH0211'?'tree_path':location==='under_tree'?'exit_path':'village_exit',definition=sceneDefinitions[location];
   const feet=routeTo(definition,start?{x:start.x,y:start.y+20}:{x:154,y:239},targetAnchor);
   if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยไปยังจุดโต้ตอบ');
-  return {id:command==='CH0004'?'tree-rest':command==='CH0201'?'village-fountain':'village-exit',stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:definition.anchors[targetAnchor].facing,seatDepth:command==='CH0004'?239:undefined};
+  return {id:treeRest?'tree-rest':command==='CH0201'?'village-fountain':'village-exit',stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:definition.anchors[targetAnchor].facing,seatDepth:treeRest?239:undefined};
  }
  const authored=command?choicePaths[command]:undefined;
  if(authored?.stage===stage)return authored;
