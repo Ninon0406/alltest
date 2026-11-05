@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "bda8f51",
+  "baseCommit": "ebe49f5",
   "phases": [
     {
       "id": 1,
@@ -510,9 +510,13 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/src/main.ts"
+        "GODSEED/src/main.ts",
+        "GODSEED/src/scenes/camera-plan.ts",
+        "GODSEED/tests/camera.spec.ts",
+        "GODSEED/tests/camera.test.ts",
+        "GODSEED/tests/camera-gallery.spec.ts"
       ],
-      "evidence": "มีfadeและparallax6px; ยังไม่ใช่กล้องpanตามSSOT",
+      "evidence": "Session10: แก้offensivefocus→enemy/support→player/path+sceneoverride; gameunit97/content2/roadmap6/buildPASS; realroutes6stages×4viewports + actualtrainingoffense focus4/4PASS1.0m; allbattle/VFXframing and finalCI58 pending",
       "acceptance": "boundedpan10–32px/easing350–650ms มีทิศทางต่อเนื่อง skip/reducedปลอดภัย",
       "legacyIds": [
         "GS-009",

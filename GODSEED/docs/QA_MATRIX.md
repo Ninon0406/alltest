@@ -71,3 +71,7 @@ New phone390×844/iPad820×1180+1024×768/desktop1366×768 touch routes observe 
 0.5.0 actualpublicPASS: touch/start/forest/FIRE/training/archive/ECHO/WATER/B02/reload/worldmemory/checksumexport/import; same41dd67354a5c542ef792c877e83a1282e6ab32250175313354f7b06296c24579 JS and29PNG sourcehashes; no observedpageerror/HTTPfailure. Four-view geometry/newPNGfallback are covered infinalsame-bundlePR50; publicflowusesretainedgoldenroutes.
 
 Session8finalmain42005831839SUCCESS at2026-11-05 10:00:21UTC; post-Actionsassets-onlyPASS same41dd6735…/29PNG/readyrenderer/emptyerrors. Localinitial49/1 is recordedasfailure beforetestfix; focused17+keyboard3 and finalPR/main50 verify the correction, no localfull50PASSclaim. Physicalhardware/Safari/FPS/finalHDstillnotcertified.
+
+Session9: camera focus/cancellation/reload4/4PASS12.3s at390/820/1024/1366 Chromiumtouch, liveviewportbounds asserted and phone screenshotreviewed. Full54 regression run pending. NotphysicalSafari/hardware/FPS or finalall-scenevisualacceptance.
+
+Session10: sixstagegallery + actualtrainingoffensepan PASS4/4 in1.0m at390×844/820×1180/1024×768/1366×768 Chromiumtouch. Archivephone image reviewed. Gameunit97/content2/roadmap6/type/lint/buildPASS. Full58CIpending; allbattleVFX/hardwareSafari/FPSnotaccepted. Prior54 belongsoldercommit.

@@ -64,3 +64,9 @@ systems/alchemy.ts derives nonmutating compatibility/missing ingredients/known-n
 Travel speed is approximately70 logicalpx/s, bounded200–900ms per leg; reduced motion still compresses to the final anchor in20ms. Village travel now begins with a south step and archive book approach uses a clear floor lane; the book endpoint foot245 sorts in front of table244 instead of tying depth. Generation-token cancellation, seated support-depth, transactions/serialization and save versions remain unchanged. Read-only walk diagnostics observe the actual texture/animation/foot/shadow for browser QA.
 
 Public verifier also hashes art-v4 (29versioned PNGs total). Task Board's five-work queue now omits DONE/blocked candidates and promotes recorded regressions; six metadata tests cover this behavior. It remains a generated view of the existing74-task dataset, not another status source.
+
+## Session9 camera prototype
+
+camera-plan.ts defines fixed1.08 full-motion overscan and ±12px/450ms focus. Phaser zooms around viewport center; margin17.78px permits12px scroll without exposing artwork edges. Reduced useszoom1/scroll0. Genuine choice/battle/spell actions focus then return center; menu-only loadout operations do not. Camera tween cancellation joins generation-token cleanup/settlers. No state/DB/file-format change. All-scene final framing remains a VIS-011 acceptance gap.
+
+Session10: purecameraFocus definespath→scenery→semanticactor priority; offensivecast framesNPC, supportive/craft framesplayer. World passes resolvedspell category, never grants effects fromcamera. camera-gallery.spec navigates genuine six-stage paths andobservesactualtrainingoffensepan onfourviewportgroups; no rendererstateinjection.
