@@ -1,7 +1,7 @@
 export const STAGES=['village','garden','workshop','forest','archive','stream'] as const;
 export type StageId=typeof STAGES[number];
 export type AmbientKind='cloud'|'leaf'|'fire'|'glow'|'water';
-export const stageFolder=(stage:StageId)=>stage==='archive'||stage==='stream'?'art-v3':'art-v2';
+export const stageFolder=(stage:StageId)=>stage==='village'?'art-v5':stage==='archive'||stage==='stream'?'art-v3':'art-v2';
 export const stageFallback=(stage:StageId)=>stage==='archive'||stage==='stream'?`art-v3/${stage}-fallback.png`:`${stage}.png`;
 export type StageLayout={
  /** A story spell acts on the scenery; battle spells continue targeting combatants. */

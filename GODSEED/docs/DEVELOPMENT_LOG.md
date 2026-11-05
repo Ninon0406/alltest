@@ -167,3 +167,28 @@ Basee76c3e4, cleanbranch; PR9sourceCI42015617056 full58SUCCESS verified before w
 VIS-011DONE for currentlyauthored6stages/3encounters after acceptance; this is not finalHD/all234VFX/futureboss/hardwarecertification. Same74tasks→19DONE/38inprogress/16notstarted/0problem/1blocked=25.7%, v119/71=26.8%. PR9 merged e470fe8; addedtests94d1f36 preserved onbranch thencherry-pickedas570091b onmain; no reset/force/delete. FinalmainCI/publicproof followsinTEST_REPORT. NextNPC→ruins/festival→B03/B04→canon/boss/endings, deviceQAremainsblocked.
 
 Session11 delivery: main42020164244SUCCESS/full58 anddeploy11:48:41UTC; publicfullflow +post-Actionsassets/rendererPASS samea09bffd7…/29PNGs. Sourcecamera acceptedforcurrentcontent, noadditional1.0/finalart/hardwareclaim. Evidencecommit concludescamera batch before newowner locationreference expansion.
+
+
+## Session12 — 2026-11-05 — 0.6.0 references / living village and tree
+
+- เป้าหมาย: latestowner10-referencevisualmission; ให้สองสถานที่ต้นแบบเดิน/นั่ง/โต้ตอบตรงบท พร้อมติดตามครบ10แห่ง
+- ทำจริง: import13files/SHA, original10PNG, fourdirectionidle, footanchors/solids/Dijkstrafixedroads, CH0004rest/leafmemory/posepersist, CH0201fountainapproach, no-reset same-mapshow, matrix10×9ในSSOT, productionreferenceexclusion
+- ปัญหาพบ: legacyidleหันขวา/resetตำแหน่งทุกshow; groundทับผนังบ้านในruntime; oldstage-siteคัดลอกdevelopmentreferencesเข้าartifactได้
+- วิธีแก้: directionalidle/preserve+stableloadanchors/restflags, authoredalpha masks+pixelregression, retainhashedclientsเฉพาะJS/CSS; ไม่มีสูตร/คำนวณcombat/schemaเปลี่ยน
+- ผลทดสอบ: baselinefocused4PASS56.6s; final104unit/content2/roadmap7/type/lint/build/PACKAGINGPASS; full62กำลังตรวจ ยังไม่อ้างCI/public0.6.0
+- ยังไม่เสร็จ:8referenceconversions, finalHD/individualNPC/special4viewposes/house-gatewalk/crystal/workshop/battleglade/VFX234/lowpreset/lazyload/Safarihardware และremainingchapter/boss/endings
+- ไฟล์/commit: base d4da87a; feat/godseed-village-references; source/evidenceในTEST_REPORT; commit/PR/deployบันทึกเมื่อมีผลจริง
+- ต่อไป: completegate/publish → gate+cottage routes → crystal/workshopinteractions → battle glade+VFX → NPC/storyruinsdependencies
+
+Session12 follow-up: source checkpoint c9d9bab / draft PR#10. Added revisitable S02_TREE for existing hub saves (18scenes/60choices), no extra trust/material gifts. First local full run interrupted after directional helper5s timeout on the longer real road from retained bench; fixes remove zero-length beats and allow bounded12s wait. Initial104unit is superseded by105 after revisit regression. Final focused10 and full63 required before VIS-014 acceptance/merge.
+
+Finalvisualfollow-up: inspected realframes aftermaskfix. Depth-only proof was insufficient; shiftedtreepath tofoot186 sohead/boughactuallyoverlap, capturedruntime andran5/5PASS1.1m. Source44bde3c. Frozen full63 nowrunning. QA-006 moved temporarily toproblem until fullgate passes. PagesSource APIupdate returned403; no setting changed. dist/Actionsartifact excludesrefs; runtime neverloadsconcepts.
+
+Baseline44bde3c full63/63PASS14.9m; PRCI42037332359SUCCESS. คืนQA-006DONEตามผลจริง หลังจากนั้นเติมidle-on-arrivalและexplicitcontinuityสำหรับactionเท่านั้น ป้องกันimportเซฟเก่าบนmapเดียวคงตำแหน่งน้ำพุผิดฉาก; arrival.specใช้ไฟล์ส่งออกจริงจากS01เพื่อนำเข้ากลับ ไม่injectstate. LatestCIมี64cases รอผลก่อนVIS-014DONE.
+
+Final pose handoff: คงท่าrestตั้งแต่ขึ้นseatผ่านcamera-returnและdurable-save ไม่แทรกidleหนึ่งเฟรม; คืนvisibilityเงาตอนยืน เพิ่มread-only MutationObserver regression (ไม่เขียนstate) ในarrival.spec targeted7/7PASS1.3m, game105/type/lint/build/packagingPASS; expectedfullCI65. No further runtime/art scope changes planned this batch.
+
+พบเส้นทางม้านั่งเดิมอ้างจุดเริ่มตายตัว จึงอาจตัดขาม้านั่งเมื่อพักซ้ำหลังเพิ่มการคงตำแหน่ง แก้ CH0210 ให้ใช้ road graph/bench_seat เหมือนน้ำพุ ทดสอบเส้นทางจากทุกAnchorและพักซ้ำที่seatแล้วไม่มีwalk beat คืนค่าsupport depthตามpostureใหม่ทุกshow ไม่แก้inventory/time/trust สูตรหรือdamage เกมunit105/content2/type/lint/build/packagingผ่าน targeted16กำลังตรวจ CI65รอsourceชุดนี้
+
+
+Session12 acceptance — source0dc5e59 / PR#10: CI42042658772SUCCESS full65, localtarget16/16PASS3.9m, unit105/content2/roadmap7/type/lint/build/referencepackingPASS. VIS-013/014DONEเฉพาะนำเข้า/ต้นแบบ2ฉากที่ทดสอบ QA-006คืนDONEหลังแก้failure; Checklist21/76=27.6%, v121/73=28.8%. Matrixยังคงlayers/movement/story/effects/readyของสองแห่งเป็นin_progressตามเกณฑ์ฉากสมบูรณ์ อีก8conceptยังไม่แปลง จึงไม่ใช้ต้นแบบเพิ่มสถานะfinalHD. Metadata/evidencecommitหลังนี้ไม่แก้runtime; public0.6.0รอผลmerge/main/deploy.

@@ -5,7 +5,7 @@ import {fresh,type State} from './engine/state';import {StorageSession} from './
 import {scenes,type Choice} from './content/story';import {choiceAvailability,nextHint,rememberedLines} from './systems/story';import {memoryPanel} from './ui/memory-panel';import {choose,craft,equip,unequip,fight} from './systems/game';import {byId,itemNames} from './systems/spells';import {startWorld} from './scenes/world';import {combatPanel} from './ui/combat-panel';
 const bookFilter:BookFilter={core:'',kind:'',mp:''};
 const app=document.querySelector<HTMLDivElement>('#app')!;
-app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.5.1</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · บันทึกบนอุปกรณ์นี้ · ไม่ใช้ AI ภายนอก</footer>`;
+app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.6.0</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · บันทึกบนอุปกรณ์นี้ · ไม่ใช้ AI ภายนอก</footer>`;
 const {world,game}=startWorld(document.querySelector('#canvas')!);const storage=new StorageSession();let state:State|null=null,busy=true,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,screen='title',saved:State|null=null,titleName='';let skip:()=>void=()=>{};
 const content=document.querySelector<HTMLDivElement>('#content')!,notice=document.querySelector<HTMLParagraphElement>('#notice')!;
 const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
@@ -17,7 +17,7 @@ async function exclusive(operation:()=>Promise<void>){
  try{await operation();}catch(error){msg(error instanceof Error?error.message:'ดำเนินการไม่สำเร็จ');}
  finally{busy=false;render();}
 }
-function showState(next:State){state=next;saved=next;screen=next.battle?'battle':'story';world.show(next);}
+function showState(next:State,continuity=false){state=next;saved=next;screen=next.battle?'battle':'story';world.show(next,continuity);}
 function controls(){saveControls(content,{current:state||saved,recovery:storage.recovery,archives:storage.archives,busy:busy||!world.ready,button,
  restore:next=>{void exclusive(async()=>{if(!confirm('แทนที่เซฟปัจจุบันด้วยความทรงจำที่เลือก?'))return;await storage.archiveCurrent();await storage.persist(next);showState(next);});},
  download:next=>{void exclusive(()=>downloadSave(next));},
@@ -39,7 +39,7 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
  }
  await storage.persist(next);
  if(world.ready&&(next.scene!==previous.scene||!!next.battle!==!!previous.battle))world.cameras.main.fadeIn(reduced?60:350,20,48,40);
- showState(next);if(previousScreen==='book'&&!next.battle)screen='book';
+ showState(next,true);if(previousScreen==='book'&&!next.battle)screen='book';
  if(previous.battle&&!next.battle)msg(next.journal.at(-1)||'จบการต่อสู้แล้ว');
 
  });}

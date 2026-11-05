@@ -1,0 +1,175 @@
+{
+  "project": "GODSEED",
+  "purpose": "location concept art references, not final gameplay maps/spritesheets",
+  "style": "HD colorful pixel art; 3/4 elevated story RPG; soft lighting; coherent scale and readable paths",
+  "locations": [
+    {
+      "id": "village_center",
+      "reference_file": "references/01_village_center.webp",
+      "name_th": "ลานน้ำพุกลางหมู่บ้าน",
+      "suggested_anchors": [
+        "fountain_front",
+        "plaza_north",
+        "plaza_west",
+        "plaza_east",
+        "plaza_south"
+      ],
+      "suggested_effects": [
+        "fountain_flow",
+        "flower_sway",
+        "villager_ambient"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "village_entrance",
+      "reference_file": "references/02_village_entrance.webp",
+      "name_th": "ประตูทางเข้าหมู่บ้าน",
+      "suggested_anchors": [
+        "entry_road",
+        "gate_front",
+        "gate_inside"
+      ],
+      "suggested_effects": [
+        "leaf_drift",
+        "lantern_glow",
+        "water_flow"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "under_tree",
+      "reference_file": "references/03_ancient_tree.webp",
+      "name_th": "ใต้ต้นไม้ใหญ่",
+      "suggested_anchors": [
+        "approach_path",
+        "tree_front",
+        "under_tree_seat",
+        "tree_exit"
+      ],
+      "suggested_effects": [
+        "leaf_fall_story_trigger",
+        "leaf_sway",
+        "dappled_light"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "player_home",
+      "reference_file": "references/04_player_cottage.webp",
+      "name_th": "บ้านผู้เล่น",
+      "suggested_anchors": [
+        "home_gate",
+        "front_door",
+        "porch_seat",
+        "garden_patch"
+      ],
+      "suggested_effects": [
+        "chimney_smoke",
+        "garden_sway"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "elder_garden",
+      "reference_file": "references/05_elder_herb_garden.webp",
+      "name_th": "บ้านผู้เฒ่าและสวนสมุนไพร",
+      "suggested_anchors": [
+        "herb_gate",
+        "elder_door",
+        "herb_patch",
+        "alchemy_kettle"
+      ],
+      "suggested_effects": [
+        "herb_sway",
+        "cauldron_steam",
+        "lantern_glow"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "forest_road",
+      "reference_file": "references/06_forest_road.webp",
+      "name_th": "ถนนสู่ป่า",
+      "suggested_anchors": [
+        "village_exit",
+        "forest_turn",
+        "bridge_crossing",
+        "forest_depth"
+      ],
+      "suggested_effects": [
+        "fireflies",
+        "leaf_drift",
+        "water_flow"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "crystal_clearing",
+      "reference_file": "references/07_crystal_clearing.webp",
+      "name_th": "ลานผลึกเวทมนตร์",
+      "suggested_anchors": [
+        "grove_entry",
+        "crystal_front",
+        "crystal_touch",
+        "grove_exit"
+      ],
+      "suggested_effects": [
+        "crystal_pulse",
+        "rune_glow",
+        "stream_flow"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "spell_workshop",
+      "reference_file": "references/08_spell_workshop.webp",
+      "name_th": "ห้องผสมเวทมนตร์",
+      "suggested_anchors": [
+        "workshop_entry",
+        "crafting_table",
+        "ingredient_shelf",
+        "recipe_book"
+      ],
+      "suggested_effects": [
+        "cauldron_swirl",
+        "crystal_glint",
+        "lamp_flicker"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "ancient_shrine",
+      "reference_file": "references/09_ancient_shrine.webp",
+      "name_th": "ศาลเจ้าโบราณ",
+      "suggested_anchors": [
+        "shrine_entry",
+        "altar_front",
+        "glyph_circle",
+        "shrine_exit"
+      ],
+      "suggested_effects": [
+        "rune_pulse",
+        "floating_motes",
+        "waterfall_flow"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    },
+    {
+      "id": "battle_glade",
+      "reference_file": "references/10_battle_glade.webp",
+      "name_th": "ลานต่อสู้กลางป่า",
+      "suggested_anchors": [
+        "player_battle_spot",
+        "enemy_battle_spot",
+        "battle_center"
+      ],
+      "suggested_effects": [
+        "grass_sway",
+        "spell_impact",
+        "combat_ambient"
+      ],
+      "implementation_note": "Visual concept only. Rebuild as layered playable scene with collision masks, fixed paths, separately animated sprites, triggers and depth sorting. Never use as sole flat background for all actions."
+    }
+  ]
+}

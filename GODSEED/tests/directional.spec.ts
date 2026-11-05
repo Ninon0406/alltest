@@ -1,6 +1,8 @@
 import {test,expect,type Page} from '@playwright/test';
 test.use({hasTouch:true});
-const stable=async(page:Page)=>{await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+// A real road from the retained bench position has up to eight bounded legs;
+// the former 5s helper assumed every action started at the reset entry point.
+const stable=async(page:Page)=>{await expect(page.locator('#content')).toHaveAttribute('aria-busy','false',{timeout:12_000});};
 const tap=async(page:Page,name:string)=>{const b=page.getByRole('button',{name,exact:true});if(!await b.isVisible()&&await page.locator('.other-routes summary').isVisible())await page.locator('.other-routes summary').tap();await b.tap();await stable(page);};
 function observe(page:Page,facing:string,texture='hero-walk-v4'){
  return page.waitForFunction(({facing,texture})=>{

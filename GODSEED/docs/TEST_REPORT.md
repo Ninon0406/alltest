@@ -1,4 +1,36 @@
-# Test report — current0.5.0 /2026-11-05 UTC
+# Test report — current0.6.0 / 2026-11-05 UTC
+
+## Session12 — ผลยืนยันของ source0dc5e59 / PR#10
+
+| Gate | ผลจริง |
+| --- | --- |
+| npm ci / typecheck / lint | PASS;156packages, ไม่มีdependencyใหม่ |
+| Content | PASS2;18scenes/60uniquechoices,17Scene IDsเดิมคงอยู่ |
+| Game unit/integration | PASS105;234legalrecipes/transactions/battle/save/route/atlas |
+| Roadmap | PASS7;ID/dependency/evidence/staleness/locationnegativecases |
+| Reference integrity | PASS10WebP/13checksums;zip b3d3f742…9f56f |
+| Art reproduction | PASS50PNGbyte-identical;40PNGเดิมไม่เปลี่ยน;10ใหม่185,199bytes |
+| Build + staging + reference exclusion | PASS;0conceptfilesในpublic/distหลังstage-site |
+| Local latest targeted | PASS16/16,3.9m; arrival/import/continuoussit/repeatedbench/4directions/4viewports/skip/reduced/fallback |
+| Latest PR CI | [SUCCESS full65](https://github.com/Ninon0406/alltest/actions/runs/42042658772);source0dc5e59/job127297687098 |
+| Historical local full | PASS63/63,14.9mที่44bde3c;ไม่รวม2casehandoffใหม่ |
+| Historical Preview full flow | PASSที่73d4a97,5สูตร/3battles/archive/stream/save;ไม่ใช้แทนpublic |
+| Latest Preview assets/renderer | PASS39versionedPNG/JS dd41d83f…bf96516/0conceptrequests/0errors |
+| Main CI / actual public0.6.0 | รอmerge/deployและตรวจจริง |
+
+ทดสอบกดUIจริง อ่านIndexedDB/diagnosticsแบบread-only ไม่มีstate injection: เดินทุกทิศ/เงาตามเท้า, treepathfoot186อยู่หลังbranch201และมีpixeloverlapจริง, seat79/193 depth239, ใบไม้หลังtree_memory, ลดmotionหยุดambient, reloadคงท่านั่ง/revision, เข้าต้นไม้จากเซฟHubเดิมแล้วกลับได้, พักซ้ำไม่เพิ่มtrust/ไม่มีwalkbeatถ้าอยู่seatแล้ว, CORE_WINDเพิ่มถูกต้อง, fountain_front254/231และidle-north, importไฟล์ส่งออกS01จริงแล้วกลับentry154/219แทนตำแหน่งน้ำพุเดิม
+
+MutationObserverตรวจว่าหลังนั่งแล้วไม่มีidleแทรกจนcontentปลดbusyหลังdurable-save ตรวจเส้นทางจากทุกvillageanchorไปทั้งน้ำพุ/ม้านั่งด้วยfootprint10×4ทุก2px ทางตัน/targetหาย/จุดเริ่มในsolidต้องไม่เดินลัด
+
+ประวัติfailureไม่ถูกซ่อน: localชุดแรกหยุดหลังdirectionalhelper5s timeout เนื่องจากเส้นทางจริงจากseatยาวขึ้น แก้bounded12sตาม8×900ms+interaction/camera และตัดzero-distancebeats Finalfull63+CI65ผ่าน โดยไม่skip/ลบassertions ภาพแรกพบGroundทับผนังจึงเพิ่มalpha mask/pixel regression; depth-onlyภาพยังไม่ทับกิ่งจึงขยับทาง186และเปิดดูภาพซ้ำ
+
+ภาพruntimeที่evidence/session12: before0.5.1และafter0.6.0คนละจังหวะการเล่น ไม่เรียกpixel-diffbaseline ภาพหลังจากชุดtargeted0dcเปิดตรวจแล้ว รูปแบบยังproceduralprototype ต่ำกว่าconceptfinalHD
+
+ข้อจำกัด: Chromiumจำลองไม่ใช่iOS/Android/iPadOS/Safariเครื่องจริง ไม่มีFPS/thermal/hardwarebenchmark ยังไม่ครบ15actions/NPC/234VFX/10scenes/fullchapter QA-009คงblocked
+
+Pages admin API PUTworkflowถูกปฏิเสธ403 ไม่ใช่automaticapprovalrejectionและไม่มีการเปลี่ยนSetting dist/Actionsartifactไม่มีreferences; legacyrepositoryarchiveอาจมีไฟล์ต้นฉบับที่เกมไม่โหลด การตั้งSourceเดียวทำผ่านSettings→Pages→Source→GitHub Actionsบนโทรศัพท์ได้
+
+---
 
 Latest0.5.0: **gameunit94/94, roadmap6/6, content2/2, type/lint/build, focused17 + keyboard3 local checks, final50-case PR/main browser CI and actual public gameplay/save/29PNG/JS verification PASS**. Main:/ Pages and mainActionsbuild/deploySUCCESS; post-Actionsbytes/rendererPASS. Earlier sections preserve historical results; Session8 explicitly records the initial local49/1 failure and corrected verification.
 
@@ -290,3 +322,8 @@ PR9 merged e470fe8 (acceptedruntime identicale76c3e4), test-only570091b onmain r
 Actualpublic0.5.1 commandverify-public.mjs PASS after main:/ Pages42020162612SUCCESS: touch/start/craft/forest/FIRE/training/archive/ECHO/WATER/B02/reload/worldmemory/checksumexport/import. All29versionedPNGbytesandJS a09bffd741f46a7fc88dd2b9e31030c3182dff4dc71f19f6e12492a4886bbfc0 match stagedrelease, observederrors empty. Publicflow reducedmotion; fullmotioncameraacceptance comesfrom genuinegallery4+sourcePRCI58 onidenticalruntimebytes. Mainlatest42020164244 pending; no fullcurrent-main58PASSclaim yet. Merge-parentworkflow superseded after test-onlymainupdate, not countedfinalgate.
 
 Session11 main42020164244 SUCCESS: build127221309698 full58/type/lint/gameunit97/content2/roadmap6/buildPASS; deploy127226559506 finished2026-11-05 11:48:41UTC. Post-Actionsassets-onlyPASS samea09bffd741f46a7fc88dd2b9e31030c3182dff4dc71f19f6e12492a4886bbfc0/29PNG/readyrenderer/emptyerrors. Confirms Actions bytes match the verifiedpublicgameplay/save loop. Finalmetadata-onlyevidence update does not alterclientbytes. Supersededmerge-parent workflow is not thefinalgate.
+
+
+Session12 final focused evidence: after adding hub revisit, direction+locations10/10PASS2.4m. Actualimage review found the initialbehind-branch lane could satisfydepth198<201 without enoughpixeloverlap; moved authored behind_branch/tree_path tofoot186 andwaitedforfoot<=188 in thecapture. Final location5/5PASS1.1m, opening/revisitrest/reload/fountain retained. Inspected new390occlusion,390fountain and390/1366seat captures; GroundMask nowkeepsfrontwallsvisible. Full63onfrozen44bde3c sourcecurrentlyrunning. QA-006 temporarily problem until full gate restored; do not hide the first timeout.
+
+Pages administration: readAPI reports build_type=legacy, source main:/. PUT build_type=workflow attempted under existing deployment authorization but GitHub integration returned403 Resource not accessible by integration. No setting changed. Existing Actions deployment remains available as before; reference exclusion is guaranteed for Vite dist / Actions artifact, not for the legacy repository-wide archive. Runtime does not import/fetch the concepts. Optional owner phone action to keep one publish pipeline: repository Settings→Pages→Build and deployment→Source→GitHub Actions. This is a permissions limit, not an automatic approval rejection.

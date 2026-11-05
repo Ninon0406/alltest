@@ -5,6 +5,7 @@ import {resolve,dirname,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 export const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 export const statuses={done:'✅ เสร็จสมบูรณ์',in_progress:'🟡 กำลังพัฒนา',not_started:'⬜ ยังไม่ได้เริ่ม',problem:'🔴 มีปัญหา',blocked:'⛔ ติดข้อจำกัด'};
+export const locationAspects={reference:'ภาพอ้างอิง',structure:'โครงสร้าง',layers:'วัตถุ/เลเยอร์',collision:'Collision/Anchor',movement:'เดิน/Animation',story:'เหตุการณ์',effects:'เอฟเฟกต์',mobile:'Chromiumจำลอง',ready:'ฉากฉบับสมบูรณ์'};
 export function validate(data,fileExists=path=>existsSync(resolve(root,path))){
  const fail=message=>{throw Error('Roadmap: '+message);};
  if(data.schemaVersion!==1||!/^\d{4}-\d{2}-\d{2}$/.test(data.updated)||!data.baseCommit)fail('invalid version/date/base commit');
@@ -24,6 +25,12 @@ export function validate(data,fileExists=path=>existsSync(resolve(root,path))){
  const active=new Set(),visited=new Set();
  function visit(id){if(active.has(id))fail('dependency cycle '+id);if(visited.has(id))return;active.add(id);byId[id].dependsOn.forEach(visit);active.delete(id);visited.add(id);}
  data.tasks.forEach(t=>visit(t.id));
+ if(!Array.isArray(data.locations)||data.locations.length!==10||new Set(data.locations.map(l=>l.id)).size!==10)fail('expected ten unique location records');
+ for(const location of data.locations){
+  if(!location.name||!location.evidence||!location.acceptance||!location.files?.length||location.files.some(p=>!fileExists(p)))fail('missing location evidence '+location.id);
+  if(Object.keys(location.readiness||{}).sort().join()!==Object.keys(locationAspects).sort().join()||Object.values(location.readiness).some(s=>!Object.hasOwn(statuses,s)))fail('invalid location readiness '+location.id);
+  if(location.readiness.ready==='done'&&Object.values(location.readiness).some(s=>s!=='done'))fail('location ready requires every aspect '+location.id);
+ }
  return data;
 }
 export function totals(tasks){const counts=Object.fromEntries(Object.keys(statuses).map(s=>[s,tasks.filter(t=>t.status===s).length]));return {...counts,total:tasks.length,percent:tasks.length?+(counts.done/tasks.length*100).toFixed(1):0};}
@@ -47,6 +54,11 @@ export function render(data){
  '', 'ตรวจRoadmap/โค้ด/เซฟ/CI → เลือกงานตามpriority+dependency → ทำโค้ด/ภาพ → ทดสอบ → อัปเดตJSONพร้อมหลักฐาน → สร้างRoadmap/Task Boardใหม่ → เพิ่มDevelopment Log → ตรวจroadmap:check → commit/PR/deployตามสิทธิ์ → บันทึกผลเว็บจริง ห้ามแก้เปอร์เซ็นต์หรือไฟล์generatedด้วยมือ',
  '', 'บอร์ดเดิมเชื่อมผ่าน legacy GS IDs ด้านล่าง ไม่ใช้บอร์ดสองชุดเป็นตัวหารซ้ำ ประวัติเดิมคงในGitและTEST_REPORT; [TASK_BOARD](GODSEED/docs/TASK_BOARD.md)เป็นมุมมองย่อจากข้อมูลชุดเดียว',
  ];
+ lines.push('','## สถานที่ตามภาพอ้างอิง 10 แห่ง','',
+  'ตารางย่อยนี้ขยาย VIS-008/009/010/014 ไม่เพิ่ม90งานในตัวหารหลัก ✅ในระบบย่อยหมายถึงผ่านเกณฑ์เฉพาะต้นแบบที่มีหลักฐาน ไม่ใช่finalHD ทั้งฉาก ต้องรอคอลัมน์ฉบับสมบูรณ์ ภาพอ้างอิงอย่างเดียวให้เครดิตเฉพาะคอลัมน์แรก Chromiumจำลองไม่ใช่Safari/อุปกรณ์จริง (QA-009)',
+  '',`| สถานที่ | ${Object.values(locationAspects).join(' | ')} |`,'| --- |'+Object.keys(locationAspects).map(()=>' --- |').join(''),
+  ...data.locations.map(l=>`| ${l.name} | ${Object.keys(locationAspects).map(k=>statuses[l.readiness[k]].split(' ')[0]).join(' | ')} |`));
+ for(const l of data.locations)lines.push('',`- **${l.id} — ${l.name}**: ${l.evidence}`,`  - หลักฐาน: ${l.files.map(f=>`[${f}](${f})`).join(' · ')}`,`  - เกณฑ์พร้อมทั้งฉาก: ${l.acceptance}`);
  for(const p of data.phases){lines.push('',`<a id="phase-${p.id}"></a>`,`## Phase ${p.id} — ${p.title}`,'');for(const t of data.tasks.filter(t=>t.phase===p.id)){
   lines.push(`- [${t.status==='done'?'x':' '}] ${statuses[t.status]} **${t.id} — ${t.title}**`,
    `  - ความสำคัญ: ${t.priority} · ขอบเขต: ${t.scope} · เชื่อมบอร์ดเดิม: ${t.legacyIds.join(', ')} · ตรวจล่าสุด: ${t.reviewed}`,
@@ -59,7 +71,7 @@ export function render(data){
 }
 export function board(data){
  const s=totals(data.tasks);
- const candidates=['VIS-003','VIS-004','VIS-011','VIS-008','CMB-006','STO-001','MAG-006'];
+ const candidates=['VIS-014','VIS-008','VIS-004','VIS-005','CMB-006','STO-001','MAG-006'];
  const regressions=data.tasks.filter(t=>t.status==='problem').sort((a,b)=>a.priority.localeCompare(b.priority)).map(t=>t.id);
  const next=[...new Set([...regressions,...candidates])].filter(id=>{const t=data.tasks.find(t=>t.id===id);return t&&t.status!=='done'&&t.status!=='blocked';}).slice(0,5);
  return ['# GODSEED Task Board','', 'Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ',

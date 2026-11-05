@@ -1,6 +1,6 @@
-# Sunlit Memory Fantasy — art bible0.5.0
+# Sunlit Memory Fantasy — art bible0.6.0
 
-Current:6layered stages,11actor sheets including retainedlegacy alternatives; all remain original procedural prototype art. The versioned notes below describe earlier states separately.
+Current:6layered stages /7location presentations,12actor sheets including retainedlegacy alternatives; all remain original procedural prototype art. The versioned notes below describe earlier states separately.
 
 ## 0.4.0 archive/stream studies
 
@@ -47,3 +47,28 @@ No new PNG/third-party art. Six authored travel lanes and eight prop approaches 
 Original generator `generate-directional-art.mjs` adds one256×192PNG underart-v4, eight32×48columns ×fourrows (south/west/east/north), sixframes@10fps each and transparent unused cells. Front has a visible face; rear has hair/scarf/backstrap; side heads have authored profiles and the asymmetric satchel stays consistent. These are actual drawings on the source grid, not rotations/scaled pictures or a front/back flip. All24frames animate; the planted sole remains onrow44. Foot/depth/shadow metrics retain worldy+20.19,427bytes; deterministicSHA9897218761283fcf21747fbce0cb91a1c2652bbf2264ad7ddba37fdccacaaf87.
 
 Directional runtime captures: directional-east-{390,820,1024,1366}.png and directional-north-{390,820,1024,1366}.png; phone390north and desktop1366east reviewed against actual movement, plus original atlas review. New tests observe south/east/west/north texture/animation and contact geometry through genuine choices, not injected animation commands. Remaining debt: individual NPC silhouettes/cycles, four-view non-walking poses, camera staging, advanced lighting, finalHD approval and physical performance. Existing39PNGs are byte-identical toGitbase after full regeneration.
+
+
+## 0.6.0 — ต้นแบบหมู่บ้านและต้นไม้จากภาพอ้างอิง
+
+เปิด Contact Sheet ทั้ง10แห่ง และภาพ01/03แบบเต็ม ใช้เป็นแนวทางสี วัสดุ หลังคาฟ้า/แดง หินครีม น้ำสีหยก ดอกไม้ และมุมมอง3/4 ภาพใหม่วาดบนกริดพิกเซลด้วยคำสั่งต้นฉบับ ไม่สุ่มสีหรือนำพิกเซลจาก concept มาตัดแปะ รายละเอียด รูปทรงต้นไม้ แสง และ NPC ยังต้องปรับอีกมากก่อนถึงเกณฑ์ final HD
+
+| มาตรฐานร่วม | ค่าที่ใช้จริง / ข้อจำกัด |
+| --- | --- |
+| Logical canvas | 480×270, Phaser nearest-neighbor / roundPixels / FIT; UI ไทยแยก DOM และไม่บังคับหมุนจอ |
+| Sprite | ผู้เล่น32×48, แถวเท้าต้นฉบับ44; พิกัดเท้าโลกคือ centerY+20 |
+| Tile / grid | กริดวางแผน16px; ต้นแบบยังใช้ PNG Layer ไม่ใช่ reusable Tile Set ที่เสร็จแล้ว |
+| มุมมอง | ฉาก3/4แบบเห็นหน้าและข้างอาคาร ใช้วัสดุและสัดส่วนร่วมกัน; ตัวละครยังมีท่าที่ต้องปรับให้เข้ากัน |
+| Palette | หิน#dfcdb0, หลังคาฟ้า#628baf/แดง#c87d67, น้ำ#6dc8c0, หญ้า#82ac76, ดอกไม้#e9bdc8 |
+| Lighting / shadow | แสงอุ่นกับเงาเขียวหม่นและเงาสัมผัสพื้น การเชื่อมทิศแสง/เงาทุกวัตถุยังเป็นต้นแบบ |
+| Layers | rear-1000, ground-900, foreground1000; Ground เว้น alpha ตรงผนังหน้าอาคาร |
+| Depth | Prop ตามฐานเท้า, actorY+20, shadowY+19; tree201 / fountain204 / bench238 / seated239 |
+| Idle / walk | ท่ายืน4ทิศ ทิศละ3เฟรม@3fps; เดิน4ทิศ ทิศละ6เฟรม@10fps ไม่ใช้ flip แทนหน้า/หลัง |
+| เวลาการกระทำ | เดินตามระยะประมาณ70px/s ช่วงละ200–900ms, interact600ms, cast1120ms, craft1600ms; ข้ามได้ |
+| Ambient | น้ำพุ6เฟรม@6fps, ใบไม้8เฟรม@6fps ใช้Spriteวนซ้ำ6ชิ้นหลัง memory flag; หยุดเมื่อ Reduced Motion |
+
+Generator ใหม่ `generate-village-art.mjs` และ `generate-idle-art.mjs` สร้าง10PNGรวม185,199bytes: ฉาก2แห่ง×3เลเยอร์480×270, fountain576×112 (6ช่อง96×112), tree432×208, leaves128×16 (8ช่อง16×16), idle96×192 (4ทิศ×3ช่อง32×48) รักษา40PNGเดิม byte-identical การนั่งใช้ Atlas เดิม; kneel/stand และปฏิสัมพันธ์ทุกทิศยังไม่ครบ
+
+แก้ Anchor/Collision ได้ใน `scene-definitions.ts` พื้นที่เท้า10×4ตรวจทุก2px ถนนเป็น Fixed Graph ไม่ใช่ Open World ไม่มีการเดาพิกัดจากภาพ concept ต้นไม้บังตามฐานเท้า201และทางหลังต้นไม้186 หลังตรวจภาพครั้งแรกว่าทาง198ให้ค่า depth ถูกแต่ตัวละครยังไม่ทับกิ่งพอ
+
+เปิดตรวจภาพ runtime390pxและ1366pxหลังแก้ Ground Mask และเส้นทางแล้ว หลักฐานใน [Session12](evidence/session12/README.md) ส่วน820/1024อยู่ในผลทดสอบและ CI Artifact ยังไม่มี Low Device Preset, Lazy Loading, FPS/thermal/hardware benchmark หรือการรับรอง Safari

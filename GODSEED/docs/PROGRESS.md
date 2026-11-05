@@ -1,4 +1,32 @@
-# GODSEED — ความคืบหน้า 0.5.1
+# GODSEED — ความคืบหน้า 0.6.0
+
+### Session12 — 2026-11-05 UTC · ต้นแบบหมู่บ้านและใต้ต้นเมล็ด
+
+เริ่มจากmain d4da87a/0.5.1 พัฒนาบน feat/godseed-village-references ไม่เริ่มใหม่และรักษา17Scene IDsเดิม/commit220e992ไว้ Sourceที่ผ่านCIคือ0dc5e59, PR#10
+
+- นำเข้า10ภาพเจ้าของ+manifest+README+Contact Sheet รวม13ไฟล์พร้อมSHA เปิดContact Sheetครบ10และภาพ01/03แบบเต็ม ใช้เป็นArt Direction ไม่ใช้ภาพเต็มเป็นพื้นหลังเกม
+- สร้าง10PNGต้นฉบับ185,199bytes: สองฉาก×3เลเยอร์, fountain6frames, tree432×208, leaves8frames, idle4ทิศ รักษา40PNGเดิมbyte-identical รวม50PNG/39versioned
+- Fixed road graph/footprint10×4/Anchorบนแผนที่ที่วาดเอง เดินถึงน้ำพุหันเหนือ เดินใต้กิ่งจริงแล้วนั่ง/ใบไม้ตามmemory พักซ้ำไม่เดินตัดขาม้านั่งหรือให้trustซ้ำ
+- คงตำแหน่งเมื่อทำactionต่อในmapเดิม; import/restore/continueใช้Anchorที่ถูกต้อง หยุดเดินเป็นidleเมื่อถึงจุด ท่านั่งไม่แทรกidleระหว่างกล้องกลับและautosave
+- เพิ่มS02_TREEและทางไปกลับจากHubให้เซฟเดิมใช้ได้ โดยไม่เริ่มใหม่ State2/DB1/envelope1เดิม ระบบวัตถุดิบ/234สูตร/Turn-Basedไม่เปลี่ยน
+- RoadmapSSOTเดิมเพิ่มตาราง9ด้านต่อ10สถานที่และVIS-013/014 ส่วนสถานที่ฉบับสมบูรณ์/ท่าพิเศษ/NPC/เอฟเฟกต์ขั้นสุดท้ายยัง🟡 ภาพอ้างอิงพร้อมไม่ใช่ฉากเสร็จ
+- stage-siteเก็บเฉพาะhashedclientเก่า ไม่คัดลอกreferencesเข้าdist; ตรวจซ้ำหลังstagingในCI เกมไม่โหลดConcept Files
+
+Checklist 27.6% (21/76) · v1 28.8% (21/73) · ✅21 🟡38 ⬜16 🔴0 ⛔1 นับจำนวนงานเท่านั้น ไม่ใช่ปริมาณแรงงานหรือคุณภาพเกม
+
+ปริมาณจากsource:18scenes/60choices/NPC5/3encounters/234legal/0endings/6Stage IDs/7location presentations มีต้นแบบตามreferenceสองแห่ง อีกแปดconceptยังไม่แปลง
+
+ผลจริง: npmci/type/lint/content2/game105/roadmap7/build/packagingPASS; localtarget16/16PASS3.9m; baselinefull63PASS14.9m; [latestPRCI full65SUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42042658772) ตรงsource0dc5e59 รูป50PNGสร้างซ้ำตรงทุกbyte Actualpublic0.6.0ยังรอmerge/deploy ไม่ใช้ผลPreviewแทนเว็บจริง
+
+ปัญหาที่พบและแก้: groundทับผนังบ้าน, ทางdepthถูกแต่ไม่ซ้อนกิ่งจริง, idleหันเดิม/resetตำแหน่ง, ท่านั่งสะดุดตอนcommit, importเซฟเก่าคงตำแหน่งใหม่, พักซ้ำตัดขาม้านั่ง, helper5sสั้นกว่าเส้นทางจริง ทั้งหมดมีผลทดสอบหลังแก้ ไม่ลบ/skipกรณีที่ล้ม
+
+ค้าง: finalHD/NPC/15actions, บ้าน→ประตู→หมู่บ้าน, Crystal/Workshop/Battle Gladeและอีก8concept, lowpreset/lazyloading/audio/Safarihardware/ruins/festival/boss/สามตอนจบ QA-009ยังblocked
+
+Pages Source APIถูกปฏิเสธ403 จึงยังlegacy main:/ WorkflowActionsยังใช้ได้ การแยกreferenceออกArtifactรับรองเฉพาะdist/Actions; เกมไม่โหลดconcept เจ้าของเปลี่ยนSourceเป็นActionsจากโทรศัพท์ได้ตามREADME
+
+งานต่อ: VIS-008ปรับภาพสองฉาก/บ้านและประตู → Crystal/Workshop → VIS-004/005ท่าNPC/ผู้เล่น → Battle Glade/VFX → เนื้อเรื่องruinsตามdependencies หลักฐานภาพที่evidence/session12/README.md
+
+---
 
 Session11 latest: PR9 merged; camera acceptance forcurrent6stages/3encounters complete. Checklist19/74=25.7%(v126.8%). Public0.5.1 verified; finalmainCI proof inTEST_REPORT. Previoussessions below retain historicalstates.
 

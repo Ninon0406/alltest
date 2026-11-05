@@ -25,6 +25,7 @@ jobs:
       - run: npm ci
       - run: npm run test:all
       - run: node scripts/stage-site.mjs
+      - run: npm run validate:references
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
         env:

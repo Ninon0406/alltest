@@ -149,3 +149,19 @@ it('front/back heads differ physically and west is not a mirrored east sheet',as
  for(let y=0;y<48;y++)for(let x=0;x<32;x++)east.copy(mirrored,(y*32+x)*4,(y*32+31-x)*4,(y*32+32-x)*4);
  expect(digest(west)).not.toBe(digest(mirrored));expect(digest(back)).not.toBe(digest(front));
 });
+
+it('standing views keep grounded feet, asymmetric front/back and real breathing frames',async()=>{
+ const {directionalIdle,facings}=await import('../src/scenes/directional-art');const picture=image('art-v5/hero-idle.png');
+ expect([picture.width,picture.height]).toEqual([96,192]);const views=[];
+ for(const direction of facings){const frames=directionalIdle[direction].frames;const hashes=frames.map(i=>digest(frame(picture,i,32,48)));expect(new Set(hashes).size).toBeGreaterThan(1);views.push(hashes[0]);
+  for(const i of frames){const pixels=frame(picture,i,32,48);expect(visible(pixels)).toBeGreaterThan(150);expect(visible(pixels.subarray(45*32*4))).toBe(0);expect(visible(pixels.subarray(44*32*4,45*32*4))).toBeGreaterThan(0);}
+ }expect(new Set(views).size).toBe(4);
+});
+it('original fountain water animates independently of opaque map and depth-sorted tree',()=>{
+ const fountain=image('art-v5/fountain.png'),tree=image('art-v5/ancient-tree.png'),leaves=image('art-v5/leaves.png');
+ expect([fountain.width,fountain.height]).toEqual([576,112]);expect([tree.width,tree.height]).toEqual([432,208]);expect([leaves.width,leaves.height]).toEqual([128,16]);
+ expect(new Set(Array.from({length:6},(_,i)=>digest(frame(fountain,i,96,112)))).size).toBe(6);
+ expect(visible(tree.data)).toBeGreaterThan(10_000);expect(visible(tree.data)).toBeLessThan(tree.width*tree.height*.65);
+ for(let i=0;i<8;i++)expect(visible(frame(leaves,i,16,16))).toBeGreaterThan(10);
+ for(const stage of ['village','tree']){const ground=image(`art-v5/${stage}-ground.png`);expect(ground.data[(170*480+70)*4+3]).toBe(0);expect(ground.data[(240*480+200)*4+3]).toBe(255);}
+});

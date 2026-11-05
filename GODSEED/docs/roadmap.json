@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "e76c3e4",
+  "baseCommit": "0dc5e59",
   "phases": [
     {
       "id": 1,
@@ -273,7 +273,7 @@
         "GODSEED/docs/ART_BIBLE.md",
         "GODSEED/docs/ASSET_LICENSES.md"
       ],
-      "evidence": "original generators39PNG; visual gateยังไม่ผ่าน",
+      "evidence": "original generators39PNG; visual gateยังไม่ผ่าน; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
       "acceptance": "palette/metrics/rights/lighting/atlasมาตรฐานเดียวและreviewจริงครบฉาก",
       "legacyIds": [
         "GS-007",
@@ -374,7 +374,7 @@
         "GODSEED/src/scenes/world.ts",
         "GODSEED/src/scenes/cinematic-paths.ts"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
@@ -444,9 +444,11 @@
       ],
       "files": [
         "GODSEED/src/scenes/stage-layout.ts",
-        "GODSEED/scripts/generate-stage-art.mjs"
+        "GODSEED/scripts/generate-stage-art.mjs",
+        "GODSEED/src/scenes/scene-definitions.ts",
+        "GODSEED/scripts/generate-village-art.mjs"
       ],
-      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี",
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
       "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
       "legacyIds": [
         "GS-008",
@@ -468,7 +470,7 @@
         "GODSEED/src/scenes/world.ts",
         "GODSEED/src/scenes/stage-layout.ts"
       ],
-      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ",
+      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
       "acceptance": "reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก",
       "legacyIds": [
         "GS-008",
@@ -490,7 +492,7 @@
         "GODSEED/src/scenes/world.ts",
         "GODSEED/src/scenes/exploration-art.ts"
       ],
-      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี",
+      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
       "acceptance": "อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด",
       "legacyIds": [
         "GS-012",
@@ -1470,7 +1472,7 @@
         "GODSEED/tests/browser.spec.ts",
         ".github/workflows/pages.yml"
       ],
-      "evidence": "Session8 readiness-boundaryแก้แล้ว; focusedkeyboard3/3PASS21.9s + finalPRCI42004666730 full50SUCCESS; เกมunit94/roadmap6/content2/buildPASS",
+      "evidence": "PRCI42042658772 SUCCESS full65 บนsource0dc5e59; localtarget16PASS3.9m และbaseline44b full63PASS14.9m/CI42037332359SUCCESS บันทึกinitialhelper5s failureและการแก้12s/zero-stepไว้ ไม่skipหรือลบassertion",
       "acceptance": "รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว",
       "legacyIds": [
         "GS-002",
@@ -1479,7 +1481,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "ไม่skipหรือลบcase; รอrenderer/startenabledก่อนEnter + realPNG500ms delay; รายงานinitiallocal49/1และcorrectionในTEST_REPORT; mainCI42005831839 full50SUCCESS; actualpublicplay/save and post-Actionsassets gatePASS",
+      "verification": "automatedgateกลับมาผ่านแล้ว; latest65ครอบคลุมposehandoff/import/repeatbenchเพิ่มเติม ไม่อ้าง63เก่ารวมcaseใหม่",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
       ]
@@ -1776,6 +1778,292 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-05"
+    },
+    {
+      "id": "VIS-013",
+      "phase": 2,
+      "title": "นำเข้า10ภาพอ้างอิงพร้อม provenance/ติดตาม9ด้านและกันออกจากProduction",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "VIS-006"
+      ],
+      "files": [
+        "assets/reference/godseed/IMPORT_PROVENANCE.json",
+        "GODSEED/scripts/validate-references.mjs",
+        "GODSEED/scripts/stage-site.mjs",
+        "GODSEED/scripts/roadmap.mjs"
+      ],
+      "evidence": "ตรวจZIPจริง/13originalfiles/SHA256ตรง/10WebP+manifest+README+ContactSheet เปิดContactSheet10และfull01/03; SSOT9ด้านต่อ10สถานที่; validate:referencesหลังbuildและstage-site PASS0conceptfilesในpublic/dist",
+      "acceptance": "ตรวจ13ไฟล์ตรงSHA/10WebP+manifest/readme/contactsheet; SSOT9ด้านต่อ10สถานที่ ไม่มีreferencesในdistหลังstage-site",
+      "legacyIds": [
+        "GS-042"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "roadmap7/7 PASS; validate:references PASS10WebP/13checksums; งานนี้รับรองการนำเข้า/การติดตาม/packagingเท่านั้น ไม่ใช่คุณภาพฉาก",
+      "evidenceFiles": [
+        "GODSEED/scripts/validate-references.mjs",
+        "GODSEED/scripts/roadmap.test.mjs",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json",
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
+    },
+    {
+      "id": "VIS-014",
+      "phase": 2,
+      "title": "ต้นแบบหมู่บ้าน/ใต้ต้นไม้: Anchor routes/idleทิศ/ท่านั่งคงอยู่",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "VIS-006"
+      ],
+      "files": [
+        "GODSEED/src/scenes/scene-definitions.ts",
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/scripts/generate-village-art.mjs",
+        "GODSEED/scripts/generate-idle-art.mjs",
+        "GODSEED/tests/scene-definitions.test.ts",
+        "GODSEED/tests/locations.spec.ts",
+        "GODSEED/tests/arrival.spec.ts"
+      ],
+      "evidence": "Source0dc5e59: game105/content2/roadmap7/type/lint/build/packagingPASS; localtarget16/16 PASS3.9m; PRCI42042658772 SUCCESS full65 รวมarrival/import/continuoussit/repeatedbench/revisit/4directions/3battles/oldsave; runtimeภาพสองสถานที่เปิดตรวจแล้ว",
+      "acceptance": "ต้นแบบ2สถานที่ originallayers/propdepth/footcolliders; choiceเดินถึงน้ำพุหันเหนือ/พักใต้ต้นไม้+ใบไม้/ยืนทิศเดิม/เซฟreload/skip/reduced ผ่าน4viewport และ full regression; ไม่ใช่finalHDหรือแปลงครบ10ฉาก",
+      "legacyIds": [
+        "GS-043"
+      ],
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "verification": "รับรองเฉพาะต้นแบบ2สถานที่/เส้นทางที่สร้าง: footcolliders+anchors/4-viewidle/routefollowing/นั่งต่อเนื่อง/เซฟreload-safe; ไม่ใช่finalHD/15actions/NPCหรือ10สถานที่สมบูรณ์",
+      "evidenceFiles": [
+        "GODSEED/tests/arrival.spec.ts",
+        "GODSEED/tests/locations.spec.ts",
+        "GODSEED/tests/scene-definitions.test.ts",
+        "GODSEED/docs/TEST_REPORT.md",
+        "GODSEED/docs/evidence/session12/README.md"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "village_center",
+      "name": "ลานน้ำพุกลางหมู่บ้าน",
+      "readiness": {
+        "reference": "done",
+        "structure": "done",
+        "layers": "in_progress",
+        "collision": "done",
+        "movement": "in_progress",
+        "story": "in_progress",
+        "effects": "in_progress",
+        "mobile": "done",
+        "ready": "in_progress"
+      },
+      "evidence": "มีต้นแบบเล่นจริงและทดสอบChromium390/820/1024/1366ผ่าน; structure/foot-collision/anchorsผ่านในขอบเขตถนนที่สร้างแล้ว ส่วนเลเยอร์/animation/เหตุการณ์/เอฟเฟกต์ระดับฉากสมบูรณ์ยังไม่ครบ (NPC/special poses/รายละเอียดเทียบconceptยังค้าง) ดูVIS-014สำหรับขอบเขตต้นแบบที่ทดสอบ ไม่ใช้ผลย่อยแทนfinalHD/hardware; CI42042658772 full65PASS source0dc5e59; VIS-014DONEเฉพาะต้นแบบ ไม่ทำให้ทั้งสถานที่เสร็จ",
+      "files": [
+        "assets/reference/godseed/references/01_village_center.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json",
+        "GODSEED/src/scenes/scene-definitions.ts",
+        "GODSEED/scripts/generate-village-art.mjs",
+        "GODSEED/tests/locations.spec.ts",
+        "GODSEED/docs/evidence/session12/village-after-390.png",
+        "GODSEED/docs/TEST_REPORT.md"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "village_entrance",
+      "name": "ประตูทางเข้าหมู่บ้าน",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง",
+      "files": [
+        "assets/reference/godseed/references/02_village_entrance.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "under_tree",
+      "name": "ใต้ต้นไม้ใหญ่",
+      "readiness": {
+        "reference": "done",
+        "structure": "done",
+        "layers": "in_progress",
+        "collision": "done",
+        "movement": "in_progress",
+        "story": "in_progress",
+        "effects": "in_progress",
+        "mobile": "done",
+        "ready": "in_progress"
+      },
+      "evidence": "มีต้นแบบเล่นจริงและทดสอบChromium390/820/1024/1366ผ่าน; structure/foot-collision/anchorsผ่านในขอบเขตถนนที่สร้างแล้ว ส่วนเลเยอร์/animation/เหตุการณ์/เอฟเฟกต์ระดับฉากสมบูรณ์ยังไม่ครบ (NPC/special poses/รายละเอียดเทียบconceptยังค้าง) ดูVIS-014สำหรับขอบเขตต้นแบบที่ทดสอบ ไม่ใช้ผลย่อยแทนfinalHD/hardware; CI42042658772 full65PASS source0dc5e59; VIS-014DONEเฉพาะต้นแบบ ไม่ทำให้ทั้งสถานที่เสร็จ",
+      "files": [
+        "assets/reference/godseed/references/03_ancient_tree.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json",
+        "GODSEED/src/scenes/scene-definitions.ts",
+        "GODSEED/scripts/generate-village-art.mjs",
+        "GODSEED/tests/locations.spec.ts",
+        "GODSEED/docs/evidence/session12/tree-after-390.png",
+        "GODSEED/docs/TEST_REPORT.md"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "player_home",
+      "name": "บ้านผู้เล่น",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง",
+      "files": [
+        "assets/reference/godseed/references/04_player_cottage.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "elder_garden",
+      "name": "บ้านผู้เฒ่าและสวนสมุนไพร",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "files": [
+        "assets/reference/godseed/references/05_elder_herb_garden.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "forest_road",
+      "name": "ถนนสู่ป่า",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "files": [
+        "assets/reference/godseed/references/06_forest_road.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "crystal_clearing",
+      "name": "ลานผลึกเวทมนตร์",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง",
+      "files": [
+        "assets/reference/godseed/references/07_crystal_clearing.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "spell_workshop",
+      "name": "ห้องผสมเวทมนตร์",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "files": [
+        "assets/reference/godseed/references/08_spell_workshop.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "ancient_shrine",
+      "name": "ศาลเจ้าโบราณ",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "files": [
+        "assets/reference/godseed/references/09_ancient_shrine.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
+    },
+    {
+      "id": "battle_glade",
+      "name": "ลานต่อสู้กลางป่า",
+      "readiness": {
+        "reference": "done",
+        "structure": "not_started",
+        "layers": "not_started",
+        "collision": "not_started",
+        "movement": "not_started",
+        "story": "not_started",
+        "effects": "not_started",
+        "mobile": "not_started",
+        "ready": "not_started"
+      },
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "files": [
+        "assets/reference/godseed/references/10_battle_glade.webp",
+        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+      ],
+      "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     }
   ]
 }

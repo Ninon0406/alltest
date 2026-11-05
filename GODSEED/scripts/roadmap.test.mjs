@@ -28,7 +28,14 @@ test('unsupported status and DONE without actual verification record reject',()=
 test('next-work list excludes completed tasks and promotes actual regressions',()=>{
  const d=data();for(const t of d.tasks)if(t.status==='problem')t.status='in_progress'; // Isolate this queue fixture from current project regressions.
  d.tasks.find(t=>t.id==='VIS-003').status='done';
- assert.match(board(d),/^1\. VIS-004 /m);
+ d.tasks.find(t=>t.id==='VIS-014').status='done';d.tasks.find(t=>t.id==='VIS-008').status='in_progress';
+ assert.match(board(d),/^1\. VIS-008 /m);
  d.tasks.find(t=>t.id==='CMB-006').status='problem';
  assert.match(board(d),/^1\. CMB-006 /m);
+});
+
+test('location records reject missing aspects, duplicate locations and premature final readiness',()=>{
+ const d=data();delete d.locations[0].readiness.collision;assert.throws(()=>validate(d),/location readiness/);
+ const e=data();e.locations[1].id=e.locations[0].id;assert.throws(()=>validate(e),/unique location/);
+ const f=data();f.locations[0].readiness.ready='done';f.locations[0].readiness.effects='in_progress';assert.throws(()=>validate(f),/requires every aspect/);
 });

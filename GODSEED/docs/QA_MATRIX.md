@@ -1,4 +1,21 @@
-# QA matrix — 0.5.0 / 2026-11-05 UTC
+# QA matrix — 0.6.0 / 2026-11-05 UTC
+
+Source0dc5e59: [PR CI full65SUCCESS](https://github.com/Ninon0406/alltest/actions/runs/42042658772), game105/content2/roadmap7/type/lint/build/referencepackingPASS. Localtarget16/16PASS3.9m; baseline44b localfull63/63PASS14.9m
+
+| สภาพแวดล้อม | สิ่งที่ตรวจ | ผล |
+| --- | --- | --- |
+| Chromium hasTouch390×844,820×1180,1024×768,1366×768 | เดิน4ทิศ/Anchor/กิ่งบัง/นั่งคงอยู่/leaf/reload/revisit/fountain/skip/reduced/PNGfallback | PASS |
+| Chromium390×844 | importไฟล์ส่งออกS01จริงคืนAnchor; MutationObserverท่านั่งผ่านcamera+save; พักbenchซ้ำไม่เดิน | PASS |
+| Chromium360/390/430,768/820/1024,1366/1440/1920,844×390 | originalrealflow/craft/battle/reload/viewport containment ในfull65 | PASS |
+| /alltest/ preview | relativepaths/keyboard/double input/ไม่มี404 | PASS |
+| IndexedDB denied/corrupt/writefailure/V1import+activebattle | กู้/ส่งออก/memorymode/ข้อมูลเดิม/once-onlycommit | PASS |
+| Preview39versionedPNG/JS | SHAตรงbuild/0Conceptrequests/0consoleerrors | PASS |
+| Actualpublic0.6.0 / main CI | หลังmergeและdeploy | PENDING |
+| Safari/iOS/Android/iPadจริง, hardwareFPS/memory/thermal | ไม่มีอุปกรณ์ในenvironmentนี้ | NOT TESTED / QA-009blocked |
+
+เปิดดูภาพจริงphone390/desktop1366หลังแก้GroundMask/routefoot186; รูปอื่นในCI Artifactพร้อมตรวจ ยังไม่รับรองfinalHDหรือvisual-regressionbaseline การผ่านส่วนย่อยต้นแบบไม่ทำให้movement/story/effectsระดับฉากครบตามreference
+
+---
 
 Current0.5.0: gameunit94/roadmap6/content2/type/lint/buildPASS, focused17+keyboard3 localPASS, finalPR42004666730 full50SUCCESS and actualpublicplay/save/29PNG/hashPASS. Main42005831839 full50/build/deploySUCCESS + post-Actions29PNG/JS/rendererPASS. Initiallocalfull49/1 startupkeyboard race preserved with its correction. Physicalhardware/Safari remainsblockedQA-009 and finalHD acceptancepending.
 
