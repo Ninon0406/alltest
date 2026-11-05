@@ -123,3 +123,29 @@ it('Eira and the water spirit are original animated silhouettes with transparent
   expect(difference,'new art must change the silhouette, not just its palette').toBeGreaterThan(20);
  }
 });
+
+it('four directional walks use visible independent frames, grounded soles and empty padding',async()=>{
+ const {directionalWalk,facings}=await import('../src/scenes/directional-art');
+ const picture=image('art-v4/hero-walk.png'),used=new Set<number>();
+ expect([picture.width,picture.height]).toEqual([256,192]);
+ for(const direction of facings){
+  const config=directionalWalk[direction];expect(config.frames).toHaveLength(6);const hashes=new Set();
+  for(const i of config.frames){
+   used.add(i);const pixels=frame(picture,i,32,48);expect(visible(pixels)).toBeGreaterThan(150);hashes.add(digest(pixels));
+   let last=0;for(let y=0;y<48;y++)for(let x=0;x<32;x++)if(pixels[(y*32+x)*4+3])last=y;
+   expect(last,`${direction}/${i} planted sole must meet ground44`).toBe(44);
+  }
+  expect(hashes.size).toBe(6);
+ }
+ for(let i=0;i<32;i++)if(!used.has(i))expect(visible(frame(picture,i,32,48))).toBe(0);
+});
+
+it('front/back heads differ physically and west is not a mirrored east sheet',async()=>{
+ const {directionalWalk}=await import('../src/scenes/directional-art');const picture=image('art-v4/hero-walk.png');
+ const front=frame(picture,directionalWalk.south.frames[0],32,48),back=frame(picture,directionalWalk.north.frames[0],32,48);
+ const skin=(pixels:Buffer)=>{let n=0;for(let y=4;y<22;y++)for(let x=0;x<32;x++){const i=(y*32+x)*4;if(pixels[i]===233&&pixels[i+1]===188&&pixels[i+2]===147)n++;}return n;};
+ expect(skin(front)).toBeGreaterThan(20);expect(skin(back)).toBe(0);
+ const east=frame(picture,directionalWalk.east.frames[0],32,48),west=frame(picture,directionalWalk.west.frames[0],32,48),mirrored=Buffer.alloc(east.length);
+ for(let y=0;y<48;y++)for(let x=0;x<32;x++)east.copy(mirrored,(y*32+x)*4,(y*32+31-x)*4,(y*32+32-x)*4);
+ expect(digest(west)).not.toBe(digest(mirrored));expect(digest(back)).not.toBe(digest(front));
+});

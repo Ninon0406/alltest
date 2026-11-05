@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-05",
-  "baseCommit": "f0eb125",
+  "baseCommit": "bda8f51",
   "phases": [
     {
       "id": 1,
@@ -247,14 +247,14 @@
         "GODSEED/scripts/roadmap.mjs",
         "GODSEED/docs/roadmap.json"
       ],
-      "evidence": "roadmap:check 5/5 PASS รวมnegative duplicate/dependency/cycle/invalidstatus/missingproof; generated8Phases/74tasksตรวจผ่าน",
+      "evidence": "roadmap6/6 PASS รวมnegative metadata/counting/queue; DONEไม่กลับไปห้างานถัดไปและregressionsขึ้นก่อน; same74taskdataset",
       "acceptance": "ID/dependency/evidence valid ไม่มีcycle เอกสารไม่stale ตรวจในCI มีlogทุกsession",
       "legacyIds": [
         "GS-041"
       ],
       "scope": "v1",
       "reviewed": "2026-11-05",
-      "verification": "roadmap5/5 + PRCI41997711472/mainCI41998656125 SUCCESS; generatedchecklistตรง17/74; 03/AGENTS/devlogเชื่อมแล้ว",
+      "verification": "generatedchecklistตรง18/74; integratedtest:all/CI; 03/AGENTS/devlogเดิมใช้ต่อไม่สร้างซ้ำ",
       "evidenceFiles": [
         "GODSEED/scripts/roadmap.test.mjs",
         "GODSEED/docs/DEVELOPMENT_LOG.md"
@@ -311,23 +311,33 @@
       "id": "VIS-003",
       "phase": 2,
       "title": "การเดินสี่ทิศทางพร้อมturn/foot alignment",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P2",
       "dependsOn": [
         "VIS-002"
       ],
       "files": [
-        "GODSEED/scripts/generate-actor-art.mjs",
-        "GODSEED/src/scenes/world.ts"
+        "GODSEED/scripts/generate-directional-art.mjs",
+        "GODSEED/src/scenes/directional-art.ts",
+        "GODSEED/src/scenes/world.ts",
+        "GODSEED/tests/directional.spec.ts",
+        "GODSEED/tests/art.test.ts"
       ],
-      "evidence": "มีwalk sheetและflipซ้าย/ขวา; ยังไม่มีatlasหน้า/หลัง",
+      "evidence": "24originalframes/fourviews; gameunit94/94, focus17/17 PASS2.4m รวม4viewports/reload/skip/reduced/newPNGfallback; phone/desktopruntime reviewed",
       "acceptance": "สี่ทิศมีoriginalframesตามเส้นทาง ไม่ใช้flipแทนหน้า/หลัง ตรวจบนสามกลุ่มจอ",
       "legacyIds": [
         "GS-007",
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "verification": "facing/foot/depth/shadowจากactualUIchoices ตรวจครบ4ทิศ ไม่มีflipแทนหน้า/หลัง; regenerate40PNGผ่าน old39byte-identical; ไม่ใช่finalHDหรือNPCacceptance",
+      "evidenceFiles": [
+        "GODSEED/tests/directional.test.ts",
+        "GODSEED/tests/directional.spec.ts",
+        "GODSEED/tests/art.test.ts",
+        "GODSEED/docs/TEST_REPORT.md"
+      ]
     },
     {
       "id": "VIS-004",
@@ -387,7 +397,7 @@
         "GODSEED/src/scenes/cinematic-paths.ts",
         "GODSEED/tests/cinematics.spec.ts"
       ],
-      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip",
+      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS",
       "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
       "legacyIds": [
         "GS-010"
@@ -1361,7 +1371,7 @@
         "GODSEED/docs/ART_BIBLE.md",
         "GODSEED/tests/visual.spec.ts"
       ],
-      "evidence": "runtime screenshotsตรวจแล้วบางฉาก; HDgateยังไม่ผ่าน",
+      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน",
       "acceptance": "ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน",
       "legacyIds": [
         "GS-033"
@@ -1438,7 +1448,7 @@
       "id": "QA-006",
       "phase": 7,
       "title": "Automated unit/content/save/balance/browser baseline",
-      "status": "done",
+      "status": "problem",
       "priority": "P0",
       "dependsOn": [
         "FND-003",
@@ -1449,7 +1459,7 @@
         "GODSEED/tests/browser.spec.ts",
         ".github/workflows/pages.yml"
       ],
-      "evidence": "87unit/content2/browser41 CI0.4.1และbaselineรอบ7ผ่าน",
+      "evidence": "Session8 localfull49PASS/1FAIL: keyboardEnterก่อนstartพร้อมจากPNGloading; PRCI50PASSแต่รอแก้testreadiness/retest",
       "acceptance": "รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว",
       "legacyIds": [
         "GS-002",

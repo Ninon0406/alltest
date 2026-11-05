@@ -63,3 +63,7 @@ Final focused authored-path touch4/4 PASS31.4s at390×844,820×1180,1024×768,13
 Final full45/45 PASS8.4m after timing/skip-order correction; finalPR41997711472SUCCESS, PR#7 merged7279cea. Publicactualtouch/old+newroutes/checksum/import/28PNG/hashPASS on2372e79842a5d35ab3534c7eaf9d074a98f3bac91fa1ecc4f348e739c485d301. Newpathcoveragecomesfromsame-bundlefourtouchcases/CI; publicverifiercoversretainedforest/training/archive/streamloops. Main/post-ActionsproofinTEST_REPORT.
 
 Main41998656125SUCCESS/deploy09:06:55UTC; post-Actionsassets-onlyPASS withsame2372e798…/28PNG/readyrenderer/emptyerrors. Finalfull45 passed in bothPR/main. PhysicalSafari/hardware/FPS/HDgate stillnotcertified.
+
+## Session8 —0.5.0
+
+New phone390×844/iPad820×1180+1024×768/desktop1366×768 touch routes observe real south/east/west/north walking texture/animation/depth/contactshadow, then reload archive research. No gameplay/animation injection. Runtimephone-north/desktopp-east screenshots and original24-frame atlas reviewed. Missing art-v4PNG is intentionally aborted in a separate negativefallback case. Previous ten-size/skip/reduced/bench/save/battle cases retained. Final fullsuite/CI/public evidence inTEST_REPORT. PhysicalSafari/hardware/FPS/finalHD remain unconfirmed/blockedQA-009.

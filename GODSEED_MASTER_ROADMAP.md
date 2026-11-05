@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `f0eb125` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-05 UTC · ตรวจจาก base commit `bda8f51` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -14,19 +14,19 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 74 | 17 | 40 | 16 | 0 | 1 | 23% |
-| 1.0 | 71 | 17 | 40 | 13 | 0 | 1 | 23.9% |
+| ทั้งโครงการ | 74 | 17 | 39 | 16 | 1 | 1 | 23% |
+| 1.0 | 71 | 17 | 39 | 13 | 1 | 1 | 23.9% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [1 — โครงสร้างพื้นฐาน](#phase-1) | 7/9 | 2 | 0 | 0 | 0 | 77.8% |
-| [2 — งานภาพ Pixel Art HD](#phase-2) | 2/12 | 10 | 0 | 0 | 0 | 16.7% |
+| [2 — งานภาพ Pixel Art HD](#phase-2) | 3/12 | 9 | 0 | 0 | 0 | 25% |
 | [3 — ระบบเนื้อเรื่อง](#phase-3) | 1/8 | 5 | 2 | 0 | 0 | 12.5% |
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
 | [5 — ระบบต่อสู้](#phase-5) | 3/9 | 4 | 2 | 0 | 0 | 33.3% |
 | [6 — โลกและเนื้อหาขนาดใหญ่](#phase-6) | 0/8 | 5 | 3 | 0 | 0 | 0% |
-| [7 — คุณภาพเกม](#phase-7) | 1/9 | 3 | 4 | 0 | 1 | 11.1% |
+| [7 — คุณภาพเกม](#phase-7) | 0/9 | 3 | 4 | 1 | 1 | 0% |
 | [8 — เกมฉบับสมบูรณ์](#phase-8) | 0/10 | 5 | 5 | 0 | 0 | 0% |
 
 ## กฎสถานะ/หลักฐาน
@@ -106,7 +106,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-041 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003
   - ไฟล์: [GODSEED/scripts/roadmap.mjs](GODSEED/scripts/roadmap.mjs) · [GODSEED/docs/roadmap.json](GODSEED/docs/roadmap.json)
-  - หลักฐาน/สถานะจริง: roadmap:check 5/5 PASS รวมnegative duplicate/dependency/cycle/invalidstatus/missingproof; generated8Phases/74tasksตรวจผ่าน · roadmap5/5 + PRCI41997711472/mainCI41998656125 SUCCESS; generatedchecklistตรง17/74; 03/AGENTS/devlogเชื่อมแล้ว
+  - หลักฐาน/สถานะจริง: roadmap6/6 PASS รวมnegative metadata/counting/queue; DONEไม่กลับไปห้างานถัดไปและregressionsขึ้นก่อน; same74taskdataset · generatedchecklistตรง18/74; integratedtest:all/CI; 03/AGENTS/devlogเดิมใช้ต่อไม่สร้างซ้ำ
   - เกณฑ์เสร็จ: ID/dependency/evidence valid ไม่มีcycle เอกสารไม่stale ตรวจในCI มีlogทุกsession
 
 
@@ -127,11 +127,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: 56frames/11cycles alpha/bounds/uniqueposesผ่านในart tests · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
   - เกณฑ์เสร็จ: idle/walk/run/interact/pick/craft/cast/guard/hit/victory/restมีเฟรมจริง runtimeใช้manifest
 
-- [ ] 🟡 กำลังพัฒนา **VIS-003 — การเดินสี่ทิศทางพร้อมturn/foot alignment**
+- [x] ✅ เสร็จสมบูรณ์ **VIS-003 — การเดินสี่ทิศทางพร้อมturn/foot alignment**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-002
-  - ไฟล์: [GODSEED/scripts/generate-actor-art.mjs](GODSEED/scripts/generate-actor-art.mjs) · [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts)
-  - หลักฐาน/สถานะจริง: มีwalk sheetและflipซ้าย/ขวา; ยังไม่มีatlasหน้า/หลัง
+  - ไฟล์: [GODSEED/scripts/generate-directional-art.mjs](GODSEED/scripts/generate-directional-art.mjs) · [GODSEED/src/scenes/directional-art.ts](GODSEED/src/scenes/directional-art.ts) · [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/tests/directional.spec.ts](GODSEED/tests/directional.spec.ts) · [GODSEED/tests/art.test.ts](GODSEED/tests/art.test.ts)
+  - หลักฐาน/สถานะจริง: 24originalframes/fourviews; gameunit94/94, focus17/17 PASS2.4m รวม4viewports/reload/skip/reduced/newPNGfallback; phone/desktopruntime reviewed · facing/foot/depth/shadowจากactualUIchoices ตรวจครบ4ทิศ ไม่มีflipแทนหน้า/หลัง; regenerate40PNGผ่าน old39byte-identical; ไม่ใช่finalHDหรือNPCacceptance
   - เกณฑ์เสร็จ: สี่ทิศมีoriginalframesตามเส้นทาง ไม่ใช้flipแทนหน้า/หลัง ตรวจบนสามกลุ่มจอ
 
 - [ ] 🟡 กำลังพัฒนา **VIS-004 — NPC/ศัตรู silhouette และท่าพิเศษครบ**
@@ -152,7 +152,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-010 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, VIS-002
   - ไฟล์: [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/tests/cinematics.spec.ts](GODSEED/tests/cinematics.spec.ts)
-  - หลักฐาน/สถานะจริง: คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip · Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS
+  - หลักฐาน/สถานะจริง: คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS · Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS
   - เกณฑ์เสร็จ: เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop
 
 - [ ] 🟡 กำลังพัฒนา **VIS-007 — Fixed Map และเมนูเส้นทาง/ตำแหน่งที่ปลดล็อก**
@@ -466,7 +466,7 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-033 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: VIS-003, VIS-004, VIS-009, MAG-007
   - ไฟล์: [GODSEED/docs/ART_BIBLE.md](GODSEED/docs/ART_BIBLE.md) · [GODSEED/tests/visual.spec.ts](GODSEED/tests/visual.spec.ts)
-  - หลักฐาน/สถานะจริง: runtime screenshotsตรวจแล้วบางฉาก; HDgateยังไม่ผ่าน
+  - หลักฐาน/สถานะจริง: runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน
   - เกณฑ์เสร็จ: ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-003 — ประสิทธิภาพมือถือ/coldload/FPS/graphics profiles**
@@ -490,11 +490,11 @@ ValidatorตรวจID/dependency cycle/ไฟล์หลักฐานแล
   - หลักฐาน/สถานะจริง: nativecontrols/aria/reducedmotionมี; fullaudit/fontscale/settingsยังไม่ครบ
   - เกณฑ์เสร็จ: WCAG2.2AA/44pxtouch/focus/fontscaling/keyboard/สถานะไม่พึ่งสีครบ
 
-- [x] ✅ เสร็จสมบูรณ์ **QA-006 — Automated unit/content/save/balance/browser baseline**
+- [ ] 🔴 มีปัญหา **QA-006 — Automated unit/content/save/balance/browser baseline**
   - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-002, GS-024, GS-031 · ตรวจล่าสุด: 2026-11-05
   - ต้องมี: FND-003, FND-005
   - ไฟล์: [GODSEED/tests/unit.test.ts](GODSEED/tests/unit.test.ts) · [GODSEED/tests/browser.spec.ts](GODSEED/tests/browser.spec.ts) · [.github/workflows/pages.yml](.github/workflows/pages.yml)
-  - หลักฐาน/สถานะจริง: 87unit/content2/browser41 CI0.4.1และbaselineรอบ7ผ่าน · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
+  - หลักฐาน/สถานะจริง: Session8 localfull49PASS/1FAIL: keyboardEnterก่อนstartพร้อมจากPNGloading; PRCI50PASSแต่รอแก้testreadiness/retest · ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate
   - เกณฑ์เสร็จ: รันlockedCIจริงทุกPR มีnegative/storage/migration/gameflow ไม่skipเพื่อเขียว
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-007 — Visual regression golden/diffและ234VFXaudit**
