@@ -1,0 +1,18 @@
+[WebServer] (node:69418) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:69437) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:69450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 GODSEED/tests/garden.spec.ts:8:84 › garden watering, bloom and saved memory 390 (8.1s)
+  ✓  2 GODSEED/tests/garden.spec.ts:8:84 › garden watering, bloom and saved memory 844 (8.3s)
+  ✓  3 GODSEED/tests/garden.spec.ts:8:84 › garden watering, bloom and saved memory 820 (8.4s)
+  ✓  4 GODSEED/tests/garden.spec.ts:8:84 › garden watering, bloom and saved memory 1024 (9.0s)
+  ✓  5 GODSEED/tests/garden.spec.ts:8:84 › garden watering, bloom and saved memory 1366 (9.1s)
+  ✓  6 GODSEED/tests/garden.spec.ts:20:1 › reload before watering commit restores buds; skipping commits exactly once and clears the action (6.2s)
+  ✓  7 GODSEED/tests/garden.spec.ts:27:1 › missing new garden art keeps rewards and saved bloom state playable (5.0s)
+
+  7 passed (55.8s)

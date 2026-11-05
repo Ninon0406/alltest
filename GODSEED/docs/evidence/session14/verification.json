@@ -1,0 +1,67 @@
+{
+  "version": "0.6.2",
+  "localE2E": 77,
+  "gameUnit": 114,
+  "contentTests": 2,
+  "roadmapTests": 7,
+  "prCI": 42065834761,
+  "mainCI": 42068520631,
+  "public": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 42,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/reload/fire-craft/practice/win/archive/echo/water/stream/reload/win/memory/export/import"
+  },
+  "gardenPublic": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "watering": true,
+    "icon": true,
+    "preCommitStable": true,
+    "bloom": true,
+    "receivedReward": true,
+    "marenMemory": true,
+    "reload": true,
+    "errors": []
+  },
+  "postDeploy": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "assetsOnly": true,
+    "jsSha256": "3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70",
+    "layeredArtFiles": 42,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": []
+  },
+  "cleanup": {
+    "result": "PASS",
+    "revisits": 12,
+    "propCountsByAvailability": {
+      "CH0603": "8",
+      "CH0601,CH0603": "9"
+    },
+    "canvases": 1,
+    "activeEffects": 0,
+    "errors": [],
+    "note": "Bounded cleanup check only; not a heap/FPS/hardware benchmark"
+  },
+  "iconLocal": {
+    "result": "PASS",
+    "subpath": "/alltest/",
+    "icon": "http://127.0.0.1:4191/alltest/assets/godseed-mark.svg",
+    "status": 200,
+    "mime": "image/svg+xml",
+    "errors": []
+  },
+  "iconPR": 13,
+  "iconSource": "7c5f455"
+}
