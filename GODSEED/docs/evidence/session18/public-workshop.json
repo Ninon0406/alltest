@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.8.0",
+  "map": "atelier-v11",
+  "lessonAnchor": true,
+  "northBrewing": true,
+  "windAndBloomCraft": true,
+  "realIngredientCells": true,
+  "workbenchVFX": true,
+  "toolboxLift": true,
+  "nativeFilePicker": true,
+  "checkpointRestored": true,
+  "exactStateRoundTrip": true,
+  "emptyRefresh": true,
+  "explicitRetry": true,
+  "persistentStorageCalls": 0,
+  "outboundWrites": 0,
+  "developmentReferenceRequests": 0,
+  "controlledNetworkErrors": 1,
+  "consoleErrors": [],
+  "hardware": "NOT_TESTED"
+}

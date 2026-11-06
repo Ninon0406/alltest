@@ -210,3 +210,6 @@ workshop-map.ts supplies11foot anchors,10links and7solids to the existingSceneDe
 workshop-staging.ts maps stableChoiceIDs to anchors, derives S05 canonical checkpoint from choice history, and maps real Core/Form/Mod to21atlas cells. No serialized rendering coordinates or new schema; State2/File2 remains. Field crafting stays available elsewhere. The renderer raises three ingredient sprites, mixes at the real cauldron mouth, then shows formula VFX/discovery. Engine/rewards/RNG/MP stay separate and unchanged.
 
 World.pendingArrival records a validated non-battle endpoint. Explicit skip or motion cancellation completes the authored endpoint/facing and clears it; normal completion clears the pending record. This fixes mid-path checkpoint drift while preserving existing cancellation generations/settlers. Ingredient sprites share the effect cleanup pool. North brewing and west lifting draw from directionalIdle manifest, not guessed rows.
+
+
+Session18 release verification: sourceff5e67d/PR17/mergef465839 preserves State2/File2 and all game reducer APIs. Local/PR/main113 browser cases and actualpublic core/workshop/UI5 passed; post-Actions59PNG+JS hashes match. Closing receipt changes only docs/evidence/Roadmap. See evidence/session18/verification.json; no persistent progress storage or new save migration.

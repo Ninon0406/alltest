@@ -1,4 +1,4 @@
-# Session18 — candidate0.8.0 / Workshop and real crafting
+# Session18 — 0.8.0 / Workshop and real crafting
 
 Base maina8512b7 (published0.7.2/source5c58122). Continue existing systems using reference08 and existing actor/loader primitives. No new project, scene/choice IDs, recipes, combat rules or progress storage.
 
@@ -12,7 +12,7 @@ Base maina8512b7 (published0.7.2/source5c58122). Continue existing systems using
 
 ## Actual gates
 
-Unit134/Content2/Roadmap8/type/lint/build/manual-sourcegate/reference packingPASS. [Focus20/20](focused-browser.txt),3.2min: fiveviewports390×844,844×390,820×1180,1024×768,1366×768; recipe items/MP/loadout, lifting/trust, file state+anchors, skip/motion, stage fallback/retry and battle room. Preview two-recipes/native-picker/privacy PASS in preview-workshop.json. Full113/CI/public results are recorded after running in REPORT_TH.md/verification.json. No hardware/FPS/human-fun/finalHD acceptance.
+Unit134/Content2/Roadmap8/type/lint/build/manual-sourcegate/reference packingPASS. [Focus20/20](focused-browser.txt),3.2min: fiveviewports390×844,844×390,820×1180,1024×768,1366×768; recipe items/MP/loadout, lifting/trust, file state+anchors, skip/motion, stage fallback/retry and battle room. Preview two-recipes/native-picker/privacy PASS in preview-workshop.json. Local113/113(23.4m) and PR CI113/113(17.7m) PASS. Actual public core/workshop/layout5 PASS; main CI42225430490 PASS113/113(16.2m)/Build/Deploy and post-Actions59PNG+JS hashes PASS. See REPORT_TH.md/verification.json. No hardware/FPS/human-fun/finalHD acceptance.
 
 Before0.7.2: [phone](before-workshop-390.png)/[desktop](before-workshop-1366.png). After: [room](workshop-room-390.png)/[mixing](workshop-mixing-390.png)/[lifting](workshop-lifting-390.png). Opened actual screenshots and reference08 for review. Different animation frames, not a pixel-diff baseline.
 
@@ -21,3 +21,11 @@ Before0.7.2: [phone](before-workshop-390.png)/[desktop](before-workshop-1366.png
 First targeted suite: new reward assertion treated absent trust as undefined+1=NaN; corrected absent to domain-zero without removing checks. Visual inspection caught incorrectly assumed atlas rows; now use directionalIdle manifest, plus head-pixel regression against original north/west cells. [Skip regression](skip-regression-before.txt) reproduced an actual mid-route stop(184,231) instead of tutor(291,212). Store validated pending arrival and complete it on explicit skip/motion cancellation; clean it on normal completion. The corrected20cases pass. Original14passing/5failing preliminary run is not reported as full success.
 
 Roadmap stays21/76=27.6%: broad tasks incomplete, no added task just to raise percentages. Workshop structure/collision/emulated viewport subgates pass; final art/all interactions/fullchapter remain. Save011/012 andQA009 still blocked on actual hardware.
+
+## Actual public evidence
+
+[Core gameplay](public-core.json), [workshop/file/privacy](public-workshop.json), [five deployed UI viewports and keyboard](public-layout.json). Opened public-room/wind-mixing/lifting and layout844/820/1366 screenshots for inspection. Core verifies 59 versioned PNG hashes and JS. The two gameplay flows discover five distinct recipes and return from three encounters. No progress storage or upload; normal console errors zero. The deliberately aborted ground request is recorded separately (one expected network error).
+
+Extra layout probe initially expected the workshop after first-craft completion, but the existing game reducer explicitly returns S05 to S02. [Initial failure](layout-check-before.txt) is retained; corrected probe measures workshop geometry before crafting and checks the village return and discovered spell in the book afterward. App behavior was preserved. Five viewports then passed, without removing either location or recipe checks.
+
+Final sourceff5e67d / mergef465839 / PR17. [Local113](full-browser.txt), [PR CI](pr-ci.json), [Main CI and deploy](main-ci.json), [post-Actions assets](post-actions-assets.json), [complete verification](verification.json). Runtime/art unchanged after tested source; closing changes are documentation/evidence only.

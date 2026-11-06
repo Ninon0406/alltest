@@ -355,7 +355,7 @@ Source5c58122(ต่อจากf851d09) / PR16 / merge d38790e. LocalFull105/10
 Roadmap21/76=27.6%(v121/73=28.8%):done21/in_progress37/not_started16/problem0/blocked2. ปิดเฉพาะFND004 VIS004/005/008ยังprototype/in_progress;0endings. Save011/012และQA009ยังรออุปกรณ์จริง ไม่อ้างhumanfunหรือfinalHD. Commitปิดรอบเฉพาะdocs/evidence/Roadmap;งานถัดไป5และdependencyตามREPORT_TH ไม่มีงานข้ามเซสชันอัตโนมัติ
 
 
-## รอบ18 — 2026-11-06 UTC — Workshop that shows the recipe (candidate0.8.0)
+## รอบ18 — 2026-11-06 UTC — Workshop that shows the recipe (0.8.0)
 
 เริ่มmaina8512b7สะอาด/0.7.2เผยแพร่แล้ว ตรวจ03/Roadmap/Log17/Architecture/ArtBible/Reference08จริง และbaselineUnit126/content2/roadmap8/buildผ่าน เลือกVIS008/007/005/010+MAG007ที่สัมพันธ์กัน ไม่รื้อLoader/ManualSaveหรือระบบต่อสู้ที่ผ่านแล้ว
 
@@ -363,8 +363,18 @@ Roadmap21/76=27.6%(v121/73=28.8%):done21/in_progress37/not_started16/problem0/bl
 
 สูตรจริงส่ง3ส่วนผสมขึ้นslot→ลงหม้อ→VFXตามrecipe→discovery ก่อนcommitครั้งเดียว;CH0402ยก/วางกล่องตรงจุดจริงพร้อมผลเดิม;manualfilesคืนS05anchorจากประวัติChoiceIDsเดิม ไม่มีState/Fileversionใหม่ ไม่ใช้Storage/Cloud/Autosave
 
-พบและแก้: ภาพท่าพิเศษอ้างrowผิดแก้ใช้manifest+headpixeltest;skipเดินหยุดกลางทาง184/231แทน291/212สร้างredtestก่อนแก้pendingArrival+cleanup;testใหม่บวกtrustundefinedเป็นNaNแก้baseline0โดยยังตรวจdeltaแน่นอน หลังแก้Unit134/Focus20ผ่าน3.2mบน5viewportsรวมfallback/recipe/privacy/skip/checkpoint.Broadfull113/CI/publicจะเพิ่มreceiptตามผลจริง ไม่อ้างว่าเสร็จก่อนรัน
+พบและแก้: ภาพท่าพิเศษอ้างrowผิดแก้ใช้manifest+headpixeltest;skipเดินหยุดกลางทาง184/231แทน291/212สร้างredtestก่อนแก้pendingArrival+cleanup;testใหม่บวกtrustundefinedเป็นNaNแก้baseline0โดยยังตรวจdeltaแน่นอน หลังแก้Unit134/Focus20ผ่าน3.2mบน5viewportsรวมfallback/recipe/privacy/skip/checkpoint.Full113/113 localผ่าน23.4m; PR CI42222588626ผ่าน113/113ใน17.7m. Source ff5e67d รวม PR17 เป็น f465839; Main CI42225430490 ผ่าน113/113(16.2m)/Build/Deploy
 
 Checklist21/76=27.6%(v121/73=28.8%)คงเดิม เพราะงานใหญ่ทุกฉาก/ทุกcueยังไม่ครบ Workshopย่อยโครงสร้าง/collision/Chromiumจำลองผ่าน ภาพ/บท/ท่าทั้งฉากยังprototype อุปกรณ์จริง/FPS/FinalHD/humanfunยังไม่ทดสอบ เกมยัง18Scene/60Choice/5NPC/3Encounter/234legal/0endings/6stages
 
 งานต่อไปตามdependency: 1)ต้นแบบศาลเจ้า/S15–17/ECHO puzzle 2)B03/B04telegraph/AI/artหลังฉากพร้อม 3)Workshopmusicbox/clue handoff 4)บ้าน–ประตู–จัตุรัส 5)VFX/visual/performanceและdevicegatesตามRoadmap ไม่ทำเซฟที่ผ่านแล้วซ้ำ
+
+
+### ผลปิดรอบ18 — 0.8.0 ยืนยันจริง
+
+เผยแพร่0.8.0ผ่านLegacyPages42225429608แล้ว Public core/workshop PASS:59versionedPNG+JS hash54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2fตรงBuild;5distinctrecipesใน2flows/3encounters/nativepicker/filechecksum/exactstate/emptyrefresh/explicitretry/0storage/0upload/0reference/0normalconsoleerrors. Controlledfaultแยก1expectednetworkerror ภาพจริงเปิดตรวจในbrowserแล้ว
+
+Public layout/input5/5 PASSบน390×844,844×390,820×1180,1024×768,1366×768:touchสี่ขนาด/keyboardEnterบนdesktop,ไม่มีhorizontaloverflow;firstcraftกลับS02และสมุดเวทมีWINDจริง ตัวตรวจใหม่เคยคาดฉากหลังผสมผิด จึงตรวจโค้ด reducerแล้ววัดโรงช่างก่อนผสมและตรวจกลับหมู่บ้านตามcontractเดิม ไม่เปลี่ยนเกมเพื่อให้testผ่าน เก็บfailureและผลแก้ในsession18 หลักฐานนี้เป็นChromiumemulation ไม่ใช่physical/Safari/FPS/humanfun
+
+
+Main CI42225430490 SUCCESS:full113/113(16.2m),buildjob127917582231/deployjob127925608096. Post-Actionsตรวจ59PNG+JS SHA54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2fตรงBuild/0console/0references. Sourceff5e67d/mergef465839/PR17;runtime/70PNGคงเดิมหลังCI ปิดรอบด้วยdocs/evidence/Roadmapเท่านั้น ไม่เริ่มงานข้ามเซสชันอัตโนมัติ หลักฐานและ5งานถัดไปในsession18/REPORT_TH.md

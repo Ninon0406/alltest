@@ -1,0 +1,147 @@
+{
+  "runId": 42225430490,
+  "url": "https://github.com/Ninon0406/alltest/actions/runs/42225430490",
+  "head": "f465839a380bc58474311c2befe192fecbc93e8c",
+  "source": "ff5e67ddbc830eeac01df2cbe016ac8f5d1a1934",
+  "result": "SUCCESS",
+  "e2e": 113,
+  "e2eDuration": "16.2m",
+  "buildJob": 127917582231,
+  "deployJob": 127925608096,
+  "jobs": [
+    {
+      "id": 127917582231,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 42225430490,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run npm ci",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run npm run test:all",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run node scripts/stage-site.mjs",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run npm run validate:references",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run npm run test:e2e",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run actions/upload-pages-artifact@v3",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ]
+    },
+    {
+      "id": 127925608096,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 42225430490,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/configure-pages@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/deploy-pages@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    "2026-11-06T13:26:36.7635173Z ℹ tests 8",
+    "2026-11-06T13:26:36.7998381Z {\"result\":\"PASS\",\"done\":21,\"in_progress\":37,\"not_started\":16,\"problem\":0,\"blocked\":2,\"total\":76,\"percent\":27.6,\"v1\":{\"done\":21,\"in_progress\":37,\"not_started\":13,\"problem\":0,\"blocked\":2,\"total\":73,\"percent\":28.8}}",
+    "2026-11-06T13:26:43.5736795Z       Tests  134 passed (134)",
+    "2026-11-06T13:43:16.1600701Z   113 passed (16.2m)"
+  ]
+}

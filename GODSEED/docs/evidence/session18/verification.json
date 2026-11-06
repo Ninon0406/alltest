@@ -5,7 +5,7 @@
   "contentTests": 2,
   "roadmapTests": 8,
   "focusedE2E": 20,
-  "localE2E": null,
+  "localE2E": 113,
   "plannedE2E": 113,
   "preview": {
     "result": "PASS",
@@ -70,7 +70,446 @@
     "reproducedPNG": 70,
     "reproducedByteIdentical": true
   },
-  "CIAndDeployment": "PENDING",
+  "CIAndDeployment": "SUCCESS",
   "hardware": "NOT_TESTED",
-  "jsSha256": "54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2f"
+  "jsSha256": "54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2f",
+  "localE2EDuration": "23.4m",
+  "source": "ff5e67ddbc830eeac01df2cbe016ac8f5d1a1934",
+  "merge": "f465839a380bc58474311c2befe192fecbc93e8c",
+  "pullRequest": "https://github.com/Ninon0406/alltest/pull/17",
+  "prCI": {
+    "runId": 42222588626,
+    "url": "https://github.com/Ninon0406/alltest/actions/runs/42222588626",
+    "head": "ff5e67ddbc830eeac01df2cbe016ac8f5d1a1934",
+    "result": "SUCCESS",
+    "e2e": 113,
+    "e2eDuration": "17.7m",
+    "buildJob": 127908015869,
+    "jobs": [
+      {
+        "id": 127908015869,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 42222588626,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run npm run test:all",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run node scripts/stage-site.mjs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run npm run validate:references",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run actions/upload-pages-artifact@v3",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23
+          }
+        ]
+      },
+      {
+        "id": 127916804289,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "skipped",
+        "run_id": 42222588626,
+        "logs_url": null,
+        "steps": null
+      }
+    ],
+    "evidence": [
+      "2026-11-06T13:05:40.0776023Z ℹ tests 8",
+      "2026-11-06T13:05:40.1234256Z {\"result\":\"PASS\",\"done\":21,\"in_progress\":37,\"not_started\":16,\"problem\":0,\"blocked\":2,\"total\":76,\"percent\":27.6,\"v1\":{\"done\":21,\"in_progress\":37,\"not_started\":13,\"problem\":0,\"blocked\":2,\"total\":73,\"percent\":28.8}}",
+      "2026-11-06T13:05:49.0387570Z       Tests  134 passed (134)",
+      "2026-11-06T13:23:59.7021654Z   113 passed (17.7m)"
+    ]
+  },
+  "publicCore": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 59,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2f",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+  },
+  "publicWorkshop": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "version": "0.8.0",
+    "map": "atelier-v11",
+    "lessonAnchor": true,
+    "northBrewing": true,
+    "windAndBloomCraft": true,
+    "realIngredientCells": true,
+    "workbenchVFX": true,
+    "toolboxLift": true,
+    "nativeFilePicker": true,
+    "checkpointRestored": true,
+    "exactStateRoundTrip": true,
+    "emptyRefresh": true,
+    "explicitRetry": true,
+    "persistentStorageCalls": 0,
+    "outboundWrites": 0,
+    "developmentReferenceRequests": 0,
+    "controlledNetworkErrors": 1,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "publicLayout": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "version": "0.8.0",
+    "viewports": [
+      {
+        "width": 390,
+        "height": 844,
+        "controls": "touch",
+        "craft": "WIND_ORB_SEEK",
+        "tutorialAnchor": {
+          "x": 291,
+          "y": 212
+        },
+        "firstCraftReturnsToVillage": true,
+        "discoveredSpellInBook": true,
+        "layout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "canvasLeft": 11,
+          "canvasRight": 379,
+          "canvasWidth": 368,
+          "canvasHeight": 207
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "controls": "touch",
+        "craft": "WIND_ORB_SEEK",
+        "tutorialAnchor": {
+          "x": 291,
+          "y": 212
+        },
+        "firstCraftReturnsToVillage": true,
+        "discoveredSpellInBook": true,
+        "layout": {
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "canvasLeft": 11,
+          "canvasRight": 422,
+          "canvasWidth": 411,
+          "canvasHeight": 231.1875
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 820,
+        "height": 1180,
+        "controls": "touch",
+        "craft": "WIND_ORB_SEEK",
+        "tutorialAnchor": {
+          "x": 291,
+          "y": 212
+        },
+        "firstCraftReturnsToVillage": true,
+        "discoveredSpellInBook": true,
+        "layout": {
+          "viewportWidth": 820,
+          "documentWidth": 820,
+          "canvasLeft": 11,
+          "canvasRight": 809,
+          "canvasWidth": 798,
+          "canvasHeight": 448.875
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "controls": "touch",
+        "craft": "WIND_ORB_SEEK",
+        "tutorialAnchor": {
+          "x": 291,
+          "y": 212
+        },
+        "firstCraftReturnsToVillage": true,
+        "discoveredSpellInBook": true,
+        "layout": {
+          "viewportWidth": 1024,
+          "documentWidth": 1024,
+          "canvasLeft": 1,
+          "canvasRight": 597.15625,
+          "canvasWidth": 596.15625,
+          "canvasHeight": 335.328125
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "controls": "keyboard-enter",
+        "craft": "WIND_ORB_SEEK",
+        "tutorialAnchor": {
+          "x": 291,
+          "y": 212
+        },
+        "firstCraftReturnsToVillage": true,
+        "discoveredSpellInBook": true,
+        "layout": {
+          "viewportWidth": 1366,
+          "documentWidth": 1366,
+          "canvasLeft": 1,
+          "canvasRight": 796.65625,
+          "canvasWidth": 795.65625,
+          "canvasHeight": 447.546875
+        },
+        "consoleErrors": []
+      }
+    ],
+    "hardware": "NOT_TESTED",
+    "scope": "Chromium viewport and input emulation, actual deployed UI; no physical device/FPS acceptance"
+  },
+  "mainCI": {
+    "runId": 42225430490,
+    "url": "https://github.com/Ninon0406/alltest/actions/runs/42225430490",
+    "head": "f465839a380bc58474311c2befe192fecbc93e8c",
+    "source": "ff5e67ddbc830eeac01df2cbe016ac8f5d1a1934",
+    "result": "SUCCESS",
+    "e2e": 113,
+    "e2eDuration": "16.2m",
+    "buildJob": 127917582231,
+    "deployJob": 127925608096,
+    "jobs": [
+      {
+        "id": 127917582231,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 42225430490,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run npm ci",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Run npm run test:all",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Run node scripts/stage-site.mjs",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Run npm run validate:references",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Run npx playwright install --with-deps chromium",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Run actions/upload-pages-artifact@v3",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23
+          }
+        ]
+      },
+      {
+        "id": 127925608096,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 42225430490,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/configure-pages@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/deploy-pages@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      "2026-11-06T13:26:36.7635173Z ℹ tests 8",
+      "2026-11-06T13:26:36.7998381Z {\"result\":\"PASS\",\"done\":21,\"in_progress\":37,\"not_started\":16,\"problem\":0,\"blocked\":2,\"total\":76,\"percent\":27.6,\"v1\":{\"done\":21,\"in_progress\":37,\"not_started\":13,\"problem\":0,\"blocked\":2,\"total\":73,\"percent\":28.8}}",
+      "2026-11-06T13:26:43.5736795Z       Tests  134 passed (134)",
+      "2026-11-06T13:43:16.1600701Z   113 passed (16.2m)"
+    ]
+  },
+  "postActionsAssets": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "assetsOnly": true,
+    "jsSha256": "54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2f",
+    "layeredArtFiles": 59,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": []
+  },
+  "runtimeUnchangedAfterSource": true,
+  "checkedAt": "2026-11-06T13:45:33.049826+00:00",
+  "legacyPagesRun": {
+    "runId": 42225429608,
+    "head": "f465839a380bc58474311c2befe192fecbc93e8c",
+    "result": "SUCCESS"
+  }
 }

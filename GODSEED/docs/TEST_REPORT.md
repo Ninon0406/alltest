@@ -1,4 +1,4 @@
-# GODSEED Test Report — รอบ 16 / 0.7.1
+# GODSEED Test Report — ล่าสุดรอบ18 / 0.8.0
 
 ## รอบ 16 — 2026-11-06 UTC — สวนสมุนไพรและเส้นทางตามฉาก (0.7.1)
 
@@ -480,6 +480,11 @@ Final decoder audit: initialshared/lazyGarden HTTP200 damagedPNG now degrades an
 Source5c58122/merge d38790e/PR16. Localfull105/105(20.5m), PRCI42209316444full105(16.5m), MainCI42211897135full105(20.2m)/Build/DeploySUCCESS. Actualpubliccore+stagedartPASS:5recipesacross2verifiers/3battles/explicitfile/nativepicker/RAMstate/emptyreload/noupload/nostorage. PostActions51PNG/JS SHA85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae/rendererPASS,0references/0consoleerrorsinpositiveflow. Faultinjectionexpectednetworkerror1separate. Mainbuildjob127872308039/deployjob127881070748. SourceandartunchangedafterCI; docs-onlyreceiptwithscopedroadmapcheck. Latestfullreport/JSON/screenshotlinksinevidence/session17. Hardware/finalHD/FPS/humanfunNOT_TESTED
 
 
-## Session18 — candidate0.8.0
+## Session18 — 0.8.0
 
-Unit134/Content2/Roadmap8/type/lint/build/referencepacking/manualsourcegatePASS. Focus20/20PASS3.2mบน390/844/820/1024/1366 รวมactualworkshopmap/recipeparts/northbrewing/lift/reward/statefile/anchor/skip/motion/PNGfallback. Originalpreliminaryrun14pass/5failureจากNaNassertionแก้แล้ว;skipredtestยืนยันตำแหน่งจริงผิดก่อนแก้ และvisualheadrowแก้พร้อมpixelregression. Full113กำลังรัน ไม่ใช้ผล105ของรอบก่อนแทน. CI/publicผลจริงในevidence/session18/REPORT_TH.md. Hardware/FPS/fullHD/humanfunNOT_TESTED
+Unit134/Content2/Roadmap8/type/lint/build/referencepacking/manualsourcegatePASS. Focus20/20PASS3.2mบน390/844/820/1024/1366 รวมactualworkshopmap/recipeparts/northbrewing/lift/reward/statefile/anchor/skip/motion/PNGfallback. Originalpreliminaryrun14pass/5failureจากNaNassertionแก้แล้ว;skipredtestยืนยันตำแหน่งจริงผิดก่อนแก้ และvisualheadrowแก้พร้อมpixelregression. Full113/113 local/PR/main ผ่าน23.4/17.7/16.2m;Deploy/actualpublic0.8.0ผ่านตามevidence/session18/REPORT_TH.md. Hardware/FPS/fullHD/humanfunNOT_TESTED
+
+
+### Session18 deployed checks — PASS
+
+LocalFull113/113 PASS23.4m; PR CI42222588626 PASS113/11317.7m, buildjob127908015869. PR17 merged sourceff5e67d as f465839. Actualpublic0.8.0 core/workshop/UI5 PASS:59versionedPNG+JS exacthash,5distinctrecipes across2flows,3encounters, explicitfile/nativepicker/exactstate/emptyrefresh,nostorage/noupload,normalconsole0. Layout probe initially expected old location after firstcraft; existingreducer returnsS05 toS02. Corrected pre-craft workshop geometry and post-craft village/book assertions pass5/5. Preserved initialfailure log; runtime unchanged. Main CI42225430490 passed113/113(16.2m)/Build/Deploy; buildjob127917582231/deployjob127925608096. Post-Actions59PNG+JS exacthashPASS;0normalconsoleerrors/0referenceRequests. Runtime and art unchanged from tested source ff5e67d.

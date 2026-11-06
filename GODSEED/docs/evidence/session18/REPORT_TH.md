@@ -1,4 +1,4 @@
-# GODSEED DEVELOPMENT REPORT — รอบ18 / candidate0.8.0
+# GODSEED DEVELOPMENT REPORT — รอบ18 / 0.8.0
 
 ## 1. สถานะก่อนเริ่ม
 
@@ -27,10 +27,13 @@ ManualFileSaveเท่านั้น:RAMระหว่างเล่น,ก�
 | npmci/type/lint/Content/Unit/Build | ผ่าน;Content2/Unit134 |
 | Roadmap | 8/8ผ่าน |
 | FocusBrowser | 20/20ผ่าน3.2นาที บน390×844,844×390,820×1180,1024×768,1366×768 |
-| FullBrowser | กำลังรัน113;ยังไม่ประกาศผ่าน |
+| FullBrowser | ผ่าน 113/113 กรณี (23.4 นาที) — [บันทึกเต็ม](full-browser.txt) |
 | Preview verifier | WIND/BLOOM/cauldronVFX/lift/nativepicker/filecheckpoint/exactstate/nostorage/nouploadผ่าน |
 | PNG reproduction | 70ตรงbyte/62เดิมคงอยู่/8ใหม่ |
-| CI/Deploy/Actualpublic0.8.0 | รอผลจากCommit/PR |
+| PR CI | ผ่าน 113/113 กรณี (17.7 นาที) พร้อม Unit/Build — [Run 42222588626](https://github.com/Ninon0406/alltest/actions/runs/42222588626) |
+| Main CI | ผ่าน113/113 (16.2 นาที), Build/Deploy สำเร็จ — [Run42225430490](https://github.com/Ninon0406/alltest/actions/runs/42225430490) |
+| เว็บจริง 0.8.0 | core/workshop ผ่าน: 5 สูตรต่างกันในสองเส้นทาง, 3 encounters, native file picker/exact state/empty refresh/retry, ไม่มี storage/upload หรือ Console Error ในการเล่นปกติ; 59 PNG+JS hash ตรง Build |
+| Public layout/input | ผ่าน 5/5 ขนาดหน้าจอจริงบนเว็บ: touch 4 ขนาดและ keyboard Enter บน desktop; ภาพไม่ล้นแนวนอน/ผสมและพบสูตรในสมุดเวทถูกต้อง — [ผล](public-layout.json) |
 | PhysicalSafari/iOS/Android/iPadOS/FPS/HumanFun/FinalHD | ยังไม่ได้ทดสอบ |
 
 ข้อผิดพลาดระหว่างพัฒนา:ทดสอบใหม่คาดundefinedtrust+1เป็นNaNแก้ค่าเริ่ม0;ตรวจภาพพบทิศSpriteผิดแก้ใช้manifestและpixeltest;[Redtest](skip-regression-before.txt)พิสูจน์Skipหยุด184/231แทน291/212 แก้pendingArrivalแล้วผ่าน20กรณี ไม่มีการskip/ลบAssertionเพื่อให้เขียว
@@ -73,7 +76,7 @@ ManualFileSaveเท่านั้น:RAMระหว่างเล่น,ก�
 
 ภาพยังเป็นproceduralprototype,Workshopmusicbox/cluehandoffยังไม่มีท่าครบ,โบราณสถาน/บอส/เทศกาล/ตอนจบยังค้าง,ไม่มีอุปกรณ์จริงหรือhumanplaytest จึงไม่อ้างความสนุก/finalHD/1.0ว่าเสร็จ SAVE011/012และQA009ยังblocked ไม่วนทำเซฟที่ผ่านแล้วซ้ำ
 
-1. VIS008/STO001 — แผนที่ศาลเจ้า/S15–17/ECHO puzzleเป็นDependencyของB03
+1. VIS008/STO001 — แผนที่ศาลเจ้า/S15–17 พร้อมรูน CH1501 (archive_read) และกล่องเพลง CH1503 (musicbox_found) ให้รับเบาะแสได้ก่อนเพิ่ม B03 ตาม Master Spec
 2. CMB006 — B03/B04พร้อมtelegraph/AI/artหลังสถานที่พร้อม
 3. VIS005 — Workshopmusicbox/cluehandoffตามบทจริง
 4. VIS007/008 — บ้าน–ประตู–จัตุรัสเชื่อมเส้นทาง
@@ -83,4 +86,4 @@ ManualFileSaveเท่านั้น:RAMระหว่างเล่น,ก�
 
 ## 8. สถานะพร้อมเล่น/GitHubPages
 
-Buildcandidate0.8.0ผ่านและPreviewเล่นได้ Liveล่าสุดยัง0.7.2จนกว่าPRผ่าน/รวม/Deploy. SourceCommit/PR/CI/public/postdeployจะบันทึกหลังตรวจจริง ไม่ใช้ผลรุ่นก่อนแทน
+Source `ff5e67d` ผ่าน Local/PR CI แล้ว รวม [PR17](https://github.com/Ninon0406/alltest/pull/17) เป็น `f465839` บน main. [เว็บจริง 0.8.0](https://ninon0406.github.io/alltest/) ผ่าน [core](public-core.json) และ [workshop](public-workshop.json) แล้ว ภาพจริง [ห้อง](public-room-390.png) / [ปรุง](public-wind-mixing-390.png) / [ยกกล่อง](public-lifting-390.png) เปิดตรวจแล้ว Run42225430490 ผ่าน113/113(16.2 นาที)/Build/Deploy แล้ว [post-Actions](post-actions-assets.json) ยืนยัน59PNG+JSตรงBuild/0ConsoleErrors/0ReferenceRequests. RuntimeและภาพคงเดิมจากSourceที่ผ่านCI; Commitปิดรอบเปลี่ยนเฉพาะเอกสารและหลักฐาน

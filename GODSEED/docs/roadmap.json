@@ -848,9 +848,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
@@ -886,7 +888,7 @@
       ],
       "scope": "v1",
       "reviewed": "2026-11-06",
-      "verification": "Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS; Session18 skip/motionยืนยันปลายทางแทนตำแหน่งกลางทาง ผ่านFocus20",
+      "verification": "Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS; Session18 skip/motionยืนยันปลายทางแทนตำแหน่งกลางทาง ผ่านFocus20; Session18 Local113/PRCI42222588626 full113PASS, sourceff5e67d/mergef465839/PR17",
       "evidenceFiles": [
         "GODSEED/tests/cinematics.test.ts",
         "GODSEED/tests/cinematics.spec.ts",
@@ -912,9 +914,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "มีhub/สถานที่อื่น/scene IDs; ยังไม่มีroute map; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "มีhub/สถานที่อื่น/scene IDs; ยังไม่มีroute map; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "แสดงแผนที่คงที่+เส้นทางที่รู้จัก ล็อกมีเหตุผลและไปกลับได้ด้วยtouch",
       "legacyIds": [
         "GS-029"
@@ -952,9 +956,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
       "legacyIds": [
         "GS-008",
@@ -984,9 +990,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก",
       "legacyIds": [
         "GS-008",
@@ -1016,9 +1024,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด",
       "legacyIds": [
         "GS-012",
@@ -1433,9 +1443,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "color/form/modparticlesและsupport/sceneanchorsมี; ยังไม่มี234distinctnessgate; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "color/form/modparticlesและsupport/sceneanchorsมี; ยังไม่มี234distinctnessgate; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "6representativegoldensและ234descriptor/renderaudit แยกSPLIT/SEEK/AMPLIFY/statusชัดในbudget",
       "legacyIds": [
         "GS-018",
@@ -1937,9 +1949,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/verification.json",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
-      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
       "acceptance": "ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน",
       "legacyIds": [
         "GS-033"
@@ -2578,7 +2592,7 @@
         "mobile": "done",
         "ready": "in_progress"
       },
-      "evidence": "รอบ18ต้นแบบReference08:วาด3layers/หม้อ/21icons/ท่ายกกล่อง/ปรุงหันเหนือจากmanifest ใช้Map11Anchor10links7ColliderกับCSDจริง;Unit134/Focus20บน5viewportผ่านรวมfallback/filecheckpoint/skip/สูตรจริง;MobileหมายถึงChromiumจำลอง ไม่ใช่physical;โครงสร้าง/Collisionผ่านเฉพาะต้นแบบ งานภาพ/บท/ทุกท่าทั้งฉากยังin_progress",
+      "evidence": "รอบ18ต้นแบบReference08:วาด3layers/หม้อ/21icons/ท่ายกกล่อง/ปรุงหันเหนือจากmanifest ใช้Map11Anchor10links7ColliderกับCSDจริง;Unit134/Focus20บน5viewportผ่านรวมfallback/filecheckpoint/skip/สูตรจริง;MobileหมายถึงChromiumจำลอง ไม่ใช่physical;โครงสร้าง/Collisionผ่านเฉพาะต้นแบบ งานภาพ/บท/ทุกท่าทั้งฉากยังin_progress; Actualpublic0.8.0 core/workshop/UI5ผ่านรวมtouch/keyboardและfileanchors ไม่มีhorizontaloverflow/normalconsoleerror;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน",
       "files": [
         "assets/reference/godseed/references/08_spell_workshop.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
@@ -2589,7 +2603,8 @@
         "GODSEED/src/scenes/workshop-map.ts",
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/docs/evidence/session18/public-layout.json"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },

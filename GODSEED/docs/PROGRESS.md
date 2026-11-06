@@ -1,10 +1,10 @@
-# สถานะล่าสุด — Session18 / candidate0.8.0
+# สถานะล่าสุด — Session18 / 0.8.0
 
 พัฒนาต่อจากa8512b7/เกม0.7.2: โรงช่างต้นฉบับใหม่3เลเยอร์,Map11anchors/10links/7solids,หม้อจริง/กล่องเครื่องมือ/ท่าปรุงหันเหนือ ส่วนผสม3ชนิดตามสูตรลอยลงหม้อและให้VFXก่อนค้นพบ รักษา234สูตร/กฎเกม/ManualFileSaveเดิม State2/File2
 
 Unit134/Focus20/Build/Previewผ่าน ตัวละครเดินถึงจุดเรียน/หยิบ/ผสมจริง Skipหรือเปลี่ยนMotionถึงAnchorปลายทางและไม่มีeffectsค้าง FileS05คืนตำแหน่งตามChoiceเก่าได้ ภาพ8PNGใหม่/70สร้างซ้ำตรงbyte ของเดิม62ไม่เปลี่ยน ภาพยังต้นแบบ
 
-Full113กำลังตรวจ และCI/เว็บจริงจะลงผลเมื่อรันเสร็จ ดู[รายงานรอบ18](evidence/session18/REPORT_TH.md). Checklist21/76=27.6%คงเดิม 🟡37/⬜16/🔴0/⛔2 งานใหญ่ยังไม่ครบ ไม่เพิ่มคะแนนจากภาพย่อย Workshopย่อยstructure/collision/viewportผ่าน ไม่ใช่finalHD/physicaldevice
+Full Browser ผ่าน 113/113 ทั้ง local (23.4 นาที) และ PR CI (17.7 นาที) รวม PR17/source ff5e67d เป็น main f465839 แล้ว เว็บจริง 0.8.0 ผ่าน core/workshop/file/UI5 และ post-Actions 59PNG+JS hash; Main CI42225430490 ผ่าน113/113 (16.2 นาที) และ Deploy สำเร็จ ดู[รายงานรอบ18](evidence/session18/REPORT_TH.md). Checklist21/76=27.6%คงเดิม 🟡37/⬜16/🔴0/⛔2 งานใหญ่ยังไม่ครบ ไม่เพิ่มคะแนนจากภาพย่อย Workshopย่อยstructure/collision/viewportผ่าน ไม่ใช่finalHD/physicaldevice
 
 ---
 

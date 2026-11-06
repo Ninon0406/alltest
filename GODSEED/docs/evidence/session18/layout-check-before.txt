@@ -1,0 +1,50 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveAttribute(expected) failed
+
+Locator:  locator('#canvas')
+Expected: "atelier-v11"
+Received: "none"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms
+  - waiting for locator('#canvas')
+    14 × locator resolved to <div role="img" id="canvas" data-npc="lumi" data-npc-frame="0" data-prop-count="6" data-hero-frame="6" data-stage="village" data-resting="false" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-last-cue="craft" data-ambient-tick="0" data-memory-props="0" data-walk-trace="west" data-garden-art="none" data-path-phase="idle" data-path-progress="1" data-active-effects="0" data-assets-loaded="38" data-walk-facing="east" data-toolbox-frame="-1" data-garden-beat="idle" data-gathering…>…</div>
+       - unexpected value "none"
+
+    at captureRawStack (/workspace/alltest/GODSEED/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/workspace/alltest/GODSEED/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toHaveAttribute (/workspace/alltest/GODSEED/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /workspace/alltest/GODSEED/docs/evidence/session18/verify-public-layout.mjs:18:24 {
+  matcherResult: {
+    name: 'toHaveAttribute',
+    expected: 'atelier-v11',
+    message: 'expect(locator).toHaveAttribute(expected) failed\n' +
+      '\n' +
+      "Locator:  locator('#canvas')\n" +
+      'Expected: "atelier-v11"\n' +
+      'Received: "none"\n' +
+      'Timeout:  5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms\n` +
+      "  - waiting for locator('#canvas')\n" +
+      '    14 × locator resolved to <div role="img" id="canvas" data-npc="lumi" data-npc-frame="0" data-prop-count="6" data-hero-frame="6" data-stage="village" data-resting="false" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-last-cue="craft" data-ambient-tick="0" data-memory-props="0" data-walk-trace="west" data-garden-art="none" data-path-phase="idle" data-path-progress="1" data-active-effects="0" data-assets-loaded="38" data-walk-facing="east" data-toolbox-frame="-1" data-garden-beat="idle" data-gathering…>…</div>\n' +
+      '       - unexpected value "none"\n',
+    pass: false,
+    actual: 'none',
+    log: [
+      `  - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms`,
+      "  - waiting for locator('#canvas')",
+      '    14 × locator resolved to <div role="img" id="canvas" data-npc="lumi" data-npc-frame="0" data-prop-count="6" data-hero-frame="6" data-stage="village" data-resting="false" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-last-cue="craft" data-ambient-tick="0" data-memory-props="0" data-walk-trace="west" data-garden-art="none" data-path-phase="idle" data-path-progress="1" data-active-effects="0" data-assets-loaded="38" data-walk-facing="east" data-toolbox-frame="-1" data-garden-beat="idle" data-gathering…>…</div>',
+      '       - unexpected value "none"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- img "โลกพิกเซลของ GODSEED"'
+  }
+}
+
+Node.js v24.19.0
