@@ -1,3 +1,13 @@
+# สถานะล่าสุด — Session18 / candidate0.8.0
+
+พัฒนาต่อจากa8512b7/เกม0.7.2: โรงช่างต้นฉบับใหม่3เลเยอร์,Map11anchors/10links/7solids,หม้อจริง/กล่องเครื่องมือ/ท่าปรุงหันเหนือ ส่วนผสม3ชนิดตามสูตรลอยลงหม้อและให้VFXก่อนค้นพบ รักษา234สูตร/กฎเกม/ManualFileSaveเดิม State2/File2
+
+Unit134/Focus20/Build/Previewผ่าน ตัวละครเดินถึงจุดเรียน/หยิบ/ผสมจริง Skipหรือเปลี่ยนMotionถึงAnchorปลายทางและไม่มีeffectsค้าง FileS05คืนตำแหน่งตามChoiceเก่าได้ ภาพ8PNGใหม่/70สร้างซ้ำตรงbyte ของเดิม62ไม่เปลี่ยน ภาพยังต้นแบบ
+
+Full113กำลังตรวจ และCI/เว็บจริงจะลงผลเมื่อรันเสร็จ ดู[รายงานรอบ18](evidence/session18/REPORT_TH.md). Checklist21/76=27.6%คงเดิม 🟡37/⬜16/🔴0/⛔2 งานใหญ่ยังไม่ครบ ไม่เพิ่มคะแนนจากภาพย่อย Workshopย่อยstructure/collision/viewportผ่าน ไม่ใช่finalHD/physicaldevice
+
+---
+
 # สถานะล่าสุด — Session17 / 0.7.2
 
 พัฒนาต่อจากmain78a2497และเกม0.7.1ที่เผยแพร่แล้ว เลือกFND-004ซึ่งเป็นDependencyของงานภาพ/มือถือ: แยกshared+stage assets, prepareก่อนcommit/โหลดไฟล์, RAMcache, Thai loading/fallback/explicitretry, timeout8000msต่อไฟล์/maxRetries0 กู้ภาพโดยไม่แตะGameState/dirty/ท่านั่ง

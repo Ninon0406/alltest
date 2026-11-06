@@ -159,3 +159,10 @@ Keep the480×270 canvas,32×48 actor cells, sole row44, nearest pixel scaling an
 Koro atlas128×144: idle0–3 (4fps), hammer4–7 (6fps), show_recipe8–11 (5fps). Forging lands on a real anvil contact, with restrained source-pixel sparks; recipe parchment carries three distinct sigils. Both keep planted boots; Reduced Motion freezes the current frame. Anvil48×32 foot321/237, contact324/217, uses Y-depth with the NPC and does not cross the authored player lane. Training combat hides it. Missing assets use the existing original-prototype fallback and explicit retry.
 
 Runtime screenshots inspected on phone/desktop; five simulated viewports tested. Sprite gestures are a delivered prototype increment, not final NPC/full workshop approval. Background detail, real workshop map/colliders, door staging, cauldron ingredient choreography, other NPC actions and hardware review remain in Roadmap. Before/after frames differ in animation timing and are not pixel-diff baselines.
+
+
+## Session18 — Workshop reference08 study (0.8.0)
+
+Original warm limewash, timber/brass shelving, arched rune niche, sunlit window/towers, oak work surfaces, herb bundles and a jade/gold rug. Keep480×270/32×48/sole44. Threelayers are actual game scenery; no reference pixels are sampled or copied. Interactive cauldron96×96×6 and toolbox56×40×3 use their authored foot positions. Held box64×48×4 keeps the hero centered; north brewer32×48×8 uses the original back-facing head. Atlas21cells16×16 represents actual8cores/6forms/7mods. No emoji/third-party sprites.
+
+Ingredient→mix→discovery uses bounded3icon sprites +24VFXparticles(8reduced), at cauldron(240,170); normal damage calculation never reads these particles. Room has forge flames, simmer/steam and motes. ExistingMotion toggle freezes prop frames and shortens transitions. All70PNG reproduce byte-identically; existing62unchanged. Still a procedural prototype, not finalHD/reference08 complete.

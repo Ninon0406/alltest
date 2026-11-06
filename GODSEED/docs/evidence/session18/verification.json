@@ -1,0 +1,76 @@
+{
+  "version": "0.8.0",
+  "base": "a8512b7",
+  "gameUnit": 134,
+  "contentTests": 2,
+  "roadmapTests": 8,
+  "focusedE2E": 20,
+  "localE2E": null,
+  "plannedE2E": 113,
+  "preview": {
+    "result": "PASS",
+    "url": "http://127.0.0.1:4190/",
+    "version": "0.8.0",
+    "map": "atelier-v11",
+    "lessonAnchor": true,
+    "northBrewing": true,
+    "windAndBloomCraft": true,
+    "realIngredientCells": true,
+    "workbenchVFX": true,
+    "toolboxLift": true,
+    "nativeFilePicker": true,
+    "checkpointRestored": true,
+    "exactStateRoundTrip": true,
+    "emptyRefresh": true,
+    "explicitRetry": true,
+    "persistentStorageCalls": 0,
+    "outboundWrites": 0,
+    "developmentReferenceRequests": 0,
+    "controlledNetworkErrors": 1,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "png": {
+    "retainedUnchanged": 62,
+    "new": {
+      "GODSEED/public/assets/art-v11/workshop-ground.png": {
+        "bytes": 11729,
+        "sha256": "d5c64d90aeae987bd7336075cd8d4c380440c428f1e61ea581b9c4e7055e5ad9"
+      },
+      "GODSEED/public/assets/art-v11/workshop-front.png": {
+        "bytes": 1811,
+        "sha256": "1c6d33f8f63a319eeff0e5966f706d71cccfd02253f47e7b843af6d2fb60e9b2"
+      },
+      "GODSEED/public/assets/art-v11/cauldron.png": {
+        "bytes": 11095,
+        "sha256": "85151755f514f3d311b5f0af809949dd76dff7969ea6a314f3dd696033f50938"
+      },
+      "GODSEED/public/assets/art-v11/ingredients.png": {
+        "bytes": 2834,
+        "sha256": "055fbdc338948e632eb2670fb05111ec02f346332380e3767cd5cf4d00f23b87"
+      },
+      "GODSEED/public/assets/art-v11/hero-toolbox.png": {
+        "bytes": 3670,
+        "sha256": "e1ac5a113cfcf03d23e0680e466da1169e43a5867eb8a36a90d47d0fdfe5a5ca"
+      },
+      "GODSEED/public/assets/art-v11/hero-brew.png": {
+        "bytes": 6567,
+        "sha256": "27dc92302c9b8cbbc11a803d74775cf2d546e0d75ed89fb1709867b66cf7a63f"
+      },
+      "GODSEED/public/assets/art-v11/toolbox.png": {
+        "bytes": 1126,
+        "sha256": "cc6f9af879ea74180e266d8ea6a1c181110ad1343d4211b1e6227b78f67973b6"
+      },
+      "GODSEED/public/assets/art-v11/workshop-rear.png": {
+        "bytes": 25338,
+        "sha256": "0ad6f9f501131dacfd21ad7c3d02eb14f169390c360e9bc7631a13c988b4226e"
+      }
+    },
+    "newBytes": 64170,
+    "reproducedPNG": 70,
+    "reproducedByteIdentical": true
+  },
+  "CIAndDeployment": "PENDING",
+  "hardware": "NOT_TESTED",
+  "jsSha256": "54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2f"
+}

@@ -1,0 +1,41 @@
+
+> godseed@0.7.2 test:e2e
+> playwright test tests/workshop.spec.ts -g skipping the lesson approach --output=/tmp/gs18-skip-red
+
+
+Running 1 test using 1 worker
+
+(node:25116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/workshop.spec.ts:27:1 › skipping the lesson approach lands at the authored checkpoint and toggling motion cannot strand a toolbox action (5.8s)
+
+
+  1) tests/workshop.spec.ts:27:1 › skipping the lesson approach lands at the authored checkpoint and toggling motion cannot strand a toolbox action 
+
+    Error: expect(received).toMatchObject(expected)
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "feetY": 232,
+    -   "x": 291,
+    -   "y": 212,
+    +   "feetY": 251,
+    +   "x": 184,
+    +   "y": 231,
+      }
+
+      27 | test('skipping the lesson approach lands at the authored checkpoint and toggling motion cannot strand a toolbox action',async({page})=>{
+      28 |  await enter(page);await tap(page,'ลดการเคลื่อนไหว');await page.getByRole('button',{name:'ขอเรียนการผสมเวท',exact:true}).tap();await expect(page.locator('#canvas')).toHaveAttribute('data-path-phase','approach');await tap(page,'ข้ามแอนิเมชัน');
+    > 29 |  expect(JSON.parse((await page.locator('#canvas').getAttribute('data-player-anchor'))!)).toMatchObject({x:291,y:212,feetY:232});const s=await exportedState(page);expect(s.choices.filter(id=>id==='CH0401')).toHaveLength(1);
+         |                                                                                          ^
+      30 |  await tap(page,'ลดการเคลื่อนไหว');for(const n of ['ออกไปหาของเพิ่มเติมก่อน','ไปโรงช่างของคุโร'])await tap(page,n);await tap(page,'ลดการเคลื่อนไหว');await page.getByRole('button',{name:'ช่วยยกกล่องเครื่องมือ',exact:true}).tap();await expect(page.locator('#canvas')).toHaveAttribute('data-path-phase','approach');await tap(page,'ลดการเคลื่อนไหว');
+      31 |  expect(JSON.parse((await page.locator('#canvas').getAttribute('data-player-anchor'))!)).toMatchObject({x:111,y:217});expect((await exportedState(page)).choices.filter(id=>id==='CH0402')).toHaveLength(1);await expect(page.locator('#canvas')).toHaveAttribute('data-active-effects','0');
+      32 | });
+        at /workspace/alltest/GODSEED/tests/workshop.spec.ts:29:90
+
+    Error Context: ../../../tmp/gs18-skip-red/workshop-skipping-the-less-cae27-not-strand-a-toolbox-action/error-context.md
+
+  1 failed
+    tests/workshop.spec.ts:27:1 › skipping the lesson approach lands at the authored checkpoint and toggling motion cannot strand a toolbox action 

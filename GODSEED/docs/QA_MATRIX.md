@@ -1,3 +1,9 @@
+# QA Matrix — รอบ18 / candidate0.8.0
+
+Unit134/Content2/Roadmap8/Focus20และBuildผ่าน ตรวจRoom/3parts/cauldron/north/west/7colliders/11anchors/filecheckpoint/skip/reduced/fallbackบน5viewportsแล้ว มี113fullcasesกำลังรัน ผลCI/actualpublicตาม[รายงานรอบ18](evidence/session18/REPORT_TH.md) Physicaldevices/Safari/FPS/humanfun/finalHDยังไม่ทดสอบ
+
+---
+
 # GODSEED QA Matrix — รอบ17 / 0.7.2
 
 | ขอบเขต | ผลตรวจจริง |

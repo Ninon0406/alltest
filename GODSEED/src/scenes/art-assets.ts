@@ -12,6 +12,8 @@ export const artAssets:readonly ArtAsset[]=[
  ...STAGES.flatMap(stage=>[image(stage,stageFallback(stage),stage),...['rear','ground','front'].map(layer=>image(`${stage}-${layer}-v2`,`${stageFolder(stage)}/${stage}-${layer}.png`,stage))]),
  ...['rear','ground','front'].map(layer=>image('tree-'+layer+'-v5','art-v5/tree-'+layer+'.png','village')),
  image('ancient-tree-v5','art-v5/ancient-tree.png','village'),sheet('fountain-v5','art-v5/fountain.png','village',96,112),sheet('leaves-v5','art-v5/leaves.png','village',16,16),
+ ...['rear','ground','front'].map(layer=>image('workshop-'+layer+'-legacy','art-v2/workshop-'+layer+'.png','workshop')),
+ sheet('workshop-cauldron-v11','art-v11/cauldron.png','workshop',96,96),sheet('workshop-toolbox-v11','art-v11/toolbox.png','workshop',56,40),sheet('hero-toolbox-v11','art-v11/hero-toolbox.png','workshop',64,48),sheet('hero-brew-v11','art-v11/hero-brew.png','workshop'),sheet('recipe-parts-v11','art-v11/ingredients.png','workshop',16,16),
  ...['rear','ground','front'].map(layer=>image('garden-'+layer+'-legacy','art-v2/garden-'+layer+'.png','garden')),
  image('garden-arch-v9','art-v9/garden-arch.png','garden'),sheet('garden-cauldron-v9','art-v9/garden-cauldron.png','garden',64,96),sheet('garden-herbs-v9','art-v9/garden-herbs.png','garden',96,48),
  sheet('maren-v8','art-v8/maren.png','garden'),sheet('garden-bed-v7','art-v7/garden-bed.png','garden',64,48),sheet('hero-water-v7','art-v7/hero-water.png','garden',64,48),

@@ -1,6 +1,6 @@
 {
   "name": "godseed",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,9 +9,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src tests",
-    "test": "vitest run tests/unit.test.ts tests/save.test.ts tests/combat.test.ts tests/balance.test.ts tests/art.test.ts tests/exploration.test.ts tests/alchemy.test.ts tests/cinematics.test.ts tests/directional.test.ts tests/camera.test.ts tests/scene-definitions.test.ts tests/gathering.test.ts tests/garden.test.ts tests/art-loading.test.ts",
+    "test": "vitest run tests/unit.test.ts tests/save.test.ts tests/combat.test.ts tests/balance.test.ts tests/art.test.ts tests/exploration.test.ts tests/alchemy.test.ts tests/cinematics.test.ts tests/directional.test.ts tests/camera.test.ts tests/scene-definitions.test.ts tests/gathering.test.ts tests/garden.test.ts tests/art-loading.test.ts tests/workshop.test.ts",
     "test:e2e": "playwright test",
-    "generate:art": "node scripts/generate-art.mjs && node scripts/generate-stage-art.mjs && node scripts/generate-actor-art.mjs && node scripts/generate-exploration-art.mjs && node scripts/generate-directional-art.mjs && node scripts/generate-village-art.mjs && node scripts/generate-idle-art.mjs && node scripts/generate-gathering-art.mjs && node scripts/generate-garden-art.mjs && node scripts/generate-maren-art.mjs && node scripts/generate-herb-garden-art.mjs && node scripts/generate-koro-art.mjs",
+    "generate:art": "node scripts/generate-art.mjs && node scripts/generate-stage-art.mjs && node scripts/generate-actor-art.mjs && node scripts/generate-exploration-art.mjs && node scripts/generate-directional-art.mjs && node scripts/generate-village-art.mjs && node scripts/generate-idle-art.mjs && node scripts/generate-gathering-art.mjs && node scripts/generate-garden-art.mjs && node scripts/generate-maren-art.mjs && node scripts/generate-herb-garden-art.mjs && node scripts/generate-koro-art.mjs && node scripts/generate-workshop-art.mjs",
     "validate:content": "vitest run tests/content.test.ts",
     "test:all": "npm run roadmap:check && npm run validate:references && npm run validate:manual-save && npm run typecheck && npm run lint && npm run validate:content && npm test && npm run build",
     "inspect:content": "node scripts/inspect-content.mjs",

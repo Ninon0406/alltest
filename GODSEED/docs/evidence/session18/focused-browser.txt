@@ -1,0 +1,35 @@
+
+> godseed@0.8.0 test:e2e
+> playwright test tests/workshop.spec.ts tests/koro.spec.ts tests/art-loading.spec.ts
+
+[WebServer] (node:26159) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:26177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:26189) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 390 (5.8s)
+  ✓   2 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 1366 (5.5s)
+  ✓   3 tests/art-loading.spec.ts:29:1 › explicit retry restores a failed shared atlas while preserving the seated checkpoint and dirty status (3.2s)
+  ✓   4 tests/art-loading.spec.ts:39:1 › repeated failure stays playable without automatic retry; later recovery retains its anchor and NPC memory (3.9s)
+  ✓   5 tests/art-loading.spec.ts:49:1 › a stalled stage asset times out, unlocks controls and can be retried without a second choice commit (11.0s)
+  ✓   6 tests/art-loading.spec.ts:59:1 › HTTP200 with undecodable PNG offers recovery and preserves the exact current file checkpoint (3.2s)
+  ✓   7 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 390 (9.0s)
+  ✓   8 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 844 (9.2s)
+  ✓   9 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 820 (9.2s)
+  ✓  10 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 1024 (9.5s)
+  ✓  11 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 1366 (9.9s)
+  ✓  12 tests/koro.spec.ts:16:1 › fallback Koro stays grounded without an anvil; explicit retry restores the prop and action (2.9s)
+  ✓  13 tests/workshop.spec.ts:7:84 › workshop lesson, real ingredient mixing, toolbox lift and file checkpoint 390 (18.9s)
+  ✓  14 tests/workshop.spec.ts:7:84 › workshop lesson, real ingredient mixing, toolbox lift and file checkpoint 844 (18.6s)
+  ✓  15 tests/workshop.spec.ts:7:84 › workshop lesson, real ingredient mixing, toolbox lift and file checkpoint 820 (20.1s)
+  ✓  16 tests/workshop.spec.ts:7:84 › workshop lesson, real ingredient mixing, toolbox lift and file checkpoint 1024 (18.4s)
+  ✓  17 tests/workshop.spec.ts:7:84 › workshop lesson, real ingredient mixing, toolbox lift and file checkpoint 1366 (18.0s)
+  ✓  18 tests/workshop.spec.ts:19:1 › skipping a brew commits once and clears ingredient sprites; training retains its clear arena (6.0s)
+  ✓  19 tests/workshop.spec.ts:23:1 › missing workshop art falls back coherently, keeps recipe/reward usable and explicit retry preserves RAM (4.0s)
+  ✓  20 tests/workshop.spec.ts:27:1 › skipping the lesson approach lands at the authored checkpoint and toggling motion cannot strand a toolbox action (4.2s)
+
+  20 passed (3.2m)
