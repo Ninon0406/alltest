@@ -67,7 +67,7 @@ test('non-combat stream path remembers listening, then a skipped genuine WIND ca
 
 test('new archive layers retain a playable fallback when a PNG request fails',async({page})=>{
  await page.route('**/assets/art-v3/archive-rear.png',route=>route.abort());await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
- await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','degraded');
+ await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','ready');
  for(const name of ['เริ่มการเดินทาง','ลุกขึ้นสำรวจรอบตัว','เดินตามป้ายไม้ไปที่จัตุรัส','เข้าหอสมุดของไอรา'])await tap(page,name);
  await expect(page.locator('#render-notice')).toContainText('ใช้ภาพสำรอง');await expect(page.locator('#canvas')).toHaveAttribute('data-stage-layers','1');
  for(const name of ['ถามว่าเศษความทรงจำคืออะไร','ขอความช่วยเหลือจากไอรา'])await tap(page,name);

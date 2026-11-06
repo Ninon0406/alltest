@@ -1,0 +1,69 @@
+{
+  "version": "0.7.2",
+  "base": "78a2497",
+  "gameUnit": 126,
+  "contentTests": 2,
+  "roadmapTests": 8,
+  "focusedE2E": 12,
+  "localE2E": null,
+  "prCI": null,
+  "mainCI": null,
+  "png": {
+    "retainedUnchanged": 60,
+    "new": {
+      "GODSEED/public/assets/art-v10/anvil.png": {
+        "bytes": 505,
+        "sha256": "34a3c68dbc1b65bff9dc9875796bb45cbbf4c8d92ed9af99758f6e85c4dcac96"
+      },
+      "GODSEED/public/assets/art-v10/koro.png": {
+        "bytes": 10400,
+        "sha256": "cb8c3895f9628192a48e1a6c2fbb59ff1ba6c4be8d03948823a93da4ebf365cb"
+      }
+    },
+    "reproducedPNG": 62,
+    "reproducedByteIdentical": true
+  },
+  "preview": {
+    "result": "PASS",
+    "url": "http://127.0.0.1:4190/",
+    "version": "0.7.2",
+    "cold": {
+      "pngRequests": 23,
+      "encodedBytes": 301231,
+      "transferBytes": 308131
+    },
+    "warm": {
+      "pngRequests": 23,
+      "encodedBytes": 301231,
+      "transferBytes": 6900
+    },
+    "baseline": {
+      "pngRequests": 57,
+      "encodedBytes": 629017
+    },
+    "koroMotion": true,
+    "recipePose": true,
+    "nativeFilePicker": true,
+    "unvisitedStageImport": true,
+    "exactStateRoundTrip": true,
+    "revisitExtraRequests": 0,
+    "bloomCraftAndEquip": true,
+    "controlledFaultRetryPreservesRAM": true,
+    "injectedNetworkErrors": 1,
+    "emptyRefresh": true,
+    "persistentStorageCalls": 0,
+    "outboundWrites": 0,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "jsSha256": "85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae",
+  "fullAndDeployment": "PENDING",
+  "hardware": "NOT_TESTED",
+  "supersededSource": "f851d09dcbfc2dc3e8e803fd85fa23cf81385098",
+  "supersededPRCI": {
+    "id": 42207916293,
+    "result": "CANCELLED: decoder fix superseded source"
+  },
+  "finalPlannedBrowserCases": 105
+}

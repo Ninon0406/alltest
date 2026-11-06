@@ -186,3 +186,16 @@ Checklist21/76=27.6%คงเดิม ไม่มีการรับรอ�
 
 
 ยืนยันรอบ16: Local/PR/main Full93 และ Build/Deploy/เว็บจริงผ่านแล้ว ดูหลักฐานใน evidence/session16/REPORT_TH.md ยังไม่รับรอง final HD หรืออุปกรณ์จริง
+
+
+## Session17 — Staged art, 0.7.2
+
+`scenes/art-assets.ts` owns a static key/path/frame/group catalog and a RAM attempt ledger independent of Game State. Preload only shared + village (23 images). `World.prepare(next)` loads an unvisited destination including encounter art; `main.act` awaits it after the old-scene cinematic and before `session.commit`. Confirming an imported file likewise prepares before replacing the current RAM state. Completed textures remain in Phaser memory, bounded by59 managed images; failed requests remain failed until the player's explicit retry. Normal HTTP asset caching contains no progress.
+
+Both image and spritesheet requests carry XHR responseType blob/timeout8000. Phaser4.2.1 merges per-file defaults over loader globals, so global timeout alone was ineffective. maxRetries0 prevents hidden repeated requests. Complete/error settles loading, registers available animations idempotently and shows the existing fallback. The Thai loading notice uses a separate event so asset progress does not rebuild/focus-reset story choices. The existing exclusive guard disables commands and file operations while loading.
+
+Retry calls prepare(current,true) then show(current,true), never ManualSession.commit/load: preserve menu, checkpoint, seated support, revision/RNG/dirty flag. It does not refresh the page. No save format migration: State2/File2 remains, GAME_VERSION0.7.2.
+
+`workshop-staging.ts` defines the anvil foot(321,237), hammer contact(324,217), and Koro's32×48 cycles. The prop sorts by foot Y, avoids existing authored player lanes and disappears for training encounters. CH0401/S05 show the three-sigil recipe; S04 forges only with a loaded anvil. Sprite/anvil fallbacks remain usable. Renderer never changes rewards/AI/damage/world flags. Full Reference08 map/collision/crafting furnace still outstanding.
+
+ArtLedger.settle reconciles all attempted keys against successful filecomplete keys on every loader complete. Phaser4.2.1 decode failures call onProcessError without loaderror; the batch reconciliation makes truncated HTTP200 PNGs visible to fallback/retry on both initial preload and later stage loading.

@@ -1,3 +1,15 @@
+# สถานะล่าสุด — Session17 / 0.7.2
+
+พัฒนาต่อจากmain78a2497และเกม0.7.1ที่เผยแพร่แล้ว เลือกFND-004ซึ่งเป็นDependencyของงานภาพ/มือถือ: แยกshared+stage assets, prepareก่อนcommit/โหลดไฟล์, RAMcache, Thai loading/fallback/explicitretry, timeout8000msต่อไฟล์/maxRetries0 กู้ภาพโดยไม่แตะGameState/dirty/ท่านั่ง
+
+เพิ่มคุโรต้นฉบับ12cellsกับทั่งตามตำแหน่งจริง: hammerในS04, show_recipeในCH0401/S05, ซ่อนทั่งระหว่างฝึกสู้, ReducedMotionและfallback ทั้งหมดไม่เปลี่ยนกฎเกม/เซฟ/รางวัล ภาพรวมworkshopยังต้นแบบ Reference08ครบฉากยังต้องพัฒนาต่อ
+
+ผลเฉพาะงานใหม่: Unit126/Content2/TypeScript/Lint/Buildผ่าน FocusedBrowser12/12PASS1.2นาที รวม5viewportและfault/retry/timeout/fileimport/RAMintegrity ภาพก่อนหลังอยู่Session17 ชุดเต็ม/CI/publicบันทึกใน[รายงานล่าสุด](evidence/session17/REPORT_TH.md)เมื่อรันจริง ไม่ใช้ผลเก่าแทนผลใหม่
+
+Checklist21/76=27.6% (v121/73=28.8%):done21/in_progress37/not_started16/problem0/blocked2 เป็นสัดส่วนรายการ ไม่ใช่คุณภาพหรือปริมาณแรงงาน FND004ผ่านเกณฑ์เฉพาะงาน VIS004/005/008ยังin_progress Save11/12และQA009ยังรออุปกรณ์จริง
+
+---
+
 # GODSEED — ความคืบหน้า 0.7.1
 
 ## รอบ 16 — 2026-11-06 UTC — สวนสมุนไพรและเส้นทางตามฉาก (0.7.1)

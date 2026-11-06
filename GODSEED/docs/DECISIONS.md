@@ -205,3 +205,12 @@ Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่า�
 ### ตรวจคิวงานหลังจัดสถานะอุปกรณ์จริง
 
 การเปลี่ยน FND-005 เป็น blocked เปิดเผยว่า Test คิวงานเดิมอาศัยสถานะสดและคาดให้ FND-005 อยู่ลำดับแรกตลอด แก้เฉพาะ Fixture ใน scripts/roadmap.test.mjs ให้กำหนด in_progress ชัดเจน แล้วตรวจทั้ง done และ blocked ว่าถูกตัดจากคิว และยังตรวจว่า regression ขึ้นก่อน ไม่มีการลบหรือผ่อน Assertion ผลสุดท้าย Roadmap 8/8 ผ่าน ดู evidence/session16/roadmap-final.txt การแก้ปิดรอบนี้กระทบเอกสาร/ข้อมูลคิว/ตัวตรวจ QA ไม่เปลี่ยนเกมหรือ Asset หลัง Source5847801 ที่ผ่าน CI
+
+
+## Session17 — 2026-11-06 — recoverable stage loading before further expansion
+
+Choose FND-004 first: all57PNG loaded at title, no explicit recovery, and a global timeout was overridden by Phaser per-file defaults. Keep the existing renderer/fallbacks and add a small static catalog + ledger; no new state machine or persistent asset manifest. Supply a real per-file8000ms timeout and maxRetries0. Prepare assets before state commit/import replacement, keep previous RAM checkpoint while loading, and allow explicit retry without a state mutation. Cold title now23PNG/301231bytes vs57/629017; this measures PNG transfer budget, not FPS or total JS cost. Cached revisits issue no new PNG requests.
+
+Second related delivery: original Koro + grounded anvil and recipe pose required by Master Spec. Keep workshop art provisional, hide prop in combat, and do not change lesson rewards, spell rules, enemy AI or saves. No story scope expansion simply to raise completion. FND-004 is done on targeted fault/budget/import verification; broad VIS-004/005/008 and quality gates remain in_progress. Hardware-only Save11/12 and QA009 remain blocked.
+
+Finalaudit: distinguish transfer success from decoded texture success. Phaser does not emitloaderror on decodefailure, so reconcile attempted vs successful keys at batch completion; preserve existing fallback and explicit retry. FND004 temporarilyproblem, restored after initial/lazycorruption tests pass. No downloaded save or asset content is executed.

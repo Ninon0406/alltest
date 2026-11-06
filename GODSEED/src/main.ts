@@ -5,7 +5,7 @@ import {fresh,type State} from './engine/state';import {ManualSession} from './e
 import {scenes,type Choice} from './content/story';import {choiceAvailability,nextHint,rememberedLines} from './systems/story';import {memoryPanel} from './ui/memory-panel';import {choose,craft,equip,unequip,fight} from './systems/game';import {byId,itemNames} from './systems/spells';import {startWorld} from './scenes/world';import {combatPanel} from './ui/combat-panel';
 const bookFilter:BookFilter={core:'',kind:'',mp:''};
 const app=document.querySelector<HTMLDivElement>('#app')!;
-app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.7.1</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
+app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.7.2</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
 const {world,game}=startWorld(document.querySelector('#canvas')!);const session=new ManualSession();let state:State|null=null,busy=true,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,screen='title',titleName='';let skip:()=>void=()=>{};
 const content=document.querySelector<HTMLDivElement>('#content')!,notice=document.querySelector<HTMLParagraphElement>('#notice')!;
 const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
@@ -16,6 +16,16 @@ async function exclusive(operation:()=>Promise<void>){
  if(busy||!world.ready)return;busy=true;msg('');render();
  try{await operation();}catch(error){msg(error instanceof Error?error.message:'ดำเนินการไม่สำเร็จ');}
  finally{busy=false;render();}
+}
+let artNoticeKey='';
+function renderArtNotice(){
+ const status=world.assetStatus,host=document.querySelector<HTMLElement>('#render-notice')!;
+ const key=JSON.stringify([status.loading,status.failed,busy,world.ready]);if(key===artNoticeKey)return;artNoticeKey=key;
+ host.hidden=!status.loading&&!status.failed.length;host.replaceChildren();
+ if(status.loading){host.append(el('span','กำลังเตรียมภาพสถานที่… โปรดรอสักครู่'));return;}
+ if(status.failed.length){host.append(el('span','ภาพบางส่วนโหลดไม่ครบ ใช้ภาพสำรองขณะนี้ คุณยังเล่นและบันทึกเกมได้ '),button('ลองโหลดภาพอีกครั้ง',()=>void exclusive(async()=>{
+  await world.prepare(state,true);world.show(state,true);msg(world.assetStatus.failed.length?'ยังโหลดภาพบางส่วนไม่ได้ ลองใหม่ภายหลังได้ ความคืบหน้ายังอยู่ในเกม':'โหลดภาพพร้อมแล้ว ความคืบหน้าในเกมยังอยู่ครบ');
+ })));}
 }
 function showState(next:State,continuity=false){state=next;screen=next.battle?'battle':'story';world.show(next,continuity);}
 let pendingImport:Awaited<ReturnType<typeof readSaveFile>>|null=null;
@@ -39,6 +49,7 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
   world.finishAction();
   document.querySelector<HTMLButtonElement>('#skip')!.hidden=true;
  }
+ await world.prepare(next);
  session.commit(next);
  if(world.ready&&(next.scene!==previous.scene||!!next.battle!==!!previous.battle))world.cameras.main.fadeIn(reduced?60:350,20,48,40);
  showState(next,true);if(previousScreen==='book'&&!next.battle)screen='book';
@@ -46,17 +57,17 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
 
  });}
 function render(){
- content.setAttribute('aria-busy',String(busy));
+ renderArtNotice();content.setAttribute('aria-busy',String(busy));
  const banner=document.querySelector<HTMLElement>('#storage')!;banner.hidden=!state;banner.textContent=session.dirty?'ยังไม่ได้เก็บความคืบหน้าล่าสุดเป็นไฟล์ · บันทึกก่อนออก':'มีไฟล์ของความคืบหน้านี้แล้ว · เล่นต่อแล้วอย่าลืมบันทึกใหม่';
  banner.dataset.dirty=String(session.dirty);
  if(state&&session.canConfirmExport)banner.append(button('ยืนยันว่าเก็บไฟล์แล้ว',()=>{session.confirmExport();render();msg('คุณยืนยันว่าเก็บไฟล์แล้ว');}));
  const nav=document.querySelector('#nav')!;nav.replaceChildren();const hud=document.querySelector('#hud')!;hud.textContent=state?`${state.name} · HP ${state.hp}/100 · MP ${state.mp}/40 · ประสบการณ์ ${state.xp} · วันที่ ${Math.floor(state.ticks/3)+1} ${['เช้า','บ่าย','เย็น'][state.ticks%3]}`:'โลกที่จดจำทุกทางเลือกของคุณ';
  if(state){for(const [id,label] of [['story','เรื่องราว'],['inventory','กระเป๋า'],['craft','ผสมเวท'],['book','สมุดเวท'],['journal','ความทรงจำ'],['save','บันทึก']])nav.append(button(label,()=>{screen=id;render();},!!state.battle&&id!=='story'&&id!=='save'));}
  if(state){if(screen!=='save'&&!leaving&&!pendingImport)nav.append(button('บันทึกเกมเป็นไฟล์',()=>void exportCurrent()));nav.append(button('เมนูหลัก',()=>leave('title')),button('เริ่มเกมใหม่',()=>leave('new')));}
- if(state&&busy)nav.append(el('p','กำลังดำเนินเหตุการณ์ จึงยังบันทึกหรือโหลดไฟล์ไม่ได้'));
+ if(state&&busy)nav.append(el('p','กำลังเตรียมเหตุการณ์ จึงยังบันทึกหรือโหลดไฟล์ไม่ได้'));
  if(leaving||pendingImport)nav.querySelectorAll('button').forEach(b=>b.disabled=true);
  if(pendingImport){const result=pendingImport,loaded=result.state;section('ตรวจสอบไฟล์เซฟก่อนโหลด',`${result.fileName} · ${loaded.name} · บทที่หนึ่ง · ${scenes[loaded.scene].title} · HP ${loaded.hp}/100 · MP ${loaded.mp}/40 · EXP ${loaded.xp} · วันที่ ${Math.floor(loaded.ticks/3)+1} · เวท ${loaded.known.length} สูตร${loaded.battle?' · อยู่ระหว่างเทิร์นต่อสู้':''}${result.legacy?' · ไฟล์รุ่นเดิม จะปรับข้อมูลใน RAM':''}`);
- content.append(el('p','การโหลดจะแทนที่เกมใน RAM ปัจจุบัน หากมีความคืบหน้าที่ยังไม่เก็บไฟล์ให้ยกเลิกและบันทึกก่อน'),button('ยืนยันโหลดไฟล์นี้',()=>{pendingImport=null;session.load(loaded);showState(session.current!);render();}),button('ยกเลิกการโหลด',()=>{pendingImport=null;render();}));return;}
+ content.append(el('p','การโหลดจะแทนที่เกมใน RAM ปัจจุบัน หากมีความคืบหน้าที่ยังไม่เก็บไฟล์ให้ยกเลิกและบันทึกก่อน'),button('ยืนยันโหลดไฟล์นี้',()=>void exclusive(async()=>{await world.prepare(loaded);session.load(loaded);pendingImport=null;showState(session.current!);})),button('ยกเลิกการโหลด',()=>{pendingImport=null;render();}));return;}
  if(leaving){section('ก่อนออกจากเรื่องราว','ความคืบหน้าที่ยังไม่ได้บันทึกเป็นไฟล์จะหายไป ต้องการบันทึกก่อนหรือไม่?');content.append(button('บันทึกเกมเป็นไฟล์',()=>void exportCurrent()),button('กลับไปเล่นต่อ',()=>{leaving=null;render();}),button('ออกโดยไม่บันทึก',finishLeaving),el('p','หลังเริ่มดาวน์โหลด ให้ตรวจว่าเก็บไฟล์ไว้แล้วก่อนออก เกมไม่บันทึกให้ลับหลัง'));return;}
  if(!state){section('โลกกำลังรอเรื่องราวของคุณ','ใต้เงาต้นเมล็ด มีบทเพลงหนึ่งกำลังเลือนหาย และมีใครบางคนรอให้คุณช่วยฟัง');const label=el('label','ชื่อผู้มาเยือน');const name=el('input');name.placeholder='อาเรน';name.maxLength=30;name.value=titleName;name.disabled=busy||!world.ready;name.oninput=()=>titleName=name.value;label.append(name);content.append(label,button('เริ่มการเดินทาง',()=>{if(state||busy||!world.ready)return;titleName=name.value;begin();render();}));
  if(busy||!world.ready)content.append(el('p','กำลังเปิดโลกแห่งความทรงจำ…'));
@@ -93,7 +104,7 @@ function applyMotion(){motionButton.setAttribute('aria-pressed',String(reduced))
 motionButton.onclick=()=>{reduced=!reduced;applyMotion();};
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{reduced=event.matches;applyMotion();});
 game.events.on('world-ready',()=>{applyMotion();world.show(state);render();});
-game.events.on('art-warning',(message:string)=>{const notice=document.querySelector<HTMLElement>('#render-notice')!;notice.hidden=false;notice.textContent=message;});
+game.events.on('art-status',renderArtNotice);
 applyMotion();
 window.addEventListener('beforeunload',event=>{if(session.dirty){event.preventDefault();event.returnValue='';}});
 document.querySelector('.brand')!.addEventListener('click',event=>{event.preventDefault();if(!busy&&world.ready)leave('title');});

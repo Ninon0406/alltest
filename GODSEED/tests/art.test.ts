@@ -206,3 +206,18 @@ it('Maren has an original elder silhouette, grounded feet and a real humming cyc
  for(let i=0;i<8;i++){const p=frame(maren,i,32,48);expect(visible(p)).toBeGreaterThan(250);expect(visible(p.subarray(45*32*4))).toBe(0);hashes.push(digest(p));}
  expect(new Set(hashes.slice(4)).size).toBe(4);expect(hashes[0]).not.toBe(digest(frame(image('maren.png'),0,32,48)));
 });
+
+it('Koro has grounded boots, distinct forging/recipe gestures and a usable anvil contact',async()=>{
+ const {koroAnimations,workshopAnvil}=await import('../src/scenes/workshop-staging');
+ const sheet=image('art-v10/koro.png');expect([sheet.width,sheet.height]).toEqual([128,144]);
+ for(const animation of Object.values(koroAnimations)){
+  const cells=animation.frames.map(i=>frame(sheet,i,32,48));expect(new Set(cells.map(digest)).size).toBeGreaterThan(1);
+  for(const p of cells){expect(visible(p)).toBeGreaterThan(300);expect(visible(p.subarray(45*32*4))).toBe(0);expect(visible(p.subarray(44*32*4,45*32*4))).toBeGreaterThan(0);}
+ }
+ const newPose=frame(sheet,0,32,48),oldPose=frame(image('koro.png'),0,32,48);let changed=0;
+ for(let i=3;i<newPose.length;i+=4)if((newPose[i]>0)!==(oldPose[i]>0))changed++;expect(changed).toBeGreaterThan(30);
+ const anvil=image('art-v10/anvil.png');expect([anvil.width,anvil.height]).toEqual([workshopAnvil.width,workshopAnvil.height]);
+ const {hit,x,y,width,height}=workshopAnvil;expect(anvil.data[((hit.y-y+height)*width+hit.x-x+width/2)*4+3]).toBe(255);
+ const {travelPaths,choicePaths}=await import('../src/scenes/cinematic-paths');
+ for(const point of [...travelPaths.workshop,...Object.values(choicePaths).filter(p=>p.stage==='workshop').flatMap(p=>p.points)])expect(point.x+10).toBeLessThan(x-width/2);
+});
