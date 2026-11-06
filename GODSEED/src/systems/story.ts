@@ -14,6 +14,9 @@ export const clueFacts=[
 ] as const;
 export const clueCount=(state:State)=>clueFacts.filter(clue=>state.flags[clue.flag]).length;
 export function nextHint(state:State){
+ if(state.flags.arc1_opening_complete)return 'งานเพลงของหมู่บ้านจบลงอย่างที่คุณเลือกแล้ว กลับไปดูโคมและเมล็ดที่จัตุรัส หรือค้นพบเวทจากวัตถุดิบที่เพื่อนบ้านมอบให้';
+ if(state.flags.festival_ready)return 'ช่วยซ่อมกล่องกับคุโร เรียงโน้ตกับไอรา และเตรียมโคมครบแล้วจึงรวมวงซ้อม ทุกงานมีวิธีทำด้วยมือโดยไม่บังคับหาเวทหายาก';
+ if(state.flags.lumi_helped&&state.flags.crafted_first&&state.flags.archive_read&&clueCount(state)>=2)return 'จัตุรัสกำลังเตรียมงานเพลงแรก ลองกลับไปช่วยเพื่อนบ้าน แล้วเลือกว่าคุณอยากรักษาสิ่งใดไว้ด้วยกัน';
  if(!state.flags.lumi_helped)return 'ลูมิที่บ่อน้ำกำลังตามหาทำนองของคุณยาย ลองฟังเรื่องของเธอ';
  if(!state.flags.crafted_first)return 'ไปโรงช่างของคุโร รับส่วนผสมและผสมเวทบทแรกด้วยตัวเอง';
  if(!state.flags.archive_read)return 'ไอราในหอสมุดอาจรู้ว่าเสียงเพลงที่หายไปถูกเก็บไว้ที่ใด';
@@ -25,6 +28,7 @@ export function nextHint(state:State){
 }
 /** Authored facts only. Rendering cannot invent progress or grant rewards. */
 export function rememberedLines(state:State,scene:StoryScene):string[]{
+ if(scene.id==='S02_HUB'&&state.flags.arc1_opening_complete)return [state.flags.a1_resolution_care?'โคมข้างทางยังสว่าง ผู้สูงวัยเดินผ่านได้อย่างสบาย มาเรนจำได้ว่าคุณเลือกทำให้งานนี้มีที่นั่งสำหรับทุกคน':state.flags.a1_resolution_knowledge?'สมุดสำเนาวางอยู่ใต้โคม ไอราเปิดไว้ให้คนต่อไปเขียนเพิ่ม ความรู้นี้ไม่ต้องมีเจ้าของเพียงคนเดียว':'เสียงเพลงจากกล่องดังเบา ๆ ลูมิชวนเพื่อนบ้านร้องท่อนที่แต่ละคนเลือก ไม่มีใครต้องร้องดังที่สุดเพื่ออยู่ในวง'];
  if((scene.id==='S00_WAKE'||scene.id==='S02_TREE')&&state.flags.tree_memory)return ['ใบไม้หมุนลงตรงปลายเท้า พิพส่งเสียงตอบเบา ๆ คุณจำช่วงเงียบที่มีเพื่อนอยู่ข้าง ๆ ได้อีกครั้ง'];
  if(scene.id==='S06_GARDEN'&&state.flags.maren_listened)return ['มาเรนเคาะจังหวะเพลงเดิมให้คุณจำ “ถ้าทำนองไหนหายไป ลองฟังช่วงเงียบระหว่างโน้ตดูนะ” เธอขยับที่บนม้านั่งราวกับจำได้ว่าคุณเคยนั่งฟังอยู่ตรงนั้น'];
  if(scene.id==='S06_GARDEN'&&state.flags.garden_tended)return ['ดอกไม้ที่คุณช่วยรดน้ำชูช่ออยู่ข้างทาง มาเรนยิ้ม “เห็นไหม พวกมันจำมือที่อ่อนโยนได้ เมล็ดที่ได้ไป ลองนำไปผสมเวทเยียวยาดูสิ”'];

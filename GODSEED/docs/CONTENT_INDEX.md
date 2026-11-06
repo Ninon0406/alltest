@@ -1,3 +1,9 @@
+# Current0.10.0 / V6 opening
+
+46scenes/142choices/5NPC/4encounters/234recipes/7stages/5fixedmaps/2questcontracts/0finalendings. +25nodes/+72choices from0.9.0;25newnodes have real reducer witnesses. Three opening mini-resolutions are not game endings or8LifePaths. Snapshot and actual counts: evidence/session20/story-graph.json.
+
+---
+
 # Current source — Session19 / 0.9.0
 
 21Scene/70Choice/70uniqueChoiceIDs/5companionNPC/4reachableEncounter(includingTraining)/234legal+uniqueSpellIDs/0chapterending/7Stage. Extracted by inspect:content; JSON/IDs in [Session19](evidence/session19/content.json). AddedS15_RUINS/S16_RUINS_RESULT/S17_ECHO_TABLET,CH0207+CH1501–1504+CH1601–1602+CH1701–1703,B03_RUIN_SENTINEL,ruinsStage. Every18oldscene/60oldchoice retained.

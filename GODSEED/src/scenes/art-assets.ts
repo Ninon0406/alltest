@@ -12,6 +12,7 @@ export const artAssets:readonly ArtAsset[]=[
  ...STAGES.flatMap(stage=>[image(stage,stageFallback(stage),stage),...['rear','ground','front'].map(layer=>image(`${stage}-${layer}-v2`,`${stageFolder(stage)}/${stage}-${layer}.png`,stage))]),
  ...['rear','ground','front'].map(layer=>image('tree-'+layer+'-v5','art-v5/tree-'+layer+'.png','village')),
  image('ancient-tree-v5','art-v5/ancient-tree.png','village'),sheet('fountain-v5','art-v5/fountain.png','village',96,112),sheet('leaves-v5','art-v5/leaves.png','village',16,16),
+ sheet('festival-props-v13','art-v13/festival-props.png','village',64,96),
  ...['rear','ground','front'].map(layer=>image('workshop-'+layer+'-legacy','art-v2/workshop-'+layer+'.png','workshop')),
  sheet('workshop-cauldron-v11','art-v11/cauldron.png','workshop',96,96),sheet('workshop-toolbox-v11','art-v11/toolbox.png','workshop',56,40),sheet('hero-toolbox-v11','art-v11/hero-toolbox.png','workshop',64,48),sheet('hero-brew-v11','art-v11/hero-brew.png','workshop'),sheet('recipe-parts-v11','art-v11/ingredients.png','workshop',16,16),
  ...['rear','ground','front'].map(layer=>image('garden-'+layer+'-legacy','art-v2/garden-'+layer+'.png','garden')),

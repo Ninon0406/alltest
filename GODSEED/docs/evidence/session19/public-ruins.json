@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.9.0",
+  "legacy080File": true,
+  "nativeFilePicker": true,
+  "runeAndMusicbox": true,
+  "questRewardOnce": true,
+  "npcMemory": true,
+  "checkpointAndWardRoundTrip": true,
+  "emptyRefresh": true,
+  "sentryWinAndRetreat": true,
+  "realWardRecipeAndShield": true,
+  "coherentFallbackAndRetry": true,
+  "persistentStorageCalls": 0,
+  "outboundWrites": 0,
+  "developmentReferenceRequests": 0,
+  "consoleErrors": [],
+  "controlledNetworkErrors": 1,
+  "hardware": "NOT_TESTED"
+}

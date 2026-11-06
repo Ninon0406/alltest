@@ -1,39 +1,63 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updated": "2026-11-06",
-  "baseCommit": "1b9d598",
+  "baseCommit": "825bfa5",
   "phases": [
     {
+      "id": 0,
+      "title": "Audit & Benchmark — ตรวจและศึกษาต้นแบบ"
+    },
+    {
       "id": 1,
-      "title": "โครงสร้างพื้นฐาน"
+      "title": "Core Playability — เกมหลักเล่นต่อได้"
     },
     {
       "id": 2,
-      "title": "งานภาพ Pixel Art HD"
+      "title": "Story Engine & Content Pipeline"
     },
     {
       "id": 3,
-      "title": "ระบบเนื้อเรื่อง"
+      "title": "Complete Opening Experience — ช่วงเริ่มต้นครบ"
     },
     {
       "id": 4,
-      "title": "ระบบเวทมนตร์"
+      "title": "Life Paths — เส้นทางชีวิต"
     },
     {
       "id": 5,
-      "title": "ระบบต่อสู้"
+      "title": "Magic System — ระบบเวทและการเรียนรู้"
     },
     {
       "id": 6,
-      "title": "โลกและเนื้อหาขนาดใหญ่"
+      "title": "Combat — การต่อสู้"
     },
     {
       "id": 7,
-      "title": "คุณภาพเกม"
+      "title": "World Systems — โลกและสังคม"
     },
     {
       "id": 8,
-      "title": "เกมฉบับสมบูรณ์"
+      "title": "Main Story Expansion — ARC 1–6"
+    },
+    {
+      "id": 9,
+      "title": "Advanced Story Expansion — ARC 7–12"
+    },
+    {
+      "id": 10,
+      "title": "Visual & Cinematic Polish"
+    },
+    {
+      "id": 11,
+      "title": "Endings & World Consequences"
+    },
+    {
+      "id": 12,
+      "title": "Performance & Quality"
+    },
+    {
+      "id": 13,
+      "title": "GODSEED 1.0 — Release Gates"
     }
   ],
   "tasks": [
@@ -59,7 +83,10 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-002",
@@ -84,7 +111,10 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-003",
@@ -110,7 +140,10 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-004",
@@ -156,7 +189,10 @@
         "GODSEED/docs/evidence/session17/main-ci.json",
         "GODSEED/docs/evidence/session17/public-staged-art.json",
         "GODSEED/docs/evidence/session17/post-actions-assets.json"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-005",
@@ -210,7 +246,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-002",
@@ -241,7 +279,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-003",
@@ -272,7 +312,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-004",
@@ -303,7 +345,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-005",
@@ -334,7 +378,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-006",
@@ -365,7 +411,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-007",
@@ -396,7 +444,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-008",
@@ -427,7 +477,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-009",
@@ -458,7 +510,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-010",
@@ -489,7 +543,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-011",
@@ -515,7 +571,9 @@
             "GS-005"
           ],
           "acceptance": "DownloadจริงในSafari/iOSและChrome/Android รวมคำแนะนำFiles/Downloads",
-          "evidence": "Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน; ไม่มีอุปกรณ์จริงในสภาพแวดล้อมนี้ Chromiumจำลองผ่านแล้ว แต่ใช้แทนphysicalacceptanceไม่ได้"
+          "evidence": "Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน; ไม่มีอุปกรณ์จริงในสภาพแวดล้อมนี้ Chromiumจำลองผ่านแล้ว แต่ใช้แทนphysicalacceptanceไม่ได้",
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-012",
@@ -541,7 +599,9 @@
             "GS-005"
           ],
           "acceptance": "เลือกไฟล์จริงในSafari/iOSและChrome/Android ไม่บังคับเมาส์",
-          "evidence": "Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน; ไม่มีอุปกรณ์จริงในสภาพแวดล้อมนี้ Chromiumจำลองผ่านแล้ว แต่ใช้แทนphysicalacceptanceไม่ได้"
+          "evidence": "Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน; ไม่มีอุปกรณ์จริงในสภาพแวดล้อมนี้ Chromiumจำลองผ่านแล้ว แต่ใช้แทนphysicalacceptanceไม่ได้",
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-013",
@@ -572,7 +632,9 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         },
         {
           "id": "SAVE-014",
@@ -603,9 +665,14 @@
           "evidenceFiles": [
             "GODSEED/docs/evidence/session15/verification.json",
             "GODSEED/docs/TEST_REPORT.md"
-          ]
+          ],
+          "legacyPhase": 1,
+          "domain": "systems"
         }
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-006",
@@ -627,7 +694,10 @@
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-007",
@@ -653,7 +723,10 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-008",
@@ -678,11 +751,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "FND-009",
-      "phase": 1,
+      "phase": 0,
       "title": "Roadmap คำนวณได้ เชื่อมบอร์ดและDevelopment Log",
       "status": "done",
       "priority": "P1",
@@ -706,11 +782,14 @@
       "evidenceFiles": [
         "GODSEED/scripts/roadmap.test.mjs",
         "GODSEED/docs/DEVELOPMENT_LOG.md"
-      ]
+      ],
+      "legacyPhase": 1,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "VIS-001",
-      "phase": 2,
+      "phase": 10,
       "title": "Art Bible/palette/pixel grid/สิทธิ์ครบ",
       "status": "in_progress",
       "priority": "P2",
@@ -728,11 +807,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-002",
-      "phase": 2,
+      "phase": 10,
       "title": "Hero atlas 11 named action cycles",
       "status": "done",
       "priority": "P2",
@@ -753,11 +835,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-003",
-      "phase": 2,
+      "phase": 10,
       "title": "การเดินสี่ทิศทางพร้อมturn/foot alignment",
       "status": "done",
       "priority": "P2",
@@ -785,11 +870,14 @@
         "GODSEED/tests/directional.spec.ts",
         "GODSEED/tests/art.test.ts",
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-004",
-      "phase": 2,
+      "phase": 10,
       "title": "NPC/ศัตรู silhouette และท่าพิเศษครบ",
       "status": "in_progress",
       "priority": "P2",
@@ -814,11 +902,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-005",
-      "phase": 2,
+      "phase": 10,
       "title": "ยืน วิ่ง นั่ง และปฏิสัมพันธ์ตามวัตถุ",
       "status": "in_progress",
       "priority": "P2",
@@ -855,20 +946,25 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/tests/ruins.test.ts",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/docs/evidence/session20/README.md",
+        "GODSEED/docs/evidence/session20/REPORT_TH.md"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
         "GS-010"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-006",
-      "phase": 2,
+      "phase": 10,
       "title": "Director: authored paths → interaction → commit/skip",
       "status": "done",
       "priority": "P1",
@@ -899,11 +995,14 @@
         "GODSEED/tests/cinematics.spec.ts",
         "GODSEED/docs/TEST_REPORT.md",
         "GODSEED/docs/evidence/session18/focused-browser.txt"
-      ]
+      ],
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-007",
-      "phase": 2,
+      "phase": 10,
       "title": "Fixed Map และเมนูเส้นทาง/ตำแหน่งที่ปลดล็อก",
       "status": "in_progress",
       "priority": "P2",
@@ -929,11 +1028,14 @@
         "GS-029"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-008",
-      "phase": 2,
+      "phase": 10,
       "title": "ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล",
       "status": "in_progress",
       "priority": "P1",
@@ -968,20 +1070,25 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/tests/ruins.test.ts",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/docs/evidence/session20/README.md",
+        "GODSEED/docs/evidence/session20/REPORT_TH.md"
       ],
-      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่",
       "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
       "legacyIds": [
         "GS-008",
         "GS-009"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-009",
-      "phase": 2,
+      "phase": 10,
       "title": "ฉากมีมิติ แสงเงา และocclusionขั้นสุดท้าย",
       "status": "in_progress",
       "priority": "P2",
@@ -1016,11 +1123,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-010",
-      "phase": 2,
+      "phase": 10,
       "title": "สิ่งแวดล้อมเคลื่อนไหวและpresetลดกราฟิก",
       "status": "in_progress",
       "priority": "P2",
@@ -1050,11 +1160,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-011",
-      "phase": 2,
+      "phase": 10,
       "title": "กล้อง Cinematic และtransitionตามทิศทาง",
       "status": "done",
       "priority": "P2",
@@ -1083,11 +1196,14 @@
         "GODSEED/tests/camera.test.ts",
         "GODSEED/tests/camera.spec.ts",
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-012",
-      "phase": 2,
+      "phase": 10,
       "title": "Pixel Art UI/icons/logo/spell revealครบ",
       "status": "in_progress",
       "priority": "P2",
@@ -1106,7 +1222,10 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "STO-001",
@@ -1123,9 +1242,11 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/tests/ruins.test.ts",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/docs/evidence/session20/README.md",
+        "GODSEED/docs/evidence/session20/REPORT_TH.md"
       ],
-      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
+      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่",
       "acceptance": "canonicalchapter1ครบมีทางเล่นจบและกลับสำรวจ ทุกทางหลักผ่านgraph/golden paths",
       "legacyIds": [
         "GS-025",
@@ -1134,11 +1255,14 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story"
     },
     {
       "id": "STO-002",
-      "phase": 3,
+      "phase": 2,
       "title": "Branch conditions/effects ที่มีผลจริง",
       "status": "done",
       "priority": "P1",
@@ -1161,11 +1285,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story"
     },
     {
       "id": "STO-003",
-      "phase": 3,
+      "phase": 7,
       "title": "NPC memories/ความสัมพันธ์ตลอดบท",
       "status": "in_progress",
       "priority": "P1",
@@ -1188,11 +1315,14 @@
         "GS-039"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story"
     },
     {
       "id": "STO-004",
-      "phase": 3,
+      "phase": 7,
       "title": "เหตุการณ์ตามสถานที่/เวลา/ทางเลือก",
       "status": "in_progress",
       "priority": "P2",
@@ -1210,11 +1340,14 @@
         "GS-030"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story"
     },
     {
       "id": "STO-005",
-      "phase": 3,
+      "phase": 11,
       "title": "หลายเส้นทาง puzzle/mercy/battleถึงบอส",
       "status": "in_progress",
       "priority": "P1",
@@ -1233,12 +1366,15 @@
         "GS-027"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story"
     },
     {
       "id": "STO-006",
-      "phase": 3,
-      "title": "สามตอนจบ FAMILY/COMMUNITY/ARCHIVE",
+      "phase": 11,
+      "title": "สามบทสรุปเดิมและฉากจบV6ตามผลสะสม",
       "status": "not_started",
       "priority": "P1",
       "dependsOn": [
@@ -1248,17 +1384,22 @@
       "files": [
         "02_GODSEED_MASTER_SPEC.md"
       ],
-      "evidence": "มีเฉพาะspec S23–S27; โค้ด0endings",
-      "acceptance": "state/scene/art/choiceของ3endingsและepilogueจริง export/importคงending",
+      "evidence": "มีเฉพาะspec S23–S27; โค้ด0endings;ขยายเกณฑ์V6 ยังไม่ใช่implementationที่ผ่านแล้ว",
+      "acceptance": "state/scene/art/choiceของ3endingsและepilogueจริง export/importคงending; V6: รักษาFAMILY/COMMUNITY/ARCHIVEเป็นบทสรุปเดิมที่ยังต้องสร้าง และขยายเป้าหมายรวม≈15บทสรุปที่มีความหมายจากLifePath/relations/knowledge/worldchoices ไม่สุ่มผลท้ายเรื่องหรือบังคับเป็นผู้มีพลังสูงสุด",
       "legacyIds": [
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story",
+      "legacyTitle": "สามตอนจบ FAMILY/COMMUNITY/ARCHIVE",
+      "legacyAcceptance": "state/scene/art/choiceของ3endingsและepilogueจริง export/importคงending"
     },
     {
       "id": "STO-007",
-      "phase": 3,
+      "phase": 2,
       "title": "Journal/recap/Thai pacingและfact audit",
       "status": "in_progress",
       "priority": "P2",
@@ -1276,11 +1417,14 @@
         "GS-030"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 3,
+      "legacyScope": "v1",
+      "domain": "story"
     },
     {
       "id": "STO-008",
-      "phase": 3,
+      "phase": 2,
       "title": "Optional AI ขอบเขตชัด/opt-in/localfallback",
       "status": "not_started",
       "priority": "P3",
@@ -1297,12 +1441,15 @@
         "GS-034"
       ],
       "scope": "optional",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 3,
+      "legacyScope": "optional",
+      "domain": "story"
     },
     {
       "id": "MAG-001",
-      "phase": 4,
-      "title": "Catalog8core/6form/7modพร้อมตัวเร่ง5และหมวดกระเป๋า",
+      "phase": 5,
+      "title": "Catalogวัตถุดิบ/ตัวเร่งและหมวดกระเป๋าตามV6",
       "status": "in_progress",
       "priority": "P1",
       "dependsOn": [
@@ -1312,17 +1459,22 @@
         "GODSEED/src/systems/spells.ts",
         "GODSEED/src/main.ts"
       ],
-      "evidence": "8/6/7catalogมี; catalyst/ไอคอน/หมวดยังไม่ครบ",
-      "acceptance": "ทุกรายการชื่อ/description/source/rarity/icon/categoryรวม5catalystsไม่ใช้questitemผิด",
+      "evidence": "8/6/7catalogมี; catalyst/ไอคอน/หมวดยังไม่ครบ;ขยายเกณฑ์V6 ยังไม่ใช่implementationที่ผ่านแล้ว",
+      "acceptance": "ทุกรายการชื่อ/description/source/rarity/icon/categoryรวม5catalystsไม่ใช้questitemผิด; V6: เป้าหมายประมาณ100วัตถุดิบมีแหล่ง/หน้าที่/recipeusageจริง แบ่งภูมิภาคตามARC;ไม่เพิ่มรายการที่หาไม่ได้หรือไม่มีผล",
       "legacyIds": [
         "GS-013"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic",
+      "legacyTitle": "Catalog8core/6form/7modพร้อมตัวเร่ง5และหมวดกระเป๋า",
+      "legacyAcceptance": "ทุกรายการชื่อ/description/source/rarity/icon/categoryรวม5catalystsไม่ใช้questitemผิด"
     },
     {
       "id": "MAG-002",
-      "phase": 4,
+      "phase": 5,
       "title": "แหล่งวัตถุดิบ/ค้นพบ/reachabilityทั้งบท",
       "status": "in_progress",
       "priority": "P1",
@@ -1339,20 +1491,25 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/tests/ruins.test.ts",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/docs/evidence/session20/README.md",
+        "GODSEED/docs/evidence/session20/REPORT_TH.md"
       ],
-      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
+      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่",
       "acceptance": "essentialmaterialsมีrouteไม่grind daily/rare/endgameหาได้ ตรวจscriptreachability",
       "legacyIds": [
         "GS-013",
         "GS-026"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-003",
-      "phase": 4,
+      "phase": 5,
       "title": "ตัวสร้าง/validatorสูตร234 stableIDs",
       "status": "done",
       "priority": "P0",
@@ -1373,11 +1530,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-004",
-      "phase": 4,
+      "phase": 5,
       "title": "Craft transaction/preview/consume-once",
       "status": "done",
       "priority": "P1",
@@ -1400,11 +1560,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-005",
-      "phase": 4,
+      "phase": 5,
       "title": "สมุดเวทกรองธาตุ/ประเภท/MPและ4ช่องequip/unequip",
       "status": "done",
       "priority": "P1",
@@ -1425,11 +1588,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-006",
-      "phase": 4,
+      "phase": 5,
       "title": "Core/Form/Mod behavior/mastery/targetsครบ",
       "status": "in_progress",
       "priority": "P1",
@@ -1448,11 +1614,14 @@
         "GS-020"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-007",
-      "phase": 4,
+      "phase": 5,
       "title": "VFX composerแยกตามสูตรและtarget",
       "status": "in_progress",
       "priority": "P2",
@@ -1479,11 +1648,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-008",
-      "phase": 4,
+      "phase": 5,
       "title": "ใช้เวทแก้เหตุการณ์เนื้อเรื่องครบ",
       "status": "in_progress",
       "priority": "P1",
@@ -1501,11 +1673,14 @@
         "GS-026"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "MAG-009",
-      "phase": 4,
+      "phase": 5,
       "title": "สมดุลเวทตลอดบทและแหล่งเติมMP",
       "status": "in_progress",
       "priority": "P1",
@@ -1524,11 +1699,14 @@
         "GS-024"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 4,
+      "legacyScope": "v1",
+      "domain": "magic"
     },
     {
       "id": "CMB-001",
-      "phase": 5,
+      "phase": 6,
       "title": "Turn-based reducer HP/MP/guard/basic",
       "status": "done",
       "priority": "P0",
@@ -1550,11 +1728,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-002",
-      "phase": 5,
+      "phase": 6,
       "title": "ความสามารถ/XP/level/party supportตามscope",
       "status": "in_progress",
       "priority": "P1",
@@ -1573,11 +1754,14 @@
         "GS-020"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-003",
-      "phase": 5,
+      "phase": 6,
       "title": "AIเชิงกฎ intent/telegraphของBT/B01/B02",
       "status": "done",
       "priority": "P1",
@@ -1599,11 +1783,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-004",
-      "phase": 5,
+      "phase": 6,
       "title": "ใช้เวท4ช่อง/ธาตุ/status interactionsทั้งหมด",
       "status": "in_progress",
       "priority": "P1",
@@ -1623,11 +1810,14 @@
         "GS-020"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-005",
-      "phase": 5,
+      "phase": 6,
       "title": "ไอเทม หนี ยอมแพ้ recoveryของencountersที่เปิด",
       "status": "done",
       "priority": "P0",
@@ -1650,11 +1840,14 @@
       "verification": "ผ่านเกณฑ์เฉพาะงานตาม TEST_REPORT Session1–6/baseline7 ไม่ใช่fullchaptergate",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-006",
-      "phase": 5,
+      "phase": 6,
       "title": "B03/B04พร้อมAI/rules/art/rewards/conditionalflee",
       "status": "in_progress",
       "priority": "P1",
@@ -1678,11 +1871,14 @@
         "GS-027"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-007",
-      "phase": 5,
+      "phase": 6,
       "title": "B05 guardian3phases/assist25%/immunity",
       "status": "not_started",
       "priority": "P1",
@@ -1699,11 +1895,14 @@
         "GS-023"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-008",
-      "phase": 5,
+      "phase": 6,
       "title": "Battle animation/defeat/reactionไม่text-only",
       "status": "in_progress",
       "priority": "P2",
@@ -1723,11 +1922,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "CMB-009",
-      "phase": 5,
+      "phase": 6,
       "title": "ผลชนะ/แพ้/เลี่ยงเชื่อมเรื่องทั้งบท",
       "status": "in_progress",
       "priority": "P1",
@@ -1746,11 +1948,14 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 5,
+      "legacyScope": "v1",
+      "domain": "combat"
     },
     {
       "id": "WRD-001",
-      "phase": 6,
+      "phase": 7,
       "title": "สถานที่/เส้นทางบท1ครบและย้อนกลับได้",
       "status": "in_progress",
       "priority": "P1",
@@ -1770,12 +1975,15 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "WRD-002",
-      "phase": 6,
-      "title": "NPC history/relationship/กิจวัตรครบcanon",
+      "phase": 7,
+      "title": "NPC history/relationship/กิจวัตรตามโลกV6",
       "status": "in_progress",
       "priority": "P2",
       "dependsOn": [
@@ -1786,18 +1994,23 @@
         "GODSEED/src/content/story.ts",
         "GODSEED/src/systems/story.ts"
       ],
-      "evidence": "5NPCdialogue/trustมี; Sentinel/ทุกmemorytagยังขาด",
-      "acceptance": "NPCcanon6ตัวและspecialreactions มีบท/ประวัติไม่ขัดcanonและเวลาไม่blockquest",
+      "evidence": "5NPCdialogue/trustมี; Sentinel/ทุกmemorytagยังขาด;ขยายเกณฑ์V6 ยังไม่ใช่implementationที่ผ่านแล้ว",
+      "acceptance": "NPCcanon6ตัวและspecialreactions มีบท/ประวัติไม่ขัดcanonและเวลาไม่blockquest; V6: เป้าหมายNPCสำคัญ30คนขึ้นไปมีบุคลิก/เป้าหมาย/กิจกรรม/ความทรงจำ/ทางเลือกและผลจริง;5NPCปัจจุบันไม่เท่ากับครบ30",
       "legacyIds": [
         "GS-011",
         "GS-039"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "v1",
+      "domain": "systems",
+      "legacyTitle": "NPC history/relationship/กิจวัตรครบcanon",
+      "legacyAcceptance": "NPCcanon6ตัวและspecialreactions มีบท/ประวัติไม่ขัดcanonและเวลาไม่blockquest"
     },
     {
       "id": "WRD-003",
-      "phase": 6,
+      "phase": 2,
       "title": "Main/sidequests Q_MAIN/Q_STREAM/Q_PIP/Q_ARCHIVE",
       "status": "in_progress",
       "priority": "P1",
@@ -1812,9 +2025,11 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/tests/ruins.test.ts",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/docs/evidence/session20/README.md",
+        "GODSEED/docs/evidence/session20/REPORT_TH.md"
       ],
-      "evidence": "stream/bell/notesfactsมี; queststate/Pipfruit/S17ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
+      "evidence": "stream/bell/notesfactsมี; queststate/Pipfruit/S17ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่",
       "acceptance": "active/completed/rewards/nextobjectiveครบ4quests เซฟ/ย้อนกลับไม่ซ้ำ",
       "legacyIds": [
         "GS-026",
@@ -1822,11 +2037,14 @@
         "GS-029"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 6,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "WRD-004",
-      "phase": 6,
+      "phase": 7,
       "title": "ความลับโลก/cluesและเหตุการณ์เฉพาะทางเลือก",
       "status": "in_progress",
       "priority": "P2",
@@ -1844,11 +2062,14 @@
         "GS-029"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "WRD-005",
-      "phase": 6,
+      "phase": 7,
       "title": "เวลา/สภาพอากาศ/แสงตามบท",
       "status": "in_progress",
       "priority": "P2",
@@ -1867,11 +2088,14 @@
         "GS-012"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "WRD-006",
-      "phase": 6,
+      "phase": 3,
       "title": "บทแรกตั้งแต่เริ่มจนจบและชีวิตหลังบท",
       "status": "not_started",
       "priority": "P1",
@@ -1888,11 +2112,14 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "v1",
+      "domain": "systems"
     },
     {
       "id": "WRD-007",
-      "phase": 6,
+      "phase": 8,
       "title": "CH2 หอนาฬิกาดาว/เขตเมือง/ดันเจี้ยนใหม่",
       "status": "not_started",
       "priority": "P3",
@@ -1903,17 +2130,21 @@
         "02_GODSEED_MASTER_SPEC.md"
       ],
       "evidence": "M7/CH2canonoutlineเท่านั้น ไม่มีimplementation",
-      "acceptance": "กำหนดboundedchapterใหม่พร้อมstory/art/puzzles/battle/save/goldenpaths หลังv1",
+      "acceptance": "กำหนดboundedchapterใหม่พร้อมstory/art/puzzles/battle/save/goldenpaths; ในV6เป็นเนื้อหาเดิมที่นำมาประกอบARC3/ARC10 ไม่ถือว่าทั้งARCเสร็จ",
       "legacyIds": [
         "GS-036",
         "GS-037"
       ],
-      "scope": "post-v1",
-      "reviewed": "2026-11-05"
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "post-v1",
+      "domain": "systems",
+      "legacyAcceptance": "กำหนดboundedchapterใหม่พร้อมstory/art/puzzles/battle/save/goldenpaths หลังv1"
     },
     {
       "id": "WRD-008",
-      "phase": 6,
+      "phase": 9,
       "title": "CH3 หอจารึกเหนือเมฆและบทสรุปโลก",
       "status": "not_started",
       "priority": "P3",
@@ -1924,16 +2155,20 @@
         "02_GODSEED_MASTER_SPEC.md"
       ],
       "evidence": "M8/CH3outlineเท่านั้น",
-      "acceptance": "chapter3ครบbranches/theme/ending/art/migrationและrealplay QA",
+      "acceptance": "chapter3ครบbranches/theme/ending/art/migrationและrealplay QA; ในV6เป็นเนื้อหาเดิมที่นำมาประกอบARC3/ARC10 ไม่ถือว่าทั้งARCเสร็จ",
       "legacyIds": [
         "GS-038"
       ],
-      "scope": "post-v1",
-      "reviewed": "2026-11-05"
+      "scope": "v1",
+      "reviewed": "2026-11-05",
+      "legacyPhase": 6,
+      "legacyScope": "post-v1",
+      "domain": "systems",
+      "legacyAcceptance": "chapter3ครบbranches/theme/ending/art/migrationและrealplay QA"
     },
     {
       "id": "QA-001",
-      "phase": 7,
+      "phase": 12,
       "title": "UX Thai/dialogue/recipe hints/pacingครบ",
       "status": "in_progress",
       "priority": "P2",
@@ -1952,11 +2187,14 @@
         "GS-040"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-002",
-      "phase": 7,
+      "phase": 10,
       "title": "Animation/art consistency/finalvisualreview",
       "status": "in_progress",
       "priority": "P2",
@@ -1994,33 +2232,42 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-003",
-      "phase": 7,
+      "phase": 12,
       "title": "ประสิทธิภาพมือถือ/coldload/FPS/graphics profiles",
-      "status": "not_started",
+      "status": "in_progress",
       "priority": "P1",
       "dependsOn": [
         "FND-004",
         "VIS-010"
       ],
       "files": [
-        "02_GODSEED_MASTER_SPEC.md"
+        "02_GODSEED_MASTER_SPEC.md",
+        "GODSEED/docs/evidence/session19/PERFORMANCE.md",
+        "GODSEED/docs/evidence/session19/profile-ruins.mjs",
+        "GODSEED/docs/evidence/session19/profile-preview.json"
       ],
-      "evidence": "ไม่มีmeasuredFPS/framebudget/loadprofile; bundle~417kBgzipไม่ใช่FPSproof",
+      "evidence": "ไม่มีmeasuredFPS/framebudget/loadprofile; bundle~417kBgzipไม่ใช่FPSproof; รอบ19เริ่มdiagnostic:8s stable ruins CPU1/4,20warmrevisits/0newPNG/DOMคงที่;heap+543988bytesยังต้องตรวจretainers ไม่ใช่physical/FPSacceptance",
       "acceptance": "วัดcold/warm/memory/longsessionFpsตามSSOTบนphysicalmidrange ลดgraphicsได้",
       "legacyIds": [
         "GS-012",
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-004",
-      "phase": 7,
+      "phase": 12,
       "title": "เสียง/SFX/musicสิทธิ์/mute/mobileunlock",
       "status": "not_started",
       "priority": "P2",
@@ -2037,11 +2284,14 @@
         "GS-032"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-005",
-      "phase": 7,
+      "phase": 12,
       "title": "Accessibility contrast/focus/font/settings",
       "status": "in_progress",
       "priority": "P1",
@@ -2059,11 +2309,14 @@
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-006",
-      "phase": 7,
+      "phase": 12,
       "title": "Automated unit/content/save/balance/browser baseline",
       "status": "done",
       "priority": "P0",
@@ -2088,11 +2341,14 @@
       "verification": "automatedgateกลับมาผ่านแล้ว; latest65ครอบคลุมposehandoff/import/repeatbenchเพิ่มเติม ไม่อ้าง63เก่ารวมcaseใหม่",
       "evidenceFiles": [
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-007",
-      "phase": 7,
+      "phase": 12,
       "title": "Visual regression golden/diffและ234VFXaudit",
       "status": "not_started",
       "priority": "P2",
@@ -2110,33 +2366,44 @@
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "QA-008",
-      "phase": 7,
-      "title": "End-to-endสามตอนจบ/allbattles/recovery",
+      "phase": 12,
+      "title": "End-to-end12ARC/เส้นทางชีวิต/ผลลัพธ์และrecovery",
       "status": "not_started",
       "priority": "P0",
       "dependsOn": [
         "WRD-006",
-        "CMB-009"
+        "CMB-009",
+        "ARC-012",
+        "CMB-011",
+        "STO-006"
       ],
       "files": [
         "02_GODSEED_MASTER_SPEC.md"
       ],
       "evidence": "currenttestsจบsliceเท่านั้น ไม่ใช่chapter",
-      "acceptance": "PATH_FAMILY/COMMUNITY/ARCHIVE/BATTLE_FULL/RECOVERYจริงไม่injectstate",
+      "acceptance": "PATH_FAMILY/COMMUNITY/ARCHIVE/BATTLE_FULL/RECOVERYจริงไม่injectstate;เพิ่มV6ทุกARC/8LifePaths/ผลลัพธ์สำคัญและ15endingเป้าหมายตามscopeที่ส่งมอบ",
       "legacyIds": [
         "GS-028",
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality",
+      "legacyTitle": "End-to-endสามตอนจบ/allbattles/recovery",
+      "legacyAcceptance": "PATH_FAMILY/COMMUNITY/ARCHIVE/BATTLE_FULL/RECOVERYจริงไม่injectstate"
     },
     {
       "id": "QA-009",
-      "phase": 7,
+      "phase": 12,
       "title": "Safari/iOS/Android/iPad/desktop physical QA",
       "status": "blocked",
       "priority": "P1",
@@ -2152,56 +2419,87 @@
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 7,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-001",
-      "phase": 8,
-      "title": "เนื้อเรื่องบท1และ3endingครบตามscope1.0",
+      "phase": 13,
+      "title": "เนื้อเรื่อง12ARCและฉากจบที่มีความหมายตามขอบเขตV6",
       "status": "not_started",
       "priority": "P0",
       "dependsOn": [
         "WRD-006",
-        "QA-008"
+        "QA-008",
+        "ARC-012",
+        "STO-006"
       ],
       "files": [
         "02_GODSEED_MASTER_SPEC.md"
       ],
-      "evidence": "spec§1.1/§16; source0endings",
-      "acceptance": "releasegateยืนยันcanonicalchapter1ครบทุกending/epilogue ไม่มีblockedmainroute",
+      "evidence": "spec§1.1/§16; source0endings; V6ขยายเกณฑ์release ยังไม่เสร็จ",
+      "acceptance": "ทุกARC1–12มีต้น/ตัวเลือก/จุดเปลี่ยน/บทสรุปย่อยและเชื่อมกัน เล่นถึงฉากจบที่แตกต่างตามการตัดสินใจได้จริง เป้าหมาย15แบบต้องปรับด้วยหลักฐานและระบุ scope ที่อนุมัติ",
       "legacyIds": [
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality",
+      "legacyTitle": "เนื้อเรื่องบท1และ3endingครบตามscope1.0",
+      "legacyAcceptance": "releasegateยืนยันcanonicalchapter1ครบทุกending/epilogue ไม่มีblockedmainroute"
     },
     {
       "id": "REL-002",
-      "phase": 8,
-      "title": "ระบบหลักครบ234recipes/mastery/quests/boss/save",
+      "phase": 13,
+      "title": "ระบบหลัก8LifePaths/พลัง/สูตร/โลก/ภารกิจ/เซฟครบV6",
       "status": "in_progress",
       "priority": "P0",
       "dependsOn": [
         "MAG-006",
         "CMB-007",
         "WRD-003",
-        "FND-005"
+        "FND-005",
+        "LIFE-001",
+        "LIFE-002",
+        "LIFE-003",
+        "LIFE-004",
+        "LIFE-005",
+        "LIFE-006",
+        "LIFE-007",
+        "LIFE-008",
+        "LIFE-009",
+        "POWER-001",
+        "MAG-010",
+        "WRD-009",
+        "WRD-010",
+        "WRD-011",
+        "WRD-012",
+        "CMB-011"
       ],
       "files": [
         "GODSEED/docs/TEST_REPORT.md"
       ],
       "evidence": "มีverticalslice/234definitions ไม่ใช่fullsystemsacceptance",
-      "acceptance": "mechanics/targets/quest/level/mastery/saveทั้งหมดผ่านacceptancetests ไม่เปิดAIก็จบได้",
+      "acceptance": "mechanics/targets/quest/level/mastery/saveทั้งหมดผ่านacceptancetests ไม่เปิดAIก็จบได้;8LifePaths/8ระดับความเข้าใจ/สังคมและเศรษฐกิจครบตามV6;234legacyrecipesยังใช้งานและtarget250ผ่านmigration/behavioraudit",
       "legacyIds": [
         "GS-016",
         "GS-023"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality",
+      "legacyTitle": "ระบบหลักครบ234recipes/mastery/quests/boss/save",
+      "legacyAcceptance": "mechanics/targets/quest/level/mastery/saveทั้งหมดผ่านacceptancetests ไม่เปิดAIก็จบได้"
     },
     {
       "id": "REL-003",
-      "phase": 8,
+      "phase": 13,
       "title": "ภาพ/VFXผ่านมาตรฐานHD Pixel Art",
       "status": "in_progress",
       "priority": "P1",
@@ -2218,11 +2516,14 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-004",
-      "phase": 8,
+      "phase": 13,
       "title": "ไม่มีบั๊กP0/P1ที่ทราบและregressionคงเขียว",
       "status": "in_progress",
       "priority": "P0",
@@ -2240,17 +2541,21 @@
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-005",
-      "phase": 8,
+      "phase": 13,
       "title": "เล่นตั้งแต่เริ่มจนจบจากcleaninstall/oldsave",
       "status": "not_started",
       "priority": "P0",
       "dependsOn": [
         "REL-001",
-        "REL-002"
+        "REL-002",
+        "ARC-012"
       ],
       "files": [
         "02_GODSEED_MASTER_SPEC.md"
@@ -2262,11 +2567,14 @@
         "GS-035"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-006",
-      "phase": 8,
+      "phase": 13,
       "title": "รองรับphone/iPad/desktopreleaseacceptance",
       "status": "in_progress",
       "priority": "P1",
@@ -2285,11 +2593,14 @@
         "GS-040"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-007",
-      "phase": 8,
+      "phase": 13,
       "title": "Production Build/lockfile/dependencies releasecandidate",
       "status": "in_progress",
       "priority": "P0",
@@ -2307,11 +2618,14 @@
         "GS-002"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-008",
-      "phase": 8,
+      "phase": 13,
       "title": "เผยแพร่1.0 GitHub Pagesพร้อมrollback",
       "status": "not_started",
       "priority": "P0",
@@ -2328,11 +2642,14 @@
         "GS-003"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-009",
-      "phase": 8,
+      "phase": 13,
       "title": "ตรวจเวอร์ชัน1.0บนเว็บจริง/endings/save/art",
       "status": "not_started",
       "priority": "P0",
@@ -2351,11 +2668,14 @@
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "REL-010",
-      "phase": 8,
+      "phase": 13,
       "title": "พร้อม1.0และhandoff/knownissues/release notes",
       "status": "not_started",
       "priority": "P0",
@@ -2381,11 +2701,14 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-05",
+      "legacyPhase": 8,
+      "legacyScope": "v1",
+      "domain": "quality"
     },
     {
       "id": "VIS-013",
-      "phase": 2,
+      "phase": 10,
       "title": "นำเข้า10ภาพอ้างอิงพร้อม provenance/ติดตาม9ด้านและกันออกจากProduction",
       "status": "done",
       "priority": "P1",
@@ -2411,11 +2734,14 @@
         "GODSEED/scripts/roadmap.test.mjs",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
         "GODSEED/docs/TEST_REPORT.md"
-      ]
+      ],
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
     },
     {
       "id": "VIS-014",
-      "phase": 2,
+      "phase": 10,
       "title": "ต้นแบบหมู่บ้าน/ใต้ต้นไม้: Anchor routes/idleทิศ/ท่านั่งคงอยู่",
       "status": "done",
       "priority": "P1",
@@ -2445,7 +2771,721 @@
         "GODSEED/tests/scene-definitions.test.ts",
         "GODSEED/docs/TEST_REPORT.md",
         "GODSEED/docs/evidence/session12/README.md"
+      ],
+      "legacyPhase": 2,
+      "legacyScope": "v1",
+      "domain": "visual"
+    },
+    {
+      "id": "AUD-001",
+      "phase": 0,
+      "domain": "quality",
+      "title": "Way of Xian benchmark จากเว็บ/สารานุกรมที่ตรวจได้",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-009"
+      ],
+      "files": [
+        "GODSEED/docs/QA_MATRIX.md",
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/docs/research/WAY_OF_XIAN_BENCHMARK.md"
+      ],
+      "evidence": "กำลังตรวจจริง;ผลวิจัยจะอยู่ docs/research/WAY_OF_XIAN_BENCHMARK.md ไม่อ้างเข้าถึงระบบที่networkไม่อนุญาต",
+      "acceptance": "แยกสิ่งที่ทดลองจริง/เข้าถึงไม่ได้/ข้อเสนอ พร้อมแหล่งและหลักฐาน Browser/mobile ไม่แต่งระบบที่ยังไม่เห็น",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "AUD-002",
+      "phase": 0,
+      "domain": "story",
+      "title": "หลักการเรื่องยาวจากแหล่งอ้างอิงที่อนุญาต",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-009"
+      ],
+      "files": [
+        "02_GODSEED_MASTER_SPEC.md",
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/docs/research/NARRATIVE_DESIGN_PRINCIPLES.md"
+      ],
+      "evidence": "กำลังศึกษาตามV6 ไม่คัดลอกตัวละคร/บท/ระบบเฉพาะ;ผลจะอยู่ docs/research/NARRATIVE_DESIGN_PRINCIPLES.md; ยืนยันรอบ20:เอกสารระบุofficialsources/ข้อจำกัดชัด;validator15negative/positivecasesและQuestUnit6ผ่าน, test:allผ่าน175unit/Content2/Roadmap10/Build;ไม่เท่ากับเกม1.0เสร็จ",
+      "acceptance": "วิเคราะห์นามธรรม Soul Land1–4/Swallowed Starจากแหล่งที่เข้าถึงจริง ระบุข้อจำกัด/ลิขสิทธิ์/การใช้ในGODSEEDต้นฉบับ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06",
+      "verification": "อ่านเอกสารวิจัยและsource observation:สรุปนามธรรมจากofficialsynopses/TOCที่เข้าถึงได้ ระบุapp/paywall/Qidian403และไม่อ้างว่าอ่านบททั้งหมดหรือสร้างเกมครบ",
+      "evidenceFiles": [
+        "GODSEED/docs/research/NARRATIVE_DESIGN_PRINCIPLES.md",
+        "GODSEED/docs/research/evidence/web-observations.json"
       ]
+    },
+    {
+      "id": "PIPE-001",
+      "phase": 2,
+      "domain": "quality",
+      "title": "Story graph/condition/quest/reference validator และ baseline ที่ทำซ้ำได้",
+      "status": "done",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-003"
+      ],
+      "files": [
+        "GODSEED/scripts/inspect-content.mjs",
+        "GODSEED/tests/content.test.ts",
+        "GODSEED/scripts/story-graph.mjs",
+        "GODSEED/scripts/story-graph.test.mjs"
+      ],
+      "evidence": "กำลังสร้างstory-graph.mjsและbaselineก่อนขยาย ไม่ใช้Roadmapนับplayablecontent; ยืนยันรอบ20:เอกสารระบุofficialsources/ข้อจำกัดชัด;validator15negative/positivecasesและQuestUnit6ผ่าน, test:allผ่าน175unit/Content2/Roadmap10/Build;ไม่เท่ากับเกม1.0เสร็จ",
+      "acceptance": "ตรวจunknown refs/deadends/structuralunreachable/conditions/questchainsจากข้อมูลจริง แยกboundedstate-witnessจากgraphreachability และลบfixtureที่ล้มเหลวไม่ได้",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06",
+      "verification": "15validatorcases/6Questunitผ่าน;actualboundedsearch46nodes138choices121recipes/2completionwitness ไม่มีerror/deadlock;ไม่พิสูจน์exhaustiveallseeds",
+      "evidenceFiles": [
+        "GODSEED/docs/evidence/session20/graph-tests.txt",
+        "GODSEED/docs/evidence/session20/story-graph.json",
+        "GODSEED/docs/research/GODSEED_V6_BASELINE.md"
+      ]
+    },
+    {
+      "id": "PIPE-002",
+      "phase": 2,
+      "domain": "story",
+      "title": "Content production contract สำหรับเพิ่มบทเป็นชุด",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "PIPE-001",
+        "STO-002"
+      ],
+      "files": [
+        "GODSEED/src/content/story.ts",
+        "GODSEED/src/systems/story.ts",
+        "GODSEED/tests/content.test.ts"
+      ],
+      "evidence": "ใช้StoryScene/Choice/cinematic/staging/timeและQuestcontractsกับ25nodes72choicesใหม่จริง แต่explicitChapterและbatchauthoringtoolingยังไม่ครบ",
+      "acceptance": "ทุกNodeมีchapter/location/narrative/preconditions/actions/choices/effects/rewards/next/NPC/cinematicmetadata;ใช้batchที่เล่นจบและมีvalidation+witnessจริง ไม่สร้างfillerให้ครบตัวเลข",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-001",
+      "phase": 4,
+      "domain": "systems",
+      "title": "Life Path engine/ข้ามสาย/requirement และ file migration",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "FND-008",
+        "PIPE-002"
+      ],
+      "files": [
+        "GODSEED/src/engine/state.ts",
+        "GODSEED/src/engine/save-file.ts",
+        "GODSEED/src/systems/game.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว;ต่อยอดRAM/File2ที่ผ่านแล้วโดยมีmigrationtestsของงานนี้ ไม่ต้องรอphysicalhardwareacceptanceของFND-005ก่อนเริ่มเขียนระบบ",
+      "acceptance": "เลือกเริ่ม/ฝึก/เปลี่ยนหรือเรียนข้ามสายด้วยเงื่อนไข deterministic ผลต่อcombat/story/resourcesแตกต่าง;ข้อมูลใหม่ในRAM/.godseedเท่านั้น oldfilemigrateได้",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-002",
+      "phase": 4,
+      "domain": "systems",
+      "title": "นักเวทพเนจร",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือการเดินทางและปรับสูตรตามพื้นที่;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-003",
+      "phase": 4,
+      "domain": "systems",
+      "title": "นักปรุงเวท",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือเตรียมวัตถุดิบและปรับพฤติกรรมสูตร;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-004",
+      "phase": 4,
+      "domain": "systems",
+      "title": "นักสำรวจ",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือเส้นทาง/ข่าวลือ/สถานที่ลับ;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-005",
+      "phase": 4,
+      "domain": "systems",
+      "title": "นักวิจัยอักขระ",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือถอดกฎ/จารึก/ความรู้ที่เผยแพร่ได้;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-006",
+      "phase": 4,
+      "domain": "systems",
+      "title": "ผู้พิทักษ์ธรรมชาติ",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือฟื้นฟูพื้นที่และสิ่งมีชีวิต;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-007",
+      "phase": 4,
+      "domain": "systems",
+      "title": "พ่อค้าเวทมนตร์",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือการค้า/ข้อตกลง/ทรัพยากร;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-008",
+      "phase": 4,
+      "domain": "systems",
+      "title": "นักฝึกพลังและการต่อสู้",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือการอ่านintentและชุดเวทเชิงกลยุทธ์;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "LIFE-009",
+      "phase": 4,
+      "domain": "systems",
+      "title": "คนธรรมดาผู้เปลี่ยนโลก",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "LIFE-001",
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือความสัมพันธ์/งานชุมชนที่มีผลกับโลก;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "POWER-001",
+      "phase": 5,
+      "domain": "magic",
+      "title": "8ระดับความเข้าใจจากธาตุถึงต้นกำเนิด",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-006",
+        "LIFE-001"
+      ],
+      "files": [
+        "GODSEED/src/systems/spells.ts",
+        "GODSEED/src/engine/state.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "ทั้ง8ระดับมีrequirement/unlock/combat/story/limit/training/knowledgecheck;ไม่ใช่เพิ่มเลขพลังอย่างเดียว;ทดสอบข้ามระดับไม่ได้และoldsaveไม่เสีย",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "MAG-010",
+      "phase": 5,
+      "domain": "magic",
+      "title": "V6 Element/Form/Modifier/Catalyst และประมาณ250สูตรที่มีพฤติกรรมจริง",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-003",
+        "MAG-004",
+        "MAG-006"
+      ],
+      "files": [
+        "GODSEED/src/systems/spells.ts",
+        "GODSEED/tests/save.test.ts"
+      ],
+      "evidence": "ปัจจุบัน234legalเดิมยังเป็นมาตรฐาน runtime;250และรายชื่อV6เป็นเป้าหมาย ยังไม่เปลี่ยนสูตรหรืออ้างว่าสร้างแล้ว",
+      "acceptance": "ออกแบบcompatibilitymappingจาก234legacyIDsไปV6(8elements/7forms/8mods/catalysts)ก่อนเปลี่ยน;สูตรใหม่deterministic/ต่างเชิงbehavior/MP/target/VFX/combination/story;ทุกสูตรเปิดให้ใช้หาingredientsได้และoldfilesผ่าน",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "WRD-009",
+      "phase": 7,
+      "domain": "systems",
+      "title": "หกสมาคม/reputation/ข้อตกลงและผลระหว่างฝ่าย",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "STO-003",
+        "LIFE-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "หกสมาคมต้นฉบับมีเป้าหมาย/งาน/ข้อตกลง/ข้อเสียและผลข้ามฝ่ายที่ตรวจได้ ข่าวลือมาจากfactจริงและมีfallback",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "WRD-010",
+      "phase": 7,
+      "domain": "systems",
+      "title": "เศรษฐกิจ/ร้านค้า/การสร้างสิ่งของและแหล่งทรัพยากร",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "MAG-002",
+        "FND-008"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "ซื้อขาย/ปรุงหรือสร้างมีต้นทุน/แหล่งรับ/ข้อจำกัดจริง ไม่สร้างเงินจากloop;ราคาตามworldfactsมีtests;ไม่paid/FOMOและไม่มีcloudstate",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "WRD-011",
+      "phase": 7,
+      "domain": "systems",
+      "title": "ฤดูกาล/อากาศ/การเดินทาง/กิจวัตรและข่าวลือตามเหตุ",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "WRD-005",
+        "WRD-002",
+        "WRD-009"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "eventconditionตามเวลา/ฤดู/อากาศ/เมือง/ป่า/NPC/เส้นทางและworldflags deterministic;ผู้เล่นมีวิธีเตรียม/รอ ไม่ล็อกmainroute;ข่าวลือเช็คsourcefact",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "WRD-012",
+      "phase": 7,
+      "domain": "systems",
+      "title": "Legacy knowledge และการเปลี่ยนสภาพโลกที่ส่งต่อ",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "WRD-004",
+        "POWER-001",
+        "STO-003"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "ความรู้ที่สืบทอด/ฟื้นฟู/เปิดทางเปลี่ยนกิจกรรมNPC/ทรัพยากร/เมืองจริงในฉากและเหตุการณ์;ย้อนกลับและmanualfileคืนสถานะถูก ไม่ให้AIแก้state",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-001",
+      "phase": 3,
+      "domain": "story",
+      "title": "ARC 1 — เมล็ดพันธุ์แรก",
+      "status": "in_progress",
+      "priority": "P1",
+      "dependsOn": [
+        "PIPE-002",
+        "STO-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts",
+        "GODSEED/docs/evidence/session20/README.md",
+        "GODSEED/docs/evidence/session20/REPORT_TH.md"
+      ],
+      "evidence": "กำลังขยายopeningจากของเดิม;รอunit/browser/statefulrouteก่อนพิจารณาเสร็จ ไม่ถือว่าทั้งARCเสร็จจากการออกแบบ; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;หมู่บ้าน ความผูกพันกับNPC/วัตถุดิบ/เวทแรก/การต่อสู้และบทสรุปย่อย;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-002",
+      "phase": 8,
+      "domain": "story",
+      "title": "ARC 2 — เสียงกระซิบจากพฤกษา",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;ป่า/ต้นไม้ ความทรงจำ/เวทสิ่งแวดล้อม/สถานที่ลับ/ผลทางเลือกเก่า;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-003",
+      "phase": 8,
+      "domain": "story",
+      "title": "ARC 3 — เมืองแห่งเจ็ดหอคอย",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-002",
+        "LIFE-001",
+        "WRD-010"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;เมือง/อาจารย์/เส้นทางชีวิต/ร้านค้า/สร้างอุปกรณ์/ภารกิจเฉพาะสาย;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-004",
+      "phase": 8,
+      "domain": "story",
+      "title": "ARC 4 — ตำราแห่งธาตุที่สูญหาย",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-003"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;ความรู้/ผสมขั้นสูง/ปริศนาเงื่อนไข/ประวัติศาสตร์วัตถุดิบ;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-005",
+      "phase": 8,
+      "domain": "story",
+      "title": "ARC 5 — สัญญาระหว่างหกสมาคม",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-004",
+        "WRD-009"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;กลุ่ม/ข้อตกลง/ชื่อเสียง/เศรษฐกิจ/ผลระหว่างฝ่าย;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-006",
+      "phase": 8,
+      "domain": "story",
+      "title": "ARC 6 — ทะเลหมอกไร้แผนที่",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-005"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;พื้นที่ใหม่/อากาศ/ข้อมูล/ทรัพยากร/ความลับที่เชื่อมของเก่า;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-007",
+      "phase": 9,
+      "domain": "story",
+      "title": "ARC 7 — มรดกของผู้ไร้นาม",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-006",
+        "WRD-012"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;ประวัติศาสตร์/legacy/knowledge/NPCmemory/branchingrevelations;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-008",
+      "phase": 9,
+      "domain": "story",
+      "title": "ARC 8 — เมืองที่หลงลืมเวลา",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-007"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;timeline/causeeffect/สถานะเมือง/ผู้ได้รับความช่วยเหลือ;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-009",
+      "phase": 9,
+      "domain": "story",
+      "title": "ARC 9 — ประตูแห่งรากโลก",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-008",
+        "POWER-001"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;mastery/บททดสอบเฉพาะสาย/เงื่อนไขเก่า/กลยุทธ์;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-010",
+      "phase": 9,
+      "domain": "story",
+      "title": "ARC 10 — อาณาจักรเหนือม่านดารา",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-009"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;กฎเวทใหม่/วัฒนธรรม/วัตถุดิบ/การปรับความรู้เดิม โดยคงFantasy;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-011",
+      "phase": 9,
+      "domain": "story",
+      "title": "ARC 11 — สงครามแห่งความทรงจำ",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-010",
+        "CMB-009",
+        "STO-003"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;ผลworld/faction/ally/bossจากการตัดสินใจสะสม ไม่สุ่มผลลัพธ์;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "ARC-012",
+      "phase": 9,
+      "domain": "story",
+      "title": "ARC 12 — GODSEED: ผู้เขียนอนาคต",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "ARC-011"
+      ],
+      "files": [
+        "03_CODEX_CONTINUE_FOREVER.md",
+        "GODSEED/src/content/story.ts"
+      ],
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว",
+      "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;ต้นกำเนิด/ทางเลือกอนาคต/บทสรุปชีวิตหลายคุณค่า ไม่บังคับพลังสูงสุด;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "CMB-010",
+      "phase": 6,
+      "domain": "combat",
+      "title": "V6ศัตรูประมาณ30แบบที่ต่างเชิงพฤติกรรม",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-003",
+        "CMB-004",
+        "CMB-006"
+      ],
+      "files": [
+        "GODSEED/src/content/encounters.ts",
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/combat.test.ts"
+      ],
+      "evidence": "V6เป้าหมายขยายcatalog;ปัจจุบัน4encountersรวมBT/B01/B02/B03ไม่เท่ากับ30ศัตรู/10บอส ยังไม่สร้างส่วนขยายนี้",
+      "acceptance": "ศัตรูเป้าหมาย≈30ประเภทมีintent/กฎ/จุดอ่อน/รางวัล/routeจริง รูปแบบเกราะ/เร็ว/เปลี่ยนธาตุ/สนับสนุน/ตอบสิ่งแวดล้อมต่างกัน ทดสอบชนะ/หนี/ยอมแพ้/แพ้ที่เปิดใช้ได้ ไม่เปลี่ยนชื่ออย่างเดียว",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
+    },
+    {
+      "id": "CMB-011",
+      "phase": 6,
+      "domain": "combat",
+      "title": "V6บอสประมาณ10ตัวและกลไกตามบท",
+      "status": "not_started",
+      "priority": "P1",
+      "dependsOn": [
+        "CMB-007",
+        "CMB-010"
+      ],
+      "files": [
+        "GODSEED/src/content/encounters.ts",
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/combat.test.ts"
+      ],
+      "evidence": "V6เป้าหมายขยายcatalog;ปัจจุบัน4encountersรวมBT/B01/B02/B03ไม่เท่ากับ30ศัตรู/10บอส ยังไม่สร้างส่วนขยายนี้",
+      "acceptance": "บอสเป้าหมาย≈10ตัวรวมguardianเดิมมีtelegraph/counterplay/phase/storyconsequences/ภาพเฉพาะครบ มีstrategiesที่ยุติธรรมและmanualfileกลางturnรองรับ ทุกตัวเข้าถึงจากบทจริง",
+      "legacyIds": [],
+      "scope": "v1",
+      "reviewed": "2026-11-06"
     }
   ],
   "locations": [
@@ -2690,5 +3730,561 @@
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     }
+  ],
+  "directive": "V6.0",
+  "scopeDefinition": "V6.0: GODSEED 1.0 ขยายเป็น 12 ARC, 8 Life Paths และผลลัพธ์ปลายทางหลากหลายตามหลักฐานการเล่นจริง เป้าหมายตัวเลขเป็นประมาณการ ไม่ใช่ข้อมูลที่สร้างแล้ว รักษาเกม choice-driven/HD Pixel Art/Turn-Based/Manual File Save และ ID เดิมทั้งหมด",
+  "scopeHistory": [
+    {
+      "date": "2026-11-06",
+      "directive": "V6.0",
+      "previous": "ก่อน V6: 1.0 = บทแรกครบสามบทสรุป; CH2/CH3 เป็นหลัง1.0",
+      "previousPhases": [
+        {
+          "id": 1,
+          "title": "โครงสร้างพื้นฐาน"
+        },
+        {
+          "id": 2,
+          "title": "งานภาพ Pixel Art HD"
+        },
+        {
+          "id": 3,
+          "title": "ระบบเนื้อเรื่อง"
+        },
+        {
+          "id": 4,
+          "title": "ระบบเวทมนตร์"
+        },
+        {
+          "id": 5,
+          "title": "ระบบต่อสู้"
+        },
+        {
+          "id": 6,
+          "title": "โลกและเนื้อหาขนาดใหญ่"
+        },
+        {
+          "id": 7,
+          "title": "คุณภาพเกม"
+        },
+        {
+          "id": 8,
+          "title": "เกมฉบับสมบูรณ์"
+        }
+      ],
+      "previousTasks": [
+        {
+          "id": "FND-001",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "FND-002",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "FND-003",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "FND-004",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "FND-005",
+          "phase": 1,
+          "scope": "v1",
+          "status": "blocked"
+        },
+        {
+          "id": "FND-006",
+          "phase": 1,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "FND-007",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "FND-008",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "FND-009",
+          "phase": 1,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "VIS-001",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-002",
+          "phase": 2,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "VIS-003",
+          "phase": 2,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "VIS-004",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-005",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-006",
+          "phase": 2,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "VIS-007",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-008",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-009",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-010",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "VIS-011",
+          "phase": 2,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "VIS-012",
+          "phase": 2,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "STO-001",
+          "phase": 3,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "STO-002",
+          "phase": 3,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "STO-003",
+          "phase": 3,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "STO-004",
+          "phase": 3,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "STO-005",
+          "phase": 3,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "STO-006",
+          "phase": 3,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "STO-007",
+          "phase": 3,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "STO-008",
+          "phase": 3,
+          "scope": "optional",
+          "status": "not_started"
+        },
+        {
+          "id": "MAG-001",
+          "phase": 4,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "MAG-002",
+          "phase": 4,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "MAG-003",
+          "phase": 4,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "MAG-004",
+          "phase": 4,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "MAG-005",
+          "phase": 4,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "MAG-006",
+          "phase": 4,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "MAG-007",
+          "phase": 4,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "MAG-008",
+          "phase": 4,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "MAG-009",
+          "phase": 4,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "CMB-001",
+          "phase": 5,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "CMB-002",
+          "phase": 5,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "CMB-003",
+          "phase": 5,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "CMB-004",
+          "phase": 5,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "CMB-005",
+          "phase": 5,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "CMB-006",
+          "phase": 5,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "CMB-007",
+          "phase": 5,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "CMB-008",
+          "phase": 5,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "CMB-009",
+          "phase": 5,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "WRD-001",
+          "phase": 6,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "WRD-002",
+          "phase": 6,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "WRD-003",
+          "phase": 6,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "WRD-004",
+          "phase": 6,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "WRD-005",
+          "phase": 6,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "WRD-006",
+          "phase": 6,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "WRD-007",
+          "phase": 6,
+          "scope": "post-v1",
+          "status": "not_started"
+        },
+        {
+          "id": "WRD-008",
+          "phase": 6,
+          "scope": "post-v1",
+          "status": "not_started"
+        },
+        {
+          "id": "QA-001",
+          "phase": 7,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "QA-002",
+          "phase": 7,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "QA-003",
+          "phase": 7,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "QA-004",
+          "phase": 7,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "QA-005",
+          "phase": 7,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "QA-006",
+          "phase": 7,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "QA-007",
+          "phase": 7,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "QA-008",
+          "phase": 7,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "QA-009",
+          "phase": 7,
+          "scope": "v1",
+          "status": "blocked"
+        },
+        {
+          "id": "REL-001",
+          "phase": 8,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "REL-002",
+          "phase": 8,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "REL-003",
+          "phase": 8,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "REL-004",
+          "phase": 8,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "REL-005",
+          "phase": 8,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "REL-006",
+          "phase": 8,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "REL-007",
+          "phase": 8,
+          "scope": "v1",
+          "status": "in_progress"
+        },
+        {
+          "id": "REL-008",
+          "phase": 8,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "REL-009",
+          "phase": 8,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "REL-010",
+          "phase": 8,
+          "scope": "v1",
+          "status": "not_started"
+        },
+        {
+          "id": "VIS-013",
+          "phase": 2,
+          "scope": "v1",
+          "status": "done"
+        },
+        {
+          "id": "VIS-014",
+          "phase": 2,
+          "scope": "v1",
+          "status": "done"
+        }
+      ],
+      "previousChecklist": {
+        "done": 21,
+        "total": 76,
+        "percent": 27.6
+      },
+      "reason": "เจ้าของขยายขอบเขตเป็น12ARC/8LifePaths เปอร์เซ็นต์ใหม่เปลี่ยนจากขอบเขต ไม่ลบหรือย้อนเครดิตงานเดิม"
+    }
+  ],
+  "designTargets": {
+    "storyNodes": 500,
+    "consequentialChoices": 1000,
+    "lifePaths": 8,
+    "arcs": 12,
+    "importantNPCs": 30,
+    "ingredients": 100,
+    "usableSpells": 250,
+    "enemyTypes": 30,
+    "bosses": 10,
+    "endings": 15
+  },
+  "progressDomains": [
+    {
+      "id": "systems",
+      "title": "ระบบเกม"
+    },
+    {
+      "id": "story",
+      "title": "เนื้อเรื่อง"
+    },
+    {
+      "id": "visual",
+      "title": "ภาพและแอนิเมชัน"
+    },
+    {
+      "id": "magic",
+      "title": "เวทมนตร์"
+    },
+    {
+      "id": "combat",
+      "title": "การต่อสู้"
+    },
+    {
+      "id": "quality",
+      "title": "คุณภาพและการทดสอบ"
+    }
+  ],
+  "workQueue": [
+    "PIPE-001",
+    "PIPE-002",
+    "ARC-001",
+    "LIFE-001",
+    "MAG-008",
+    "CMB-006",
+    "ARC-002",
+    "VIS-008",
+    "QA-003"
   ]
 }

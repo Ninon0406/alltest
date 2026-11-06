@@ -1,4 +1,4 @@
-# GODSEED DEVELOPMENT REPORT — รอบ19 / candidate 0.9.0
+# GODSEED DEVELOPMENT REPORT — รอบ19 / 0.9.0
 
 ## 1. สถานะก่อนเริ่ม
 
@@ -33,11 +33,11 @@ Manual File Save เท่านั้น เก็บความคืบห�
 | Roadmap | 8/8ผ่าน |
 | FocusBrowser | 10/10ผ่าน3.4นาที; หลังแก้ท่าถอยตรวจอีก2/2บน390×844และ1366×768ผ่าน50.4วินาที ไม่ได้นับเป็น12กรณีที่ต่างกัน |
 | หน้าจอใหม่ | Focus5ขนาดและPreviewเพิ่มครบ10ขนาดตามสเปก:360/390/430/844/768/820/1024/1366/1440/1920;TouchและKeyboardEnterผ่าน ไม่มีhorizontaloverflow/consoleerror — [ผล](preview-layout.json) |
-| FullBrowser | กำลังรัน123กรณีจากโค้ดหลังแก้ท่าถอย ไม่ใช้ชุดที่ยกเลิกแทน |
+| FullBrowser | 123/123ผ่านในเครื่อง28.1นาที, PR CI18.3นาที, Main CI20.2นาที จากโค้ดหลังแก้ท่าถอย |
 | Balance | 64/64ชนะจาก32seeds×2วิธีเล่น เส้นทางรับของจริง;4–7เทิร์น จบHP60–80/MP0–2 — [ข้อมูล](balance.json) |
 | PNG | ทุก78ไฟล์สร้างซ้ำตรงbyte;70เดิมไม่เปลี่ยน/8ใหม่ |
 | Previewล่าสุด | ไฟล์0.8เดิม/nativepicker/รูน/กล่องเพลง/questonce/เกราะfileturn/เวทป้องกัน/fallback/retryผ่าน;0storage/0upload/0normalconsoleerrors |
-| CI/Deploy/Public0.9.0 | รอผลหลังCommit/PRและตรวจเว็บจริง |
+| CI/Deploy/Public0.9.0 | ผ่าน PR18/MainCI42250048254/Deploy และเว็บ0.9.0จริง |
 | Safari/อุปกรณ์จริง/FPS/thermal/ความสนุกโดยผู้เล่น/finalHD | ยังไม่ได้ทดสอบ |
 
 ประวัติปัญหาและวิธีแก้เก็บใน[README](README.md): ฐานเสาขวางจุดเข้า,fixtureไม่พักMP,ตัวตรวจpropsรองรับเฉพาะAtlasเก่า,ช่วงตรวจความลึกสั้นเกินpoll,ตัวตรวจคาดแท่นopenแทนremembered และ[ท่าถอยตัดฐานเสาจริง](retreat-regression-before.txt). แก้ข้อมูล/โค้ดที่สาเหตุ ใช้RAFอ่านเฟรมและรักษาความทรงจำเดิม ไม่ลบAssertionหรือskipกรณีทดสอบ ชุดเต็มแรกยกเลิกก่อนจบเพื่อทดสอบsourceที่แก้ท่าถอยแล้ว
@@ -77,6 +77,11 @@ B04/B05/เทศกาลและตอนจบยังไม่สร้า
 
 ## 8. สถานะพร้อมเล่นและGitHub
 
-Candidate0.9.0 Buildผ่านและPreviewเล่นได้ เว็บล่าสุดยัง0.8.0จนกว่าPR/CI/Deployผ่าน ผลsourcecommit/PR/mainCI/public/postdeployจะเพิ่มหลังตรวจจริง ไม่ใช้ผลรุ่นก่อนแทน
+เผยแพร่0.9.0แล้ว Source9b2cca2/PR18/merge825bfa5;MainCI42250048254ผ่าน123/123และDeploy ตรวจเว็บจริงcore+ruins+10viewportผ่าน รวม4encountersและ5สูตรที่ต่างกันในสองflow ไฟล์0.8เก่า/import/checkpoint/refreshว่าง/questonce/fallback/retryผ่าน 0storage/0upload/0reference/0normalconsoleerrors;controllednetworkerror1แยกจากpositiveflow Post-Actions67PNG+JS SHA256 dbc7fe4f4fc2cdde020375fe64bf34a1b39bcfcf92a56c3a4bca66cae1e0be7f ตรงBuild
 
 CIหมายเหตุ:Run42239707225ถูกยกเลิกหลังfontmirrorช้า11นาทีและก่อนE2E ไม่ใช่PASS อัปเดตWorkflowให้ใช้Ubuntu24.04/ThaiLoma/Chromiumheadlessshellและยังต้องผ่าน123กรณีครบก่อนรวมPR
+
+
+## ปิดรอบ19 ก่อนขยายV6
+
+ตัวเลข21/76=27.6%ในรายงานนี้เป็นsnapshotขอบเขตก่อนV6 คำสั่งV6ขยาย1.0เป็น12ARC/8pathsและPhase0–13แล้ว ดูRoadmapปัจจุบันและรายงานsession20 ไม่ใช้ตัวหารเก่านับงานV6 การวัดประสิทธิภาพเพิ่มเติมอยู่ในPERFORMANCE.mdและยังไม่ใช่physicalacceptance

@@ -1,0 +1,100 @@
+{
+  "result": "PASS_DIAGNOSTIC",
+  "url": "http://127.0.0.1:4190/",
+  "version": "0.9.0",
+  "browser": "154.0.8037.57",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "titlePngs": 23,
+  "titlePngEncodedBytes": 301231,
+  "samples": [
+    {
+      "cpuRate": 1,
+      "reducedMotion": false,
+      "sampleMs": 8016.299999999999,
+      "intervals": 472,
+      "meanMs": 16.983686440677964,
+      "p50Ms": 16.699999999999818,
+      "p95Ms": 16.799999999999272,
+      "p99Ms": 33.30000000000018,
+      "intervalsOver50Ms": 0
+    },
+    {
+      "cpuRate": 4,
+      "reducedMotion": false,
+      "sampleMs": 8016.4,
+      "intervals": 353,
+      "meanMs": 22.709348441926345,
+      "p50Ms": 16.700000000000728,
+      "p95Ms": 33.399999999999636,
+      "p99Ms": 50.099999999998545,
+      "intervalsOver50Ms": 4
+    },
+    {
+      "cpuRate": 4,
+      "reducedMotion": true,
+      "sampleMs": 8033,
+      "intervals": 352,
+      "meanMs": 22.821022727272727,
+      "p50Ms": 16.700000000000728,
+      "p95Ms": 33.400000000001455,
+      "p99Ms": 50.099999999998545,
+      "intervalsOver50Ms": 4
+    }
+  ],
+  "revisits": 20,
+  "newPngRequestsOnWarmRevisits": 0,
+  "warmRevisitSamples": [
+    {
+      "revisits": 5,
+      "metrics": {
+        "Documents": 1,
+        "LayoutObjects": 61,
+        "Nodes": 216,
+        "JSHeapUsedSize": 8745516
+      }
+    },
+    {
+      "revisits": 10,
+      "metrics": {
+        "Documents": 1,
+        "LayoutObjects": 61,
+        "Nodes": 216,
+        "JSHeapUsedSize": 8844296
+      }
+    },
+    {
+      "revisits": 20,
+      "metrics": {
+        "Documents": 1,
+        "LayoutObjects": 61,
+        "Nodes": 216,
+        "JSHeapUsedSize": 8966144
+      }
+    }
+  ],
+  "memory": {
+    "before": {
+      "Documents": 1,
+      "LayoutObjects": 61,
+      "Nodes": 216,
+      "JSHeapUsedSize": 8417900
+    },
+    "after": {
+      "Documents": 1,
+      "LayoutObjects": 61,
+      "Nodes": 216,
+      "JSHeapUsedSize": 8961888
+    },
+    "delta": {
+      "Documents": 0,
+      "LayoutObjects": 0,
+      "Nodes": 0,
+      "JSHeapUsedSize": 543988
+    }
+  },
+  "consoleErrors": [],
+  "scope": "8-second stable ruins samples in headless desktop Chromium at CPU1/4. Loopback byte counts are not internet timings. GC heap samples do not prove absence of leaks. No real mobile GPU/FPS/thermal or animation/VFX load acceptance."
+}

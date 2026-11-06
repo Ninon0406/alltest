@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "oldUnchanged": 78,
+  "reproduced": 79,
+  "newFiles": 1,
+  "newBytes": 2418,
+  "sha256": "715a38a92401f166e44ca8dedde2cee5791fa52336455f2bccd890f715b8c055"
+}

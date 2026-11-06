@@ -1,0 +1,109 @@
+{
+  "accessedDate": "2026-11-06 UTC",
+  "method": "Supported web retrieval/search service; static/indexed official pages, not interactive browser gameplay.",
+  "executorBrowserResult": "Both Way of Xian URLs failed ERR_TUNNEL_CONNECTION_FAILED; no proxy/network-policy bypass.",
+  "sources": [
+    {
+      "url": "https://way-of-xian.wox-game.workers.dev/",
+      "result": "HTML_SHELL_ONLY",
+      "observed": [
+        "Game title and loading state",
+        "Theme control",
+        "Speed control group"
+      ],
+      "notVerified": [
+        "All gameplay systems",
+        "Mobile layout or interaction quality",
+        "Counts or completion paths"
+      ]
+    },
+    {
+      "url": "https://way-of-xian.wox-game.workers.dev/wiki",
+      "result": "HTML_SHELL_ONLY",
+      "observed": [
+        "Encyclopedia header",
+        "Menu control",
+        "Search input",
+        "Language control",
+        "Back-to-game link"
+      ],
+      "notVerified": [
+        "Search results",
+        "Language toggle behavior",
+        "System article content"
+      ]
+    },
+    {
+      "url": "https://www.webnovel.com/book/soul-land_28854123108881805",
+      "result": "OFFICIAL_SYNOPSIS_METADATA",
+      "observed": [
+        "Book identity and author",
+        "Synopsis describes discovering ability with daily-life and combat uses"
+      ],
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/8099443605005505",
+      "result": "OFFICIAL_SYNOPSIS_METADATA_AND_PARTIAL_TOC",
+      "observed": [
+        "Book identity and author",
+        "Synopsis connects inherited organization and new techniques/tools"
+      ],
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/8093958205004005",
+      "result": "OFFICIAL_SYNOPSIS_METADATA",
+      "observed": [
+        "Book identity and author",
+        "Synopsis connects societal change and resource/ecological conflict"
+      ],
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/14107168305361805",
+      "result": "OFFICIAL_SYNOPSIS_METADATA",
+      "observed": [
+        "Book identity and author",
+        "Synopsis presents a later era and an origin mystery"
+      ],
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/swallowed-star_7213811205000505",
+      "result": "OFFICIAL_SYNOPSIS_METADATA",
+      "observed": [
+        "Author shown as I Eat Tomatoes",
+        "Title and completion metadata"
+      ],
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/7213811205000505/catalog",
+      "result": "OFFICIAL_TOC",
+      "observed": [
+        "Early titles about tests/training/equipment/resources",
+        "Later titles about inheritance and wider regions",
+        "Final episode entry"
+      ],
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/swallowed-star_7213811205000505/transcending-reincarnation-(the-final-episode)-part-2_35943895548354032",
+      "result": "OFFICIAL_PREVIEW_ONLY",
+      "observed": [
+        "Short opening preview",
+        "App continuation prompt"
+      ],
+      "fullEndingRead": false
+    },
+    {
+      "url": "https://book.qidian.com/info/1639199/",
+      "result": "HTTP_403",
+      "observed": [],
+      "fullNovelRead": false
+    }
+  ],
+  "originality": "Only brief paraphrased observations and original design recommendations stored. No fiction chapters, game code, original artwork, credentials or save data copied.",
+  "interpretation": "Narrative principles are GODSEED design proposals informed by accessible high-level sources, not verified claims about complete source narratives."
+}

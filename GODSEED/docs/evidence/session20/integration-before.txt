@@ -1,0 +1,141 @@
+
+> godseed@0.10.0 test:all
+> npm run roadmap:check && npm run validate:references && npm run validate:manual-save && npm run validate:story && npm run typecheck && npm run lint && npm run validate:content && npm test && npm run build
+
+
+> godseed@0.10.0 roadmap:check
+> node --test scripts/roadmap.test.mjs && node scripts/roadmap.mjs
+
+✔ counts only DONE, including zero/all and each non-done state (3.585249ms)
+✔ current audit has valid references, deterministic checklist and checked boxes only for DONE (23.717063ms)
+✔ duplicate and unknown dependency IDs reject (10.192338ms)
+✔ cycles and missing source evidence reject (7.454917ms)
+✔ unsupported status and DONE without actual verification record reject (2.747395ms)
+✔ next-work list excludes done/blocked tasks and promotes actual regressions (20.603666ms)
+✔ location records reject missing aspects, duplicate locations and premature final readiness (19.231735ms)
+✔ manual save subtasks have stable IDs, evidence and do not inflate the main denominator (8.243788ms)
+✔ V6 preserves legacy IDs/phase/scope history while allowing unfinished expanded scope (14.492004ms)
+✔ six domains partition milestones exactly once; designs and save substeps add no completion credit (8.406272ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 206.530783
+{"result":"PASS","done":21,"in_progress":43,"not_started":43,"problem":0,"blocked":2,"total":109,"percent":19.3,"v1":{"done":21,"in_progress":43,"not_started":42,"problem":0,"blocked":2,"total":108,"percent":19.4}}
+
+> godseed@0.10.0 validate:references
+> node scripts/validate-references.mjs
+
+{"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}
+
+> godseed@0.10.0 validate:manual-save
+> node scripts/validate-manual-save.mjs
+
+{"result":"PASS","applicationFiles":34,"policy":"RAM only; explicit file export/import; no progress storage or outbound upload API in application source"}
+
+> godseed@0.10.0 validate:story
+> node --test scripts/story-graph.test.mjs && node scripts/story-graph.mjs
+
+✔ static graph reports structural counts without claiming executable quests or life paths (2.574765ms)
+✔ missing transitions and duplicated global choice IDs fail (0.668889ms)
+✔ duplicate source definitions cannot hide behind Object.fromEntries (0.20572ms)
+✔ unlinked story nodes and closed non-ending loops fail (0.173041ms)
+✔ reaching a self loop still fails when it cannot escape to a safe hub or ending (0.183467ms)
+✔ authored ending is allowed to terminate and is distinct from an accidental dead end (0.173331ms)
+✔ condition typos, impossible flag sources and unknown spell cores fail (0.216437ms)
+✔ flag produced on an entry or literal engine action is a legal prerequisite (0.353774ms)
+✔ reward IDs, quantities, relationship IDs and shared onceFlag guards are checked (0.379903ms)
+✔ battle victory, defeat and dynamic checkpoint recovery are explicit graph edges (0.44375ms)
+✔ scene staging and source choice cinematic anchors resolve against real map metadata (0.365952ms)
+✔ structured quest chains reject wrong scene references and unconnected steps (0.890624ms)
+✔ invalid recipe definitions fail instead of inflating usable spell counts (0.1724ms)
+✔ actual catalog and bounded real reducer exploration remain separate proof levels (920.508397ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1028.430903
+{
+  "result": "PASS",
+  "scope": "Static catalog validation and structural reachability; conditions and combat wins are not assumed executable",
+  "counts": {
+    "storyNodes": 46,
+    "choices": 142,
+    "declaredEffectChoices": 142,
+    "structurallyReachableNodes": 46,
+    "endings": 0,
+    "encounters": 4,
+    "recipeDefinitions": 234,
+    "uniqueRecipes": 234,
+    "declaredQuestChains": 2,
+    "completableQuests": null,
+    "implementedLifePaths": null,
+    "stages": 7
+  },
+  "structurallyReachable": [
+    "S00_WAKE",
+    "S01_FIRST_STEPS",
+    "S02_HUB",
+    "S02_TREE",
+    "S03B_MAREN",
+    "S03_LUMI",
+    "S04_KORO",
+    "S05_CRAFT_TUTORIAL",
+    "S06_GARDEN",
+    "S07_ARCHIVE",
+    "S08_FOREST_GATE",
+    "S09_FOREST",
+    "S10_FOREST_RESULT",
+    "S11_STREAM",
+    "S12_STREAM_RESULT",
+    "S13_FOREST_SHRINE",
+    "S14_RESEARCH",
+    "S15_RUINS",
+    "S16_RUINS_RESULT",
+    "S17_ECHO_TABLET",
+    "S18_FESTIVAL_PREP",
+    "S19_FESTIVAL",
+    "S20_SEAL_PASSAGE",
+    "S28_RECOVER",
+    "V6_A1_BELL",
+    "V6_A1_CIRCLE",
+    "V6_A1_CLOSE_ARCHIVE",
+    "V6_A1_CLOSE_CIRCLE",
+    "V6_A1_CLOSE_GARDEN",
+    "V6_A1_FIRST_SONG",
+    "V6_A1_FOREST",
+    "V6_A1_FOREST_ECHO",
+    "V6_A1_GARDEN",
+    "V6_A1_GEARS",
+    "V6_A1_INVITATION",
+    "V6_A1_LIGHT_RESULT",
+    "V6_A1_MARGIN",
+    "V6_A1_MORNING",
+    "V6_A1_MUSICBOX",
+    "V6_A1_NOTES",
+    "V6_A1_REHEARSAL",
+    "V6_A1_RUINS_RETURN",
+    "V6_A1_RUNE_COPY",
+    "V6_A1_SEEDBEDS",
+    "V6_A1_STREAM",
+    "V6_A1_WORKSHOP_LIGHT"
+  ],
+  "edges": 154,
+  "flagProducers": 102,
+  "errors": [],
+  "warnings": []
+}
+
+> godseed@0.10.0 typecheck
+> tsc --noEmit
+
+tests/content-staging.test.ts(3,19): error TS7016: Could not find a declaration file for module 'pngjs'. '/workspace/alltest/GODSEED/node_modules/pngjs/lib/png.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pngjs` if it exists or add a new declaration (.d.ts) file containing `declare module 'pngjs';`
+tests/content-staging.test.ts(17,29): error TS7034: Variable 'bytes' implicitly has type 'any[]' in some locations where its type cannot be determined.
+tests/content-staging.test.ts(17,185): error TS7005: Variable 'bytes' implicitly has an 'any[]' type.

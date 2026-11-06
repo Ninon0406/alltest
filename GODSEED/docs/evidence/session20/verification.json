@@ -1,0 +1,26 @@
+{
+  "version": "0.10.0",
+  "base": "825bfa5",
+  "gameUnit": 175,
+  "contentTests": 2,
+  "roadmapTests": 10,
+  "storyValidatorTests": 15,
+  "focusedE2E": 8,
+  "focusedDuration": "2.1m",
+  "plannedFullE2E": 131,
+  "localE2E": null,
+  "publicVersion": "0.9.0",
+  "runtimeFrozen": true,
+  "jsFile": "index-DlhkVw6p.js",
+  "jsSha256": "0d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84",
+  "art": {
+    "result": "PASS",
+    "oldUnchanged": 78,
+    "reproduced": 79,
+    "newFiles": 1,
+    "newBytes": 2418,
+    "sha256": "715a38a92401f166e44ca8dedde2cee5791fa52336455f2bccd890f715b8c055"
+  },
+  "CIAndDeployment": "PENDING",
+  "hardware": "NOT_TESTED"
+}
