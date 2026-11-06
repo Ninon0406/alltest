@@ -24,13 +24,13 @@
       "duration": "3.3m",
       "hardware": "Chromium emulation"
     },
-    "fullBrowser": "RUNNING",
+    "fullBrowser": "Initial run interrupted:17PASS/2whole-loop30sTIMEOUT/1interrupted/119notrun;final isolated139 PENDING",
     "prCI": "PENDING",
     "mainCI": "PENDING",
     "live011": "NOT_YET_PUBLISHED"
   },
-  "rootEntry": "./assets/index-CElof2kH.js",
-  "jsSha256": "3bbcd0128ada74f4ed2a28d0372e4b3055562271edbfe629fce5300468ee596b",
+  "rootEntry": "./assets/index-DIovloRG.js",
+  "jsSha256": "ba1ab51e94d661399ff135182b299ede5a11699fce502c879ec76ce64620ecb2",
   "manualSave": "State2/File2; RAM only; genuine published0.10 UI file exactly imported locally; no storage/uploads",
   "newContent": {
     "nodes": 16,

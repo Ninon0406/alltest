@@ -1,5 +1,9 @@
 import {reloadFromFile} from './file-helpers';
 import {test,expect} from '@playwright/test';
+// This full loop includes two native file downloads/imports plus combat. Give
+// the whole scenario a budget above its observed 25–30s on emulated tablets;
+// individual action assertions retain their original five-second deadline.
+test.setTimeout(60_000);
 for(const [w,h] of [[360,800],[390,844],[430,932],[768,1024],[820,1180],[1024,768],[1366,768],[1440,900],[1920,1080],[844,390]])test(`real loop and save ${w}x${h}`,async({page})=>{
  await page.setViewportSize({width:w,height:h});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
  await page.goto('/');if(w===360)await page.screenshot({path:'test-results/title-360.png',fullPage:true});await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เริ่มการเดินทาง'}).click();
