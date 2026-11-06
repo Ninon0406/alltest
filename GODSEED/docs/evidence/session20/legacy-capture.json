@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.9.0",
+  "capturedAt": "2026-11-06T17:11:49.101Z",
+  "nativeFilePicker": true,
+  "legacy080ExactState": true,
+  "activeWard": true,
+  "turn": 4,
+  "fileSha256": "f32180dba979a30a79041038253d0b018d2473ff18437555e6a116e27b3b70d8",
+  "stateSha256": "573e0d15361d620ae43b21656d0ffc7ee809d238ead93a5dc77dd740c4012647",
+  "saveLocation": "Only /tmp/gs20-published-0.9.godseed; not committed or uploaded",
+  "persistentStorageCalls": 0,
+  "outboundWrites": 0,
+  "developmentReferenceRequests": 0,
+  "consoleErrors": [],
+  "hardware": "NOT_TESTED"
+}

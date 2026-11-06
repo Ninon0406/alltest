@@ -1,4 +1,4 @@
-# Session20 — 2026-11-06 UTC / candidate0.10.0 / Owner V6
+# Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
 
@@ -406,3 +406,23 @@ Full123รันใหม่จากsourceหลังretreatfix; CI/PR/public�
 
 
 Session19 CI setup audit: PR18/run42239707225 passed Unit151/Build but spent11min3s fetching17.3MB optional font packages from the Ubuntu resolute mirror. Maintainer cancellation coincided with completed browser downloads; no E2E ran, so this run is CANCELLED, never PASS. Pin ubuntu-24.04, install the Thai Loma font explicitly, and download Playwright's supported --only-shell Chromium. All123 browser cases remain required; native-library errors still fail the run. No runtime/test/build-input changes. New PR CI must pass before merging. Logs summarized in evidence/session19/ci-installer-cancelled.json.
+
+
+## รอบ20 — V6: คืนแรกที่กลับมาเล่าได้ / 2026-11-06 UTC
+
+เป้าหมาย:แก้เพดานเนื้อหาหลังS17ด้วยVerticalSlice+ContentBatch+Validator โดยรักษา0.9.0/source9b2cca2/merge825bfa5ที่ผ่าน151unit/123local+PR+main/Build/Deploy/Publicไว้ Sourceรอบใหม่3439b40/PR19draft ต่อ25nodes72choices รวม46/142 พร้อม2Questcontractsและ3openingmini-resolutions ไม่ใช่finalending/8LifePathsครบ
+
+ปัญหา/วิธีแก้:ภาพจริงHUDเย็นในบทเช้า → สร้างredtestแล้วเพิ่มChoice.time evening/next-morningและsceneTint; sourceanchor/facingassertเทียบคนละshape → แยกพิกัดเท้ากับทิศโดยยังตรวจทั้งคู่;titlePNGเพิ่มเป็น24จากatlasใหม่2418bytes → ปรับbudgetอย่างมีหลักฐานไม่ตัดasset;knowledgebrowserfixtureยังไม่ได้ruins_clue → ให้เดินเส้นทางศาลเจ้าจริง ไม่ลบgate;TypeScriptPNGไม่มีdeclaration → ใช้JSdevelopmenttoolเดิมพร้อมคำอธิบายtypeและtypedarray;RoadmapDONEขาดverification/evidenceFields → validatorปฏิเสธ จึงผูกหลักฐานจริงแล้วจึงปิดเฉพาะAUD002/PIPE001
+
+ผล:175gameunit/2content/10roadmap/15storyvalidator/type/lint/buildผ่าน FocusBrowser8/8ผ่าน2.1mหลังแก้ บน5viewport/TouchKeyboard/3conclusions/เวทจริง/ไฟล์/skip/fallback/เวลา ทั้ง79PNGreproexact/78เดิมคงอยู่. Boundedsearch21→46nodes,70→138choices,61→121recipes และsupplement4known-corechoicesรวม142/142/16timeline/54routesผ่าน เป็นreducerproofไม่ใช่browserproofหรือallseeds. Full131/CI/Public0.10กำลังตรวจ จะเพิ่มreceiptตามผลจริง
+
+RoadmapV6Phase0–13/109tasks:23done42in_progress42not_started2blocked=21.1% (v123/108=21.3%). ตัวหารเดิม21/76=27.6%เก็บเป็นhistory;ปิดงานวิจัย/เครื่องมือตรวจไม่เท่ากับปิดเกม. WayBrowserถูกnetworkจำกัดจึงใช้แหล่งที่เปิดได้และไม่แต่งplaytest. ภาพยังprototype/Safarihardware/FPS/humanfunยังไม่รับรอง. งานถัดไปตามREPORT_TH:ContentcontractและARC2→LifePaths→B04/B05→MAG010พร้อมmigration. ไม่มีงานข้ามsessionอัตโนมัติ
+
+
+## ยืนยันปิดรอบ20 — 0.10.0
+
+Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI42255223231ผ่าน131/13118.4m; MainCI42259628354ผ่าน131/13119.3m/Build/Deploy (build128035842862/deploy128046914961). Unit175/Content2/Roadmap10/StoryGraph15/type/lint/Buildผ่าน ไม่เปลี่ยนruntime/PNGหลังsourceที่ผ่านCI
+
+เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
+
+Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ

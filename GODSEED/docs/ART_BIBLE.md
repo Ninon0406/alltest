@@ -1,3 +1,13 @@
+# 0.10.0 — Opening festival study (V6)
+
+Original art-v13/festival-props.png:384×96,6cells64×96,2418bytes. Three warm paper-seed lantern frames plus unlit frame, a brass musicbox on a wooden stand, and a planted promise. Generated solely by generate-festival-art.mjs; no copied concept pixels. Existing78PNG unchanged;79reproducebyte-identically. Canvas480×270/player32×48/footdepth remain unchanged.
+
+Flagsfestival_ready/a1_lights_ready/arc1_opening_complete determine displayed objects. Hanging lights use depth805; stand/pot bases lie inside the already-solid north stairs, preserving roads/colliders. Evening-layer tint0xa4afcf supportsS19/S20/closing beats; next-morning clears it. Choice.time keeps HUD consistent. Props flicker4fps and stop underReducedMotion. This is prototype environmental dressing, not finalHD or a completed10-location pass. Group scenes still display the principalNPC; directional gesture variants and full ensemble choreography remain unfinished.
+
+Actual focused captures: evidence/session20/opening-evening-390.png and opening-memory-1366.png. Do not infer physicalGPU/FPS/fun from screenshots or emulatedviewporttests.
+
+---
+
 # Sunlit Memory Fantasy — 0.7.2 Koro study
 
 ## รอบ 16 — สวนสมุนไพรตาม Reference 05

@@ -1,4 +1,4 @@
-# Session20 — 2026-11-06 UTC / candidate0.10.0 / Owner V6
+# Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
 
@@ -281,3 +281,12 @@ Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่า�
 ### ตรวจคิวงานหลังจัดสถานะอุปกรณ์จริง
 
 การเปลี่ยน FND-005 เป็น blocked เปิดเผยว่า Test คิวงานเดิมอาศัยสถานะสดและคาดให้ FND-005 อยู่ลำดับแรกตลอด แก้เฉพาะ Fixture ใน scripts/roadmap.test.mjs ให้กำหนด in_progress ชัดเจน แล้วตรวจทั้ง done และ blocked ว่าถูกตัดจากคิว และยังตรวจว่า regression ขึ้นก่อน ไม่มีการลบหรือผ่อน Assertion ผลสุดท้าย Roadmap 8/8 ผ่าน ดู evidence/session16/roadmap-final.txt การแก้ปิดรอบนี้กระทบเอกสาร/ข้อมูลคิว/ตัวตรวจ QA ไม่เปลี่ยนเกมหรือ Asset หลัง Source5847801 ที่ผ่าน CI
+
+
+## ยืนยันปิดรอบ20 — 0.10.0
+
+Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI42255223231ผ่าน131/13118.4m; MainCI42259628354ผ่าน131/13119.3m/Build/Deploy (build128035842862/deploy128046914961). Unit175/Content2/Roadmap10/StoryGraph15/type/lint/Buildผ่าน ไม่เปลี่ยนruntime/PNGหลังsourceที่ผ่านCI
+
+เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
+
+Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ

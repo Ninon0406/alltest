@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "runId": 42255223231,
+  "buildJob": 128020518983,
+  "source": "3439b402246c23a9d61b45ef8cca96a9bcf9b13b",
+  "gameUnit": 175,
+  "content": 2,
+  "roadmap": 10,
+  "storyValidator": 15,
+  "e2e": 131,
+  "duration": "18.4m",
+  "evidence": [
+    "2026-11-06T16:45:31.0266418Z ℹ pass 10",
+    "2026-11-06T16:45:32.1618379Z ℹ pass 15",
+    "2026-11-06T16:45:36.7959391Z       Tests  2 passed (2)",
+    "2026-11-06T16:45:39.2855128Z       Tests  175 passed (175)",
+    "2026-11-06T16:45:44.4700539Z ✓ built in 3.04s",
+    "2026-11-06T17:04:18.5860103Z   131 passed (18.4m)"
+  ]
+}

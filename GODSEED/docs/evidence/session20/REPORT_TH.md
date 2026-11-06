@@ -1,4 +1,4 @@
-# GODSEED EVOLUTION REPORT — รอบ20 / candidate0.10.0
+# GODSEED EVOLUTION REPORT — รอบ20 / 0.10.0
 
 ## 1. ก่อนเริ่ม V6
 
@@ -39,25 +39,25 @@
 | เส้นทางชีวิตครบเกณฑ์ / ตอนจบเกม |0 /0|0 /0|
 | NPCคู่สัมพันธ์ / Stage / fixedmaps |5 /7 /5|5 /7 /5|
 
-ค้นแบบมีขอบเขต4000states/12วินาทีseed12345 ไม่ใช่พิสูจน์ทุกลำดับ/seed/ครบ234สูตรหรือพบ121สูตรในเซฟเดียว รายการ4choiceที่ยังไม่พบในsearchไม่ถูกประกาศว่าunreachable มีกรณีunitเฉพาะทางแยก ดู[Baseline](../../research/GODSEED_V6_BASELINE.md)/[ผลล่าสุด](story-graph.json). InventoryCatalog27/ส่วนผสม21 ยังไม่มีCatalystช่องที่4/Level/gear/8Pathsครบ
+ค้นแบบมีขอบเขต4000states/12วินาทีseed12345 ไม่ใช่พิสูจน์ทุกลำดับ/seed/ครบ234สูตรหรือพบ121สูตรในเซฟเดียว เพิ่ม[หลักฐาน4choiceที่ต้องเรียนECHO/WATER/FIRE](extra-choice-witnesses.json)จากfresh/ของหาได้จริงแล้ว รวมเรียกได้142/142 โดยคงboundedsearch138ตามเดิม พร้อม16timeline/54anchorroutechecks ไม่ใช่browserproofหรือผลทุกseed ดู[Baseline](../../research/GODSEED_V6_BASELINE.md)/[ผลล่าสุด](story-graph.json). InventoryCatalog27/ส่วนผสม21 ยังไม่มีCatalystช่องที่4/Level/gear/8Pathsครบ
 
 ## 7. ผลทดสอบจริง
 
 Unit175 / Content2 / Roadmap10 / StoryGraph15 / TypeScript / ESLint / Build ผ่าน FocusedBrowser8/8ผ่าน2.1นาที:5viewports390/844/820/1024/1366,Touch/Keyboard,สามบทสรุปย่อย,เก็บของ→craftเวท,ไฟล์/checkpoint/refreshว่าง,skip,PNGfallback/retry และเวลาเย็น–เช้า
 
-FullBrowser131กรณี/PRCI/MainCI/Public0.10ยังรอผล จะบันทึกตามจริงก่อนปิดรอบ Source0.9.0ผ่าน123/PR/Main/เว็บจริงและPost-Actions67PNG+JSแล้ว ไม่ใช้ผลนั้นแทนผล0.10
+FullBrowser131/131ผ่าน local28.9m / PRCI18.4m / MainCI19.3m พร้อมBuild/Deployและเว็บจริง0.10.0ผ่าน ดูreceiptด้านล่าง Source0.9.0เป็นประวัติแยกไม่ใช้แทนผล0.10
 
 ## 8. Roadmap ถึง1.0
 
-[ChecklistครบทุกID/เกณฑ์/Dependency/หลักฐาน](../../../../GODSEED_MASTER_ROADMAP.md) ปรับเป็นPhase0–13ตามV6 รักษา76IDเดิมและประวัติเพิ่มเป็น109งาน ตัวหารใหญ่ขึ้นจากขอบเขต12ARC/8Paths/โลกใหม่ ไม่ใช่งานเดิมถอยหลัง เปอร์เซ็นต์นับเฉพาะ✅/ทุกงาน ไม่ใช่คุณภาพหรือแรงงานของเกม การเสร็จของงานวิจัย/ตัวตรวจไม่เท่ากับสร้างระบบเกมเสร็จ
+[ChecklistครบทุกID/เกณฑ์/Dependency/หลักฐาน](../../../../GODSEED_MASTER_ROADMAP.md) ปรับเป็นPhase0–13ตามV6 รักษา76IDเดิมและประวัติเพิ่มเป็น109งาน ตัวหารใหญ่ขึ้นจากขอบเขต12ARC/8Paths/โลกใหม่ ไม่ใช่งานเดิมถอยหลัง ล่าสุด23/109=21.1%:✅23 🟡42 ⬜42 🔴0 ⛔2;เฉพาะ1.0=23/108=21.3% เปอร์เซ็นต์นับเฉพาะ✅/ทุกงาน ไม่ใช่คุณภาพหรือแรงงานของเกม การเสร็จของงานวิจัย/ตัวตรวจไม่เท่ากับสร้างระบบเกมเสร็จ
 
 ## 9. ข้อจำกัดและงานค้าง
 
-ยังไม่มี8LifePaths/Level/gear/เศรษฐกิจ/factions/ARC2–12ครบ/บอสB04/B05/15ตอนจบ/Catalystช่อง4/≈250สูตร งานภาพ10แห่งยังมีต้นแบบและฉากขาด อุปกรณ์จริง/Safari/FPS/thermal/เสียง/A11y/ความสนุกกับผู้เล่นจริงยังไม่ยืนยัน Benchmarkที่เข้าถึงไม่ได้ยังไม่ทำเครื่องหมายเสร็จ
+ยังไม่มี8LifePaths/Level/gear/เศรษฐกิจ/factions/ARC2–12ครบ/บอสB04/B05/15ตอนจบ/Catalystช่อง4/≈250สูตร งานภาพ10แห่งยังมีต้นแบบและฉากขาด ฉากกลุ่มยังแสดงNPCหลักคนเดียวและบางgestureยังมีSpriteทิศเดียว อุปกรณ์จริง/Safari/FPS/thermal/เสียง/A11y/ความสนุกกับผู้เล่นจริงยังไม่ยืนยัน Benchmarkที่เข้าถึงไม่ได้ยังไม่ทำเครื่องหมายเสร็จ
 
 ## 10. Next Development Batch
 
-1. ContentcontractChapter/การผลิตbatchและตรวจ4choicesที่searchยังไม่พบ เพิ่มหลักฐานโดยไม่ลดเงื่อนไข
+1. ContentcontractChapter/การผลิตbatch เพิ่มตัวตรวจstate witnessesที่ทำซ้ำได้โดยไม่ลดเงื่อนไข
 2. ต่อARC2จากผนึกด้วยปฏิกิริยาลม/น้ำ/พฤกษาที่มีผลต่อฉากและกลับเข้าหมู่บ้านได้
 3. LifePathengineสองสายแรกพร้อมกิจกรรม/ความสามารถ/ข้อจำกัด/filemigration จากนั้นขยายครบ8
 4. B04copytelegraphและB05ตามdependency พร้อมcounterplayและผลเรื่องจริง
@@ -65,4 +65,13 @@ FullBrowser131กรณี/PRCI/MainCI/Public0.10ยังรอผล จะบ
 
 ## 11. สถานะพร้อมเล่นและGitHubPages
 
-Build0.10.0ผ่านและช่วงเปิดใหม่เล่นถึงบทสรุปย่อยในPreviewแล้ว เว็บเผยแพร่ล่าสุด0.9.0ที่ https://ninon0406.github.io/alltest/ ผ่านการตรวจจริง รุ่น0.10.0จะลงหลักฐานCommit/PR/CI/Deploy/Publicหลังตรวจครบ ไม่มีการพัฒนาข้ามsessionโดยอัตโนมัติ
+เผยแพร่0.10.0ที่ https://ninon0406.github.io/alltest/ แล้ว Build/CI/Deployและเว็บจริงผ่านตามreceiptด้านล่าง ไม่มีการพัฒนาข้ามsessionโดยอัตโนมัติ
+
+
+## ยืนยันปิดรอบ20 — 0.10.0
+
+Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI42255223231ผ่าน131/13118.4m; MainCI42259628354ผ่าน131/13119.3m/Build/Deploy (build128035842862/deploy128046914961). Unit175/Content2/Roadmap10/StoryGraph15/type/lint/Buildผ่าน ไม่เปลี่ยนruntime/PNGหลังsourceที่ผ่านCI
+
+เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
+
+Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ

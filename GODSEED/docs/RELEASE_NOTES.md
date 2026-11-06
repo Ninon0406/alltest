@@ -1,4 +1,4 @@
-# Session20 — 2026-11-06 UTC / candidate0.10.0 / Owner V6
+# Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
 
@@ -227,3 +227,12 @@ Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่า�
 คง Checklist หลัก20/76=26.3% (1.0:20/73=27.4%) งานภาพใหญ่ยังไม่ครบ ไม่ปิดงานจากภาพอ้างอิงอย่างเดียว สถานที่ garden ยังเป็นต้นแบบ งานเซฟหลักทำได้แล้ว12/14 เหลือ SAVE-011/012 ที่ต้องทดสอบอุปกรณ์จริง จัด FND-005 และสองงานย่อยเป็น blocked เพื่อให้คิวไม่ย้อนเขียนระบบที่ผ่านแล้วซ้ำ: จำนวนรวม ✅20 🟡38 ⬜16 🔴0 ⛔2 เปอร์เซ็นต์ไม่เปลี่ยน QA-009 ยังคง blocked เช่นเดิม ไม่มีการรับรอง Safari/iOS/Android จริง, FPS หรือความสนุกจากผู้เล่นจริง
 
 [รายงานภาษาไทยและภาพก่อน/หลัง](evidence/session16/REPORT_TH.md) / [หลักฐาน JSON](evidence/session16/verification.json) เกม source ไม่เปลี่ยนหลัง commit ที่ผ่าน CI; Commit ปิดรอบเพิ่มเฉพาะเอกสาร/หลักฐาน ตัวตรวจเว็บ และ Fixture ของ Roadmap Test
+
+
+## ยืนยันปิดรอบ20 — 0.10.0
+
+Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI42255223231ผ่าน131/13118.4m; MainCI42259628354ผ่าน131/13119.3m/Build/Deploy (build128035842862/deploy128046914961). Unit175/Content2/Roadmap10/StoryGraph15/type/lint/Buildผ่าน ไม่เปลี่ยนruntime/PNGหลังsourceที่ผ่านCI
+
+เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
+
+Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ

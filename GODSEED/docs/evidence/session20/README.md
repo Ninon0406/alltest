@@ -11,3 +11,12 @@ Art: one original64×96cell atlas (six frames,2418bytes) adds unlit/lit seed lan
 Research: official public synopses and permitted previews only. Way of Xian browser access failed and retrieval showed only shell/navigation; no invented playtest or system comparison. Performance/hardware/visualfinality/humanfun remain unverified; prior diagnostic is in session19/PERFORMANCE.md.
 
 Failures retained in focused-before.txt, time-regression-before.txt and integration-before.txt. No assertion was removed or test skipped to obtain green. Full Thai delivery and next batch: REPORT_TH.md.
+
+
+## ยืนยันปิดรอบ20 — 0.10.0
+
+Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI42255223231ผ่าน131/13118.4m; MainCI42259628354ผ่าน131/13119.3m/Build/Deploy (build128035842862/deploy128046914961). Unit175/Content2/Roadmap10/StoryGraph15/type/lint/Buildผ่าน ไม่เปลี่ยนruntime/PNGหลังsourceที่ผ่านCI
+
+เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
+
+Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ
