@@ -173,7 +173,7 @@ for(const [width,height] of [[390,844],[820,1180],[1366,768]]){
   await photographStage(page,'workshop',width);
   for(const name of ['ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท','ไปโรงช่างของคุโร','ฝึกต่อสู้กับภูตจำลอง'])await clickAndWait(page,name);
   const canvas=page.locator('#canvas');
-  await expect(canvas).toHaveAttribute('data-npc','training-v2');
+  await expect(canvas).toHaveAttribute('data-npc','training-v2');await expect(canvas).toHaveAttribute('data-workshop-anvil','false');
   await expect(canvas).toHaveAttribute('data-stage','workshop');
   await expect(page.getByRole('heading',{name:'ภูตฝึกเวทจำลอง',exact:true})).toBeVisible();
   expect((await savedSnapshot(page)).scene).toBe('S04_KORO');
@@ -182,7 +182,7 @@ for(const [width,height] of [[390,844],[820,1180],[1366,768]]){
   if(width===390){
    for(let turn=0;turn<2;turn++)await clickAndWait(page,'วายุดารานำวิถี · MP 10');
    await expect(canvas).toHaveAttribute('data-last-outcome','win');
-   await expect(canvas).toHaveAttribute('data-npc','koro');
+   await expect(canvas).toHaveAttribute('data-npc','koro-v10');await expect(canvas).toHaveAttribute('data-workshop-anvil','true');
    await expect(page.getByRole('heading',{name:'โรงช่างที่กลิ่นเหล็กกับดอกไม้',exact:true})).toBeVisible();
   }
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

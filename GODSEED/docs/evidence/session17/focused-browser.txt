@@ -1,0 +1,26 @@
+
+> godseed@0.7.2 test:e2e
+> playwright test tests/art-loading.spec.ts tests/koro.spec.ts
+
+[WebServer] (node:13776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 11 tests using 1 worker
+
+(node:13806) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 390 (5.1s)
+  ✓   2 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 1366 (4.5s)
+  ✓   3 tests/art-loading.spec.ts:29:1 › explicit retry restores a failed shared atlas while preserving the seated checkpoint and dirty status (3.7s)
+  ✓   4 tests/art-loading.spec.ts:39:1 › repeated failure stays playable without automatic retry; later recovery retains a listening scene and its rewards (4.0s)
+  ✓   5 tests/art-loading.spec.ts:49:1 › a stalled stage asset times out, unlocks controls and can be retried without a second choice commit (11.6s)
+  ✓   6 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 390 (8.8s)
+  ✓   7 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 844 (7.4s)
+  ✓   8 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 820 (7.2s)
+  ✓   9 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 1024 (7.0s)
+  ✓  10 tests/koro.spec.ts:7:84 › Koro forging, recipe gesture and restored tutorial 1366 (6.4s)
+  ✓  11 tests/koro.spec.ts:16:1 › fallback Koro stays grounded without an anvil; explicit retry restores the prop and action (3.9s)
+
+  11 passed (1.2m)

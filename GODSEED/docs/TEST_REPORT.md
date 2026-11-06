@@ -464,3 +464,10 @@ Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่า�
 ### ตรวจคิวงานหลังจัดสถานะอุปกรณ์จริง
 
 การเปลี่ยน FND-005 เป็น blocked เปิดเผยว่า Test คิวงานเดิมอาศัยสถานะสดและคาดให้ FND-005 อยู่ลำดับแรกตลอด แก้เฉพาะ Fixture ใน scripts/roadmap.test.mjs ให้กำหนด in_progress ชัดเจน แล้วตรวจทั้ง done และ blocked ว่าถูกตัดจากคิว และยังตรวจว่า regression ขึ้นก่อน ไม่มีการลบหรือผ่อน Assertion ผลสุดท้าย Roadmap 8/8 ผ่าน ดู evidence/session16/roadmap-final.txt การแก้ปิดรอบนี้กระทบเอกสาร/ข้อมูลคิว/ตัวตรวจ QA ไม่เปลี่ยนเกมหรือ Asset หลัง Source5847801 ที่ผ่าน CI
+
+
+## Session17 — 0.7.2 staged art and Koro
+
+TypeScript/Lint/Content2/Unit125/Roadmap8/Build/manual-sourcegate/referencepackingPASS Focused11/11PASS1.2m รวม23PNGtitle/revisit0/importunvisited/fault/repeatedretry/timeout8s/RAMdirtyanchor/Koro5viewport/reduced/fallback. Existing93+new11=104Fullcasesกำลังรันก่อนmerge; CI/publicยังรอผลและบันทึกใน[evidence/session17/REPORT_TH.md](evidence/session17/REPORT_TH.md). ไม่ใช้ผลรอบก่อนแทน
+
+62PNGสร้างซ้ำตรงbyte/60เดิมไม่เปลี่ยน/2ใหม่10905bytes. ActualtitlePNG629017→301231bytes/57→23; coldwarmวัดจริงในpreview-staged-art.json. State2/File2เดิม ไม่เพิ่มpersistentGameState. ประวัติfailedretry/timeout/typeerrorและวิธีแก้ในSession17README. FinalHD/hardware/FPS/humanfunยังไม่ยืนยัน

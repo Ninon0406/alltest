@@ -322,3 +322,20 @@ Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่า�
 ### ตรวจคิวงานหลังจัดสถานะอุปกรณ์จริง
 
 การเปลี่ยน FND-005 เป็น blocked เปิดเผยว่า Test คิวงานเดิมอาศัยสถานะสดและคาดให้ FND-005 อยู่ลำดับแรกตลอด แก้เฉพาะ Fixture ใน scripts/roadmap.test.mjs ให้กำหนด in_progress ชัดเจน แล้วตรวจทั้ง done และ blocked ว่าถูกตัดจากคิว และยังตรวจว่า regression ขึ้นก่อน ไม่มีการลบหรือผ่อน Assertion ผลสุดท้าย Roadmap 8/8 ผ่าน ดู evidence/session16/roadmap-final.txt การแก้ปิดรอบนี้กระทบเอกสาร/ข้อมูลคิว/ตัวตรวจ QA ไม่เปลี่ยนเกมหรือ Asset หลัง Source5847801 ที่ผ่าน CI
+
+
+## รอบ17 — 2026-11-06 UTC — staged art and Koro (0.7.2)
+
+เริ่มจากmain78a2497ที่สะอาด หลังPR15/0.7.1/CI93และเว็บจริงผ่าน อ่าน03/Roadmap/Log/Architecture/Skills ตรวจsnapshot18Scene/60Choice/5NPC/3Encounter/234legal/0endings/6Stage และภาพอ้างอิง10แห่ง เลือกFND004ซึ่งยังpreload57PNGและไม่มีretryเป็นงานแรก ต่อด้วยVIS004/005ส่วนคุโรที่เกี่ยวข้อง ไม่เริ่มใหม่หรือเพิ่มสูตร/เนื้อเรื่อง/ศัตรู
+
+ทำจริง: staticcatalog/RAMledger, shared+stage loading, asyncprepareก่อนcommit/import replacement, explicitretryโดยไม่session.commit/load, boundedXHR8000ms/maxRetries0, Thai progress/fallback UIและbusyguard; oldart60ไม่เปลี่ยน เพิ่มart-v10คุโรกับทั่ง2PNG/10905bytes พื้นทั่งไม่ตัดทางเดินเดิมและซ่อนในtraining, CH0401/S05แสดงสูตรตามบท ใช้Reference08เป็นทิศทางวัสดุ ไม่คัดลอกทั้งภาพ
+
+พบปัญหาและแก้จริง: PhaserdefaultmaxRetries2ทำให้failedassetขอ3ครั้ง; globaltimeoutถูกper-filedefault0ทับ Firstper-filepatchTypeScriptไม่ผ่านเพราะต้องมีresponseTypeทำให้การทดสอบรอบนั้นยังใช้Buildเก่า แก้blob+timeoutและบังคับBuildผ่านก่อนทดสอบใหม่ RuntimeXHRจริงเป็น8000และstalledtestกลับมาเล่นได้ แก้labelภาษาไทยในtestใหม่ให้ตรงปุ่มเดิม ไม่มีskipหรือลบAssertion
+
+ผลยืนยันเฉพาะงาน: Unit125/Focus11/BuildPASS; Focus1.2mครอบคลุมcold/warm/revisit/importunvisitedstage/fallback/repeatedfault/8stimeout/dirtyflag/seatedanchor/Koro5viewport/ReducedMotion ภาพruntimeเปิดตรวจแล้ว titlePNG57→23,629017→301231bytes ลด52.1% ไม่ใช่FPSbenchmark ManualFileSaveเฉพาะRAM+ไฟล์เดิม State2/File2ไม่เปลี่ยน
+
+RoadmapFND004doneบนเกณฑ์เฉพาะงาน;21/76=27.6%,v121/73=28.8%; VIS004/005/008ยังไม่ครบงานใหญ่ Workshoplocationเป็นpartialprototype ไม่ใช่10ฉากเสร็จ ไม่มีหลักฐานfinalHD/hardware/humanfun ยังขาดchapterตอนท้าย/boss/สามending/สถานที่ใหม่/เสียง/A11yและreleasegate
+
+งานถัดไป5ตามDependency:1)Fixedworkshopmap/anchors/collidersจากReference08 2)craftcauldron+ingredientstagingกับสูตรเดิม 3)เส้นทางบ้าน–ประตู–จัตุรัส 4)ตัวละคร/NPCท่าโต้ตอบที่เหลือ 5)boss/mercy/puzzleเพื่อปลดเนื้อเรื่องท้ายบทพร้อมregression ทั้งหมดเก็บรายละเอียดในRoadmap; HardwareQAแยกไม่วนทำManualSaveซ้ำ
+
+ผลfull/CI/commit/PR/main/deploy/actualpublicจะเพิ่มเป็นreceiptท้ายรอบตามผลจริง ดูevidence/session17 ไม่อ้างผลSession16แทน

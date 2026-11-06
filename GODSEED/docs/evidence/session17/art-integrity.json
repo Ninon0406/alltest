@@ -1,0 +1,15 @@
+{
+  "retainedUnchanged": 60,
+  "new": {
+    "GODSEED/public/assets/art-v10/anvil.png": {
+      "bytes": 505,
+      "sha256": "34a3c68dbc1b65bff9dc9875796bb45cbbf4c8d92ed9af99758f6e85c4dcac96"
+    },
+    "GODSEED/public/assets/art-v10/koro.png": {
+      "bytes": 10400,
+      "sha256": "cb8c3895f9628192a48e1a6c2fbb59ff1ba6c4be8d03948823a93da4ebf365cb"
+    }
+  },
+  "reproducedPNG": 62,
+  "reproducedByteIdentical": true
+}
