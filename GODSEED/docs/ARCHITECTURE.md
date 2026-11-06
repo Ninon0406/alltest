@@ -1,4 +1,4 @@
-# GODSEED architecture — 0.7.1 (candidate)
+# GODSEED architecture — 0.7.1
 
 ## สวนสมุนไพร / รอบ 16
 
@@ -183,3 +183,6 @@ Icon patch7c5f455/PR#13แก้favicon404ที่พบจากstrictconsolea
 ตรวจ https://ninon0406.github.io/alltest/ จริง: ก่อนรดน้ำเซฟยังไม่เปลี่ยน → รดน้ำ → รับของ/trustครั้งเดียว → กลับสวนดอกบานและมาเรนจำได้ → reload คงผล ผ่าน เส้นทางหลัก/ผสม5สูตร/ต่อสู้3แบบ/ส่งออก–นำเข้าเซฟผ่าน ตรวจหลังActionsdeployซ้ำ 42versionedPNG และ JavaScript SHA256 `3e3f9ee32870e266ed809a043217ca8492a9f4826b89af3bfa4708d305e1be70` ตรงBuild, 0Conceptrequests/0ConsoleErrors ในเส้นทางที่ตรวจ ภาพ actualpublic ก่อน/ระหว่าง/หลังอยู่ในevidence/session14
 
 Checklist21/76=27.6%คงเดิม ไม่มีการรับรองfinalHD/อุปกรณ์จริง/Safari/FPSหรือความสนุกจากผู้เล่นจริง ปรับขอบเขตรอบนี้ให้ส่งมอบด้วยBrowser EmulationและPagesได้ครบ โดยคงQA-009เป็นreleasegateที่ยังไม่ยืนยัน
+
+
+ยืนยันรอบ16: Local/PR/main Full93 และ Build/Deploy/เว็บจริงผ่านแล้ว ดูหลักฐานใน evidence/session16/REPORT_TH.md ยังไม่รับรอง final HD หรืออุปกรณ์จริง

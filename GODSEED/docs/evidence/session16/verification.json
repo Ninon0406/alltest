@@ -1,0 +1,79 @@
+{
+  "version": "0.7.1",
+  "source": "5847801d37bfa9adaaf3b2f6819c1da486ff7700",
+  "merge": "895054279d3e29847376b0546c6ac28d60f1adcd",
+  "pr": 15,
+  "prCI": 42192866046,
+  "mainCI": 42195039742,
+  "gameUnit": 121,
+  "contentTests": 2,
+  "roadmapTests": 8,
+  "localE2E": 93,
+  "focusedE2E": 20,
+  "png": {
+    "total": 60,
+    "retainedUnchanged": 54,
+    "new": 6,
+    "newBytes": 71335
+  },
+  "public": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 49,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "b77768c89479cb77ecdb50f41b9dbf5c5e589e351a01105560c33f6dff4b359e",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+  },
+  "gardenAndManualFile": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "version": "0.7.1",
+    "gardenArt": "herbalist-v9",
+    "ambientMotion": true,
+    "collisionTarget": true,
+    "archDepth": true,
+    "wateringAndBloom": true,
+    "bloomCraftAndEquip": true,
+    "seatedListening": true,
+    "nativeFilePicker": true,
+    "exactStateRoundTrip": true,
+    "emptyRefresh": true,
+    "persistentStorageCalls": 0,
+    "outboundWrites": 0,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "postDeploy": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "assetsOnly": true,
+    "jsSha256": "b77768c89479cb77ecdb50f41b9dbf5c5e589e351a01105560c33f6dff4b359e",
+    "layeredArtFiles": 49,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": []
+  },
+  "hardware": "NOT_TESTED",
+  "checklist": {
+    "done": 20,
+    "in_progress": 38,
+    "not_started": 16,
+    "problem": 0,
+    "blocked": 2,
+    "total": 76,
+    "percent": 26.3
+  },
+  "metadataReceipt": {
+    "roadmapTests": 8,
+    "result": "PASS",
+    "fixture": "Explicit pending/done/blocked states; no runtime changes",
+    "evidence": "roadmap-final.txt"
+  }
+}

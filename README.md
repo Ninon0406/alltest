@@ -2,9 +2,9 @@
 
 เกม Pixel Art RPG ภาษาไทย ควบคุมด้วยตัวเลือก สร้างเวท และต่อสู้ผลัดเทิร์น ไม่ต้องใช้ API Key
 
-สถานะ Source candidate 0.7.1 / เว็บเผยแพร่ 0.7.0: **Manual File Save เท่านั้น** เกมเก็บความคืบหน้าใน RAM ระหว่างเปิดหน้า เมื่อปิดหรือรีเฟรชต้องโหลดไฟล์เอง ไม่มี Auto Save หรือการเล่นต่อจากข้อมูลเบราว์เซอร์ ไฟล์เก่า .json ที่เคยส่งออกยังเลือกโหลดได้
+สถานะ Source และเว็บเผยแพร่ 0.7.1: **Manual File Save เท่านั้น** เกมเก็บความคืบหน้าใน RAM ระหว่างเปิดหน้า เมื่อปิดหรือรีเฟรชต้องโหลดไฟล์เอง ไม่มี Auto Save หรือการเล่นต่อจากข้อมูลเบราว์เซอร์ ไฟล์เก่า .json ที่เคยส่งออกยังเลือกโหลดได้
 
-รอบ 16 กำลังตรวจสวนสมุนไพรใหม่: บ้านหลังคาม่วง ทางหิน ซุ้มที่บังตามความลึก หม้อยา/สมุนไพรเคลื่อนไหว และการนั่งฟังอดีตของมาเรน [ภาพจริงและผลตรวจปัจจุบัน](GODSEED/docs/evidence/session16/README.md) ภาพยังเป็นต้นแบบ ยังไม่รับรอง 1.0 หรืออุปกรณ์จริง
+รอบ16เผยแพร่สวนสมุนไพรใหม่แล้ว: บ้านหลังคาม่วง ทางหิน ซุ้ม หม้อยา/สมุนไพรเคลื่อนไหว และการนั่งฟังมาเรน [รายงานพร้อมภาพก่อน/หลัง](GODSEED/docs/evidence/session16/REPORT_TH.md) ภาพยังเป็นต้นแบบ ยังไม่รับรอง1.0หรืออุปกรณ์จริง
 
 วิธีเล่นและเก็บความทรงจำ:
 
@@ -26,11 +26,11 @@ Node 24: `npm ci --prefix GODSEED` แล้ว `npm --prefix GODSEED run test:a
 
 ## GitHub Pages
 
-เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่ 0.7.0 แล้ว ใช้ Manual File Save เท่านั้น และมีฉากนั่งฟังมาเรนฮัมเพลง Source `0676719` / PR #14 / main `8b610f3`
+เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่0.7.1แล้ว Source`5847801`/PR#15/main`8950542` ใช้Manual File Saveเท่านั้น
 
-Browser 85 กรณีผ่านทั้ง local, PR และ main; Unit 115 / Content 2 / Roadmap 8 / Build และการตรวจไม่เก็บเซฟถาวรผ่าน [main CI](https://github.com/Ninon0406/alltest/actions/runs/42116389685) Deploy สำเร็จ ตรวจเว็บจริงทั้งดาวน์โหลด เลือกไฟล์ สรุปก่อนโหลด โหลดครบ State และรีเฟรชกลับหน้าเริ่ม ไม่พบการเก็บ progress ใน browser storage หรือส่งเซฟไปเซิร์ฟเวอร์ เส้นทาง 5 สูตร / 3 การต่อสู้ผ่าน ภาพ 43 ไฟล์และ JS ตรง Build ไม่พบ Console errors ในเส้นทางที่ตรวจ ภาพยังเป็นต้นแบบและยังไม่ใช่ 1.0
+Local/PR/main Browser93ผ่าน Unit121/Content2/Roadmap8/Buildผ่าน [mainCI](https://github.com/Ninon0406/alltest/actions/runs/42195039742) Deployสำเร็จ ตรวจเว็บจริงสวน/เก็บน้ำค้าง/รดน้ำ/นั่งฟัง/ไฟล์ครบState/รีเฟรชหน้าเริ่ม ไม่พบBrowser progress storageหรือSave upload เส้นทาง5สูตร/3การต่อสู้ผ่าน 49versionedPNGและJSตรงBuild ไม่พบConsole errorsในเส้นทางตรวจ
 
-[รายงานรอบ 15 พร้อมภาพและข้อจำกัด](GODSEED/docs/evidence/session15/REPORT_TH.md) · [รูปแบบไฟล์เซฟ](GODSEED/docs/SAVE_FILE_FORMAT.md) · ใช้ไฟล์ที่ผู้เล่นส่งออกไว้เพื่อเล่นต่อ ไม่มีการกู้ฐานข้อมูลเก่าอัตโนมัติ
+[รายงานรอบ16พร้อมภาพและข้อจำกัด](GODSEED/docs/evidence/session16/REPORT_TH.md) · [ไฟล์เซฟ](GODSEED/docs/SAVE_FILE_FORMAT.md) · [Roadmapทุกงาน](GODSEED_MASTER_ROADMAP.md) ภาพยังต้นแบบ ยังไม่ใช่1.0
 
 workflow ทดสอบทุก PR และ deploy เมื่อ main ผ่าน checks รองรับ Pages artifact พร้อมไฟล์ root สำหรับ source `main:/` หากเปลี่ยน Source ได้ ให้ใช้ Settings → Pages → Build and deployment → GitHub Actions ผ่านเบราว์เซอร์โทรศัพท์
 

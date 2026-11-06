@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-06 UTC · ตรวจจาก base commit `ea50dfa` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-06 UTC · ตรวจจาก base commit `5847801` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -14,13 +14,13 @@ Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.js
 
 | ขอบเขต | งานทั้งหมด | ✅ | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ทั้งโครงการ | 76 | 20 | 39 | 16 | 0 | 1 | 26.3% |
-| 1.0 | 73 | 20 | 39 | 13 | 0 | 1 | 27.4% |
+| ทั้งโครงการ | 76 | 20 | 38 | 16 | 0 | 2 | 26.3% |
+| 1.0 | 73 | 20 | 38 | 13 | 0 | 2 | 27.4% |
 | หลัง1.0/เสริม | 3 | 0 | 0 | 3 | 0 | 0 | 0% |
 
 | Phase | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| [1 — โครงสร้างพื้นฐาน](#phase-1) | 6/9 | 3 | 0 | 0 | 0 | 66.7% |
+| [1 — โครงสร้างพื้นฐาน](#phase-1) | 6/9 | 2 | 0 | 0 | 1 | 66.7% |
 | [2 — งานภาพ Pixel Art HD](#phase-2) | 6/14 | 8 | 0 | 0 | 0 | 42.9% |
 | [3 — ระบบเนื้อเรื่อง](#phase-3) | 1/8 | 5 | 2 | 0 | 0 | 12.5% |
 | [4 — ระบบเวทมนตร์](#phase-4) | 3/9 | 6 | 0 | 0 | 0 | 33.3% |
@@ -107,16 +107,16 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - หลักฐาน: Sourceและfocusedbrowser15/15+Unit115ผ่าน ตามSession15; ไม่ใช้ผลระบบIDBเก่า · Unit115/Focus15/Full85 local+PRCI42113575343/mainCI42116389685; actualpublic manual-only/nativepicker/roundtrip/audit0 PASS
   - เกณฑ์เสร็จ: สามตัวเลือกsave/continue/discardพร้อมnativebeforeunload ไม่มีhiddenwrite
 
-- [ ] 🟡 กำลังพัฒนา **SAVE-011 — ทดสอบดาวน์โหลดบนมือถือ**
-  - ความสำคัญ: P1 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+- [ ] ⛔ ติดข้อจำกัด **SAVE-011 — ทดสอบดาวน์โหลดบนมือถือ**
+  - ความสำคัญ: P1 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-06
   - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
-  - หลักฐาน: Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน
+  - หลักฐาน: Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน; ไม่มีอุปกรณ์จริงในสภาพแวดล้อมนี้ Chromiumจำลองผ่านแล้ว แต่ใช้แทนphysicalacceptanceไม่ได้
   - เกณฑ์เสร็จ: DownloadจริงในSafari/iOSและChrome/Android รวมคำแนะนำFiles/Downloads
 
-- [ ] 🟡 กำลังพัฒนา **SAVE-012 — ทดสอบเลือกไฟล์บนมือถือ**
-  - ความสำคัญ: P1 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-05
+- [ ] ⛔ ติดข้อจำกัด **SAVE-012 — ทดสอบเลือกไฟล์บนมือถือ**
+  - ความสำคัญ: P1 · ต้องมี: SAVE-001 · ตรวจ: 2026-11-06
   - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs) · [GODSEED/tests/save.test.ts](GODSEED/tests/save.test.ts) · [GODSEED/docs/evidence/session15/README.md](GODSEED/docs/evidence/session15/README.md)
-  - หลักฐาน: Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน
+  - หลักฐาน: Chromium touch simulation390/844/820/1024/1366ผ่านdownload/upload+preview; Safari/iOS/Androidอุปกรณ์จริงยังไม่มีหลักฐาน; ไม่มีอุปกรณ์จริงในสภาพแวดล้อมนี้ Chromiumจำลองผ่านแล้ว แต่ใช้แทนphysicalacceptanceไม่ได้
   - เกณฑ์เสร็จ: เลือกไฟล์จริงในSafari/iOSและChrome/Android ไม่บังคับเมาส์
 
 - [x] ✅ เสร็จสมบูรณ์ **SAVE-013 — Save/Load Round Trip รวมต่อสู้และความทรงจำ**
@@ -165,7 +165,7 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - หลักฐาน: [assets/reference/godseed/references/04_player_cottage.webp](assets/reference/godseed/references/04_player_cottage.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
-- **elder_garden — บ้านผู้เฒ่าและสวนสมุนไพร**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก; รอบ16 เริ่มแปลงฉากใหม่ตามReference05จริง บ้านหลังคาม่วง/ถนนหิน/ซุ้ม/หม้อยา/สมุนไพรแยกเลเยอร์ อ่านแผนที่เดียวกับDirectorและตรวจ9Colliders Focus20ผ่าน ยังเป็นต้นแบบไม่ครบfinalHD/mobilehardware
+- **elder_garden — บ้านผู้เฒ่าและสวนสมุนไพร**: ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก; รอบ16 เริ่มแปลงฉากใหม่ตามReference05จริง บ้านหลังคาม่วง/ถนนหิน/ซุ้ม/หม้อยา/สมุนไพรแยกเลเยอร์ อ่านแผนที่เดียวกับDirectorและตรวจ9Colliders Focus20ผ่าน ยังเป็นต้นแบบไม่ครบfinalHD/mobilehardware; local/PR/main93/Build/Deploy และ actualpublicสวนใหม่/49PNG/JS/ไฟล์ผ่าน ยังไม่finalHDหรือครบphysicalmobile
   - หลักฐาน: [assets/reference/godseed/references/05_elder_herb_garden.webp](assets/reference/godseed/references/05_elder_herb_garden.webp) · [assets/reference/godseed/IMPORT_PROVENANCE.json](assets/reference/godseed/IMPORT_PROVENANCE.json) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/scripts/generate-garden-art.mjs](GODSEED/scripts/generate-garden-art.mjs) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
   - เกณฑ์พร้อมทั้งฉาก: ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ
 
@@ -217,14 +217,14 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-001, GS-012 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: FND-001
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/tests/visual.spec.ts](GODSEED/tests/visual.spec.ts) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
-  - หลักฐาน/สถานะจริง: มีPNG fallbackและwarning ทดสอบabortedPNG; ยังpreloadทั้งหมดไม่มีretryครบ; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง
+  - หลักฐาน/สถานะจริง: มีPNG fallbackและwarning ทดสอบabortedPNG; ยังpreloadทั้งหมดไม่มีretryครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16
   - เกณฑ์เสร็จ: โหลดผิดพลาดกู้ได้ไม่deadlock วัดbudget cold/warm และแบ่งโหลดอย่างปลอดภัย
 
-- [ ] 🟡 กำลังพัฒนา **FND-005 — Manual File Save: RAM only / .godseed / import / validation**
-  - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-005, GS-035 · ตรวจล่าสุด: 2026-11-05
+- [ ] ⛔ ติดข้อจำกัด **FND-005 — Manual File Save: RAM only / .godseed / import / validation**
+  - ความสำคัญ: P0 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-005, GS-035 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: FND-001
   - ไฟล์: [GODSEED/src/engine/manual-session.ts](GODSEED/src/engine/manual-session.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/ui/save-controls.ts](GODSEED/src/ui/save-controls.ts) · [GODSEED/tests/storage.spec.ts](GODSEED/tests/storage.spec.ts) · [GODSEED/scripts/validate-manual-save.mjs](GODSEED/scripts/validate-manual-save.mjs)
-  - หลักฐาน/สถานะจริง: Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน
+  - หลักฐาน/สถานะจริง: Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน; รอบ16 core/manual-file regression93ผ่าน รอเฉพาะphysicalSafari/iOS/Android SAVE-011/012 จัดblockedเพื่อไม่ให้คิวกลับมาทำcoreซ้ำ
   - เกณฑ์เสร็จ: RAM only; explicit .godseed export/import/preview/validation/migration; safe-boundary controls/dirty-exit guard; no persistent progress or save upload; mobilebrowser QA ตามSAVE tasks โดยhardwareแยกQA-009
 
 - [ ] 🟡 กำลังพัฒนา **FND-006 — Responsive phone/iPad/desktop touch/keyboard**
@@ -249,10 +249,10 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - เกณฑ์เสร็จ: ผลเหมือนเดิมเมื่อseed/actionsเหมือนกัน invalid commandไม่เปลี่ยนstate
 
 - [x] ✅ เสร็จสมบูรณ์ **FND-009 — Roadmap คำนวณได้ เชื่อมบอร์ดและDevelopment Log**
-  - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-041 · ตรวจล่าสุด: 2026-11-05
+  - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-041 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: FND-003
-  - ไฟล์: [GODSEED/scripts/roadmap.mjs](GODSEED/scripts/roadmap.mjs) · [GODSEED/docs/roadmap.json](GODSEED/docs/roadmap.json)
-  - หลักฐาน/สถานะจริง: roadmap6/6 PASS รวมnegative metadata/counting/queue; DONEไม่กลับไปห้างานถัดไปและregressionsขึ้นก่อน; same74taskdataset · roadmap6/6PASS และPRCI42004666730SUCCESS; generatedchecklistตรง18/74 และqueueคืนงานunfinishedหลังปิดregression; mainCI42005831839SUCCESS; finalroadmap:check6PASS afterevidenceupdate
+  - ไฟล์: [GODSEED/scripts/roadmap.mjs](GODSEED/scripts/roadmap.mjs) · [GODSEED/docs/roadmap.json](GODSEED/docs/roadmap.json) · [GODSEED/scripts/roadmap.test.mjs](GODSEED/scripts/roadmap.test.mjs) · [GODSEED/docs/evidence/session16/roadmap-final.txt](GODSEED/docs/evidence/session16/roadmap-final.txt)
+  - หลักฐาน/สถานะจริง: roadmap6/6 PASS รวมnegative metadata/counting/queue; DONEไม่กลับไปห้างานถัดไปและregressionsขึ้นก่อน; same74taskdataset; รอบ16 แก้Fixtureไม่ผูกสถานะสด ตรวจคิวin_progress/done/blocked/regressionอย่างชัดเจน Roadmap8/8ผ่าน · roadmap6/6PASS และPRCI42004666730SUCCESS; generatedchecklistตรง18/74 และqueueคืนงานunfinishedหลังปิดregression; mainCI42005831839SUCCESS; finalroadmap:check6PASS afterevidenceupdate; Session16 receipt Roadmap8/8 PASS
   - เกณฑ์เสร็จ: ID/dependency/evidence valid ไม่มีcycle เอกสารไม่stale ตรวจในCI มีlogทุกsession
 
 
@@ -291,7 +291,7 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-007, GS-010 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: VIS-002
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md) · [GODSEED/tests/maren.spec.ts](GODSEED/tests/maren.spec.ts) · [GODSEED/scripts/generate-maren-art.mjs](GODSEED/scripts/generate-maren-art.mjs) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
-  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง
+  - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
@@ -312,21 +312,21 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - ความสำคัญ: P1 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-008, GS-009 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: VIS-001
   - ไฟล์: [GODSEED/src/scenes/stage-layout.ts](GODSEED/src/scenes/stage-layout.ts) · [GODSEED/scripts/generate-stage-art.mjs](GODSEED/scripts/generate-stage-art.mjs) · [GODSEED/src/scenes/scene-definitions.ts](GODSEED/src/scenes/scene-definitions.ts) · [GODSEED/scripts/generate-village-art.mjs](GODSEED/scripts/generate-village-art.mjs) · [GODSEED/src/scenes/garden-staging.ts](GODSEED/src/scenes/garden-staging.ts) · [GODSEED/tests/garden.spec.ts](GODSEED/tests/garden.spec.ts) · [GODSEED/docs/evidence/session14/README.md](GODSEED/docs/evidence/session14/README.md) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
-  - หลักฐาน/สถานะจริง: 6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง
+  - หลักฐาน/สถานะจริง: 6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16
   - เกณฑ์เสร็จ: ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน
 
 - [ ] 🟡 กำลังพัฒนา **VIS-009 — ฉากมีมิติ แสงเงา และocclusionขั้นสุดท้าย**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-008, GS-033 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: VIS-008
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/stage-layout.ts](GODSEED/src/scenes/stage-layout.ts) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
-  - หลักฐาน/สถานะจริง: มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง
+  - หลักฐาน/สถานะจริง: มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16
   - เกณฑ์เสร็จ: reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก
 
 - [ ] 🟡 กำลังพัฒนา **VIS-010 — สิ่งแวดล้อมเคลื่อนไหวและpresetลดกราฟิก**
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-012, GS-033 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: VIS-008
   - ไฟล์: [GODSEED/src/scenes/world.ts](GODSEED/src/scenes/world.ts) · [GODSEED/src/scenes/exploration-art.ts](GODSEED/src/scenes/exploration-art.ts) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
-  - หลักฐาน/สถานะจริง: water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง
+  - หลักฐาน/สถานะจริง: water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16
   - เกณฑ์เสร็จ: อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด
 
 - [x] ✅ เสร็จสมบูรณ์ **VIS-011 — กล้อง Cinematic และtransitionตามทิศทาง**
@@ -626,7 +626,7 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - ความสำคัญ: P2 · ขอบเขต: v1 · เชื่อมบอร์ดเดิม: GS-033 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: VIS-003, VIS-004, VIS-009, MAG-007
   - ไฟล์: [GODSEED/docs/ART_BIBLE.md](GODSEED/docs/ART_BIBLE.md) · [GODSEED/tests/visual.spec.ts](GODSEED/tests/visual.spec.ts) · [GODSEED/src/scenes/gathering-props.ts](GODSEED/src/scenes/gathering-props.ts) · [GODSEED/tests/gathering.spec.ts](GODSEED/tests/gathering.spec.ts) · [GODSEED/src/scenes/garden-map.ts](GODSEED/src/scenes/garden-map.ts) · [GODSEED/scripts/generate-herb-garden-art.mjs](GODSEED/scripts/generate-herb-garden-art.mjs) · [GODSEED/tests/herb-garden.spec.ts](GODSEED/tests/herb-garden.spec.ts) · [GODSEED/docs/evidence/session16/README.md](GODSEED/docs/evidence/session16/README.md)
-  - หลักฐาน/สถานะจริง: runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง
+  - หลักฐาน/สถานะจริง: runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16
   - เกณฑ์เสร็จ: ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **QA-003 — ประสิทธิภาพมือถือ/coldload/FPS/graphics profiles**

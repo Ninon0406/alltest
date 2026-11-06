@@ -161,7 +161,7 @@ Source `0676719` / PR#14 / merge `8b610f3`. Local85/85PASS; PR CI42113575343 ful
 SAVE12/14=85.7%สำหรับงานย่อย (SAVE-011/SAVE-012 อุปกรณ์จริงยัง in_progress) FND-005จึงยังin_progress Checklistหลัก20/76=26.3%, scope1.020/73=27.4% ไม่เพิ่มSAVE14เข้าdenominatorซ้ำ ไม่มีhardwareSafari/FPS/humanfunacceptance ภาพยังprototype ไม่อ้าง1.0หรือRef05ครบฉาก
 
 
-## รอบ 16 — 2026-11-06 UTC — สวนสมุนไพรและเส้นทางตามฉาก (candidate 0.7.1)
+## รอบ 16 — 2026-11-06 UTC — สวนสมุนไพรและเส้นทางตามฉาก (0.7.1)
 
 Base `ea50dfa` / branch `feat/godseed-herb-garden-scene` สะอาดก่อนเริ่ม ตรวจคำสั่ง V2, Roadmap, Log รอบ 15 และระบบจริงแล้ว Baseline 0.7.0 checks ผ่าน เลือก VIS-008 / VIS-009 / VIS-010 ต่อจากงานรอบก่อน เพราะ SAVE-011/012 ต้องใช้อุปกรณ์จริงที่ยังไม่มี ไม่เขียนระบบเซฟที่ผ่านแล้วซ้ำ
 
@@ -169,10 +169,21 @@ Base `ea50dfa` / branch `feat/godseed-herb-garden-scene` สะอาดก่�
 
 รักษา CH0601 รดน้ำ/ดอกบาน/เก็บของ, CH0602 นั่งฟัง และ CH0603 เก็บน้ำค้าง พร้อมเชื่อม CH03B1 ให้เดินไปนั่งฟังอดีตบนม้านั่งจริง คง cue เชิงกฎเป็น talk เพื่อไม่เพิ่ม HP/MP/เวลาโดยไม่ตั้งใจ บันทึกได้เฉพาะไฟล์ตามเดิม State2/File2 ไม่เปลี่ยน ผลเกมยัง 18 Scene / 60 Choice / 5 NPC / 3 Encounter / 234 สูตร / 0 ตอนจบ / 6 Stage
 
-ผลตรวจปัจจุบัน: Unit 121 / Content 2 / Roadmap 8 / TypeScript / Lint / Build / manual-save source gate / reference packing ผ่าน; Focused Browser 20/20 ผ่านบน 390×844, 844×390, 820×1180, 1024×768, 1366×768 รวม PNG fallback, Reduced Motion, เดินเก็บน้ำค้าง/ความลึก, รดน้ำ/นั่ง/ความทรงจำ/โหลดไฟล์ ชุดเต็ม 93 กรณีกำลังตรวจ ยังไม่อ้างผล CI/เผยแพร่ 0.7.1 ก่อนตรวจจริง
+ผลตรวจปัจจุบัน: Unit 121 / Content 2 / Roadmap 8 / TypeScript / Lint / Build / manual-save source gate / reference packing ผ่าน; Focused Browser 20/20 ผ่านบน 390×844, 844×390, 820×1180, 1024×768, 1366×768 รวม PNG fallback, Reduced Motion, เดินเก็บน้ำค้าง/ความลึก, รดน้ำ/นั่ง/ความทรงจำ/โหลดไฟล์ ชุดเต็ม 93 กรณีผ่านทั้ง local/PR/main และเผยแพร่ 0.7.1 แล้ว ดูหลักฐานปิดรอบ
 
 ภาพสวน/เก็บน้ำค้างบน phone และ iPad เปิดตรวจจาก browser แล้ว เก็บภาพก่อน 0.7.0 และภาพหลังใน docs/evidence/session16 งานภาพยังเป็นต้นแบบ ไม่ใช่ final HD หรือ Reference 05 ครบฉาก มือถือจริง/Safari/FPS/ความสนุกจากผู้เล่นจริงยังไม่ยืนยัน Checklist ใหญ่คง 20/76 = 26.3% (1.0: 20/73 = 27.4%) ไม่เพิ่มงานซ้ำเพื่อเพิ่มเปอร์เซ็นต์
 
 ปัญหาระหว่างพัฒนา: Test ใหม่คาดค่า phase ว่า interact แต่ระบบใช้ interaction จึงแก้ให้ตรง contract แล้วรันซ้ำผ่าน; พบว่าการเปลี่ยน cue ของบทสนทนาเป็น rest จะเพิ่มโบนัสพักโดยอัตโนมัติ จึงรักษา talk และแยกท่านั่งใน Director พร้อม Unit ตรวจ HP/MP/เวลา/รางวัลเดิม ไม่มีการปิด assertion หรือข้ามกรณีที่ไม่ผ่าน
 
 งานถัดไป: (1) ปรับสวนและต้นไม้ตามภาพอ้างอิงให้ผ่านคุณภาพทั้งฉาก (2) ท่าพิเศษ NPC อื่น (3) ห้องผสมเวท/VFX (4) โบราณสถาน/B03 ตาม dependency (5) ทดสอบ Files/Downloads และ file picker บนมือถือจริงเมื่อมีอุปกรณ์ ไม่หยุดงานภาพเพื่อรอหรือเขียนระบบเซฟซ้ำ
+
+
+## ยืนยันปิดรอบ 16 — 0.7.1 / 2026-11-06 UTC
+
+Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่าน (17.9 นาที), PR CI42192866046 และ main CI42195039742 ตรวจชุดเต็มและ Build ผ่าน; main Deploy สำเร็จ Unit121 / Content2 / Roadmap8 / TypeScript / Lint / Build / Source gate / Reference packing ผ่าน Focus20/20 ผ่าน; 60 PNG สร้างซ้ำตรง byte, 54 เดิมไม่เปลี่ยน, 6 ใหม่รวม 71,335 bytes
+
+ตรวจเว็บจริง https://ninon0406.github.io/alltest/ ผ่านสวนใหม่ หม้อยา/สมุนไพรเคลื่อนไหว เป้าหมายเก็บน้ำค้าง/ซุ้มบังตามความลึก รดน้ำ/ดอกบาน นั่งฟัง ความทรงจำ และ native file picker/โหลดครบ State/รีเฟรชหน้าเริ่ม ตรวจพบ browser storage และการส่งข้อมูลที่เปลี่ยนสถานะออกนอกเครื่อง 0 ครั้ง เส้นทางเดิมผสม5สูตร/ต่อสู้3แบบ/ความทรงจำ/ไฟล์ผ่าน ตรวจหลัง Actions Deploy: 49 versionedPNG และ JS SHA256 `b77768c89479cb77ecdb50f41b9dbf5c5e589e351a01105560c33f6dff4b359e` ตรง Build, 0 Reference requests / Console errors ในเส้นทางที่ตรวจ
+
+คง Checklist หลัก20/76=26.3% (1.0:20/73=27.4%) งานภาพใหญ่ยังไม่ครบ ไม่ปิดงานจากภาพอ้างอิงอย่างเดียว สถานที่ garden ยังเป็นต้นแบบ งานเซฟหลักทำได้แล้ว12/14 เหลือ SAVE-011/012 ที่ต้องทดสอบอุปกรณ์จริง จัด FND-005 และสองงานย่อยเป็น blocked เพื่อให้คิวไม่ย้อนเขียนระบบที่ผ่านแล้วซ้ำ: จำนวนรวม ✅20 🟡38 ⬜16 🔴0 ⛔2 เปอร์เซ็นต์ไม่เปลี่ยน QA-009 ยังคง blocked เช่นเดิม ไม่มีการรับรอง Safari/iOS/Android จริง, FPS หรือความสนุกจากผู้เล่นจริง
+
+[รายงานภาษาไทยและภาพก่อน/หลัง](evidence/session16/REPORT_TH.md) / [หลักฐาน JSON](evidence/session16/verification.json) เกม source ไม่เปลี่ยนหลัง commit ที่ผ่าน CI; Commit ปิดรอบเพิ่มเฉพาะเอกสาร/หลักฐาน ตัวตรวจเว็บ และ Fixture ของ Roadmap Test

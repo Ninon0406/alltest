@@ -1,0 +1,21 @@
+
+> godseed@0.7.1 roadmap:check
+> node --test scripts/roadmap.test.mjs && node scripts/roadmap.mjs
+
+✔ counts only DONE, including zero/all and each non-done state (2.228472ms)
+✔ current audit has valid references, deterministic checklist and checked boxes only for DONE (11.835964ms)
+✔ duplicate and unknown dependency IDs reject (5.7408ms)
+✔ cycles and missing source evidence reject (4.020064ms)
+✔ unsupported status and DONE without actual verification record reject (1.618902ms)
+✔ next-work list excludes done/blocked tasks and promotes actual regressions (2.063042ms)
+✔ location records reject missing aspects, duplicate locations and premature final readiness (9.561543ms)
+✔ manual save subtasks have stable IDs, evidence and do not inflate the main denominator (4.564275ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.688198
+{"result":"PASS","done":20,"in_progress":38,"not_started":16,"problem":0,"blocked":2,"total":76,"percent":26.3,"v1":{"done":20,"in_progress":38,"not_started":13,"problem":0,"blocked":2,"total":73,"percent":27.4}}

@@ -20,7 +20,7 @@ Computed with `npm run inspect:content` (`scripts/inspect-content.mjs` imports a
 
 `village`, `garden`, `workshop`, `forest`, `archive`, `stream`
 
-NPC counts represent authored companion dialogue; renderer suffixes identify textures, not extra characters.12actor PNG sheets include retained fallback/old player and four-direction idle art. Six stages each have rear/ground/front, plus four retained legacy fallback stages and two new composited fallbacks.
+NPC counts represent authored companion dialogue; renderer suffixes identify textures, not extra characters.14actor PNG sheets include retained fallback/old player and four-direction idle art. Six stages each have rear/ground/front, plus four retained legacy fallback stages and two new composited fallbacks.
 
 Session5 adds4scenes/15choices (2hub routes+6archive/research+7stream/result), oneNPC and oneencounter. Canonical IDs and every older transition remain. Archive branches unlock essential facts on all exits. New ingredients CORE_WATER/CORE_ECHO/FORM_RAY/MOD_LINGER come from actual options; bell is a quest item. Starter/grants and234recipe legality unchanged. ECHO+RAY+LINGER remains illegal; a real route supplies Koro's extraORB to craft ECHO_ORB_LINGER instead.
 
