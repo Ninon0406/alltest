@@ -201,3 +201,12 @@ Retry calls prepare(current,true) then show(current,true), never ManualSession.c
 ArtLedger.settle reconciles all attempted keys against successful filecomplete keys on every loader complete. Phaser4.2.1 decode failures call onProcessError without loaderror; the batch reconciliation makes truncated HTTP200 PNGs visible to fallback/retry on both initial preload and later stage loading.
 
 Session17 delivery verified: local/PR/main full105 plusBuild/Deploy/publiccore+stagedart+postActions51PNG/JS PASS at source5c58122. FND004 complete; workshop/NPC/fullchapter/finalHD/hardware remain Roadmap work. Seeevidence/session17/REPORT_TH.md.
+
+
+## Session18 — Workshop map and crafting, candidate0.8.0
+
+workshop-map.ts supplies11foot anchors,10links and7solids to the existingSceneDefinition/Dijkstra director. Interact with the tutor/toolbox/cauldron before applying the original action. Newart-v11layers replace the workshop primary images under stable keys; retainedart-v2layers are a coherent fallback. Training uses the clear legacy layout, without the anvil/cauldron/toolbox. Load only on workshop entry through the existingRAMledger; title remains23PNG.
+
+workshop-staging.ts maps stableChoiceIDs to anchors, derives S05 canonical checkpoint from choice history, and maps real Core/Form/Mod to21atlas cells. No serialized rendering coordinates or new schema; State2/File2 remains. Field crafting stays available elsewhere. The renderer raises three ingredient sprites, mixes at the real cauldron mouth, then shows formula VFX/discovery. Engine/rewards/RNG/MP stay separate and unchanged.
+
+World.pendingArrival records a validated non-battle endpoint. Explicit skip or motion cancellation completes the authored endpoint/facing and clears it; normal completion clears the pending record. This fixes mid-path checkpoint drift while preserving existing cancellation generations/settlers. Ingredient sprites share the effect cleanup pool. North brewing and west lifting draw from directionalIdle manifest, not guessed rows.

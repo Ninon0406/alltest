@@ -353,3 +353,18 @@ Source5c58122(ต่อจากf851d09) / PR16 / merge d38790e. LocalFull105/10
 เว็บจริง https://ninon0406.github.io/alltest/ ผ่านstart/tree/fountain/5craftedrecipesacross2flows/3encounters/returnstory/archive/stream/memory/filechecksum/nativepicker/exactstateimport/emptyrefresh/explicitretry/nostorage/noupload. Koroจริงและภาพก่อนหลังเปิดตรวจแล้ว PostActions51PNG+JS SHA85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29aeตรงBuild,0ConceptRequests/0ConsoleErrorsในpositiveflow. Controlledfaultแยกexpectednetworkerror1 ไม่ใช่productionoutage
 
 Roadmap21/76=27.6%(v121/73=28.8%):done21/in_progress37/not_started16/problem0/blocked2. ปิดเฉพาะFND004 VIS004/005/008ยังprototype/in_progress;0endings. Save011/012และQA009ยังรออุปกรณ์จริง ไม่อ้างhumanfunหรือfinalHD. Commitปิดรอบเฉพาะdocs/evidence/Roadmap;งานถัดไป5และdependencyตามREPORT_TH ไม่มีงานข้ามเซสชันอัตโนมัติ
+
+
+## รอบ18 — 2026-11-06 UTC — Workshop that shows the recipe (candidate0.8.0)
+
+เริ่มmaina8512b7สะอาด/0.7.2เผยแพร่แล้ว ตรวจ03/Roadmap/Log17/Architecture/ArtBible/Reference08จริง และbaselineUnit126/content2/roadmap8/buildผ่าน เลือกVIS008/007/005/010+MAG007ที่สัมพันธ์กัน ไม่รื้อLoader/ManualSaveหรือระบบต่อสู้ที่ผ่านแล้ว
+
+ทำจริง: Map11anchors/10links/7solids,เส้นทางเรียน/ยกกล่อง/ผสม/ออก,3originallayers+หม้อ6frames+กล่อง3states+ท่ายกกล่อง/ปรุงหันเหนือ+21recipeicons รวม8PNG64170bytes ของเดิม62ไม่เปลี่ยน ทุก70สร้างซ้ำตรงbyte พิกัดมาจากแผนที่ที่วาดเอง ไม่ใช่ภาพreferenceพร้อมcollision
+
+สูตรจริงส่ง3ส่วนผสมขึ้นslot→ลงหม้อ→VFXตามrecipe→discovery ก่อนcommitครั้งเดียว;CH0402ยก/วางกล่องตรงจุดจริงพร้อมผลเดิม;manualfilesคืนS05anchorจากประวัติChoiceIDsเดิม ไม่มีState/Fileversionใหม่ ไม่ใช้Storage/Cloud/Autosave
+
+พบและแก้: ภาพท่าพิเศษอ้างrowผิดแก้ใช้manifest+headpixeltest;skipเดินหยุดกลางทาง184/231แทน291/212สร้างredtestก่อนแก้pendingArrival+cleanup;testใหม่บวกtrustundefinedเป็นNaNแก้baseline0โดยยังตรวจdeltaแน่นอน หลังแก้Unit134/Focus20ผ่าน3.2mบน5viewportsรวมfallback/recipe/privacy/skip/checkpoint.Broadfull113/CI/publicจะเพิ่มreceiptตามผลจริง ไม่อ้างว่าเสร็จก่อนรัน
+
+Checklist21/76=27.6%(v121/73=28.8%)คงเดิม เพราะงานใหญ่ทุกฉาก/ทุกcueยังไม่ครบ Workshopย่อยโครงสร้าง/collision/Chromiumจำลองผ่าน ภาพ/บท/ท่าทั้งฉากยังprototype อุปกรณ์จริง/FPS/FinalHD/humanfunยังไม่ทดสอบ เกมยัง18Scene/60Choice/5NPC/3Encounter/234legal/0endings/6stages
+
+งานต่อไปตามdependency: 1)ต้นแบบศาลเจ้า/S15–17/ECHO puzzle 2)B03/B04telegraph/AI/artหลังฉากพร้อม 3)Workshopmusicbox/clue handoff 4)บ้าน–ประตู–จัตุรัส 5)VFX/visual/performanceและdevicegatesตามRoadmap ไม่ทำเซฟที่ผ่านแล้วซ้ำ

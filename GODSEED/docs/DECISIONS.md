@@ -216,3 +216,10 @@ Second related delivery: original Koro + grounded anvil and recipe pose required
 Finalaudit: distinguish transfer success from decoded texture success. Phaser does not emitloaderror on decodefailure, so reconcile attempted vs successful keys at batch completion; preserve existing fallback and explicit retry. FND004 temporarilyproblem, restored after initial/lazycorruption tests pass. No downloaded save or asset content is executed.
 
 Session17 final gates: local/PR/main full105 andactualpublic0.7.2/51PNG/JS PASS. KeepFND004done andbroaderartin_progress; no score for merely havingreferencesornewPNG. Preserve original234recipes/18scenes/60choices/3encounters/0endings andmanualfileState2/File2. Receiptcommitchangesmetadataonly; no repeatfullsuitewithouta runtimechange.
+
+
+## Session18 — 2026-11-06 — workshop before further world expansion
+
+ChooseVIS008/007/005/010 andMAG007related work: existing workshop had a generic lane, side-facing craft pose and VFX aimed at the NPC. Add a fixed authored map and actual workbench without touching the crafting/combat reducers or save schema. Keep a clean training layout and coherent layer fallback. Rendering uses the real recipe's3parts and procedural effect; no hundreds of videos.
+
+Inspection found skip cancels in mid-lane: retain a validated endpoint until explicit skip/motion cancellation, then complete it. Head rows initially assumed incorrectly; now reference directionalIdle and protect the head pixels in tests. First new reward assertion mishandled absent trust: fix undefined-as-zero, keeping exact reward checks. Preserve failure evidence and rerun. No score increase from partial art: overall21/76unchanged; prototype subgates tracked under the existing workshop location.

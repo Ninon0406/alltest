@@ -478,3 +478,8 @@ Final decoder audit: initialshared/lazyGarden HTTP200 damagedPNG now degrades an
 ### Session17 final receipt — verified 0.7.2
 
 Source5c58122/merge d38790e/PR16. Localfull105/105(20.5m), PRCI42209316444full105(16.5m), MainCI42211897135full105(20.2m)/Build/DeploySUCCESS. Actualpubliccore+stagedartPASS:5recipesacross2verifiers/3battles/explicitfile/nativepicker/RAMstate/emptyreload/noupload/nostorage. PostActions51PNG/JS SHA85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae/rendererPASS,0references/0consoleerrorsinpositiveflow. Faultinjectionexpectednetworkerror1separate. Mainbuildjob127872308039/deployjob127881070748. SourceandartunchangedafterCI; docs-onlyreceiptwithscopedroadmapcheck. Latestfullreport/JSON/screenshotlinksinevidence/session17. Hardware/finalHD/FPS/humanfunNOT_TESTED
+
+
+## Session18 — candidate0.8.0
+
+Unit134/Content2/Roadmap8/type/lint/build/referencepacking/manualsourcegatePASS. Focus20/20PASS3.2mบน390/844/820/1024/1366 รวมactualworkshopmap/recipeparts/northbrewing/lift/reward/statefile/anchor/skip/motion/PNGfallback. Originalpreliminaryrun14pass/5failureจากNaNassertionแก้แล้ว;skipredtestยืนยันตำแหน่งจริงผิดก่อนแก้ และvisualheadrowแก้พร้อมpixelregression. Full113กำลังรัน ไม่ใช้ผล105ของรอบก่อนแทน. CI/publicผลจริงในevidence/session18/REPORT_TH.md. Hardware/FPS/fullHD/humanfunNOT_TESTED

@@ -1,6 +1,7 @@
 import type {StageId} from './stage-layout';
 import type {Facing} from './directional-art';
 import {routeTo,sceneDefinitions,type LocationId} from './scene-definitions';
+import {workshopChoiceTargets} from './workshop-staging';
 import {gardenMap,gardenScenery} from './garden-map';
 export type Point={x:number;y:number};
 export type CinematicPath={id:string;stage:StageId;points:readonly Point[];seatDepth?:number;facing?:Facing;targetAnchor?:string};
@@ -27,6 +28,10 @@ export const choicePaths:Record<string,CinematicPath>={
  CH1201:{id:'stream-bell',stage:'stream',points:[{x:195,y:231},{x:248,y:226}]},
 };
 export function cinematicPath(stage:StageId,cue:string,command?:string,start?:Point,location:LocationId='village_center'):CinematicPath|undefined {
+ if(stage==='workshop'&&start){
+  const targetAnchor=command&&workshopChoiceTargets[command]|| (cue==='craft'?'craft_front':cue==='walk'&&command?.startsWith('CH')?'exit_path':undefined);
+  if(targetAnchor){const def=sceneDefinitions.spell_workshop,feet=routeTo(def,{x:start.x,y:start.y+20},targetAnchor);if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยในโรงช่าง');return {id:'workshop-'+targetAnchor,stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:def.anchors[targetAnchor].facing};}
+ }
  if(stage==='garden'&&start){
   const authored=command?choicePaths[command]:undefined;
   const targetAnchor=command==='CH0601'?'herb_bed_front':command==='CH0602'||command==='CH03B1'?'maren_listen_seat':command==='CH0603'?'dew_collect':cue==='walk'?'exit_path':undefined;
