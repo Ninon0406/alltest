@@ -83,4 +83,3 @@ AssertionError: ruins interactive scenery: expected 0 to be greater than 0
       Tests  1 failed | 149 passed (150)
    Start at  14:26:14
    Duration  5.92s (transform 411ms, setup 0ms, import 1.39s, tests 2.34s, environment 1ms)
-

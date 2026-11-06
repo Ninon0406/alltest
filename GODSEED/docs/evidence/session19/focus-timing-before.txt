@@ -19,7 +19,7 @@ Running 10 tests using 1 worker
   ✘  10 tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor (9.3s)
 
 
-  1) tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor 
+  1) tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor
 
     Error: expect(received).toBe(expected) // Object.is equality
 
@@ -41,5 +41,5 @@ Running 10 tests using 1 worker
     Error Context: test-results/ruins-skipping-a-rune-appr-9b652-sh-once-at-the-right-anchor/error-context.md
 
   1 failed
-    tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor 
+    tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor
   9 passed (3.3m)

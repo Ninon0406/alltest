@@ -34,4 +34,3 @@ AssertionError: CH1501: expected undefined to be defined
       Tests  2 failed | 14 passed (16)
    Start at  14:23:37
    Duration  748ms (transform 300ms, setup 0ms, import 399ms, tests 224ms, environment 0ms)
-
