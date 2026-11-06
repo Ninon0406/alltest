@@ -1,3 +1,9 @@
+# QA Matrix — Session19 / candidate0.9.0
+
+Unit151/Content2/Roadmap8/BuildPASS; Focus10/10(5viewport)และหลังแก้retreat2/2(390/1366)ผ่าน. Rune/musicbox/questonce/file/ward/win/retreat/defeat/PNGfallback/skip/RAfdepthตรวจจริงแล้ว Full123/CI/publicตาม[รายงานรอบ19](evidence/session19/REPORT_TH.md) ภาพและประสิทธิภาพอุปกรณ์จริง/Safari/FPS/humanfunยังไม่รับรอง
+
+---
+
 # QA Matrix — รอบ18 / 0.8.0
 
 Unit134/Content2/Roadmap8/Focus20และBuildผ่าน ตรวจRoom/3parts/cauldron/north/west/7colliders/11anchors/filecheckpoint/skip/reduced/fallbackบน5viewportsแล้ว Local113/113 (23.4m) และ PR CI113/113 (17.7m) ผ่าน Actualpublic core/workshop/59PNG+JS hash ผ่าน; Main CI42225430490 ผ่าน113/113(16.2m)/Deploy และ post-Actions59PNG+JSผ่าน ผลล่าสุดตาม[รายงานรอบ18](evidence/session18/REPORT_TH.md) Physicaldevices/Safari/FPS/humanfun/finalHDยังไม่ทดสอบ

@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: GODSEED
@@ -26,7 +26,14 @@ jobs:
       - run: npm run test:all
       - run: node scripts/stage-site.mjs
       - run: npm run validate:references
-      - run: npx playwright install --with-deps chromium
+      - name: Install Thai font
+        timeout-minutes: 5
+        run: |
+          sudo apt-get update -o Acquire::Retries=2 -o Acquire::http::Timeout=30
+          sudo apt-get install -y --no-install-recommends fonts-tlwg-loma-otf
+      - name: Install Chromium headless shell
+        timeout-minutes: 5
+        run: npx playwright install chromium --only-shell
       - run: npm run test:e2e
         env:
           CHROMIUM_PATH: ''
@@ -41,7 +48,7 @@ jobs:
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       pages: write
       id-token: write

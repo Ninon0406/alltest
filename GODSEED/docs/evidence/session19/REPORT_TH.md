@@ -1,0 +1,82 @@
+# GODSEED DEVELOPMENT REPORT — รอบ19 / candidate 0.9.0
+
+## 1. สถานะก่อนเริ่ม
+
+เริ่มจาก main `1b9d598` ที่สะอาดและเว็บ 0.8.0 ซึ่งผ่าน113BrowserCasesแล้ว อ่าน03/Roadmap/Log18/สเปก/ArtBible/ArchitectureและเปิดReference09กับContactSheetจริง Baseline Unit134/Content2/Roadmap8/Buildผ่าน จึงเลือก VIS-008 / STO-001 / CMB-006 ต่อจากโรงช่าง โดยไม่เขียนระบบเซฟหรือสูตรเวทเดิมซ้ำ
+
+ภาพก่อนรอบนี้คือ[จัตุรัสหลังอ่านแผนที่บนเว็บ0.8.0](before-hub-390.png): ruins_open เป็นจริง แต่ยังไม่มีทางเข้าศาลเจ้า นี่เป็นหลักฐานช่องว่างเนื้อหาเดิม ไม่ใช่ภาพศาลเจ้าเก่าที่นำมาอ้างเป็นสถานที่เดียวกัน
+
+## 2. งานที่สร้างจริง
+
+- [story.ts](../../../src/content/story.ts): S15_RUINS, S16_RUINS_RESULT, S17_ECHO_TABLET และ10ตัวเลือกใหม่รวมทางเข้า CH0207 แก้รูนตามบันทึก ใช้กล่องเพลง หรือเลือกสู้ B03 ได้ มีทางออกทุกฉาก ไม่บังคับสู้เพื่อรับเบาะแส
+- [ruins-map.ts](../../../src/scenes/ruins-map.ts): 14จุดหมาย/15เส้นทาง/8พื้นที่ห้ามเดิน ใช้พิกัดเท้าบนแผนที่ที่วาดเอง ร่วมกับ Generator และ Director; เสาแยกSpriteเรียงความลึกที่242
+- [ruins-staging.ts](../../../src/scenes/ruins-staging.ts), [world.ts](../../../src/scenes/world.ts): เดินไปหารูน ช่องกล่องเพลง ผลึก หรือแผ่นจารึกจริง หันเหนือก่อนทำท่า แท่นมีสามสถานะและจำผลของเรื่อง แสงเกิดตามจังหวะบท ข้าม/ReducedMotionจบที่Anchorและรับผลครั้งเดียว
+- [generate-ruins-art.mjs](../../../scripts/generate-ruins-art.mjs): 8PNGต้นฉบับ/151337bytes ได้แก่สามเลเยอร์+fallback,แท่น12เฟรม,เสา,หุ่น16เฟรม64×64 และท่าผู้เล่น10เฟรมหันเหนือ ใช้Reference09เป็นแนวทาง ไม่อ่านหรือแปะพิกเซลจากConcept
+- [combat.ts](../../../src/systems/combat.ts): B03HP66/Power10/แพ้ธาตุดิน20%; แจ้งกางเกราะทุกเทิร์นที่3 งดโจมตีในจังหวะนั้น แล้วลดความเสียหาย50%อีกสองจังหวะผู้เล่น เวททะลวงลดผลเกราะได้ ชนะได้FORM_WARDและXP18ครั้งเดียว หนีได้ ยอมแพ้ไม่ได้ แพ้แล้วพักและกลับS15ได้
+- [game.ts](../../../src/systems/game.ts), [memory-panel.ts](../../../src/ui/memory-panel.ts): Q_ARCHIVE_NOTESให้FORM_RAYและTrustEIRAร่วมกันเพียงครั้งเดียว แม้เลือกทั้งคัดลอกและฟังจารึก กลับหอสมุดไอราจำสำเนาที่ส่งมาได้ แสดงผลจริงในสมุดความทรงจำ
+
+[เข้าศาลเจ้า](ruins-entry-390.png) · [แตะรูน](ruins-tracing-390.png) · [ใช้กล่องเพลง](ruins-musicbox-390.png) · [เดินหลังเสา](ruins-behind-pillar-390.png) · [เกราะB03](ruins-sentinel-ward-390.png). เปิดตรวจภาพจริงบนphone/desktopแล้ว ภาพยังเป็นproceduralprototype ไม่ใช่finalHDหรือpixel-diffbaseline
+
+## 3. เซฟและความเข้ากันได้
+
+Manual File Save เท่านั้น เก็บความคืบหน้าในRAM กดดาวน์โหลด.godseedและเลือกไฟล์ยืนยันเอง ไม่มีAutoSave/Cloud/BrowserProgressStorage/ส่งเซฟให้เซิร์ฟเวอร์
+
+คง State2/File2 และทุกIDเดิม เพิ่มเฉพาะScene/Choice/Encounter/statusในCatalogและflagเส้นทาง ค่าจากไฟล์0.8.0เดิมต้องกลับมาเหมือนเดิมทุกฟิลด์ ไฟล์ใหม่มีGameVersion0.9.0เพื่อป้องกันโหลดเนื้อหาใหม่ในเกมเก่า เกราะรูนจำกัด2จังหวะ/เฉพาะB03ก่อนรับเซฟ ไม่มีการอ่านฐานข้อมูลเก่าหรือแอบสร้างไฟล์
+
+ส่งออกไฟล์จำลองด้วยปุ่มจากเว็บ0.8.0จริงแล้ว เก็บไฟล์เฉพาะ/tmp ไม่commitหรือuploadตัวเซฟ หลักฐานhashและเวอร์ชันอยู่ใน[before.json](before.json) การโหลดไฟล์เดิม/ไฟล์ระหว่างเกราะ/คืนAnchor/refreshว่างอยู่ในBrowserและตัวตรวจPreview/public
+
+## 4. ผลทดสอบจริง
+
+| การตรวจ | ผลล่าสุด |
+| --- | --- |
+| npmci/type/lint/content/unit/build | ผ่าน; Unit151/Content2 |
+| Roadmap | 8/8ผ่าน |
+| FocusBrowser | 10/10ผ่าน3.4นาที; หลังแก้ท่าถอยตรวจอีก2/2บน390×844และ1366×768ผ่าน50.4วินาที ไม่ได้นับเป็น12กรณีที่ต่างกัน |
+| หน้าจอใหม่ | Focus5ขนาดและPreviewเพิ่มครบ10ขนาดตามสเปก:360/390/430/844/768/820/1024/1366/1440/1920;TouchและKeyboardEnterผ่าน ไม่มีhorizontaloverflow/consoleerror — [ผล](preview-layout.json) |
+| FullBrowser | กำลังรัน123กรณีจากโค้ดหลังแก้ท่าถอย ไม่ใช้ชุดที่ยกเลิกแทน |
+| Balance | 64/64ชนะจาก32seeds×2วิธีเล่น เส้นทางรับของจริง;4–7เทิร์น จบHP60–80/MP0–2 — [ข้อมูล](balance.json) |
+| PNG | ทุก78ไฟล์สร้างซ้ำตรงbyte;70เดิมไม่เปลี่ยน/8ใหม่ |
+| Previewล่าสุด | ไฟล์0.8เดิม/nativepicker/รูน/กล่องเพลง/questonce/เกราะfileturn/เวทป้องกัน/fallback/retryผ่าน;0storage/0upload/0normalconsoleerrors |
+| CI/Deploy/Public0.9.0 | รอผลหลังCommit/PRและตรวจเว็บจริง |
+| Safari/อุปกรณ์จริง/FPS/thermal/ความสนุกโดยผู้เล่น/finalHD | ยังไม่ได้ทดสอบ |
+
+ประวัติปัญหาและวิธีแก้เก็บใน[README](README.md): ฐานเสาขวางจุดเข้า,fixtureไม่พักMP,ตัวตรวจpropsรองรับเฉพาะAtlasเก่า,ช่วงตรวจความลึกสั้นเกินpoll,ตัวตรวจคาดแท่นopenแทนremembered และ[ท่าถอยตัดฐานเสาจริง](retreat-regression-before.txt). แก้ข้อมูล/โค้ดที่สาเหตุ ใช้RAFอ่านเฟรมและรักษาความทรงจำเดิม ไม่ลบAssertionหรือskipกรณีทดสอบ ชุดเต็มแรกยกเลิกก่อนจบเพื่อทดสอบsourceที่แก้ท่าถอยแล้ว
+
+## 5. ปริมาณเกมปัจจุบัน
+
+จาก inspect:content: **21Scene /70Choice /5NPC /4EncounterรวมTraining /234สูตร /0ตอนจบบทเต็ม /7Stage**. IDเดิมยังอยู่ครบ สูตรและวัตถุดิบเดิมไม่เปลี่ยน เพิ่มแหล่งFORM_WARD/MOD_PIERCE/FORM_RAYที่มีผลจริง สามารถนำรางวัลไปผสมWIND_WARD_LINGER ติดตั้งและสร้างโล่ในรอบสู้ใหม่ได้
+
+B04/B05/เทศกาลและตอนจบยังไม่สร้างครบ ไม่เรียกว่าเล่นจบบทแรก ความสนุกและสัดส่วนเวลา50:50ยังไม่ยืนยันจากผู้เล่นจริง
+
+## 6. Roadmap ทั้งโครงการ
+
+**27.6% — 21/76งาน**; ✅21 🟡38 ⬜15 🔴0 ⛔2. เฉพาะscope1.0=21/73=28.8%. เป็นเปอร์เซ็นต์Checklist ไม่ใช่ปริมาณแรงงานหรือคุณภาพของเกม เปลี่ยนCMB-006เป็นกำลังพัฒนาเพราะB03ทำแล้ว แต่B04ยังเหลือ ไม่ปิดงานใหญ่หรือเพิ่มตัวหารเพื่อเพิ่มคะแนน
+
+| Phase | เสร็จ/ทั้งหมด | งานที่ยังเหลือหลัก |
+| --- | ---: | --- |
+| 1 พื้นฐาน |7/9|Responsiveครบ/PhysicalfileQA|
+| 2 งานภาพ |6/14|ทุกฉาก/NPC/ท่าพิเศษ/UI/finalHD|
+| 3 เนื้อเรื่อง |1/8|เทศกาล/บทท้าย/หลายเส้นทาง/3ตอนจบ|
+| 4 เวท |3/9|แหล่งวัตถุดิบ/mastery/behavior/VFX/balanceครบ|
+| 5 ต่อสู้ |3/9|B04/B05/assist/ปฏิกิริยาและแอนิเมชันครบ|
+| 6 โลก |0/8|ภารกิจ/สถานที่/เวลา/บทสรุปครบ|
+| 7 คุณภาพ |1/9|เสียง/A11y/performance/visualregression/fullplaytest|
+| 8 ฉบับสมบูรณ์ |0/10|ทุกreleasegateของ1.0|
+
+[Checklistครบ76ID/Dependency/เกณฑ์/หลักฐาน/SAVE14งานย่อย/ความพร้อม10สถานที่](../../../../GODSEED_MASTER_ROADMAP.md). สถานที่ที่เปลี่ยนในรอบนี้คือancient_shrine:ref/structure/collision/Chromiumviewportผ่าน;layers/movement/story/effects/readyยังพัฒนา อีก9แห่งรักษาสถานะเดิม
+
+## 7. งานสำคัญสำหรับรอบถัดไป
+
+1. STO-001/WRD-003 — S18–S20เทศกาลตามlumi_helped/crafted_first/clue_countพร้อมท่าติดตั้งกล่องเพลงและประตูผนึก
+2. CMB-006/STO-005 — S21กับB04copytelegraph/EIRAconditionalflee หลังเชื่อมเทศกาลแล้ว
+3. CMB-007 — S22/B05สามช่วง/Guard/Pierce/assist/recovery ก่อนสามตอนจบ
+4. VIS-005/008 — ท่ากล่องเพลงที่โรงช่างและเส้นทางบ้าน–ประตู–จัตุรัส พร้อมปรับภาพตามReference
+5. MAG-007/QA-002/003 — ความต่างVFX/ความสม่ำเสมอภาพและประสิทธิภาพมือถือ ก่อนเกณฑ์release/hardware
+
+คำสั่งรอบถัดไป:อ่าน03/Roadmap/Log19 ตรวจsourceที่ผ่านแล้ว แล้วต่อเทศกาลS18–S20และประตูผนึกโดยคงรูน/รางวัลครั้งเดียว/234สูตร/ManualFileSave/Turn-Basedเดิม
+
+## 8. สถานะพร้อมเล่นและGitHub
+
+Candidate0.9.0 Buildผ่านและPreviewเล่นได้ เว็บล่าสุดยัง0.8.0จนกว่าPR/CI/Deployผ่าน ผลsourcecommit/PR/mainCI/public/postdeployจะเพิ่มหลังตรวจจริง ไม่ใช้ผลรุ่นก่อนแทน
+
+CIหมายเหตุ:Run42239707225ถูกยกเลิกหลังfontmirrorช้า11นาทีและก่อนE2E ไม่ใช่PASS อัปเดตWorkflowให้ใช้Ubuntu24.04/ThaiLoma/Chromiumheadlessshellและยังต้องผ่าน123กรณีครบก่อนรวมPR

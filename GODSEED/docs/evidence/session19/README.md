@@ -1,0 +1,15 @@
+# Session19 — candidate0.9.0 / The listening sanctuary
+
+Base main1b9d598, published0.8.0. Continue existing choice-driven RPG; no project restart, browser progress storage or AI dependency.
+
+Implemented: canonicalS15/S16/S17 and10choices including the hub link; Reference09 directed original three-layer ruins,14footanchors/15roadlinks/8solids/altar12frames/hero10northgestures/16-frame64px rune sentry. New8PNG total151337bytes; all78 reproduce byte-identically and original70 unchanged. Runtime concept requests remain forbidden. Art is provisional, not finalHD.
+
+B03 uses66HP/power10/EARTHweakness, announced ward on every third turn. The ward is applied after that no-attack enemy action and lasts two player actions; PIERCE mitigates it. Shared archive quest reward is guarded by an authored onceFlag; route flags restore the current musicbox/rune/crystal checkpoint even when unique choice history contains both paths. No State/File schema bump or destructive migration. Old0.8file from the actual published site stays in /tmp only; before.json records its hash without uploading the save.
+
+Validation: Unit151/content2/roadmap8/type/lint/build PASS. Focus10/10 passed3.4m before the later retreat fix. Finalretreat2/2PASS50.4s; latestPreview PASS with0.8file/nativepicker/ward/shield/quest/fallback/0storage/0upload. Full123/CI/public receipts are added after actual execution; do not substitute the earlier partial suite for them. Pure engine balance64/64wins across32seeds/twopolicies (balance.json), not human fun or physical-device performance.
+
+Failures preserved: initial-unit.txt (blocked entrance/MP assumption), initial-integration.txt (validator assumed legacy props only), focused-superseded.txt (cancelled to align FLEE label), focus-timing-before.txt (9pass/1missed short occlusion window), preview-memory-before.txt (probe expected open after song already remembered), retreat-regression-before.txt (real generic FLEE crosses new pillar). Fixed root paths/data, used actual UI names, RAF observation and preserved remembered state. Full-superseded.txt was cancelled after discovering the retreat issue and is not full PASS. No tests/assertions skipped or deleted.
+
+Full Thai report, roadmap and release receipts are recorded in REPORT_TH.md/verification.json. PhysicalSafari/iOS/Android/iPadOS/FPS/thermal/finalHD/humanfun remain NOT_TESTED. B04, guardian, festival and endings are not delivered in this batch.
+
+ExtraPreview layout10/10 PASS:360×800,390×844,430×932,844×390,768×1024,820×1180,1024×768,1366×768,1440×900,1920×1080; real old0.8file import/rune/quest, touch7sizes/keyboardEnter3sizes, no horizontal overflow/normalconsoleerrors. Opened360/1920 captures. Physicaldevices remain NOT_TESTED. First PR CI installer run was cancelled for diagnosis; see ci-installer-cancelled.json, not a passing browser run. New setup pins Ubuntu24.04 and installs only required Thai font plus headless Chromium; all tests stay required.

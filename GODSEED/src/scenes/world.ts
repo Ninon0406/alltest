@@ -15,6 +15,8 @@ import {outcomeFor,poseFor,type Outcome} from './visual-plan';
 import {gatheringProps} from './gathering-props';
 import {gardenPresentation,wateringPlan,wateringFrames} from './garden-staging';
 import {gardenScenery} from './garden-map';
+import {ruinsScenery,ruinsMap} from './ruins-map';
+import {ruinsActions,ruinsAnimations,ruinsCheckpoint,altarState} from './ruins-staging';
 import {workshopScenery,workshopMap} from './workshop-map';
 import {koroAnimations,workshopAnvil,workshopRecipe,workshopCheckpoint} from './workshop-staging';
 
@@ -60,6 +62,8 @@ export class World extends Phaser.Scene {
  private gardenBed?:Phaser.GameObjects.Sprite;
  private gardenArtActive=false;
  private workshopArtActive=false;
+ private ruinsAltar?:Phaser.GameObjects.Sprite;
+ private ruinsArtActive=false;
  private cauldron?:Phaser.GameObjects.Sprite;
  private toolbox?:Phaser.GameObjects.Sprite;
  private gardenArch?:Phaser.GameObjects.Sprite;
@@ -81,8 +85,9 @@ export class World extends Phaser.Scene {
   this.writeMetric('walkFacing',this.facing);this.writeMetric('walkTrace',this.walkTrace.join(','));
   this.writeMetric('location',this.currentStage==='village'?this.location:this.currentStage);
   this.writeMetric('leafFall',this.leafFall?'active':'inactive');this.writeMetric('resting',String(this.resting));
-  this.writeMetric('occluderDepth',this.currentStage==='village'?(this.location==='under_tree'?201:204):0);
-  this.writeMetric('workshopAnvil',String(this.anvilVisible));if(this.npc){this.writeMetric('npcAnimation',this.npc.anims.currentAnim?.key||'none');this.writeMetric('npcFrame',this.npc.frame.name);}
+  this.writeMetric('occluderDepth',this.currentStage==='village'?(this.location==='under_tree'?201:204):this.currentStage==='ruins'?242:0);
+  this.writeMetric('ruinsArt',this.currentStage==='ruins'?(this.ruinsArtActive?'shrine-v12':'fallback'):'none');this.writeMetric('altarFrame',this.ruinsAltar?.frame.name??-1);
+  this.writeMetric('workshopAnvil',String(this.anvilVisible));if(this.npc){this.writeMetric('npcContact',JSON.stringify({x:this.npc.x,y:this.npc.y,originY:this.npc.originY,feetY:this.npc.y+20,depth:this.npc.depth,shadowY:this.npcShadow.y}));this.writeMetric('npcAnimation',this.npc.anims.currentAnim?.key||'none');this.writeMetric('npcFrame',this.npc.frame.name);}
   this.writeMetric('workshopArt',this.currentStage==='workshop'?(this.workshopArtActive?'atelier-v11':'legacy'):'none');this.writeMetric('cauldronFrame',this.cauldron?.frame.name??-1);this.writeMetric('toolboxFrame',this.toolbox?.frame.name??-1);
   if(this.player)this.writeMetric('idleAnimation',this.player.anims.currentAnim?.key||'none');
   if(this.player){this.writeMetric('playerTexture',this.player.texture.key);if(this.phase==='action'&&this.playerAction==='walk')this.writeMetric('walkSample',JSON.stringify({x:this.player.x,y:this.player.y,feetY:Math.round(this.player.y+20),shadowX:this.playerShadow.x,shadowY:this.playerShadow.y,depth:this.player.depth,animation:this.player.anims.currentAnim?.key,texture:this.player.texture.key}));}
@@ -118,6 +123,8 @@ export class World extends Phaser.Scene {
  }
  private registerArtAnimations(){
   const add=(config:Phaser.Types.Animations.Animation)=>{if(!this.anims.exists(config.key!))this.anims.create(config);};
+  for(const [texture,animations] of Object.entries(ruinsAnimations))if(this.textures.exists(texture))for(const [name,config] of Object.entries(animations))add({key:texture+'-'+name,frames:this.anims.generateFrameNumbers(texture,{frames:[...config.frames]}),frameRate:config.frameRate,repeat:config.repeat});
+  if(this.textures.exists('ruins-altar-v12'))for(let state=0;state<3;state++)add({key:'ruins-altar-'+state,frames:this.anims.generateFrameNumbers('ruins-altar-v12',{start:state*4,end:state*4+3}),frameRate:4,repeat:-1});
   if(this.textures.exists('workshop-cauldron-v11'))add({key:'workshop-simmer',frames:this.anims.generateFrameNumbers('workshop-cauldron-v11',{start:0,end:5}),frameRate:5,repeat:-1});
   if(this.textures.exists('hero-brew-v11'))add({key:'hero-brew',frames:this.anims.generateFrameNumbers('hero-brew-v11',{start:0,end:7}),frameRate:10,repeat:-1});
   if(this.textures.exists('hero-toolbox-v11'))add({key:'hero-toolbox',frames:this.anims.generateFrameNumbers('hero-toolbox-v11',{frames:[0,1,2,3,2,1,0]}),frameRate:7,repeat:0});
@@ -173,7 +180,8 @@ export class World extends Phaser.Scene {
  }
  private pose(name:string){
   this.playerAction=name;
-  if(name==='brew'&&this.textures.exists('hero-brew-v11')){this.player.setTexture('hero-brew-v11').setFlipX(false).play('hero-brew');if(!this.motion)this.player.setFrame(2);
+  if((name==='trace'||name==='musicbox')&&this.textures.exists('hero-ruins-v12')){this.player.setTexture('hero-ruins-v12').setFlipX(false).play('hero-ruins-v12-'+name);if(!this.motion)this.player.setFrame(name==='trace'?2:8);
+  }else if(name==='brew'&&this.textures.exists('hero-brew-v11')){this.player.setTexture('hero-brew-v11').setFlipX(false).play('hero-brew');if(!this.motion)this.player.setFrame(2);
   }else if(name==='toolbox'&&this.textures.exists('hero-toolbox-v11')){this.player.setTexture('hero-toolbox-v11').setFlipX(false).play('hero-toolbox');if(!this.motion)this.player.setFrame(3);
   }else if(name==='water'&&this.textures.exists('hero-water-v7')){
    this.player.setTexture('hero-water-v7').setFlipX(false).play('hero-water');if(!this.motion)this.player.setFrame(1);
@@ -202,11 +210,12 @@ export class World extends Phaser.Scene {
   this.gardenArtActive=this.currentStage==='garden'&&['rear','ground','front'].every(layer=>this.textures.exists(`garden-${layer}-v2`));
   this.workshopArtActive=this.currentStage==='workshop'&&!state?.battle&&['rear','ground','front'].every(layer=>this.textures.exists(`workshop-${layer}-v2`));
   const layerKey=(layer:string)=>this.currentStage==='workshop'&&!this.workshopArtActive?`workshop-${layer}-legacy`:this.currentStage==='garden'&&!this.gardenArtActive?`garden-${layer}-legacy`:this.currentStage==='village'&&this.location==='under_tree'?`tree-${layer}-v5`:`${this.currentStage}-${layer}-v2`;
+  this.ruinsArtActive=this.currentStage==='ruins'&&['rear','ground','front'].every(layer=>this.textures.exists(layerKey(layer)));
   this.layered=['rear','ground','front'].every(layer=>this.textures.exists(layerKey(layer)));
   this.stage.setTexture(this.currentStage).setVisible(!this.layered);
   this.rear.setVisible(this.layered);this.ground.setVisible(this.layered);this.front.setVisible(this.layered);
   if(this.layered){this.rear.setTexture(layerKey('rear'));this.ground.setTexture(layerKey('ground'));this.front.setTexture(layerKey('front'));}
-  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;this.gardenBed=undefined;this.gardenArch=undefined;this.gardenCauldron=undefined;this.gardenHerbs=undefined;this.cauldron=undefined;this.toolbox=undefined;this.anvilVisible=false;this.writeMetric('workshopBeat','idle');this.writeMetric('gardenBeat','idle');
+  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;this.gardenBed=undefined;this.gardenArch=undefined;this.gardenCauldron=undefined;this.gardenHerbs=undefined;this.cauldron=undefined;this.toolbox=undefined;this.ruinsAltar=undefined;this.anvilVisible=false;this.writeMetric('ruinsBeat','idle');this.writeMetric('altarState',this.currentStage==='ruins'?['sealed','open','remembered'][altarState(state)]:'none');this.writeMetric('runeWard',String(!!state?.battle?.status.RUNE_WARD));this.writeMetric('workshopBeat','idle');this.writeMetric('gardenBeat','idle');
   const garden=gardenPresentation(state);this.writeMetric('gardenGrowth',garden?.frame===2?'bloom':garden?'buds':'none');
   if(garden&&this.textures.exists('garden-bed-v7')){this.gardenBed=this.add.sprite(garden.bed.x,garden.bed.y,'garden-bed-v7',garden.frame).setOrigin(.5,1).setDepth(garden.bed.depth);this.props.push(this.gardenBed);}
   const addProp=(frame:number,x:number,y:number)=>{if(this.textures.exists('props-v2')){const prop=this.add.sprite(x,y,'props-v2',frame).setOrigin(.5,1).setDepth(y);this.props.push(prop);return true;}return false;};
@@ -221,6 +230,10 @@ export class World extends Phaser.Scene {
    if(this.workshopArtActive){
     if(this.textures.exists('workshop-cauldron-v11')){const a=workshopScenery.cauldron;this.cauldron=this.add.sprite(a.x,a.y,'workshop-cauldron-v11').setOrigin(.5,1).setDepth(a.y).play('workshop-simmer');this.props.push(this.cauldron);}else addProp(2,240,209);
     if(this.textures.exists('workshop-toolbox-v11')){const a=workshopScenery.toolbox;this.toolbox=this.add.sprite(a.x,a.y,'workshop-toolbox-v11',state?.flags.workshop_help?2:0).setOrigin(.5,1).setDepth(a.y-1);this.props.push(this.toolbox);}
+   }
+   if(this.ruinsArtActive)for(const a of stageLayouts.ruins.customProps||[]){
+    if(!this.textures.exists(a.texture))continue;const prop=this.add.sprite(a.x,a.y,a.texture).setOrigin(.5,1).setDepth(a.y);this.props.push(prop);
+    if(a.texture==='ruins-altar-v12'){this.ruinsAltar=prop;prop.play('ruins-altar-'+altarState(state));}
    }
    if(this.currentStage==='village'){
     if(this.location==='under_tree'&&this.textures.exists('ancient-tree-v5'))this.props.push(this.add.sprite(276,201,'ancient-tree-v5').setOrigin(.5,1).setDepth(201));
@@ -243,9 +256,11 @@ export class World extends Phaser.Scene {
   if(this.npcKey==='maren'&&this.textures.exists('maren-v8'))this.npcKey='maren-v8';
   if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
   this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
-  this.npcRestPose=this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
-  this.npc.setTexture(this.npcKey);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
+  this.npcRestPose=this.npcKey==='sentinel-v12'&&state?.battle?.status.RUNE_WARD?'guard':this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
+  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
   if(!preserve){this.player.setPosition(state?.battle?130:154,219);this.facing='east';
+   if(this.currentStage==='ruins'&&state?.battle)this.player.setPosition(ruinsScenery.playerBattle.x,ruinsScenery.playerBattle.y);
+   if(this.currentStage==='ruins'&&!state?.battle){const a=ruinsMap.anchors[ruinsCheckpoint(state) as keyof typeof ruinsMap.anchors];this.player.setPosition(a.x,a.y-20);this.facing='facing' in a?a.facing:'east';}
    if(this.currentStage==='workshop'&&!state?.battle){const a=workshopMap.anchors[workshopCheckpoint(state) as keyof typeof workshopMap.anchors];this.player.setPosition(a.x,a.y-20);this.facing='facing' in a?a.facing:'east';}
    if(scene?.id==='S03_LUMI'&&!state?.battle){const anchor=sceneDefinitions.village_center.anchors.fountain_front;this.player.setPosition(anchor.x,anchor.y-20);this.facing=anchor.facing!;}
   }
@@ -254,7 +269,7 @@ export class World extends Phaser.Scene {
   this.playerShadow.setVisible(!this.resting);
   if(this.resting){this.player.setPosition(79,193);this.actionDepth=239;this.playerShadow.setVisible(false);this.facing='south';}
   this.shown=state?{runId:state.runId,battle:!!state.battle}:undefined;
-  this.npcHomeX=state?.battle?350:this.currentStage==='garden'?365:338;this.npc.setPosition(this.npcHomeX,212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.reportArt();
+  this.npcHomeX=state?.battle?(this.currentStage==='ruins'?ruinsScenery.enemyBattle.x:350):this.currentStage==='garden'?365:338;this.npc.setPosition(this.npcHomeX,this.currentStage==='ruins'&&state?.battle?ruinsScenery.enemyBattle.y:212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.reportArt();
  }
  finishAction(){
   const support=this.actionDepth,arrival=this.pendingArrival;this.pendingArrival=undefined;this.generation++;this.actionDepth=undefined;
@@ -266,7 +281,7 @@ export class World extends Phaser.Scene {
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
   this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();
-  if(this.resting){this.actionDepth=support??239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.writeMetric('workshopBeat','idle');this.parallax.value=0;this.diagnostics();
+  if(this.resting){this.actionDepth=support??239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.writeMetric('workshopBeat','idle');this.writeMetric('ruinsBeat','idle');this.parallax.value=0;this.diagnostics();
  }
  setReduced(reduced:boolean){this.motion=!reduced;if(this.ready){if(reduced)this.finishAction();this.cameras.main.setZoom(reduced?1:cameraFraming.zoom).setScroll(0,0);}this.diagnostics();}
  private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
@@ -308,9 +323,14 @@ export class World extends Phaser.Scene {
    this.tweens.add({targets:particle,x:Math.round(endX),y:Math.round(endY),alpha:0,scale:modifier==='AMPLIFY'?2.5:1,duration:reduced?100:modifier==='LINGER'?650+i*4:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
   }
  }
+ private ruinsGlow(kind:string,reduced:boolean,origin?:{x:number;y:number}){
+  const target=origin||(kind==='crystal'?{x:350,y:170}:ruinsScenery.spellTarget),count=reduced?4:12;
+  for(let i=0;i<count;i++){const a=i*Math.PI*2/count,particle=this.add.sprite(target.x+Math.cos(a)*25,target.y+Math.sin(a)*12,'ambient-v2',12+i%4).setTint(kind==='song'?0xcbbbe5:0xf4d28a).setScale(.35).setDepth(850);this.effects.add(particle);this.tweens.add({targets:particle,x:target.x+Math.cos(a)*36,y:target.y-18+Math.sin(a)*20,alpha:0,duration:reduced?80:650+i*15,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});}
+ }
  async action(cue:string,reduced:boolean,spell?:Spell,before?:State,next?:State,command?:string,target?:'scene'){
   if(!this.ready)return;
   this.finishAction();this.resting=false;this.actionDepth=undefined;this.playerShadow.setVisible(true);this.motion=!reduced;const token=this.generation;this.phase='action';this.walkTrace=[];this.lastCue=cue;this.lastOutcome=outcomeFor(before,next,command);this.pose(poseFor(cue));if(cue==='talk'||cue==='pick')this.npcPose(command==='CH0401'?'show_recipe':'talk');
+  const ruinAction=this.currentStage==='ruins'&&!before?.battle&&command?ruinsActions[command]:undefined;
   const brewing=this.currentStage==='workshop'&&cue==='craft'&&!before?.battle;
   if(!brewing&&(spell||cue==='cast'||cue==='craft'))this.castEffect(reduced,spell,target);
   const path=cinematicPath(this.currentStage,cue,command,{x:this.player.x,y:this.player.y},this.location);
@@ -353,6 +373,7 @@ export class World extends Phaser.Scene {
    await this.beat(this.player,{alpha:1,duration:reduced?40:900},token);if(token!==this.generation)return;
    this.writeMetric('workshopBeat','discovery');await this.beat(this.player,{alpha:1,duration:reduced?25:400},token);if(token!==this.generation)return;
   }
+  if(ruinAction){this.writeMetric('ruinsBeat',ruinAction.beat);this.pose(ruinAction.pose);if(ruinAction.effect){this.ruinsGlow(ruinAction.effect,reduced);if(ruinAction.effect!=='crystal')this.ruinsAltar?.play('ruins-altar-'+(ruinAction.effect==='song'?2:1));}if(ruinAction.duration)await this.beat(this.player,{alpha:1,duration:reduced?50:ruinAction.duration},token);if(token!==this.generation)return;}
   const lifting=this.currentStage==='workshop'&&command==='CH0402';
   if(lifting){
    this.toolbox?.setFrame(1);this.writeMetric('workshopBeat','lifting');this.pose(this.textures.exists('hero-toolbox-v11')?'toolbox':'pick_up');
@@ -369,11 +390,11 @@ export class World extends Phaser.Scene {
    this.gardenBed?.setFrame(2);this.writeMetric('gardenGrowth','bloom');this.writeMetric('gardenBeat','collecting');
   }
   const listening=this.currentStage==='garden'&&(command==='CH0602'||command==='CH03B1');
-  if(!lifting)this.pose(brewing?'idle':listening?'rest':cue==='walk'?'idle':poseFor(cue));
+  if(!lifting&&!ruinAction)this.pose(brewing?'idle':listening?'rest':cue==='walk'?'idle':poseFor(cue));
   if(listening){this.npcPose(command==='CH0602'?'hum':'talk');this.writeMetric('gardenBeat','listening');}
   if(path?.seatDepth&&(cue==='rest'||listening)){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
-  if(cue!=='walk'&&!brewing&&!lifting)await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:listening?1800:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
+  if(cue!=='walk'&&!brewing&&!lifting&&!ruinAction)await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:listening?1800:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
   if(token!==this.generation)return;
   if(before?.battle&&next){
    this.phase='reaction';this.diagnostics();
@@ -381,6 +402,7 @@ export class World extends Phaser.Scene {
    if(next.battle&&next.battle.enemyHp<before.battle.enemyHp||this.lastOutcome==='win'){
     this.npcPose('hit');this.npc.setTint(0xffe3b6);
    }
+   if(next.battle?.status.RUNE_WARD&&!before.battle.status.RUNE_WARD){this.npcPose('guard');this.ruinsGlow('ward',reduced,{x:this.npc.x,y:this.npc.y-12});}
    if(next.battle?.playerStatus.VEIL&&!before.battle.playerStatus.VEIL){
     this.npcPose('attack');await this.beat(this.npc,{alpha:.7,duration:reduced?20:120,yoyo:true},token);
    }

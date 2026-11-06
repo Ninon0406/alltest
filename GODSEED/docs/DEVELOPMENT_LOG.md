@@ -378,3 +378,19 @@ Public layout/input5/5 PASSบน390×844,844×390,820×1180,1024×768,1366×768
 
 
 Main CI42225430490 SUCCESS:full113/113(16.2m),buildjob127917582231/deployjob127925608096. Post-Actionsตรวจ59PNG+JS SHA54b2b63cb0081e111457a432e00f70eda845c56e749e476a3e1e024f136c7e2fตรงBuild/0console/0references. Sourceff5e67d/mergef465839/PR17;runtime/70PNGคงเดิมหลังCI ปิดรอบด้วยdocs/evidence/Roadmapเท่านั้น ไม่เริ่มงานข้ามเซสชันอัตโนมัติ หลักฐานและ5งานถัดไปในsession18/REPORT_TH.md
+
+
+## รอบ19 — 2026-11-06 UTC — ประตูที่เลือกคนฟัง (candidate0.9.0)
+
+เริ่มmain1b9d598สะอาด/เว็บ0.8.0 ตรวจ03/Roadmap/Log18/สเปก/Architecture/ArtBible/Reference09จริง baseline134/content2/roadmap8/buildผ่าน เลือกVIS008/STO001/CMB006ตามDependency สร้างS15–17+10choices/ศาลเจ้าสามเลเยอร์/B03/ภารกิจจารึกและความทรงจำ ไม่รื้อเซฟหรือ234สูตร
+
+8PNG151337bytes/14anchors15links8solids/แท่น12frames/หุ่น16frames/hero10gestures/78PNGreproexact70เดิมคงอยู่ รางวัลQ_ARCHIVEร่วมonceFlag และrouteflagsคืนตำแหน่งเพลง/รูน/ผลึก แม้เคยเลือกทั้งสองทาง File2/State2คงเดิม อัปเดตCatalog/Status validationเท่านั้น
+
+พบและแก้จริง:ฐานเสาชิดจุดเข้า/fixtureใช้เวททั้งที่MPไม่พอ/validatorเห็นเฉพาะpropsเก่า/locatorปุ่มถอยไม่ตรงUI/การอ่านช่วงเดินใช้pollช้า/ตัวตรวจลืมว่าแท่นจำเพลงแล้ว/ท่าถอยเดิมตัดฐานเสา สร้างretreatredtestก่อนแก้และเก็บlogs ไม่skipกรณีทดสอบ ทำsourceBattlepoints/retreatจากข้อมูลร่วม แก้sourceแล้วUnit151/Content2/Buildผ่าน Focus10ผ่าน3.4m+finalretreat2ผ่าน50.4s บนphone/desktop
+
+Purebalance64/64wins4–7turns ไม่ใช่humanfun; ของจริง21Scene70Choice5NPC4Encounter234legal0Endings7Stage Roadmap21/76=27.6%(v121/73=28.8%),in_progress38/not_started15/blocked2 CMB006ยังเหลือB04 ภาพยังต้นแบบ/hardwareยังไม่ยืนยัน
+
+Full123รันใหม่จากsourceหลังretreatfix; CI/PR/publicจะบันทึกตามผลจริง เว็บก่อนรอบ0.8.0ส่งออกไฟล์ด้วยปุ่มให้importใน0.9ได้ ไม่commit/uploadตัวเซฟ งานถัดไป:เทศกาลS18–20→S21/B04→B05→กล่องเพลง/เส้นทางบ้าน→VFX/performance ไม่มีการทำงานข้ามsessionอัตโนมัติ
+
+
+Session19 CI setup audit: PR18/run42239707225 passed Unit151/Build but spent11min3s fetching17.3MB optional font packages from the Ubuntu resolute mirror. Maintainer cancellation coincided with completed browser downloads; no E2E ran, so this run is CANCELLED, never PASS. Pin ubuntu-24.04, install the Thai Loma font explicitly, and download Playwright's supported --only-shell Chromium. All123 browser cases remain required; native-library errors still fail the run. No runtime/test/build-input changes. New PR CI must pass before merging. Logs summarized in evidence/session19/ci-installer-cancelled.json.

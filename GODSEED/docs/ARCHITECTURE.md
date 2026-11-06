@@ -213,3 +213,12 @@ World.pendingArrival records a validated non-battle endpoint. Explicit skip or m
 
 
 Session18 release verification: sourceff5e67d/PR17/mergef465839 preserves State2/File2 and all game reducer APIs. Local/PR/main113 browser cases and actualpublic core/workshop/UI5 passed; post-Actions59PNG+JS hashes match. Closing receipt changes only docs/evidence/Roadmap. See evidence/session18/verification.json; no persistent progress storage or new save migration.
+
+
+## Session19 — Ruins/quest reward boundary, candidate0.9.0
+
+Extend the current content graph with S15–17/CH0207/B03, retaining every earlier ID. Choice.onceFlag scopes a shared one-time reward across CH1702/1703; Choice.clearFlags resets only the authored mutually exclusive route flags before setting the new branch. This avoids deriving the latest checkpoint from a unique-first-visit choice list. State2/File2 remain; new catalog IDs and RUNE_WARD are additive, and old0.8 fields round-trip unchanged. Validate ward<=2, only on B03 enemies. No persistence backend.
+
+ruins-map.ts owns14footanchors/15links/8solids, altar/pillars/battlepoints/retreat. Road generator and routeTo use the same map; all target/start pairs and FLEE segments have footprint checks. Battle player and enemy positions are consumed from the shared data. Generic retreat originally cut the new pillar; a failing test and dedicated south-west-north route fix it. Main already fades on story/battle mode changes.
+
+StageLayout.customProps describes dedicated atlas scenery; renderer and art validator consume it alongside legacy props. ArtAsset.alsoFor adds Eira/water as lazy ruins dependencies without duplicate files or eager title loading. Primary rear/ground/front, Y-sorted pillars, altar state animations, 64px sentry origin40/64 keep footY+20. The composite fallback is generated from our layers, not the concept; missing art degrades visibly and explicit retry keeps RAM. Reduced/skip cancels glyph sprites and completes pending arrival. VFX do not calculate rewards/damage.

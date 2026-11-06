@@ -1,3 +1,15 @@
+# สถานะล่าสุด — Session19 / candidate0.9.0
+
+Base main1b9d598สะอาด/เว็บ0.8.0 เลือกVIS008/STO001/CMB006:เพิ่มS15/S16/S17+10choicesและB03 พร้อมศาลเจ้าสามเลเยอร์/14anchors15links8solids/แท่นจำ3สถานะ/ท่ารูนและกล่องเพลง/เกราะหุ่นที่แจ้งล่วงหน้า Q_ARCHIVEรางวัลร่วมครั้งเดียวและNPCจดจำจริง คงManualFileSaveState2/File2/234สูตร/IDเก่าทั้งหมด
+
+Unit151/Content2/Roadmap8/Buildผ่าน Focus10ผ่าน3.4mและหลังแก้retreat2ผ่าน50.4s;78PNGสร้างซ้ำตรงbyte/70เดิมคงอยู่/8ใหม่151337bytes Balance64seeds/policiesชนะ4–7turns(ไม่ใช่humanfun). Full123หลังretreatfixกำลังรัน CI/publicจะลงผลเมื่อรันจริง ดู[รายงานรอบ19](evidence/session19/REPORT_TH.md)
+
+ของจริง21scenes/70choices/5NPC/4encountersรวมTraining/234legal/0endings/7stages. Checklist21/76=27.6%,done21/in_progress38/not_started15/problem0/blocked2;CMB006เริ่มแล้วเฉพาะB03 ไม่ปิดB04หรือmilestoneภาพทั้งเกม ภาพยังต้นแบบ/hardware/FPS/Safariยังไม่ยืนยัน
+
+งานถัดไป:เทศกาลS18–20→S21/B04→B05→ท่ากล่องเพลง/บ้าน–ประตู→VFX/performanceตามDependency ไม่เขียนเซฟที่ผ่านแล้วซ้ำ
+
+---
+
 # สถานะล่าสุด — Session18 / 0.8.0
 
 พัฒนาต่อจากa8512b7/เกม0.7.2: โรงช่างต้นฉบับใหม่3เลเยอร์,Map11anchors/10links/7solids,หม้อจริง/กล่องเครื่องมือ/ท่าปรุงหันเหนือ ส่วนผสม3ชนิดตามสูตรลอยลงหม้อและให้VFXก่อนค้นพบ รักษา234สูตร/กฎเกม/ManualFileSaveเดิม State2/File2

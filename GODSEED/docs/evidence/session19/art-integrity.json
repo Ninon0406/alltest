@@ -1,0 +1,40 @@
+{
+  "oldUnchanged": 70,
+  "new": {
+    "GODSEED/public/assets/art-v12/pillar.png": {
+      "bytes": 1943,
+      "sha256": "3360e5c4602add6e29bd8a2f41b471c4da81c6cd8a0b1b565c2b6e82f2771d2d"
+    },
+    "GODSEED/public/assets/art-v12/sentinel.png": {
+      "bytes": 25805,
+      "sha256": "4d4698e9b7df08dea9cae7f2be89971d4329af71adb706b0a2a127b82ebbdf00"
+    },
+    "GODSEED/public/assets/art-v12/ruins-ground.png": {
+      "bytes": 15086,
+      "sha256": "9842ee495653eac091f441832b50cd0bbc8d82365f7de8645a151909b15c9c9e"
+    },
+    "GODSEED/public/assets/art-v12/ruins-front.png": {
+      "bytes": 4339,
+      "sha256": "765d410d1c085474ba768292e0c0f53bb6f739d6bf8cdd9c5ea60024b2fec262"
+    },
+    "GODSEED/public/assets/art-v12/hero-ruins.png": {
+      "bytes": 8003,
+      "sha256": "c31a19436aeb119864899530c1f0da8189c169f6d8d8678ef2defe6657b17b51"
+    },
+    "GODSEED/public/assets/art-v12/ruins-rear.png": {
+      "bytes": 27969,
+      "sha256": "e47c412b87bb6524ba5fd39ed689e1f87fe91be190f26302db5f0ecee5505d66"
+    },
+    "GODSEED/public/assets/art-v12/altar.png": {
+      "bytes": 23897,
+      "sha256": "a5c8219f8e4fe920a41a31cc883074619e975f0ae3f5bf59458c033ae2105db4"
+    },
+    "GODSEED/public/assets/art-v12/ruins-fallback.png": {
+      "bytes": 44295,
+      "sha256": "50b50d9aa847adf6d087cdc223b5284422c34abf33e4eafa8edc3c71b6be9dff"
+    }
+  },
+  "newBytes": 151337,
+  "reproduced": 78,
+  "byteIdentical": true
+}

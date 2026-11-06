@@ -1,0 +1,48 @@
+[WebServer] (node:35129) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35147) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:35159) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 390 (28.3s)
+  ✓   2 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 844 (25.8s)
+  ✓   3 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 820 (28.7s)
+  ✓   4 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1024 (23.9s)
+  ✘   5 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1366 (10.8s)
+
+
+  1) tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1366 ───────
+
+    Test was interrupted.
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'เริ่มการเดินทาง', exact: true })
+    Expected: visible
+    Error: Test ended.
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'เริ่มการเดินทาง', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'เริ่มการเดินทาง', exact: true })
+      - Test ended.
+
+
+       at file-helpers.ts:15
+
+      13 |  await page.getByLabel('โหลดเกมจากไฟล์',{exact:true}).setInputFiles({name,mimeType:'application/json',buffer});await expect(page.getByRole('heading',{name:'ตรวจสอบไฟล์เซฟก่อนโหลด',exact:true})).toBeVisible();await page.getByRole('button',{name:'ยืนยันโหลดไฟล์นี้',exact:true}).click();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');
+      14 | }
+    > 15 | export async function reloadFromFile(page:Page){const buffer=await exportFile(page);await page.reload();await expect(page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'เล่นต่อจากความทรงจำ',exact:true})).toHaveCount(0);await loadFile(page,buffer);}
+         |                                                                                                                                                                                    ^
+      16 |
+        at reloadFromFile (/workspace/alltest/GODSEED/tests/file-helpers.ts:15:180)
+        at /workspace/alltest/GODSEED/tests/ruins.spec.ts:17:193
+
+    Error Context: test-results/ruins-ruins-rune-and-music-4fdde--memory-and-owned-file-1366/error-context.md
+
+  1 interrupted
+    tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1366 ────────
+  5 did not run
+  4 passed (2.0m)

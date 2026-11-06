@@ -1,0 +1,32 @@
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+ ❯ tests/ruins.test.ts (17 tests | 1 failed) 215ms
+     × retreats around the pillar footprint from the actual battle position 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/ruins.test.ts > authored ruins maps, art and gestures > retreats around the pillar footprint from the actual battle position
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/ruins.test.ts:109:77
+    107|   const def=sceneDefinitions.ancient_shrine,start={x:130,y:219},retrea…
+    108|   const feet=[start,...retreat.points].map(p=>({x:p.x,y:p.y+20}));
+    109|   for(let i=1;i<feet.length;i++)expect(clearSegment(def,feet[i-1],feet…
+       |                                                                             ^
+    110|   expect(retreat.points.at(-1)).toEqual({x:80,y:219});
+    111|  });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 16 passed (17)
+   Start at  14:53:03
+   Duration  648ms (transform 201ms, setup 0ms, import 297ms, tests 215ms, environment 0ms)

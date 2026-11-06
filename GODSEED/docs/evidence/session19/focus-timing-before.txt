@@ -1,0 +1,45 @@
+[WebServer] (node:35911) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:35941) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 390 (24.6s)
+  ✓   2 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 844 (24.7s)
+  ✓   3 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 820 (25.3s)
+  ✓   4 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1024 (23.5s)
+  ✓   5 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1366 (26.4s)
+  ✓   6 tests/ruins.spec.ts:24:52 › sentinel telegraph, ward file, victory and real defensive recipe 390 (22.9s)
+  ✓   7 tests/ruins.spec.ts:24:52 › sentinel telegraph, ward file, victory and real defensive recipe 1366 (23.0s)
+  ✓   8 tests/ruins.spec.ts:37:1 › ruins retreat and genuine defeat recover to S15 without duplicated rewards (12.1s)
+  ✓   9 tests/ruins.spec.ts:42:1 › missing ruins art keeps the file and rune route playable; explicit retry preserves progress (6.4s)
+  ✘  10 tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor (9.3s)
+
+
+  1) tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      44 | });
+      45 | test('skipping a rune approach and reducing musicbox motion finish once at the right anchor',async({page})=>{
+    > 46 |  test.setTimeout(60_000);await enter(page);await motion(page,false);const canvas=page.locator('#canvas');await page.getByRole('button',{name:'แก้รูนตามบันทึกหอสมุด',exact:true}).tap();await expect(canvas).toHaveAttribute('data-path-phase','approach');await expect.poll(async()=>{const v=JSON.parse((await canvas.getAttribute('data-walk-sample'))||'{}');return v.x===126&&v.feetY<235&&v.feetY>211;}).toBe(true);await expect(canvas).toHaveAttribute('data-occluder-depth','242');const covered=JSON.parse((await canvas.getAttribute('data-walk-sample'))!);expect(covered.depth).toBeLessThan(242);await page.screenshot({path:'test-results/ruins-behind-pillar-390.png',fullPage:true});await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).tap();await stable(page);expect(await hero(page)).toMatchObject({x:188,y:187});await expect(canvas).toHaveAttribute('data-active-effects','0');await motion(page,true);let state=await exportedState(page);expect(state.choices.filter(id=>id==='CH1501')).toHaveLength(1);await tap(page,'ถอดความหมายด้วยตัวเอง');
+         |                                                                                                                                                                                                                                                                                                                                                                                                                ^
+      47 |  for(const n of ['ไปหาลูมิที่บ่อน้ำ','ช่วยดูว่ากล่องดนตรีเสียตรงไหน','ฟังคุณยายเล่าเรื่องในอดีต','เข้าโบราณสถานเสียงสะท้อน'])await tap(page,n);await motion(page,false);await page.getByRole('button',{name:'ลองใช้เสียงเพลงจากกล่อง',exact:true}).tap();await expect(canvas).toHaveAttribute('data-ruins-beat','offering',{timeout:12_000});await page.getByRole('button',{name:'ลดการเคลื่อนไหว',exact:true}).tap();await stable(page);expect(await hero(page)).toMatchObject({x:286,y:187});await expect(canvas).toHaveAttribute('data-active-effects','0');state=await exportedState(page);expect(state.choices.filter(id=>id==='CH1503')).toHaveLength(1);expect(state.flags.ruins_box_path).toBe(true);
+      48 | });
+      49 |
+        at /workspace/alltest/GODSEED/tests/ruins.spec.ts:46:400
+
+    Error Context: test-results/ruins-skipping-a-rune-appr-9b652-sh-once-at-the-right-anchor/error-context.md
+
+  1 failed
+    tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor
+  9 passed (3.3m)

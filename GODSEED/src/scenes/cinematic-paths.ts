@@ -1,6 +1,8 @@
 import type {StageId} from './stage-layout';
 import type {Facing} from './directional-art';
 import {routeTo,sceneDefinitions,type LocationId} from './scene-definitions';
+import {ruinsScenery} from './ruins-map';
+import {ruinsActions} from './ruins-staging';
 import {workshopChoiceTargets} from './workshop-staging';
 import {gardenMap,gardenScenery} from './garden-map';
 export type Point={x:number;y:number};
@@ -8,6 +10,7 @@ export type CinematicPath={id:string;stage:StageId;points:readonly Point[];seatD
 // Sprite centers, foot anchor y+20. Authored lanes avoid solid prop bases;
 // these routes are presentation data, never free-roam or serialized progress.
 export const travelPaths:Record<StageId,readonly Point[]>={
+ ruins:[{x:126,y:228},{x:240,y:231},{x:350,y:231}],
  village:[{x:154,y:237},{x:190,y:227},{x:230,y:219}],
  garden:[{x:185,y:228},{x:205,y:238},{x:282,y:238},{x:368,y:238},{x:378,y:219}],
  workshop:[{x:190,y:230},{x:230,y:219}],
@@ -28,6 +31,8 @@ export const choicePaths:Record<string,CinematicPath>={
  CH1201:{id:'stream-bell',stage:'stream',points:[{x:195,y:231},{x:248,y:226}]},
 };
 export function cinematicPath(stage:StageId,cue:string,command?:string,start?:Point,location:LocationId='village_center'):CinematicPath|undefined {
+ if(stage==='ruins'&&cue==='walk'&&command==='FLEE')return {id:'ruins-retreat',stage,points:ruinsScenery.retreat};
+ if(stage==='ruins'&&start&&command&&ruinsActions[command]){const targetAnchor=ruinsActions[command].anchor,def=sceneDefinitions.ancient_shrine,feet=routeTo(def,{x:start.x,y:start.y+20},targetAnchor);if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยในโบราณสถาน');return {id:'ruins-'+targetAnchor,stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:def.anchors[targetAnchor].facing};}
  if(stage==='workshop'&&start){
   const targetAnchor=command&&workshopChoiceTargets[command]|| (cue==='craft'?'craft_front':cue==='walk'&&command?.startsWith('CH')?'exit_path':undefined);
   if(targetAnchor){const def=sceneDefinitions.spell_workshop,feet=routeTo(def,{x:start.x,y:start.y+20},targetAnchor);if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยในโรงช่าง');return {id:'workshop-'+targetAnchor,stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:def.anchors[targetAnchor].facing};}

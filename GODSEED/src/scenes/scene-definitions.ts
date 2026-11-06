@@ -1,11 +1,12 @@
 import type {Facing} from './directional-art';
 import type {Point} from './cinematic-paths';
 import {workshopMap} from './workshop-map';
+import {ruinsMap} from './ruins-map';
 import {gardenMap} from './garden-map';
 
 /** Coordinates are feet on our authored source maps, never reference-image pixels.
  * Overhead branches are occluders, not ground colliders. No free roaming. */
-export type LocationId='village_center'|'under_tree'|'elder_garden'|'spell_workshop';
+export type LocationId='village_center'|'under_tree'|'elder_garden'|'spell_workshop'|'ancient_shrine';
 type Anchor=Point&{facing?:Facing};
 type Solid={id:string;x:number;y:number;width:number;height:number};
 export type SceneDefinition={
@@ -21,6 +22,7 @@ const sharedSolids:Solid[]=[
  {id:'bench-east-leg',x:101,y:231,width:6,height:8},
 ];
 export const sceneDefinitions:Record<LocationId,SceneDefinition>={
+ ancient_shrine:{id:'ancient_shrine',reference:'09_ancient_shrine.webp',...ruinsMap},
  spell_workshop:{id:'spell_workshop',reference:'08_spell_workshop.webp',...workshopMap},
  elder_garden:{id:'elder_garden',reference:'05_elder_herb_garden.webp',...gardenMap},
  village_center:{id:'village_center',reference:'01_village_center.webp',
@@ -45,7 +47,7 @@ export const sceneDefinitions:Record<LocationId,SceneDefinition>={
   occluders:[{id:'ancient-tree',footY:201},{id:'bench',footY:238}],
  },
 };
-export const locationFor=(scene?:string):LocationId=>scene==='S04_KORO'||scene==='S05_CRAFT_TUTORIAL'?'spell_workshop':scene==='S00_WAKE'||scene==='S02_TREE'?'under_tree':scene==='S06_GARDEN'||scene==='S03B_MAREN'?'elder_garden':'village_center';
+export const locationFor=(scene?:string):LocationId=>scene==='S15_RUINS'||scene==='S16_RUINS_RESULT'||scene==='S17_ECHO_TABLET'?'ancient_shrine':scene==='S04_KORO'||scene==='S05_CRAFT_TUTORIAL'?'spell_workshop':scene==='S00_WAKE'||scene==='S02_TREE'?'under_tree':scene==='S06_GARDEN'||scene==='S03B_MAREN'?'elder_garden':'village_center';
 /** Actor footprint is 10x4 at the feet, smaller than the coat/overhead canopy. */
 export function walkable(def:SceneDefinition,p:Point){
  return p.x>=40&&p.x<=438&&p.y>=183&&p.y<=259&&!def.solids.some(s=>p.x+5>s.x&&p.x-5<s.x+s.width&&p.y+2>s.y&&p.y-2<s.y+s.height);

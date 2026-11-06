@@ -35,3 +35,10 @@ Independent verbose run: `npx --prefix GODSEED vitest run GODSEED/tests/balance.
 | Stream | Explicit MP0 WIND/GUARD |100|8|59|
 
 These establish viability rather than final human pacing/difficulty. Browser routes separately discover and use WATER_RING_HEAL and ECHO_ORB_LINGER through real materials. No stats progression, mastery or new recipe definitions were added.
+
+
+## Session19 — B03_RUIN_SENTINEL0.9.0
+
+66HP/power10/EARTH×1.2; every third intent is an announced no-attack ward, applied after the player action and lasting two following actions. PIERCE mitigates it. Shared first-win FORM_WARD/XP18 once; no B02 flag or duplicate reward. Starter-only32seeds perpolicy (64wins/0losses) from genuine intro/craft/archive choices: cast-until-empty4turns/HP80/MP0; read-intent/guard7turns/HP60/MP2. Both are feasible; the guard policy trades more HP/turns for2MP. This is a prototype encounter, not proof of strategic depth/final balance/human fun.
+
+Reproduce: `node GODSEED/docs/evidence/session19/inspect-balance.mjs`; full rows in balance.json. Browser additionally gathers actual new WARD material and existing WIND/LINGER, discovers WIND_WARD_LINGER and blocks damage in a rematch. A BASIC-only playthrough can lose and recover toS15; BASIC/GUARD/flee always remain available.
