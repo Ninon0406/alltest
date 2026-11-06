@@ -1,14 +1,20 @@
 import {transact,random,type State} from '../engine/state';
 import {encounters,type EncounterId} from '../content/encounters';
+import {scenes} from '../content/story';
 import {byId,itemNames,type Spell} from './spells';
+import {hasPathAbility} from './life-paths';
 type Battle=NonNullable<State['battle']>;
-export const statusNames:Record<string,string>={RUNE_WARD:'เกราะรูน',SEAR:'เพลิงคุกรุ่น',WET:'เปียกชุ่ม',SWIRL:'ลมหมุน',GROUNDED:'ยึดโยงพื้นดิน',GLEAM:'แสงเผยเงา',VEIL:'ม่านลดความแม่นยำ',ROOTED:'รากตรึง',RESONANCE:'เสียงก้องขยายเวท',SLOWED:'เสียจังหวะ'};
-export const statusHelp:Record<string,string>={RUNE_WARD:'ลดความเสียหาย 50% เป็นเวลา 2 จังหวะผู้เล่น เวททะลวงลดผลเกราะได้ หุ่นจะหยุดโจมตีในจังหวะกางเกราะ',SEAR:'รับผลเพลิง 3 HP หลังการกระทำในแต่ละเทิร์นที่เหลือ',WET:'เพลิงเพิ่มพลัง 20% และใช้หยดน้ำหนึ่งช่วง ลมทำให้เสียจังหวะหนึ่งครั้ง',SWIRL:'เพิ่มโอกาสติดสถานะของเวทถัดไป 15%',GROUNDED:'ลดแรงโจมตี 2 หน่วย พฤกษาที่กระทบผืนดินฟื้น MP ผู้ร่าย 3',GLEAM:'แสงสลายม่านเงา เวทเงาที่ตามมาจะไม่เพิ่มม่านซ้ำในครั้งนั้น',VEIL:'ลดความแม่นยำการโจมตีของผู้ติดสถานะ 10%',ROOTED:'รากลดการหลบ ทำให้เวททั่วไปแม่นขึ้น น้ำที่ตามมาฟื้น HP ผู้ร่าย 3',RESONANCE:'เวทโจมตีถัดไปแรงขึ้น 10% แล้วใช้เสียงก้องหมด เวทเสียงซ้ำแยกสองครั้ง',SLOWED:'เลื่อนการกระทำของศัตรูหนึ่งครั้งในจังหวะนี้'};
+export const statusNames:Record<string,string>={TRAIL_FOCUS:'เพ่งจังหวะ',RUNE_WARD:'เกราะรูน',SEAR:'เพลิงคุกรุ่น',WET:'เปียกชุ่ม',SWIRL:'ลมหมุน',GROUNDED:'ยึดโยงพื้นดิน',GLEAM:'แสงเผยเงา',VEIL:'ม่านลดความแม่นยำ',ROOTED:'รากตรึง',RESONANCE:'เสียงก้องขยายเวท',SLOWED:'เสียจังหวะ'};
+export const statusHelp:Record<string,string>={TRAIL_FOCUS:'เวทโจมตีที่ติดตั้งครั้งถัดไปแม่นยำแน่นอนและผ่านท่าหุบใบหรือเกราะรูน แต่เกราะพื้นดินยังลดแรงโจมตี 2 หน่วย ใช้ได้ใน 2 เทิร์นถัดไป เวทสนับสนุนไม่ใช้ผลแต่เวลายังลดลง',RUNE_WARD:'ลดความเสียหาย 50% เป็นเวลา 2 จังหวะผู้เล่น เวททะลวงลดผลเกราะได้ หุ่นจะหยุดโจมตีในจังหวะกางเกราะ',SEAR:'รับผลเพลิง 3 HP หลังการกระทำในแต่ละเทิร์นที่เหลือ',WET:'เพลิงเพิ่มพลัง 20% และใช้หยดน้ำหนึ่งช่วง ลมทำให้เสียจังหวะหนึ่งครั้ง',SWIRL:'เพิ่มโอกาสติดสถานะของเวทถัดไป 15%',GROUNDED:'ลดแรงโจมตี 2 หน่วย พฤกษาที่กระทบผืนดินฟื้น MP ผู้ร่าย 3',GLEAM:'แสงสลายม่านเงา เวทเงาที่ตามมาจะไม่เพิ่มม่านซ้ำในครั้งนั้น',VEIL:'ลดความแม่นยำการโจมตีของผู้ติดสถานะ 10%',ROOTED:'รากลดการหลบ ทำให้เวททั่วไปแม่นขึ้น น้ำที่ตามมาฟื้น HP ผู้ร่าย 3',RESONANCE:'เวทโจมตีถัดไปแรงขึ้น 10% แล้วใช้เสียงก้องหมด เวทเสียงซ้ำแยกสองครั้ง',SLOWED:'เลื่อนการกระทำของศัตรูหนึ่งครั้งในจังหวะนี้'};
 const statusTurns:Record<string,number>={SEAR:2,WET:2,SWIRL:1,GROUNDED:2,GLEAM:2,VEIL:1,ROOTED:1,RESONANCE:2};
 export const statusSummary=(statuses:Record<string,number>)=>Object.entries(statuses).filter(([,n])=>n>0).map(([id,n])=>`${statusNames[id]||'สถานะเวท'} · ${n} เทิร์น`);
 export const enemyName=(s:State)=>s.battle?encounters[s.battle.id].name:'';
 export const enemyMaxHp=(s:State)=>s.battle?encounters[s.battle.id].hp:0;
 export const battleRules=(s:State)=>s.battle?encounters[s.battle.id]:{canFlee:false,canSurrender:false};
+export function scoutAvailability(s:State){
+ const reason=!s.battle?'ใช้ได้ระหว่างการต่อสู้':!hasPathAbility(s,'TRAIL_FOCUS')?'ต้องผ่านบททดสอบนักสำรวจระดับ 2':s.battle.pathActions?.scouted?'สำรวจจังหวะไปแล้วในการต่อสู้นี้':s.mp<4?'MP ไม่พอ · ต้องใช้ 4 MP':'';
+ return {enabled:!reason,reason};
+}
 function plannedIntent(b:Battle):'pulse'|'leaf'|'curl'|'splash'|'mist'|'rune'|'ward'{
  if(b.id==='B03_RUIN_SENTINEL')return b.turn%3===0?'ward':'rune';
  if(b.id==='BT_TRAINING')return 'pulse';
@@ -22,7 +28,7 @@ function finish(d:State,b:Battle){
  const encounter=encounters[b.id],key='win:'+b.id;const first=!d.rewarded.includes(key);
  if(first){d.rewarded.push(key);d.inventory[encounter.reward]=(d.inventory[encounter.reward]||0)+1;d.xp+=encounter.xp;}
  if(b.id==='B01_FOREST_SPROUT'){d.flags.first_battle_won=true;d.flags.battle_B01_done=true;}else if(b.id==='BT_TRAINING')d.flags.training_won=true;else if(b.id==='B02_STREAM_WISP')d.flags.battle_B02_done=true;else d.flags.battle_B03_done=true;
- d.scene=b.next;d.battle=undefined;d.journal.push((b.id==='BT_TRAINING'?'ผ่านการฝึกกับภูตจำลองแล้ว':b.id==='B02_STREAM_WISP'?'ละอองธาราสงบลงแล้ว':b.id==='B03_RUIN_SENTINEL'?'หุ่นรูนลดเกราะและเปิดทางแล้ว':'ต้นอ่อนสงบลงแล้ว')+(first?` · ประสบการณ์ ${encounter.xp} และ ${itemNames[encounter.reward]} 1 ชิ้น`:' · เคยรับรางวัลครั้งแรกแล้ว'));
+ d.scene=b.next;for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;d.battle=undefined;d.journal.push((b.id==='BT_TRAINING'?'ผ่านการฝึกกับภูตจำลองแล้ว':b.id==='B02_STREAM_WISP'?'ละอองธาราสงบลงแล้ว':b.id==='B03_RUIN_SENTINEL'?'หุ่นรูนลดเกราะและเปิดทางแล้ว':'ต้นอ่อนสงบลงแล้ว')+(first?` · ประสบการณ์ ${encounter.xp} และ ${itemNames[encounter.reward]} 1 ชิ้น`:' · เคยรับรางวัลครั้งแรกแล้ว'));
 }
 function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
  const log=(text:string)=>b.log.push(text);
@@ -46,7 +52,9 @@ function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
  }
  const shadowRevealed=sp.core==='SHADOW'&&b.status.GLEAM>0;
  if(shadowRevealed){delete b.status.VEIL;log('เสียงของแสงเปิดม่านเงา');}
- const chance=sp.mod==='SEEK'?1:Math.max(0, (b.status.ROOTED?1:.95)-(b.playerStatus.VEIL?.1:0));
+ const focused=!!b.playerStatus.TRAIL_FOCUS;
+ if(focused){delete b.playerStatus.TRAIL_FOCUS;log('เพ่งจังหวะ — เวทแม่นยำและผ่านท่าป้องกัน');}
+ const chance=focused||sp.mod==='SEEK'?1:Math.max(0, (b.status.ROOTED?1:.95)-(b.playerStatus.VEIL?.1:0));
  if(chance<1&&random(d)>=chance){log('เวทคลาดเป้า');return;}
  nourish();
  let multiplier=sp.core===encounters[b.id].weakness?1.2:1;
@@ -57,7 +65,7 @@ function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
  const hits=sp.hits===2||(sp.core==='ECHO'&&mark)?2:1;
  const guard=b.status.RUNE_WARD||b.id==='B01_FOREST_SPROUT'&&b.turn%2===0?.5:0;
  const armor=b.status.GROUNDED?2:0;
- const power=sp.power*1.2*multiplier*(mark?1.1:1)*(sp.mod==='SEEK'?1.1:1)*(hits===2?.6:1)*(1-guard*(1-sp.pierce));
+ const power=sp.power*1.2*multiplier*(mark?1.1:1)*(sp.mod==='SEEK'?1.1:1)*(hits===2?.6:1)*(1-guard*(1-(focused?1:sp.pierce)));
  const perHit=Math.min(999,Math.max(1,Math.round(power-armor)));
  const damage=perHit*hits;b.enemyHp=Math.max(0,b.enemyHp-damage);log(`${sp.name} กระทบ ${damage}${hits===2?' (2 ครั้ง)':''}`);
  if(!shadowRevealed&&random(d)<Math.min(.85,.35+(swirling?.15:0))){
@@ -66,13 +74,24 @@ function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
 }
 export function fight(state:State,action:string){return transact(state,d=>{
  const b=d.battle;if(!b)throw Error('ไม่มีการต่อสู้');
- const encounter=encounters[b.id],plan=plannedIntent(b);const fresh=new Set<string>();const burning=b.status.SEAR>0;let guarding=false;b.log=[];
+ const encounter=encounters[b.id],plan=plannedIntent(b);const fresh=new Set<string>(),playerFresh=new Set<string>();const burning=b.status.SEAR>0;let guarding=false;b.log=[];
  if(action==='FLEE'||action==='SURRENDER'){
   if(action==='SURRENDER'?!encounter.canSurrender:!encounter.canFlee)throw Error('ออกจากการต่อสู้ด้วยวิธีนี้ไม่ได้');
   d.scene=b.checkpoint;d.battle=undefined;d.ticks++;d.journal.push(action==='FLEE'?'ถอยออกมาเตรียมตัว':'ยุติการฝึกอย่างปลอดภัย');return;
  }
- if(action==='BASIC_PULSE'){const base=b.status.RUNE_WARD||b.id==='B01_FOREST_SPROUT'&&b.turn%2===0?2:4;const damage=Math.max(1,base-(b.status.GROUNDED?2:0));b.enemyHp=Math.max(0,b.enemyHp-damage);b.log.push(`ประกายพื้นฐานกระทบ ${damage}`);}
- else if(action==='GUARD'){guarding=true;d.mp=Math.min(40,d.mp+6);b.log.push('ตั้งรับ ลดแรงโจมตี 40% และฟื้น MP 6');}
+ if(action==='SCOUT'){
+  const availability=scoutAvailability(d);if(!availability.enabled)throw Error(availability.reason);
+  d.mp-=4;b.pathActions={...b.pathActions,scouted:true};b.playerStatus.TRAIL_FOCUS=2;playerFresh.add('TRAIL_FOCUS');b.log.push('สำรวจจังหวะ — ใช้ MP 4 เตรียมเวทโจมตีที่ติดตั้งครั้งถัดไป');
+ }
+ else if(action==='BASIC_PULSE'){const base=b.status.RUNE_WARD||b.id==='B01_FOREST_SPROUT'&&b.turn%2===0?2:4;const damage=Math.max(1,base-(b.status.GROUNDED?2:0));b.enemyHp=Math.max(0,b.enemyHp-damage);b.log.push(`ประกายพื้นฐานกระทบ ${damage}`);}
+ else if(action==='GUARD'){
+  guarding=true;d.mp=Math.min(40,d.mp+6);b.log.push('ตั้งรับ ลดแรงโจมตี 40% และฟื้น MP 6');
+  if(hasPathAbility(d,'ROOT_REFUGE')&&!b.pathActions?.rootGuardUsed){
+   b.pathActions={...b.pathActions,rootGuardUsed:true};
+   if(b.shield<=8){b.shield=8;b.shieldTurns=2;b.log.push('รากคุ้มภัย — โล่ 8 ป้องกัน 2 จังหวะศัตรู ใช้ได้ครั้งเดียวในการต่อสู้');}
+   else b.log.push('รากคุ้มภัย — คงโล่เดิมที่แข็งแรงกว่า ไม่ต่อเวลา ใช้สิทธิ์ครั้งแรกแล้ว');
+  }
+ }
  else if(action==='IT_POTION_DEW'||action==='IT_MANA_LEAF'){
   if(!d.inventory[action])throw Error('ไอเทมหมดแล้ว');d.inventory[action]--;
   if(action==='IT_POTION_DEW'){d.hp=Math.min(100,d.hp+25);b.log.push('ดื่มน้ำค้าง ฟื้น HP สูงสุด 25');}else{d.mp=Math.min(40,d.mp+15);b.log.push('ใบฟื้นเวท ฟื้น MP สูงสุด 15');}
@@ -92,7 +111,7 @@ export function fight(state:State,action:string){return transact(state,d=>{
  }else if(plan==='ward'){b.status.RUNE_WARD=2;fresh.add('RUNE_WARD');b.log.push('หุ่นกางเกราะรูน ป้องกัน 50% เป็นเวลา 2 จังหวะผู้เล่น — จังหวะนี้ไม่โจมตี');}
  else if(plan==='mist'){b.playerStatus.VEIL=1;misted=true;b.log.push('ม่านหมอกบดบังสายตา ลดความแม่นยำ 10% ในเทิร์นถัดไป');}
  else b.log.push('ต้นอ่อนหุบใบป้องกัน');
- fresh.delete('VEIL');tick(b.status,fresh);tick(b.playerStatus,misted?new Set(['VEIL']):undefined);
+ fresh.delete('VEIL');if(misted)playerFresh.add('VEIL');tick(b.status,fresh);tick(b.playerStatus,playerFresh);
  if(b.shieldTurns>0&&--b.shieldTurns===0){b.shield=0;b.log.push('โล่เวทหมดเวลา');}
  b.turn++;b.log=b.log.slice(-12);d.journal.push(...b.log);
  if(d.hp<=0){d.hp=70;d.mp=20;d.recoveryScene=b.checkpoint;d.scene='S28_RECOVER';d.battle=undefined;d.journal.push('พิพพากลับมาพักอย่างปลอดภัย');}

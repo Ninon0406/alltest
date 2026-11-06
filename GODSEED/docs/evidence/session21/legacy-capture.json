@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "at": "2026-11-06T23:01:06.625Z",
+  "version": "0.10.0",
+  "genuineUIExport": true,
+  "fileSha256": "25ecc241aec8d3088961c97d5e3bc501f3d3274cf38cf068df636d6d1bc953e4",
+  "stateSha256": "ae40faab036030303753f5e26a3d324c717db0867a0ffaf87de79743171ea020",
+  "saveLocation": "/tmp/gs21-published-0.10.godseed",
+  "storageCalls": 0,
+  "uploads": 0,
+  "references": 0,
+  "consoleErrors": []
+}

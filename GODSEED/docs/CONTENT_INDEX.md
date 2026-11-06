@@ -1,3 +1,11 @@
+# Current0.11.0 — two introductory life paths
+
+62nodes/185choices/5NPC/4encounters/234legal recipes/7stages/5fixed maps/4questcontracts/2introductorycourses/0finalendings. +16nodes/+43choices vs0.10.0. All62nodes and185choices have real reducer witnesses;145choices cause a measured game-state effect beyond navigation/clock/journal. Sources:content/life-story.ts,content/life-quests.ts,systems/life-paths.ts. Data and full IDs: evidence/session21/story-graph.json and extra-choice-witnesses.json. New materials make234distinct legal recipes craftable across separate earned-material witness routes, versus121witnessed before; this does not mean234recipes owned in one save or browser-tested.
+
+LP_CROSSROADS; LP_EXPLORER_BRIEF/SURVEY/MARKERS/ACK/TRIAL/RESULT/HOME; LP_NATURE_BRIEF/SOURCE/FIELD/ACK/TRIAL/RESULT/HOME; LP_SHARED_ROOTS. Q_PATH_EXPLORER andQ_PATH_NATURE each have five objectives. Trials reuse BT_TRAINING with authored win-only destinations, not two new enemy types.
+
+---
+
 # Current0.10.0 / V6 opening
 
 46scenes/142choices/5NPC/4encounters/234recipes/7stages/5fixedmaps/2questcontracts/0finalendings. +25nodes/+72choices from0.9.0;25newnodes have real reducer witnesses. Three opening mini-resolutions are not game endings or8LifePaths. Snapshot and actual counts: evidence/session20/story-graph.json.

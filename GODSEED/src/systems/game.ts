@@ -23,7 +23,7 @@ export function choose(s:State,id:string){return transact(s,d=>{
  if(d.scene==='S03_LUMI')d.flags.lumi_met=true;
  if(d.scene==='S04_KORO')d.flags.forest_open=true;
  if(d.scene==='S05_CRAFT_TUTORIAL'&&!d.flags.starter_grant){for(const i of ['CORE_WIND','FORM_ORB','MOD_SEEK'])d.inventory[i]=Math.max(1,d.inventory[i]||0);d.flags.starter_grant=true;}
- for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;
+ if(!c.battle)for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;
  if(c.battle){d.battle=createBattle(c.battle,prev,c.next);d.scene=prev;}
  });}
 export function craft(s:State,c:Core,f:Form,m:Mod){return transact(s,d=>{

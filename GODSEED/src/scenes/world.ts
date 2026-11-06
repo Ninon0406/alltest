@@ -18,6 +18,7 @@ import {gardenScenery} from './garden-map';
 import {ruinsScenery,ruinsMap} from './ruins-map';
 import {ruinsActions,ruinsAnimations,ruinsCheckpoint,altarState} from './ruins-staging';
 import {workshopScenery,workshopMap} from './workshop-map';
+import {pathProgress} from '../systems/life-paths';
 import {koroAnimations,workshopAnvil,workshopRecipe,workshopCheckpoint} from './workshop-staging';
 
 export class World extends Phaser.Scene {
@@ -216,7 +217,7 @@ export class World extends Phaser.Scene {
   this.stage.setTexture(this.currentStage).setVisible(!this.layered);
   this.rear.setVisible(this.layered);this.ground.setVisible(this.layered);this.front.setVisible(this.layered);
   if(this.layered){this.rear.setTexture(layerKey('rear'));this.ground.setTexture(layerKey('ground'));this.front.setTexture(layerKey('front'));}
-  const evening=festivalEvening(scene?.id),light=evening?0xa4afcf:0xffffff;for(const layer of [this.stage,this.rear,this.ground,this.front])layer.setTint(light);this.writeMetric('timeLight',evening?'evening':'day');
+  const evening=festivalEvening(scene?.id)||!!state&&state.ticks%3===2,light=evening?0xa4afcf:0xffffff;for(const layer of [this.stage,this.rear,this.ground,this.front])layer.setTint(light);this.writeMetric('timeLight',evening?'evening':'day');
   this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;this.gardenBed=undefined;this.gardenArch=undefined;this.gardenCauldron=undefined;this.gardenHerbs=undefined;this.cauldron=undefined;this.toolbox=undefined;this.ruinsAltar=undefined;this.anvilVisible=false;this.writeMetric('ruinsBeat','idle');this.writeMetric('altarState',this.currentStage==='ruins'?['sealed','open','remembered'][altarState(state)]:'none');this.writeMetric('runeWard',String(!!state?.battle?.status.RUNE_WARD));this.writeMetric('workshopBeat','idle');this.writeMetric('gardenBeat','idle');
   const garden=gardenPresentation(state);this.writeMetric('gardenGrowth',garden?.frame===2?'bloom':garden?'buds':'none');
   if(garden&&this.textures.exists('garden-bed-v7')){this.gardenBed=this.add.sprite(garden.bed.x,garden.bed.y,'garden-bed-v7',garden.frame).setOrigin(.5,1).setDepth(garden.bed.depth);this.props.push(this.gardenBed);}
@@ -256,6 +257,12 @@ export class World extends Phaser.Scene {
   }
   this.leafFall=this.currentStage==='village'&&this.location==='under_tree'&&!!state?.flags.tree_memory;
   this.writeMetric('festivalState',state?.flags.arc1_opening_complete?'remembered':state?.flags.a1_lights_ready?'lit':state?.flags.festival_ready?'preparing':'none');
+  const progress=state?pathProgress(state):[];this.writeMetric('lifeRanks',progress.map(p=>p.id+':'+p.rank).join(','));
+  this.writeMetric('trailFocus',state?.battle?.playerStatus.TRAIL_FOCUS||0);this.writeMetric('rootGuardUsed',String(!!state?.battle?.pathActions?.rootGuardUsed));
+  if(this.textures.exists('life-icons-v14')){
+   if(this.currentStage==='village'&&this.location==='under_tree'&&state?.flags.lp_explorer_marked){const frame=progress[0].rank===2?2:1;for(const p of [sceneDefinitions.under_tree.anchors.tree_path,sceneDefinitions.under_tree.anchors.behind_branch])this.props.push(this.add.sprite(p.x,p.y-2,'life-icons-v14',frame).setOrigin(.5,1).setScale(.5).setDepth(p.y-1));}
+   if(this.currentStage==='garden'&&state?.flags.lp_nature_watered)this.props.push(this.add.sprite(259,229,'life-icons-v14',progress[1].rank===2?5:4).setScale(.5).setDepth(227));
+  }
   const gatherable=this.textures.exists('gathering-v6')?gatheringProps(state):[];this.writeMetric('gatheringProps',gatherable.map(p=>p.choice).join(','));
   if(this.textures.exists('gathering-v6'))for(const item of gatherable)this.props.push(this.add.sprite(item.x,item.y,'gathering-v6',item.kind*4).setOrigin(.5,1).setDepth(item.y-1).play('gathering-'+item.kind));
   if(this.leafFall&&this.textures.exists('leaves-v5'))for(let i=0;i<6;i++){const leaf=this.add.sprite(62+i*7,117,'leaves-v5').setDepth(810).play('falling-leaf');leaf.setData('anchor',{x:62+i*7,y:117,kind:'fall'});this.ambient.push(leaf);}
@@ -293,7 +300,7 @@ export class World extends Phaser.Scene {
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
   this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();
-  if(this.resting){this.actionDepth=support??239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.writeMetric('workshopBeat','idle');this.writeMetric('ruinsBeat','idle');this.parallax.value=0;this.diagnostics();
+  if(this.resting){this.actionDepth=support??239;this.playerShadow.setVisible(false);}this.pose(this.resting?'rest':'idle');this.phase='idle';this.writeMetric('pathPhase','idle');this.writeMetric('gardenBeat','idle');this.writeMetric('workshopBeat','idle');this.writeMetric('ruinsBeat','idle');this.writeMetric('pathAbilityBeat','idle');this.parallax.value=0;this.diagnostics();
  }
  setReduced(reduced:boolean){this.motion=!reduced;if(this.ready){if(reduced)this.finishAction();this.cameras.main.setZoom(reduced?1:cameraFraming.zoom).setScroll(0,0);}this.diagnostics();}
  private beat(target:object,properties:Omit<Phaser.Types.Tweens.TweenBuilderConfig,'targets'>,token:number):Promise<void>{
@@ -338,6 +345,11 @@ export class World extends Phaser.Scene {
  private ruinsGlow(kind:string,reduced:boolean,origin?:{x:number;y:number}){
   const target=origin||(kind==='crystal'?{x:350,y:170}:ruinsScenery.spellTarget),count=reduced?4:12;
   for(let i=0;i<count;i++){const a=i*Math.PI*2/count,particle=this.add.sprite(target.x+Math.cos(a)*25,target.y+Math.sin(a)*12,'ambient-v2',(kind==='leaf'?4:12)+i%4).setTint(kind==='leaf'?0xa4be77:kind==='song'?0xcbbbe5:0xf4d28a).setScale(.35).setDepth(850);this.effects.add(particle);this.tweens.add({targets:particle,x:target.x+Math.cos(a)*36,y:target.y-18+Math.sin(a)*20,alpha:0,duration:reduced?80:650+i*15,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});}
+ }
+ private pathGlyph(kind:'SCOUT'|'ROOT_REFUGE',reduced:boolean){
+  this.writeMetric('pathAbilityBeat',kind);const scout=kind==='SCOUT',origin=scout?this.npc:this.player;
+  if(!this.textures.exists('life-icons-v14'))return;
+  for(let i=0;i<(reduced?2:5);i++){const a=i*Math.PI*2/5,sprite=this.add.sprite(origin.x+Math.cos(a)*23,origin.y-12+Math.sin(a)*15,'life-icons-v14',scout?2:5).setScale(.4).setDepth(850);this.effects.add(sprite);this.tweens.add({targets:sprite,y:sprite.y-13,alpha:0,duration:reduced?80:700+i*30,onComplete:()=>{this.effects.delete(sprite);sprite.destroy();}});}
  }
  async action(cue:string,reduced:boolean,spell?:Spell,before?:State,next?:State,command?:string,target?:'scene'){
   if(!this.ready)return;
@@ -408,8 +420,11 @@ export class World extends Phaser.Scene {
   if(listening){this.npcPose(command==='CH0602'?'hum':'talk');this.writeMetric('gardenBeat','listening');}
   if(path?.seatDepth&&(cue==='rest'||listening||path.pose==='rest')){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
   this.writeMetric('actionAnchor',JSON.stringify({x:this.player.x,y:this.player.y,feetY:this.player.y+20,depth:this.player.depth,pose:this.playerAction}));
+  if(path?.pose==='water'){this.gardenBed?.setFrame(1);this.writeMetric('gardenBeat','watering');}
+  if(before?.battle&&next?.battle){if(next.battle.pathActions?.scouted&&!before.battle.pathActions?.scouted)this.pathGlyph('SCOUT',reduced);if(next.battle.pathActions?.rootGuardUsed&&!before.battle.pathActions?.rootGuardUsed)this.pathGlyph('ROOT_REFUGE',reduced);}
   if(cue!=='walk'&&!brewing&&!lifting&&!ruinAction)await this.beat(this.player,{y:this.player.y+(cue==='pick'?4:0),duration:reduced?35:listening?1800:cue==='craft'?1600:cue==='cast'?1120:600,yoyo:cue==='pick'},token);
   if(token!==this.generation)return;
+  if(path?.pose==='water'){this.gardenBed?.setFrame(2);this.writeMetric('gardenGrowth','bloom');}
   if(before?.battle&&next){
    this.phase='reaction';this.diagnostics();
    if(next.hp<before.hp){this.pose('hit');this.player.setTint(0xf2b193);}

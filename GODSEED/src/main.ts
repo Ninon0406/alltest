@@ -1,11 +1,12 @@
 import {craftingPanel,spellbookPanel} from './ui/alchemy-panel';
 import type {BookFilter} from './systems/alchemy';
+import {lifePathsPanel} from './ui/life-paths-panel';
 import './styles/game.css';
 import {fresh,type State} from './engine/state';import {ManualSession} from './engine/manual-session';import {readSaveFile} from './engine/save-file';import {saveControls,downloadSave} from './ui/save-controls';
 import {scenes,type Choice} from './content/story';import {choiceAvailability,nextHint,rememberedLines} from './systems/story';import {memoryPanel} from './ui/memory-panel';import {choose,craft,equip,unequip,fight} from './systems/game';import {byId,itemNames} from './systems/spells';import {startWorld} from './scenes/world';import {combatPanel} from './ui/combat-panel';
 const bookFilter:BookFilter={core:'',kind:'',mp:''};
 const app=document.querySelector<HTMLDivElement>('#app')!;
-app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.10.0</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
+app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.11.0</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
 const {world,game}=startWorld(document.querySelector('#canvas')!);const session=new ManualSession();let state:State|null=null,busy=true,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,screen='title',titleName='';let skip:()=>void=()=>{};
 const content=document.querySelector<HTMLDivElement>('#content')!,notice=document.querySelector<HTMLParagraphElement>('#notice')!;
 const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
@@ -62,7 +63,7 @@ function render(){
  banner.dataset.dirty=String(session.dirty);
  if(state&&session.canConfirmExport)banner.append(button('ยืนยันว่าเก็บไฟล์แล้ว',()=>{session.confirmExport();render();msg('คุณยืนยันว่าเก็บไฟล์แล้ว');}));
  const nav=document.querySelector('#nav')!;nav.replaceChildren();const hud=document.querySelector('#hud')!;hud.textContent=state?`${state.name} · HP ${state.hp}/100 · MP ${state.mp}/40 · ประสบการณ์ ${state.xp} · วันที่ ${Math.floor(state.ticks/3)+1} ${['เช้า','บ่าย','เย็น'][state.ticks%3]}`:'โลกที่จดจำทุกทางเลือกของคุณ';
- if(state){for(const [id,label] of [['story','เรื่องราว'],['inventory','กระเป๋า'],['craft','ผสมเวท'],['book','สมุดเวท'],['journal','ความทรงจำ'],['save','บันทึก']])nav.append(button(label,()=>{screen=id;render();},!!state.battle&&id!=='story'&&id!=='save'));}
+ if(state){for(const [id,label] of [['story','เรื่องราว'],['inventory','กระเป๋า'],['craft','ผสมเวท'],['book','สมุดเวท'],['paths','เส้นทางชีวิต'],['journal','ความทรงจำ'],['save','บันทึก']])nav.append(button(label,()=>{screen=id;render();},!!state.battle&&id!=='story'&&id!=='save'));}
  if(state){if(screen!=='save'&&!leaving&&!pendingImport)nav.append(button('บันทึกเกมเป็นไฟล์',()=>void exportCurrent()));nav.append(button('เมนูหลัก',()=>leave('title')),button('เริ่มเกมใหม่',()=>leave('new')));}
  if(state&&busy)nav.append(el('p','กำลังเตรียมเหตุการณ์ จึงยังบันทึกหรือโหลดไฟล์ไม่ได้'));
  if(leaving||pendingImport)nav.querySelectorAll('button').forEach(b=>b.disabled=true);
@@ -76,10 +77,11 @@ function render(){
  if(screen==='save'){section('ไฟล์เซฟของคุณ','บันทึกเกมเป็นไฟล์ .godseed ด้วยตัวเอง เลือกไฟล์จากอุปกรณ์เพื่อเล่นต่อ ไม่มีการกู้ความคืบหน้าอัตโนมัติ');controls();return;}
  if(screen==='inventory'){section('กระเป๋าของผู้มาเยือน','วัตถุดิบสามชนิด สร้างคาถาที่เป็นของคุณ ของภารกิจจะไม่ถูกใช้ในการผสม');for(const [id,n] of Object.entries(s.inventory).filter(([,n])=>n>0)){content.append(el('p',`${itemNames[id]||id} × ${n}`));}return;}
  if(screen==='journal'){memoryPanel(content,s);return;}
+ if(screen==='paths'){lifePathsPanel(content,s,()=>{screen='story';render();});return;}
  if(screen==='craft'){section('โต๊ะผสมเมล็ดเวท','แก่นธาตุ + รูปแบบ + ตัวปรับ ใช้อย่างละหนึ่งชิ้นเมื่อค้นพบครั้งแรก ร่ายครั้งถัดไปใช้ MP');craftingPanel(content,s,button,(c,f,m)=>void act(()=>craft(s,c,f,m),'craft',`SPELL_${c}_${f}_${m}`));return;}
  if(screen==='book'){section('สมุดเวทมนตร์',`${s.known.length} สูตรที่ค้นพบ · ติดตั้งได้ 4 ช่อง · เปลี่ยนเวทได้เมื่อนอกการต่อสู้`);spellbookPanel(content,s,button,(id,slot)=>void act(()=>equip(s,id,slot)),slot=>void act(()=>unequip(s,slot)),bookFilter);return;}
  if(s.battle){screen='battle';combatPanel(content,s,button,(id,cue,spellId)=>void act(()=>fight(s,id),cue,spellId,id));return;}
- const scene=scenes[s.scene];section(scene.title,scene.text);if(s.flags.slice_complete&&s.scene==='S02_HUB')content.append(el('p','คุณนำโน้ตจากป่ากลับมาแล้ว — จบช่วงทดลองเมล็ดแรก! ยังสำรวจ ผสมเวท และฝึกสู้ต่อได้ ยังมีหอสมุดของไอรากับลำธารให้ตามทำนองต่อ เทศกาลและบทสรุปทั้งสามยังไม่เปิดในฉบับนี้'));
+ const scene=scenes[s.scene];section(scene.title,scene.text);if(s.flags.slice_complete&&s.scene==='S02_HUB')content.append(el('p','คุณนำโน้ตจากป่ากลับมาแล้ว — จบช่วงทดลองเมล็ดแรก! ยังสำรวจ ผสมเวท และฝึกสู้ต่อได้ หอสมุด ลำธาร ศาลเจ้า และงานเพลงของหมู่บ้านยังมีเรื่องให้ติดตามต่อ'));
  if(s.flags.lumi_helped&&s.scene==='S02_HUB')content.append(el('p','ลูมิโบกมือ: “หนูรู้แล้วว่าถ้าหาไม่เจอ ก็ลองฟังให้ดีกว่าเดิม!”'));
  for(const line of rememberedLines(s,scene))content.append(el('p',line));
  if(scene.id==='S02_HUB'){const hint=el('p',nextHint(s));hint.className='story-hint';content.append(hint);}

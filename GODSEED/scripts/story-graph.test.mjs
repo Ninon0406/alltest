@@ -96,6 +96,12 @@ test('invalid recipe definitions fail instead of inflating usable spell counts',
  const result=codes(analyzeStoryGraph(x));
  for(const code of ['DUPLICATE_RECIPE_ID','INVALID_RECIPE_STATS','MISSING_RECIPE_VFX'])assert.ok(result.includes(code));
 });
+test('path conditions, mentor, ability, location and progression flags resolve to authored data',()=>{
+ const x=fixture();x.lifePaths=[{id:'EXPLORER',mentorId:'PIP',locationId:'tree',startedFlag:'path_started',rank1Flag:'path_rank1',trialFlag:'path_trial',rank2Flag:'path_rank2',ability:{id:'TRAIL_FOCUS'},requirements:{start:[{flag:'opening'}],rank1:[{flag:'surveyed'}]}}];
+ x.locations={tree:{anchors:{}}};x.engineFlags.push('path_started','path_rank1','path_trial','path_rank2','opening','surveyed');x.scenes[1].choices[0].when=[{kind:'pathStart',id:'EXPLORER'}];
+ assert.equal(analyzeStoryGraph(x).result,'PASS');x.lifePaths.push({...x.lifePaths[0],mentorId:'TYPO',locationId:'lost',rank2Flag:'unproduced'});x.scenes[1].choices[0].when[0].id='UNKNOWN';
+ const result=codes(analyzeStoryGraph(x));for(const code of ['DUPLICATE_LIFE_PATH','INVALID_PATH_ABILITY','MISSING_PATH_MENTOR','MISSING_PATH_LOCATION','UNPRODUCED_FLAG','MISSING_LIFE_PATH'])assert.ok(result.includes(code),code);
+});
 test('actual catalog and bounded real reducer exploration remain separate proof levels',async()=>{
  const catalog=await loadGameCatalog(),report=analyzeStoryGraph(catalog);
  assert.equal(report.result,'PASS',JSON.stringify(report.errors));
@@ -103,5 +109,6 @@ test('actual catalog and bounded real reducer exploration remain separate proof 
  const witnesses=exploreRealChoices(catalog,{maxStates:200,maxMs:3000});
  assert.equal(witnesses.result,'PASS_BOUNDED',JSON.stringify(witnesses.failures));
  assert.ok(witnesses.counts.witnessedNodes>1);assert.ok(witnesses.counts.successfulChoices>1);
+ assert.ok(witnesses.counts.witnessedStateChangingChoices>0);assert.ok(witnesses.counts.witnessedStateChangingChoices<=witnesses.counts.successfulChoices);
  assert.equal(witnesses.counts.witnessedNodes+witnesses.unverifiedNodes.length,report.counts.storyNodes);
 });

@@ -236,3 +236,8 @@ Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI4225522
 เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
 
 Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ
+
+
+## 0.11.0 candidate — แผนที่ที่เว้นที่ให้ราก
+
+หลังคืนแรกของงานฉลอง เรียนหลักสูตรนักสำรวจกับพิพหรือผู้พิทักษ์ธรรมชาติกับมาเรนได้ ภาคสนาม→การฝึก→ความสามารถเฉพาะ และเรียนข้ามสายหลังรับรองพื้นฐาน จบทั้งสองสายเพื่อแลกเปลี่ยนความรู้ร่วมกัน เพิ่ม16จุดเนื้อเรื่อง43ตัวเลือกและ2ภารกิจขั้นต้น สำรวจจังหวะใช้4MPเตรียมเวทผ่านท่าป้องกัน;รากคุ้มภัยเกิดเมื่อGUARDครั้งแรก แก้การได้เครื่องหมายผ่านบททดสอบก่อนชนะ รองรับไฟล์0.10เดิมแบบmanualเหมือนเดิม. การเผยแพร่รอqualitygate;นี่ไม่ใช่เกม1.0หรือ8Pathsครบ.

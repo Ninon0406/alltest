@@ -1,3 +1,9 @@
+# Session21 / candidate0.11.0
+
+223unit/2content/16negative+positivegraph/10roadmap/type/lint/buildPASS. InitialFocus7/7PASS(2.6m); final8/Full139/PRCI/mainCI/live0.11pending. Local native import of genuine published0.10file is exactly equal, new combat focus/cross-path progression and malformed-file rejection work, no storage/upload/reference/consoleerrors. Boundedsearch62/62nodes180choices/234craftedrecipes;5supplementalactualearnedspellroutes total185/185.145choices affect gameplay state by defined metric. This does not prove all seeds, human fun or every spell in a browser. Full evidence follows in session21 receipts. Physical devices/Safari/FPS/final pixel-diff baselineNOT TESTED.
+
+---
+
 # Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
@@ -519,3 +525,5 @@ Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI4225522
 เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
 
 Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ
+
+Session21 verification correction: initialFull stopped after17PASS/2whole-scenario30sTIMEOUT/1interrupted/119notrun while a second local browser verifier shared the CPU. Not a passed run. Retained every action/5sassertion, raised only the complete legacyloop budget to60s based on observed25–30s, and will run finalFull isolated. Corrected reward descriptions to the actual item catalog. Extended verifier initially tried a13MP ward with only6MP; fixed preparation through actual GUARD turns, no injected MP or lowered assertions. Evidence retains the failed attempt; final receipts supersede it only after rerun.

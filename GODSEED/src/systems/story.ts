@@ -1,6 +1,7 @@
 import type {State} from '../engine/state';
 import {satisfies} from '../engine/conditions';
 import type {Choice,StoryScene} from '../content/story';
+import {pathProgress} from './life-paths';
 
 export function choiceAvailability(state:State,choice:Choice){
  const enabled=(!choice.requires||!!state.flags[choice.requires])&&(!choice.when||choice.when.every(condition=>satisfies(state,condition)));
@@ -14,7 +15,7 @@ export const clueFacts=[
 ] as const;
 export const clueCount=(state:State)=>clueFacts.filter(clue=>state.flags[clue.flag]).length;
 export function nextHint(state:State){
- if(state.flags.arc1_opening_complete)return 'งานเพลงของหมู่บ้านจบลงอย่างที่คุณเลือกแล้ว กลับไปดูโคมและเมล็ดที่จัตุรัส หรือค้นพบเวทจากวัตถุดิบที่เพื่อนบ้านมอบให้';
+ if(state.flags.arc1_opening_complete){const paths=pathProgress(state),learning=paths.find(p=>p.started&&p.rank<2);if(learning)return learning.name+' · '+learning.next+' กลับทางแยกในจัตุรัสเพื่อเรียนต่อได้';if(paths.every(p=>p.rank===2))return 'ทั้งสองสายเรียนพื้นฐานสำเร็จแล้ว ลองนำแผนที่ไปเล่าให้มาเรนฟังที่ทางแยก หรือใช้สำรวจจังหวะและรากคุ้มภัยในการต่อสู้';return 'หลังคืนแรก คุณเลือกเรียนจากพิพหรือมาเรนได้ที่ทางแยกในจัตุรัส แต่ละสายมีภาคสนาม การฝึก และความสามารถต่างกัน';}
  if(state.flags.festival_ready)return 'ช่วยซ่อมกล่องกับคุโร เรียงโน้ตกับไอรา และเตรียมโคมครบแล้วจึงรวมวงซ้อม ทุกงานมีวิธีทำด้วยมือโดยไม่บังคับหาเวทหายาก';
  if(state.flags.lumi_helped&&state.flags.crafted_first&&state.flags.archive_read&&clueCount(state)>=2)return 'จัตุรัสกำลังเตรียมงานเพลงแรก ลองกลับไปช่วยเพื่อนบ้าน แล้วเลือกว่าคุณอยากรักษาสิ่งใดไว้ด้วยกัน';
  if(!state.flags.lumi_helped)return 'ลูมิที่บ่อน้ำกำลังตามหาทำนองของคุณยาย ลองฟังเรื่องของเธอ';
@@ -28,6 +29,8 @@ export function nextHint(state:State){
 }
 /** Authored facts only. Rendering cannot invent progress or grant rewards. */
 export function rememberedLines(state:State,scene:StoryScene):string[]{
+ if((scene.id==='S00_WAKE'||scene.id==='S02_TREE'||scene.id==='LP_EXPLORER_BRIEF')&&state.flags.lp_explorer_rank2)return ['พิพหยุดรอที่ป้ายใบไม้ซึ่งคุณช่วยทำไว้ มันจำได้ว่าแผนที่ของคุณเว้นที่ให้คนเดินช้าด้วย'];
+ if(scene.stage==='garden'&&state.flags.lp_nature_rank2)return ['มาเรนยกบัวรดน้ำให้ดู รากที่คุณช่วยดูแลไม่ต้องให้ใครยืนเฝ้าตลอดเวลา “เธอรู้แล้วว่าควรคุ้มกันเมื่อใด และควรปล่อยให้มันเติบโตเมื่อใด”'];
  if(scene.id==='S02_HUB'&&state.flags.arc1_opening_complete)return [state.flags.a1_resolution_care?'โคมข้างทางยังสว่าง ผู้สูงวัยเดินผ่านได้อย่างสบาย มาเรนจำได้ว่าคุณเลือกทำให้งานนี้มีที่นั่งสำหรับทุกคน':state.flags.a1_resolution_knowledge?'สมุดสำเนาวางอยู่ใต้โคม ไอราเปิดไว้ให้คนต่อไปเขียนเพิ่ม ความรู้นี้ไม่ต้องมีเจ้าของเพียงคนเดียว':'เสียงเพลงจากกล่องดังเบา ๆ ลูมิชวนเพื่อนบ้านร้องท่อนที่แต่ละคนเลือก ไม่มีใครต้องร้องดังที่สุดเพื่ออยู่ในวง'];
  if((scene.id==='S00_WAKE'||scene.id==='S02_TREE')&&state.flags.tree_memory)return ['ใบไม้หมุนลงตรงปลายเท้า พิพส่งเสียงตอบเบา ๆ คุณจำช่วงเงียบที่มีเพื่อนอยู่ข้าง ๆ ได้อีกครั้ง'];
  if(scene.id==='S06_GARDEN'&&state.flags.maren_listened)return ['มาเรนเคาะจังหวะเพลงเดิมให้คุณจำ “ถ้าทำนองไหนหายไป ลองฟังช่วงเงียบระหว่างโน้ตดูนะ” เธอขยับที่บนม้านั่งราวกับจำได้ว่าคุณเคยนั่งฟังอยู่ตรงนั้น'];

@@ -1,4 +1,5 @@
 import type {State} from '../engine/state';
+import {lifeQuests} from './life-quests';
 
 export type QuestStep={
  id:string;label:string;flag:string;scene:string;choices:readonly string[];next:readonly string[];
@@ -12,6 +13,7 @@ export type QuestDefinition={
 
 /** Contracts for quests implemented in the existing story, not future roadmap quests. */
 export const quests:readonly QuestDefinition[]=[
+ ...lifeQuests,
  {
   id:'Q_ARCHIVE_NOTES',title:'บันทึกที่มีคนกลับมาเล่า',startScene:'S07_ARCHIVE',
   description:'อ่านแผนที่ ฟังจารึก และแบ่งปันทำนองที่พบกับไอรา',

@@ -1,3 +1,9 @@
+### Session21 — 2026-11-06 UTC / candidate0.11.0
+
+Basef2396f4, branchfeat/godseed-life-paths. LIFE001/004/006 verticalslice: real field lessons→training→two earned abilities→cross-mentor capstone;62/185(+16/+43),4questcontracts,2introductorycourses. ManualFile2/State2 exactold0.10import and activefocus roundtrip passed locally; no persistent storage.223unit/2content/16graph/10roadmap/type/lint/build and initialFocus7PASS; finalFocus8/Full/CI/publicpending. One original4253byteatlas;80PNGreproexact,79previousunchanged. Two intro courses are not full8paths/12ARCs/endings. Next tasks and release receipts: evidence/session21/README.md.
+
+---
+
 # Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
