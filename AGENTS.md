@@ -1,5 +1,13 @@
 # GODSEED — active project
 
+## Owner V6 — Evolution scope (2026-11-06)
+
+คำสั่ง V6 ล่าสุดขยายเป้าหมาย 1.0 เป็น 12 ARC / 8 Life Paths พร้อมความก้าวหน้าของพลังและโลก ไม่ใช่เฉพาะบทแรกตามขอบเขตประวัติด้านล่าง ตรวจ Roadmap Phase 0–13 และ Development Log ล่าสุดก่อนทุก batch; รักษา ID/หลักฐาน/เซฟเดิม เป้าหมาย 500 nodes/1,000 choices/≈250 spells เป็นเป้าหมายออกแบบ ไม่ใช่ของที่สร้างแล้ว
+
+Catalog ปัจจุบันยังมีเวท 234 สูตรที่ใช้ได้จริง ห้ามลบธาตุหรือเปลี่ยน Recipe IDs เดิมเพื่อให้ตรงรายชื่อใหม่โดยไม่มี migration/tests งานเพิ่ม Element/Form/Modifier/Catalyst ตาม V6 อยู่ใน MAG-010; การเพิ่มจำนวนต้องตามกฎและมีพฤติกรรมจริง การบันทึกยังเป็น RAM + ผู้เล่นส่งออก/เลือกไฟล์ .godseed เท่านั้น
+
+ใช้ Vertical Slice + Content Batch + Automated Validation: เพิ่มเนื้อหาที่เดินถึงบทสรุปย่อยได้พร้อมภาพการกระทำและผลจากตัวเลือก ไม่ปิด ARC/ตอนจบเกมจากบทสรุปย่อย อ่าน docs/research/WAY_OF_XIAN_BENCHMARK.md และ NARRATIVE_DESIGN_PRINCIPLES.md โดยแยกสิ่งที่ตรวจจริงกับสิ่งที่เข้าไม่ถึง; ห้ามคัดลอกโค้ด ภาพ หรือเนื้อเรื่องต้นแบบ
+
 Latest owner directive authorizes replacing REBORN completely with GODSEED. Historical REBORN game files and policies are removed. Do not resume REBORN development. GODSEED lives in `GODSEED/` and is published at the repository Pages root.
 
 Read `01_CODEX_START.md`, `02_GODSEED_MASTER_SPEC.md` in full, `03_CODEX_CONTINUE_FOREVER.md` and `GODSEED/docs/PROGRESS.md` before development. Master specification controls game design; latest owner instructions control scope.

@@ -1,3 +1,15 @@
+# Session20 — 2026-11-06 UTC / candidate0.10.0 / Owner V6
+
+ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
+
+Unit175/Content2/Roadmap10/StoryGraph15/type/lint/Buildผ่าน,Focused8/8ผ่าน2.1mบน5viewportพร้อมTouch/Keyboard/ไฟล์/skip/fallback/เวทจริง;Full131และCI/Public0.10รอลงผลจริง Old78PNGไม่เปลี่ยน ทั้ง79สร้างซ้ำตรงbyte Title24PNG303649bytes ภาพยังprototype ResearchWayofXianเปิดBrowserไม่ได้จึงไม่อ้างว่าทดลองกลไกครบ
+
+RoadmapPhase0–13รักษา76IDsเดิม เพิ่มขอบเขต12ARC/8Pathsถึง1.0เป็น109งาน รายงานแยกเครื่องมือตรวจ/เอกสารวิจัยจากระบบเกมจริง เปอร์เซ็นต์Checklistใหม่ดูRoadmapSSOT ไม่ใช้27.6%เก่าแทน V6ยังไม่ครบทุกARC/Paths/250recipes/endings และไม่รับรองอุปกรณ์จริง/FPS/finalHD/humanfun
+
+ดู[รายงานรอบ20](evidence/session20/REPORT_TH.md) และ[BaselineจากGit](research/GODSEED_V6_BASELINE.md). งานถัดไป:Contentcontract/ARC2→LifePaths→B04/B05→MAG010อย่างมีmigration ไม่มีงานข้ามsessionอัตโนมัติ
+
+---
+
 # GODSEED Development Log
 
 Append-only ประวัติการส่งมอบ งานออกแบบในSSOTแยกจากงานที่สร้างจริง สถานะปัจจุบันดู [Master Roadmap](../../GODSEED_MASTER_ROADMAP.md) และ [PROGRESS](PROGRESS.md). Session0–6 ด้านล่างสรุปย้อนหลังจากGit/TEST_REPORT ไม่ใช่การรันทดสอบใหม่ในรอบ7; หลักฐานrelease/ข้อจำกัดดั้งเดิมยังอยู่ใน [TEST_REPORT](TEST_REPORT.md). วันที่เป็นUTC.

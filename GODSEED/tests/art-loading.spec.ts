@@ -12,7 +12,7 @@ for(const [width,height] of [[390,844],[1366,768]])test(`bounded title assets, c
  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});
  const urls:string[]=[],errors:string[]=[];page.on('request',r=>{if(r.url().endsWith('.png'))urls.push(r.url());});page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');const canvas=page.locator('#canvas');await expect(canvas).toHaveAttribute('data-render-status','ready');
- const cold=await pngMetrics(page);expect(cold.files).toBe(23);expect(cold.encodedBytes).toBeLessThan(629017*.65);
+ const cold=await pngMetrics(page);expect(cold.files).toBe(24);expect(cold.encodedBytes).toBeLessThan(629017*.65);
  expect(urls.some(u=>/art-v9|art-v10|archive|stream/.test(u))).toBe(false);
  await hub(page);await tap(page,'แวะสวนดอกไม้ของยายมาเรน');await expect(canvas).toHaveAttribute('data-garden-art','herbalist-v9');
  const buffer=await exportFile(page),state=JSON.parse(buffer.toString()).state,loaded=await canvas.getAttribute('data-asset-requests'),count=urls.length;
@@ -20,10 +20,10 @@ for(const [width,height] of [[390,844],[1366,768]])test(`bounded title assets, c
  expect(urls).toHaveLength(count);await expect(canvas).toHaveAttribute('data-asset-requests',loaded!);
  // A reload has no progress. A selected file then prepares the destination art
  // before replacing RAM, including animation registration absent at the title.
- await page.reload();await expect(page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true})).toBeVisible();await expect(canvas).toHaveAttribute('data-asset-requests','23');
+ await page.reload();await expect(page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true})).toBeVisible();await expect(canvas).toHaveAttribute('data-asset-requests','24');
  await expect(canvas).toHaveAttribute('data-render-status','ready');const warm=await pngMetrics(page);await loadFile(page,buffer);expect(await exportedState(page)).toEqual(state);
  await expect(canvas).toHaveAttribute('data-npc','maren-v8');await expect(canvas).toHaveAttribute('data-garden-art','herbalist-v9');
- await info.attach('asset-budget',{body:JSON.stringify({cold,warm,titleBaseline:{files:57,encodedBytes:629017},revisitExtraRequests:urls.length-count-warm.files-(Number(loaded)-23)},null,2),contentType:'application/json'});
+ await info.attach('asset-budget',{body:JSON.stringify({cold,warm,titleBaseline:{files:57,encodedBytes:629017},revisitExtraRequests:urls.length-count-warm.files-(Number(loaded)-24)},null,2),contentType:'application/json'});
  expect(errors).toEqual([]);
 });
 test('explicit retry restores a failed shared atlas while preserving the seated checkpoint and dirty status',async({page})=>{

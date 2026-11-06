@@ -16,6 +16,7 @@ export function choose(s:State,id:string){return transact(s,d=>{
  if(daily)d.gathered[id]=day;
  if(first)d.choices.push(id);
  d.journal.push(c.label);if(daily&&!reward)d.journal.push('เก็บวัตถุดิบที่นี่แล้ววันนี้ กลับมาใหม่ในวันถัดไปได้');d.ticks+=c.cue==='walk'||c.cue==='rest'?1:0;
+ if(c.time==='evening')d.ticks=s.ticks+(2-s.ticks%3+3)%3;else if(c.time==='next-morning')d.ticks=s.ticks+3-s.ticks%3;
  if(c.cue==='rest'){d.hp=Math.min(100,d.hp+15);d.mp=Math.min(40,d.mp+10);}
  const prev=d.scene;d.scene=c.next;if(id==='CH2801')d.scene=d.recoveryScene;
  if(d.scene==='S02_HUB'&&!d.flags.intro_grant){if(!d.inventory.CORE_WIND)d.inventory.CORE_WIND=1;d.flags.intro_grant=true;}

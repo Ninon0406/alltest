@@ -5,8 +5,10 @@ import {ruinsScenery} from './ruins-map';
 import {ruinsActions} from './ruins-staging';
 import {workshopChoiceTargets} from './workshop-staging';
 import {gardenMap,gardenScenery} from './garden-map';
+import {scenes,type Choice} from '../content/story';
 export type Point={x:number;y:number};
-export type CinematicPath={id:string;stage:StageId;points:readonly Point[];seatDepth?:number;facing?:Facing;targetAnchor?:string};
+export type CinematicPath={id:string;stage:StageId;points:readonly Point[];seatDepth?:number;facing?:Facing;targetAnchor?:string;pose?:string;effect?:string};
+export function authoredCinematic(command?:string):Choice['cinematic']{return command?Object.values(scenes).flatMap(s=>s.choices).find(c=>c.id===command)?.cinematic:undefined;}
 // Sprite centers, foot anchor y+20. Authored lanes avoid solid prop bases;
 // these routes are presentation data, never free-roam or serialized progress.
 export const travelPaths:Record<StageId,readonly Point[]>={
@@ -31,6 +33,8 @@ export const choicePaths:Record<string,CinematicPath>={
  CH1201:{id:'stream-bell',stage:'stream',points:[{x:195,y:231},{x:248,y:226}]},
 };
 export function cinematicPath(stage:StageId,cue:string,command?:string,start?:Point,location:LocationId='village_center'):CinematicPath|undefined {
+ const authored=authoredCinematic(command);
+ if(authored&&start){const def=sceneDefinitions[location],points=routeTo(def,{x:start.x,y:start.y+20},authored.anchor);if(!points)throw Error('ไม่พบเส้นทางที่ปลอดภัยไปยังเหตุการณ์');return {id:'story-'+authored.anchor,stage,points:points.map(p=>({x:p.x,y:p.y-20})),targetAnchor:authored.anchor,facing:def.anchors[authored.anchor].facing,pose:authored.pose,effect:authored.effect,seatDepth:authored.pose==='rest'?(def.occluders.find(o=>o.id.includes('bench'))?.footY??238)+1:undefined};}
  if(stage==='ruins'&&cue==='walk'&&command==='FLEE')return {id:'ruins-retreat',stage,points:ruinsScenery.retreat};
  if(stage==='ruins'&&start&&command&&ruinsActions[command]){const targetAnchor=ruinsActions[command].anchor,def=sceneDefinitions.ancient_shrine,feet=routeTo(def,{x:start.x,y:start.y+20},targetAnchor);if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยในโบราณสถาน');return {id:'ruins-'+targetAnchor,stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:def.anchors[targetAnchor].facing};}
  if(stage==='workshop'&&start){
@@ -53,8 +57,8 @@ export function cinematicPath(stage:StageId,cue:string,command?:string,start?:Po
   if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยไปยังจุดโต้ตอบ');
   return {id:treeRest?'tree-rest':benchRest?'village-bench':command==='CH0201'?'village-fountain':'village-exit',stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:definition.anchors[targetAnchor].facing,seatDepth:treeRest||benchRest?239:undefined};
  }
- const authored=command?choicePaths[command]:undefined;
- if(authored?.stage===stage)return authored;
+ const oldPath=command?choicePaths[command]:undefined;
+ if(oldPath?.stage===stage)return oldPath;
  if(cue==='walk')return {id:command==='FLEE'?'battle-retreat':stage+'-travel',stage,points:command==='FLEE'?[{x:105,y:225},{x:80,y:219}]:travelPaths[stage]};
  return undefined;
 }

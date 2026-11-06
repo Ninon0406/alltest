@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "url": "https://way-of-xian.wox-game.workers.dev/",
+      "viewport": "390x844",
+      "controls": "touch",
+      "attemptedAt": "2026-11-06T16:10:40.106Z",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://way-of-xian.wox-game.workers.dev/\nCall log:\n  - navigating to \"https://way-of-xian.wox-game.workers.dev/\", waiting until \"domcontentloaded\"\n"
+    },
+    {
+      "url": "https://way-of-xian.wox-game.workers.dev/wiki",
+      "viewport": "390x844",
+      "controls": "touch",
+      "attemptedAt": "2026-11-06T16:10:40.380Z",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://way-of-xian.wox-game.workers.dev/wiki\nCall log:\n  - navigating to \"https://way-of-xian.wox-game.workers.dev/wiki\", waiting until \"domcontentloaded\"\n"
+    }
+  ],
+  "note": "No policy bypass, credentials, registration, save upload, code or artwork extraction."
+}

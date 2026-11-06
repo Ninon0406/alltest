@@ -1,0 +1,27 @@
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+ ❯ tests/opening-content.test.ts (16 tests | 1 failed) 173ms
+     × plays from the first wake-up to the morning quest conclusion without battle or injected state 43ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/opening-content.test.ts > V6 opening: a completed evening from real choices > plays from the first wake-up to the morning quest conclusion without battle or injected state
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ tests/opening-content.test.ts:42:65
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 passed (16)
+   Start at  16:32:31
+   Duration  917ms (transform 421ms, setup 0ms, import 577ms, tests 173ms, environment 0ms)

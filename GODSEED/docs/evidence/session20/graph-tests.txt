@@ -1,0 +1,23 @@
+✔ static graph reports structural counts without claiming executable quests or life paths (3.408259ms)
+✔ missing transitions and duplicated global choice IDs fail (0.425472ms)
+✔ duplicate source definitions cannot hide behind Object.fromEntries (0.357399ms)
+✔ unlinked story nodes and closed non-ending loops fail (8.413607ms)
+✔ reaching a self loop still fails when it cannot escape to a safe hub or ending (0.488627ms)
+✔ authored ending is allowed to terminate and is distinct from an accidental dead end (0.257658ms)
+✔ condition typos, impossible flag sources and unknown spell cores fail (0.306913ms)
+✔ flag produced on an entry or literal engine action is a legal prerequisite (0.326152ms)
+✔ reward IDs, quantities, relationship IDs and shared onceFlag guards are checked (0.38453ms)
+✔ battle victory, defeat and dynamic checkpoint recovery are explicit graph edges (3.795283ms)
+✔ scene staging and source choice cinematic anchors resolve against real map metadata (0.499553ms)
+✔ authored time cuts accept supported boundaries and reject misspelled phases (1.29976ms)
+✔ structured quest chains reject wrong scene references and unconnected steps (0.349336ms)
+✔ invalid recipe definitions fail instead of inflating usable spell counts (0.217418ms)
+✔ actual catalog and bounded real reducer exploration remain separate proof levels (2003.799015ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2143.78068

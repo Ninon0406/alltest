@@ -1,0 +1,1596 @@
+{
+  "result": "PASS",
+  "scope": "Static catalog validation and structural reachability; conditions and combat wins are not assumed executable",
+  "counts": {
+    "storyNodes": 21,
+    "choices": 70,
+    "declaredEffectChoices": 70,
+    "structurallyReachableNodes": 21,
+    "endings": 0,
+    "encounters": 4,
+    "recipeDefinitions": 234,
+    "uniqueRecipes": 234,
+    "declaredQuestChains": 0,
+    "completableQuests": null,
+    "implementedLifePaths": null,
+    "stages": 7
+  },
+  "structurallyReachable": [
+    "S00_WAKE",
+    "S01_FIRST_STEPS",
+    "S02_HUB",
+    "S02_TREE",
+    "S03B_MAREN",
+    "S03_LUMI",
+    "S04_KORO",
+    "S05_CRAFT_TUTORIAL",
+    "S06_GARDEN",
+    "S07_ARCHIVE",
+    "S08_FOREST_GATE",
+    "S09_FOREST",
+    "S10_FOREST_RESULT",
+    "S11_STREAM",
+    "S12_STREAM_RESULT",
+    "S13_FOREST_SHRINE",
+    "S14_RESEARCH",
+    "S15_RUINS",
+    "S16_RUINS_RESULT",
+    "S17_ECHO_TABLET",
+    "S28_RECOVER"
+  ],
+  "edges": [
+    {
+      "from": "S00_WAKE",
+      "to": "S01_FIRST_STEPS",
+      "kind": "choice",
+      "choice": "CH0001"
+    },
+    {
+      "from": "S00_WAKE",
+      "to": "S01_FIRST_STEPS",
+      "kind": "choice",
+      "choice": "CH0002"
+    },
+    {
+      "from": "S00_WAKE",
+      "to": "S01_FIRST_STEPS",
+      "kind": "choice",
+      "choice": "CH0003"
+    },
+    {
+      "from": "S00_WAKE",
+      "to": "S00_WAKE",
+      "kind": "choice",
+      "choice": "CH0004"
+    },
+    {
+      "from": "S01_FIRST_STEPS",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0101"
+    },
+    {
+      "from": "S01_FIRST_STEPS",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0102"
+    },
+    {
+      "from": "S01_FIRST_STEPS",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0103"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S03_LUMI",
+      "kind": "choice",
+      "choice": "CH0201"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S04_KORO",
+      "kind": "choice",
+      "choice": "CH0202"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S06_GARDEN",
+      "kind": "choice",
+      "choice": "CH0203"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S07_ARCHIVE",
+      "kind": "choice",
+      "choice": "CH0204"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S11_STREAM",
+      "kind": "choice",
+      "choice": "CH0206"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S15_RUINS",
+      "kind": "choice",
+      "choice": "CH0207"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S02_TREE",
+      "kind": "choice",
+      "choice": "CH0211"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S08_FOREST_GATE",
+      "kind": "choice",
+      "choice": "CH0205"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0209"
+    },
+    {
+      "from": "S02_HUB",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0210"
+    },
+    {
+      "from": "S02_TREE",
+      "to": "S02_TREE",
+      "kind": "choice",
+      "choice": "CH02T1"
+    },
+    {
+      "from": "S02_TREE",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH02T2"
+    },
+    {
+      "from": "S03_LUMI",
+      "to": "S03B_MAREN",
+      "kind": "choice",
+      "choice": "CH0301"
+    },
+    {
+      "from": "S03_LUMI",
+      "to": "S03B_MAREN",
+      "kind": "choice",
+      "choice": "CH0302"
+    },
+    {
+      "from": "S03_LUMI",
+      "to": "S03B_MAREN",
+      "kind": "choice",
+      "choice": "CH0303"
+    },
+    {
+      "from": "S03B_MAREN",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH03B1"
+    },
+    {
+      "from": "S03B_MAREN",
+      "to": "S04_KORO",
+      "kind": "choice",
+      "choice": "CH03B2"
+    },
+    {
+      "from": "S03B_MAREN",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH03B3"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S05_CRAFT_TUTORIAL",
+      "kind": "choice",
+      "choice": "CH0401"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S05_CRAFT_TUTORIAL",
+      "kind": "choice",
+      "choice": "CH0402"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S05_CRAFT_TUTORIAL",
+      "kind": "choice",
+      "choice": "CH0403"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S04_KORO",
+      "kind": "battleVictory",
+      "choice": "CH0404"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S28_RECOVER",
+      "kind": "battleDefeat",
+      "choice": "CH0404"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S04_KORO",
+      "kind": "battleExit",
+      "choice": "CH0404"
+    },
+    {
+      "from": "S04_KORO",
+      "to": "S05_CRAFT_TUTORIAL",
+      "kind": "choice",
+      "choice": "CH0405"
+    },
+    {
+      "from": "S05_CRAFT_TUTORIAL",
+      "to": "S05_CRAFT_TUTORIAL",
+      "kind": "choice",
+      "choice": "CH0501"
+    },
+    {
+      "from": "S05_CRAFT_TUTORIAL",
+      "to": "S05_CRAFT_TUTORIAL",
+      "kind": "choice",
+      "choice": "CH0502"
+    },
+    {
+      "from": "S05_CRAFT_TUTORIAL",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0503"
+    },
+    {
+      "from": "S06_GARDEN",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0601"
+    },
+    {
+      "from": "S06_GARDEN",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0602"
+    },
+    {
+      "from": "S06_GARDEN",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0603"
+    },
+    {
+      "from": "S07_ARCHIVE",
+      "to": "S14_RESEARCH",
+      "kind": "choice",
+      "choice": "CH0701"
+    },
+    {
+      "from": "S07_ARCHIVE",
+      "to": "S14_RESEARCH",
+      "kind": "choice",
+      "choice": "CH0702"
+    },
+    {
+      "from": "S07_ARCHIVE",
+      "to": "S14_RESEARCH",
+      "kind": "choice",
+      "choice": "CH0703"
+    },
+    {
+      "from": "S14_RESEARCH",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1401"
+    },
+    {
+      "from": "S14_RESEARCH",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1402"
+    },
+    {
+      "from": "S14_RESEARCH",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1403"
+    },
+    {
+      "from": "S11_STREAM",
+      "to": "S12_STREAM_RESULT",
+      "kind": "battleVictory",
+      "choice": "CH1101"
+    },
+    {
+      "from": "S11_STREAM",
+      "to": "S28_RECOVER",
+      "kind": "battleDefeat",
+      "choice": "CH1101"
+    },
+    {
+      "from": "S11_STREAM",
+      "to": "S11_STREAM",
+      "kind": "battleExit",
+      "choice": "CH1101"
+    },
+    {
+      "from": "S11_STREAM",
+      "to": "S12_STREAM_RESULT",
+      "kind": "choice",
+      "choice": "CH1102"
+    },
+    {
+      "from": "S11_STREAM",
+      "to": "S12_STREAM_RESULT",
+      "kind": "choice",
+      "choice": "CH1103"
+    },
+    {
+      "from": "S11_STREAM",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1104"
+    },
+    {
+      "from": "S12_STREAM_RESULT",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1201"
+    },
+    {
+      "from": "S12_STREAM_RESULT",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1202"
+    },
+    {
+      "from": "S12_STREAM_RESULT",
+      "to": "S03B_MAREN",
+      "kind": "choice",
+      "choice": "CH1203"
+    },
+    {
+      "from": "S08_FOREST_GATE",
+      "to": "S09_FOREST",
+      "kind": "choice",
+      "choice": "CH0801"
+    },
+    {
+      "from": "S08_FOREST_GATE",
+      "to": "S09_FOREST",
+      "kind": "choice",
+      "choice": "CH0802"
+    },
+    {
+      "from": "S08_FOREST_GATE",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH0803"
+    },
+    {
+      "from": "S09_FOREST",
+      "to": "S10_FOREST_RESULT",
+      "kind": "battleVictory",
+      "choice": "CH0901"
+    },
+    {
+      "from": "S09_FOREST",
+      "to": "S28_RECOVER",
+      "kind": "battleDefeat",
+      "choice": "CH0901"
+    },
+    {
+      "from": "S09_FOREST",
+      "to": "S09_FOREST",
+      "kind": "battleExit",
+      "choice": "CH0901"
+    },
+    {
+      "from": "S09_FOREST",
+      "to": "S13_FOREST_SHRINE",
+      "kind": "choice",
+      "choice": "CH0903"
+    },
+    {
+      "from": "S09_FOREST",
+      "to": "S08_FOREST_GATE",
+      "kind": "choice",
+      "choice": "CH0904"
+    },
+    {
+      "from": "S10_FOREST_RESULT",
+      "to": "S13_FOREST_SHRINE",
+      "kind": "choice",
+      "choice": "CH1001"
+    },
+    {
+      "from": "S10_FOREST_RESULT",
+      "to": "S13_FOREST_SHRINE",
+      "kind": "choice",
+      "choice": "CH1002"
+    },
+    {
+      "from": "S13_FOREST_SHRINE",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1301"
+    },
+    {
+      "from": "S13_FOREST_SHRINE",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1303"
+    },
+    {
+      "from": "S15_RUINS",
+      "to": "S17_ECHO_TABLET",
+      "kind": "choice",
+      "choice": "CH1501"
+    },
+    {
+      "from": "S15_RUINS",
+      "to": "S16_RUINS_RESULT",
+      "kind": "battleVictory",
+      "choice": "CH1502"
+    },
+    {
+      "from": "S15_RUINS",
+      "to": "S28_RECOVER",
+      "kind": "battleDefeat",
+      "choice": "CH1502"
+    },
+    {
+      "from": "S15_RUINS",
+      "to": "S15_RUINS",
+      "kind": "battleExit",
+      "choice": "CH1502"
+    },
+    {
+      "from": "S15_RUINS",
+      "to": "S17_ECHO_TABLET",
+      "kind": "choice",
+      "choice": "CH1503"
+    },
+    {
+      "from": "S15_RUINS",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1504"
+    },
+    {
+      "from": "S16_RUINS_RESULT",
+      "to": "S17_ECHO_TABLET",
+      "kind": "choice",
+      "choice": "CH1601"
+    },
+    {
+      "from": "S16_RUINS_RESULT",
+      "to": "S17_ECHO_TABLET",
+      "kind": "choice",
+      "choice": "CH1602"
+    },
+    {
+      "from": "S17_ECHO_TABLET",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1701"
+    },
+    {
+      "from": "S17_ECHO_TABLET",
+      "to": "S07_ARCHIVE",
+      "kind": "choice",
+      "choice": "CH1702"
+    },
+    {
+      "from": "S17_ECHO_TABLET",
+      "to": "S02_HUB",
+      "kind": "choice",
+      "choice": "CH1703"
+    },
+    {
+      "from": "S28_RECOVER",
+      "to": "S09_FOREST",
+      "kind": "choice",
+      "choice": "CH2801"
+    },
+    {
+      "from": "S28_RECOVER",
+      "to": "S04_KORO",
+      "kind": "choice",
+      "choice": "CH2802"
+    },
+    {
+      "from": "S28_RECOVER",
+      "to": "S04_KORO",
+      "kind": "dynamicRecovery",
+      "choice": "CH2801"
+    },
+    {
+      "from": "S28_RECOVER",
+      "to": "S11_STREAM",
+      "kind": "dynamicRecovery",
+      "choice": "CH2801"
+    },
+    {
+      "from": "S28_RECOVER",
+      "to": "S09_FOREST",
+      "kind": "dynamicRecovery",
+      "choice": "CH2801"
+    },
+    {
+      "from": "S28_RECOVER",
+      "to": "S15_RUINS",
+      "kind": "dynamicRecovery",
+      "choice": "CH2801"
+    }
+  ],
+  "flagProducers": [
+    "archive_notes_complete",
+    "archive_read",
+    "battle_B01_done",
+    "battle_B02_done",
+    "battle_B03_done",
+    "crafted_first",
+    "echo_hint",
+    "first_battle_won",
+    "forest_clue",
+    "forest_open",
+    "forest_verse",
+    "garden_tended",
+    "intro_called",
+    "intro_grant",
+    "intro_listened",
+    "intro_observe",
+    "koro_trained",
+    "lumi_helped",
+    "lumi_met",
+    "maren_listened",
+    "musicbox_found",
+    "rest_bench",
+    "rest_under_tree",
+    "ruins_box_path",
+    "ruins_clue",
+    "ruins_crystal_path",
+    "ruins_open",
+    "ruins_rune_path",
+    "slice_complete",
+    "song_fragment",
+    "song_memory_hint",
+    "starter_grant",
+    "story_song_question",
+    "stream_clean",
+    "stream_clue",
+    "training_won",
+    "tree_memory",
+    "tutorial_hint",
+    "workshop_help"
+  ],
+  "errors": [],
+  "warnings": [
+    {
+      "code": "NO_QUEST_CATALOG",
+      "at": "quests",
+      "message": "No structured quest-chain catalog exists; quest completion count cannot be inferred from flags or UI text"
+    }
+  ],
+  "playableWitnesses": {
+    "result": "PASS_BOUNDED",
+    "scope": "Real fresh/choose/craft/fight reducers, seed 12345; projected-state bounded search. Coverage is a verified lower bound, not exhaustive solvability or browser proof.",
+    "limits": {
+      "maxStates": 4000,
+      "maxMs": 12000,
+      "processed": 4000,
+      "elapsedMs": 2470
+    },
+    "counts": {
+      "witnessedNodes": 21,
+      "successfulChoices": 70,
+      "successfullyCraftedRecipes": 15,
+      "endingWitnesses": 0
+    },
+    "nodeWitnesses": {
+      "S00_WAKE": [],
+      "S01_FIRST_STEPS": [
+        {
+          "choice": "CH0001"
+        }
+      ],
+      "S02_HUB": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        }
+      ],
+      "S02_TREE": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0211"
+        }
+      ],
+      "S03B_MAREN": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1203"
+        }
+      ],
+      "S03_LUMI": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0201"
+        }
+      ],
+      "S04_KORO": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        }
+      ],
+      "S05_CRAFT_TUTORIAL": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        }
+      ],
+      "S06_GARDEN": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0203"
+        }
+      ],
+      "S07_ARCHIVE": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0204"
+        }
+      ],
+      "S08_FOREST_GATE": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        }
+      ],
+      "S09_FOREST": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        }
+      ],
+      "S10_FOREST_RESULT": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        }
+      ],
+      "S11_STREAM": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0206"
+        }
+      ],
+      "S12_STREAM_RESULT": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        }
+      ],
+      "S13_FOREST_SHRINE": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0903"
+        }
+      ],
+      "S14_RESEARCH": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        }
+      ],
+      "S15_RUINS": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        }
+      ],
+      "S16_RUINS_RESULT": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1502"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        }
+      ],
+      "S17_ECHO_TABLET": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        }
+      ],
+      "S28_RECOVER": [
+        {
+          "choice": "CH0003"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1502"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "IT_POTION_DEW",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "IT_POTION_DEW",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE",
+            "BASIC_PULSE"
+          ]
+        }
+      ]
+    },
+    "successfulChoiceIds": [
+      "CH0001",
+      "CH0002",
+      "CH0003",
+      "CH0004",
+      "CH0101",
+      "CH0102",
+      "CH0103",
+      "CH0201",
+      "CH0202",
+      "CH0203",
+      "CH0204",
+      "CH0205",
+      "CH0206",
+      "CH0207",
+      "CH0209",
+      "CH0210",
+      "CH0211",
+      "CH02T1",
+      "CH02T2",
+      "CH0301",
+      "CH0302",
+      "CH0303",
+      "CH03B1",
+      "CH03B2",
+      "CH03B3",
+      "CH0401",
+      "CH0402",
+      "CH0403",
+      "CH0404",
+      "CH0405",
+      "CH0501",
+      "CH0502",
+      "CH0503",
+      "CH0601",
+      "CH0602",
+      "CH0603",
+      "CH0701",
+      "CH0702",
+      "CH0703",
+      "CH0801",
+      "CH0802",
+      "CH0803",
+      "CH0901",
+      "CH0903",
+      "CH0904",
+      "CH1001",
+      "CH1002",
+      "CH1101",
+      "CH1102",
+      "CH1103",
+      "CH1104",
+      "CH1201",
+      "CH1202",
+      "CH1203",
+      "CH1301",
+      "CH1303",
+      "CH1401",
+      "CH1402",
+      "CH1403",
+      "CH1501",
+      "CH1502",
+      "CH1503",
+      "CH1504",
+      "CH1601",
+      "CH1602",
+      "CH1701",
+      "CH1702",
+      "CH1703",
+      "CH2801",
+      "CH2802"
+    ],
+    "craftedRecipeWitnesses": {
+      "SPELL_BLOOM_ORB_LINGER": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0601"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_BLOOM_ORB_LINGER"
+          }
+        ]
+      },
+      "SPELL_BLOOM_ORB_SEEK": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0601"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_BLOOM_ORB_SEEK"
+          }
+        ]
+      },
+      "SPELL_BLOOM_ORB_SPLIT": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0402"
+          },
+          {
+            "craft": "SPELL_WIND_ORB_SEEK"
+          },
+          {
+            "choice": "CH0205"
+          },
+          {
+            "choice": "CH0801"
+          },
+          {
+            "choice": "CH0901"
+          },
+          {
+            "battlePolicy": "win",
+            "actions": [
+              "SPELL_WIND_ORB_SEEK",
+              "SPELL_WIND_ORB_SEEK",
+              "SPELL_WIND_ORB_SEEK"
+            ]
+          },
+          {
+            "choice": "CH1002"
+          },
+          {
+            "choice": "CH1301"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0405"
+          },
+          {
+            "craft": "SPELL_BLOOM_ORB_SPLIT"
+          }
+        ]
+      },
+      "SPELL_BLOOM_RING_HEAL": {
+        "from": "S02_HUB",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0601"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0603"
+          },
+          {
+            "craft": "SPELL_BLOOM_RING_HEAL"
+          }
+        ]
+      },
+      "SPELL_BLOOM_RING_LINGER": {
+        "from": "S02_HUB",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0601"
+          },
+          {
+            "craft": "SPELL_BLOOM_RING_LINGER"
+          }
+        ]
+      },
+      "SPELL_ECHO_ORB_LINGER": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0207"
+          },
+          {
+            "choice": "CH1501"
+          },
+          {
+            "choice": "CH1702"
+          },
+          {
+            "choice": "CH0701"
+          },
+          {
+            "choice": "CH1402"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_ECHO_ORB_LINGER"
+          }
+        ]
+      },
+      "SPELL_ECHO_ORB_SEEK": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1402"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_ECHO_ORB_SEEK"
+          }
+        ]
+      },
+      "SPELL_ECHO_RAY_SEEK": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0703"
+          },
+          {
+            "choice": "CH1402"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_ECHO_RAY_SEEK"
+          }
+        ]
+      },
+      "SPELL_ECHO_RING_LINGER": {
+        "from": "S02_HUB",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0207"
+          },
+          {
+            "choice": "CH1501"
+          },
+          {
+            "choice": "CH1702"
+          },
+          {
+            "choice": "CH0701"
+          },
+          {
+            "choice": "CH1402"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0601"
+          },
+          {
+            "craft": "SPELL_ECHO_RING_LINGER"
+          }
+        ]
+      },
+      "SPELL_FIRE_ORB_SPLIT": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0402"
+          },
+          {
+            "craft": "SPELL_WIND_ORB_SEEK"
+          },
+          {
+            "choice": "CH0205"
+          },
+          {
+            "choice": "CH0801"
+          },
+          {
+            "choice": "CH0903"
+          },
+          {
+            "choice": "CH1301"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0405"
+          },
+          {
+            "craft": "SPELL_FIRE_ORB_SPLIT"
+          }
+        ]
+      },
+      "SPELL_WIND_ORB_LINGER": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_WIND_ORB_LINGER"
+          }
+        ]
+      },
+      "SPELL_WIND_ORB_SEEK": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0402"
+          },
+          {
+            "craft": "SPELL_WIND_ORB_SEEK"
+          }
+        ]
+      },
+      "SPELL_WIND_RAIN_SEEK": {
+        "from": "S09_FOREST",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0402"
+          },
+          {
+            "choice": "CH0503"
+          },
+          {
+            "choice": "CH0205"
+          },
+          {
+            "choice": "CH0802"
+          },
+          {
+            "craft": "SPELL_WIND_RAIN_SEEK"
+          }
+        ]
+      },
+      "SPELL_WIND_RAY_SEEK": {
+        "from": "S05_CRAFT_TUTORIAL",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0207"
+          },
+          {
+            "choice": "CH1501"
+          },
+          {
+            "choice": "CH1703"
+          },
+          {
+            "choice": "CH0202"
+          },
+          {
+            "choice": "CH0401"
+          },
+          {
+            "craft": "SPELL_WIND_RAY_SEEK"
+          }
+        ]
+      },
+      "SPELL_WIND_RING_LINGER": {
+        "from": "S02_HUB",
+        "path": [
+          {
+            "choice": "CH0003"
+          },
+          {
+            "choice": "CH0101"
+          },
+          {
+            "choice": "CH0204"
+          },
+          {
+            "choice": "CH0702"
+          },
+          {
+            "choice": "CH1401"
+          },
+          {
+            "choice": "CH0203"
+          },
+          {
+            "choice": "CH0601"
+          },
+          {
+            "craft": "SPELL_WIND_RING_LINGER"
+          }
+        ]
+      }
+    },
+    "unverifiedNodes": [],
+    "deadlocks": [],
+    "failures": []
+  },
+  "baseline": {
+    "commit": "9b2cca25d957f825aa48b4348eff08ccac9a7c91",
+    "gameVersion": "0.9.0",
+    "source": "git archive frozen before V6; independent of current working tree",
+    "recordedAtUTC": "2026-11-06T16:29:37.967003+00:00"
+  }
+}
