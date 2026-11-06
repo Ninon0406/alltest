@@ -4,13 +4,13 @@ import {scenes} from '../content/story';
 import {encounters} from '../content/encounters';
 import {byId,itemNames} from '../systems/spells';
 export const SAVE_LIMIT=1_000_000;
-export const GAME_VERSION='0.10.0';
+export const GAME_VERSION='0.11.0';
 const digest=z.string().regex(/^[a-f0-9]{64}$/);
 const oldEnvelope=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(1),checksum:digest,state:z.unknown()}).strict();
 const fileSchema=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(2),gameVersion:z.string().regex(/^\d+\.\d+\.\d+$/),exportedAt:z.iso.datetime(),chapterId:z.literal('CHAPTER_1'),checkpoint:z.object({sceneId:z.string(),storyNodeId:z.string(),kind:z.enum(['story_choice','battle_turn'])}).strict(),checksum:digest,state:z.unknown()}).strict();
 const choiceIds=new Set(Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id)));
 const npcIds=new Set(['LUMI','MAREN','KORO','EIRA','PIP']);
-const statuses=new Set(['SEAR','WET','SWIRL','GROUNDED','GLEAM','VEIL','ROOTED','RESONANCE','RUNE_WARD']);
+const statuses=new Set(['SEAR','WET','SWIRL','GROUNDED','GLEAM','VEIL','ROOTED','RESONANCE','RUNE_WARD','TRAIL_FOCUS']);
 function canonical(value:unknown):string {
  if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';
  if(value!==null&&typeof value==='object')return '{'+Object.entries(value).filter(([,v])=>v!==undefined).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([key,v])=>JSON.stringify(key)+':'+canonical(v)).join(',')+'}';

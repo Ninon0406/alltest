@@ -1,3 +1,9 @@
+# Session21 / candidate0.11.0
+
+223unit/2content/16negative+positivegraph/10roadmap/type/lint/buildPASS. InitialFocus7/7PASS(2.6m); final8/Full139/PRCI/mainCI/live0.11pending. Local native import of genuine published0.10file is exactly equal, new combat focus/cross-path progression and malformed-file rejection work, no storage/upload/reference/consoleerrors. Boundedsearch62/62nodes180choices/234craftedrecipes;5supplementalactualearnedspellroutes total185/185.145choices affect gameplay state by defined metric. This does not prove all seeds, human fun or every spell in a browser. Full evidence follows in session21 receipts. Physical devices/Safari/FPS/final pixel-diff baselineNOT TESTED.
+
+---
+
 # Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave

@@ -1,0 +1,47 @@
+{
+  "version": "0.11.0",
+  "baselineCommit": "f2396f4",
+  "sourceBranch": "feat/godseed-life-paths",
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "content": {
+      "passed": 2
+    },
+    "unit": {
+      "passed": 223
+    },
+    "roadmap": {
+      "passed": 10
+    },
+    "storyGraph": {
+      "passed": 16
+    },
+    "build": "PASS",
+    "focusedBrowser": {
+      "passed": 8,
+      "duration": "3.3m",
+      "hardware": "Chromium emulation"
+    },
+    "fullBrowser": "RUNNING",
+    "prCI": "PENDING",
+    "mainCI": "PENDING",
+    "live011": "NOT_YET_PUBLISHED"
+  },
+  "rootEntry": "./assets/index-CElof2kH.js",
+  "jsSha256": "3bbcd0128ada74f4ed2a28d0372e4b3055562271edbfe629fce5300468ee596b",
+  "manualSave": "State2/File2; RAM only; genuine published0.10 UI file exactly imported locally; no storage/uploads",
+  "newContent": {
+    "nodes": 16,
+    "choices": 43,
+    "introductoryPaths": 2,
+    "questContracts": 2,
+    "fullGameEndings": 0
+  },
+  "knownLimitations": [
+    "Six life paths, ARC2–12, B04/B05 and final endings unfinished",
+    "Physical Safari/iPhone/Android/iPad, FPS and human fun NOT TESTED",
+    "Art remains a tested procedural prototype, not finalHD acceptance"
+  ]
+}

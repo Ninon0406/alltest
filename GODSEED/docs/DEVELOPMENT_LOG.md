@@ -426,3 +426,14 @@ Source3439b40 / PR19 / mergec7d9346. Local131/131ผ่าน28.9m; PR CI4225522
 เว็บจริง0.10.0 https://ninon0406.github.io/alltest/ ผ่านcore+V6opening:5distinctrecipesในสองflow/4encounters/HEALฟื้นHPจริง/B03ชนะ14actions/รางวัลWARD1→craftWIND_WARD_LINGER→rematchshieldรับdamageทั้งหมด→flee/questrewardonce/เวลายามเย็น–เช้า/nativeold0.9wardfileexactimport/blankrefresh/finalroundtrip. เดินตามmetadataจริงsouth/east/northและ10viewports360–1920/touch7/keyboard3ผ่าน. 0storagecalls/0upload/0reference/0consoleerrorsในpositiveflows เปิดดูภาพจริงแล้ว Post-Actions68PNG+JS SHA2560d01621646ae5a9d152c75a969fc85d2a6084e4277e20fa447e2577c5581cd84ตรงBuild
 
 Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNodes/อย่างน้อย121recipewitnesses/2questcompletions/16timeline/54routes. ไม่ใช่allseeds/ทุกสูตรในเซฟเดียว/3finalendingsหรือ8Pathsครบ. Roadmap23/109=21.1%(v123/108=21.3%) ภาพยังprototype/ensembleและgestureบางทิศยังไม่ครบ;physicalSafari/iOS/Android/iPad/FPS/humanfunยังไม่ทดสอบ. ก่อนรอบ21ใช้46/142เป็นbaselineและไม่เขียนงานที่ผ่านแล้วซ้ำ
+
+
+## รอบ21 — 2026-11-06 UTC — แผนที่ที่เว้นที่ให้ราก / candidate0.11.0
+
+เริ่มf2396f4/เว็บ0.10.0ที่ผ่านทุกgateแล้ว ไม่รื้อของเดิม เลือกLIFE001/004/006เพื่อให้การเติบโตเปลี่ยนการเล่นจริง:16nodes43choices/2หลักสูตรขั้นต้น/2Questchains/2abilities/เรียนข้ามหลังrank1/บทสรุปร่วมหลังrank2ทั้งคู่. Baseline46/142→62/185;0finalendings/5NPC/4encounters/234legal/7stagesคงเดิม.
+
+พบP1entryFlagsให้ผ่านบททดสอบตั้งแต่เริ่มfight สร้างarrivalred3failก่อนแก้Game.chooseและCombat.finish ให้ลงผลเมื่อชนะจริง;flee/surrender/defeatไม่ให้ผล. Scout4MP/once/1turn→nextoffensiveผ่านguard แต่ไม่ข้ามflatarmor;RootRefugefirstGUARD8shield2enemyactions ไม่refreshหรือทับstrongshield. OptionalpathActions/noDefaultรักษาoldsaveexact, File2/State2/version0.11. Published0.10genuineUIexportเก็บ/tmpเท่านั้น localnativeimportexactและfreshfocusroundtrip/corruptfile/blankrefreshผ่าน ไม่มีstorage/upload.
+
+เพิ่มoriginal6frameglyphatlas4253bytes/80PNGreproexact79เดิมคงอยู่, marksจริงใต้ต้นไม้/รูปรากสวน,waterpose/CSD/clocktint/UIcollapsedcompletedobjectives.223unit/2content/10roadmap/16graph/type/lint/build/initialFocus7ผ่าน;finalFocus8/Full139/CI/public0.11ยังรอreceipt. Bounded62/62nodes180choices+5earnedspellroutes=185/185,145game-state-changingchoices;234recipewitnessesต่างrouteไม่ใช่ในเซฟเดียว.
+
+LIFE001engineใช้PIPE001typedvalidatorที่พร้อมแล้ว จึงไม่ต้องรอPIPE002explicitchapterauthoringtools;ระบุdependencyตามโค้ดจริง ไม่ลดเกณฑ์สองสายเต็มซึ่งยังไม่ครบmainstory/endings. Next:PIPE002→ARC2→B04/B05→อีก6Paths→quality/devicegates. ผลสุดท้ายจะเพิ่มหลังตรวจจริง ไม่ทำงานข้ามsessionอัตโนมัติ.

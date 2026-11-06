@@ -183,3 +183,8 @@ Ingredient→mix→discovery uses bounded3icon sprites +24VFXparticles(8reduced)
 Viewed reference09 and the10-scene contact sheet. Original480×270 study uses cream/lavender stone, jade vegetation and water, warm carved gold, worn portal/statues, hanging flowers and distant aqueducts. No concept pixels sampled or loaded by runtime. EightPNG151337bytes:3layers+compositefallback,96×112altar12frames(4columns×3states),48×112pillar,64×64sentry16frames(4columns×4poses),32×48northhero10frames(8columns×2rows;unusedcells transparent). Source70oldPNG unchanged;78reproducible.
 
 Altar sealed/open/remembered is driven by ruins_clue/battle_B03_done/song_fragment; already remembered remains remembered after a battle. Pillars sort at242, altar185, actors feet=centerY+20; sentry source sole60 uses originY40/64. Rune/musicbox gestures preserve our own north head/boots; trace/offering/reading/listening use authored anchors and restrained12glyph sprites(4reduced). Water/fire/leaves reuse existing original atlases. Browser captures reviewed on phone/desktop; still procedural prototype, not finalHD, complete reference09 conversion, hardware/FPS or a golden pixel-diff baseline.
+
+
+## Session21 / original path glyphs
+
+art-v14/life-icons.png192×32six32pxframes:compass/quill0–2,rootshield3–5.4253bytes;crisp2×64pxUI with the existingjade/cream/goldpalette. Originalgeneratorgenerate-life-art.mjs noexternalpixels. Sharedworldstampsscale.5at authoredfoot anchors; abilityglyphs max5/2reduced are presentation-only. Existingwateringpose now used by Choice.cinematic.water at gardenherb_bed_front;daytint follows actualclock. All80PNGreproexact79oldunchanged. Stillprototype/finalHDgatesremain.

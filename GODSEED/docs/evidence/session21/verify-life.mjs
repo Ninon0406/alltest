@@ -1,0 +1,44 @@
+// Real UI only. Save bytes stay in /tmp; never committed or uploaded.
+import {chromium,expect} from '../../../node_modules/@playwright/test/index.mjs';
+import {completeOpening,learnBothPaths,clickLife,takeLife} from '../../../tests/life-helpers.ts';
+import {exportFile,exportedState} from '../../../tests/file-helpers.ts';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const [url,mode='verify']=process.argv.slice(2);if(!url||!['capture-legacy','verify'].includes(mode))throw Error('URL [capture-legacy|verify]');
+const dir=new URL('./',import.meta.url),oldFile='/tmp/gs21-published-0.10.godseed',hash=b=>createHash('sha256').update(b).digest('hex');
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox']});
+async function observed(width,height){
+ const context=await browser.newContext({viewport:{width,height},hasTouch:width<1280}),page=await context.newPage();page.setDefaultTimeout(20_000);
+ const errors=[],writes=[],references=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});page.on('request',r=>{if(!['GET','HEAD'].includes(r.method()))writes.push(r.url());if(r.url().includes('/reference/'))references.push(r.url());});
+ await page.addInitScript(()=>{window.__saveAudit=[];for(const [proto,methods] of [[Storage.prototype,['getItem','setItem','clear','removeItem']],[IDBFactory.prototype,['open','deleteDatabase']]])for(const key of methods){const fn=proto[key];proto[key]=function(...args){window.__saveAudit.push(key);return fn.apply(this,args);};}const cookie=Object.getOwnPropertyDescriptor(Document.prototype,'cookie');if(cookie)Object.defineProperty(Document.prototype,'cookie',{...cookie,get(){window.__saveAudit.push('cookie-read');return cookie.get.call(this);},set(v){window.__saveAudit.push('cookie-write');cookie.set.call(this,v);}});});
+ const audit=async()=>{const calls=await page.evaluate(()=>window.__saveAudit);expect(calls).toEqual([]);expect(errors).toEqual([]);expect(writes).toEqual([]);expect(references).toEqual([]);return {storageCalls:calls.length,uploads:writes.length,references:references.length,consoleErrors:errors};};
+ const nativeImport=async buffer=>{const pending=page.waitForEvent('filechooser');await page.getByRole('button',{name:'โหลดเกมจากไฟล์',exact:true}).click();await(await pending).setFiles({name:'GODSEED_Explicit.godseed',mimeType:'application/json',buffer});await expect(page.getByRole('heading',{name:'ตรวจสอบไฟล์เซฟก่อนโหลด',exact:true})).toBeVisible();await clickLife(page,'ยืนยันโหลดไฟล์นี้');};
+ return {context,page,audit,nativeImport,canvas:page.locator('#canvas')};
+}
+try{
+ const f=await observed(390,844);let done;
+ try{
+  await f.page.emulateMedia({reducedMotion:'reduce'});
+  if(mode==='capture-legacy'){
+   await completeOpening(f.page,url);await expect(f.page.locator('.edition')).toContainText('0.10.0');
+   const file=await exportFile(f.page),body=JSON.parse(file);expect(body.gameVersion).toBe('0.10.0');expect(body.state.flags.arc1_opening_complete).toBe(true);await writeFile(oldFile,file,{mode:0o600});await f.page.screenshot({path:new URL('before-0.10-390.png',dir).pathname,fullPage:true});
+   const report={result:'PASS',url,at:new Date().toISOString(),version:'0.10.0',genuineUIExport:true,fileSha256:hash(file),stateSha256:hash(JSON.stringify(body.state)),saveLocation:oldFile,...await f.audit()};await writeFile(new URL('legacy-capture.json',dir),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+  }else{
+   await f.page.goto(url);await expect(f.page.locator('.edition')).toContainText('0.11.0');const old=await readFile(oldFile),body=JSON.parse(old);await f.nativeImport(old);expect(await exportedState(f.page)).toEqual(body.state);
+   const learned=await learnBothPaths(f.page);await clickLife(f.page,'เส้นทางชีวิต');await f.page.screenshot({path:new URL('after-paths-390.png',dir).pathname,fullPage:true});await clickLife(f.page,'กลับสู่เรื่องราว');
+   // Earned ingredients now create actual distinct support and offensive spells.
+   const crafted=[];for(const [core,form,mod] of [['WIND','RAIN','SEEK'],['BLOOM','RING','HEAL'],['EARTH','WARD','GUARD']]){
+    await clickLife(f.page,'ผสมเวท');await f.page.getByLabel('แก่นธาตุ',{exact:true}).selectOption(core);await f.page.getByLabel('รูปแบบ',{exact:true}).selectOption(form);await f.page.getByLabel('ตัวปรับ',{exact:true}).selectOption(mod);await clickLife(f.page,'ผสมและค้นพบเวท');const s=await exportedState(f.page),id=`SPELL_${core}_${form}_${mod}`;expect(s.known).toContain(id);crafted.push(id);await clickLife(f.page,'เรื่องราว');
+   }
+   await takeLife(f.page,'CH0210','CH0210','CH0207','CH1502');await clickLife(f.page,'ตั้งรับ · ฟื้น MP 6');const roots=await exportedState(f.page);expect(roots.battle.pathActions.rootGuardUsed).toBe(true);expect(roots.battle.shield).toBeGreaterThan(0);
+   await clickLife(f.page,'ตั้งรับ · ฟื้น MP 6');await clickLife(f.page,'สำรวจจังหวะ · MP 4');const focus=await exportedState(f.page);expect(focus.battle.playerStatus.TRAIL_FOCUS).toBe(2);expect(focus.battle.status.RUNE_WARD).toBeGreaterThan(0);
+   const active=await exportFile(f.page);await f.page.reload();await expect(f.page.getByRole('button',{name:'เริ่มการเดินทาง',exact:true})).toBeVisible();await f.nativeImport(active);expect(await exportedState(f.page)).toEqual(focus);await f.page.screenshot({path:new URL('after-focus-390.png',dir).pathname,fullPage:true});
+   await clickLife(f.page,'วายุดารานำวิถี · MP 10');const hit=await exportedState(f.page);expect(hit.battle.enemyHp).toBeLessThan(focus.battle.enemyHp-10);expect(hit.battle.playerStatus.TRAIL_FOCUS).toBeUndefined();await clickLife(f.page,'ถอยออกมาเตรียมตัว');
+   await takeLife(f.page,'CH1503');const final=await exportedState(f.page);done=await exportFile(f.page);await f.page.reload();await f.nativeImport(done);expect(await exportedState(f.page)).toEqual(final);
+   // Malformed local file must leave the active RAM snapshot intact.
+   await f.page.getByRole('button',{name:'บันทึก',exact:true}).click();await f.page.getByLabel('โหลดเกมจากไฟล์',{exact:true}).setInputFiles({name:'broken.godseed',mimeType:'application/json',buffer:Buffer.from('{broken')});await expect(f.page.getByRole('heading',{name:'ตรวจสอบไฟล์เซฟก่อนโหลด',exact:true})).toHaveCount(0);expect(await exportedState(f.page)).toEqual(final);
+   const report={result:'PASS',url,at:new Date().toISOString(),version:'0.11.0',legacy010ExactImport:true,bothIntroductoryPaths:true,trainingWins:2,derivedQuests:2,crafted,rootGuard:true,scout:true,activeFocusExactImport:true,wardPenetration:true,malformedFilePreservesRAM:true,refreshStartsBlank:true,manualNativeFileOnly:true,stateSha256:hash(JSON.stringify(final)),learnedFlagCount:Object.values(learned.flags).filter(Boolean).length,...await f.audit(),hardware:'NOT_TESTED'};await writeFile(new URL('public-life.json',dir),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+  }
+ }finally{await f.context.close();}
+ if(done){const results=[];for(const [width,height] of [[360,800],[390,844],[430,932],[844,390],[768,1024],[820,1180],[1024,768],[1366,768],[1440,900],[1920,1080]]){const f=await observed(width,height);try{await f.page.emulateMedia({reducedMotion:'reduce'});await f.page.goto(url);await f.nativeImport(done);await clickLife(f.page,'เส้นทางชีวิต');for(const id of ['EXPLORER','NATURE_KEEPER'])await expect(f.page.locator(`[data-life-path="${id}"]`)).toHaveAttribute('data-rank','2');expect(await f.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);await f.page.screenshot({path:new URL(`public-layout-${width}.png`,dir).pathname,fullPage:true});results.push({width,height,input:width<1280?'touch':'keyboard',result:'PASS',...await f.audit()});}finally{await f.context.close();}}await writeFile(new URL('public-layouts.json',dir),JSON.stringify({result:'PASS',url,viewports:results,hardware:'NOT_TESTED'},null,2)+'\n');console.log(JSON.stringify({result:'PASS',viewports:results.length}));}
+}finally{await browser.close();}

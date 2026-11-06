@@ -1,5 +1,6 @@
 import type {State} from '../engine/state';
-import {battleRules,enemyMaxHp,enemyName,intent,statusSummary,statusHelp} from '../systems/combat';
+import {battleRules,enemyMaxHp,enemyName,intent,statusSummary,statusHelp,scoutAvailability} from '../systems/combat';
+import {hasPathAbility} from '../systems/life-paths';
 import {byId,cores,coreNames} from '../systems/spells';
 
 type ButtonFactory=(label:string,action:()=>void,disabled?:boolean)=>HTMLButtonElement;
@@ -68,6 +69,15 @@ export function combatPanel(content:HTMLElement,s:State,button:ButtonFactory,act
   ['IT_MANA_LEAF',`ใบฟื้นเวท · ${s.inventory.IT_MANA_LEAF||0}`,'rest']
  ];
  for(const [id,label,cue] of actions)utilities.append(button(label,()=>action(id,cue),id.startsWith('IT_')&&!s.inventory[id]));
+
+ const scout=scoutAvailability(s),scoutControl=button('สำรวจจังหวะ · MP 4',()=>action('SCOUT','pick'),!scout.enabled);
+ const scoutDetail=element('p',scout.reason||'ใช้หนึ่งเทิร์น ไม่โจมตี · เวทโจมตีที่ติดตั้งครั้งถัดไปแม่นยำและผ่านท่าป้องกัน ต้องใช้ใน 2 เทิร์น');
+ scoutDetail.id='battle-scout-detail';scoutDetail.className='action-detail';scoutControl.setAttribute('aria-describedby',scoutDetail.id);scoutControl.dataset.pathAbility='TRAIL_FOCUS';
+ utilities.append(scoutControl,scoutDetail);
+ const abilities=element('section');abilities.className='path-abilities';abilities.setAttribute('aria-label','ความสามารถจากเส้นทางชีวิต');
+ if(hasPathAbility(s,'TRAIL_FOCUS'))abilities.append(element('p',battle.pathActions?.scouted?'นักสำรวจ · ใช้สำรวจจังหวะในการต่อสู้นี้แล้ว':'นักสำรวจ · สำรวจจังหวะได้ครั้งเดียวในการต่อสู้นี้'));
+ if(hasPathAbility(s,'ROOT_REFUGE'))abilities.append(element('p',battle.pathActions?.rootGuardUsed?'ผู้พิทักษ์ธรรมชาติ · ใช้รากคุ้มภัยจากการตั้งรับครั้งแรกแล้ว':'ผู้พิทักษ์ธรรมชาติ · ตั้งรับครั้งแรกสร้างโล่ 8 คุ้มกัน 2 จังหวะศัตรู คงโล่เดิมที่แรงกว่าและไม่ต่อเวลา'));
+ if(abilities.childElementCount)content.append(abilities);
 
  if(rules.canFlee)utilities.append(button('ถอยออกมาเตรียมตัว',()=>action('FLEE','walk')));
  else{const reason=element('p','การต่อสู้นี้ถอยไม่ได้');reason.className='action-detail';utilities.append(reason);}

@@ -60,7 +60,7 @@ describe('canonical ruins routes and world memory',()=>{
   s=path(s,['CH0210','CH0210']);const defended=fight(path(s,['CH0207','CH1502']),'SPELL_WIND_WARD_LINGER');expect(defended.battle!.shield).toBeGreaterThan(0);expect(defended.hp).toBe(s.hp);expect(defended.mp).toBe(s.mp-byId.SPELL_WIND_WARD_LINGER.mp);
  });
  it('all new scene/choice IDs are unique, reachable, and mapped to actual action targets',()=>{
-  expect(Object.keys(scenes)).toHaveLength(46);const ids=Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id));expect(ids).toHaveLength(142);expect(new Set(ids).size).toBe(142);
+  expect(Object.keys(scenes)).toHaveLength(62);const ids=Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id));expect(ids).toHaveLength(185);expect(new Set(ids).size).toBe(185);
   for(const scene of ['S15_RUINS','S16_RUINS_RESULT','S17_ECHO_TABLET']){expect(locationFor(scene)).toBe('ancient_shrine');for(const c of scenes[scene].choices){expect(scenes[c.next]).toBeDefined();expect(ruinsActions[c.id]).toBeDefined();}}
  });
 });
@@ -101,7 +101,7 @@ describe('authored ruins maps, art and gestures',()=>{
   expect(routeTo(def,{x:108,y:230},'tablet_front')).toBeUndefined();expect(routeTo(def,def.anchors.shrine_entrance,'missing')).toBeUndefined();expect(ruinsMap.occluders).toContainEqual({id:'west-pillar',footY:242});
  });
  it('keeps new assets lazy, and cold file imports load Eira/water without unrelated stages',()=>{
-  const title=artForStage('village');expect(title).toHaveLength(24);expect(title.some(a=>a.group==='ruins')).toBe(false);const cold=new ArtLedger().pending('ruins');expect(cold.map(a=>a.key)).toEqual(expect.arrayContaining(['eira-v3','water-v3','sentinel-v12','ruins-altar-v12','ruins']));expect(cold.some(a=>a.path.includes('archive-ground')||a.path.includes('stream-ground'))).toBe(false);
+  const title=artForStage('village');expect(title).toHaveLength(25);expect(title.some(a=>a.group==='ruins')).toBe(false);const cold=new ArtLedger().pending('ruins');expect(cold.map(a=>a.key)).toEqual(expect.arrayContaining(['eira-v3','water-v3','sentinel-v12','ruins-altar-v12','ruins']));expect(cold.some(a=>a.path.includes('archive-ground')||a.path.includes('stream-ground'))).toBe(false);
  });
  it('retreats around the pillar footprint from the actual battle position',()=>{
   const def=sceneDefinitions.ancient_shrine,start={x:130,y:219},retreat=cinematicPath('ruins','walk','FLEE',start,'ancient_shrine')!;

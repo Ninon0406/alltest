@@ -9,6 +9,7 @@ export const artAssets:readonly ArtAsset[]=[
  sheet('props-v2','art-v2/props.png','shared',64,96),sheet('ambient-v2','art-v2/ambient.png','shared',32,32),
  sheet('hero-v2','art-v2/player.png','shared'),sheet('hero-walk-v4','art-v4/hero-walk.png','shared'),sheet('hero-idle-v5','art-v5/hero-idle.png','shared'),
  sheet('gathering-v6','art-v6/gathering.png','shared',24,24),
+ sheet('life-icons-v14','art-v14/life-icons.png','shared',32,32),
  ...STAGES.flatMap(stage=>[image(stage,stageFallback(stage),stage),...['rear','ground','front'].map(layer=>image(`${stage}-${layer}-v2`,`${stageFolder(stage)}/${stage}-${layer}.png`,stage))]),
  ...['rear','ground','front'].map(layer=>image('tree-'+layer+'-v5','art-v5/tree-'+layer+'.png','village')),
  image('ancient-tree-v5','art-v5/ancient-tree.png','village'),sheet('fountain-v5','art-v5/fountain.png','village',96,112),sheet('leaves-v5','art-v5/leaves.png','village',16,16),

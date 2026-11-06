@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "url": "http://127.0.0.1:4200/",
+  "at": "2026-11-06T23:04:33.089Z",
+  "version": "0.11.0",
+  "legacy010ExactImport": true,
+  "bothIntroductoryPaths": true,
+  "trainingWins": 2,
+  "derivedQuests": 2,
+  "crafted": [
+    "SPELL_WIND_RAIN_SEEK",
+    "SPELL_BLOOM_RING_HEAL",
+    "SPELL_EARTH_WARD_GUARD"
+  ],
+  "rootGuard": true,
+  "scout": true,
+  "activeFocusExactImport": true,
+  "wardPenetration": true,
+  "malformedFilePreservesRAM": true,
+  "refreshStartsBlank": true,
+  "manualNativeFileOnly": true,
+  "stateSha256": "478eaca523fdd3d3300a1653e0a2a1fdbae10aec1710a8ad51e41fc3735b99d4",
+  "learnedFlagCount": 60,
+  "storageCalls": 0,
+  "uploads": 0,
+  "references": 0,
+  "consoleErrors": [],
+  "hardware": "NOT_TESTED"
+}

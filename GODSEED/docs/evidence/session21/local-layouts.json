@@ -1,0 +1,107 @@
+{
+  "result": "PASS",
+  "url": "http://127.0.0.1:4200/",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "input": "touch",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "input": "keyboard",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "input": "keyboard",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "input": "keyboard",
+      "result": "PASS",
+      "storageCalls": 0,
+      "uploads": 0,
+      "references": 0,
+      "consoleErrors": []
+    }
+  ],
+  "hardware": "NOT_TESTED"
+}

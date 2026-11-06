@@ -2,7 +2,7 @@
 
 Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ
 
-Checklist 21.1% · ✅23 🟡42 ⬜42 🔴0 ⛔2 · ทั้งหมด109
+Checklist 21.1% · ✅23 🟡45 ⬜39 🔴0 ⛔2 · ทั้งหมด109
 
 V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshotก่อนขยาย ดูscopeHistoryในJSON งานเดิมไม่ถูกลบ เป้าหมายตัวเลขไม่ใช่ของที่สร้างเสร็จ
 
@@ -21,7 +21,7 @@ V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshot
 | 1 Core Playability — เกมหลักเล่นต่อได้ | FND-001, FND-002, FND-003, FND-004, FND-007, FND-008 | FND-005: ⛔, FND-006: 🟡 |
 | 2 Story Engine & Content Pipeline | STO-002, PIPE-001 | STO-007: 🟡, STO-008: ⬜, WRD-003: 🟡, PIPE-002: 🟡 |
 | 3 Complete Opening Experience — ช่วงเริ่มต้นครบ | — | STO-001: 🟡, WRD-006: ⬜, ARC-001: 🟡 |
-| 4 Life Paths — เส้นทางชีวิต | — | LIFE-001: ⬜, LIFE-002: ⬜, LIFE-003: ⬜, LIFE-004: ⬜, LIFE-005: ⬜, LIFE-006: ⬜, LIFE-007: ⬜, LIFE-008: ⬜, LIFE-009: ⬜ |
+| 4 Life Paths — เส้นทางชีวิต | — | LIFE-001: 🟡, LIFE-002: ⬜, LIFE-003: ⬜, LIFE-004: 🟡, LIFE-005: ⬜, LIFE-006: 🟡, LIFE-007: ⬜, LIFE-008: ⬜, LIFE-009: ⬜ |
 | 5 Magic System — ระบบเวทและการเรียนรู้ | MAG-003, MAG-004, MAG-005 | MAG-001: 🟡, MAG-002: 🟡, MAG-006: 🟡, MAG-007: 🟡, MAG-008: 🟡, MAG-009: 🟡, POWER-001: ⬜, MAG-010: ⬜ |
 | 6 Combat — การต่อสู้ | CMB-001, CMB-003, CMB-005 | CMB-002: 🟡, CMB-004: 🟡, CMB-006: 🟡, CMB-007: ⬜, CMB-008: 🟡, CMB-009: 🟡, CMB-010: ⬜, CMB-011: ⬜ |
 | 7 World Systems — โลกและสังคม | — | STO-003: 🟡, STO-004: 🟡, WRD-001: 🟡, WRD-002: 🟡, WRD-004: 🟡, WRD-005: 🟡, WRD-009: ⬜, WRD-010: ⬜, WRD-011: ⬜, WRD-012: ⬜ |
@@ -35,9 +35,9 @@ V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshot
 ## ห้างานถัดไปตามpriorityและdependency
 
 1. PIPE-002 (V6) Content production contract สำหรับเพิ่มบทเป็นชุด — ต้องมี PIPE-001, STO-002
-2. ARC-001 (V6) ARC 1 — เมล็ดพันธุ์แรก — ต้องมี PIPE-002, STO-001
-3. LIFE-001 (V6) Life Path engine/ข้ามสาย/requirement และ file migration — ต้องมี FND-008, PIPE-002
-4. MAG-008 (GS-026) ใช้เวทแก้เหตุการณ์เนื้อเรื่องครบ — ต้องมี MAG-005, STO-002
+2. ARC-002 (V6) ARC 2 — เสียงกระซิบจากพฤกษา — ต้องมี ARC-001
+3. LIFE-004 (V6) นักสำรวจ — ต้องมี LIFE-001, ARC-001
+4. LIFE-006 (V6) ผู้พิทักษ์ธรรมชาติ — ต้องมี LIFE-001, ARC-001
 5. CMB-006 (GS-022/GS-026/GS-027) B03/B04พร้อมAI/rules/art/rewards/conditionalflee — ต้องมี CMB-003, VIS-008
 
 เมื่อพบP0/P1 regressionให้แทรกก่อนรายการนี้ คิวนี้เป็นงานสำคัญที่ต้องตรวจdependencyของส่วนย่อยก่อนทำ ไม่อ้างว่าทั้งmilestoneพร้อมเพราะอยู่ในคิว ใช้Vertical Slice + Content Batch + Automated Validation ไม่รอภาพทั้งหมดก่อนเพิ่มบทหรือทดสอบต่อสู้

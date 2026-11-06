@@ -4,7 +4,7 @@ import {fileURLToPath} from 'node:url';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const cueKinds=new Set(['walk','talk','pick','cast','rest']);
-const poses=new Set(['interact','talk','pick_up','cast','rest']);
+const poses=new Set(['interact','talk','pick_up','cast','rest','water']);
 const effects=new Set(['lantern','song','leaf']);
 const present=value=>typeof value==='string'&&value.trim().length>0;
 const ending=scene=>scene.terminal===true||scene.ending===true||/_END_/.test(scene.id);
@@ -17,6 +17,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
  const warn=(code,at,message)=>warnings.push({code,at,message});
  const stages=new Set(catalog.stages||[]),actors=new Set(catalog.actors||[]),items=new Set(Object.keys(catalog.items||{}));
  const cores=new Set(catalog.cores||[]),encounters=catalog.encounters||{},locations=catalog.locations||{};
+ const lifePathIds=new Set((catalog.lifePaths||[]).map(p=>p.id));
  const flagSources=new Set(catalog.engineFlags||[]);
  for(const scene of rows){
   if(!present(scene.id)){error('INVALID_SCENE_ID','scene','Scene ID must be a nonempty string');continue;}
@@ -32,6 +33,14 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   if(!present(flag))error('INVALID_FLAG',at,'Flag ID must be a nonempty string');
   else if(!flagSources.has(flag))error('UNPRODUCED_FLAG',at,'No authored choice, scene entry or literal engine assignment produces '+flag);
  };
+ const seenPaths=new Set(),seenAbilities=new Set();
+ for(const p of catalog.lifePaths||[]){
+  if(!present(p.id)||seenPaths.has(p.id))error('DUPLICATE_LIFE_PATH',p.id,'Life path IDs must be present and unique');seenPaths.add(p.id);
+  if(!present(p.ability?.id)||seenAbilities.has(p.ability.id))error('INVALID_PATH_ABILITY',p.id,'Each path needs a distinct ability');seenAbilities.add(p.ability?.id);
+  if(catalog.npcIds&&!catalog.npcIds.includes(p.mentorId))error('MISSING_PATH_MENTOR',p.id,'Unknown mentor '+p.mentorId);
+  if(!locations[p.locationId])error('MISSING_PATH_LOCATION',p.id,'Unknown lesson location '+p.locationId);
+  for(const flag of [p.startedFlag,p.rank1Flag,p.trialFlag,p.rank2Flag,...(p.requirements?.start||[]).map(o=>o.flag),...(p.requirements?.rank1||[]).map(o=>o.flag)])requireFlag(flag,p.id+'.progression');
+ }
  const validateAnchor=(location,anchor,at)=>{
   const def=locations[location];
   if(!def){error('MISSING_LOCATION',at,'Unknown scene definition '+location);return;}
@@ -73,6 +82,8 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
     else if(condition.kind==='anyFlag'){
      if(!Array.isArray(condition.ids)||!condition.ids.length)error('EMPTY_ANY_FLAG',ca,'anyFlag requires at least one flag');
      else condition.ids.forEach(flag=>requireFlag(flag,ca+'.when'));
+    }else if(condition.kind==='pathStart'){
+     if(!lifePathIds.has(condition.id))error('MISSING_LIFE_PATH',ca,'Unknown introductory life path '+condition.id);
     }else if(condition.kind==='knownCore'){
      if(!cores.has(condition.core))error('INVALID_CORE_CONDITION',ca,'Unknown core '+condition.core);
     }else error('UNKNOWN_CONDITION',ca,'Unsupported condition kind '+condition.kind);
@@ -155,7 +166,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   for(const id of steps.keys())if(!seen.has(id))error('UNREACHABLE_QUEST_STEP',quest.id+'/'+id,'No chain route from the first quest step');
  }
  return {result:errors.length?'FAIL':'PASS',scope:'Static catalog validation and structural reachability; conditions and combat wins are not assumed executable',
-  counts:{storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,stages:stages.size},
+  counts:{storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,introductoryLifePathContracts:lifePathIds.size,stages:stages.size},
   structurallyReachable:[...reachable].sort(),edges,flagProducers:[...flagSources].sort(),errors,warnings};
 }
 
@@ -197,7 +208,8 @@ export async function loadGameCatalog(gameRoot=root){
   const npcLiteral=saveSource.match(/const npcIds=new Set\(\[([^\]]*)\]\)/),npcIds=npcLiteral?[...npcLiteral[1].matchAll(/'([^']+)'/g)].map(m=>m[1]):undefined;
   let quests=story.quests||[];
   try{await readFile(path.join(gameRoot,'src/content/quests.ts'));quests=(await server.ssrLoadModule('/src/content/quests.ts')).quests;}catch(e){if(e.code!=='ENOENT')throw e;}
-  return {scenes:story.scenes,quests,stages:STAGES,actors:artAssets.map(a=>a.key),items:spells.itemNames,cores:spells.cores,spells:spells.allSpells,encounters,locations:maps.sceneDefinitions,locationFor:maps.locationFor,walkable:maps.walkable,npcIds,engineFlags:[...engineFlags],declaredSceneIds,runtime:{...state,...game,...availability,...combat,spells:spells.allSpells}};
+  let life={lifePaths:[]};try{await readFile(path.join(gameRoot,'src/systems/life-paths.ts'));life=await server.ssrLoadModule('/src/systems/life-paths.ts');}catch(e){if(e.code!=='ENOENT')throw e;}
+  return {scenes:story.scenes,quests,lifePaths:life.lifePaths,stages:STAGES,actors:artAssets.map(a=>a.key),items:spells.itemNames,cores:spells.cores,spells:spells.allSpells,encounters,locations:maps.sceneDefinitions,locationFor:maps.locationFor,walkable:maps.walkable,npcIds,engineFlags:[...engineFlags],declaredSceneIds,runtime:{...state,...game,...availability,...combat,...life,spells:spells.allSpells}};
  }finally{await server.close();}
 }
 
@@ -206,7 +218,8 @@ export async function loadGameCatalog(gameRoot=root){
  */
 export function exploreRealChoices(catalog,{maxStates=4000,maxMs=12000,seed=12345}={}){
  const rt=catalog.runtime;if(!rt)throw Error('Actual runtime reducers required');
- const started=performance.now(),queue=[],seen=new Set(),nodes=new Map(),choices=new Set(),recipes=new Map(),questWitnesses=new Map(),deadlocks=[],failures=[];
+ const started=performance.now(),queue=[],seen=new Set(),nodes=new Map(),choices=new Set(),stateChanges=new Set(),recipes=new Map(),questWitnesses=new Map(),deadlocks=[],failures=[];
+ const effects=s=>JSON.stringify([s.hp,s.mp,s.xp,s.inventory,s.known,s.equipped,s.flags,s.trust,s.battle,s.recoveryScene]);
  const key=s=>JSON.stringify([s.scene,Object.keys(s.flags).filter(f=>s.flags[f]).sort(),s.known.slice().sort(),Object.entries(s.inventory).filter(([,n])=>n>0).sort().map(([id,n])=>[id,Math.min(2,n)]),Math.floor(s.hp/10),Math.floor(s.mp/10),s.ticks%3,Object.entries(s.trust).sort()]);
  function remember(s,path){
   if(!nodes.has(s.scene))nodes.set(s.scene,path);
@@ -250,7 +263,7 @@ export function exploreRealChoices(catalog,{maxStates=4000,maxMs=12000,seed=1234
   }
   for(const c of enabled){
    try{
-    const next=rt.choose(s,c.id),nextPath=[...path,{choice:c.id}];choices.add(c.id);
+    const next=rt.choose(s,c.id),nextPath=[...path,{choice:c.id}];choices.add(c.id);if(effects(next)!==effects(s))stateChanges.add(c.id);
     if(next.battle){
      for(const policy of ['win','defeat']){const resolved=resolveBattle(next,policy);if(!resolved.state.battle)enqueue(resolved.state,[...nextPath,{battlePolicy:policy,actions:resolved.actions}]);}
      if(catalog.encounters[c.battle]?.canFlee)enqueue(rt.fight(next,'FLEE'),[...nextPath,{fight:'FLEE'}]);
@@ -260,8 +273,8 @@ export function exploreRealChoices(catalog,{maxStates=4000,maxMs=12000,seed=1234
  }
  const sceneIds=Object.keys(catalog.scenes);
  return {result:failures.length||deadlocks.length?'FAIL':'PASS_BOUNDED',scope:'Real fresh/choose/craft/fight reducers, seed '+seed+'; projected-state bounded search. Coverage is a verified lower bound, not exhaustive solvability or browser proof.',
-  limits:{maxStates,maxMs,processed,elapsedMs:Math.round(performance.now()-started)},counts:{witnessedNodes:nodes.size,successfulChoices:choices.size,successfullyCraftedRecipes:recipes.size,endingWitnesses:[...nodes.keys()].filter(id=>ending(catalog.scenes[id])).length},
-  nodeWitnesses:Object.fromEntries([...nodes].sort()),successfulChoiceIds:[...choices].sort(),craftedRecipeWitnesses:Object.fromEntries([...recipes].sort()),questCompletionWitnesses:Object.fromEntries([...questWitnesses].sort()),unverifiedQuests:(catalog.quests||[]).map(q=>q.id).filter(id=>!questWitnesses.has(id)),unverifiedNodes:sceneIds.filter(id=>!nodes.has(id)),deadlocks,failures};
+  limits:{maxStates,maxMs,processed,elapsedMs:Math.round(performance.now()-started)},counts:{witnessedNodes:nodes.size,successfulChoices:choices.size,witnessedStateChangingChoices:stateChanges.size,successfullyCraftedRecipes:recipes.size,endingWitnesses:[...nodes.keys()].filter(id=>ending(catalog.scenes[id])).length},
+  nodeWitnesses:Object.fromEntries([...nodes].sort()),successfulChoiceIds:[...choices].sort(),stateChangingChoiceIds:[...stateChanges].sort(),craftedRecipeWitnesses:Object.fromEntries([...recipes].sort()),questCompletionWitnesses:Object.fromEntries([...questWitnesses].sort()),unverifiedQuests:(catalog.quests||[]).map(q=>q.id).filter(id=>!questWitnesses.has(id)),unverifiedNodes:sceneIds.filter(id=>!nodes.has(id)),deadlocks,failures};
 }
 
 async function main(){

@@ -1,3 +1,11 @@
+# Session21 — life-path courses and additive combat state
+
+Pure systems/life-paths.ts derives progression from existingRAMflags; no XP shortcut or second progression database. Condition.pathStart reads coherent rank1 before cross-learning. Read-onlyUI never teleports or rewards; ordinary story choose handles lessons/materials/relationship flags. StoryScene.staging and Choice.cinematic reuse maps/foot anchors; water is a reusable pose. Quest contracts are derived from flags. Trial completion entryFlags apply on actual battle finish, never on battle start/flee/surrender/defeat.
+
+Battle.pathActions is optional strict {scouted?,rootGuardUsed?}, no defaults; absent old snapshots stay exact. TRAIL_FOCUS is player-only1–2turns tied to an earned Explorer2 and scouted:true. Both abilities are resolved by combat.ts, rendering only reads before/after. SaveFile2/State2 remain, gameVersion0.11prevents older clients silently taking new optional battle state. No persistent game state or new backend.
+
+---
+
 # Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave
