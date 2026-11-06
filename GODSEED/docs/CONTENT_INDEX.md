@@ -1,4 +1,4 @@
-# Content index 0.7.1
+# Content index 0.7.2
 
 Computed with `npm run inspect:content` (`scripts/inspect-content.mjs` imports actual typed source through Vite SSR; no browser/gameplay writes).
 

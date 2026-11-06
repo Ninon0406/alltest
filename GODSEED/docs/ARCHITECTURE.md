@@ -199,3 +199,5 @@ Retry calls prepare(current,true) then show(current,true), never ManualSession.c
 `workshop-staging.ts` defines the anvil foot(321,237), hammer contact(324,217), and Koro's32×48 cycles. The prop sorts by foot Y, avoids existing authored player lanes and disappears for training encounters. CH0401/S05 show the three-sigil recipe; S04 forges only with a loaded anvil. Sprite/anvil fallbacks remain usable. Renderer never changes rewards/AI/damage/world flags. Full Reference08 map/collision/crafting furnace still outstanding.
 
 ArtLedger.settle reconciles all attempted keys against successful filecomplete keys on every loader complete. Phaser4.2.1 decode failures call onProcessError without loaderror; the batch reconciliation makes truncated HTTP200 PNGs visible to fallback/retry on both initial preload and later stage loading.
+
+Session17 delivery verified: local/PR/main full105 plusBuild/Deploy/publiccore+stagedart+postActions51PNG/JS PASS at source5c58122. FND004 complete; workshop/NPC/fullchapter/finalHD/hardware remain Roadmap work. Seeevidence/session17/REPORT_TH.md.

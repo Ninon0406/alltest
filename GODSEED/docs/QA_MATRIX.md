@@ -1,3 +1,18 @@
+# GODSEED QA Matrix — รอบ17 / 0.7.2
+
+| ขอบเขต | ผลตรวจจริง |
+| --- | --- |
+| Loader | shared/stage/titlebudget/cache/retry/timeout8s/HTTP200decodeerror/selectedfileimport ผ่าน |
+| คุโร | hammer/recipe/anvil/depth/reduced/fallback/restore 5viewport ผ่าน |
+| ระบบเดิม | Unit126/Content2/Roadmap8/FullBrowser105 ในเครื่องและPR CI ผ่าน |
+| ManualFileSave | RAM-only/emptyreload/nativepicker/unchangedstate/dirtyflag/noStorage/noUpload ผ่าน |
+| Build/Public | Buildผ่าน;เว็บจริง0.7.2ส่วนstagedartผ่าน;MainDeployและpostActions51PNG/JSผ่าน ดูรายงาน |
+| ยังไม่ยืนยัน | PhysicalSafari/iOS/Android/iPadOS/FPS/FinalHD/HumanPlaytest |
+
+[รายงานและหลักฐานล่าสุด](evidence/session17/REPORT_TH.md) / [ChecklistSSOT](../../GODSEED_MASTER_ROADMAP.md)
+
+---
+
 # GODSEED QA Matrix — รอบ 16
 
 ## รอบ 16 — 2026-11-06 UTC — สวนสมุนไพรและเส้นทางตามฉาก (0.7.1)

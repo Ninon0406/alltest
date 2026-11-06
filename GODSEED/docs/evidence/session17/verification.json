@@ -5,9 +5,9 @@
   "contentTests": 2,
   "roadmapTests": 8,
   "focusedE2E": 12,
-  "localE2E": null,
-  "prCI": null,
-  "mainCI": null,
+  "localE2E": 105,
+  "prCI": 42209316444,
+  "mainCI": 42211897135,
   "png": {
     "retainedUnchanged": 60,
     "new": {
@@ -58,12 +58,77 @@
     "hardware": "NOT_TESTED"
   },
   "jsSha256": "85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae",
-  "fullAndDeployment": "PENDING",
+  "fullAndDeployment": "PASS: local105/PR105/main105/build/deploy/actualpublic flows/post-Actions assets",
   "hardware": "NOT_TESTED",
   "supersededSource": "f851d09dcbfc2dc3e8e803fd85fa23cf81385098",
   "supersededPRCI": {
     "id": 42207916293,
     "result": "CANCELLED: decoder fix superseded source"
   },
-  "finalPlannedBrowserCases": 105
+  "source": "5c581228c64ce94db6d5ebbd4ec5db9a249a8fb9",
+  "merge": "d38790e45e72a5fa385031e4aec941aea0c3692e",
+  "pr": 16,
+  "legacyPages": 42211897139,
+  "publicStaged": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "version": "0.7.2",
+    "cold": {
+      "pngRequests": 23,
+      "encodedBytes": 301231,
+      "transferBytes": 308131
+    },
+    "warm": {
+      "pngRequests": 23,
+      "encodedBytes": 301231,
+      "transferBytes": 0
+    },
+    "baseline": {
+      "pngRequests": 57,
+      "encodedBytes": 629017
+    },
+    "koroMotion": true,
+    "recipePose": true,
+    "nativeFilePicker": true,
+    "unvisitedStageImport": true,
+    "exactStateRoundTrip": true,
+    "revisitExtraRequests": 0,
+    "bloomCraftAndEquip": true,
+    "controlledFaultRetryPreservesRAM": true,
+    "injectedNetworkErrors": 1,
+    "emptyRefresh": true,
+    "persistentStorageCalls": 0,
+    "outboundWrites": 0,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "public": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 51,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+  },
+  "mainCIstatus": "success",
+  "mainBuildJob": 127872308039,
+  "deployJob": 127881070748,
+  "postDeploy": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "assetsOnly": true,
+    "jsSha256": "85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae",
+    "layeredArtFiles": 51,
+    "developmentReferenceRequests": 0,
+    "consoleErrors": []
+  },
+  "fullBrowserCases": 105
 }

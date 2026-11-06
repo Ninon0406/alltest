@@ -1,0 +1,15 @@
+{
+  "url": "https://ninon0406.github.io/alltest/",
+  "result": "PASS",
+  "checksumExport": true,
+  "importRoundTrip": true,
+  "trainingAndFire": true,
+  "archiveAndStream": true,
+  "waterAndEcho": true,
+  "layeredArtFiles": 51,
+  "developmentReferenceRequests": 0,
+  "originalTrainingSpirit": true,
+  "jsSha256": "85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae",
+  "consoleErrors": [],
+  "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+}

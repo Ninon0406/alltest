@@ -1,0 +1,26 @@
+{
+  "source": "5c581228c64ce94db6d5ebbd4ec5db9a249a8fb9",
+  "run": 42209316444,
+  "url": "https://github.com/Ninon0406/alltest/actions/runs/42209316444",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 127863750684,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127871204754,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "skipped"
+    }
+  ],
+  "logProof": [
+    "n2026-11-06T11:19:47.2713423Z ℹ tests 8",
+    "n2026-11-06T11:19:47.2715493Z ℹ fail 0",
+    "u001b[32m126 passed",
+    "n2026-11-06T11:36:50.7551886Z   105 passed (16.5m)"
+  ]
+}

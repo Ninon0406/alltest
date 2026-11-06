@@ -1,0 +1,34 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.7.2",
+  "cold": {
+    "pngRequests": 23,
+    "encodedBytes": 301231,
+    "transferBytes": 308131
+  },
+  "warm": {
+    "pngRequests": 23,
+    "encodedBytes": 301231,
+    "transferBytes": 0
+  },
+  "baseline": {
+    "pngRequests": 57,
+    "encodedBytes": 629017
+  },
+  "koroMotion": true,
+  "recipePose": true,
+  "nativeFilePicker": true,
+  "unvisitedStageImport": true,
+  "exactStateRoundTrip": true,
+  "revisitExtraRequests": 0,
+  "bloomCraftAndEquip": true,
+  "controlledFaultRetryPreservesRAM": true,
+  "injectedNetworkErrors": 1,
+  "emptyRefresh": true,
+  "persistentStorageCalls": 0,
+  "outboundWrites": 0,
+  "developmentReferenceRequests": 0,
+  "consoleErrors": [],
+  "hardware": "NOT_TESTED"
+}

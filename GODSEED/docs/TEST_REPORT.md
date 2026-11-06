@@ -473,3 +473,8 @@ TypeScript/Lint/Content2/Unit125/Roadmap8/Build/manual-sourcegate/referencepacki
 62PNGสร้างซ้ำตรงbyte/60เดิมไม่เปลี่ยน/2ใหม่10905bytes. ActualtitlePNG629017→301231bytes/57→23; coldwarmวัดจริงในpreview-staged-art.json. State2/File2เดิม ไม่เพิ่มpersistentGameState. ประวัติfailedretry/timeout/typeerrorและวิธีแก้ในSession17README. FinalHD/hardware/FPS/humanfunยังไม่ยืนยัน
 
 Final decoder audit: initialshared/lazyGarden HTTP200 damagedPNG now degrades and retries correctly with unchangedRAM. Unit126/Focus12PASS; priorlocal104/PRCI42207916293 cancelled as superseded, latestfull105pending. SeeSession17decode-failure-before.json andfocused-browser.txt.
+
+
+### Session17 final receipt — verified 0.7.2
+
+Source5c58122/merge d38790e/PR16. Localfull105/105(20.5m), PRCI42209316444full105(16.5m), MainCI42211897135full105(20.2m)/Build/DeploySUCCESS. Actualpubliccore+stagedartPASS:5recipesacross2verifiers/3battles/explicitfile/nativepicker/RAMstate/emptyreload/noupload/nostorage. PostActions51PNG/JS SHA85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae/rendererPASS,0references/0consoleerrorsinpositiveflow. Faultinjectionexpectednetworkerror1separate. Mainbuildjob127872308039/deployjob127881070748. SourceandartunchangedafterCI; docs-onlyreceiptwithscopedroadmapcheck. Latestfullreport/JSON/screenshotlinksinevidence/session17. Hardware/finalHD/FPS/humanfunNOT_TESTED

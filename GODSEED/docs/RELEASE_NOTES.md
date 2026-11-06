@@ -4,7 +4,7 @@
 
 คุโรมีแว่น ผ้ากันเปื้อน ค้อนและทั่งต้นฉบับ ตีทั่งขณะรอและถือสูตรสามองค์ประกอบเมื่อเรียนผสมเวท ทั่งไม่กีดขวางลานฝึก Reduced Motion/ภาพสำรองยังทำงาน ภาพทั้งฉากยังเป็นต้นแบบ เวท234สูตร/เนื้อเรื่อง/รางวัล/ต่อสู้/ManualFileSaveเดิมยังอยู่ State2/File2ไม่เปลี่ยน
 
-สถานะการทดสอบและเผยแพร่ตามจริง: [รายงานรอบ17](evidence/session17/REPORT_TH.md)
+เผยแพร่0.7.2แล้วที่ https://ninon0406.github.io/alltest/ · PR16 · Local/PR/Main full105/Build/Deploy/public/postActionsผ่าน · รายละเอียด:  [รายงานรอบ17](evidence/session17/REPORT_TH.md)
 
 ---
 

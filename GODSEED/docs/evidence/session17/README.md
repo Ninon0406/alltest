@@ -24,3 +24,7 @@ First focused run exposed Phaser's default two retries: three requests instead o
 Full regression, PR/main CI, deployment and public results are recorded in [REPORT_TH.md](REPORT_TH.md) and verification.json after those gates actually run. Hardware iOS/Android/iPadOS/Safari, FPS/thermal, full visual acceptance and human fun testing remain unverified. Manual File Save stays State2/File2; no automatic recovery.
 
 Final audit before merge reproduced HTTP200 + damaged PNG: legacy fallback worked but status stayed ready and retry was absent ([before proof](decode-failure-before.json)). Marked FND004 problem, added batch reconciliation of requested vs successfully decoded files, and tested initial shared image plus lazy garden layer. Both now recover with unchanged RAM. Final126unit/12focusedPASS. Earlier104-case local run and PRCI42207916293 were cancelled because their source was superseded; neither is reported as a completed passing gate.
+
+## Final delivery receipt
+
+Source5c58122/PR16/merge d38790e. Local105/PRCI42209316444full105/MainCI42211897135full105+Build+DeployPASS. Actualpubliccoreandstaged-artPASS, pluspost-Actions51PNG/JS/renderer. See [Thai report](REPORT_TH.md), [main CI](main-ci.json), [full local log](full-browser.txt), [public core](public-core.json), [public staged art](public-staged-art.json), [post-deploy hashes](post-actions-assets.json). These public checks use the actualninon0406.github.io URL; Preview is separately named. LatestRuntimecode/art stayed unchanged after CI; only receiptmetadata added.

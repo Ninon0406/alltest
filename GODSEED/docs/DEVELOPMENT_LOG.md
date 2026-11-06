@@ -344,3 +344,12 @@ RoadmapFND004doneบนเกณฑ์เฉพาะงาน;21/76=27.6%,v121/
 ### Session17 final audit — decode failure regression
 
 หลังf851d09/PR16ตรวจvendorและจำลองHTTP200แต่PNGเสีย พบใช้legacyแต่statusreadyและไม่มีretryจริง ดูdecode-failure-before.json เปลี่ยนFND004เป็นproblemระหว่างแก้ เพิ่มArtLedger.settleตรวจrequestedที่decodeไม่สำเร็จเมื่อbatchcompleteและรายงานUIทั้งpreload/prepare เก็บUnitใหม่และBrowsercaseทั้งinitialshared+lazyGarden ไม่เพิ่มงานหรือเปลี่ยนเกม. FinalUnit126/Focus12PASS1.2m จึงคืนFND004doneตามเกณฑ์. ยกเลิกlocal104และCI42207916293ซึ่งทดสอบsourceก่อนแก้ ไม่ใช้เป็นpass; finalfullเป็น105casesจากโค้ดล่าสุด
+
+
+### ผลปิดรอบ17 — 0.7.2 ยืนยันจริง
+
+Source5c58122(ต่อจากf851d09) / PR16 / merge d38790e. LocalFull105/105PASS20.5m, PRCI42209316444SUCCESS105/10516.5m, MainCI42211897135SUCCESS105/10520.2m/Build/Deploy. Unit126/Content2/Roadmap8/Focus12/Reference10checksums13/ManualSource30appfilesผ่าน. Runtimecodeและ62PNGไม่เปลี่ยนหลังSourceที่ผ่านCI
+
+เว็บจริง https://ninon0406.github.io/alltest/ ผ่านstart/tree/fountain/5craftedrecipesacross2flows/3encounters/returnstory/archive/stream/memory/filechecksum/nativepicker/exactstateimport/emptyrefresh/explicitretry/nostorage/noupload. Koroจริงและภาพก่อนหลังเปิดตรวจแล้ว PostActions51PNG+JS SHA85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29aeตรงBuild,0ConceptRequests/0ConsoleErrorsในpositiveflow. Controlledfaultแยกexpectednetworkerror1 ไม่ใช่productionoutage
+
+Roadmap21/76=27.6%(v121/73=28.8%):done21/in_progress37/not_started16/problem0/blocked2. ปิดเฉพาะFND004 VIS004/005/008ยังprototype/in_progress;0endings. Save011/012และQA009ยังรออุปกรณ์จริง ไม่อ้างhumanfunหรือfinalHD. Commitปิดรอบเฉพาะdocs/evidence/Roadmap;งานถัดไป5และdependencyตามREPORT_TH ไม่มีงานข้ามเซสชันอัตโนมัติ
