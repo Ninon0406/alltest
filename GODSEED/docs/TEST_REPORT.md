@@ -1,4 +1,4 @@
-# GODSEED Test Report — ล่าสุดรอบ18 / 0.8.0
+# GODSEED Test Report — ล่าสุดรอบ19 / 0.9.0
 
 ## รอบ 16 — 2026-11-06 UTC — สวนสมุนไพรและเส้นทางตามฉาก (0.7.1)
 
@@ -495,3 +495,6 @@ LocalFull113/113 PASS23.4m; PR CI42222588626 PASS113/11317.7m, buildjob127908015
 Baseline npmci/Unit134/Content2/Roadmap8/BuildPASS. Current Unit151/Content2/Roadmap8/type/lint/build/referencepacking/manualsourcegate PASS. Initial new Unit16 had2failures(map clearance and fixture MP); corrected16PASS. Legacy art check required real prop metadata and now accepts/tests dedicated atlases. Focus10/10PASS3.4m after RAF timing correction, fiveviewports; then regression test17 proves generic FLEE clips pillar. Fixed dedicated retreat, final2/2browserPASS50.4s on390/1366 observes south/west/north and exact anchors. Final full123running; cancelled partial is not PASS.
 
 78PNG reproduce exactbytes/70old unchanged/8new151337bytes.64pure simulations win4–7turns. Actual0.8public file exported explicitly to/tmp and native-imported into0.9Preview with exactstate/ward/checkpoints; latest Preview/public/fullCI receipts are recorded in evidence/session19/verification.json after execution. Hardware/Safari/FPS/finalHD/humanfun NOT_TESTED.
+
+
+Session19 CI setup audit: PR18/run42239707225 passed Unit151/Build but spent11min3s fetching17.3MB optional font packages from the Ubuntu resolute mirror. Maintainer cancellation coincided with completed browser downloads; no E2E ran, so this run is CANCELLED, never PASS. Pin ubuntu-24.04, install the Thai Loma font explicitly, and download Playwright's supported --only-shell Chromium. All123 browser cases remain required; native-library errors still fail the run. No runtime/test/build-input changes. New PR CI must pass before merging. Logs summarized in evidence/session19/ci-installer-cancelled.json.

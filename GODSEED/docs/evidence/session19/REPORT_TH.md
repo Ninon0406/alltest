@@ -32,7 +32,7 @@ Manual File Save เท่านั้น เก็บความคืบห�
 | npmci/type/lint/content/unit/build | ผ่าน; Unit151/Content2 |
 | Roadmap | 8/8ผ่าน |
 | FocusBrowser | 10/10ผ่าน3.4นาที; หลังแก้ท่าถอยตรวจอีก2/2บน390×844และ1366×768ผ่าน50.4วินาที ไม่ได้นับเป็น12กรณีที่ต่างกัน |
-| หน้าจอใหม่ | ผ่าน390×844,844×390,820×1180,1024×768,1366×768ด้วยChromiumจำลอง |
+| หน้าจอใหม่ | Focus5ขนาดและPreviewเพิ่มครบ10ขนาดตามสเปก:360/390/430/844/768/820/1024/1366/1440/1920;TouchและKeyboardEnterผ่าน ไม่มีhorizontaloverflow/consoleerror — [ผล](preview-layout.json) |
 | FullBrowser | กำลังรัน123กรณีจากโค้ดหลังแก้ท่าถอย ไม่ใช้ชุดที่ยกเลิกแทน |
 | Balance | 64/64ชนะจาก32seeds×2วิธีเล่น เส้นทางรับของจริง;4–7เทิร์น จบHP60–80/MP0–2 — [ข้อมูล](balance.json) |
 | PNG | ทุก78ไฟล์สร้างซ้ำตรงbyte;70เดิมไม่เปลี่ยน/8ใหม่ |
@@ -78,3 +78,5 @@ B04/B05/เทศกาลและตอนจบยังไม่สร้า
 ## 8. สถานะพร้อมเล่นและGitHub
 
 Candidate0.9.0 Buildผ่านและPreviewเล่นได้ เว็บล่าสุดยัง0.8.0จนกว่าPR/CI/Deployผ่าน ผลsourcecommit/PR/mainCI/public/postdeployจะเพิ่มหลังตรวจจริง ไม่ใช้ผลรุ่นก่อนแทน
+
+CIหมายเหตุ:Run42239707225ถูกยกเลิกหลังfontmirrorช้า11นาทีและก่อนE2E ไม่ใช่PASS อัปเดตWorkflowให้ใช้Ubuntu24.04/ThaiLoma/Chromiumheadlessshellและยังต้องผ่าน123กรณีครบก่อนรวมPR

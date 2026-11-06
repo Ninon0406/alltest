@@ -391,3 +391,6 @@ Main CI42225430490 SUCCESS:full113/113(16.2m),buildjob127917582231/deployjob1279
 Purebalance64/64wins4–7turns ไม่ใช่humanfun; ของจริง21Scene70Choice5NPC4Encounter234legal0Endings7Stage Roadmap21/76=27.6%(v121/73=28.8%),in_progress38/not_started15/blocked2 CMB006ยังเหลือB04 ภาพยังต้นแบบ/hardwareยังไม่ยืนยัน
 
 Full123รันใหม่จากsourceหลังretreatfix; CI/PR/publicจะบันทึกตามผลจริง เว็บก่อนรอบ0.8.0ส่งออกไฟล์ด้วยปุ่มให้importใน0.9ได้ ไม่commit/uploadตัวเซฟ งานถัดไป:เทศกาลS18–20→S21/B04→B05→กล่องเพลง/เส้นทางบ้าน→VFX/performance ไม่มีการทำงานข้ามsessionอัตโนมัติ
+
+
+Session19 CI setup audit: PR18/run42239707225 passed Unit151/Build but spent11min3s fetching17.3MB optional font packages from the Ubuntu resolute mirror. Maintainer cancellation coincided with completed browser downloads; no E2E ran, so this run is CANCELLED, never PASS. Pin ubuntu-24.04, install the Thai Loma font explicitly, and download Playwright's supported --only-shell Chromium. All123 browser cases remain required; native-library errors still fail the run. No runtime/test/build-input changes. New PR CI must pass before merging. Logs summarized in evidence/session19/ci-installer-cancelled.json.

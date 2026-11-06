@@ -6,7 +6,7 @@ New sources for existingFORM_WARD/MOD_PIERCE/FORM_RAY enable actual WIND_WARD_LI
 
 ---
 
-# Content index 0.9.0
+# Historical content index — 0.8.0
 
 Computed with `npm run inspect:content` (`scripts/inspect-content.mjs` imports actual typed source through Vite SSR; no browser/gameplay writes).
 

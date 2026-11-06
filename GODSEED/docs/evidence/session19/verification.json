@@ -86,5 +86,192 @@
     "consoleErrors": [],
     "controlledNetworkErrors": 1,
     "hardware": "NOT_TESTED"
+  },
+  "previewLayout": {
+    "result": "PASS",
+    "url": "http://127.0.0.1:4190/",
+    "version": "0.9.0",
+    "viewports": [
+      {
+        "width": 360,
+        "height": 800,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 360,
+          "documentWidth": 360,
+          "canvasLeft": 11,
+          "canvasRight": 349,
+          "canvasWidth": 338,
+          "canvasHeight": 190.125
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "canvasLeft": 11,
+          "canvasRight": 379,
+          "canvasWidth": 368,
+          "canvasHeight": 207
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 430,
+        "height": 932,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 430,
+          "documentWidth": 430,
+          "canvasLeft": 11,
+          "canvasRight": 419,
+          "canvasWidth": 408,
+          "canvasHeight": 229.5
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "canvasLeft": 11,
+          "canvasRight": 422,
+          "canvasWidth": 411,
+          "canvasHeight": 231.1875
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "canvasLeft": 11,
+          "canvasRight": 757,
+          "canvasWidth": 746,
+          "canvasHeight": 419.625
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 820,
+        "height": 1180,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 820,
+          "documentWidth": 820,
+          "canvasLeft": 11,
+          "canvasRight": 809,
+          "canvasWidth": 798,
+          "canvasHeight": 448.875
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "controls": "touch",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 1024,
+          "documentWidth": 1024,
+          "canvasLeft": 1,
+          "canvasRight": 597.15625,
+          "canvasWidth": 596.15625,
+          "canvasHeight": 335.328125
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 1366,
+        "height": 768,
+        "controls": "keyboard-enter",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 1366,
+          "documentWidth": 1366,
+          "canvasLeft": 1,
+          "canvasRight": 796.65625,
+          "canvasWidth": 795.65625,
+          "canvasHeight": 447.546875
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "controls": "keyboard-enter",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 1440,
+          "documentWidth": 1440,
+          "canvasLeft": 31,
+          "canvasRight": 834.828125,
+          "canvasWidth": 803.828125,
+          "canvasHeight": 452.140625
+        },
+        "consoleErrors": []
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "controls": "keyboard-enter",
+        "legacy080File": true,
+        "runeAndQuest": true,
+        "layout": {
+          "viewportWidth": 1920,
+          "documentWidth": 1920,
+          "canvasLeft": 271,
+          "canvasRight": 1074.828125,
+          "canvasWidth": 803.828125,
+          "canvasHeight": 452.140625
+        },
+        "consoleErrors": []
+      }
+    ],
+    "hardware": "NOT_TESTED",
+    "scope": "Chromium viewport and input emulation; no physical device/FPS acceptance"
+  },
+  "cancelledCI": {
+    "runId": 42239707225,
+    "jobId": 127966447592,
+    "conclusion": "CANCELLED_BY_MAINTAINER",
+    "reason": "Inspect unexpectedly slow browser setup; cancellation coincided with completed download. Not a passing E2E run.",
+    "aptFontFetch": "17.3MB in11min3s",
+    "e2eStarted": false,
+    "evidence": [
+      "2026-11-06T15:05:58.6170328Z       Tests  151 passed (151)",
+      "2026-11-06T15:06:04.6241644Z ✓ built in 3.51s",
+      "2026-11-06T15:07:00.0391193Z Ign:2 http://azure.archive.ubuntu.com/ubuntu resolute/universe amd64v3 fonts-ipafont-gothic all 00303-23ubuntu1",
+      "2026-11-06T15:10:03.1769136Z Ign:5 http://azure.archive.ubuntu.com/ubuntu resolute/universe amd64v3 fonts-unifont all 1:16.0.04-1build1",
+      "2026-11-06T15:12:23.1229185Z Ign:6 http://azure.archive.ubuntu.com/ubuntu resolute/universe amd64v3 fonts-wqy-zenhei all 0.9.45-8build1",
+      "2026-11-06T15:17:29.7790867Z Fetched 17.3 MB in 11min 3s (26.1 kB/s)",
+      "2026-11-06T15:17:42.9273689Z Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1248",
+      "2026-11-06T15:17:42.9521209Z ##[error]The operation was canceled."
+    ]
   }
 }
