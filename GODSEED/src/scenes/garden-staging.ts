@@ -1,8 +1,9 @@
 import type {State} from '../engine/state';
 import {choicePaths} from './cinematic-paths';
+import {gardenBed} from './garden-map';
+export {gardenBed} from './garden-map';
 /** Source-pixel staging: stand outside the bed; pour toward its near edge.
  * Presentation only. Rewards/day/trust stay in the transaction reducer. */
-export const gardenBed={x:247,y:245,depth:228,width:64,height:48,solid:{left:220,top:231,right:273,bottom:245}} as const;
 export const wateringFrames=[0,1,2,1,2,3];
 export function gardenPresentation(state:State|null){
  if(!state||state.battle||state.scene!=='S06_GARDEN')return undefined;

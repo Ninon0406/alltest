@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-11-05",
-  "baseCommit": "0676719",
+  "updated": "2026-11-06",
+  "baseCommit": "ea50dfa",
   "phases": [
     {
       "id": 1,
@@ -123,16 +123,20 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/tests/visual.spec.ts"
+        "GODSEED/tests/visual.spec.ts",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
-      "evidence": "มีPNG fallbackและwarning ทดสอบabortedPNG; ยังpreloadทั้งหมดไม่มีretryครบ",
+      "evidence": "มีPNG fallbackและwarning ทดสอบabortedPNG; ยังpreloadทั้งหมดไม่มีretryครบ; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง",
       "acceptance": "โหลดผิดพลาดกู้ได้ไม่deadlock วัดbudget cold/warm และแบ่งโหลดอย่างปลอดภัย",
       "legacyIds": [
         "GS-001",
         "GS-012"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "FND-005",
@@ -803,16 +807,20 @@
         "GODSEED/tests/garden.spec.ts",
         "GODSEED/docs/evidence/session14/README.md",
         "GODSEED/tests/maren.spec.ts",
-        "GODSEED/scripts/generate-maren-art.mjs"
+        "GODSEED/scripts/generate-maren-art.mjs",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
         "GS-010"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "VIS-006",
@@ -880,16 +888,20 @@
         "GODSEED/scripts/generate-village-art.mjs",
         "GODSEED/src/scenes/garden-staging.ts",
         "GODSEED/tests/garden.spec.ts",
-        "GODSEED/docs/evidence/session14/README.md"
+        "GODSEED/docs/evidence/session14/README.md",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
-      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่",
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง",
       "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
       "legacyIds": [
         "GS-008",
         "GS-009"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "VIS-009",
@@ -902,16 +914,20 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/src/scenes/stage-layout.ts"
+        "GODSEED/src/scenes/stage-layout.ts",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
-      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
+      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง",
       "acceptance": "reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก",
       "legacyIds": [
         "GS-008",
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "VIS-010",
@@ -924,16 +940,20 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/src/scenes/exploration-art.ts"
+        "GODSEED/src/scenes/exploration-art.ts",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
-      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ",
+      "evidence": "water6f/leaf/cloud/fire/glowและreduced motionมี; lowpresetยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง",
       "acceptance": "อย่างน้อย3detailsต่อฉาก budgetวัดได้ preset/reduced/hiddenไม่ทำให้เกมผิด",
       "legacyIds": [
         "GS-012",
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "VIS-011",
@@ -1825,15 +1845,19 @@
         "GODSEED/docs/ART_BIBLE.md",
         "GODSEED/tests/visual.spec.ts",
         "GODSEED/src/scenes/gathering-props.ts",
-        "GODSEED/tests/gathering.spec.ts"
+        "GODSEED/tests/gathering.spec.ts",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
-      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress",
+      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 candidate0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน ยังรอfull93/CI/public ไม่รับรองfinalHDหรืออุปกรณ์จริง",
       "acceptance": "ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน",
       "legacyIds": [
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "QA-003",
@@ -2394,15 +2418,19 @@
         "story": "in_progress",
         "effects": "in_progress",
         "mobile": "in_progress",
-        "ready": "not_started"
+        "ready": "in_progress"
       },
-      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก",
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก; รอบ16 เริ่มแปลงฉากใหม่ตามReference05จริง บ้านหลังคาม่วง/ถนนหิน/ซุ้ม/หม้อยา/สมุนไพรแยกเลเยอร์ อ่านแผนที่เดียวกับDirectorและตรวจ9Colliders Focus20ผ่าน ยังเป็นต้นแบบไม่ครบfinalHD/mobilehardware",
       "files": [
         "assets/reference/godseed/references/05_elder_herb_garden.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
         "GODSEED/src/scenes/garden-staging.ts",
         "GODSEED/scripts/generate-garden-art.mjs",
-        "GODSEED/docs/evidence/session14/README.md"
+        "GODSEED/docs/evidence/session14/README.md",
+        "GODSEED/src/scenes/garden-map.ts",
+        "GODSEED/scripts/generate-herb-garden-art.mjs",
+        "GODSEED/tests/herb-garden.spec.ts",
+        "GODSEED/docs/evidence/session16/README.md"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },

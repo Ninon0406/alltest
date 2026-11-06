@@ -1,3 +1,15 @@
+# GODSEED architecture — 0.7.1 (candidate)
+
+## สวนสมุนไพร / รอบ 16
+
+`garden-map.ts` เป็นข้อมูลพิกัดเท้าของ Anchor, ถนน, Collider และตำแหน่งซุ้ม/หม้อยา/สมุนไพร/ม้านั่ง ไม่อ่านพิกัดจาก Reference; `scene-definitions.ts` เชื่อมสถานที่ `elder_garden` เข้ากับ routeTo เดิม ซึ่งตรวจ foot box และใช้ Dijkstra เฉพาะถนนที่ผู้พัฒนากำหนด `cinematicPath` หยุดเมื่อหาเส้นทางปลอดภัยไม่ได้ ไม่เดินตรงผ่านอาคารเป็น fallback
+
+`generate-herb-garden-art.mjs` ใช้ Node 24 อ่านข้อมูล TS ชุดเดียวกันแล้ววาดถนนบนกริด 480×270 ภาพต้นฉบับแยก rear/ground/front; ground เว้นหน้าอาคาร/บันได ซุ้มแยก Sprite ที่ depth ตามฐาน 242 หม้อยาและสมุนไพรเป็น Sprite วนซ้ำ ไม่ใช่วิดีโอหรือ particle ไม่จำกัด จำนวน Sprite ใหม่คงที่สามชิ้น; Reduced Motion หยุดเฟรมตามระบบ props เดิม ยังไม่มีการรับรอง FPS บนอุปกรณ์จริง
+
+World ใช้ art-v9 เป็น primary และโหลดสวน art-v2 สามเลเยอร์เป็น fallback ที่เข้ากันทั้งชุดเมื่อเลเยอร์ใหม่ขาด ไม่ซ้อน props ชุดใหม่กับ fallback หาก atlas ขาด เกมยังเล่น/ส่งออกไฟล์ได้พร้อมคำแจ้ง degraded แผนที่เป็น presentation data ไม่เพิ่มข้อมูลลง State หรือเปลี่ยน RNG
+
+CH03B1 และ CH0602 ใช้ม้านั่ง/route ร่วมกันและท่านั่งคงอยู่ระหว่างกล้องคืนตำแหน่ง CH03B1 คง cue talk เชิงกฎ ต่างจากท่าทาง rest ของ renderer เพื่อรักษาเวลา/HP/MP/รางวัลเดิม ManualSession และ File2 ไม่เปลี่ยนสัญญา คำสั่งเซฟ V2 ด้านล่างยังมีผล
+
 # GODSEED architecture — 0.7.0
 
 ## Owner V2 — Manual File Save only (2026-11-05)

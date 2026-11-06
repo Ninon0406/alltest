@@ -3,6 +3,24 @@ import {sceneDefinitions,routeTo,clearSegment,walkable} from '../src/scenes/scen
 import {cinematicPath} from '../src/scenes/cinematic-paths';
 import {fresh,schema} from '../src/engine/state';
 import {choose} from '../src/systems/game';
+import {gardenMap} from '../src/scenes/garden-map';
+
+it('garden routes connect every authored arrival to seeds, dew, bench and exit without crossing scenery',()=>{
+ const def=sceneDefinitions.elder_garden;
+ for(const start of Object.values(gardenMap.anchors))for(const [command,cue,target] of [['CH0601','pick','herb_bed_front'],['CH0602','rest','maren_listen_seat'],['CH03B1','talk','maren_listen_seat'],['CH0603','pick','dew_collect'],['CH0604','walk','exit_path']]){
+  const path=cinematicPath('garden',cue,command,{x:start.x,y:start.y-20})!;
+  expect(path.targetAnchor).toBe(target);expect(path.points.at(-1)).toMatchObject({x:def.anchors[target].x,y:def.anchors[target].y-20});
+  for(let i=1;i<path.points.length;i++)expect(clearSegment(def,{x:path.points[i-1].x,y:path.points[i-1].y+20},{x:path.points[i].x,y:path.points[i].y+20}),`${command} from ${start.x}/${start.y}`).toBe(true);
+ }
+ expect(cinematicPath('garden','rest','CH0602',{x:312,y:197})?.points).toEqual([{x:312,y:197}]);
+});
+it('garden masonry, piers, pot and beds block feet; unreachable movement never teleports through them',()=>{
+ const def=sceneDefinitions.elder_garden;
+ for(const p of [{x:150,y:180},{x:26,y:238},{x:86,y:238},{x:414,y:200},{x:430,y:240},{x:247,y:239}])expect(walkable(def,p)).toBe(false);
+ expect(routeTo({...def,links:[]},def.anchors.garden_entrance,'dew_collect')).toBeUndefined();
+ expect(()=>cinematicPath('garden','pick','CH0601',{x:247,y:219})).toThrow('ไม่พบเส้นทางที่ปลอดภัย');
+ expect(walkable(def,def.anchors.dew_collect)).toBe(true);
+});
 
 it('authored road links and named anchors respect actual source-map footprints',()=>{
  for(const definition of Object.values(sceneDefinitions)){
