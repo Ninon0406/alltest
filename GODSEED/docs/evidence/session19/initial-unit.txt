@@ -1,0 +1,37 @@
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+ ❯ tests/ruins.test.ts (16 tests | 2 failed) 224ms
+     × battle result items and a newly craftable ward come from real source choices 11ms
+     × every starting anchor reaches every cinematic target safely in both axes 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/ruins.test.ts > canonical ruins routes and world memory > battle result items and a newly craftable ward come from real source choices
+Error: ใช้เวทนี้ไม่ได้
+ ❯ src/systems/combat.ts:80:80
+     78|   if(action==='IT_POTION_DEW'){d.hp=Math.min(100,d.hp+25);b.log.push('…
+     79|  }else{
+     80|   const sp=byId[action];if(!sp||!d.equipped.includes(action)||d.mp<sp.…
+       |                                                                                ^
+     81|   d.mp-=sp.mp;cast(d,b,sp,fresh);
+     82|  }
+ ❯ transact src/engine/state.ts:16:85
+ ❯ fight src/systems/combat.ts:67:57
+ ❯ tests/ruins.test.ts:60:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/ruins.test.ts > authored ruins maps, art and gestures > every starting anchor reaches every cinematic target safely in both axes
+AssertionError: CH1501: expected undefined to be defined
+ ❯ tests/ruins.test.ts:100:167
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 14 passed (16)
+   Start at  14:23:37
+   Duration  748ms (transform 300ms, setup 0ms, import 399ms, tests 224ms, environment 0ms)
+

@@ -1,4 +1,12 @@
-# Content index 0.8.0
+# Current source — Session19 / 0.9.0
+
+21Scene/70Choice/70uniqueChoiceIDs/5companionNPC/4reachableEncounter(includingTraining)/234legal+uniqueSpellIDs/0chapterending/7Stage. Extracted by inspect:content; JSON/IDs in [Session19](evidence/session19/content.json). AddedS15_RUINS/S16_RUINS_RESULT/S17_ECHO_TABLET,CH0207+CH1501–1504+CH1601–1602+CH1701–1703,B03_RUIN_SENTINEL,ruinsStage. Every18oldscene/60oldchoice retained.
+
+New sources for existingFORM_WARD/MOD_PIERCE/FORM_RAY enable actual WIND_WARD_LINGER discovery/defense; no new recipe or material definition. Q_ARCHIVE_NOTES is one shared completion acrosscopy/listen and NPC remembers facts. Other quest/chapter/endings remain partial. Old statements about future ruins below are historical0.8andearlier, not the current feature state.
+
+---
+
+# Content index 0.9.0
 
 Computed with `npm run inspect:content` (`scripts/inspect-content.mjs` imports actual typed source through Vite SSR; no browser/gameplay writes).
 

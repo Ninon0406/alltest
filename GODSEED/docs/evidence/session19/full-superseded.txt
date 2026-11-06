@@ -1,0 +1,200 @@
+
+> godseed@0.9.0 test:e2e
+> playwright test
+
+[WebServer] (node:37549) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37568) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 123 tests using 1 worker
+
+(node:37580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 tests/alchemy.spec.ts:4:74 › recipe preview, filtered book and empty loadout 390 (13.1s)
+  ✓    2 tests/alchemy.spec.ts:4:74 › recipe preview, filtered book and empty loadout 820 (14.9s)
+  ✓    3 tests/alchemy.spec.ts:4:74 › recipe preview, filtered book and empty loadout 1024 (13.1s)
+  ✓    4 tests/alchemy.spec.ts:4:74 › recipe preview, filtered book and empty loadout 1366 (12.7s)
+  ✓    5 tests/arrival.spec.ts:6:1 › arrival stops the gait during the camera return and imported saves reset staging (10.3s)
+  ✓    6 tests/arrival.spec.ts:21:1 › seated rest holds through camera completion and the durable save (19.4s)
+  ✓    7 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 390 (4.8s)
+  ✓    8 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 1366 (4.7s)
+  ✓    9 tests/art-loading.spec.ts:29:1 › explicit retry restores a failed shared atlas while preserving the seated checkpoint and dirty status (3.1s)
+  ✓   10 tests/art-loading.spec.ts:39:1 › repeated failure stays playable without automatic retry; later recovery retains its anchor and NPC memory (3.7s)
+  ✓   11 tests/art-loading.spec.ts:49:1 › a stalled stage asset times out, unlocks controls and can be retried without a second choice commit (14.2s)
+  ✓   12 tests/art-loading.spec.ts:59:1 › HTTP200 with undecodable PNG offers recovery and preserves the exact current file checkpoint (3.9s)
+  ✓   13 tests/browser.spec.ts:3:129 › real loop and save 360x800 (26.3s)
+  ✘   14 tests/browser.spec.ts:3:129 › real loop and save 390x844 (30.1s)
+(node:38474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   15 tests/browser.spec.ts:3:129 › real loop and save 430x932 (30.2s)
+(node:38604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   16 tests/browser.spec.ts:3:129 › real loop and save 768x1024 (27.5s)
+  ✓   17 tests/browser.spec.ts:3:129 › real loop and save 820x1180 (25.1s)
+  ✓   18 tests/browser.spec.ts:3:129 › real loop and save 1024x768 (24.6s)
+  ✘   19 tests/browser.spec.ts:3:129 › real loop and save 1366x768 (30.2s)
+(node:38973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   20 tests/browser.spec.ts:3:129 › real loop and save 1440x900 (30.2s)
+(node:39102) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   21 tests/browser.spec.ts:3:129 › real loop and save 1920x1080 (30.0s)
+  ✓   22 tests/browser.spec.ts:3:129 › real loop and save 844x390 (25.2s)
+  ✓   23 tests/browser.spec.ts:21:1 › project Pages subpath loads actual production assets and accepts keyboard/touch without duplicate action (7.0s)
+  ✓   24 tests/browser.spec.ts:35:1 › touch controls commit one choice and expose an animated world (3.4s)
+  ✘   25 tests/camera-gallery.spec.ts:3:74 › camera gallery six genuine stages 390 (19.4s)
+
+
+  1) tests/browser.spec.ts:3:129 › real loop and save 390x844 ──────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+    Expected: hidden
+    Received: visible
+
+    Call log:
+      - Expect "toBeHidden" getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+        7 × locator resolved to <button id="skip">ข้ามแอนิเมชัน</button>
+          - unexpected value "visible"
+      - Test timeout of 30000ms exceeded.
+
+
+      4 |  await page.setViewportSize({width:w,height:h});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
+      5 |  await page.goto('/');if(w===360)await page.screenshot({path:'test-results/title-360.png',fullPage:true});await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เริ่มการเดินทาง'}).click();
+    > 6 |  const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+        |                                                                                                                                                                     ^
+      7 |  for(const n of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน','ไปโรงช่างของคุโร','ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท'])await click(n);
+      8 |  await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว'})).toBeVisible();
+      9 |  await page.getByRole('button',{name:'สมุดเวท',exact:true}).click();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี'})).toBeVisible();
+        at click (/workspace/alltest/GODSEED/tests/browser.spec.ts:6:165)
+        at /workspace/alltest/GODSEED/tests/browser.spec.ts:17:142
+
+    Error Context: test-results/browser-real-loop-and-save-390x844/error-context.md
+
+  2) tests/browser.spec.ts:3:129 › real loop and save 430x932 ──────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+    Expected: hidden
+    Received: visible
+
+    Call log:
+      - Expect "toBeHidden" getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+      - Test timeout of 30000ms exceeded.
+
+
+      4 |  await page.setViewportSize({width:w,height:h});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
+      5 |  await page.goto('/');if(w===360)await page.screenshot({path:'test-results/title-360.png',fullPage:true});await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เริ่มการเดินทาง'}).click();
+    > 6 |  const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+        |                                                                                                                                                                     ^
+      7 |  for(const n of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน','ไปโรงช่างของคุโร','ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท'])await click(n);
+      8 |  await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว'})).toBeVisible();
+      9 |  await page.getByRole('button',{name:'สมุดเวท',exact:true}).click();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี'})).toBeVisible();
+        at click (/workspace/alltest/GODSEED/tests/browser.spec.ts:6:165)
+        at /workspace/alltest/GODSEED/tests/browser.spec.ts:17:142
+
+    Error Context: test-results/browser-real-loop-and-save-430x932/error-context.md
+
+  3) tests/browser.spec.ts:3:129 › real loop and save 1366x768 ─────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+    Expected: hidden
+    Received: visible
+
+    Call log:
+      - Expect "toBeHidden" getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+        2 × locator resolved to <button id="skip">ข้ามแอนิเมชัน</button>
+          - unexpected value "visible"
+      - Test timeout of 30000ms exceeded.
+
+
+      4 |  await page.setViewportSize({width:w,height:h});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
+      5 |  await page.goto('/');if(w===360)await page.screenshot({path:'test-results/title-360.png',fullPage:true});await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เริ่มการเดินทาง'}).click();
+    > 6 |  const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+        |                                                                                                                                                                     ^
+      7 |  for(const n of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน','ไปโรงช่างของคุโร','ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท'])await click(n);
+      8 |  await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว'})).toBeVisible();
+      9 |  await page.getByRole('button',{name:'สมุดเวท',exact:true}).click();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี'})).toBeVisible();
+        at click (/workspace/alltest/GODSEED/tests/browser.spec.ts:6:165)
+        at /workspace/alltest/GODSEED/tests/browser.spec.ts:17:142
+
+    Error Context: test-results/browser-real-loop-and-save-1366x768/error-context.md
+
+  4) tests/browser.spec.ts:3:129 › real loop and save 1440x900 ─────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+    Expected: hidden
+    Received: visible
+
+    Call log:
+      - Expect "toBeHidden" getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'ข้ามแอนิเมชัน', exact: true })
+        5 × locator resolved to <button id="skip">ข้ามแอนิเมชัน</button>
+          - unexpected value "visible"
+      - Test timeout of 30000ms exceeded.
+
+
+      4 |  await page.setViewportSize({width:w,height:h});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
+      5 |  await page.goto('/');if(w===360)await page.screenshot({path:'test-results/title-360.png',fullPage:true});await page.getByRole('button',{name:'ลดการเคลื่อนไหว'}).click();await page.getByRole('button',{name:'เริ่มการเดินทาง'}).click();
+    > 6 |  const click=async(name:string)=>{await page.getByRole('button',{name,exact:true}).click();await expect(page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true})).toBeHidden();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+        |                                                                                                                                                                     ^
+      7 |  for(const n of ['ลุกขึ้นสำรวจรอบตัว','เก็บขนนกสีฟ้าที่ข้างทางก่อน','ไปโรงช่างของคุโร','ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท'])await click(n);
+      8 |  await expect(page.getByRole('heading',{name:'จัตุรัสของเรื่องราว'})).toBeVisible();
+      9 |  await page.getByRole('button',{name:'สมุดเวท',exact:true}).click();await expect(page.getByRole('heading',{name:'วายุดารานำวิถี'})).toBeVisible();
+        at click (/workspace/alltest/GODSEED/tests/browser.spec.ts:6:165)
+        at /workspace/alltest/GODSEED/tests/browser.spec.ts:17:142
+
+    Error Context: test-results/browser-real-loop-and-save-1440x900/error-context.md
+
+  5) tests/camera-gallery.spec.ts:3:74 › camera gallery six genuine stages 390 ─────────────────────
+
+    Test was interrupted.
+
+    Error: locator.tap: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: 'วายุดารานำวิถี · MP 10', exact: true })
+        - locator resolved to <button aria-describedby="battle-slot-0-detail">วายุดารานำวิถี · MP 10</button>
+      - attempting tap action
+        - waiting for element to be visible, enabled and stable
+
+
+      4 |  test.setTimeout(180_000);await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+      5 |  await page.goto('/');const canvas=page.locator('#canvas');await expect(canvas).toHaveAttribute('data-render-status','ready');
+    > 6 |  const tap=async(name:string)=>{const b=page.getByRole('button',{name,exact:true});if(!await b.isVisible()&&await page.locator('.other-routes summary').isVisible())await page.locator('.other-routes summary').tap();await b.tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');};
+        |                                                                                                                                                                                                                               ^
+      7 |  const photo=async(stage:string)=>{await expect(canvas).toHaveAttribute('data-stage',stage);await tap('ลดการเคลื่อนไหว');await page.waitForTimeout(100);const c=JSON.parse((await canvas.getAttribute('data-camera-shot'))!);expect(c.zoom).toBe(1.08);expect(c.left).toBeGreaterThanOrEqual(0);expect(c.right).toBeLessThanOrEqual(480);await canvas.screenshot({path:`test-results/gallery-${stage}-${width}.png`});await tap('ลดการเคลื่อนไหว');};
+      8 |  await tap('เริ่มการเดินทาง');await tap('ลุกขึ้นสำรวจรอบตัว');await photo('village');for(const n of ['เดินตามป้ายไม้ไปที่จัตุรัส','แวะสวนดอกไม้ของยายมาเรน'])await tap(n);await photo('garden');
+      9 |  for(const n of ['ช่วยรดน้ำและเก็บเมล็ด','ไปโรงช่างของคุโร'])await tap(n);await photo('workshop');for(const n of ['ขอเรียนการผสมเวท','ทดลองสูตรแรกจากของที่มี','ผสมและค้นพบเวท','ไปโรงช่างของคุโร','ฝึกต่อสู้กับภูตจำลอง'])await tap(n);
+        at tap (/workspace/alltest/GODSEED/tests/camera-gallery.spec.ts:6:223)
+        at win (/workspace/alltest/GODSEED/tests/camera-gallery.spec.ts:20:206)
+        at /workspace/alltest/GODSEED/tests/camera-gallery.spec.ts:21:124
+
+    Error Context: test-results/camera-gallery-camera-gallery-six-genuine-stages-390/error-context.md
+
+  4 failed
+    tests/browser.spec.ts:3:129 › real loop and save 390x844 ───────────────────────────────────────
+    tests/browser.spec.ts:3:129 › real loop and save 430x932 ───────────────────────────────────────
+    tests/browser.spec.ts:3:129 › real loop and save 1366x768 ──────────────────────────────────────
+    tests/browser.spec.ts:3:129 › real loop and save 1440x900 ──────────────────────────────────────
+  1 interrupted
+    tests/camera-gallery.spec.ts:3:74 › camera gallery six genuine stages 390 ──────────────────────
+  98 did not run
+  20 passed (7.2m)

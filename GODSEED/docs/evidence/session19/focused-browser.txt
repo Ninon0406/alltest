@@ -1,0 +1,21 @@
+[WebServer] (node:36810) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:36829) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:36841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 390 (23.5s)
+  ✓   2 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 844 (24.5s)
+  ✓   3 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 820 (26.3s)
+  ✓   4 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1024 (24.6s)
+  ✓   5 tests/ruins.spec.ts:11:84 › ruins rune and musicbox choices, memory and owned file 1366 (23.0s)
+  ✓   6 tests/ruins.spec.ts:24:52 › sentinel telegraph, ward file, victory and real defensive recipe 390 (22.1s)
+  ✓   7 tests/ruins.spec.ts:24:52 › sentinel telegraph, ward file, victory and real defensive recipe 1366 (24.5s)
+  ✓   8 tests/ruins.spec.ts:37:1 › ruins retreat and genuine defeat recover to S15 without duplicated rewards (12.9s)
+  ✓   9 tests/ruins.spec.ts:42:1 › missing ruins art keeps the file and rune route playable; explicit retry preserves progress (5.8s)
+  ✓  10 tests/ruins.spec.ts:45:1 › skipping a rune approach and reducing musicbox motion finish once at the right anchor (12.5s)
+
+  10 passed (3.4m)

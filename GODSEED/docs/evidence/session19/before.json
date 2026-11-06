@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.8.0",
+  "beforeFeature": true,
+  "archiveUnlockedRuins": true,
+  "ruinsRouteExisted": false,
+  "formatVersion": 2,
+  "fileSha256": "ac6af8682e4236e8764f3e69459d0a240a6b5a8903dd48cc877264e9df8b2cd3",
+  "syntheticSave": "only /tmp; not committed or uploaded",
+  "consoleErrors": []
+}

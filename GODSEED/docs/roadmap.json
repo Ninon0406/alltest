@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updated": "2026-11-06",
-  "baseCommit": "a8512b7",
+  "baseCommit": "1b9d598",
   "phases": [
     {
       "id": 1,
@@ -850,9 +850,14 @@
         "GODSEED/tests/workshop.spec.ts",
         "GODSEED/docs/evidence/session18/README.md",
         "GODSEED/docs/evidence/session18/verification.json",
-        "GODSEED/docs/evidence/session18/public-layout.json"
+        "GODSEED/docs/evidence/session18/public-layout.json",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
+      "evidence": "มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet",
       "legacyIds": [
         "GS-007",
@@ -958,9 +963,14 @@
         "GODSEED/tests/workshop.spec.ts",
         "GODSEED/docs/evidence/session18/README.md",
         "GODSEED/docs/evidence/session18/verification.json",
-        "GODSEED/docs/evidence/session18/public-layout.json"
+        "GODSEED/docs/evidence/session18/public-layout.json",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
       "legacyIds": [
         "GS-008",
@@ -992,9 +1002,14 @@
         "GODSEED/tests/workshop.spec.ts",
         "GODSEED/docs/evidence/session18/README.md",
         "GODSEED/docs/evidence/session18/verification.json",
-        "GODSEED/docs/evidence/session18/public-layout.json"
+        "GODSEED/docs/evidence/session18/public-layout.json",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
+      "evidence": "มีY-depth/contactshadows/3layers; advancedlightingยังต้นแบบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "reviewactualruntimeทุกฉาก foot/propไม่ทะลุ depth/time-lightสอดคล้องภาพหลัก",
       "legacyIds": [
         "GS-008",
@@ -1103,9 +1118,14 @@
         "FND-003"
       ],
       "files": [
-        "GODSEED/src/content/story.ts"
+        "GODSEED/src/content/story.ts",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด",
+      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "canonicalchapter1ครบมีทางเล่นจบและกลับสำรวจ ทุกทางหลักผ่านgraph/golden paths",
       "legacyIds": [
         "GS-025",
@@ -1114,7 +1134,7 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "STO-002",
@@ -1314,16 +1334,21 @@
         "GODSEED/src/content/story.ts",
         "GODSEED/tests/exploration.test.ts",
         "GODSEED/src/scenes/gathering-props.ts",
-        "GODSEED/tests/gathering.spec.ts"
+        "GODSEED/tests/gathering.spec.ts",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress",
+      "evidence": "จริง5สูตรจากstory; unit234ใช้fixtureของครบไม่ใช่storyaccess; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "essentialmaterialsมีrouteไม่grind daily/rare/endgameหาได้ ตรวจscriptreachability",
       "legacyIds": [
         "GS-013",
         "GS-026"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "MAG-003",
@@ -1631,16 +1656,21 @@
       "id": "CMB-006",
       "phase": 5,
       "title": "B03/B04พร้อมAI/rules/art/rewards/conditionalflee",
-      "status": "not_started",
+      "status": "in_progress",
       "priority": "P1",
       "dependsOn": [
         "CMB-003",
         "VIS-008"
       ],
       "files": [
-        "02_GODSEED_MASTER_SPEC.md"
+        "02_GODSEED_MASTER_SPEC.md",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "spec66/76HPและrulesมี โค้ดcatalogยังไม่มี",
+      "evidence": "spec66/76HPและrulesมี โค้ดcatalogยังไม่มี; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "B03wardturn3/B04copytelegraph EIRAconditionalflee balance/truepathsผ่าน",
       "legacyIds": [
         "GS-022",
@@ -1648,7 +1678,7 @@
         "GS-027"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "CMB-007",
@@ -1777,9 +1807,14 @@
       ],
       "files": [
         "GODSEED/src/content/story.ts",
-        "GODSEED/src/ui/memory-panel.ts"
+        "GODSEED/src/ui/memory-panel.ts",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/tests/ruins.test.ts",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
-      "evidence": "stream/bell/notesfactsมี; queststate/Pipfruit/S17ยังไม่ครบ",
+      "evidence": "stream/bell/notesfactsมี; queststate/Pipfruit/S17ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
       "acceptance": "active/completed/rewards/nextobjectiveครบ4quests เซฟ/ย้อนกลับไม่ซ้ำ",
       "legacyIds": [
         "GS-026",
@@ -1787,7 +1822,7 @@
         "GS-029"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05"
+      "reviewed": "2026-11-06"
     },
     {
       "id": "WRD-004",
@@ -2613,19 +2648,24 @@
       "name": "ศาลเจ้าโบราณ",
       "readiness": {
         "reference": "done",
-        "structure": "not_started",
-        "layers": "not_started",
-        "collision": "not_started",
-        "movement": "not_started",
-        "story": "not_started",
-        "effects": "not_started",
-        "mobile": "not_started",
-        "ready": "not_started"
+        "structure": "done",
+        "layers": "in_progress",
+        "collision": "done",
+        "movement": "in_progress",
+        "story": "in_progress",
+        "effects": "in_progress",
+        "mobile": "done",
+        "ready": "in_progress"
       },
-      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "evidence": "รอบ19ต้นแบบReference09:3layers/altar12frames/Y-sortpillars/14anchors15links8solids/hero10gestures/sentinel16frames;PureUnit17และBrowser5viewportผ่านrune/musicbox/file/questmemory,retreatregressionfixผ่านUnit17และ2Browser;Mobile=Chromiumจำลอง ไม่ใช่อุปกรณ์จริง ภาพ/ทั้งบท/ทุกท่ายังin_progress",
       "files": [
         "assets/reference/godseed/references/09_ancient_shrine.webp",
-        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+        "assets/reference/godseed/IMPORT_PROVENANCE.json",
+        "GODSEED/src/scenes/ruins-map.ts",
+        "GODSEED/src/scenes/ruins-staging.ts",
+        "GODSEED/scripts/generate-ruins-art.mjs",
+        "GODSEED/tests/ruins.spec.ts",
+        "GODSEED/docs/evidence/session19/README.md"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },

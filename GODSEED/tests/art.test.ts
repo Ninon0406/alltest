@@ -50,7 +50,7 @@ const visible=(pixels:Buffer)=>{let count=0;for(let i=3;i<pixels.length;i+=4)if(
 
 describe('original layered-stage assets and layout bounds',()=>{
  it('contains three distinct nonempty full-size layers for each reachable stage',()=>{
-  expect([...STAGES].sort()).toEqual(['archive','forest','garden','stream','village','workshop']);
+  expect([...STAGES].sort()).toEqual(['archive','forest','garden','ruins','stream','village','workshop']);
   for(const stage of STAGES){
    const hashes=[];
    for(const layer of ['rear','ground','front']){
@@ -72,13 +72,13 @@ describe('original layered-stage assets and layout bounds',()=>{
   for(let index=0;index<16;index++)expect(visible(frame(ambient,index,32,32)),`ambient ${index}`).toBeGreaterThan(0);
   for(const stage of STAGES){
    const layout=stageLayouts[stage];
-   expect(layout.props.length,`${stage} interactive scenery`).toBeGreaterThan(0);
+   expect(layout.props.length+(layout.customProps?.length||0),`${stage} interactive scenery`).toBeGreaterThan(0);
    expect(layout.ambient.length,`${stage} animated atmosphere`).toBeGreaterThan(0);
    for(const prop of layout.props){
     expect(Number.isInteger(prop.frame)).toBe(true);
     expect(prop.frame).toBeGreaterThanOrEqual(0);expect(prop.frame).toBeLessThan(8);
    }
-   for(const anchor of [...layout.props,...layout.ambient]){
+   for(const anchor of [...layout.props,...(layout.customProps||[]),...layout.ambient]){
     expect(anchor.x,`${stage} anchor x`).toBeGreaterThanOrEqual(0);expect(anchor.x).toBeLessThanOrEqual(480);
     expect(anchor.y,`${stage} anchor y`).toBeGreaterThanOrEqual(0);expect(anchor.y).toBeLessThanOrEqual(270);
    }

@@ -166,3 +166,10 @@ Runtime screenshots inspected on phone/desktop; five simulated viewports tested.
 Original warm limewash, timber/brass shelving, arched rune niche, sunlit window/towers, oak work surfaces, herb bundles and a jade/gold rug. Keep480×270/32×48/sole44. Threelayers are actual game scenery; no reference pixels are sampled or copied. Interactive cauldron96×96×6 and toolbox56×40×3 use their authored foot positions. Held box64×48×4 keeps the hero centered; north brewer32×48×8 uses the original back-facing head. Atlas21cells16×16 represents actual8cores/6forms/7mods. No emoji/third-party sprites.
 
 Ingredient→mix→discovery uses bounded3icon sprites +24VFXparticles(8reduced), at cauldron(240,170); normal damage calculation never reads these particles. Room has forge flames, simmer/steam and motes. ExistingMotion toggle freezes prop frames and shortens transitions. All70PNG reproduce byte-identically; existing62unchanged. Still a procedural prototype, not finalHD/reference08 complete.
+
+
+## Session19 — Reference09 listening sanctuary, candidate0.9.0
+
+Viewed reference09 and the10-scene contact sheet. Original480×270 study uses cream/lavender stone, jade vegetation and water, warm carved gold, worn portal/statues, hanging flowers and distant aqueducts. No concept pixels sampled or loaded by runtime. EightPNG151337bytes:3layers+compositefallback,96×112altar12frames(4columns×3states),48×112pillar,64×64sentry16frames(4columns×4poses),32×48northhero10frames(8columns×2rows;unusedcells transparent). Source70oldPNG unchanged;78reproducible.
+
+Altar sealed/open/remembered is driven by ruins_clue/battle_B03_done/song_fragment; already remembered remains remembered after a battle. Pillars sort at242, altar185, actors feet=centerY+20; sentry source sole60 uses originY40/64. Rune/musicbox gestures preserve our own north head/boots; trace/offering/reading/listening use authored anchors and restrained12glyph sprites(4reduced). Water/fire/leaves reuse existing original atlases. Browser captures reviewed on phone/desktop; still procedural prototype, not finalHD, complete reference09 conversion, hardware/FPS or a golden pixel-diff baseline.

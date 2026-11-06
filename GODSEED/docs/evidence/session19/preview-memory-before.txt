@@ -1,0 +1,50 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveAttribute(expected) failed
+
+Locator:  locator('#canvas')
+Expected: "open"
+Received: "remembered"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms
+  - waiting for locator('#canvas')
+    13 × locator resolved to <div role="img" id="canvas" data-stage="ruins" data-npc="eira-v3" data-walk-trace="" data-npc-frame="0" data-prop-count="3" data-hero-frame="9" data-last-cue="cast" data-resting="false" data-altar-frame="8" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-location="ruins" data-ambient-tick="0" data-memory-props="0" data-last-path="none" data-garden-art="none" data-path-phase="idle" data-ruins-beat="idle" data-rune-ward="false" data-path-progress="0" data-active-effects="0" dat…>…</div>
+       - unexpected value "remembered"
+
+    at captureRawStack (/workspace/alltest/GODSEED/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/workspace/alltest/GODSEED/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toHaveAttribute (/workspace/alltest/GODSEED/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /workspace/alltest/GODSEED/docs/evidence/session19/verify-ruins.mjs:38:111 {
+  matcherResult: {
+    name: 'toHaveAttribute',
+    expected: 'open',
+    message: 'expect(locator).toHaveAttribute(expected) failed\n' +
+      '\n' +
+      "Locator:  locator('#canvas')\n" +
+      'Expected: "open"\n' +
+      'Received: "remembered"\n' +
+      'Timeout:  5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms\n` +
+      "  - waiting for locator('#canvas')\n" +
+      '    13 × locator resolved to <div role="img" id="canvas" data-stage="ruins" data-npc="eira-v3" data-walk-trace="" data-npc-frame="0" data-prop-count="3" data-hero-frame="9" data-last-cue="cast" data-resting="false" data-altar-frame="8" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-location="ruins" data-ambient-tick="0" data-memory-props="0" data-last-path="none" data-garden-art="none" data-path-phase="idle" data-ruins-beat="idle" data-rune-ward="false" data-path-progress="0" data-active-effects="0" dat…>…</div>\n' +
+      '       - unexpected value "remembered"\n',
+    pass: false,
+    actual: 'remembered',
+    log: [
+      `  - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms`,
+      "  - waiting for locator('#canvas')",
+      '    13 × locator resolved to <div role="img" id="canvas" data-stage="ruins" data-npc="eira-v3" data-walk-trace="" data-npc-frame="0" data-prop-count="3" data-hero-frame="9" data-last-cue="cast" data-resting="false" data-altar-frame="8" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-location="ruins" data-ambient-tick="0" data-memory-props="0" data-last-path="none" data-garden-art="none" data-path-phase="idle" data-ruins-beat="idle" data-rune-ward="false" data-path-progress="0" data-active-effects="0" dat…>…</div>',
+      '       - unexpected value "remembered"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- img "โลกพิกเซลของ GODSEED"'
+  }
+}
+
+Node.js v24.19.0

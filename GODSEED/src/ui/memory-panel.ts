@@ -11,6 +11,9 @@ export function memoryPanel(host:HTMLElement,state:State){
  if(state.flags.stream_clean)text('p','ลำธารกลับมาใส · หมอกใต้สะพานจางลง');
  if(state.choices.includes('CH1201'))text('p','ช่วยกระดิ่งจากรากไม้ · เก็บกระดิ่งเก่าไว้แล้ว');
  if(state.flags.archive_read)text('p','ไอราเก็บหน้ารูนไว้ให้ · อ่านร่องรอยบนแผนที่แล้ว');
+ if(state.flags.song_fragment)text('p','โน้ตจากจารึกแห่งคำสัญญา · บันทึกทำนองแล้ว');
+ if(state.flags.archive_notes_complete)text('p','ภารกิจบันทึกหอสมุด · สำเร็จ รับเส้นใยดาราและความไว้วางใจไอราครั้งแรกแล้ว');
+ if(state.flags.battle_B03_done)text('p','หุ่นรูนเปิดทาง · บันทึกรางวัลชัยชนะครั้งแรกแล้ว');
  text('h2','ผู้คนที่ร่วมเรื่องราว');
  const names:Record<string,string>={LUMI:'ลูมิ',MAREN:'มาเรน',KORO:'คุโร',PIP:'พิพ',EIRA:'ไอรา'};
  for(const [id,value] of Object.entries(state.trust))text('p',`${names[id]||id}: ความไว้วางใจ ${value}`);

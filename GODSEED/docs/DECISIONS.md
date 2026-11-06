@@ -226,3 +226,14 @@ Inspection found skip cancels in mid-lane: retain a validated endpoint until exp
 
 
 Session18 release receipt: after local/PR/main113PASS and actualpublic0.8.0 verification, freeze runtime atff5e67d (mergef465839). Record remaining provisional art, training legacy room, hardware/FPS/fun gates and unchanged27.6% checklist. Do not mark whole VIS008/MAG007 complete from a workshop subgate. Closing documentation/evidence commit uses [skip ci] because no runtime or build inputs change; post-Actions hashes and scoped roadmap validation provide the receipt.
+
+
+## Session19 — 2026-11-06 UTC — canonical listening routes before later bosses
+
+Continue from1b9d598; choose VIS008/STO001/CMB006. Deliver S15–17/CH0207/B03 as one playable content/art group. B04 needs its S21/festival route and remains pending; do not expose a fake boss/festival option. Count21scenes70choices4encounters7stages,234unchanged,0chapterendings. No whole milestone is DONE from this partial batch.
+
+Q_ARCHIVE_NOTES has one shared reward flag for both canonical completion choices. Reward eligibility is checked before effects, and route flags restore the last branch independent of first-visit-only choice history. Reuse File2/State2 rather than destructive migrations; new gameVersion guards downgrade. Only explicit manual files are read/written.
+
+B03 uses canonical66HP/10power/EARTH20%. On every third enemy action, announce then apply a two-player-action ward and make no attack; do not change an announced intent after player damage. PIERCE mitigates the half reduction.32seeds×2starterpolicies win4–7turns; this measures reachability rather than human enjoyment. Reuse existing reusable WARD spell engine instead of adding fake recipes.
+
+Dedicated prop metadata and lazy NPC/water dependencies extend existing asset contracts. Original art remains provisional. Test failures were retained and fixed: map clearance, missing MP in fixture, legacy-only prop validation, wrong button label, observation timing, remembered-vs-open probe, and the real FLEE/pillar intersection. Stop the superseded full suite and rerun final source; never claim its partial passes as complete.

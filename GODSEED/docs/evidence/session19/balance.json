@@ -1,0 +1,680 @@
+{
+  "kind": "pure-engine deterministic simulation; no human fun/hardware claim",
+  "starter": "WIND_ORB_SEEK; original100HP/40MP; genuine story grants only",
+  "policies": {
+    "cast-until-empty": {
+      "runs": 32,
+      "wins": 32,
+      "turns": [
+        4,
+        4
+      ],
+      "hp": [
+        80,
+        80
+      ],
+      "mp": [
+        0,
+        0
+      ]
+    },
+    "read-intent": {
+      "runs": 32,
+      "wins": 32,
+      "turns": [
+        7,
+        7
+      ],
+      "hp": [
+        60,
+        60
+      ],
+      "mp": [
+        2,
+        2
+      ]
+    }
+  },
+  "rows": [
+    {
+      "policy": "cast-until-empty",
+      "seed": 1,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 2,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 3,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 4,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 5,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 6,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 7,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 8,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 9,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 10,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 11,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 12,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 13,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 14,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 15,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 16,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 17,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 18,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 19,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 20,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 21,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 22,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 23,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 24,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 25,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 26,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 27,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 28,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 29,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 30,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 31,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "cast-until-empty",
+      "seed": 32,
+      "result": "WIN",
+      "hp": 80,
+      "mp": 0,
+      "turns": 4,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 1,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 2,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 3,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 4,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 5,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 6,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 7,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 8,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 9,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 10,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 11,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 12,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 13,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 14,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 15,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 16,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 17,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 18,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 19,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 20,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 21,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 22,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 23,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 24,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 25,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 26,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 27,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 28,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 29,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 30,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 31,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    },
+    {
+      "policy": "read-intent",
+      "seed": 32,
+      "result": "WIN",
+      "hp": 60,
+      "mp": 2,
+      "turns": 7,
+      "xp": 28,
+      "ward": 1
+    }
+  ]
+}
