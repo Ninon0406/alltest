@@ -5,6 +5,29 @@ import {fileURLToPath} from 'node:url';
 import {describe,expect,it} from 'vitest';
 import {actorFrame,playerAnimations,trainingAnimations} from '../src/scenes/actor-art';
 import {STAGES,stageLayouts,stageFolder} from '../src/scenes/stage-layout';
+import {gardenMap,gardenScenery} from '../src/scenes/garden-map';
+
+it('herbalist arch leaves a genuine open passage, grounded piers and transparent surroundings',()=>{
+ const arch=image('art-v9/garden-arch.png');expect([arch.width,arch.height]).toEqual([gardenScenery.arch.width,gardenScenery.arch.height]);
+ const alpha=(x:number,y:number)=>arch.data[(y*arch.width+x)*4+3];
+ expect(alpha(26,141)).toBe(255);expect(alpha(86,141)).toBe(255);expect(alpha(56,110)).toBe(0);expect(alpha(105,141)).toBe(0);
+ expect(visible(arch.data)).toBeGreaterThan(2000);expect(visible(arch.data)).toBeLessThan(arch.width*arch.height*.65);
+});
+it('garden ground roads cover the actual foot anchors while retaining the cottage face cutout',()=>{
+ const ground=image('art-v9/garden-ground.png'),stoneColors=new Set(['b3b28a','9d9f83','e1d2ae','c9c2a2','d4c8a7','9eac7e']);
+ for(const a of Object.values(gardenMap.anchors)){
+  const i=(a.y*480+a.x)*4;expect(ground.data[i+3],`ground at ${a.x}/${a.y}`).toBe(255);expect(stoneColors.has(ground.data.subarray(i,i+3).toString('hex'))).toBe(true);
+ }
+ expect(ground.data[(170*480+150)*4+3]).toBe(0);
+});
+it('cauldron and hanging herbs use bounded real animation frames with a stable pot contact',()=>{
+ for(const [name,width,height,count] of [['cauldron',64,96,6],['herbs',96,48,4]] as const){
+  const sheet=image(`art-v9/garden-${name}.png`);expect([sheet.width,sheet.height]).toEqual([width*count,height]);
+  const cells=Array.from({length:count},(_,i)=>frame(sheet,i,width,height));expect(new Set(cells.map(digest)).size).toBe(count);
+  cells.forEach(p=>expect(visible(p)).toBeGreaterThan(100));
+  if(name==='cauldron')expect(new Set(cells.map(p=>digest(p.subarray(84*width*4)))).size).toBe(1);
+ }
+});
 
 it('gathering atlas has three distinct grounded silhouettes and four real glint frames',()=>{
  const sheet=image('art-v6/gathering.png');expect([sheet.width,sheet.height]).toEqual([96,72]);const kinds=[];

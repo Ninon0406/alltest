@@ -1,4 +1,4 @@
-# Content index0.6.0
+# Content index 0.7.1
 
 Computed with `npm run inspect:content` (`scripts/inspect-content.mjs` imports actual typed source through Vite SSR; no browser/gameplay writes).
 
@@ -44,3 +44,8 @@ Session13: counts unchanged18/60/5NPC/3encounters/234legal/0endings/6stageIDs. A
 รอบ14 / 0.6.2: ตรวจ source อีกครั้ง 18Scene/60Choice/5NPC/3Encounters/234legal/0Endings/6Stages เท่าเดิม; 53runtimePNG, 42versionedPNG รวมแปลงและท่ารดน้ำใหม่ 2 ไฟล์ การผสมที่ทดสอบจากของจริงยัง 5 สูตร ไม่ใช่การเข้าถึง234สูตรทั้งหมดจากเนื้อเรื่อง
 
 Session15/0.7.0: source counts unchanged18scenes/60choices/5NPC/3encounters/234legal/0endings/6stages. NewMaren runtimeactor replacespresentation only; existingCH0602flags now have a seated/hummingtimeline. 54PNG runtime /43versionedPNG plusownedSVGmark. State2 unchanged; fileformat2 replacesbrowserstorage.
+
+
+## รอบ 16 — ตรวจจาก source 2026-11-06
+
+inspect:content ยืนยัน 18 Scene / 60 Choice / 5 NPC / 3 Encounter / 234 legal / 0 Endings / 6 Stage เหมือนเดิม เพิ่มเฉพาะ presentation location `elder_garden`, แผนที่/ต้นฉบับภาพสวน และการนั่งตาม CH03B1 ไม่มี Story ID, loot, สูตร หรือศัตรูใหม่ State2/File2 เดิม; GAME_VERSION 0.7.1

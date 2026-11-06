@@ -39,3 +39,9 @@ it('listening uses the real bench support and remembers the song without inventi
  const route=choicePaths.CH0602;expect(route.points.at(-1)).toEqual({x:312,y:197});expect(route.seatDepth).toBe(243);expect(route.facing).toBe('east');
  let s=fresh();for(const id of ['CH0001','CH0101','CH0203'])s=choose(s,id);const inventory=structuredClone(s.inventory);const next=choose(s,'CH0602');expect(next.inventory).toEqual(inventory);expect(next.flags.maren_listened).toBe(true);expect(next.flags.song_memory_hint).toBe(true);expect(rememberedLines({...next,scene:'S06_GARDEN'},scenes.S06_GARDEN).join()).toContain('เคยนั่งฟัง');
 });
+it('staging Maren history as seated dialogue preserves its original talk-time and reward rules',()=>{
+ let s=fresh();for(const id of ['CH0001','CH0101','CH0201','CH0301'])s=choose(s,id);
+ s={...s,hp:17,mp:4};const next=choose(s,'CH03B1');
+ expect(scenes.S03B_MAREN.choices.find(c=>c.id==='CH03B1')?.cue).toBe('talk');
+ expect(next.hp).toBe(17);expect(next.mp).toBe(4);expect(next.ticks).toBe(s.ticks);expect(next.inventory.CORE_BLOOM).toBe(1);expect(next.trust.MAREN).toBe(2);
+});

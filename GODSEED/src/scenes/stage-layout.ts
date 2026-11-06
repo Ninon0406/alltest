@@ -1,7 +1,7 @@
 export const STAGES=['village','garden','workshop','forest','archive','stream'] as const;
 export type StageId=typeof STAGES[number];
 export type AmbientKind='cloud'|'leaf'|'fire'|'glow'|'water';
-export const stageFolder=(stage:StageId)=>stage==='village'?'art-v5':stage==='archive'||stage==='stream'?'art-v3':'art-v2';
+export const stageFolder=(stage:StageId)=>stage==='village'?'art-v5':stage==='garden'?'art-v9':stage==='archive'||stage==='stream'?'art-v3':'art-v2';
 export const stageFallback=(stage:StageId)=>stage==='archive'||stage==='stream'?`art-v3/${stage}-fallback.png`:`${stage}.png`;
 export type StageLayout={
  /** A story spell acts on the scenery; battle spells continue targeting combatants. */
@@ -30,8 +30,8 @@ export const stageLayouts:Record<StageId,StageLayout>={
   ambient:[{kind:'cloud',x:124,y:33},{kind:'cloud',x:281,y:47},{kind:'leaf',x:30,y:145},{kind:'leaf',x:435,y:151},{kind:'glow',x:254,y:159}],
  },
  garden:{
-  props:[{frame:1,x:312,y:242},{frame:3,x:96,y:205},{frame:4,x:128,y:175},{frame:5,x:46,y:219},{frame:5,x:430,y:212}],
-  ambient:[{kind:'cloud',x:155,y:38},{kind:'leaf',x:58,y:169},{kind:'leaf',x:415,y:165},{kind:'glow',x:251,y:112},{kind:'glow',x:367,y:173}],
+  props:[{frame:1,x:gardenScenery.bench.x,y:gardenScenery.bench.y},{frame:3,x:96,y:205},{frame:4,x:128,y:175},{frame:5,x:46,y:219},{frame:5,x:430,y:212}],
+  ambient:[{kind:'cloud',x:338,y:35},{kind:'leaf',x:32,y:85},{kind:'leaf',x:447,y:210},{kind:'glow',x:414,y:165},{kind:'glow',x:209,y:120}],
  },
  workshop:{
   props:[{frame:2,x:78,y:245},{frame:2,x:240,y:176},{frame:5,x:64,y:167},{frame:4,x:347,y:158},{frame:7,x:304,y:173}],
@@ -42,3 +42,4 @@ export const stageLayouts:Record<StageId,StageLayout>={
   ambient:[{kind:'cloud',x:230,y:60},{kind:'leaf',x:82,y:147},{kind:'leaf',x:393,y:155},{kind:'glow',x:286,y:160},{kind:'glow',x:364,y:196},{kind:'glow',x:117,y:187}],
  },
 };
+import {gardenScenery} from './garden-map';

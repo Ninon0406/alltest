@@ -1,0 +1,82 @@
+
+> godseed@0.7.1 test:all
+> npm run roadmap:check && npm run validate:references && npm run validate:manual-save && npm run typecheck && npm run lint && npm run validate:content && npm test && npm run build
+
+
+> godseed@0.7.1 roadmap:check
+> node --test scripts/roadmap.test.mjs && node scripts/roadmap.mjs
+
+✔ counts only DONE, including zero/all and each non-done state (1.956239ms)
+✔ current audit has valid references, deterministic checklist and checked boxes only for DONE (10.213209ms)
+✔ duplicate and unknown dependency IDs reject (4.412749ms)
+✔ cycles and missing source evidence reject (4.090578ms)
+✔ unsupported status and DONE without actual verification record reject (1.417668ms)
+✔ next-work list excludes completed tasks and promotes actual regressions (2.16874ms)
+✔ location records reject missing aspects, duplicate locations and premature final readiness (7.427118ms)
+✔ manual save subtasks have stable IDs, evidence and do not inflate the main denominator (2.895786ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.877215
+{"result":"PASS","done":20,"in_progress":39,"not_started":16,"problem":0,"blocked":1,"total":76,"percent":26.3,"v1":{"done":20,"in_progress":39,"not_started":13,"problem":0,"blocked":1,"total":73,"percent":27.4}}
+
+> godseed@0.7.1 validate:references
+> node scripts/validate-references.mjs
+
+{"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}
+
+> godseed@0.7.1 validate:manual-save
+> node scripts/validate-manual-save.mjs
+
+{"result":"PASS","applicationFiles":28,"policy":"RAM only; explicit file export/import; no progress storage or outbound upload API in application source"}
+
+> godseed@0.7.1 typecheck
+> tsc --noEmit
+
+
+> godseed@0.7.1 lint
+> eslint src tests
+
+
+> godseed@0.7.1 validate:content
+> vitest run tests/content.test.ts
+
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  09:02:37
+   Duration  320ms (transform 120ms, setup 0ms, import 185ms, tests 17ms, environment 0ms)
+
+
+> godseed@0.7.1 test
+> vitest run tests/unit.test.ts tests/save.test.ts tests/combat.test.ts tests/balance.test.ts tests/art.test.ts tests/exploration.test.ts tests/alchemy.test.ts tests/cinematics.test.ts tests/directional.test.ts tests/camera.test.ts tests/scene-definitions.test.ts tests/gathering.test.ts tests/garden.test.ts
+
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+
+ Test Files  13 passed (13)
+      Tests  121 passed (121)
+   Start at  09:02:37
+   Duration  3.77s (transform 326ms, setup 0ms, import 940ms, tests 1.36s, environment 1ms)
+
+
+> godseed@0.7.1 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 108 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.60 kB │ gzip:   0.43 kB
+dist/assets/index-CoaNX5A0.css      7.46 kB │ gzip:   2.43 kB
+dist/assets/index-5zSTAV7n.js   1,562.73 kB │ gzip: 423.52 kB
+✓ built in 3.90s
