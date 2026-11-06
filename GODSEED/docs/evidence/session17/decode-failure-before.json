@@ -1,0 +1,8 @@
+{
+  "errors": [
+    "Failed to process file: %s \"%s\" image garden-ground-v2"
+  ],
+  "status": "ready",
+  "gardenArt": "legacy",
+  "retryButtons": 0
+}

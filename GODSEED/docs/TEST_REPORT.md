@@ -471,3 +471,5 @@ Source `5847801` / PR #15 / main merge `8950542`. Local Browser 93/93 ผ่า�
 TypeScript/Lint/Content2/Unit125/Roadmap8/Build/manual-sourcegate/referencepackingPASS Focused11/11PASS1.2m รวม23PNGtitle/revisit0/importunvisited/fault/repeatedretry/timeout8s/RAMdirtyanchor/Koro5viewport/reduced/fallback. Existing93+new11=104Fullcasesกำลังรันก่อนmerge; CI/publicยังรอผลและบันทึกใน[evidence/session17/REPORT_TH.md](evidence/session17/REPORT_TH.md). ไม่ใช้ผลรอบก่อนแทน
 
 62PNGสร้างซ้ำตรงbyte/60เดิมไม่เปลี่ยน/2ใหม่10905bytes. ActualtitlePNG629017→301231bytes/57→23; coldwarmวัดจริงในpreview-staged-art.json. State2/File2เดิม ไม่เพิ่มpersistentGameState. ประวัติfailedretry/timeout/typeerrorและวิธีแก้ในSession17README. FinalHD/hardware/FPS/humanfunยังไม่ยืนยัน
+
+Final decoder audit: initialshared/lazyGarden HTTP200 damagedPNG now degrades and retries correctly with unchangedRAM. Unit126/Focus12PASS; priorlocal104/PRCI42207916293 cancelled as superseded, latestfull105pending. SeeSession17decode-failure-before.json andfocused-browser.txt.

@@ -104,6 +104,7 @@ export class World extends Phaser.Scene {
   this.assetWork=work;this.queueArt(assets);this.reportArt();this.load.start();await work;
  }
  preload(){
+  this.load.on('complete',()=>{this.art.settle();this.reportArt();});
   this.load.on('loaderror',(file:{key:string})=>this.art.fail(file.key));
   this.load.on('filecomplete',(key:string)=>this.art.complete(key));
   this.load.on('progress',()=>this.reportArt());

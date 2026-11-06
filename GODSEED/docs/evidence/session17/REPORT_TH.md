@@ -32,9 +32,9 @@ Manual File SaveยังเฉพาะRAMและไฟล์.godseedที�
 | Gate | ผลตรวจล่าสุด |
 | --- | --- |
 | npmci / TypeScript / Lint / ProductionBuild | ผ่าน |
-| GameUnit / Content / Roadmap | 125 / 2 / 8 ผ่าน |
-| FocusedBrowser | 11/11ผ่าน1.2นาที |
-| FullBrowser | กำลังทดสอบ104กรณี;ยังไม่ประกาศผ่าน |
+| GameUnit / Content / Roadmap | 126 / 2 / 8 ผ่าน |
+| FocusedBrowser | 12/12ผ่าน1.2นาที |
+| FullBrowser | กำลังทดสอบ105กรณี;ยังไม่ประกาศผ่าน |
 | PR CI / Main CI / GitHub Pages | รอCommitและผลWorkflow |
 | Reference packing / ManualSave source gate | ผ่าน;ไม่มีReferenceในdist |
 | PNG reproduction | 62ตรงbyte;60เดิมคงอยู่;2ใหม่ |
@@ -44,7 +44,7 @@ Manual File SaveยังเฉพาะRAMและไฟล์.godseedที�
 
 วัดหน้าเริ่มจริง:57→23PNG, encodedbytes629,017→301,231 ลด52.1% ทั้งphone/desktop Browserwarmreloadยังขอ23URLแต่ถ่ายโอนเพียง6,900bytesบนPreview (header/cachevalidation); กลับฉากในsessionเดียว0คำขอภาพเพิ่ม ไม่ใช่การรับรองFPSหรือความเร็วบนฮาร์ดแวร์
 
-ประวัติที่ไม่ผ่าน: defaultretryทำให้3คำขอแทน1; stalledtestพบtimeout0; patchแรกTypeScriptไม่ผ่านและtestใช้Buildก่อนหน้า แก้responseTypeblob/per-filetimeout/maxRetries0และบังคับBuildผ่านก่อนรันใหม่ Focus11ผ่านจริง ไม่มีการskipหรือลดAssertion
+ประวัติที่ไม่ผ่าน: defaultretryทำให้3คำขอแทน1; stalledtestพบtimeout0; patchแรกTypeScriptไม่ผ่านและtestใช้Buildก่อนหน้า แก้responseTypeblob/per-filetimeout/maxRetries0และบังคับBuildผ่านก่อนรันใหม่ Focus12ผ่านจริง ไม่มีการskipหรือลดAssertion
 
 ## 5. ความคืบหน้าและChecklistจนถึง1.0
 

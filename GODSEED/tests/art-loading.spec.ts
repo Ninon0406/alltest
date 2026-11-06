@@ -56,3 +56,11 @@ test('a stalled stage asset times out, unlocks controls and can be retried witho
  const next=await exportedState(page);expect(next.revision).toBe(before.revision+1);expect(next.choices.filter((id:string)=>id==='CH0202')).toHaveLength(1);
  release();await page.unroute(failed);await tap(page,'ลองโหลดภาพอีกครั้ง');await expect(canvas).toHaveAttribute('data-npc','koro-v10');await expect(canvas).toHaveAttribute('data-npc-animation','koro-v10-hammer');expect(await exportedState(page)).toEqual(next);
 });
+test('HTTP200 with undecodable PNG offers recovery and preserves the exact current file checkpoint',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});const failed='**/assets/art-v9/garden-ground.png',errors:string[]=[];
+ page.on('pageerror',e=>errors.push(e.message));const corrupt=(r:import('@playwright/test').Route)=>r.fulfill({status:200,contentType:'image/png',body:'damaged PNG'});
+ const shared='**/assets/art-v4/hero-walk.png';await page.route(shared,corrupt);await page.route(failed,corrupt);
+ await page.goto('/');await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','degraded');await expect(page.getByRole('button',{name:'ลองโหลดภาพอีกครั้ง',exact:true})).toBeEnabled();await page.unroute(shared);await tap(page,'ลองโหลดภาพอีกครั้ง');await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','ready');await hub(page);await tap(page,'แวะสวนดอกไม้ของยายมาเรน');const canvas=page.locator('#canvas');
+ await expect(canvas).toHaveAttribute('data-render-status','degraded');await expect(canvas).toHaveAttribute('data-garden-art','legacy');
+ const before=await exportedState(page);await page.unroute(failed);await tap(page,'ลองโหลดภาพอีกครั้ง');await expect(canvas).toHaveAttribute('data-render-status','ready');await expect(canvas).toHaveAttribute('data-garden-art','herbalist-v9');expect(await exportedState(page)).toEqual(before);expect(errors).toEqual([]);
+});

@@ -29,6 +29,8 @@ export class ArtLedger {
  request(assets:readonly ArtAsset[]){for(const a of assets)this.attempts.set(a.key,(this.attempts.get(a.key)||0)+1);}
  complete(key:string){this.successful.add(key);this.failures.delete(key);}
  fail(key:string){this.failures.add(key);}
+ /** Phaser decode errors do not emit loaderror. Reconcile every settled batch. */
+ settle(){for(const key of this.attempts.keys())if(!this.successful.has(key))this.failures.add(key);}
  errors(stage:StageId){return artForStage(stage).filter(a=>this.failures.has(a.key)).map(a=>a.key);}
  get requests(){return [...this.attempts.values()].reduce((a,b)=>a+b,0);}
  get loaded(){return this.successful.size;}

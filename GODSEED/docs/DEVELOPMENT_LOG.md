@@ -339,3 +339,8 @@ RoadmapFND004doneบนเกณฑ์เฉพาะงาน;21/76=27.6%,v121/
 งานถัดไป5ตามDependency:1)Fixedworkshopmap/anchors/collidersจากReference08 2)craftcauldron+ingredientstagingกับสูตรเดิม 3)เส้นทางบ้าน–ประตู–จัตุรัส 4)ตัวละคร/NPCท่าโต้ตอบที่เหลือ 5)boss/mercy/puzzleเพื่อปลดเนื้อเรื่องท้ายบทพร้อมregression ทั้งหมดเก็บรายละเอียดในRoadmap; HardwareQAแยกไม่วนทำManualSaveซ้ำ
 
 ผลfull/CI/commit/PR/main/deploy/actualpublicจะเพิ่มเป็นreceiptท้ายรอบตามผลจริง ดูevidence/session17 ไม่อ้างผลSession16แทน
+
+
+### Session17 final audit — decode failure regression
+
+หลังf851d09/PR16ตรวจvendorและจำลองHTTP200แต่PNGเสีย พบใช้legacyแต่statusreadyและไม่มีretryจริง ดูdecode-failure-before.json เปลี่ยนFND004เป็นproblemระหว่างแก้ เพิ่มArtLedger.settleตรวจrequestedที่decodeไม่สำเร็จเมื่อbatchcompleteและรายงานUIทั้งpreload/prepare เก็บUnitใหม่และBrowsercaseทั้งinitialshared+lazyGarden ไม่เพิ่มงานหรือเปลี่ยนเกม. FinalUnit126/Focus12PASS1.2m จึงคืนFND004doneตามเกณฑ์. ยกเลิกlocal104และCI42207916293ซึ่งทดสอบsourceก่อนแก้ ไม่ใช้เป็นpass; finalfullเป็น105casesจากโค้ดล่าสุด

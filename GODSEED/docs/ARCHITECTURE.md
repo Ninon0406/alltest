@@ -197,3 +197,5 @@ Both image and spritesheet requests carry XHR responseType blob/timeout8000. Pha
 Retry calls prepare(current,true) then show(current,true), never ManualSession.commit/load: preserve menu, checkpoint, seated support, revision/RNG/dirty flag. It does not refresh the page. No save format migration: State2/File2 remains, GAME_VERSION0.7.2.
 
 `workshop-staging.ts` defines the anvil foot(321,237), hammer contact(324,217), and Koro's32×48 cycles. The prop sorts by foot Y, avoids existing authored player lanes and disappears for training encounters. CH0401/S05 show the three-sigil recipe; S04 forges only with a loaded anvil. Sprite/anvil fallbacks remain usable. Renderer never changes rewards/AI/damage/world flags. Full Reference08 map/collision/crafting furnace still outstanding.
+
+ArtLedger.settle reconciles all attempted keys against successful filecomplete keys on every loader complete. Phaser4.2.1 decode failures call onProcessError without loaderror; the batch reconciliation makes truncated HTTP200 PNGs visible to fallback/retry on both initial preload and later stage loading.

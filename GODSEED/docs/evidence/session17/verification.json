@@ -1,10 +1,10 @@
 {
   "version": "0.7.2",
   "base": "78a2497",
-  "gameUnit": 125,
+  "gameUnit": 126,
   "contentTests": 2,
   "roadmapTests": 8,
-  "focusedE2E": 11,
+  "focusedE2E": 12,
   "localE2E": null,
   "prCI": null,
   "mainCI": null,
@@ -57,7 +57,13 @@
     "consoleErrors": [],
     "hardware": "NOT_TESTED"
   },
-  "jsSha256": "32e48e992ba4af6c233c33b34a6d62d5e7903c37bb59b7621753aa3de5aad599",
+  "jsSha256": "85c1c2b2a1b086574f72559076401e195640a7acd174be53f088892c327f29ae",
   "fullAndDeployment": "PENDING",
-  "hardware": "NOT_TESTED"
+  "hardware": "NOT_TESTED",
+  "supersededSource": "f851d09dcbfc2dc3e8e803fd85fa23cf81385098",
+  "supersededPRCI": {
+    "id": 42207916293,
+    "result": "CANCELLED: decoder fix superseded source"
+  },
+  "finalPlannedBrowserCases": 105
 }

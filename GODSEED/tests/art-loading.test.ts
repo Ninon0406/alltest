@@ -34,4 +34,11 @@ describe('staged, recoverable art loading',()=>{
   const again=ledger.pending('garden',true);ledger.request(again);ledger.fail('maren-v8');expect(ledger.pending('garden',true).map(a=>a.key)).toEqual(['maren-v8']);
   expect(ledger.requests).toBe(first.length+garden.length+2);ledger.complete('maren-v8');expect(ledger.errors('garden')).toEqual([]);
  });
+ it('recognizes a settled file that decoded unsuccessfully without a loaderror event',()=>{
+  const ledger=new ArtLedger(),batch=ledger.pending('village');ledger.request(batch);
+  batch.filter(a=>a.key!=='fountain-v5').forEach(a=>ledger.complete(a.key));
+  ledger.settle();expect(ledger.errors('village')).toEqual(['fountain-v5']);expect(ledger.pending('village')).toEqual([]);
+  const retry=ledger.pending('village',true);ledger.request(retry);ledger.complete('fountain-v5');ledger.settle();
+  expect(ledger.errors('village')).toEqual([]);expect(ledger.loaded).toBe(batch.length);
+ });
 });
