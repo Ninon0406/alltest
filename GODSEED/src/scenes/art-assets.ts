@@ -25,20 +25,20 @@ export const artAssets:readonly ArtAsset[]=[
  sheet('glade-resonator-v15','art-v15/resonator.png','glade',96,112),sheet('glade-post-v15','art-v15/post.png','glade',48,112),sheet('echo-knot-v15','art-v15/echo-knot.png','glade',64,64),
  image('stream-mist-v3','art-v3/stream-mist.png','stream'),{...sheet('water-v3','art-v3/water.png','stream',32,32),alsoFor:['ruins','glade']},sheet('wisp-v3','art-v3/wisp.png','stream'),
 ];
-export const artForStage=(stage:StageId)=>artAssets.filter(asset=>asset.group==='shared'||asset.group===stage||!!asset.alsoFor?.includes(stage));
+export const artForStage=(stage:StageId,actor?:string)=>artAssets.filter(asset=>asset.group==='shared'||asset.group===stage||!!asset.alsoFor?.includes(stage)||asset.key===actor);
 /** Failed files are attempted again only on an explicit retry. Successful assets
  * stay in Phaser's memory cache; scene revisits do not issue new requests. */
 export class ArtLedger {
  private attempts=new Map<string,number>();
  private successful=new Set<string>();
  private failures=new Set<string>();
- pending(stage:StageId,retry=false){return artForStage(stage).filter(a=>retry?this.failures.has(a.key):!this.attempts.has(a.key));}
+ pending(stage:StageId,retry=false,actor?:string){return artForStage(stage,actor).filter(a=>retry?this.failures.has(a.key):!this.attempts.has(a.key));}
  request(assets:readonly ArtAsset[]){for(const a of assets)this.attempts.set(a.key,(this.attempts.get(a.key)||0)+1);}
  complete(key:string){this.successful.add(key);this.failures.delete(key);}
  fail(key:string){this.failures.add(key);}
  /** Phaser decode errors do not emit loaderror. Reconcile every settled batch. */
  settle(){for(const key of this.attempts.keys())if(!this.successful.has(key))this.failures.add(key);}
- errors(stage:StageId){return artForStage(stage).filter(a=>this.failures.has(a.key)).map(a=>a.key);}
+ errors(stage:StageId,actor?:string){return artForStage(stage,actor).filter(a=>this.failures.has(a.key)).map(a=>a.key);}
  get requests(){return [...this.attempts.values()].reduce((a,b)=>a+b,0);}
  get loaded(){return this.successful.size;}
 }

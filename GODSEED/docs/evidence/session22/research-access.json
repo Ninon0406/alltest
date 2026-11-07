@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-07T10:59:04.335Z",
+  "method": "Real isolated Chromium page.goto, no account/login/paywall bypass/source-code copying",
+  "records": [
+    {
+      "url": "https://way-of-xian.wox-game.workers.dev/",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://way-of-xian.wox-game.workers.dev/",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    },
+    {
+      "url": "https://way-of-xian.wox-game.workers.dev/wiki",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://way-of-xian.wox-game.workers.dev/wiki",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    },
+    {
+      "url": "https://www.webnovel.com/book/soul-land_28854123108881805",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.webnovel.com/book/soul-land_28854123108881805",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    },
+    {
+      "url": "https://www.webnovel.com/book/8099443605005505",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.webnovel.com/book/8099443605005505",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    },
+    {
+      "url": "https://www.webnovel.com/book/8093958205004005",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.webnovel.com/book/8093958205004005",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    },
+    {
+      "url": "https://www.webnovel.com/book/14107168305361805",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.webnovel.com/book/14107168305361805",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    },
+    {
+      "url": "https://www.webnovel.com/book/swallowed-star_7213811205000505",
+      "error": "page.goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://www.webnovel.com/book/swallowed-star_7213811205000505",
+      "scope": "Not accessible in this environment; no substitute/mirror used"
+    }
+  ]
+}

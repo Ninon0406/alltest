@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "at": "2026-11-07T11:07:34.058Z",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.12.0",
+  "observedColdVillageActor": "maren",
+  "expectedActor": "eira-v3",
+  "fileSha256": "64cee1785612ddb36115a68f60e59f3901da41d246804481859cd55cc4c61bd6",
+  "stateSha256": "278728586cca897ea1b093b2757435bc09055eeeafff0813208a7d1355aebc05",
+  "activeEcho": true,
+  "saveBytes": "Only /tmp/gs22-published-0.12.0.godseed, never committed or uploaded"
+}

@@ -1,0 +1,40 @@
+[WebServer] (node:18719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:18737) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:18749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/echo.spec.ts:60:1 › a cold imported opening file loads Eira for the village expedition instead of a fallback actor (17.5s)
+
+
+  1) tests/echo.spec.ts:60:1 › a cold imported opening file loads Eira for the village expedition instead of a fallback actor 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('#canvas')
+    Expected: "eira-v3"
+    Received: "maren"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms
+      - waiting for locator('#canvas')
+        14 × locator resolved to <div role="img" id="canvas" data-npc="maren" data-npc-frame="0" data-hero-frame="6" data-stage="village" data-last-cue="walk" data-resting="false" data-prop-count="12" data-trail-focus="0" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-ruins-art="none" data-altar-frame="-1" data-ambient-tick="0" data-memory-props="1" data-time-light="day" data-echo-core="none" data-walk-trace="east" data-garden-art="none" data-path-phase="idle" data-ruins-beat="idle" data-rune-ward="false" d…>…</div>
+           - unexpected value "maren"
+
+
+      60 | test('a cold imported opening file loads Eira for the village expedition instead of a fallback actor',async({page})=>{
+      61 |  await page.setViewportSize({width:390,height:844});await completeOpening(page);const file=await exportFile(page);await page.reload();await loadFile(page,file);
+    > 62 |  await takeLife(page,'CHE_HUB');await expect(canvas(page)).toHaveAttribute('data-npc','eira-v3');await expect(canvas(page)).toHaveAttribute('data-asset-errors','0');await page.screenshot({path:'test-results/echo-cold-eira-390.png',fullPage:true});
+         |                                                            ^
+      63 | });
+      64 |
+        at /workspace/alltest/GODSEED/tests/echo.spec.ts:62:60
+
+    Error Context: test-results/echo-a-cold-imported-openi-1f704-instead-of-a-fallback-actor/error-context.md
+
+  1 failed
+    tests/echo.spec.ts:60:1 › a cold imported opening file loads Eira for the village expedition instead of a fallback actor 
