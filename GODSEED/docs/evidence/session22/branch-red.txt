@@ -1,0 +1,41 @@
+[WebServer] (node:9142) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:9161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:9173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/echo.spec.ts:50:1 › Wind targets the actual blocked stream branch; moving it persists through a manual file (16.5s)
+
+
+  1) tests/echo.spec.ts:50:1 › Wind targets the actual blocked stream branch; moving it persists through a manual file 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('#canvas')
+    Expected: "blocked"
+    Received: ""
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms
+      - waiting for locator('#canvas')
+        14 × locator resolved to <div role="img" id="canvas" data-npc="pip" data-stage="glade" data-npc-frame="0" data-prop-count="3" data-hero-frame="6" data-last-cue="walk" data-resting="false" data-trail-focus="0" data-stage-layers="3" data-motion="reduced" data-asset-errors="0" data-location="glade" data-ruins-art="none" data-altar-frame="-1" data-ambient-tick="0" data-memory-props="0" data-time-light="day" data-echo-core="none" data-walk-trace="east" data-garden-art="none" data-path-phase="idle" data-ruins-beat="idle" data-ru…>…</div>
+           - unexpected value "null"
+
+
+      49 |
+      50 | test('Wind targets the actual blocked stream branch; moving it persists through a manual file',async({page})=>{
+    > 51 |  await page.setViewportSize({width:390,height:844});await enterEcho(page,'/',false);await expect(canvas(page)).toHaveAttribute('data-glade-branch','blocked');await takeLife(page,'CHE_ROAD_WATER');await clickLife(page,'ลดการเคลื่อนไหว');await page.getByRole('button',{name:choiceLabel('CHE_WATER_WIND'),exact:true}).tap();
+         |                                                                                                                ^
+      52 |  await expect(canvas(page)).toHaveAttribute('data-stream-beat','moving');expect(JSON.parse((await canvas(page).getAttribute('data-spell-target'))!)).toEqual({kind:'scene',x:431,y:222});await page.screenshot({path:'test-results/echo-branch-moving-390.png',fullPage:true});await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await expect(canvas(page)).toHaveAttribute('data-glade-branch','bank');
+      53 |  const state=await exportedState(page);expect(state.flags.echo_water_open).toBe(true);await reloadFromFile(page);expect(await exportedState(page)).toEqual(state);await expect(canvas(page)).toHaveAttribute('data-glade-branch','bank');await expect(canvas(page)).toHaveAttribute('data-active-effects','0');
+      54 | });
+        at /workspace/alltest/GODSEED/tests/echo.spec.ts:51:112
+
+    Error Context: test-results/echo-Wind-targets-the-actu-0a664-sists-through-a-manual-file/error-context.md
+
+  1 failed
+    tests/echo.spec.ts:50:1 › Wind targets the actual blocked stream branch; moving it persists through a manual file 

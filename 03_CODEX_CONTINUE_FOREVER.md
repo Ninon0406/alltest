@@ -278,3 +278,12 @@ Select **the highest priority area**, then rotate to next weak area after it pas
 - Roadmapเป็นภารกิจเพิ่มเติม ต้องพัฒนาเกม/ภาพ/Cinematic Story Directorต่อ ไม่จบรอบด้วยเอกสารอย่างเดียวเมื่อมีงานที่ทำได้ปลอดภัย
 
 - งานภาพตามชุด10สถานที่ให้ตรวจตาราง9ด้านของแต่ละlocationในRoadmap/roadmap.jsonก่อนลงมือ ภาพอ้างอิงพร้อมไม่เท่ากับฉากเกมพร้อม ห้ามนับ90ช่องซ้ำในเปอร์เซ็นต์หลัก แยกChromiumจำลอง/อุปกรณ์จริง และตรวจว่าstage-siteไม่ส่งdevelopmentreferencesเข้าProduction
+
+
+## Session22 handoff — 2026-11-07 / candidate0.12.0
+
+ตรวจSession22/verification.jsonและRoadmapก่อนใช้คำสั่งต่อไป เพิ่ม19nodes47choicesถึง81/232/B04_ECHO_KNOT/GladeMap/4chapterbatches/Questเดินทางที่จบกลับชุมชนได้ ไม่ถือว่าB05/S22–27หรือARC1จบแล้ว งานถัดไปคือB05พร้อมcheckpoint/สามphase/บทยุติความขัดแย้งและบทสรุปที่ขึ้นกับผลเก่า ก่อนขยายARC2
+
+รักษาbattle.echo optionalstrictและabsenceในเซฟเก่า;Intentใช้coreก่อนaction ส่วนcoreใหม่ใช้เทิร์นหน้า. FLEEต้องEIRAtrust2+WINDhit. คงstationarypendingArrivalfixของ0.11.1 ห้ามกลับไปทำให้Skipตำแหน่งเท้าค้าง. Full147/CI/Publicใหม่ต้องอ่านผลจริงในlog ไม่ใช้candidateเป็นหลักฐานผ่าน
+
+รอบ22finalfreezeแก้กิ่งไม้จากstate-onlyให้เป็นวัตถุ3stateที่ย้ายจริงและโหลดคืนได้ WINDอ้างeffectTargetรายวัตถุ ห้ามกลับไปยิงแท่นกลางฉากแทนกิ่งไม้ Full148ใหม่ต้องดูผลปิดรอบ;candidateFull147/CI42362726203ถูกหยุด/ยกเลิก ไม่ใช่PASSครบ

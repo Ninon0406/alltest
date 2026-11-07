@@ -19,9 +19,11 @@ export const artAssets:readonly ArtAsset[]=[
  ...['rear','ground','front'].map(layer=>image('garden-'+layer+'-legacy','art-v2/garden-'+layer+'.png','garden')),
  image('garden-arch-v9','art-v9/garden-arch.png','garden'),sheet('garden-cauldron-v9','art-v9/garden-cauldron.png','garden',64,96),sheet('garden-herbs-v9','art-v9/garden-herbs.png','garden',96,48),
  sheet('maren-v8','art-v8/maren.png','garden'),sheet('garden-bed-v7','art-v7/garden-bed.png','garden',64,48),sheet('hero-water-v7','art-v7/hero-water.png','garden',64,48),
- sheet('training-v2','art-v2/training.png','workshop'),sheet('koro-v10','art-v10/koro.png','workshop'),image('workshop-anvil-v10','art-v10/anvil.png','workshop'),{...sheet('eira-v3','art-v3/eira.png','archive'),alsoFor:['ruins']},
+ sheet('training-v2','art-v2/training.png','workshop'),sheet('koro-v10','art-v10/koro.png','workshop'),image('workshop-anvil-v10','art-v10/anvil.png','workshop'),{...sheet('eira-v3','art-v3/eira.png','archive'),alsoFor:['ruins','glade']},
  sheet('ruins-altar-v12','art-v12/altar.png','ruins',96,112),sheet('ruins-pillars-v12','art-v12/pillar.png','ruins',48,112),sheet('sentinel-v12','art-v12/sentinel.png','ruins',64,64),sheet('hero-ruins-v12','art-v12/hero-ruins.png','ruins'),
- image('stream-mist-v3','art-v3/stream-mist.png','stream'),{...sheet('water-v3','art-v3/water.png','stream',32,32),alsoFor:['ruins']},sheet('wisp-v3','art-v3/wisp.png','stream'),
+ sheet('glade-branch-v15','art-v15/stream-branch.png','glade',32,32),
+ sheet('glade-resonator-v15','art-v15/resonator.png','glade',96,112),sheet('glade-post-v15','art-v15/post.png','glade',48,112),sheet('echo-knot-v15','art-v15/echo-knot.png','glade',64,64),
+ image('stream-mist-v3','art-v3/stream-mist.png','stream'),{...sheet('water-v3','art-v3/water.png','stream',32,32),alsoFor:['ruins','glade']},sheet('wisp-v3','art-v3/wisp.png','stream'),
 ];
 export const artForStage=(stage:StageId)=>artAssets.filter(asset=>asset.group==='shared'||asset.group===stage||!!asset.alsoFor?.includes(stage));
 /** Failed files are attempted again only on an explicit retry. Successful assets

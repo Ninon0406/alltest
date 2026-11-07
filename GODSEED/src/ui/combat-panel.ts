@@ -80,7 +80,7 @@ export function combatPanel(content:HTMLElement,s:State,button:ButtonFactory,act
  if(abilities.childElementCount)content.append(abilities);
 
  if(rules.canFlee)utilities.append(button('ถอยออกมาเตรียมตัว',()=>action('FLEE','walk')));
- else{const reason=element('p','การต่อสู้นี้ถอยไม่ได้');reason.className='action-detail';utilities.append(reason);}
+ else{const reason=element('p','fleeHint' in rules?rules.fleeHint:'การต่อสู้นี้ถอยไม่ได้');reason.className='action-detail';utilities.append(reason);}
  if(rules.canSurrender)utilities.append(button('ยุติการฝึก',()=>action('SURRENDER','rest')));
  content.append(utilities);
 }

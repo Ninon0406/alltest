@@ -84,6 +84,8 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
      else condition.ids.forEach(flag=>requireFlag(flag,ca+'.when'));
     }else if(condition.kind==='pathStart'){
      if(!lifePathIds.has(condition.id))error('MISSING_LIFE_PATH',ca,'Unknown introductory life path '+condition.id);
+    }else if(condition.kind==='trust'){
+     if(!catalog.npcIds?.includes(condition.npc)||!Number.isInteger(condition.min)||condition.min< -2||condition.min>5)error('INVALID_TRUST_CONDITION',ca,'Trust needs a known NPC and integer -2..5');
     }else if(condition.kind==='knownCore'){
      if(!cores.has(condition.core))error('INVALID_CORE_CONDITION',ca,'Unknown core '+condition.core);
     }else error('UNKNOWN_CONDITION',ca,'Unsupported condition kind '+condition.kind);
@@ -102,6 +104,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
    if(choice.spellCore&&!cores.has(choice.spellCore))error('MISSING_SPELL_CORE',ca,'Unknown environmental spell core');
    if(choice.route&&choice.route!=='craft')error('UNKNOWN_ROUTE',ca,'Unknown UI route '+choice.route);
    if(choice.cinematic){
+    if(choice.cinematic.effectTarget){const p=locations[location]?.effectTargets?.[choice.cinematic.effectTarget];if(!p||!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.x>480||p.y<0||p.y>270)error('MISSING_EFFECT_TARGET',ca,'Unknown or out-of-bounds source-map effect origin');}
     validateAnchor(location,choice.cinematic.anchor,ca+'.cinematic');
     if(choice.cinematic.pose&&!poses.has(choice.cinematic.pose))error('INVALID_CINEMATIC_POSE',ca,'Unknown pose '+choice.cinematic.pose);
     if(choice.cinematic.effect&&!effects.has(choice.cinematic.effect))error('INVALID_CINEMATIC_EFFECT',ca,'Unknown effect '+choice.cinematic.effect);
@@ -165,8 +168,21 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   for(let i=0;i<queue.length;i++)for(const to of steps.get(queue[i])?.next||[])if(steps.has(to)&&!seen.has(to)){seen.add(to);queue.push(to);}
   for(const id of steps.keys())if(!seen.has(id))error('UNREACHABLE_QUEST_STEP',quest.id+'/'+id,'No chain route from the first quest step');
  }
+ if(catalog.contentBatches){
+  const owners=new Map(),ids=new Set();
+  for(const batch of catalog.contentBatches){
+   if(!present(batch.id)||ids.has(batch.id))error('DUPLICATE_CONTENT_BATCH',batch.id,'Batch IDs must be unique');ids.add(batch.id);
+   if(batch.chapterId!=='CHAPTER_1'||batch.arc!=='ARC_01')error('UNSUPPORTED_BATCH_CHAPTER',batch.id,'Add a deliberate chapter/save contract before expanding the ARC');
+   if(!batch.sceneIds?.length||!batch.entryScenes?.length||!batch.exitScenes?.length||!batch.completionFlags?.length)error('INCOMPLETE_CONTENT_BATCH',batch.id,'Batch needs owned nodes, entries, exits and completion facts');
+   for(const id of batch.sceneIds||[]){if(!scenes.has(id))error('MISSING_BATCH_NODE',batch.id,'Unknown node '+id);if(owners.has(id))error('DUPLICATE_BATCH_NODE',id,'Node belongs to two batches');owners.set(id,batch.id);}
+   for(const id of batch.entryScenes||[])if(!batch.sceneIds?.includes(id))error('INVALID_BATCH_ENTRY',batch.id,'Entry must be owned by its batch');
+   for(const id of batch.exitScenes||[])if(!scenes.has(id)||!canExit.has(id))error('INVALID_BATCH_EXIT',batch.id,'Exit needs a route to a safe hub');
+   for(const flag of batch.completionFlags||[])requireFlag(flag,batch.id+'.completionFlags');
+  }
+  for(const id of scenes.keys())if(!owners.has(id))error('UNOWNED_BATCH_NODE',id,'Every node needs explicit chapter/batch ownership');
+ }
  return {result:errors.length?'FAIL':'PASS',scope:'Static catalog validation and structural reachability; conditions and combat wins are not assumed executable',
-  counts:{storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,introductoryLifePathContracts:lifePathIds.size,stages:stages.size},
+  counts:{contentBatches:(catalog.contentBatches||[]).length,storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,introductoryLifePathContracts:lifePathIds.size,stages:stages.size},
   structurallyReachable:[...reachable].sort(),edges,flagProducers:[...flagSources].sort(),errors,warnings};
 }
 
@@ -209,7 +225,7 @@ export async function loadGameCatalog(gameRoot=root){
   let quests=story.quests||[];
   try{await readFile(path.join(gameRoot,'src/content/quests.ts'));quests=(await server.ssrLoadModule('/src/content/quests.ts')).quests;}catch(e){if(e.code!=='ENOENT')throw e;}
   let life={lifePaths:[]};try{await readFile(path.join(gameRoot,'src/systems/life-paths.ts'));life=await server.ssrLoadModule('/src/systems/life-paths.ts');}catch(e){if(e.code!=='ENOENT')throw e;}
-  return {scenes:story.scenes,quests,lifePaths:life.lifePaths,stages:STAGES,actors:artAssets.map(a=>a.key),items:spells.itemNames,cores:spells.cores,spells:spells.allSpells,encounters,locations:maps.sceneDefinitions,locationFor:maps.locationFor,walkable:maps.walkable,npcIds,engineFlags:[...engineFlags],declaredSceneIds,runtime:{...state,...game,...availability,...combat,...life,spells:spells.allSpells}};
+  return {scenes:story.scenes,contentBatches:story.contentBatches,quests,lifePaths:life.lifePaths,stages:STAGES,actors:artAssets.map(a=>a.key),items:spells.itemNames,cores:spells.cores,spells:spells.allSpells,encounters,locations:maps.sceneDefinitions,locationFor:maps.locationFor,walkable:maps.walkable,npcIds,engineFlags:[...engineFlags],declaredSceneIds,runtime:{...state,...game,...availability,...combat,...life,spells:spells.allSpells}};
  }finally{await server.close();}
 }
 
@@ -266,7 +282,7 @@ export function exploreRealChoices(catalog,{maxStates=4000,maxMs=12000,seed=1234
     const next=rt.choose(s,c.id),nextPath=[...path,{choice:c.id}];choices.add(c.id);if(effects(next)!==effects(s))stateChanges.add(c.id);
     if(next.battle){
      for(const policy of ['win','defeat']){const resolved=resolveBattle(next,policy);if(!resolved.state.battle)enqueue(resolved.state,[...nextPath,{battlePolicy:policy,actions:resolved.actions}]);}
-     if(catalog.encounters[c.battle]?.canFlee)enqueue(rt.fight(next,'FLEE'),[...nextPath,{fight:'FLEE'}]);
+     if(rt.battleRules(next).canFlee)enqueue(rt.fight(next,'FLEE'),[...nextPath,{fight:'FLEE'}]);
     }else enqueue(next,nextPath);
    }catch(e){failures.push({scene:s.scene,choice:c.id,message:e.message,path});}
   }

@@ -1,3 +1,11 @@
+## 0.12.0 additive compatibility
+
+GameVersion0.12.0;File2/State2/CHAPTER_1เดิม scene/choice/recipeเก่าทั้งหมดคงอยู่ เพิ่มB04_ECHO_KNOT maxHP76และstrict optional battle.echo={core?:existingCore,exitOpened?:true} เฉพาะB04 ไม่มีdefaultหรือการสร้างfieldใหม่ให้snapshotเก่า. coreคือธาตุจากoffensivecastล่าสุด exitOpenedมาจากWINDhit. Intent/nextturn/RNG/loadroundtripตรวจเหมือนเดิม ไม่มีstorage/backend/automaticexport
+
+เก็บไฟล์จริงจากpublished0.11.1ก่อนdeployใน/tmpเท่านั้น (legacy-capture.jsonเก็บเฉพาะhash/metadata);ไม่commitหรือuploadเซฟผู้เล่น
+
+---
+
 # GODSEED Manual File Save — current contract
 
 Owner V2 supersedes historical autosave instructions. The website keeps player progress only in RAM. Explicit file selection is the only way to continue after navigation/reload. Existing browser databases are not read or silently erased. No progress is sent to a server.

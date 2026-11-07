@@ -1,0 +1,19 @@
+[WebServer] (node:10283) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:10313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/echo.spec.ts:8:1 › 390: earned Light, announced Echo core, native mid-battle file, conditional flee and real victory (22.5s)
+  ✓  2 tests/echo.spec.ts:20:1 › 844 landscape: cooperating with Eira reaches a complete knowledge conclusion without a fake win (14.9s)
+  ✓  3 tests/echo.spec.ts:26:1 › 1366: both earned life paths open field choices and abilities in the new actual encounter (19.0s)
+  ✓  4 tests/echo.spec.ts:31:1 › normal walk, Skip and Reduced Motion arrive at the same real anchor and commit the same state (14.3s)
+  ✓  5 tests/echo.spec.ts:38:1 › normal enemy VFX echoes the previously announced core and Skip preserves canonical battle feet (23.3s)
+  ✓  6 tests/echo.spec.ts:45:1 › missing dedicated glade art degrades visibly, permits export and retries without progress changes (11.2s)
+  ✓  7 tests/echo.spec.ts:50:1 › Wind targets the actual blocked stream branch; moving it persists through a manual file (13.2s)
+  ✓  8 tests/echo.spec.ts:56:1 › repository subpath serves the glade, choice conclusion and manual file without asset errors (16.5s)
+
+  8 passed (2.3m)

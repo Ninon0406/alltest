@@ -1,18 +1,19 @@
 import type {Facing} from './directional-art';
 import type {Point} from './cinematic-paths';
 import {workshopMap} from './workshop-map';
+import {gladeMap} from './glade-map';
 import {ruinsMap} from './ruins-map';
 import {gardenMap} from './garden-map';
 import {scenes} from '../content/story';
 
 /** Coordinates are feet on our authored source maps, never reference-image pixels.
  * Overhead branches are occluders, not ground colliders. No free roaming. */
-export type LocationId='village_center'|'under_tree'|'elder_garden'|'spell_workshop'|'ancient_shrine';
+export type LocationId='village_center'|'under_tree'|'elder_garden'|'spell_workshop'|'ancient_shrine'|'battle_glade';
 type Anchor=Point&{facing?:Facing};
 type Solid={id:string;x:number;y:number;width:number;height:number};
 export type SceneDefinition={
  id:LocationId;reference:string;anchors:Record<string,Anchor>;links:readonly (readonly [string,string])[];
- junctions:readonly string[];solids:readonly Solid[];occluders:readonly {id:string;footY:number}[];
+ junctions:readonly string[];effectTargets?:Record<string,Point>;solids:readonly Solid[];occluders:readonly {id:string;footY:number}[];
 };
 const sharedSolids:Solid[]=[
  {id:'west-house',x:0,y:0,width:144,height:180},
@@ -23,6 +24,7 @@ const sharedSolids:Solid[]=[
  {id:'bench-east-leg',x:101,y:231,width:6,height:8},
 ];
 export const sceneDefinitions:Record<LocationId,SceneDefinition>={
+ battle_glade:{id:'battle_glade',reference:'10_battle_glade.webp',...gladeMap},
  ancient_shrine:{id:'ancient_shrine',reference:'09_ancient_shrine.webp',...ruinsMap},
  spell_workshop:{id:'spell_workshop',reference:'08_spell_workshop.webp',...workshopMap},
  elder_garden:{id:'elder_garden',reference:'05_elder_herb_garden.webp',...gardenMap},

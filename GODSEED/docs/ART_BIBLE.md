@@ -1,3 +1,15 @@
+# 0.12.0 — Reference10 / original Battle Glade study
+
+เปิด10_battle_glade.webpจริง ใช้ลานโปร่ง วงหิน ต้นไม้เก่า น้ำขอบลาน และซุ้มเรืองแสงเป็นทิศทาง ไม่มีอ่าน/trace/resizeconceptpixelsในgenerator. 480×270,hero32×48,integerpixel/paletteแสงอุ่นยังคงสัญญาเดิม
+
+art-v15มีrear/ground/front/fallback480×270;post48×112;resonator384×112(4frames);echo-knot256×256(16cells64×64/idleattackhitlisten). Knotเป็นสามสายถักรอบช่องฟัง สร้างsilhouetteใหม่ ไม่เปลี่ยนสีsentryเดิม. ฝั่งเสาอยู่Y242/แท่นY180ตามColliderและYsort;ถนนและพิกัดเท้าจากglade-mapเดียวกัน อนุภาค8/24ตามReducedMotion
+
+88PNGสร้างซ้ำตรงbyte/80เดิมคงอยู่ ฉากใหม่โหลดเมื่อเข้าลานเท่านั้น ภาพยังprototypepixelstudyที่ต้องทำfinalHDpass ไม่มีการรับรองhardwareFPS
+
+เพิ่มstream-branch96×32/3states:ขวางช่องน้ำ/วางริมฝั่ง/ที่หลบปลา เส้นทางNatureแสดงสภาพต่างจริงและโหลดคืนจากecho_water_open/echo_nature_shelter. WINDใช้effectTargetstream_branchที่431,222ตามgladeMap แยกจากเป้ารวมแท่น350,139. กิ่งย้ายจริงในtimelineและSkipจบตรงผลเดียวกัน
+
+---
+
 # 0.10.0 — Opening festival study (V6)
 
 Original art-v13/festival-props.png:384×96,6cells64×96,2418bytes. Three warm paper-seed lantern frames plus unlit frame, a brass musicbox on a wooden stand, and a planted promise. Generated solely by generate-festival-art.mjs; no copied concept pixels. Existing78PNG unchanged;79reproducebyte-identically. Canvas480×270/player32×48/footdepth remain unchanged.

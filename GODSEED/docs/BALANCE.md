@@ -1,3 +1,11 @@
+### 0.12.0 — B04 Echo Knot
+
+คงspec76HP/11power/LIGHTweakness20%/20XP+CORE_ECHOครั้งแรก. ฟังเฉพาะturn1;หากยังไม่จำธาตุturn2+เป็นคลื่นเสียง11 เพื่อไม่ให้BASIC_PULSEอย่างเดียวชนะฟรี เมื่อจำธาตุจากoffensivecastล่าสุดแล้วintentประกาศcoreเก่าก่อนaction ถ้าoffensivecoreที่ใช้ซ้ำตรงกันincoming16 แทน11;differentcore/basic/support11;GUARDคูณ0.6และโล่เดิมยังมีผล
+
+WINDhitเปิดทางถอย แต่ต้องEIRAtrust≥2ร่วมกัน ไม่มีsurrender. LIGHTมีวัสดุให้ทดลอง1ชุดพร้อมreturnไปจัดเวท ไม่ล็อกบังคับcraft;mentortrustbypassเป็นทางจบโดยไม่fakewin. Unitactualopening24seedsสลับWIND/LIGHTและGUARDเมื่อMPไม่พอชนะได้ทุกseedที่ทดสอบ ไม่รับรองallrecipes/allseedsหรือความสนุกจากผู้เล่นจริง
+
+---
+
 # Single-enemy combat balance — 0.4.0
 
 Canonical encounter values unchanged: B01 HP42/power7/FIRE×1.2, alternating attack/guard; practice HP35/power5/no elemental weakness, attacking each turn. New craft XP10, practice first win XP5+potion1, B01 first win XP12+bloom1; repeat wins give no extra rewards. XP does not grant level stats yet.
