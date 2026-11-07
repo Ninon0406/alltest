@@ -71,5 +71,10 @@ for(let row=0;row<4;row++)for(let f=0;f<4;f++){const p=img(64,64),bob=row===2?[0
  if(row===3){line(p,25,33+bob,39,33+bob,'dcd7b4');star(p,43,17,2,'dfd8b5');}else for(let i=0;i<3;i++)star(p,13+i*19,11+(i%2)*37+f%2,1,'eddeb3');
  if(row===1)for(let i=0;i<=f;i++)line(p,5+i*2,27-i*3,5+i*2,31+i*3,'d5d4de');blit(knot,p,f*64,row*64);
 }save('echo-knot',knot);
+const branch=img(96,32);
+for(let f=0;f<3;f++){const p=img(32,32);line(p,5,26,27,13,'5a6c49',4);line(p,6,25,27,13,'b79964',2);line(p,14,21,11,11,'6f754d',3);line(p,15,20,11,10,'ceb47c');line(p,20,17,28,23,'776e4a',3);line(p,20,16,28,22,'d5b97c');
+ for(const [x,y] of f===1?[[12,12]]:[[10,9],[27,20],[27,12]]){oval(p,x,y,4,2,f===2?'9db77a':'a4ae6f');line(p,x-2,y,x+2,y,'d3c88a');}
+ if(f===2){line(p,5,28,28,28,'b9d8bb');oval(p,16,26,4,2,'c1ad7b');px(p,18,26,'496d68');}blit(branch,p,f*32,0);
+}save('stream-branch',branch);
 const fallback=img();blit(fallback,rear,0,0);blit(fallback,ground,0,0);for(const a of gladeScenery.posts)blit(fallback,post,a.x-24,a.y-112);const first=img(96,112);for(let y=0;y<112;y++)resonator.data.copy(first.data,y*96*4,y*384*4,(y*384+96)*4);blit(fallback,first,302,68);blit(fallback,front,0,0);save('glade-fallback',fallback);
 console.log('Glade: original 3 layers + fallback, 4 resonator frames, depth-sorted lamp posts, 16 Echo Knot poses; reference 10 kept outside runtime assets.');

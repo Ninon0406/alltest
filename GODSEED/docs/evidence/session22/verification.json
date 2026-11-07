@@ -7,7 +7,7 @@
     "typecheck": true,
     "lint": true,
     "unit": {
-      "passed": 240,
+      "passed": 242,
       "failed": 0
     },
     "contentTests": {
@@ -15,7 +15,7 @@
       "failed": 0
     },
     "graphTests": {
-      "passed": 19,
+      "passed": 20,
       "failed": 0
     },
     "roadmapTests": {
@@ -23,23 +23,25 @@
       "failed": 0
     },
     "focusedBrowser": {
-      "passed": 7,
+      "passed": 8,
       "failed": 0,
-      "scope": "6 full expedition/fallback/subpath paths + 1 normal VFX test; emulated Chromium"
+      "minutes": 2.3,
+      "scope": "Final authored-object targets and branch state, normal VFX, skip, earned paths, native files, fallback and subpath; emulated Chromium"
     },
     "productionBuild": true,
     "manualSaveSourceGate": true,
     "referencePackingGate": true,
-    "reproducedOriginalPng": 87,
+    "reproducedOriginalPng": 88,
     "unchangedOldPng": 80,
     "actualReachableNodes": 81,
     "actualExecutableChoices": 232,
-    "stateChangingChoiceWitnesses": 178
+    "stateChangingChoiceWitnesses": 178,
+    "newGladePng": 8
   },
   "pending": [
-    "local full147",
-    "PR CI full147",
-    "main CI full147 + deploy",
+    "final local full148",
+    "final PR CI full148",
+    "main CI full148 + deploy",
     "actual public0.12/legacyfile/layout/hash verification"
   ],
   "limitations": [
@@ -47,5 +49,15 @@
     "No measured hardware FPS or human fun proof",
     "Pixel art is an original playable study, not final HD acceptance",
     "ARC1/B05/main endings and remaining V6 scope unfinished"
-  ]
+  ],
+  "history": {
+    "initialSource": "238d4c30b1125e9a9e5faedb974fca1c4000f41a",
+    "initialLocalFull147": "INTENTIONALLY_INTERRUPTED after59passed/1interrupted/87notrun to fix stream object mismatch; not PASS",
+    "initialPrCi": {
+      "runId": 42362726203,
+      "conclusion": "cancelled"
+    },
+    "branchRed": "Expected failure: no visible branch state before fix",
+    "branchFix": "3-state authored prop, actual movement/persistence, object-specific spell target and validation; green final Focused8"
+  }
 }

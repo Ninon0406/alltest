@@ -1,8 +1,8 @@
 ### Session22 — Echo gates
 
-Unit17ใหม่:actualopening/materialconsumption/rewardonce/questcompletion/bypass/victory-onlyarrivals/conditionalflee/defeat/strictsave/coretelegraph/24seedroutes/14anchorcollision/lazyart. Graphเพิ่ม3fixturesตรวจbatchownership/chaptercontracts/trustcondition
+Unit19ใหม่:actualopening/materialconsumption/rewardonce/questcompletion/bypass/victory-onlyarrivals/conditionalflee/defeat/strictsave/coretelegraph/24seedroutes/14anchorcollision/lazyart. Graphเพิ่ม4fixturesตรวจbatchownership/chaptercontracts/trustcondition
 
-Browser7ใหม่:390fight/nativeactivefile/flee/firstreward;844bypass/knowledgeconclusion;1366crosspathfieldchoices+abilities;normalwalkSkipvsReducedMotionexactstate/anchor;normalenemyVFXusespreviouscoreandcanonicalfeet;dedicatedassetfailure/export/retry;repositorysubpath. PASSทั้ง7แบบemulation ไม่ใช่physicalhardware. Full147/CI/publicรอผลแยกในSession22verification
+Browser8ใหม่:390fight/nativeactivefile/flee/firstreward;844bypass/knowledgeconclusion;1366crosspathfieldchoices+abilities;normalwalkSkipvsReducedMotionexactstate/anchor;normalenemyVFXusespreviouscoreandcanonicalfeet;dedicatedassetfailure/export/retry;repositorysubpath. PASSทั้ง8แบบemulation ไม่ใช่physicalhardware. Full148/CI/publicรอผลแยกในSession22verification
 
 ---
 

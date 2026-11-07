@@ -4,7 +4,9 @@
 
 art-v15มีrear/ground/front/fallback480×270;post48×112;resonator384×112(4frames);echo-knot256×256(16cells64×64/idleattackhitlisten). Knotเป็นสามสายถักรอบช่องฟัง สร้างsilhouetteใหม่ ไม่เปลี่ยนสีsentryเดิม. ฝั่งเสาอยู่Y242/แท่นY180ตามColliderและYsort;ถนนและพิกัดเท้าจากglade-mapเดียวกัน อนุภาค8/24ตามReducedMotion
 
-87PNGสร้างซ้ำตรงbyte/80เดิมคงอยู่ ฉากใหม่โหลดเมื่อเข้าลานเท่านั้น ภาพยังprototypepixelstudyที่ต้องทำfinalHDpass ไม่มีการรับรองhardwareFPS
+88PNGสร้างซ้ำตรงbyte/80เดิมคงอยู่ ฉากใหม่โหลดเมื่อเข้าลานเท่านั้น ภาพยังprototypepixelstudyที่ต้องทำfinalHDpass ไม่มีการรับรองhardwareFPS
+
+เพิ่มstream-branch96×32/3states:ขวางช่องน้ำ/วางริมฝั่ง/ที่หลบปลา เส้นทางNatureแสดงสภาพต่างจริงและโหลดคืนจากecho_water_open/echo_nature_shelter. WINDใช้effectTargetstream_branchที่431,222ตามgladeMap แยกจากเป้ารวมแท่น350,139. กิ่งย้ายจริงในtimelineและSkipจบตรงผลเดียวกัน
 
 ---
 

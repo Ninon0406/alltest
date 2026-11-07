@@ -82,6 +82,14 @@ describe('Echo Knot telegraph and file-safe deterministic turns',()=>{
 });
 
 describe('authored glade and content production contracts',()=>{
+ it('aims the stream spell at its real object rather than the stage-wide resonator',()=>{
+  const path=cinematicPath('glade','cast','CHE_WATER_WIND',{x:405,y:219},'battle_glade')!;
+  expect(path.effectTarget).toEqual({x:431,y:222});expect(path.targetAnchor).toBe('water_front');
+ });
+ it('rejects an unknown authored effect object instead of silently aiming somewhere else',()=>{
+  const c=scenes.ECHO_WATER.choices.find(c=>c.id==='CHE_WATER_WIND')!,old=c.cinematic!.effectTarget;
+  try{c.cinematic!.effectTarget='missing_branch';expect(()=>cinematicPath('glade','cast',c.id,{x:405,y:219},'battle_glade')).toThrow('ไม่พบตำแหน่งวัตถุ');}finally{c.cinematic!.effectTarget=old;}
+ });
  it('assigns every playable node to exactly one explicit chapter batch',()=>{const ids=contentBatches.flatMap(b=>b.sceneIds);expect(new Set(ids).size).toBe(ids.length);expect([...ids].sort()).toEqual(Object.keys(scenes).sort());expect(echoScenes).toHaveLength(19);});
  it('routes every scene and choice through real unblocked glade foot anchors',()=>{
   const def=sceneDefinitions.battle_glade;for(const scene of echoScenes.filter(s=>s.stage==='glade')){
@@ -90,5 +98,5 @@ describe('authored glade and content production contracts',()=>{
   }
   const flee=cinematicPath('glade','walk','FLEE',{x:130,y:219},'battle_glade')!;for(let i=1;i<flee.points.length;i++)expect(clearSegment(def,{x:flee.points[i-1].x,y:flee.points[i-1].y+20},{x:flee.points[i].x,y:flee.points[i].y+20})).toBe(true);
  });
- it('keeps references out of runtime and glade art out of cold village loading',()=>{expect(artForStage('village').some(a=>a.path.includes('art-v15'))).toBe(false);expect(artForStage('glade').filter(a=>a.path.includes('art-v15'))).toHaveLength(7);expect(artForStage('glade').every(a=>!a.path.includes('reference'))).toBe(true);});
+ it('keeps references out of runtime and glade art out of cold village loading',()=>{expect(artForStage('village').some(a=>a.path.includes('art-v15'))).toBe(false);expect(artForStage('glade').filter(a=>a.path.includes('art-v15'))).toHaveLength(8);expect(artForStage('glade').every(a=>!a.path.includes('reference'))).toBe(true);});
 });

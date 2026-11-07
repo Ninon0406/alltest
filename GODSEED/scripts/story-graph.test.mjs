@@ -27,6 +27,11 @@ test('relationship conditions reject invalid mentors and impossible thresholds',
  const x=fixture();x.scenes[1].choices.push(c('CHTRUST','S02_HUB',{when:[{kind:'trust',npc:'PIP',min:2}]}));assert.equal(analyzeStoryGraph(x).result,'PASS');
  x.scenes[1].choices[1].when=[{kind:'trust',npc:'TYPO',min:9}];assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_TRUST_CONDITION'));
 });
+test('cinematic spell targets require a named in-bounds object from the source map',()=>{
+ const x=fixture();x.locations={village_center:{anchors:{entry:{x:100,y:200}},effectTargets:{branch:{x:431,y:222}}}};x.locationFor=()=> 'village_center';x.scenes[1].choices[0].cinematic={anchor:'entry',effectTarget:'branch'};assert.equal(analyzeStoryGraph(x).result,'PASS');
+ x.scenes[1].choices[0].cinematic.effectTarget='typo';assert.ok(codes(analyzeStoryGraph(x)).includes('MISSING_EFFECT_TARGET'));
+ x.scenes[1].choices[0].cinematic.effectTarget='branch';x.locations.village_center.effectTargets.branch.x=500;assert.ok(codes(analyzeStoryGraph(x)).includes('MISSING_EFFECT_TARGET'));
+});
 
 test('static graph reports structural counts without claiming executable quests or life paths',()=>{
  const report=analyzeStoryGraph(fixture());

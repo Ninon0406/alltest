@@ -469,3 +469,7 @@ Next5ตามdependency:PIPE002chapter/batch+savecontext→S21/B04→B05/ARC1�
 - ยังไม่เสร็จ:B05/S22–27/ARC1ครบ/ARC2–12/อีก6LifePaths/องค์ประกอบเวทV6/FinalHDครบ10สถานที่/audio/hardwareFPS/SafariAndroidและhumanfun. PIPE002ยังไม่ครบmetadata/authoringtoolingทุกบท;Readyฉากใหม่ยังpartial
 - หลักฐาน/ไฟล์:docs/evidence/session22/{README.md,before-content.json,after-content.json,after-graph.json,extra-choice-witnesses.json,art-reproduction.json};echo-story.ts/combat.ts/glade-map.ts/generate-glade-art.mjs/echo.test.ts/echo.spec.ts;ยังไม่ระบุcommitที่ยังไม่เกิด
 - ถัดไป:CMB007B05สามphaseและretry→STO001/S23–27ผลเลือกเก่า→PIPE002metadata/futurechaptercompat→ARC002ต้นไม้/เวทสิ่งแวดล้อม→LifePaths/VisualqualityตามDependency. ไม่อ้างพัฒนาข้ามเซสชันอัตโนมัติ
+
+### Session22 QA ก่อนfreezeสุดท้าย — 2026-11-07
+
+พบภาพกิ่งไม้ไม่เปลี่ยนแม้flagเปลี่ยนและWINDวิ่งไปเป้าstageรวม แสดงredจริงก่อนแก้ แล้วเพิ่มstream-branchatlas3states/propเคลื่อนที่/flag-derivedpersist/SceneDefinition.effectTargets+validation/Nativefiletest. Unit242/Graph20/Focused8ผ่าน2.3m. Full147candidate238d4c3หยุดโดยตั้งใจ59pass/1interrupted/87ไม่รัน และPRCI42362726203cancelled เพื่อเริ่มFull148ของsourceสุดท้าย. ไม่มีการอ้างผลครบจากcandidateเก่า ยังรอFull148/CI/publicใหม่ก่อนปิดrelease

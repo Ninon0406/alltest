@@ -4,9 +4,9 @@ Session22 candidate0.12.0 ต่อจาก146db71:19newnodes47choices รว�
 
 B04จำธาตุที่ประกาศจากเทิร์นก่อน ฟัง1turn/11power/ธาตุเดิมซ้ำ16/LIGHTweakness/หนีหลังWINDถูกเป้า+EIRAtrust2/firstwinCORE_ECHO+20XP. File2/State2/RAM-onlyเดิม เพิ่มbattle.echooptionalstrictไม่มีdefault รักษาไฟล์เก่าและRNG
 
-87PNGสร้างซ้ำตรงbyte/old80unchanged/7newart-v15/14anchors16links7solids/3layers/Ysort/4resonatorframes/16EchoKnotposes. งานภาพยังprototype ไม่รับรองfinalHD/physicalSafari/Android/FPS/humanfun
+88PNGสร้างซ้ำตรงbyte/old80unchanged/8newart-v15/14anchors16links7solids/3layers/Ysort/4resonatorframes/16EchoKnotposes. งานภาพยังprototype ไม่รับรองfinalHD/physicalSafari/Android/FPS/humanfun
 
-PASSปัจจุบัน:Unit240/Content2/Graph19/Roadmap10/type/lint/build/references/manualsave/Focused7;Full147/CI/Deploy/publicใหม่รอผลจริง. รายงานปิดรอบและหลักฐานอยู่[Session22](evidence/session22/README.md) ไม่ใช้ผลcandidateแทนผลเผยแพร่
+PASSปัจจุบัน:Unit242/Content2/Graph20/Roadmap10/type/lint/build/references/manualsave/Focused8;Full148/CI/Deploy/publicใหม่รอผลจริง. รายงานปิดรอบและหลักฐานอยู่[Session22](evidence/session22/README.md) ไม่ใช้ผลcandidateแทนผลเผยแพร่
 
 ---
 

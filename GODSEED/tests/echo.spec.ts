@@ -25,7 +25,7 @@ test('844 landscape: cooperating with Eira reaches a complete knowledge conclusi
 
 test('1366: both earned life paths open field choices and abilities in the new actual encounter',async({page})=>{
  await page.setViewportSize({width:1366,height:768});await completeOpening(page);await learnBothPaths(page);await takeLife(page,'CHE_HUB','CHE_CALL_PREP','CHE_PACK_TAKE','CHE_RECIPE_CRAFT');await page.getByLabel('แก่นธาตุ').selectOption('LIGHT');await clickLife(page,'ผสมและค้นพบเวท');await takeLife(page,'CHE_RECIPE_LIGHT','CHE_ROAD_MAP','CHE_TRACK_WATER','CHE_WATER_ROOT','CHE_ARCH_READ','CHE_LISTEN_PAUSE','CHE_SIGNAL_TEAM','CH2101');
- await clickLife(page,'ตั้งรับ · ฟื้น MP 6');await clickLife(page,'สำรวจจังหวะ · MP 4');const s=await exportedState(page);expect(s.flags.echo_explorer_route).toBe(true);expect(s.flags.echo_nature_shelter).toBe(true);expect(s.battle?.pathActions).toEqual({rootGuardUsed:true,scouted:true});await reloadFromFile(page);expect(await exportedState(page)).toEqual(s);await winEcho(page);await page.screenshot({path:'test-results/echo-paths-1366.png',fullPage:true});
+ await expect(canvas(page)).toHaveAttribute('data-glade-branch','shelter');await clickLife(page,'ตั้งรับ · ฟื้น MP 6');await clickLife(page,'สำรวจจังหวะ · MP 4');const s=await exportedState(page);expect(s.flags.echo_explorer_route).toBe(true);expect(s.flags.echo_nature_shelter).toBe(true);expect(s.battle?.pathActions).toEqual({rootGuardUsed:true,scouted:true});await reloadFromFile(page);expect(await exportedState(page)).toEqual(s);await winEcho(page);await page.screenshot({path:'test-results/echo-paths-1366.png',fullPage:true});
 });
 
 test('normal walk, Skip and Reduced Motion arrive at the same real anchor and commit the same state',async({page})=>{
@@ -45,6 +45,12 @@ test('normal enemy VFX echoes the previously announced core and Skip preserves c
 test('missing dedicated glade art degrades visibly, permits export and retries without progress changes',async({page})=>{
  await page.setViewportSize({width:390,height:844});let block=true;await page.route('**/art-v15/resonator.png',route=>block?route.abort():route.continue());await enterEcho(page,'/',false);
  await expect(canvas(page)).toHaveAttribute('data-asset-errors','1');const before=await exportedState(page);block=false;await clickLife(page,'ลองโหลดภาพอีกครั้ง');await expect(canvas(page)).toHaveAttribute('data-asset-errors','0');expect(await exportedState(page)).toEqual(before);
+});
+
+test('Wind targets the actual blocked stream branch; moving it persists through a manual file',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await enterEcho(page,'/',false);await expect(canvas(page)).toHaveAttribute('data-glade-branch','blocked');await takeLife(page,'CHE_ROAD_WATER');await clickLife(page,'ลดการเคลื่อนไหว');await page.getByRole('button',{name:choiceLabel('CHE_WATER_WIND'),exact:true}).tap();
+ await expect(canvas(page)).toHaveAttribute('data-stream-beat','moving');expect(JSON.parse((await canvas(page).getAttribute('data-spell-target'))!)).toEqual({kind:'scene',x:431,y:222});await page.screenshot({path:'test-results/echo-branch-moving-390.png',fullPage:true});await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await expect(canvas(page)).toHaveAttribute('data-glade-branch','bank');
+ const state=await exportedState(page);expect(state.flags.echo_water_open).toBe(true);await reloadFromFile(page);expect(await exportedState(page)).toEqual(state);await expect(canvas(page)).toHaveAttribute('data-glade-branch','bank');await expect(canvas(page)).toHaveAttribute('data-active-effects','0');
 });
 
 test('repository subpath serves the glade, choice conclusion and manual file without asset errors',async({page})=>{

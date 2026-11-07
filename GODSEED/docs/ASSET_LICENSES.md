@@ -1,6 +1,6 @@
 ## 0.12.0 — original glade assets
 
-7PNGในpublic/assets/art-v15สร้างจากrasterinstructionsของgenerate-glade-art.mjsและglade-map.ts ไม่มีภาพภายนอก/ฟอนต์/เพลงใหม่ ไม่อ่านภาพReference10ระหว่างgenerate ภาพเจ้าของใช้เป็นartdirectionหลังเปิดตรวจจริงและยังแยกจากproduction. Old80PNGไม่เปลี่ยนและ87สร้างซ้ำตรงbyte. ความเป็นต้นฉบับของไฟล์ไม่ใช่การรับรองfinalHD
+8PNGในpublic/assets/art-v15สร้างจากrasterinstructionsของgenerate-glade-art.mjsและglade-map.ts ไม่มีภาพภายนอก/ฟอนต์/เพลงใหม่ ไม่อ่านภาพReference10ระหว่างgenerate ภาพเจ้าของใช้เป็นartdirectionหลังเปิดตรวจจริงและยังแยกจากproduction. Old80PNGไม่เปลี่ยนและ87สร้างซ้ำตรงbyte. ความเป็นต้นฉบับของไฟล์ไม่ใช่การรับรองfinalHD
 
 ---
 

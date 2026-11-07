@@ -1800,8 +1800,8 @@
     "limits": {
       "maxStates": 4000,
       "maxMs": 12000,
-      "processed": 2884,
-      "elapsedMs": 12001
+      "processed": 2482,
+      "elapsedMs": 12000
     },
     "counts": {
       "witnessedNodes": 81,

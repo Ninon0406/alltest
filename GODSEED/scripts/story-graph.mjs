@@ -104,6 +104,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
    if(choice.spellCore&&!cores.has(choice.spellCore))error('MISSING_SPELL_CORE',ca,'Unknown environmental spell core');
    if(choice.route&&choice.route!=='craft')error('UNKNOWN_ROUTE',ca,'Unknown UI route '+choice.route);
    if(choice.cinematic){
+    if(choice.cinematic.effectTarget){const p=locations[location]?.effectTargets?.[choice.cinematic.effectTarget];if(!p||!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.x>480||p.y<0||p.y>270)error('MISSING_EFFECT_TARGET',ca,'Unknown or out-of-bounds source-map effect origin');}
     validateAnchor(location,choice.cinematic.anchor,ca+'.cinematic');
     if(choice.cinematic.pose&&!poses.has(choice.cinematic.pose))error('INVALID_CINEMATIC_POSE',ca,'Unknown pose '+choice.cinematic.pose);
     if(choice.cinematic.effect&&!effects.has(choice.cinematic.effect))error('INVALID_CINEMATIC_EFFECT',ca,'Unknown effect '+choice.cinematic.effect);

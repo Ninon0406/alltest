@@ -1,8 +1,8 @@
 {
   "result": "PASS",
-  "totalOriginalPng": 87,
+  "totalOriginalPng": 88,
   "unchangedPriorPng": 80,
-  "newGladePng": 7,
+  "newGladePng": 8,
   "allReproducedByteIdentically": true,
   "sha256": {
     "public/assets/art-v10/anvil.png": "34a3c68dbc1b65bff9dc9875796bb45cbbf4c8d92ed9af99758f6e85c4dcac96",
@@ -32,6 +32,7 @@
     "public/assets/art-v15/glade-rear.png": "c95868780fd4400113be1a80a6908e45e3bcaee5a3e357bf72e2ac482ae17efd",
     "public/assets/art-v15/post.png": "29aaac280b19a524b09783ee5ce12461d9b11da15d276c2e7d03942e120795c3",
     "public/assets/art-v15/resonator.png": "6479750127f265bd3f931af2b9278e5ce67e14eae2cb7808f30ce538ba94bb01",
+    "public/assets/art-v15/stream-branch.png": "212c9c64857081a5b2015de8dbd87e8ee7d6a0c7ee15cee66535ae9408b12399",
     "public/assets/art-v2/ambient.png": "615f7d1ad5dd041244a3815c538d41468c0b32058f1dc9160f2246b54d4732a0",
     "public/assets/art-v2/forest-front.png": "719e4482d67f65cf00ed02e007e9b9f3ac125846f4dd660f1412c784a6b64e32",
     "public/assets/art-v2/forest-ground.png": "29d503b61077b64c955d861284437d7f222e67b8093c7d3dcb60cf14abe669d6",

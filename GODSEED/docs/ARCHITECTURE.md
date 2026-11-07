@@ -8,6 +8,8 @@ B04rulesคำนวณintentจากbattle.echo.coreก่อนactionแล�
 
 GladeMapแชร์14footanchors/16links/7solidsกับrenderer/generator ใช้StageIdgladeและlazygroupart-v15. Dedicatedresonator/postsYsortพร้อมfallback;EchoKnot64×64 origin40/64;playerfeet239และworldposition130/219. EnemyVFXอ่านcoreที่ประกาศจากbeforestate ไม่อ่านcoreใหม่หรือแก้damage. SkipคืนpendingArrivalของstationarygestureตามhotfix0.11.1
 
+Cinematicmetadataเพิ่มeffectTargetชื่อวัตถุที่อ้างSceneDefinition.effectTargets;validatorปฏิเสธIDผิดหรือพิกัดนอก480×270. World.castEffectรับเป้ารายเหตุการณ์แทนใช้เป้ารวมstageทุกครั้ง. GladebranchderiveจากflagsในRAM ไม่มีstate/เซฟอีกก้อน กระทำครั้งแรกย้ายSpriteจริงและfinishActionฆ่าTweenเมื่อSkipก่อนshowผลที่ยืนยันแล้ว
+
 ---
 
 # Session21 — life-path courses and additive combat state

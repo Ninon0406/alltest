@@ -13,7 +13,7 @@ type Anchor=Point&{facing?:Facing};
 type Solid={id:string;x:number;y:number;width:number;height:number};
 export type SceneDefinition={
  id:LocationId;reference:string;anchors:Record<string,Anchor>;links:readonly (readonly [string,string])[];
- junctions:readonly string[];solids:readonly Solid[];occluders:readonly {id:string;footY:number}[];
+ junctions:readonly string[];effectTargets?:Record<string,Point>;solids:readonly Solid[];occluders:readonly {id:string;footY:number}[];
 };
 const sharedSolids:Solid[]=[
  {id:'west-house',x:0,y:0,width:144,height:180},
