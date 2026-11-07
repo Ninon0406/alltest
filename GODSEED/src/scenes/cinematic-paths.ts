@@ -12,6 +12,7 @@ export function authoredCinematic(command?:string):Choice['cinematic']{return co
 // Sprite centers, foot anchor y+20. Authored lanes avoid solid prop bases;
 // these routes are presentation data, never free-roam or serialized progress.
 export const travelPaths:Record<StageId,readonly Point[]>={
+ glade:[{x:130,y:219},{x:126,y:231},{x:80,y:231}],
  ruins:[{x:126,y:228},{x:240,y:231},{x:350,y:231}],
  village:[{x:154,y:237},{x:190,y:227},{x:230,y:219}],
  garden:[{x:185,y:228},{x:205,y:238},{x:282,y:238},{x:368,y:238},{x:378,y:219}],
@@ -35,6 +36,7 @@ export const choicePaths:Record<string,CinematicPath>={
 export function cinematicPath(stage:StageId,cue:string,command?:string,start?:Point,location:LocationId='village_center'):CinematicPath|undefined {
  const authored=authoredCinematic(command);
  if(authored&&start){const def=sceneDefinitions[location],points=routeTo(def,{x:start.x,y:start.y+20},authored.anchor);if(!points)throw Error('ไม่พบเส้นทางที่ปลอดภัยไปยังเหตุการณ์');return {id:'story-'+authored.anchor,stage,points:points.map(p=>({x:p.x,y:p.y-20})),targetAnchor:authored.anchor,facing:def.anchors[authored.anchor].facing,pose:authored.pose,effect:authored.effect,seatDepth:authored.pose==='rest'?(def.occluders.find(o=>o.id.includes('bench'))?.footY??238)+1:undefined};}
+ if(stage==='glade'&&cue==='walk'&&command==='FLEE')return {id:'glade-retreat',stage,points:travelPaths.glade};
  if(stage==='ruins'&&cue==='walk'&&command==='FLEE')return {id:'ruins-retreat',stage,points:ruinsScenery.retreat};
  if(stage==='ruins'&&start&&command&&ruinsActions[command]){const targetAnchor=ruinsActions[command].anchor,def=sceneDefinitions.ancient_shrine,feet=routeTo(def,{x:start.x,y:start.y+20},targetAnchor);if(!feet)throw Error('ไม่พบเส้นทางที่ปลอดภัยในโบราณสถาน');return {id:'ruins-'+targetAnchor,stage,points:feet.map(p=>({x:p.x,y:p.y-20})),targetAnchor,facing:def.anchors[targetAnchor].facing};}
  if(stage==='workshop'&&start){

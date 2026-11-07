@@ -1,3 +1,11 @@
+### Session22 — Echo gates
+
+Unit17ใหม่:actualopening/materialconsumption/rewardonce/questcompletion/bypass/victory-onlyarrivals/conditionalflee/defeat/strictsave/coretelegraph/24seedroutes/14anchorcollision/lazyart. Graphเพิ่ม3fixturesตรวจbatchownership/chaptercontracts/trustcondition
+
+Browser7ใหม่:390fight/nativeactivefile/flee/firstreward;844bypass/knowledgeconclusion;1366crosspathfieldchoices+abilities;normalwalkSkipvsReducedMotionexactstate/anchor;normalenemyVFXusespreviouscoreandcanonicalfeet;dedicatedassetfailure/export/retry;repositorysubpath. PASSทั้ง7แบบemulation ไม่ใช่physicalhardware. Full147/CI/publicรอผลแยกในSession22verification
+
+---
+
 # Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave

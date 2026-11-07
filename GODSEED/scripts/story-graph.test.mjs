@@ -11,6 +11,23 @@ const fixture=()=>({
 });
 const codes=report=>report.errors.map(e=>e.code);
 
+test('explicit chapter batches reject duplicate ownership, unknown nodes, exits and missing ownership',()=>{
+ const x=fixture();x.engineFlags.push('complete');
+ const batch={id:'A',chapterId:'CHAPTER_1',arc:'ARC_01',sceneIds:['S00_WAKE','S02_HUB'],entryScenes:['S00_WAKE'],exitScenes:['S02_HUB'],completionFlags:['complete']};
+ x.contentBatches=[batch];assert.equal(analyzeStoryGraph(x).result,'PASS');
+ x.contentBatches=[{...batch,sceneIds:['S00_WAKE','TYPO'],entryScenes:['S02_HUB'],exitScenes:['NO_EXIT']}];
+ for(const code of ['MISSING_BATCH_NODE','INVALID_BATCH_ENTRY','INVALID_BATCH_EXIT','UNOWNED_BATCH_NODE'])assert.ok(codes(analyzeStoryGraph(x)).includes(code),code);
+ x.contentBatches=[batch,{...batch}];for(const code of ['DUPLICATE_CONTENT_BATCH','DUPLICATE_BATCH_NODE'])assert.ok(codes(analyzeStoryGraph(x)).includes(code));
+});
+test('unknown chapter changes and incomplete batch contracts fail instead of silently inheriting chapter one',()=>{
+ const x=fixture();x.contentBatches=[{id:'A',chapterId:'FUTURE',arc:'ARC_02',sceneIds:[],entryScenes:[],exitScenes:[],completionFlags:[]}];
+ const result=codes(analyzeStoryGraph(x));assert.ok(result.includes('UNSUPPORTED_BATCH_CHAPTER'));assert.ok(result.includes('INCOMPLETE_CONTENT_BATCH'));
+});
+test('relationship conditions reject invalid mentors and impossible thresholds',()=>{
+ const x=fixture();x.scenes[1].choices.push(c('CHTRUST','S02_HUB',{when:[{kind:'trust',npc:'PIP',min:2}]}));assert.equal(analyzeStoryGraph(x).result,'PASS');
+ x.scenes[1].choices[1].when=[{kind:'trust',npc:'TYPO',min:9}];assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_TRUST_CONDITION'));
+});
+
 test('static graph reports structural counts without claiming executable quests or life paths',()=>{
  const report=analyzeStoryGraph(fixture());
  assert.equal(report.result,'PASS');assert.equal(report.counts.storyNodes,2);

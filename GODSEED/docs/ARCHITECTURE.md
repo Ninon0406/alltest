@@ -1,3 +1,15 @@
+# 0.12.0 — Echo expedition / explicit content ownership
+
+StoryScene IDs เดิมไม่เปลี่ยน เพิ่มecho-story19nodes และCHE_HUBที่ล็อกด้วยarc1_opening_complete. contentBatchesแบ่งทุก81nodeอย่างชัดเจนเป็นCHAPTER_1/ARC_01 พร้อมentry/exit/completionfacts;validatorปฏิเสธnodeซ้ำ/ไม่เป็นเจ้าของ/chapterที่ยังไม่รองรับ ไม่ได้ประกาศว่าmetadataและauthoringtoolsของทุกARCเสร็จแล้ว
+
+Conditionsเพิ่มtrustที่ตรวจNPC/thresholdได้ QuestSummaryยังderiveจากflagsเท่านั้น ไม่มีquestsaveอีกก้อน Finishcombatลงarrivalfactsเฉพาะwinตาม0.11เดิม ส่วนbypassแยกเหตุการณ์รอรูนคลายก่อนเข้าECHO_RESULT. ทุกsharedrewardใช้onceFlagข้ามทางเลือก
+
+B04rulesคำนวณintentจากbattle.echo.coreก่อนactionแล้วบันทึกcoreใหม่หลังoffensivecast Support/basic/guardไม่เขียนcore Fleeอ่านtrustและexitOpenedหลังWINDhitพร้อมกัน. Optionalstrict echo objectไม่มีdefault อยู่ได้เฉพาะB04 เก่าไม่มีfieldก็ยังไม่มี. State2/File2/CHAPTER_1เดิม GameVersion0.12.0
+
+GladeMapแชร์14footanchors/16links/7solidsกับrenderer/generator ใช้StageIdgladeและlazygroupart-v15. Dedicatedresonator/postsYsortพร้อมfallback;EchoKnot64×64 origin40/64;playerfeet239และworldposition130/219. EnemyVFXอ่านcoreที่ประกาศจากbeforestate ไม่อ่านcoreใหม่หรือแก้damage. SkipคืนpendingArrivalของstationarygestureตามhotfix0.11.1
+
+---
+
 # Session21 — life-path courses and additive combat state
 
 Pure systems/life-paths.ts derives progression from existingRAMflags; no XP shortcut or second progression database. Condition.pathStart reads coherent rank1 before cross-learning. Read-onlyUI never teleports or rewards; ordinary story choose handles lessons/materials/relationship flags. StoryScene.staging and Choice.cinematic reuse maps/foot anchors; water is a reusable pose. Quest contracts are derived from flags. Trial completion entryFlags apply on actual battle finish, never on battle start/flee/surrender/defeat.

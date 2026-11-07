@@ -2,7 +2,9 @@ import Phaser from 'phaser';
 import {scenes,festivalEvening} from '../content/story';
 import {encounters} from '../content/encounters';
 import type {State} from '../engine/state';
-import type {Spell} from '../systems/spells';
+import {colors,cores,type Core,type Spell} from '../systems/spells';
+import {echoIntentCore} from '../systems/combat';
+import {gladeScenery} from './glade-map';
 import {playerAnimations,trainingAnimations} from './actor-art';
 import {stageLayouts,type StageId} from './stage-layout';
 import {ArtLedger,type ArtAsset} from './art-assets';
@@ -86,7 +88,7 @@ export class World extends Phaser.Scene {
   this.writeMetric('walkFacing',this.facing);this.writeMetric('walkTrace',this.walkTrace.join(','));
   this.writeMetric('location',this.currentStage==='village'?this.location:this.currentStage);
   this.writeMetric('leafFall',this.leafFall?'active':'inactive');this.writeMetric('resting',String(this.resting));
-  this.writeMetric('occluderDepth',this.currentStage==='village'?(this.location==='under_tree'?201:204):this.currentStage==='ruins'?242:0);
+  this.writeMetric('occluderDepth',this.currentStage==='village'?(this.location==='under_tree'?201:204):this.currentStage==='ruins'||this.currentStage==='glade'?242:0);
   this.writeMetric('ruinsArt',this.currentStage==='ruins'?(this.ruinsArtActive?'shrine-v12':'fallback'):'none');this.writeMetric('altarFrame',this.ruinsAltar?.frame.name??-1);
   this.writeMetric('workshopAnvil',String(this.anvilVisible));if(this.npc){this.writeMetric('npcContact',JSON.stringify({x:this.npc.x,y:this.npc.y,originY:this.npc.originY,feetY:this.npc.y+20,depth:this.npc.depth,shadowY:this.npcShadow.y}));this.writeMetric('npcAnimation',this.npc.anims.currentAnim?.key||'none');this.writeMetric('npcFrame',this.npc.frame.name);}
   this.writeMetric('workshopArt',this.currentStage==='workshop'?(this.workshopArtActive?'atelier-v11':'legacy'):'none');this.writeMetric('cauldronFrame',this.cauldron?.frame.name??-1);this.writeMetric('toolboxFrame',this.toolbox?.frame.name??-1);
@@ -126,6 +128,8 @@ export class World extends Phaser.Scene {
   const add=(config:Phaser.Types.Animations.Animation)=>{if(!this.anims.exists(config.key!))this.anims.create(config);};
   for(const [texture,animations] of Object.entries(ruinsAnimations))if(this.textures.exists(texture))for(const [name,config] of Object.entries(animations))add({key:texture+'-'+name,frames:this.anims.generateFrameNumbers(texture,{frames:[...config.frames]}),frameRate:config.frameRate,repeat:config.repeat});
   if(this.textures.exists('ruins-altar-v12'))for(let state=0;state<3;state++)add({key:'ruins-altar-'+state,frames:this.anims.generateFrameNumbers('ruins-altar-v12',{start:state*4,end:state*4+3}),frameRate:4,repeat:-1});
+  if(this.textures.exists('echo-knot-v15'))for(const [row,name] of ['idle','attack','hit','listen'].entries())add({key:'echo-knot-v15-'+name,frames:this.anims.generateFrameNumbers('echo-knot-v15',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='listen'?4:8,repeat:name==='idle'||name==='listen'?-1:0});
+  if(this.textures.exists('glade-resonator-v15'))add({key:'glade-resonator-flow',frames:this.anims.generateFrameNumbers('glade-resonator-v15',{start:0,end:3}),frameRate:4,repeat:-1});
   if(this.textures.exists('festival-props-v13'))add({key:'festival-lantern',frames:this.anims.generateFrameNumbers('festival-props-v13',{frames:[1,2,3,2]}),frameRate:4,repeat:-1});
   if(this.textures.exists('workshop-cauldron-v11'))add({key:'workshop-simmer',frames:this.anims.generateFrameNumbers('workshop-cauldron-v11',{start:0,end:5}),frameRate:5,repeat:-1});
   if(this.textures.exists('hero-brew-v11'))add({key:'hero-brew',frames:this.anims.generateFrameNumbers('hero-brew-v11',{start:0,end:7}),frameRate:10,repeat:-1});
@@ -238,6 +242,7 @@ export class World extends Phaser.Scene {
     if(!this.textures.exists(a.texture))continue;const prop=this.add.sprite(a.x,a.y,a.texture).setOrigin(.5,1).setDepth(a.y);this.props.push(prop);
     if(a.texture==='ruins-altar-v12'){this.ruinsAltar=prop;prop.play('ruins-altar-'+altarState(state));}
    }
+   if(this.currentStage==='glade')for(const a of stageLayouts.glade.customProps||[]){if(!this.textures.exists(a.texture))continue;const prop=this.add.sprite(a.x,a.y,a.texture).setOrigin(.5,1).setDepth(a.y);if(a.texture==='glade-resonator-v15')prop.play('glade-resonator-flow');this.props.push(prop);}
    if(this.currentStage==='village'){
     if(this.location==='under_tree'&&this.textures.exists('ancient-tree-v5'))this.props.push(this.add.sprite(276,201,'ancient-tree-v5').setOrigin(.5,1).setDepth(201));
     else if(this.location==='village_center'&&this.textures.exists('fountain-v5'))this.props.push(this.add.sprite(254,204,'fountain-v5').setOrigin(.5,1).setDepth(204).play('fountain-flow'));
@@ -272,9 +277,11 @@ export class World extends Phaser.Scene {
   if(this.npcKey==='maren'&&this.textures.exists('maren-v8'))this.npcKey='maren-v8';
   if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
   this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
-  this.npcRestPose=this.npcKey==='sentinel-v12'&&state?.battle?.status.RUNE_WARD?'guard':this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
-  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
+  this.writeMetric('echoCore',state?echoIntentCore(state)||'none':'none');this.writeMetric('echoExit',String(!!state?.battle?.echo?.exitOpened));
+  this.npcRestPose=this.npcKey==='echo-knot-v15'&&!(state&&echoIntentCore(state))?'listen':this.npcKey==='sentinel-v12'&&state?.battle?.status.RUNE_WARD?'guard':this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
+  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'||this.npcKey==='echo-knot-v15'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
   if(!preserve){this.player.setPosition(state?.battle?130:154,219);this.facing='east';
+   if(this.currentStage==='glade'&&state?.battle)this.player.setPosition(gladeScenery.playerBattle.x,gladeScenery.playerBattle.y);
    if(this.currentStage==='ruins'&&state?.battle)this.player.setPosition(ruinsScenery.playerBattle.x,ruinsScenery.playerBattle.y);
    if(this.currentStage==='ruins'&&!state?.battle){const a=ruinsMap.anchors[ruinsCheckpoint(state) as keyof typeof ruinsMap.anchors];this.player.setPosition(a.x,a.y-20);this.facing='facing' in a?a.facing:'east';}
    if(this.currentStage==='workshop'&&!state?.battle){const a=workshopMap.anchors[workshopCheckpoint(state) as keyof typeof workshopMap.anchors];this.player.setPosition(a.x,a.y-20);this.facing='facing' in a?a.facing:'east';}
@@ -288,7 +295,7 @@ export class World extends Phaser.Scene {
   this.playerShadow.setVisible(!this.resting);
   if(this.resting){if(!stagedSeat)this.player.setPosition(79,193);this.actionDepth=stagedSeat?(sceneDefinitions[this.location].occluders.find(o=>o.id.includes('bench'))?.footY??238)+1:239;this.playerShadow.setVisible(false);this.facing=staged?.facing||'south';}
   this.shown=state?{runId:state.runId,battle:!!state.battle,scene:state.scene}:undefined;
-  this.npcHomeX=state?.battle?(this.currentStage==='ruins'?ruinsScenery.enemyBattle.x:350):this.currentStage==='garden'?365:338;this.npc.setPosition(this.npcHomeX,this.currentStage==='ruins'&&state?.battle?ruinsScenery.enemyBattle.y:212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.reportArt();
+  this.npcHomeX=state?.battle?(this.currentStage==='glade'?gladeScenery.enemyBattle.x:this.currentStage==='ruins'?ruinsScenery.enemyBattle.x:350):this.currentStage==='garden'?365:338;this.npc.setPosition(this.npcHomeX,this.currentStage==='glade'&&state?.battle?gladeScenery.enemyBattle.y:this.currentStage==='ruins'&&state?.battle?ruinsScenery.enemyBattle.y:212);this.player.setDepth(this.actionDepth??this.player.y+20);this.npc.setDepth(this.npc.y+20);this.pose(this.resting?'rest':'idle');this.parallax.value=0;this.phase='idle';this.reportArt();
  }
  finishAction(){
   const support=this.actionDepth,arrival=this.pendingArrival;this.pendingArrival=undefined;this.generation++;this.actionDepth=undefined;
@@ -340,6 +347,13 @@ export class World extends Phaser.Scene {
    const particle=this.add.rectangle(Math.round(x),Math.round(y),shape==='RAY'?8:3,shape==='RAIN'||modifier==='GUARD'?7:3,color,.9).setDepth(bench?850:0);
    this.effects.add(particle);
    this.tweens.add({targets:particle,x:Math.round(endX),y:Math.round(endY),alpha:0,scale:modifier==='AMPLIFY'?2.5:1,duration:reduced?100:modifier==='LINGER'?650+i*4:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
+  }
+ }
+ private echoCast(core:Core,reduced:boolean){
+  const count=reduced?8:24,color=colors[cores.indexOf(core)];this.writeMetric('echoCast',core);
+  for(let i=0;i<count;i++){
+   const t=i/count,particle=this.add.rectangle(this.npc.x+Math.sin(t*12)*8,this.npc.y-10,core==='EARTH'?5:3,core==='WATER'?6:3,color,.9).setDepth(850);this.effects.add(particle);
+   this.tweens.add({targets:particle,x:this.player.x+Math.cos(t*12)*12,y:this.player.y-8+(core==='WIND'?Math.sin(t*12)*20:core==='LIGHT'?Math.cos(t*6)*10:0),angle:core==='BLOOM'?90:0,alpha:0,duration:reduced?100:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
   }
  }
  private ruinsGlow(kind:string,reduced:boolean,origin?:{x:number;y:number}){
@@ -439,7 +453,7 @@ export class World extends Phaser.Scene {
     this.npcPose('attack');await this.beat(this.npc,{alpha:.7,duration:reduced?20:120,yoyo:true},token);
    }
    if(next.battle?.log.some(line=>line.includes(' โจมตี ')||line.includes('โจมตีพลาด'))){
-    this.npcPose('attack');
+    this.npcPose('attack');const echoed=echoIntentCore(before);if(echoed)this.echoCast(echoed,reduced);
     await this.beat(this.npc,{x:this.npcHomeX-10,duration:reduced?20:120,yoyo:true},token);
    }
    if(token!==this.generation)return;

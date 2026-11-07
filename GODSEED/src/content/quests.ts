@@ -14,6 +14,12 @@ export type QuestDefinition={
 /** Contracts for quests implemented in the existing story, not future roadmap quests. */
 export const quests:readonly QuestDefinition[]=[
  ...lifeQuests,
+ {id:'Q_ECHO_EXPEDITION',title:'เสียงที่ยอมฟังเสียงอื่น',description:'เตรียมของ อ่านรูปแบบเสียง คลี่ปม แล้วนำเรื่องกลับมาแบ่งปัน',startScene:'ECHO_CALL',activationFlags:['echo_expedition_started'],completionFlag:'echo_expedition_complete',rewardGuard:'echo_report_reward',rewardChoiceIds:['CHE_CLOSE_PIERCE','CHE_CLOSE_LINGER'],rewardText:'เลือกเขี้ยวผลึกเจาะหรือทรายเวลาอ่อนหนึ่งชิ้น รับครั้งเดียวร่วมกันทั้งสองทาง',entrySteps:['pack'],steps:[
+  {id:'pack',label:'รับอุปกรณ์จากคุโรและเตรียมช่องเวท',flag:'echo_kit_taken',scene:'ECHO_PACK',choices:['CHE_PACK_TAKE'],next:['listen']},
+  {id:'listen',label:'สังเกตรูปแบบธาตุที่ปมเสียงจดจำ',flag:'echo_pattern_observed',scene:'ECHO_LISTEN',choices:['CHE_LISTEN_PAUSE','CHE_LISTEN_NOTE'],requiresFlags:['echo_kit_taken'],next:['resolve']},
+  {id:'resolve',label:'คลี่ปมด้วยการต่อสู้หรือร่วมมือกับไอรา',flag:'echo_trial_resolved',scene:'S21_ECHO_TRIAL',choices:['CH2101','CH2102'],requiresFlags:['echo_pattern_observed'],next:['share']},
+  {id:'share',label:'แบ่งปันสิ่งที่พบและรับของสำหรับทดลองต่อ',flag:'echo_expedition_complete',scene:'ECHO_CLOSURE',choices:['CHE_CLOSE_PIERCE','CHE_CLOSE_LINGER'],requiresFlags:['echo_trial_resolved'],next:[]},
+ ]},
  {
   id:'Q_ARCHIVE_NOTES',title:'บันทึกที่มีคนกลับมาเล่า',startScene:'S07_ARCHIVE',
   description:'อ่านแผนที่ ฟังจารึก และแบ่งปันทำนองที่พบกับไอรา',

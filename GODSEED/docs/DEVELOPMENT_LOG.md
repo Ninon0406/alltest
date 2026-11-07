@@ -456,3 +456,16 @@ ContentSource248220c/PR20/mergeb21e847;hotfixSource330899e/PR21/mergec9c2f56. �
 Roadmap24done44in_progress39not_started0problem2blocked=24/10922.0%(v124/10822.2%). ปิดLIFE001engine;VIS006เคยปิดแล้วเปิดตรวจใหม่เมื่อพบregression ก่อนคืนdoneด้วยCI140/publicexactfeet ไม่ปิดLIFE004/006หรือทั้ง8Paths/12ARCsจากสองหลักสูตรขั้นต้น HardwareSafari/iPhone/Android/iPad/FPS/humanfun/finalHDยังไม่ทดสอบ ผลประเมินความสนุกเป็นภายใน
 
 Next5ตามdependency:PIPE002chapter/batch+savecontext→S21/B04→B05/ARC1→ARC2→นักเวทพเนจร/นักปรุงเวท+ผลระยะยาวของสองสายแรก งานMAG010/visual/mobilebudgetทำคู่contentตามRoadmap. ไม่มีการพัฒนาข้ามsessionอัตโนมัติ Repoปิดรอบด้วยdocs/evidenceเท่านั้น ไม่เปลี่ยนappinputsหลังsource330899eที่ผ่านCI
+
+
+## Session22 — 2026-11-07 UTC — ช่องว่างที่โลกยอมฟัง / 0.12.0 candidate
+
+- ฐาน:main146db71790a8f2490b6ea4ba04615a71863f4265/เว็บ0.11.1/CI140ผ่านจริง;อ่าน03/Roadmap/Log/V6/spec/design/architecture/researchและเปิดReference10จริง ไม่สร้างโปรเจกต์ใหม่
+- เป้าหมาย:แก้ช่องว่างเนื้อหาหลังคืนแรกด้วยการเดินทางที่จบกลับชุมชนได้ และส่งมอบB04พร้อมกฎ/ภาพ/เซฟ/ทางเลี่ยงเพื่อปลดDependencyก่อนB05
+- เสร็จในsource:19nodes47choicesรวม81/232;actual81nodes232choiceswitnesses/178withstatechange/5questcontracts/4explicitchapterbatches;B04+7originalgladePNG/14anchors16links7solids/8stages6maps;234recipes/5NPC/2introPaths/0finalendingsเดิม;ManualRAM/File2/State2เก็บเฉพาะผู้เล่นกดไฟล์
+- ปัญหา/วิธีแก้:linkทางเข้าลานเฉียดฐานเสา→อ้อมexit_southตามถนนจริง;prototypeB04รอฟังตลอดถ้าไม่ใช้ธาตุ→ฟังเพียงturn1แล้วpulse11;VFXต้องอ่านcoreก่อนaction→แยกechoIntentCore(before)จากcoreใหม่สำหรับเทิร์นหน้า. Fixtureคาดจำนวนเก่าปรับเป็น81/232/5quests/8stagesหลังตรวจactualsource ไม่ลดเกณฑ์พฤติกรรม
+- ทดสอบจริงตอนบันทึกcandidate:Unit240/Content2/Graph19/Roadmap10/type/lint/build/references/manualsave/Focused7ผ่าน;24actualseedpathsชนะด้วยสลับWIND/LIGHT;nativefilemidbattle/flee/alternativeconclusion/normalenemyVFX/Skipcanonicalfeet/assetretry/subpathผ่าน. 87PNGสร้างซ้ำตรงbyte/80เดิมคงอยู่. Full147/PRCI/MainCI/Deploy/Public0.12กำลังตรวจ ยังไม่ใช้ผลcandidateอ้างว่าเผยแพร่แล้ว
+- Compatibility:ดาวน์โหลดไฟล์จริงจากpublished0.11.1ผ่านUIเมื่อ09:59:53UTC เก็บเฉพาะ/tmp/gs22-published-0.11.1.godseed;hashอยู่legacy-capture.json ไม่มีcommit/uploadsavebytes
+- ยังไม่เสร็จ:B05/S22–27/ARC1ครบ/ARC2–12/อีก6LifePaths/องค์ประกอบเวทV6/FinalHDครบ10สถานที่/audio/hardwareFPS/SafariAndroidและhumanfun. PIPE002ยังไม่ครบmetadata/authoringtoolingทุกบท;Readyฉากใหม่ยังpartial
+- หลักฐาน/ไฟล์:docs/evidence/session22/{README.md,before-content.json,after-content.json,after-graph.json,extra-choice-witnesses.json,art-reproduction.json};echo-story.ts/combat.ts/glade-map.ts/generate-glade-art.mjs/echo.test.ts/echo.spec.ts;ยังไม่ระบุcommitที่ยังไม่เกิด
+- ถัดไป:CMB007B05สามphaseและretry→STO001/S23–27ผลเลือกเก่า→PIPE002metadata/futurechaptercompat→ARC002ต้นไม้/เวทสิ่งแวดล้อม→LifePaths/VisualqualityตามDependency. ไม่อ้างพัฒนาข้ามเซสชันอัตโนมัติ

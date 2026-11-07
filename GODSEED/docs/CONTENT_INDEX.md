@@ -1,3 +1,13 @@
+# Session22 / 0.12.0 candidate
+
+81nodes/232choices/81actualnodewitnesses/232executablechoicewitnesses/178choiceswithactualstatedelta. 5Questcontracts (เพิ่มQ_ECHO_EXPEDITION)/5encounters (เพิ่มB04)/8stages (เพิ่มglade)/6fixedmaps. 5NPC,2introductorypaths,234recipes,0finalendings
+
+echo-story.tsเพิ่ม19nodes:คำชวน→คำฝาก→ชุดทดลอง→เวทแสง→ทางเข้าลาน→รอยเท้า/น้ำ→ซุ้ม→ฟังรูปแบบ→ตกลงสัญญาณ→S21→fight/bypass→ผล→ชิ้นส่วน/บันทึก→มาเรน/หอสมุด→ลูมิ→บทสรุปพร้อมวัสดุที่เลือก. เวทใหม่ที่ทดลองเป็นสูตรLIGHTเดิมจากวัสดุที่ได้จริง ไม่เพิ่มจำนวนrecipedefinitions
+
+ทุกnodeเป็นเจ้าของหนึ่งใน4contentBatchesภายใต้CHAPTER_1/ARC_01;ตรวจownership/chapter/entry/exit/completionflags. PIPE002ยังไม่ปิดจนmetadata/authoringtoolingทุกบทครบ
+
+---
+
 # Current0.11.1
 
 Same62nodes185choices/2introductorypaths/4questcontracts/0finalendings as0.11;renderer-onlyanchorhotfix.234earned-materialrecipepaths independentlyreplayed;sourceandproof in evidence/session21/recipe-replay.json.

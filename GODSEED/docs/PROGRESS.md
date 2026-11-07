@@ -1,3 +1,15 @@
+### Session22 — 2026-11-07 UTC / candidate0.12.0
+
+Session22 candidate0.12.0 ต่อจาก146db71:19newnodes47choices รวม81/232; actual81node/232choicewitnessesและ178state-changingchoices (ไม่ใช่distinctendings). 5Questcontracts/4chapterbatches/5encounters/8stages/6fixedmaps/234recipes/5NPC/2introductorypaths/0finalendings. บทเดินทางลานเสียงย้อนจบได้ทั้งfight/mentor-bypass พร้อมกลับชุมชน รางวัลร่วมให้ครั้งเดียว
+
+B04จำธาตุที่ประกาศจากเทิร์นก่อน ฟัง1turn/11power/ธาตุเดิมซ้ำ16/LIGHTweakness/หนีหลังWINDถูกเป้า+EIRAtrust2/firstwinCORE_ECHO+20XP. File2/State2/RAM-onlyเดิม เพิ่มbattle.echooptionalstrictไม่มีdefault รักษาไฟล์เก่าและRNG
+
+87PNGสร้างซ้ำตรงbyte/old80unchanged/7newart-v15/14anchors16links7solids/3layers/Ysort/4resonatorframes/16EchoKnotposes. งานภาพยังprototype ไม่รับรองfinalHD/physicalSafari/Android/FPS/humanfun
+
+PASSปัจจุบัน:Unit240/Content2/Graph19/Roadmap10/type/lint/build/references/manualsave/Focused7;Full147/CI/Deploy/publicใหม่รอผลจริง. รายงานปิดรอบและหลักฐานอยู่[Session22](evidence/session22/README.md) ไม่ใช้ผลcandidateแทนผลเผยแพร่
+
+---
+
 ### Session21 — 2026-11-06–07 UTC / 0.11.1
 
 Content248220c/PR20/mergeb21e847;hotfix330899e/PR21/mergec9c2f56. เพิ่ม16nodes43choices รวม62/185;2หลักสูตรขั้นต้น/4Questcontracts/2ความสามารถที่เล่นต่างกัน/เรียนข้ามสาย/บทสรุปร่วม. แก้trialflagsก่อนชนะและSkipnonpathgestureค้างตำแหน่ง Source16nodebatch+1originalatlas4253bytes,80PNGreproexact79เดิมคงอยู่. ManualRAM/File2/State2 เดิม ไม่มีStorage/Cloud/Autosave

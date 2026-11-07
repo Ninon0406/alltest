@@ -1,3 +1,9 @@
+## 0.12.0 — original glade assets
+
+7PNGในpublic/assets/art-v15สร้างจากrasterinstructionsของgenerate-glade-art.mjsและglade-map.ts ไม่มีภาพภายนอก/ฟอนต์/เพลงใหม่ ไม่อ่านภาพReference10ระหว่างgenerate ภาพเจ้าของใช้เป็นartdirectionหลังเปิดตรวจจริงและยังแยกจากproduction. Old80PNGไม่เปลี่ยนและ87สร้างซ้ำตรงbyte. ความเป็นต้นฉบับของไฟล์ไม่ใช่การรับรองfinalHD
+
+---
+
 # Asset provenance
 
 All PNG world/actor assets in public/assets generated locally from original drawing instructions in scripts/generate-art.mjs, scripts/generate-stage-art.mjs and scripts/generate-actor-art.mjs for this project. No borrowed game sprites, screenshots, music or CC packs. No external font download; uses available system Thai fonts. No audio files yet.

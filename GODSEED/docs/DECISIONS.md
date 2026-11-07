@@ -1,3 +1,13 @@
+### 2026-11-07 — Session22: finite expedition before guardian
+
+ทำB04และบทเดินทางที่จบกลับชุมชนได้ แทนการเผยS22ที่ยังไม่มีB05ให้ผู้เล่นติดอยู่ เนื้อเรื่องอธิบายประตูชั้นในที่ยังปิด ไม่กล่าวว่าเพลงหรือARC1จบแล้ว;B05/S23–27เป็นงานถัดไป
+
+ใช้repeatcore+5และtelegraphจากturnก่อนเพื่อให้สลับธาตุ/ตั้งรับมีผล เริ่มฟังเพียง1turnเพื่อป้องกันbasic-onlyfreewin;คง76HP/11base/LIGHTweakness20%ตามspec ค่า24seedrealroutesผ่านเป็นinternalbalancecheck ไม่ใช่playerfunproof
+
+Chapterownershipชัดเจน4batchesโดยไม่ย้ายStableIDsหรือเปลี่ยนFile2;ห้ามเพิ่มARCใหม่แบบsilentdefault. งานPIPE002ยังเปิดเพราะmetadata/authoringpipelineทุกบทและmigrationข้ามchapterยังไม่ครบ
+
+---
+
 # Session20 — 2026-11-06 UTC / 0.10.0 / Owner V6
 
 ต่อจาก0.9.0ที่เผยแพร่แล้ว (source9b2cca2/PR18/merge825bfa5,MainCI42250048254:123/123/Build/Deploy/Public67PNG+JSผ่าน). ขยายV6จริง25nodes72choices รวม46/142,ภารกิจเตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSDและเวลาเย็น–เช้า/atlasโคมต้นฉบับ2418bytes คงIDเดิม/234สูตร/State2/File2/RAM-onlyManualSave

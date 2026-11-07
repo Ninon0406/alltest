@@ -50,7 +50,7 @@ const visible=(pixels:Buffer)=>{let count=0;for(let i=3;i<pixels.length;i+=4)if(
 
 describe('original layered-stage assets and layout bounds',()=>{
  it('contains three distinct nonempty full-size layers for each reachable stage',()=>{
-  expect([...STAGES].sort()).toEqual(['archive','forest','garden','ruins','stream','village','workshop']);
+  expect([...STAGES].sort()).toEqual(['archive','forest','garden','glade','ruins','stream','village','workshop']);
   for(const stage of STAGES){
    const hashes=[];
    for(const layer of ['rear','ground','front']){

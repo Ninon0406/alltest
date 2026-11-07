@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "updated": "2026-11-07",
-  "baseCommit": "c9c2f56",
+  "baseCommit": "146db71",
   "phases": [
     {
       "id": 0,
@@ -208,16 +208,22 @@
         "GODSEED/src/engine/save-file.ts",
         "GODSEED/src/ui/save-controls.ts",
         "GODSEED/tests/storage.spec.ts",
-        "GODSEED/scripts/validate-manual-save.mjs"
+        "GODSEED/scripts/validate-manual-save.mjs",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน; รอบ16 core/manual-file regression93ผ่าน รอเฉพาะphysicalSafari/iOS/Android SAVE-011/012 จัดblockedเพื่อไม่ให้คิวกลับมาทำcoreซ้ำ",
+      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน; รอบ16 core/manual-file regression93ผ่าน รอเฉพาะphysicalSafari/iOS/Android SAVE-011/012 จัดblockedเพื่อไม่ให้คิวกลับมาทำcoreซ้ำ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "RAM only; explicit .godseed export/import/preview/validation/migration; safe-boundary controls/dirty-exit guard; no persistent progress or save upload; mobilebrowser QA ตามSAVE tasks โดยhardwareแยกQA-009",
       "legacyIds": [
         "GS-005",
         "GS-035"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06",
+      "reviewed": "2026-11-07",
       "subtasks": [
         {
           "id": "SAVE-001",
@@ -983,9 +989,15 @@
         "GODSEED/docs/evidence/session18/README.md",
         "GODSEED/tests/life-paths.spec.ts",
         "GODSEED/docs/evidence/session21/stationary-before.log",
-        "GODSEED/docs/evidence/session21/stationary-after.log"
+        "GODSEED/docs/evidence/session21/stationary-after.log",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ;Session21B:ตรวจnormalVFXบนเว็บ0.11พบSkipSCOUTค้างy219.98แทน219 สร้างredtestยืนยัน;แก้Directorให้nonpathgestureจำจุดเดิมและคืนตำแหน่งเมื่อยกเลิก Targetedskip+reducedtoggleผ่าน1/1ใน0.11.1 ยังรอFull140/CIจึงเปิดงานเดิมอีกครั้ง ไม่อ้างเก่าdoneครอบคลุมbugใหม่;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน",
+      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ;Session21B:ตรวจnormalVFXบนเว็บ0.11พบSkipSCOUTค้างy219.98แทน219 สร้างredtestยืนยัน;แก้Directorให้nonpathgestureจำจุดเดิมและคืนตำแหน่งเมื่อยกเลิก Targetedskip+reducedtoggleผ่าน1/1ใน0.11.1 ยังรอFull140/CIจึงเปิดงานเดิมอีกครั้ง ไม่อ้างเก่าdoneครอบคลุมbugใหม่;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
       "legacyIds": [
         "GS-010"
@@ -1045,7 +1057,7 @@
     {
       "id": "VIS-008",
       "phase": 10,
-      "title": "ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล",
+      "title": "ฉากหมู่บ้าน ป่า โรงช่าง หอสมุด ลำธาร โบราณสถาน เทศกาล และลานเสียงย้อน",
       "status": "in_progress",
       "priority": "P1",
       "dependsOn": [
@@ -1081,16 +1093,22 @@
         "GODSEED/tests/ruins.spec.ts",
         "GODSEED/docs/evidence/session19/README.md",
         "GODSEED/docs/evidence/session20/README.md",
-        "GODSEED/docs/evidence/session20/REPORT_TH.md"
+        "GODSEED/docs/evidence/session20/REPORT_TH.md",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths",
+      "evidence": "6layered stagesจริง; ruins/festivalยังไม่มี; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "ครบสถานที่บท1และbattle variants ใช้tile/props/layersสัมพันธ์กัน",
       "legacyIds": [
         "GS-008",
         "GS-009"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06",
+      "reviewed": "2026-11-07",
       "legacyPhase": 2,
       "legacyScope": "v1",
       "domain": "visual"
@@ -1253,9 +1271,15 @@
         "GODSEED/tests/ruins.spec.ts",
         "GODSEED/docs/evidence/session19/README.md",
         "GODSEED/docs/evidence/session20/README.md",
-        "GODSEED/docs/evidence/session20/REPORT_TH.md"
+        "GODSEED/docs/evidence/session20/REPORT_TH.md",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ",
+      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "canonicalchapter1ครบมีทางเล่นจบและกลับสำรวจ ทุกทางหลักผ่านgraph/golden paths",
       "legacyIds": [
         "GS-025",
@@ -1264,7 +1288,7 @@
         "GS-028"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06",
+      "reviewed": "2026-11-07",
       "legacyPhase": 3,
       "legacyScope": "v1",
       "domain": "story"
@@ -1858,7 +1882,7 @@
       "id": "CMB-006",
       "phase": 6,
       "title": "B03/B04พร้อมAI/rules/art/rewards/conditionalflee",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P1",
       "dependsOn": [
         "CMB-003",
@@ -1870,9 +1894,15 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/tests/ruins.test.ts",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "spec66/76HPและrulesมี โค้ดcatalogยังไม่มี; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04",
+      "evidence": "spec66/76HPและrulesมี โค้ดcatalogยังไม่มี; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "B03wardturn3/B04copytelegraph EIRAconditionalflee balance/truepathsผ่าน",
       "legacyIds": [
         "GS-022",
@@ -1880,10 +1910,16 @@
         "GS-027"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-06",
+      "reviewed": "2026-11-07",
       "legacyPhase": 5,
       "legacyScope": "v1",
-      "domain": "combat"
+      "domain": "combat",
+      "verification": "B03 previous full140/public0.11.1; B04 actual new Unit17 + Browser7 including earned spells/win/bypass/flee/file/normal VFX/canonical Skip/fallback/subpath and 24seed alternating-spell trials passed; overall147/CI release gate pending in candidate",
+      "evidenceFiles": [
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
+      ]
     },
     {
       "id": "CMB-007",
@@ -1921,9 +1957,15 @@
       ],
       "files": [
         "GODSEED/src/scenes/world.ts",
-        "GODSEED/tests/visual.spec.ts"
+        "GODSEED/tests/visual.spec.ts",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "hero/foeattack/hit/win/loss/sceneanchoredมี; finalVFX/enemiesยังต้นแบบ",
+      "evidence": "hero/foeattack/hit/win/loss/sceneanchoredมี; finalVFX/enemiesยังต้นแบบ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "ทุกencounterมีwarn/attack/react/defeatตามผลจริง supportยิงถูกฝ่าย visualgateผ่าน",
       "legacyIds": [
         "GS-007",
@@ -1931,7 +1973,7 @@
         "GS-033"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05",
+      "reviewed": "2026-11-07",
       "legacyPhase": 5,
       "legacyScope": "v1",
       "domain": "combat"
@@ -2366,16 +2408,22 @@
       ],
       "files": [
         "GODSEED/tests/visual.spec.ts",
-        "GODSEED/tests/art.test.ts"
+        "GODSEED/tests/art.test.ts",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "มีscreenshots/assetchecks ไม่ใช่toHaveScreenshotgoldendiff",
+      "evidence": "มีscreenshots/assetchecks ไม่ใช่toHaveScreenshotgoldendiff; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "baselineapproved pinbrowser/font diffthreshold ตรวจlayout/canvas/VFXและreviewchanges",
       "legacyIds": [
         "GS-033",
         "GS-031"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05",
+      "reviewed": "2026-11-07",
       "legacyPhase": 7,
       "legacyScope": "v1",
       "domain": "quality"
@@ -2874,9 +2922,15 @@
       "files": [
         "GODSEED/src/content/story.ts",
         "GODSEED/src/systems/story.ts",
-        "GODSEED/tests/content.test.ts"
+        "GODSEED/tests/content.test.ts",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "ใช้StoryScene/Choice/cinematic/staging/timeและQuestcontractsกับ25nodes72choicesใหม่จริง แต่explicitChapterและbatchauthoringtoolingยังไม่ครบ;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน",
+      "evidence": "ใช้StoryScene/Choice/cinematic/staging/timeและQuestcontractsกับ25nodes72choicesใหม่จริง แต่explicitChapterและbatchauthoringtoolingยังไม่ครบ;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "ทุกNodeมีchapter/location/narrative/preconditions/actions/choices/effects/rewards/next/NPC/cinematicmetadata;ใช้batchที่เล่นจบและมีvalidation+witnessจริง ไม่สร้างfillerให้ครบตัวเลข",
       "legacyIds": [],
       "scope": "v1",
@@ -3247,9 +3301,15 @@
         "03_CODEX_CONTINUE_FOREVER.md",
         "GODSEED/src/content/story.ts",
         "GODSEED/docs/evidence/session20/README.md",
-        "GODSEED/docs/evidence/session20/REPORT_TH.md"
+        "GODSEED/docs/evidence/session20/REPORT_TH.md",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
-      "evidence": "กำลังขยายopeningจากของเดิม;รอunit/browser/statefulrouteก่อนพิจารณาเสร็จ ไม่ถือว่าทั้งARCเสร็จจากการออกแบบ; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน",
+      "evidence": "กำลังขยายopeningจากของเดิม;รอunit/browser/statefulrouteก่อนพิจารณาเสร็จ ไม่ถือว่าทั้งARCเสร็จจากการออกแบบ; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy",
       "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;หมู่บ้าน ความผูกพันกับNPC/วัตถุดิบ/เวทแรก/การต่อสู้และบทสรุปย่อย;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
       "legacyIds": [],
       "scope": "v1",
@@ -3758,19 +3818,25 @@
       "name": "ลานต่อสู้กลางป่า",
       "readiness": {
         "reference": "done",
-        "structure": "not_started",
-        "layers": "not_started",
-        "collision": "not_started",
-        "movement": "not_started",
-        "story": "not_started",
-        "effects": "not_started",
-        "mobile": "not_started",
-        "ready": "not_started"
+        "structure": "done",
+        "layers": "done",
+        "collision": "done",
+        "movement": "done",
+        "story": "done",
+        "effects": "done",
+        "mobile": "in_progress",
+        "ready": "in_progress"
       },
-      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้",
+      "evidence": "เปิดReference10จริงและสร้างoriginalstudy7PNG/3layers+fallback/4resonatorframes/16EchoKnotposes/Ysortedposts;14anchors16links7solids sharedgenerator/routes;19nodeexpedition+win/bypass+return;Browser7ผ่าน3emulatedviewports/normalVFX/skip/file/fallback/subpath;ยังไม่รับรองfinalHD/physicalmobile/FPSหรือทุกweather",
       "files": [
         "assets/reference/godseed/references/10_battle_glade.webp",
-        "assets/reference/godseed/IMPORT_PROVENANCE.json"
+        "assets/reference/godseed/IMPORT_PROVENANCE.json",
+        "GODSEED/src/content/echo-story.ts",
+        "GODSEED/src/scenes/glade-map.ts",
+        "GODSEED/scripts/generate-glade-art.mjs",
+        "GODSEED/tests/echo.test.ts",
+        "GODSEED/tests/echo.spec.ts",
+        "GODSEED/docs/evidence/session22/README.md"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     }
@@ -4321,10 +4387,9 @@
     }
   ],
   "workQueue": [
-    "PIPE-002",
-    "STO-001",
-    "CMB-006",
     "CMB-007",
+    "STO-001",
+    "PIPE-002",
     "ARC-001",
     "ARC-002",
     "LIFE-004",

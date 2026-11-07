@@ -1,0 +1,51 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "version": "0.12.0",
+  "baseCommit": "146db71790a8f2490b6ea4ba04615a71863f4265",
+  "actualCompleted": {
+    "npmCi": true,
+    "typecheck": true,
+    "lint": true,
+    "unit": {
+      "passed": 240,
+      "failed": 0
+    },
+    "contentTests": {
+      "passed": 2,
+      "failed": 0
+    },
+    "graphTests": {
+      "passed": 19,
+      "failed": 0
+    },
+    "roadmapTests": {
+      "passed": 10,
+      "failed": 0
+    },
+    "focusedBrowser": {
+      "passed": 7,
+      "failed": 0,
+      "scope": "6 full expedition/fallback/subpath paths + 1 normal VFX test; emulated Chromium"
+    },
+    "productionBuild": true,
+    "manualSaveSourceGate": true,
+    "referencePackingGate": true,
+    "reproducedOriginalPng": 87,
+    "unchangedOldPng": 80,
+    "actualReachableNodes": 81,
+    "actualExecutableChoices": 232,
+    "stateChangingChoiceWitnesses": 178
+  },
+  "pending": [
+    "local full147",
+    "PR CI full147",
+    "main CI full147 + deploy",
+    "actual public0.12/legacyfile/layout/hash verification"
+  ],
+  "limitations": [
+    "Physical iPhone Safari / Android not tested",
+    "No measured hardware FPS or human fun proof",
+    "Pixel art is an original playable study, not final HD acceptance",
+    "ARC1/B05/main endings and remaining V6 scope unfinished"
+  ]
+}
