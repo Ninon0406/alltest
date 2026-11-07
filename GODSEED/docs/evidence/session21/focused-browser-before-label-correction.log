@@ -1,0 +1,19 @@
+[WebServer] (node:62495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62513) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:62532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/life-paths.spec.ts:6:84 › two introductory paths, earned abilities and manual file 390 (21.2s)
+  ✓  2 tests/life-paths.spec.ts:6:84 › two introductory paths, earned abilities and manual file 844 (36.2s)
+  ✓  3 tests/life-paths.spec.ts:6:84 › two introductory paths, earned abilities and manual file 820 (46.5s)
+  ✓  4 tests/life-paths.spec.ts:6:84 › two introductory paths, earned abilities and manual file 1024 (33.9s)
+  ✓  5 tests/life-paths.spec.ts:6:84 › two introductory paths, earned abilities and manual file 1366 (15.9s)
+  ✓  6 tests/life-paths.spec.ts:15:1 › source anchors, watering beat, trial exit and cross learning are consistent with the lesson (16.2s)
+  ✓  7 tests/life-paths.spec.ts:27:1 › scouting, first-guard roots, active-status file and ward penetration work through the battle UI (19.3s)
+  ✓  8 tests/life-paths.spec.ts:35:1 › missing path atlas remains playable and explicit retry preserves the RAM snapshot (8.9s)
+
+  8 passed (3.3m)

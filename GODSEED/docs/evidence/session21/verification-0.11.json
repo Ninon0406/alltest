@@ -1,0 +1,106 @@
+{
+  "version": "0.11.0",
+  "baselineCommit": "f2396f4",
+  "sourceBranch": "feat/godseed-life-paths",
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "content": {
+      "passed": 2
+    },
+    "unit": {
+      "passed": 223
+    },
+    "roadmap": {
+      "passed": 10
+    },
+    "storyGraph": {
+      "passed": 16
+    },
+    "build": "PASS",
+    "focusedBrowser": {
+      "passed": 8,
+      "duration": "3.3m",
+      "hardware": "Chromium emulation"
+    },
+    "fullBrowser": {
+      "result": "PASS",
+      "passed": 139,
+      "failed": 0,
+      "skipped": 0,
+      "duration": "27.8m",
+      "sourceCommit": "248220c43bf590fb221c294a8fcfbabf68a73643"
+    },
+    "prCI": {
+      "run": 42310555741,
+      "job": 128210745871,
+      "status": "PASS",
+      "browserTests": 139,
+      "duration": "22.7m",
+      "sourceCommit": "248220c43bf590fb221c294a8fcfbabf68a73643"
+    },
+    "mainCI": {
+      "run": 42313865712,
+      "status": "RUNNING"
+    },
+    "live011": {
+      "result": "PASS",
+      "url": "https://ninon0406.github.io/alltest/",
+      "deployment": "LegacyPages42313865105 SUCCESS; customActions mainCI still running",
+      "coreReceipt": "public-core.json",
+      "lifeReceipt": "public-life.json",
+      "layoutsReceipt": "public-layouts.json",
+      "sameStateAsLocalBuild": true,
+      "versionedPngSha256Matches": 69,
+      "jsSha256": "ba1ab51e94d661399ff135182b299ede5a11699fce502c879ec76ce64620ecb2",
+      "consoleErrors": 0,
+      "storageCalls": 0,
+      "uploads": 0
+    },
+    "recipeReplay": {
+      "result": "PASS",
+      "recipes": 234,
+      "healing": 18,
+      "shield": 64,
+      "offensive": 152,
+      "injectedItems": false
+    }
+  },
+  "rootEntry": "./assets/index-DIovloRG.js",
+  "jsSha256": "ba1ab51e94d661399ff135182b299ede5a11699fce502c879ec76ce64620ecb2",
+  "manualSave": "State2/File2; RAM only. Published0.9 activeRUNE_WARD and0.10 completedopening exactly imported locally; activeTRAIL_FOCUS roundtrip; no storage/uploads",
+  "newContent": {
+    "nodes": 16,
+    "choices": 43,
+    "introductoryPaths": 2,
+    "questContracts": 2,
+    "fullGameEndings": 0
+  },
+  "knownLimitations": [
+    "Six life paths, ARC2–12, B04/B05 and final endings unfinished",
+    "Physical Safari/iPhone/Android/iPad, FPS and human fun NOT TESTED",
+    "Art remains a tested procedural prototype, not finalHD acceptance"
+  ],
+  "sourceCommit": "248220c43bf590fb221c294a8fcfbabf68a73643",
+  "localExpandedFlow": {
+    "result": "PASS",
+    "receipt": "local-life.json",
+    "legacy09ActiveWardExactImport": true,
+    "legacy010ExactImport": true,
+    "nativeFilePicker": true,
+    "actualNewlyCraftedSpellEffects": [
+      "BLOOM_RING_HEAL restoresHP",
+      "EARTH_WARD_GUARD absorbs damage",
+      "WIND_RAIN_SEEK damages enemy"
+    ],
+    "normalWateringAndSkip": true,
+    "viewports": 10,
+    "storageCalls": 0,
+    "uploads": 0,
+    "consoleErrors": 0
+  },
+  "mergeCommit": "b21e847d8b817443268e16c274555a79c9fc80de",
+  "pullRequest": "https://github.com/Ninon0406/alltest/pull/20",
+  "knownIssueDiscoveredAfterInitialGates": "Normal scouting skip could leave feet offset; reproduced and fixed in0.11.1. Original139case run did not cover this invariant."
+}

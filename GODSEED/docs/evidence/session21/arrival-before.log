@@ -1,0 +1,74 @@
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+ ❯ tests/arrival-flags.test.ts (4 tests | 3 failed) 33ms
+     × does not grant result flags while selecting a fight or after fleeing/defeat 18ms
+     × grants the destination flags after winning an existing active battle 11ms
+     × does not grant destination flags when surrendering a training encounter 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/arrival-flags.test.ts > destination entry flags belong to actual battle arrival > does not grant result flags while selecting a fight or after fleeing/defeat
+AssertionError: expected true to be undefined
+
+- Expected:
+undefined
+
++ Received:
+true
+
+ ❯ tests/arrival-flags.test.ts:16:116
+     14| describe('destination entry flags belong to actual battle arrival',()=…
+     15|  it('does not grant result flags while selecting a fight or after flee…
+     16|   const active=choose(forest(),'CH0901');expect(active.scene).toBe('S0…
+       |                                                                                                                    ^
+     17|   const escaped=fight(active,'FLEE');expect(escaped.scene).toBe('S09_F…
+     18|   const weak=structuredClone(active);weak.hp=1;const lost=fight(weak,'…
+ ❯ withEntryFlag tests/arrival-flags.test.ts:12:159
+ ❯ tests/arrival-flags.test.ts:15:87
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/arrival-flags.test.ts > destination entry flags belong to actual battle arrival > grants the destination flags after winning an existing active battle
+AssertionError: expected undefined to be true // Object.is equality
+
+- Expected:
+true
+
++ Received:
+undefined
+
+ ❯ tests/arrival-flags.test.ts:25:141
+     23|   const initial=forest();initial.battle=createBattle('B01_FOREST_SPROU…
+     24|   const saved=(await decodeSave(await encodeSave(initial))).state;
+     25|   withEntryFlag('S10_FOREST_RESULT',()=>{const done=win(saved);expect(…
+       |                                                                                                                                             ^
+     26|  });
+     27|  it('does not grant destination flags when surrendering a training enc…
+ ❯ withEntryFlag tests/arrival-flags.test.ts:12:159
+ ❯ tests/arrival-flags.test.ts:25:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/arrival-flags.test.ts > destination entry flags belong to actual battle arrival > does not grant destination flags when surrendering a training encounter
+AssertionError: expected true to be undefined
+
+- Expected:
+undefined
+
++ Received:
+true
+
+ ❯ tests/arrival-flags.test.ts:29:104
+
+ ❯ withEntryFlag tests/arrival-flags.test.ts:12:159
+ ❯ tests/arrival-flags.test.ts:29:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  22:40:11
+   Duration  414ms (transform 157ms, setup 0ms, import 237ms, tests 33ms, environment 0ms)
+

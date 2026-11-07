@@ -359,6 +359,9 @@ export class World extends Phaser.Scene {
   const path=cinematicPath(this.currentStage,cue,command,{x:this.player.x,y:this.player.y},this.location);
   if(!brewing&&!path?.pose&&(spell||cue==='cast'||cue==='craft'))this.castEffect(reduced,spell,target);
   if(path&&!before?.battle){const end=path.points.at(-1)!;this.pendingArrival={x:end.x,y:end.y,facing:path.facing,anchor:path.targetAnchor};}
+  // Stationary gestures can lean/bob too. Cancelling their tween must restore
+  // the original feet, just as a cancelled route settles at its destination.
+  else if(!path)this.pendingArrival={x:this.player.x,y:this.player.y,facing:this.facing};
   const framed=!reduced&&!!(command||path||spell);
   if(framed){const focus=cameraFocus({cue,playerX:this.player.x,npcX:this.npc.x,pathX:path?.points.at(-1)?.x,sceneX:target==='scene'?stageLayouts[this.currentStage].spellTarget?.x??240:undefined,offensive:spell?spell.heal===0&&spell.shield===0:command==='BASIC_PULSE'});const shot=cameraShot(focus,false);this.tweens.add({targets:this.cameras.main,scrollX:shot.scrollX,duration:cameraFraming.duration,ease:'Sine.easeInOut'});}
   this.writeMetric('lastPath',path?.id||'none');this.writeMetric('pathPhase',path?'approach':'interaction');

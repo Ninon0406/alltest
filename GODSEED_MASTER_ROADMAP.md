@@ -1,6 +1,6 @@
 # GODSEED MASTER ROADMAP
 
-อัปเดต 2026-11-06 UTC · ตรวจจาก base commit `f2396f4` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
+อัปเดต 2026-11-07 UTC · ตรวจจาก base commit `b21e847` และงานรอบล่าสุดใน [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)
 
 Source of truth ของสถานะ: [roadmap.json](GODSEED/docs/roadmap.json) · สร้างด้วย `npm --prefix GODSEED run roadmap:update` · ตรวจด้วย `npm --prefix GODSEED run roadmap:check`
 
@@ -26,9 +26,9 @@ V6.0: GODSEED 1.0 ขยายเป็น 12 ARC, 8 Life Paths และผล�
 
 | ด้าน | ✅ / ทั้งหมด | 🟡 | ⬜ | 🔴 | ⛔ | Checklist |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| ระบบเกม | 7/30 | 9 | 13 | 0 | 1 | 23.3% |
+| ระบบเกม | 8/30 | 8 | 13 | 0 | 1 | 26.7% |
 | เนื้อเรื่อง | 2/22 | 7 | 13 | 0 | 0 | 9.1% |
-| ภาพและแอนิเมชัน | 6/14 | 8 | 0 | 0 | 0 | 42.9% |
+| ภาพและแอนิเมชัน | 5/14 | 9 | 0 | 0 | 0 | 35.7% |
 | เวทมนตร์ | 3/11 | 6 | 2 | 0 | 0 | 27.3% |
 | การต่อสู้ | 3/11 | 5 | 3 | 0 | 0 | 27.3% |
 | คุณภาพและการทดสอบ | 2/21 | 10 | 8 | 0 | 1 | 9.5% |
@@ -44,13 +44,13 @@ V6.0: GODSEED 1.0 ขยายเป็น 12 ARC, 8 Life Paths และผล�
 | [1 — Core Playability — เกมหลักเล่นต่อได้](#phase-1) | 6/8 | 1 | 0 | 0 | 1 | 75% |
 | [2 — Story Engine & Content Pipeline](#phase-2) | 2/6 | 3 | 1 | 0 | 0 | 33.3% |
 | [3 — Complete Opening Experience — ช่วงเริ่มต้นครบ](#phase-3) | 0/3 | 2 | 1 | 0 | 0 | 0% |
-| [4 — Life Paths — เส้นทางชีวิต](#phase-4) | 0/9 | 3 | 6 | 0 | 0 | 0% |
+| [4 — Life Paths — เส้นทางชีวิต](#phase-4) | 1/9 | 2 | 6 | 0 | 0 | 11.1% |
 | [5 — Magic System — ระบบเวทและการเรียนรู้](#phase-5) | 3/11 | 6 | 2 | 0 | 0 | 27.3% |
 | [6 — Combat — การต่อสู้](#phase-6) | 3/11 | 5 | 3 | 0 | 0 | 27.3% |
 | [7 — World Systems — โลกและสังคม](#phase-7) | 0/10 | 6 | 4 | 0 | 0 | 0% |
 | [8 — Main Story Expansion — ARC 1–6](#phase-8) | 0/6 | 0 | 6 | 0 | 0 | 0% |
 | [9 — Advanced Story Expansion — ARC 7–12](#phase-9) | 0/7 | 0 | 7 | 0 | 0 | 0% |
-| [10 — Visual & Cinematic Polish](#phase-10) | 6/15 | 9 | 0 | 0 | 0 | 40% |
+| [10 — Visual & Cinematic Polish](#phase-10) | 5/15 | 10 | 0 | 0 | 0 | 33.3% |
 | [11 — Endings & World Consequences](#phase-11) | 0/2 | 1 | 1 | 0 | 0 | 0% |
 | [12 — Performance & Quality](#phase-12) | 1/8 | 3 | 3 | 0 | 1 | 12.5% |
 | [13 — GODSEED 1.0 — Release Gates](#phase-13) | 0/10 | 5 | 5 | 0 | 0 | 0% |
@@ -374,11 +374,11 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
 <a id="phase-4"></a>
 ## Phase 4 — Life Paths — เส้นทางชีวิต
 
-- [ ] 🟡 กำลังพัฒนา **LIFE-001 — Life Path engine/ข้ามสาย/requirement และ file migration**
+- [x] ✅ เสร็จสมบูรณ์ **LIFE-001 — Life Path engine/ข้ามสาย/requirement และ file migration**
   - ความสำคัญ: P1 · ขอบเขต: v1 · ด้าน: systems · เชื่อมบอร์ดเดิม: — · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: FND-008, PIPE-001
   - ไฟล์: [GODSEED/src/engine/state.ts](GODSEED/src/engine/state.ts) · [GODSEED/src/engine/save-file.ts](GODSEED/src/engine/save-file.ts) · [GODSEED/src/systems/game.ts](GODSEED/src/systems/game.ts) · [GODSEED/src/content/life-story.ts](GODSEED/src/content/life-story.ts) · [GODSEED/src/systems/life-paths.ts](GODSEED/src/systems/life-paths.ts) · [GODSEED/src/ui/life-paths-panel.ts](GODSEED/src/ui/life-paths-panel.ts) · [GODSEED/tests/life-story.test.ts](GODSEED/tests/life-story.test.ts) · [GODSEED/tests/path-combat.test.ts](GODSEED/tests/path-combat.test.ts) · [GODSEED/tests/life-paths.spec.ts](GODSEED/tests/life-paths.spec.ts) · [GODSEED/docs/evidence/session21/README.md](GODSEED/docs/evidence/session21/README.md)
-  - หลักฐาน/สถานะจริง: Session21 candidate0.11:16nodes43choices/2introductorycourses/fieldwork→trial→rank2/crosslearning/2differentcombatabilities/old0.10UIfile exactimport/State2File2optionalextension;223unit+Focus7initial+localnativefileflowผ่าน ชุดเต็ม/CI/public0.11ยังรอ ไม่ถือ2หลักสูตรเป็น8สายครบ12ARC/บทสรุปสุดท้าย;ขึ้นกับvalidator/typedChoiceที่มีแล้ว ไม่ต้องรอexplicitchapterauthoringtoolของPIPE002 ซึ่งยังแยกพัฒนาต่อ
+  - หลักฐาน/สถานะจริง: 0.11engineใช้flagsRAM/File2ที่มีอยู่:coherentrank0/1/2,เรียนข้ามหลังพื้นฐาน,2หลักสูตรจริง16nodes43choices/2combatabilities,old0.9activeWard+0.10fileexactimport,strictoptionalpathActions ไม่มีdefault ไม่มีStorage/Upload. Intro2สายไม่ใช่8สายเต็ม. · Source248220c/mergeb21e847;223game+2content+16graph+10roadmap/type/lint/build PASS;Full139 local27.8m/PRCI42310555741 22.7m;localnativefile&10emulatedviewports PASS;current234recipepaths replayed from fresh using earned ingredients. MainCI/public release receipts follow separately.
   - เกณฑ์เสร็จ: เลือกเริ่ม/ฝึก/เปลี่ยนหรือเรียนข้ามสายด้วยเงื่อนไข deterministic ผลต่อcombat/story/resourcesแตกต่าง;ข้อมูลใหม่ในRAM/.godseedเท่านั้น oldfilemigrateได้
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **LIFE-002 — นักเวทพเนจร**
@@ -399,7 +399,7 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - ความสำคัญ: P1 · ขอบเขต: v1 · ด้าน: systems · เชื่อมบอร์ดเดิม: — · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: LIFE-001, ARC-001
   - ไฟล์: [03_CODEX_CONTINUE_FOREVER.md](03_CODEX_CONTINUE_FOREVER.md) · [GODSEED/src/content/story.ts](GODSEED/src/content/story.ts) · [GODSEED/src/content/life-story.ts](GODSEED/src/content/life-story.ts) · [GODSEED/src/systems/life-paths.ts](GODSEED/src/systems/life-paths.ts) · [GODSEED/src/ui/life-paths-panel.ts](GODSEED/src/ui/life-paths-panel.ts) · [GODSEED/tests/life-story.test.ts](GODSEED/tests/life-story.test.ts) · [GODSEED/tests/path-combat.test.ts](GODSEED/tests/path-combat.test.ts) · [GODSEED/tests/life-paths.spec.ts](GODSEED/tests/life-paths.spec.ts) · [GODSEED/docs/evidence/session21/README.md](GODSEED/docs/evidence/session21/README.md)
-  - หลักฐาน/สถานะจริง: Session21 candidate0.11:16nodes43choices/2introductorycourses/fieldwork→trial→rank2/crosslearning/2differentcombatabilities/old0.10UIfile exactimport/State2File2optionalextension;223unit+Focus7initial+localnativefileflowผ่าน ชุดเต็ม/CI/public0.11ยังรอ ไม่ถือ2หลักสูตรเป็น8สายครบ12ARC/บทสรุปสุดท้าย
+  - หลักฐาน/สถานะจริง: 0.11หลักสูตรขั้นต้นเล่นจบจริง ภาคสนาม→trainingwin→rank2→cross-mentorcapstone มีวัตถุดิบและความสามารถเฉพาะต่างกัน;223unit/Full139local+PRCI42310555741/10localemulatedviewports/nativeoldfileผ่าน ยังขาดผลระยะยาวต่อARCและตอนจบ จึงin_progress ไม่ใช่เส้นทางชีวิตครบ1.0
   - เกณฑ์เสร็จ: มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือเส้นทาง/ข่าวลือ/สถานที่ลับ;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **LIFE-005 — นักวิจัยอักขระ**
@@ -413,7 +413,7 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - ความสำคัญ: P1 · ขอบเขต: v1 · ด้าน: systems · เชื่อมบอร์ดเดิม: — · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: LIFE-001, ARC-001
   - ไฟล์: [03_CODEX_CONTINUE_FOREVER.md](03_CODEX_CONTINUE_FOREVER.md) · [GODSEED/src/content/story.ts](GODSEED/src/content/story.ts) · [GODSEED/src/content/life-story.ts](GODSEED/src/content/life-story.ts) · [GODSEED/src/systems/life-paths.ts](GODSEED/src/systems/life-paths.ts) · [GODSEED/src/ui/life-paths-panel.ts](GODSEED/src/ui/life-paths-panel.ts) · [GODSEED/tests/life-story.test.ts](GODSEED/tests/life-story.test.ts) · [GODSEED/tests/path-combat.test.ts](GODSEED/tests/path-combat.test.ts) · [GODSEED/tests/life-paths.spec.ts](GODSEED/tests/life-paths.spec.ts) · [GODSEED/docs/evidence/session21/README.md](GODSEED/docs/evidence/session21/README.md)
-  - หลักฐาน/สถานะจริง: Session21 candidate0.11:16nodes43choices/2introductorycourses/fieldwork→trial→rank2/crosslearning/2differentcombatabilities/old0.10UIfile exactimport/State2File2optionalextension;223unit+Focus7initial+localnativefileflowผ่าน ชุดเต็ม/CI/public0.11ยังรอ ไม่ถือ2หลักสูตรเป็น8สายครบ12ARC/บทสรุปสุดท้าย
+  - หลักฐาน/สถานะจริง: 0.11หลักสูตรขั้นต้นเล่นจบจริง ภาคสนาม→trainingwin→rank2→cross-mentorcapstone มีวัตถุดิบและความสามารถเฉพาะต่างกัน;223unit/Full139local+PRCI42310555741/10localemulatedviewports/nativeoldfileผ่าน ยังขาดผลระยะยาวต่อARCและตอนจบ จึงin_progress ไม่ใช่เส้นทางชีวิตครบ1.0
   - เกณฑ์เสร็จ: มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือฟื้นฟูพื้นที่และสิ่งมีชีวิต;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง
 
 - [ ] ⬜ ยังไม่ได้เริ่ม **LIFE-007 — พ่อค้าเวทมนตร์**
@@ -811,11 +811,11 @@ Checklist เซฟ 85.7% (12/14) แยกจากตัวหารหลั�
   - หลักฐาน/สถานะจริง: มีrest/run/interact poses; รอบ7นั่งม้านั่ง/approachและsupportdepthผ่าน แต่runยังไม่มีstorychoiceจริง/ปฏิสัมพันธ์ยังไม่ครบ; Session12 ต้นแบบหมู่บ้าน/ต้นไม้ผ่านCI65ในVIS-014แล้ว แต่เกณฑ์งานใหญ่/ภาพขั้นสุดท้ายยังไม่ครบ; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ14 CH0601 water→bloom→pluck และมาเรนจำ garden_tended หลังโหลด; fixed exit อ้อมฐานแปลง; local Unit114/Browser7/Build ผ่าน, local77/PRCI42065834761/mainCI42068520631 ผ่านและเว็บจริงรดน้ำ/รางวัล/ดอกบาน/มาเรน/โหลด/42PNGผ่าน; เป็นส่วนย่อย ยังไม่ครบเกณฑ์งานใหญ่; Session15 CH0602มีbenchroute/rest/hummingMarenต้นฉบับ8framesและmemoryผ่านfile-save roundtripบน5viewport; ยังไม่ครบเกณฑ์งานใหญ่; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ
   - เกณฑ์เสร็จ: ท่าทางทุกcueตรงวัตถุ/พื้น มีเหตุการณ์นั่งและวิ่งที่ใช้จริง ไม่เพียงมีsheet
 
-- [x] ✅ เสร็จสมบูรณ์ **VIS-006 — Director: authored paths → interaction → commit/skip**
+- [ ] 🟡 กำลังพัฒนา **VIS-006 — Director: authored paths → interaction → commit/skip**
   - ความสำคัญ: P1 · ขอบเขต: v1 · ด้าน: visual · เชื่อมบอร์ดเดิม: GS-010 · Phaseเดิม: 2 · ตรวจล่าสุด: 2026-11-06
   - ต้องมี: FND-003, VIS-002
-  - ไฟล์: [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/tests/cinematics.spec.ts](GODSEED/tests/cinematics.spec.ts) · [GODSEED/src/scenes/workshop-map.ts](GODSEED/src/scenes/workshop-map.ts) · [GODSEED/src/scenes/workshop-staging.ts](GODSEED/src/scenes/workshop-staging.ts) · [GODSEED/scripts/generate-workshop-art.mjs](GODSEED/scripts/generate-workshop-art.mjs) · [GODSEED/tests/workshop.test.ts](GODSEED/tests/workshop.test.ts) · [GODSEED/tests/workshop.spec.ts](GODSEED/tests/workshop.spec.ts) · [GODSEED/docs/evidence/session18/README.md](GODSEED/docs/evidence/session18/README.md)
-  - หลักฐาน/สถานะจริง: คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ · Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS; Session18 skip/motionยืนยันปลายทางแทนตำแหน่งกลางทาง ผ่านFocus20; Session18 Local113/PRCI42222588626 full113PASS, sourceff5e67d/mergef465839/PR17
+  - ไฟล์: [GODSEED/src/scenes/cinematic-paths.ts](GODSEED/src/scenes/cinematic-paths.ts) · [GODSEED/tests/cinematics.spec.ts](GODSEED/tests/cinematics.spec.ts) · [GODSEED/src/scenes/workshop-map.ts](GODSEED/src/scenes/workshop-map.ts) · [GODSEED/src/scenes/workshop-staging.ts](GODSEED/src/scenes/workshop-staging.ts) · [GODSEED/scripts/generate-workshop-art.mjs](GODSEED/scripts/generate-workshop-art.mjs) · [GODSEED/tests/workshop.test.ts](GODSEED/tests/workshop.test.ts) · [GODSEED/tests/workshop.spec.ts](GODSEED/tests/workshop.spec.ts) · [GODSEED/docs/evidence/session18/README.md](GODSEED/docs/evidence/session18/README.md) · [GODSEED/tests/life-paths.spec.ts](GODSEED/tests/life-paths.spec.ts) · [GODSEED/docs/evidence/session21/stationary-before.log](GODSEED/docs/evidence/session21/stationary-before.log) · [GODSEED/docs/evidence/session21/stationary-after.log](GODSEED/docs/evidence/session21/stationary-after.log)
+  - หลักฐาน/สถานะจริง: คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ;Session21B:ตรวจnormalVFXบนเว็บ0.11พบSkipSCOUTค้างy219.98แทน219 สร้างredtestยืนยัน;แก้Directorให้nonpathgestureจำจุดเดิมและคืนตำแหน่งเมื่อยกเลิก Targetedskip+reducedtoggleผ่าน1/1ใน0.11.1 ยังรอFull140/CIจึงเปิดงานเดิมอีกครั้ง ไม่อ้างเก่าdoneครอบคลุมbugใหม่ · Unitcinematics3 + full45ผ่านหลังแก้ ทุกcaseไม่skip; reviewedbench390/1366; source95c3637/PR7/merge7279cea; ไม่ใช่fullcamera/4direction/HDgate; mainCI41998656125/public2372e798…/post-deployassetgate PASS; Session18 skip/motionยืนยันปลายทางแทนตำแหน่งกลางทาง ผ่านFocus20; Session18 Local113/PRCI42222588626 full113PASS, sourceff5e67d/mergef465839/PR17
   - เกณฑ์เสร็จ: เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop
 
 - [ ] 🟡 กำลังพัฒนา **VIS-007 — Fixed Map และเมนูเส้นทาง/ตำแหน่งที่ปลดล็อก**

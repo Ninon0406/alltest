@@ -1,0 +1,199 @@
+
+> godseed@0.11.0 test:all
+> npm run roadmap:check && npm run validate:references && npm run validate:manual-save && npm run validate:story && npm run typecheck && npm run lint && npm run validate:content && npm test && npm run build
+
+
+> godseed@0.11.0 roadmap:check
+> node --test scripts/roadmap.test.mjs && node scripts/roadmap.mjs
+
+✔ counts only DONE, including zero/all and each non-done state (2.323814ms)
+✔ current audit has valid references, deterministic checklist and checked boxes only for DONE (14.84334ms)
+✔ duplicate and unknown dependency IDs reject (8.852719ms)
+✔ cycles and missing source evidence reject (6.109291ms)
+✔ unsupported status and DONE without actual verification record reject (2.568583ms)
+✔ next-work list excludes done/blocked tasks and promotes actual regressions (4.231009ms)
+✔ location records reject missing aspects, duplicate locations and premature final readiness (14.668377ms)
+✔ manual save subtasks have stable IDs, evidence and do not inflate the main denominator (7.878378ms)
+✔ V6 preserves legacy IDs/phase/scope history while allowing unfinished expanded scope (13.22467ms)
+✔ six domains partition milestones exactly once; designs and save substeps add no completion credit (8.652485ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.651899
+{"result":"PASS","done":23,"in_progress":45,"not_started":39,"problem":0,"blocked":2,"total":109,"percent":21.1,"v1":{"done":23,"in_progress":45,"not_started":38,"problem":0,"blocked":2,"total":108,"percent":21.3}}
+
+> godseed@0.11.0 validate:references
+> node scripts/validate-references.mjs
+
+{"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}
+
+> godseed@0.11.0 validate:manual-save
+> node scripts/validate-manual-save.mjs
+
+{"result":"PASS","applicationFiles":38,"policy":"RAM only; explicit file export/import; no progress storage or outbound upload API in application source"}
+
+> godseed@0.11.0 validate:story
+> node --test scripts/story-graph.test.mjs && node scripts/story-graph.mjs
+
+✔ static graph reports structural counts without claiming executable quests or life paths (2.830868ms)
+✔ missing transitions and duplicated global choice IDs fail (0.295235ms)
+✔ duplicate source definitions cannot hide behind Object.fromEntries (0.355866ms)
+✔ unlinked story nodes and closed non-ending loops fail (0.172009ms)
+✔ reaching a self loop still fails when it cannot escape to a safe hub or ending (0.185379ms)
+✔ authored ending is allowed to terminate and is distinct from an accidental dead end (0.209936ms)
+✔ condition typos, impossible flag sources and unknown spell cores fail (0.250107ms)
+✔ flag produced on an entry or literal engine action is a legal prerequisite (0.161173ms)
+✔ reward IDs, quantities, relationship IDs and shared onceFlag guards are checked (0.274143ms)
+✔ battle victory, defeat and dynamic checkpoint recovery are explicit graph edges (0.372281ms)
+✔ scene staging and source choice cinematic anchors resolve against real map metadata (0.968651ms)
+✔ authored time cuts accept supported boundaries and reject misspelled phases (0.165941ms)
+✔ structured quest chains reject wrong scene references and unconnected steps (0.21279ms)
+✔ invalid recipe definitions fail instead of inflating usable spell counts (0.126981ms)
+✔ path conditions, mentor, ability, location and progression flags resolve to authored data (0.287153ms)
+✔ actual catalog and bounded real reducer exploration remain separate proof levels (927.374392ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1032.956996
+{
+  "result": "PASS",
+  "scope": "Static catalog validation and structural reachability; conditions and combat wins are not assumed executable",
+  "counts": {
+    "storyNodes": 62,
+    "choices": 185,
+    "declaredEffectChoices": 185,
+    "structurallyReachableNodes": 62,
+    "endings": 0,
+    "encounters": 4,
+    "recipeDefinitions": 234,
+    "uniqueRecipes": 234,
+    "declaredQuestChains": 4,
+    "completableQuests": null,
+    "implementedLifePaths": null,
+    "introductoryLifePathContracts": 2,
+    "stages": 7
+  },
+  "structurallyReachable": [
+    "LP_CROSSROADS",
+    "LP_EXPLORER_ACK",
+    "LP_EXPLORER_BRIEF",
+    "LP_EXPLORER_HOME",
+    "LP_EXPLORER_MARKERS",
+    "LP_EXPLORER_RESULT",
+    "LP_EXPLORER_SURVEY",
+    "LP_EXPLORER_TRIAL",
+    "LP_NATURE_ACK",
+    "LP_NATURE_BRIEF",
+    "LP_NATURE_FIELD",
+    "LP_NATURE_HOME",
+    "LP_NATURE_RESULT",
+    "LP_NATURE_SOURCE",
+    "LP_NATURE_TRIAL",
+    "LP_SHARED_ROOTS",
+    "S00_WAKE",
+    "S01_FIRST_STEPS",
+    "S02_HUB",
+    "S02_TREE",
+    "S03B_MAREN",
+    "S03_LUMI",
+    "S04_KORO",
+    "S05_CRAFT_TUTORIAL",
+    "S06_GARDEN",
+    "S07_ARCHIVE",
+    "S08_FOREST_GATE",
+    "S09_FOREST",
+    "S10_FOREST_RESULT",
+    "S11_STREAM",
+    "S12_STREAM_RESULT",
+    "S13_FOREST_SHRINE",
+    "S14_RESEARCH",
+    "S15_RUINS",
+    "S16_RUINS_RESULT",
+    "S17_ECHO_TABLET",
+    "S18_FESTIVAL_PREP",
+    "S19_FESTIVAL",
+    "S20_SEAL_PASSAGE",
+    "S28_RECOVER",
+    "V6_A1_BELL",
+    "V6_A1_CIRCLE",
+    "V6_A1_CLOSE_ARCHIVE",
+    "V6_A1_CLOSE_CIRCLE",
+    "V6_A1_CLOSE_GARDEN",
+    "V6_A1_FIRST_SONG",
+    "V6_A1_FOREST",
+    "V6_A1_FOREST_ECHO",
+    "V6_A1_GARDEN",
+    "V6_A1_GEARS",
+    "V6_A1_INVITATION",
+    "V6_A1_LIGHT_RESULT",
+    "V6_A1_MARGIN",
+    "V6_A1_MORNING",
+    "V6_A1_MUSICBOX",
+    "V6_A1_NOTES",
+    "V6_A1_REHEARSAL",
+    "V6_A1_RUINS_RETURN",
+    "V6_A1_RUNE_COPY",
+    "V6_A1_SEEDBEDS",
+    "V6_A1_STREAM",
+    "V6_A1_WORKSHOP_LIGHT"
+  ],
+  "edges": 203,
+  "flagProducers": 138,
+  "errors": [],
+  "warnings": []
+}
+
+> godseed@0.11.0 typecheck
+> tsc --noEmit
+
+
+> godseed@0.11.0 lint
+> eslint src tests
+
+
+> godseed@0.11.0 validate:content
+> vitest run tests/content.test.ts
+
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:13:30
+   Duration  380ms (transform 175ms, setup 0ms, import 249ms, tests 24ms, environment 0ms)
+
+
+> godseed@0.11.0 test
+> vitest run tests/unit.test.ts tests/save.test.ts tests/combat.test.ts tests/balance.test.ts tests/art.test.ts tests/exploration.test.ts tests/alchemy.test.ts tests/cinematics.test.ts tests/directional.test.ts tests/camera.test.ts tests/scene-definitions.test.ts tests/gathering.test.ts tests/garden.test.ts tests/art-loading.test.ts tests/workshop.test.ts tests/ruins.test.ts tests/opening-content.test.ts tests/content-staging.test.ts tests/quests.test.ts tests/life-paths.test.ts tests/life-story.test.ts tests/path-combat.test.ts tests/arrival-flags.test.ts
+
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+
+ Test Files  23 passed (23)
+      Tests  223 passed (223)
+   Start at  23:13:31
+   Duration  6.55s (transform 489ms, setup 0ms, import 1.79s, tests 2.27s, environment 2ms)
+
+
+> godseed@0.11.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 118 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.60 kB │ gzip:   0.43 kB
+dist/assets/index-C-j8N8xK.css      8.36 kB │ gzip:   2.66 kB
+dist/assets/index-DIovloRG.js   1,684.11 kB │ gzip: 449.77 kB
+✓ built in 4.11s
