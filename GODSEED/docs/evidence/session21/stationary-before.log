@@ -1,0 +1,45 @@
+[WebServer] (node:72038) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:72057) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:72069) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/life-paths.spec.ts:39:1 › skipping or reducing a stationary scouting gesture preserves the battle feet and commits one turn (19.5s)
+
+
+  1) tests/life-paths.spec.ts:39:1 › skipping or reducing a stationary scouting gesture preserves the battle feet and commits one turn 
+
+    Error: expect(received).toMatchObject(expected)
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "depth": 239,
+    -   "feetY": 239,
+    +   "depth": 239.98,
+    +   "feetY": 239.98,
+        "x": 130,
+    -   "y": 219,
+    +   "y": 219.98,
+      }
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      47 |   await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+      48 |   await clickLife(page,method==='skip'?'ข้ามแอนิเมชัน':'ลดการเคลื่อนไหว');
+    > 49 |   await expect.poll(async()=>JSON.parse((await canvas.getAttribute('data-player-anchor'))!)).toMatchObject({x:130,y:219,feetY:239,depth:239});
+         |                                                                                              ^
+      50 |   await expect(canvas).toHaveAttribute('data-active-effects','0');const after=await exportedState(page);expect(after.revision).toBe(before.revision+1);expect(after.battle!.turn).toBe(before.battle!.turn+1);expect(after.battle!.playerStatus.TRAIL_FOCUS).toBe(2);
+      51 |   await clickLife(page,'ถอยออกมาเตรียมตัว');if(method==='skip')await takeLife(page,'CH1502');
+      52 |  }
+        at /workspace/alltest/GODSEED/tests/life-paths.spec.ts:49:94
+
+    Error Context: test-results/life-paths-skipping-or-red-81745-e-feet-and-commits-one-turn/error-context.md
+
+  1 failed
+    tests/life-paths.spec.ts:39:1 › skipping or reducing a stationary scouting gesture preserves the battle feet and commits one turn 

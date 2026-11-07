@@ -1,0 +1,1426 @@
+{
+  "result": "PASS",
+  "recordedAt": "2026-11-06T23:43:53.341Z",
+  "scope": "234 independent runs from fresh seed12345, replaying actual choices and battle actions before each craft. Each recipe consumes real earned components exactly once and enters the spell book. No inventory/flags/HP/MP injection, browser state, save export or upload. This does not mean all234 are owned in one run or that all VFX/strategy differences were browser-tested.",
+  "recipes": 234,
+  "categories": {
+    "healing": 18,
+    "shield": 64,
+    "offensive": 152
+  },
+  "sourceSha256": {
+    "engine/state.ts": "d61e362fa310a6afd64783d552971207c65f10901ea5a18f152eb4830124769b",
+    "systems/game.ts": "0e8a41d27bd7dc6cd06b6254ef629bd452c6236f9065bee22f323070f7a3ca9c",
+    "systems/combat.ts": "6116f322b47c5b95ae38ff2010976776ddb79196fb846fd7013d5f856e47e72d",
+    "systems/spells.ts": "0bdb5922c801f80ed4dbbc006c1b79f74046feef905982de5c87dd0158026954",
+    "systems/life-paths.ts": "63ffb5efc644f487f818e403f893876a483f0ce8db9e22519ebc9b089598937e",
+    "content/story.ts": "855d49c7d3d37eed48d958c16101971d873c01668664a80a3bbdc6058834f772",
+    "content/life-story.ts": "9a38f8686777ab7f68d33c9bb6d3bd8aa83dcdd2add7e2f2cb8f32d9372c8a09"
+  },
+  "records": [
+    {
+      "id": "SPELL_BLOOM_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_CHAIN_HEAL",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_HEAL",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_BLOOM_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 36,
+      "learnedInScene": "S05_CRAFT_TUTORIAL"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_HEAL",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_BLOOM_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 36,
+      "learnedInScene": "S05_CRAFT_TUTORIAL"
+    },
+    {
+      "id": "SPELL_BLOOM_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_RAY_HEAL",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_BLOOM_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_BLOOM_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_BLOOM_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_RING_HEAL",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_BLOOM_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_BLOOM_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_WARD_HEAL",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_BLOOM_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "S16_RUINS_RESULT"
+    },
+    {
+      "id": "SPELL_EARTH_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 90,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_EARTH_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_ECHO_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_ECHO_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 102,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_FIRE_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 36,
+      "learnedInScene": "S05_CRAFT_TUTORIAL"
+    },
+    {
+      "id": "SPELL_FIRE_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_FIRE_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 36,
+      "learnedInScene": "S05_CRAFT_TUTORIAL"
+    },
+    {
+      "id": "SPELL_FIRE_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_FIRE_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_FIRE_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_FIRE_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_FIRE_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "S16_RUINS_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_CHAIN_HEAL",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_HEAL",
+      "result": "PASS",
+      "pathCommands": 50,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_LIGHT_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_HEAL",
+      "result": "PASS",
+      "pathCommands": 50,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_LIGHT_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_LIGHT_RAY_HEAL",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_LIGHT_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_LIGHT_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_LIGHT_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_LIGHT_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_RING_HEAL",
+      "result": "PASS",
+      "pathCommands": 50,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "V6_A1_LIGHT_RESULT"
+    },
+    {
+      "id": "SPELL_LIGHT_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_WARD_HEAL",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_LIGHT_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_SHADOW_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_SHADOW_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 235,
+      "learnedInScene": "V6_A1_FIRST_SONG"
+    },
+    {
+      "id": "SPELL_WATER_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_CHAIN_HEAL",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WATER_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WATER_ORB_HEAL",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_WATER_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_HEAL",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_WATER_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WATER_RAY_HEAL",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WATER_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_WATER_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WATER_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WATER_RING_HEAL",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 48,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WATER_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WATER_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WATER_WARD_HEAL",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WATER_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WIND_CHAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_CHAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_CHAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_CHAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_CHAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_ORB_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_ORB_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WIND_ORB_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_ORB_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_ORB_SEEK",
+      "result": "PASS",
+      "pathCommands": 5,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_ORB_SPLIT",
+      "result": "PASS",
+      "pathCommands": 36,
+      "learnedInScene": "S05_CRAFT_TUTORIAL"
+    },
+    {
+      "id": "SPELL_WIND_RAIN_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_RAIN_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WIND_RAIN_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_RAIN_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_RAIN_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_WIND_RAIN_SPLIT",
+      "result": "PASS",
+      "pathCommands": 36,
+      "learnedInScene": "S05_CRAFT_TUTORIAL"
+    },
+    {
+      "id": "SPELL_WIND_RAY_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_RAY_PIERCE",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_EXPLORER_HOME"
+    },
+    {
+      "id": "SPELL_WIND_RAY_SEEK",
+      "result": "PASS",
+      "pathCommands": 73,
+      "learnedInScene": "LP_EXPLORER_TRIAL"
+    },
+    {
+      "id": "SPELL_WIND_RAY_SPLIT",
+      "result": "PASS",
+      "pathCommands": 60,
+      "learnedInScene": "S18_FESTIVAL_PREP"
+    },
+    {
+      "id": "SPELL_WIND_RING_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 67,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_RING_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WIND_RING_LINGER",
+      "result": "PASS",
+      "pathCommands": 44,
+      "learnedInScene": "S02_HUB"
+    },
+    {
+      "id": "SPELL_WIND_WARD_AMPLIFY",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WIND_WARD_GUARD",
+      "result": "PASS",
+      "pathCommands": 76,
+      "learnedInScene": "LP_NATURE_HOME"
+    },
+    {
+      "id": "SPELL_WIND_WARD_LINGER",
+      "result": "PASS",
+      "pathCommands": 47,
+      "learnedInScene": "S16_RUINS_RESULT"
+    }
+  ]
+}

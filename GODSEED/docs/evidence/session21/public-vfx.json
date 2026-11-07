@@ -1,0 +1,58 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "at": "2026-11-06T23:52:50.370Z",
+  "mode": "normal motion plus explicit skip; public UI and earned recipes",
+  "shots": [
+    {
+      "button": "ตั้งรับ · ฟื้น MP 6",
+      "file": "vfx-root-refuge-390.png",
+      "beat": "ROOT_REFUGE",
+      "target": null,
+      "activeParticles": 5
+    },
+    {
+      "button": "สำรวจจังหวะ · MP 4",
+      "file": "vfx-scout-390.png",
+      "beat": "SCOUT",
+      "target": null,
+      "activeParticles": 5
+    },
+    {
+      "button": "พฤกษาวงแหวนชีวา · MP 14",
+      "file": "vfx-ring-390.png",
+      "beat": null,
+      "target": {
+        "kind": "player",
+        "x": 130,
+        "y": 214.87333333333333
+      },
+      "activeParticles": 24
+    },
+    {
+      "button": "ศิลาปราการคุ้มครอง · MP 13",
+      "file": "vfx-ward-390.png",
+      "beat": null,
+      "target": {
+        "kind": "player",
+        "x": 130,
+        "y": 214.87333333333333
+      },
+      "activeParticles": 24
+    },
+    {
+      "button": "วายุพิรุณนำวิถี · MP 13",
+      "file": "vfx-rain-390.png",
+      "beat": null,
+      "target": {
+        "kind": "npc",
+        "x": 350,
+        "y": 204
+      },
+      "activeParticles": 24
+    }
+  ],
+  "cleanupAfterEach": true,
+  "consoleErrors": [],
+  "hardware": "Chromium emulation; physical devices NOT TESTED"
+}

@@ -36,3 +36,18 @@ test('missing path atlas remains playable and explicit retry preserves the RAM s
  await page.route('**/assets/art-v14/life-icons.png',r=>r.abort());await completeOpening(page);await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','degraded');const before=await exportedState(page);
  await page.unroute('**/assets/art-v14/life-icons.png');await clickLife(page,'ลองโหลดภาพอีกครั้ง');await expect(page.locator('#canvas')).toHaveAttribute('data-render-status','ready');expect(await exportedState(page)).toEqual(before);
 });
+test('skipping or reducing a stationary scouting gesture preserves the battle feet and commits one turn',async({page})=>{
+ await completeOpening(page);await learnBothPaths(page);await takeLife(page,'CH0210','CH0210','CH0207','CH1502');
+ const canvas=page.locator('#canvas');
+ for(const method of ['skip','reduce']){
+  if(await page.locator('#motion').getAttribute('aria-pressed')==='true')await clickLife(page,'ลดการเคลื่อนไหว');
+  const before=await exportedState(page);await expect.poll(async()=>JSON.parse((await canvas.getAttribute('data-player-anchor'))!)).toMatchObject({x:130,y:219,feetY:239,depth:239});
+  await page.getByRole('button',{name:'สำรวจจังหวะ · MP 4',exact:true}).tap();await expect(canvas).toHaveAttribute('data-path-ability-beat','SCOUT');
+  // Interrupt a live gesture after real rendered frames, rather than before it starts.
+  await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+  await clickLife(page,method==='skip'?'ข้ามแอนิเมชัน':'ลดการเคลื่อนไหว');
+  await expect.poll(async()=>JSON.parse((await canvas.getAttribute('data-player-anchor'))!)).toMatchObject({x:130,y:219,feetY:239,depth:239});
+  await expect(canvas).toHaveAttribute('data-active-effects','0');const after=await exportedState(page);expect(after.revision).toBe(before.revision+1);expect(after.battle!.turn).toBe(before.battle!.turn+1);expect(after.battle!.playerStatus.TRAIL_FOCUS).toBe(2);
+  await clickLife(page,'ถอยออกมาเตรียมตัว');if(method==='skip')await takeLife(page,'CH1502');
+ }
+});

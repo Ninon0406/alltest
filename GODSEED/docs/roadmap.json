@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "updated": "2026-11-06",
-  "baseCommit": "f2396f4",
+  "updated": "2026-11-07",
+  "baseCommit": "b21e847",
   "phases": [
     {
       "id": 0,
@@ -966,7 +966,7 @@
       "id": "VIS-006",
       "phase": 10,
       "title": "Director: authored paths → interaction → commit/skip",
-      "status": "done",
+      "status": "in_progress",
       "priority": "P1",
       "dependsOn": [
         "FND-003",
@@ -980,9 +980,12 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.test.ts",
         "GODSEED/tests/workshop.spec.ts",
-        "GODSEED/docs/evidence/session18/README.md"
+        "GODSEED/docs/evidence/session18/README.md",
+        "GODSEED/tests/life-paths.spec.ts",
+        "GODSEED/docs/evidence/session21/stationary-before.log",
+        "GODSEED/docs/evidence/session21/stationary-after.log"
       ],
-      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ",
+      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ;Session21B:ตรวจnormalVFXบนเว็บ0.11พบSkipSCOUTค้างy219.98แทน219 สร้างredtestยืนยัน;แก้Directorให้nonpathgestureจำจุดเดิมและคืนตำแหน่งเมื่อยกเลิก Targetedskip+reducedtoggleผ่าน1/1ใน0.11.1 ยังรอFull140/CIจึงเปิดงานเดิมอีกครั้ง ไม่อ้างเก่าdoneครอบคลุมbugใหม่",
       "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
       "legacyIds": [
         "GS-010"
@@ -2878,7 +2881,7 @@
       "phase": 4,
       "domain": "systems",
       "title": "Life Path engine/ข้ามสาย/requirement และ file migration",
-      "status": "in_progress",
+      "status": "done",
       "priority": "P1",
       "dependsOn": [
         "FND-008",
@@ -2896,11 +2899,18 @@
         "GODSEED/tests/life-paths.spec.ts",
         "GODSEED/docs/evidence/session21/README.md"
       ],
-      "evidence": "Session21 candidate0.11:16nodes43choices/2introductorycourses/fieldwork→trial→rank2/crosslearning/2differentcombatabilities/old0.10UIfile exactimport/State2File2optionalextension;223unit+Focus7initial+localnativefileflowผ่าน ชุดเต็ม/CI/public0.11ยังรอ ไม่ถือ2หลักสูตรเป็น8สายครบ12ARC/บทสรุปสุดท้าย;ขึ้นกับvalidator/typedChoiceที่มีแล้ว ไม่ต้องรอexplicitchapterauthoringtoolของPIPE002 ซึ่งยังแยกพัฒนาต่อ",
+      "evidence": "0.11engineใช้flagsRAM/File2ที่มีอยู่:coherentrank0/1/2,เรียนข้ามหลังพื้นฐาน,2หลักสูตรจริง16nodes43choices/2combatabilities,old0.9activeWard+0.10fileexactimport,strictoptionalpathActions ไม่มีdefault ไม่มีStorage/Upload. Intro2สายไม่ใช่8สายเต็ม.",
       "acceptance": "เลือกเริ่ม/ฝึก/เปลี่ยนหรือเรียนข้ามสายด้วยเงื่อนไข deterministic ผลต่อcombat/story/resourcesแตกต่าง;ข้อมูลใหม่ในRAM/.godseedเท่านั้น oldfilemigrateได้",
       "legacyIds": [],
       "scope": "v1",
-      "reviewed": "2026-11-06"
+      "reviewed": "2026-11-06",
+      "verification": "Source248220c/mergeb21e847;223game+2content+16graph+10roadmap/type/lint/build PASS;Full139 local27.8m/PRCI42310555741 22.7m;localnativefile&10emulatedviewports PASS;current234recipepaths replayed from fresh using earned ingredients. MainCI/public release receipts follow separately.",
+      "evidenceFiles": [
+        "GODSEED/docs/evidence/session21/pr-ci.json",
+        "GODSEED/docs/evidence/session21/full-browser.log",
+        "GODSEED/docs/evidence/session21/local-life.json",
+        "GODSEED/docs/evidence/session21/recipe-replay.json"
+      ]
     },
     {
       "id": "LIFE-002",
@@ -2966,7 +2976,7 @@
         "GODSEED/tests/life-paths.spec.ts",
         "GODSEED/docs/evidence/session21/README.md"
       ],
-      "evidence": "Session21 candidate0.11:16nodes43choices/2introductorycourses/fieldwork→trial→rank2/crosslearning/2differentcombatabilities/old0.10UIfile exactimport/State2File2optionalextension;223unit+Focus7initial+localnativefileflowผ่าน ชุดเต็ม/CI/public0.11ยังรอ ไม่ถือ2หลักสูตรเป็น8สายครบ12ARC/บทสรุปสุดท้าย",
+      "evidence": "0.11หลักสูตรขั้นต้นเล่นจบจริง ภาคสนาม→trainingwin→rank2→cross-mentorcapstone มีวัตถุดิบและความสามารถเฉพาะต่างกัน;223unit/Full139local+PRCI42310555741/10localemulatedviewports/nativeoldfileผ่าน ยังขาดผลระยะยาวต่อARCและตอนจบ จึงin_progress ไม่ใช่เส้นทางชีวิตครบ1.0",
       "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือเส้นทาง/ข่าวลือ/สถานที่ลับ;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
       "legacyIds": [],
       "scope": "v1",
@@ -3015,7 +3025,7 @@
         "GODSEED/tests/life-paths.spec.ts",
         "GODSEED/docs/evidence/session21/README.md"
       ],
-      "evidence": "Session21 candidate0.11:16nodes43choices/2introductorycourses/fieldwork→trial→rank2/crosslearning/2differentcombatabilities/old0.10UIfile exactimport/State2File2optionalextension;223unit+Focus7initial+localnativefileflowผ่าน ชุดเต็ม/CI/public0.11ยังรอ ไม่ถือ2หลักสูตรเป็น8สายครบ12ARC/บทสรุปสุดท้าย",
+      "evidence": "0.11หลักสูตรขั้นต้นเล่นจบจริง ภาคสนาม→trainingwin→rank2→cross-mentorcapstone มีวัตถุดิบและความสามารถเฉพาะต่างกัน;223unit/Full139local+PRCI42310555741/10localemulatedviewports/nativeoldfileผ่าน ยังขาดผลระยะยาวต่อARCและตอนจบ จึงin_progress ไม่ใช่เส้นทางชีวิตครบ1.0",
       "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือฟื้นฟูพื้นที่และสิ่งมีชีวิต;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
       "legacyIds": [],
       "scope": "v1",
@@ -4303,11 +4313,13 @@
   ],
   "workQueue": [
     "PIPE-002",
+    "STO-001",
+    "CMB-006",
+    "CMB-007",
+    "ARC-001",
     "ARC-002",
     "LIFE-004",
     "LIFE-006",
-    "CMB-006",
-    "CMB-007",
     "MAG-010",
     "VIS-008",
     "QA-003"

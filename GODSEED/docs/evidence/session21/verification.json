@@ -1,37 +1,10 @@
 {
-  "version": "0.11.0",
-  "baselineCommit": "f2396f4",
-  "sourceBranch": "feat/godseed-life-paths",
-  "checks": {
-    "npmCi": "PASS",
-    "typecheck": "PASS",
-    "lint": "PASS",
-    "content": {
-      "passed": 2
-    },
-    "unit": {
-      "passed": 223
-    },
-    "roadmap": {
-      "passed": 10
-    },
-    "storyGraph": {
-      "passed": 16
-    },
-    "build": "PASS",
-    "focusedBrowser": {
-      "passed": 8,
-      "duration": "3.3m",
-      "hardware": "Chromium emulation"
-    },
-    "fullBrowser": "Initial run interrupted:17PASS/2whole-loop30sTIMEOUT/1interrupted/119notrun;final isolated139 PENDING",
-    "prCI": "PENDING",
-    "mainCI": "PENDING",
-    "live011": "NOT_YET_PUBLISHED"
-  },
-  "rootEntry": "./assets/index-DIovloRG.js",
-  "jsSha256": "ba1ab51e94d661399ff135182b299ede5a11699fce502c879ec76ce64620ecb2",
-  "manualSave": "State2/File2; RAM only; genuine published0.10 UI file exactly imported locally; no storage/uploads",
+  "version": "0.11.1",
+  "baseMerge": "b21e847d8b817443268e16c274555a79c9fc80de",
+  "sourceBranch": "fix/godseed-stationary-skip",
+  "rootEntry": "./assets/index-hv1pG7Dh.js",
+  "jsSha256": "f732bb3f271f67fdd1eab017fd0095e2720e7eae30be13d876c9d99dbdd57f5d",
+  "previousReleaseEvidence": "verification-0.11.json",
   "newContent": {
     "nodes": 16,
     "choices": 43,
@@ -39,9 +12,33 @@
     "questContracts": 2,
     "fullGameEndings": 0
   },
-  "knownLimitations": [
-    "Six life paths, ARC2–12, B04/B05 and final endings unfinished",
-    "Physical Safari/iPhone/Android/iPad, FPS and human fun NOT TESTED",
-    "Art remains a tested procedural prototype, not finalHD acceptance"
-  ]
+  "checks": {
+    "npmCi": "PASS",
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "unit": {
+      "passed": 223
+    },
+    "content": {
+      "passed": 2
+    },
+    "storyGraph": {
+      "passed": 16
+    },
+    "roadmap": {
+      "passed": 10
+    },
+    "build": "PASS",
+    "stationaryRegression": {
+      "before": "FAIL:feet239.98 instead of239",
+      "after": "PASS:Skip/ReducedMotion restorefeet239 and consume1turn",
+      "tests": 1,
+      "duration": "22.9s"
+    },
+    "fullBrowser": "RUNNING140",
+    "prCI": "PENDING",
+    "mainCI": "PENDING",
+    "live0111": "NOT_YET_PUBLISHED"
+  },
+  "manualSave": "State2/File2/RAMonly. Genuine0.9,0.10,0.11 native files retained locally in/tmp for compatibility verification. No save bytes inGit/upload."
 }
