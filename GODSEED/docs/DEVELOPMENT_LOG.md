@@ -473,3 +473,17 @@ Next5ตามdependency:PIPE002chapter/batch+savecontext→S21/B04→B05/ARC1�
 ### Session22 QA ก่อนfreezeสุดท้าย — 2026-11-07
 
 พบภาพกิ่งไม้ไม่เปลี่ยนแม้flagเปลี่ยนและWINDวิ่งไปเป้าstageรวม แสดงredจริงก่อนแก้ แล้วเพิ่มstream-branchatlas3states/propเคลื่อนที่/flag-derivedpersist/SceneDefinition.effectTargets+validation/Nativefiletest. Unit242/Graph20/Focused8ผ่าน2.3m. Full147candidate238d4c3หยุดโดยตั้งใจ59pass/1interrupted/87ไม่รัน และPRCI42362726203cancelled เพื่อเริ่มFull148ของsourceสุดท้าย. ไม่มีการอ้างผลครบจากcandidateเก่า ยังรอFull148/CI/publicใหม่ก่อนปิดrelease
+
+### Session22 release checkpoints — 2026-11-07 UTC
+
+Source355ef932c71589a5d6448883a22822b6a1a71d03/PR22/merge5964756fc4b835db1a75f419a431a1289f030e18. LocalFull148ผ่าน28.6m;PRCI42363869084/job128377691126ผ่าน148/14825.4mพร้อม242unit/Build/gates. Native0.9/0.10/0.11/0.11.1exactimportบนlocalและactualpublic0.12ผ่าน;midB04echo/flee/win/quest→reward→ECHO_CHAIN_PIERCEcraft/equip/realtrainingdamage/malformedfilepreserve/blankrefresh/0StorageUploadReferenceConsoleErrorsผ่าน;10emulatedviewportsและ77versionedPNG+JSsha4db52f4b566ecfc34a03a7e9fff189d638846271b445b4cee5464dba4d5d70e3ผ่าน. Publicstatehashbdf54204c96397c13aba9e4cde09882575110e802ca532131402c660a7a5a27aตรงlocal. LegacyPages42365860226SUCCESS;MainCI42365860406/job128383652308ยังรอผล ไม่อ้างปิดgateนั้นก่อนจบจริง
+
+เปิดChromiumตรวจSourceศึกษาซ้ำ10:59UTC:Wayเว็บหลัก/wikiและofficialWebnovel5หน้าล้มด้วยERR_TUNNEL_CONNECTION_FAILED บันทึกresearch-access.json ไม่มีขอบเขตอ่านหรือเล่นต้นแบบเพิ่ม ไม่ใช้mirror/paywallbypass. ขอบเขตข้อมูลเก่าระบุวันที่แยกชัด
+
+### Session22 hotfix0.12.1 — cold imported NPC dependency
+
+หลังSource355/PR22/Local148/PRCI148/public0.12.0ผ่าน พบข้อผิดพลาดที่coverageเดิมยังไม่ครอบคลุม:reloadแล้วimportopeningfile→ECHO_CALLvillageแสดงmarenแทนeira-v3 เพราะActorassetอยู่grouparchiveและไม่เคยโหลดในsessionใหม่ ทดสอบredจริงทั้งlocalและpublic0.12.0ก่อนแก้พร้อมภาพก่อน;ไม่ปิดบังความผิดพลาดจากชุดเก่า
+
+หยุดMainCI42365860406โดยตั้งใจเพื่อออก0.12.1 ไม่อ้างว่ามีMain148PASS. เก็บactual0.12.0activeECHOfileจากUIเฉพาะ/tmp/gs22-published-0.12.0.godseedสำหรับcompatibility5รุ่น. Codeเพิ่มactor-awareArtLedger/World.prepare+error/retrycontext โหลดเฉพาะNPCที่ฉากใช้ คงtitle25PNG/cache/SceneIDs/File2/State2/234recipes/88PNGเดิม. เพิ่มUnit2และBrowsercoldfile1 รวม244Unit/149Browserเป้าหมายรอบใหม่;กำลังรันFocused15และchecksก่อนเตรียมPR
+
+Hotfixtargetedผลจริง:Unit244/Focused15ผ่าน2.7m;casecoldfileเพิ่มเติมพร้อมabortEIRA PNG→degraded→explicitretry→EIRAcorrect/Stateexactผ่าน1/1ใน16.5s;title25คงเดิม คืนFND004จากproblemเป็นdoneตามหลักฐานเฉพาะsubsystem แต่Full149/CI/publicของ0.12.1ยังต้องตรวจ
