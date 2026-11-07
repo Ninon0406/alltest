@@ -441,3 +441,18 @@ LIFE001engineใช้PIPE001typedvalidatorที่พร้อมแล้ว 
 Session21 verification correction: initialFull stopped after17PASS/2whole-scenario30sTIMEOUT/1interrupted/119notrun while a second local browser verifier shared the CPU. Not a passed run. Retained every action/5sassertion, raised only the complete legacyloop budget to60s based on observed25–30s, and will run finalFull isolated. Corrected reward descriptions to the actual item catalog. Extended verifier initially tried a13MP ward with only6MP; fixed preparation through actual GUARD turns, no injected MP or lowered assertions. Evidence retains the failed attempt; final receipts supersede it only after rerun.
 
 Session21B /0.11.1hotfix: normalpublicVFXinspection revealed a real stationary-gesture skip drift: canonicaly219→219.98, later supporttargety214.87 rather than211. KillTween retained a partial bob for actions with no route. Redbrowser reproduced it, then preserve the stationary origin through the existing pendingArrival cleanup. Skip and motion-reduction each restore exactfeet239 and consume exactlyone turn;targeted1PASS22.9s. Unit223/content2/graph16/type/lint/buildPASS. Reopened VIS006 pending Full140/CI/public0.11.1. Prior0.11Full139/PRCI139/publicproof remain historical valid within their tested scope; they did not check this new positional invariant. File2/State2 and mechanics unchanged.
+
+
+## ปิดรอบ21/21B — 2026-11-07 UTC — 0.11.1
+
+ContentSource248220c/PR20/mergeb21e847;hotfixSource330899e/PR21/mergec9c2f56. เพิ่ม16nodes43choices รวม62/185,4questcontracts,2introductorycourses,2earnedcombatabilities,1original6frameatlas4253bytes.0finalendings/5NPC/4encounters/234legal/7stages/5mapsคงเดิม.234สูตรถูกreplayจากfreshต่างเส้นทางโดยใช้earnedmaterials ไม่ใส่ของหรือflagsให้เอง ภาพ80PNGreproexact79เดิมไม่เปลี่ยน
+
+223unit/2content/16graph/10roadmap/type/lint/buildผ่าน;PR21CI42315999153 full140/14019.8m;MainCI42351787262 full140/14022.4m/Build128341295752/Deploy128346207882SUCCESS.0.11ก่อนpatchlocal139/27.8m/PR139/Main139เป็นประวัติแยก ส่วนlocalFull140ที่เริ่มก่อนพักไม่มีfinallogหลังexecutorถูกเปลี่ยน จึงไม่อ้างว่าlocal140ผ่าน ใช้CI140ที่จบจริงเป็นfullproof
+
+ตรวจเว็บจริง0.11.1ผ่านcore/2courses/3realspelluses/nativefiles0.9/0.10/0.11exact/activeFocus/invalidfilepreservesRAM/emptyrefresh/10emulatedviewports/normalVFX5และcanonicalx130/y219/feet239/depth239หลังSkipทั้งหมด.0storagecalls/0upload/0reference/0consoleerrors,69versionedPNG+JS SHA256f732bb3f271f67fdd1eab017fd0095e2720e7eae30be13d876c9d99dbdd57f5dตรงBuild. เมื่อ/tmpหายหลังexecutorเปลี่ยน recaptureผ่านoriginalcompiled0.9/0.10จากGitและpublished0.11 ไม่อ้างhashเดิมของfileใหม่และไม่commit/uploadตัวเซฟ
+
+แก้ปัญหาจริง: trialentryflagsก่อนwin→ลงผลเมื่อwin; default30swholelooptimeout→60sโดยรักษา5sassertionsทั้งหมดและisolatedfullpass;ตัวตรวจMPไม่พอ→ตั้งรับจริง;generatedRoadmapstaleหลังเปลี่ยนวัน→regenSSOT;SCOUTskipค้างy219.98→สร้างredtestแล้วเก็บstationaryoriginในpendingArrivalคืนตำแหน่งเมื่อcancel/toggleReducedMotion เพิ่มregression1ข้อและpublicVFXproof ไม่ลบหรือskiptest
+
+Roadmap24done44in_progress39not_started0problem2blocked=24/10922.0%(v124/10822.2%). ปิดLIFE001engine;VIS006เคยปิดแล้วเปิดตรวจใหม่เมื่อพบregression ก่อนคืนdoneด้วยCI140/publicexactfeet ไม่ปิดLIFE004/006หรือทั้ง8Paths/12ARCsจากสองหลักสูตรขั้นต้น HardwareSafari/iPhone/Android/iPad/FPS/humanfun/finalHDยังไม่ทดสอบ ผลประเมินความสนุกเป็นภายใน
+
+Next5ตามdependency:PIPE002chapter/batch+savecontext→S21/B04→B05/ARC1→ARC2→นักเวทพเนจร/นักปรุงเวท+ผลระยะยาวของสองสายแรก งานMAG010/visual/mobilebudgetทำคู่contentตามRoadmap. ไม่มีการพัฒนาข้ามsessionอัตโนมัติ Repoปิดรอบด้วยdocs/evidenceเท่านั้น ไม่เปลี่ยนappinputsหลังsource330899eที่ผ่านCI

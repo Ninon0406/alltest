@@ -2,7 +2,7 @@
 
 Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ
 
-Checklist 21.1% · ✅23 🟡45 ⬜39 🔴0 ⛔2 · ทั้งหมด109
+Checklist 22% · ✅24 🟡44 ⬜39 🔴0 ⛔2 · ทั้งหมด109
 
 V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshotก่อนขยาย ดูscopeHistoryในJSON งานเดิมไม่ถูกลบ เป้าหมายตัวเลขไม่ใช่ของที่สร้างเสร็จ
 
@@ -10,7 +10,7 @@ V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshot
 | --- | ---: | ---: |
 | ระบบเกม | 8/30 | 26.7% |
 | เนื้อเรื่อง | 2/22 | 9.1% |
-| ภาพและแอนิเมชัน | 5/14 | 35.7% |
+| ภาพและแอนิเมชัน | 6/14 | 42.9% |
 | เวทมนตร์ | 3/11 | 27.3% |
 | การต่อสู้ | 3/11 | 27.3% |
 | คุณภาพและการทดสอบ | 2/21 | 9.5% |
@@ -27,7 +27,7 @@ V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshot
 | 7 World Systems — โลกและสังคม | — | STO-003: 🟡, STO-004: 🟡, WRD-001: 🟡, WRD-002: 🟡, WRD-004: 🟡, WRD-005: 🟡, WRD-009: ⬜, WRD-010: ⬜, WRD-011: ⬜, WRD-012: ⬜ |
 | 8 Main Story Expansion — ARC 1–6 | — | WRD-007: ⬜, ARC-002: ⬜, ARC-003: ⬜, ARC-004: ⬜, ARC-005: ⬜, ARC-006: ⬜ |
 | 9 Advanced Story Expansion — ARC 7–12 | — | WRD-008: ⬜, ARC-007: ⬜, ARC-008: ⬜, ARC-009: ⬜, ARC-010: ⬜, ARC-011: ⬜, ARC-012: ⬜ |
-| 10 Visual & Cinematic Polish | VIS-002, VIS-003, VIS-011, VIS-013, VIS-014 | VIS-001: 🟡, VIS-004: 🟡, VIS-005: 🟡, VIS-006: 🟡, VIS-007: 🟡, VIS-008: 🟡, VIS-009: 🟡, VIS-010: 🟡, VIS-012: 🟡, QA-002: 🟡 |
+| 10 Visual & Cinematic Polish | VIS-002, VIS-003, VIS-006, VIS-011, VIS-013, VIS-014 | VIS-001: 🟡, VIS-004: 🟡, VIS-005: 🟡, VIS-007: 🟡, VIS-008: 🟡, VIS-009: 🟡, VIS-010: 🟡, VIS-012: 🟡, QA-002: 🟡 |
 | 11 Endings & World Consequences | — | STO-005: 🟡, STO-006: ⬜ |
 | 12 Performance & Quality | QA-006 | QA-001: 🟡, QA-003: 🟡, QA-004: ⬜, QA-005: 🟡, QA-007: ⬜, QA-008: ⬜, QA-009: ⛔ |
 | 13 GODSEED 1.0 — Release Gates | — | REL-001: ⬜, REL-002: 🟡, REL-003: 🟡, REL-004: 🟡, REL-005: ⬜, REL-006: 🟡, REL-007: 🟡, REL-008: ⬜, REL-009: ⬜, REL-010: ⬜ |

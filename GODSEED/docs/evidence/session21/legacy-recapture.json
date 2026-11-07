@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "at": "2026-11-07T07:31:35.821Z",
+  "reason": "Executor replacement removed temporary private files; regenerated via original historical compiled clients, not fabricated state. These are new exports and do not reuse prior hashes. Save bytes remain only in/tmp, never committed/uploaded.",
+  "records": [
+    {
+      "version": "0.9.0",
+      "sourceCommit": "825bfa5",
+      "genuineUIExport": true,
+      "compiledClientUnmodified": true,
+      "fileSha256": "c500d60135c06672caaad29b6f8d2b0f9629502c4ee9525c07211d3d1ebb6992",
+      "stateSha256": "d2d2f5ca3b9d5fecc87dadc673ee8bc2c6a5bec8b0fb20e552d521bf11308e2f",
+      "bytes": 3375,
+      "localFile": "/tmp/gs20-published-0.9.godseed",
+      "consoleErrors": []
+    },
+    {
+      "version": "0.10.0",
+      "sourceCommit": "f2396f4",
+      "genuineUIExport": true,
+      "compiledClientUnmodified": true,
+      "fileSha256": "bd166e43f289d9770615210983ce5ca9fd78c248b16df8c2ad4cc901157be96b",
+      "stateSha256": "9ab9fd85171ab5ae5a6b04b5f71f374c5e6ad3387be9a581a8b935094d1d1f05",
+      "bytes": 6075,
+      "localFile": "/tmp/gs21-published-0.10.godseed",
+      "consoleErrors": []
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+# Current0.11.1
+
+Same62nodes185choices/2introductorypaths/4questcontracts/0finalendings as0.11;renderer-onlyanchorhotfix.234earned-materialrecipepaths independentlyreplayed;sourceandproof in evidence/session21/recipe-replay.json.
+
 # Current0.11.0 — two introductory life paths
 
 62nodes/185choices/5NPC/4encounters/234legal recipes/7stages/5fixed maps/4questcontracts/2introductorycourses/0finalendings. +16nodes/+43choices vs0.10.0. All62nodes and185choices have real reducer witnesses;145choices cause a measured game-state effect beyond navigation/clock/journal. Sources:content/life-story.ts,content/life-quests.ts,systems/life-paths.ts. Data and full IDs: evidence/session21/story-graph.json and extra-choice-witnesses.json. New materials make234distinct legal recipes craftable across separate earned-material witness routes, versus121witnessed before; this does not mean234recipes owned in one save or browser-tested.

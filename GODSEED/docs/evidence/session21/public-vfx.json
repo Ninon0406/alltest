@@ -1,7 +1,8 @@
 {
   "result": "PASS",
   "url": "https://ninon0406.github.io/alltest/",
-  "at": "2026-11-06T23:52:50.370Z",
+  "version": "0.11.1",
+  "at": "2026-11-07T07:36:58.445Z",
   "mode": "normal motion plus explicit skip; public UI and earned recipes",
   "shots": [
     {
@@ -9,14 +10,26 @@
       "file": "vfx-root-refuge-390.png",
       "beat": "ROOT_REFUGE",
       "target": null,
-      "activeParticles": 5
+      "activeParticles": 5,
+      "settledAnchor": {
+        "x": 130,
+        "y": 219,
+        "feetY": 239,
+        "depth": 239
+      }
     },
     {
       "button": "สำรวจจังหวะ · MP 4",
       "file": "vfx-scout-390.png",
       "beat": "SCOUT",
       "target": null,
-      "activeParticles": 5
+      "activeParticles": 5,
+      "settledAnchor": {
+        "x": 130,
+        "y": 219,
+        "feetY": 239,
+        "depth": 239
+      }
     },
     {
       "button": "พฤกษาวงแหวนชีวา · MP 14",
@@ -25,9 +38,15 @@
       "target": {
         "kind": "player",
         "x": 130,
-        "y": 214.87333333333333
+        "y": 211
       },
-      "activeParticles": 24
+      "activeParticles": 24,
+      "settledAnchor": {
+        "x": 130,
+        "y": 219,
+        "feetY": 239,
+        "depth": 239
+      }
     },
     {
       "button": "ศิลาปราการคุ้มครอง · MP 13",
@@ -36,9 +55,15 @@
       "target": {
         "kind": "player",
         "x": 130,
-        "y": 214.87333333333333
+        "y": 211
       },
-      "activeParticles": 24
+      "activeParticles": 24,
+      "settledAnchor": {
+        "x": 130,
+        "y": 219,
+        "feetY": 239,
+        "depth": 239
+      }
     },
     {
       "button": "วายุพิรุณนำวิถี · MP 13",
@@ -49,7 +74,13 @@
         "x": 350,
         "y": 204
       },
-      "activeParticles": 24
+      "activeParticles": 24,
+      "settledAnchor": {
+        "x": 130,
+        "y": 219,
+        "feetY": 239,
+        "depth": 239
+      }
     }
   ],
   "cleanupAfterEach": true,

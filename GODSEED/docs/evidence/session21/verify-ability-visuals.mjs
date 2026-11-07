@@ -18,7 +18,7 @@ async function active(name,file,{beat,target}={}){
  const count=Number(await canvas.getAttribute('data-active-effects')),focus=target?JSON.parse(await canvas.getAttribute('data-spell-target')):null;
  await page.screenshot({path:new URL(file,dir).pathname,fullPage:true});shots.push({button:name,file,beat:beat||null,target:focus,activeParticles:count});
  if(await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).isVisible())await clickLife(page,'ข้ามแอนิเมชัน');
- await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await expect(canvas).toHaveAttribute('data-active-effects','0');await expect.poll(async()=>JSON.parse(await canvas.getAttribute('data-player-anchor'))).toMatchObject({x:130,y:219,feetY:239,depth:239});
+ await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');await expect(canvas).toHaveAttribute('data-active-effects','0');await expect.poll(async()=>JSON.parse(await canvas.getAttribute('data-player-anchor'))).toMatchObject({x:130,y:219,feetY:239,depth:239});shots.at(-1).settledAnchor=JSON.parse(await canvas.getAttribute('data-player-anchor'));
 }
 try{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(url);await expect(page.locator('.edition')).toContainText(version);await loadFile(page,await readFile('/tmp/gs21-published-0.10.godseed'));await learnBothPaths(page);

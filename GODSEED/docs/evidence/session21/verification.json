@@ -1,7 +1,7 @@
 {
   "version": "0.11.1",
   "baseMerge": "b21e847d8b817443268e16c274555a79c9fc80de",
-  "sourceBranch": "fix/godseed-stationary-skip",
+  "sourceBranch": "main (implementation branch fix/godseed-stationary-skip)",
   "rootEntry": "./assets/index-hv1pG7Dh.js",
   "jsSha256": "f732bb3f271f67fdd1eab017fd0095e2720e7eae30be13d876c9d99dbdd57f5d",
   "previousReleaseEvidence": "verification-0.11.json",
@@ -35,10 +35,63 @@
       "tests": 1,
       "duration": "22.9s"
     },
-    "fullBrowser": "RUNNING140",
-    "prCI": "PENDING",
-    "mainCI": "PENDING",
-    "live0111": "NOT_YET_PUBLISHED"
+    "fullBrowser": "CI140PASS; local final140 attempt UNCONFIRMED because /tmp and test-results were not retained across executor replacement. No local140PASS claim.",
+    "prCI": {
+      "result": "PASS",
+      "run": 42315999153,
+      "buildJob": 128228625093,
+      "browserTests": 140,
+      "duration": "19.8m"
+    },
+    "mainCI": {
+      "result": "PASS",
+      "run": 42351787262,
+      "buildJob": 128341295752,
+      "deployJob": 128346207882,
+      "browserTests": 140,
+      "duration": "22.4m",
+      "deployment": "SUCCESS"
+    },
+    "live0111": {
+      "result": "PASS",
+      "url": "https://ninon0406.github.io/alltest/",
+      "source": "LegacyPages42351786779 + customActions42351787262 SUCCESS; postMain69PNG+JSchecksumPASS",
+      "gameplay": "public-core.json + public-life.json",
+      "layouts": "public-layouts.json,10viewports",
+      "vfx": "public-vfx.json,5normal-motionactions with canonicalfeet239 afterskip",
+      "jsSha256": "f732bb3f271f67fdd1eab017fd0095e2720e7eae30be13d876c9d99dbdd57f5d",
+      "matchedVersionedPNGs": 69,
+      "consoleErrors": 0,
+      "persistentStorageCalls": 0,
+      "uploads": 0
+    },
+    "localNativeFlow": {
+      "result": "PASS",
+      "version": "0.11.1",
+      "legacyVersions": [
+        "0.9.0",
+        "0.10.0",
+        "0.11.0"
+      ],
+      "genuineExportsRecapturedAfterExecutorReplacement": true,
+      "viewports": 10,
+      "oldFull140Log": "not retained; unconfirmed",
+      "storageCalls": 0,
+      "uploads": 0,
+      "consoleErrors": 0
+    },
+    "postMainAssets": {
+      "url": "https://ninon0406.github.io/alltest/",
+      "result": "PASS",
+      "assetsOnly": true,
+      "jsSha256": "f732bb3f271f67fdd1eab017fd0095e2720e7eae30be13d876c9d99dbdd57f5d",
+      "layeredArtFiles": 69,
+      "developmentReferenceRequests": 0,
+      "consoleErrors": []
+    }
   },
-  "manualSave": "State2/File2/RAMonly. Genuine0.9,0.10,0.11 native files retained locally in/tmp for compatibility verification. No save bytes inGit/upload."
+  "manualSave": "State2/File2/RAMonly. Genuine0.9,0.10,0.11 native files retained locally in/tmp for compatibility verification. No save bytes inGit/upload.",
+  "sourceCommit": "330899e0729b19ce9efd6893d05cea20989bbc3a",
+  "mergeCommit": "c9c2f569f2242f8baf9b30d2f40a11fdda47b767",
+  "pullRequest": "https://github.com/Ninon0406/alltest/pull/21"
 }

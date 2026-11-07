@@ -42,7 +42,12 @@
     },
     "mainCI": {
       "run": 42313865712,
-      "status": "RUNNING"
+      "buildJob": 128221592840,
+      "deployJob": 128230375057,
+      "result": "PASS",
+      "browserTests": 139,
+      "duration": "24.0m",
+      "deployment": "SUCCESS"
     },
     "live011": {
       "result": "PASS",

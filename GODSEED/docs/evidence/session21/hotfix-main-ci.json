@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "version": "0.11.1",
+  "run": 42351787262,
+  "buildJob": 128341295752,
+  "deployJob": 128346207882,
+  "mergeCommit": "c9c2f569f2242f8baf9b30d2f40a11fdda47b767",
+  "evidence": [
+    "2026-11-07T07:34:31.8583229Z ℹ pass 10",
+    "2026-11-07T07:34:33.4618183Z ℹ pass 16",
+    "2026-11-07T07:34:39.8254241Z  Test Files  1 passed (1)",
+    "2026-11-07T07:34:39.8255273Z       Tests  2 passed (2)",
+    "2026-11-07T07:34:43.7113348Z  Test Files  23 passed (23)",
+    "2026-11-07T07:34:43.7114397Z       Tests  223 passed (223)",
+    "2026-11-07T07:34:50.7046098Z dist/assets/index-hv1pG7Dh.js   1,684.20 kB │ gzip: 449.79 kB",
+    "2026-11-07T07:34:50.7047235Z ✓ built in 3.90s",
+    "2026-11-07T07:57:29.9840900Z   140 passed (22.4m)",
+    "2026-11-07T07:57:32.2628312Z ./assets/index-hv1pG7Dh.js"
+  ]
+}

@@ -2,7 +2,9 @@
 
 เกม Pixel Art RPG ภาษาไทย ควบคุมด้วยตัวเลือก สร้างเวท และต่อสู้ผลัดเทิร์น ไม่ต้องใช้ API Key
 
-เว็บเผยแพร่ล่าสุด 0.10.0: **Manual File Save เท่านั้น** เกมเก็บความคืบหน้าใน RAM ระหว่างเปิดหน้า เมื่อปิดหรือรีเฟรชต้องโหลดไฟล์เอง ไม่มี Auto Save หรือการเล่นต่อจากข้อมูลเบราว์เซอร์ ไฟล์เก่า .json ที่เคยส่งออกยังเลือกโหลดได้
+เว็บเผยแพร่ล่าสุด 0.11.1: **Manual File Save เท่านั้น** เกมเก็บความคืบหน้าใน RAM ระหว่างเปิดหน้า เมื่อปิดหรือรีเฟรชต้องโหลดไฟล์เอง ไม่มี Auto Save หรือการเล่นต่อจากข้อมูลเบราว์เซอร์ ไฟล์เก่า .json ที่เคยส่งออกยังเลือกโหลดได้
+
+รอบ21 เพิ่ม16จุดเนื้อเรื่อง43ตัวเลือก รวม62/185 พร้อมหลักสูตรนักสำรวจและผู้พิทักษ์ธรรมชาติ ภารกิจภาคสนาม การฝึก ความสามารถเฉพาะ และเรียนข้ามสาย แพตช์0.11.1แก้ตำแหน่งตัวละครเมื่อข้ามท่า [รายงานและหลักฐานล่าสุด](GODSEED/docs/evidence/session21/REPORT_TH.md) เกมยังมี0ตอนจบฉบับเต็ม และสองสายเป็นหลักสูตรขั้นต้น
 
 รอบ20/V6 เพิ่ม25จุดเนื้อเรื่อง72ตัวเลือกและบทสรุปย่อยของงานหมู่บ้าน พร้อมสมุดภารกิจ โคมและแสงเย็น–เช้า [รายงานรอบ20](GODSEED/docs/evidence/session20/REPORT_TH.md) เกมยังอยู่ระหว่างพัฒนาสู่12ARC/8Paths ไม่ใช่1.0
 
@@ -20,7 +22,7 @@
 4. เบราว์เซอร์ยืนยันไม่ได้ว่า OS เก็บสำเร็จ ตรวจไฟล์ก่อนกด “ยืนยันว่าเก็บไฟล์แล้ว” การกระทำถัดไปต้องบันทึกใหม่
 5. ครั้งต่อไปเปิดเว็บแล้วเลือกไฟล์เอง หากยังไม่บันทึกจะมีคำเตือนก่อนเริ่มใหม่/ออก แต่ไม่มีการเขียนข้อมูลให้ลับหลัง
 
-เกมยังเป็น vertical slice: 18ฉาก/60ตัวเลือก/234สูตรถูกต้อง/3เหตุการณ์ต่อสู้/0ตอนจบ มี5สูตรที่ค้นพบจากเส้นทางทดสอบ ภาพต้นไม้/หมู่บ้าน/สวนและตัวละครยังเป็นต้นแบบ CH0602 เดินไปนั่งฟังมาเรนฮัมเพลงและจดจำการฟังผ่านไฟล์
+เกมยังเป็น vertical slice: 62จุดเนื้อเรื่อง/185ตัวเลือก/5NPC/4เหตุการณ์ต่อสู้/234สูตรถูกต้อง/7stages/5fixedmaps/4Questcontracts/2หลักสูตรเส้นทางชีวิตขั้นต้น/0ตอนจบเกม ทดสอบสูตรจากวัตถุดิบที่ได้จริงแยก234เส้นทาง ไม่ใช่สูตรครบในเซฟเดียว ภาพยังเป็นต้นแบบ และผลทดสอบจอมือถือเป็นChromiumจำลอง
 
 [รูปแบบไฟล์และการย้ายข้อมูล](GODSEED/docs/SAVE_FILE_FORMAT.md) · [Master Roadmap](GODSEED_MASTER_ROADMAP.md) · [หลักฐานรอบ15](GODSEED/docs/evidence/session15/README.md)
 
@@ -32,9 +34,9 @@ Node 24: `npm ci --prefix GODSEED` แล้ว `npm --prefix GODSEED run test:a
 
 ## GitHub Pages
 
-เล่นได้ที่ https://ninon0406.github.io/alltest/ — เผยแพร่0.7.1แล้ว Source`5847801`/PR#15/main`8950542` ใช้Manual File Saveเท่านั้น
+เล่นได้ที่ https://ninon0406.github.io/alltest/ — 0.11.1 Source`330899e`/PR#21/merge`c9c2f56` ใช้Manual File Saveเท่านั้น เว็บจริงผ่าน3รุ่นเซฟเก่า/สองหลักสูตร/3เวท/10viewports/5VFXและตำแหน่งเท้าหลังSkip [หลักฐานล่าสุด](GODSEED/docs/evidence/session21/verification.json)
 
-Local/PR/main Browser93ผ่าน Unit121/Content2/Roadmap8/Buildผ่าน [mainCI](https://github.com/Ninon0406/alltest/actions/runs/42195039742) Deployสำเร็จ ตรวจเว็บจริงสวน/เก็บน้ำค้าง/รดน้ำ/นั่งฟัง/ไฟล์ครบState/รีเฟรชหน้าเริ่ม ไม่พบBrowser progress storageหรือSave upload เส้นทาง5สูตร/3การต่อสู้ผ่าน 49versionedPNGและJSตรงBuild ไม่พบConsole errorsในเส้นทางตรวจ
+ประวัติ0.7.1: Local/PR/main Browser93ผ่าน Unit121/Content2/Roadmap8/Buildผ่าน [mainCI](https://github.com/Ninon0406/alltest/actions/runs/42195039742) Deployสำเร็จ ตรวจเว็บจริงสวน/เก็บน้ำค้าง/รดน้ำ/นั่งฟัง/ไฟล์ครบState/รีเฟรชหน้าเริ่ม ไม่พบBrowser progress storageหรือSave upload เส้นทาง5สูตร/3การต่อสู้ผ่าน 49versionedPNGและJSตรงBuild ไม่พบConsole errorsในเส้นทางตรวจ
 
 [รายงานรอบ16พร้อมภาพและข้อจำกัด](GODSEED/docs/evidence/session16/REPORT_TH.md) · [ไฟล์เซฟ](GODSEED/docs/SAVE_FILE_FORMAT.md) · [Roadmapทุกงาน](GODSEED_MASTER_ROADMAP.md) ภาพยังต้นแบบ ยังไม่ใช่1.0
 
@@ -42,7 +44,7 @@ workflow ทดสอบทุก PR และ deploy เมื่อ main ผ�
 
 โปรเจกต์ REBORN ถูกนำออกจาก working tree ตามคำสั่งเจ้าของล่าสุด ไม่ใช่ระบบเซฟเดียวกับ GODSEED
 
-เซฟเกมใช้ schema2 (ตั้งแต่รุ่น0.2.0) โดยย้ายจากV1และเก็บต้นฉบับก่อนเขียนครั้งแรก ตัวตน/seed/ความคืบหน้าไม่ถูกสุ่มใหม่ XP ที่แสดงยังไม่ใช่ระบบเลื่อนระดับอัตโนมัติ
+เซฟเกมใช้ State2/File2 ตรวจและย้ายข้อมูลV1ในRAMเมื่อผู้เล่นเลือกไฟล์และยืนยันเอง ตัวตน/seed/ความคืบหน้าไม่ถูกสุ่มใหม่ ไม่มีการเขียนความคืบหน้าถาวรให้อัตโนมัติ XP ที่แสดงยังไม่ใช่ระบบเลื่อนระดับอัตโนมัติ
 
 ตรวจปริมาณเนื้อหาจากโค้ดด้วย `npm --prefix GODSEED run inspect:content` ใช้กฎเดียวกันระหว่างปุ่มกับระบบเพื่อแสดงเหตุผลของทางเลือกที่ยังล็อก เก็บของลำธารได้ตามวันในเกม การฟังกระดิ่งไม่ล้างผลการช่วยที่ทำไว้ก่อนหน้า
 
@@ -50,7 +52,7 @@ workflow ทดสอบทุก PR และ deploy เมื่อ main ผ�
 
 ## แผนพัฒนาและประวัติ
 
-[GODSEED_MASTER_ROADMAP](GODSEED_MASTER_ROADMAP.md) รวม8Phasesและเกณฑ์1.0จากโค้ด/ภาพ/ผลทดสอบจริง [Task Board](GODSEED/docs/TASK_BOARD.md)เป็นมุมมองย่อจาก [ข้อมูลสถานะชุดเดียว](GODSEED/docs/roadmap.json); [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)เก็บประวัติย้อนหลังและทุกรอบใหม่
+[GODSEED_MASTER_ROADMAP](GODSEED_MASTER_ROADMAP.md) รวมPhase0–13ตามV6และเกณฑ์1.0จากโค้ด/ภาพ/ผลทดสอบจริง [Task Board](GODSEED/docs/TASK_BOARD.md)เป็นมุมมองย่อจาก [ข้อมูลสถานะชุดเดียว](GODSEED/docs/roadmap.json); [Development Log](GODSEED/docs/DEVELOPMENT_LOG.md)เก็บประวัติย้อนหลังและทุกรอบใหม่
 
 ผู้พัฒนาแก้สถานะหลังทดสอบแล้วใช้ `npm --prefix GODSEED run roadmap:update` และ `npm --prefix GODSEED run roadmap:check` (CIตรวจด้วย) เปอร์เซ็นต์นับเฉพาะงาน✅ เป็นChecklist ไม่ใช่สัดส่วนเวลา/คุณภาพเกม; AIเสริมและCH2/CH3แยกขอบเขตจาก1.0
 

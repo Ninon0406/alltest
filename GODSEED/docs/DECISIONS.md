@@ -266,3 +266,8 @@ Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNo
 ## 2026-11-06 / Session21 — earned introductory paths
 
 Expose only2authored introductory courses, not8empty selectable cards. Derive ranks from all prerequisite flags; cross-learning waits for the first foundation. Two quests and actual distinct battle abilities ship with the engine. Preserve legacy recipes/IDs and RAM-onlymanualsave. Optional battle.pathActions has no defaults; oldfiles stay structurallyexact. File2 additivefields plus gameVersion0.11 reject downgrade through the existing version gate. Win destinationentryFlags must be delayed until victory. LIFE001 depends on PIPE001 already-usedvalidator, not the unfinished PIPE002authoring contract. Completed objective lists collapse for mobile reading. No humanfun or finalHD claim.
+
+
+## Session21 / final0.11.1 evidence update
+
+Stationary gestures now retain their starting position in pendingArrival until normal completion/cancellation. Route destinations keep existing behavior. Skip/ReducedMotion restore exactfeet239 and commit one turn; no save-field or damage calculation change. Actualpublic5VFX confirms canonicalposition and zeroeffectsaftercleanup. Old0.9/0.10/0.11 files recreated through original clients after executorreplacement load exactly. All 10 emulatedviewports pass; physicalSafari/iPhone/Android/iPad/FPS/humanfun are NOT TESTED. Source330899e PRCI140PASS;MainCI42351787262 PASS full140/140(22.4m),Build/DeploySUCCESS. Detailed current evidence in session21/REPORT_TH.md; earliercandidate notes above remain chronologicalhistory.

@@ -1,6 +1,10 @@
-### Session21 — 2026-11-06 UTC / candidate0.11.0
+### Session21 — 2026-11-06–07 UTC / 0.11.1
 
-Basef2396f4, branchfeat/godseed-life-paths. LIFE001/004/006 verticalslice: real field lessons→training→two earned abilities→cross-mentor capstone;62/185(+16/+43),4questcontracts,2introductorycourses. ManualFile2/State2 exactold0.10import and activefocus roundtrip passed locally; no persistent storage.223unit/2content/16graph/10roadmap/type/lint/build and initialFocus7PASS; finalFocus8/Full/CI/publicpending. One original4253byteatlas;80PNGreproexact,79previousunchanged. Two intro courses are not full8paths/12ARCs/endings. Next tasks and release receipts: evidence/session21/README.md.
+Content248220c/PR20/mergeb21e847;hotfix330899e/PR21/mergec9c2f56. เพิ่ม16nodes43choices รวม62/185;2หลักสูตรขั้นต้น/4Questcontracts/2ความสามารถที่เล่นต่างกัน/เรียนข้ามสาย/บทสรุปร่วม. แก้trialflagsก่อนชนะและSkipnonpathgestureค้างตำแหน่ง Source16nodebatch+1originalatlas4253bytes,80PNGreproexact79เดิมคงอยู่. ManualRAM/File2/State2 เดิม ไม่มีStorage/Cloud/Autosave
+
+223unit/2content/16graph/10roadmap/type/lint/build/PRCI140ผ่าน. Actualpublic0.11.1:3legacyversions exactfiles/2courses/3realspelleffects/10emulatedviewports/5normalVFX+canonicalfeet/0StorageUploadReferenceConsoleErrors PASS. MainCI42351787262 PASS full140/140(22.4m),Build/DeploySUCCESS. LocalFull140finalไม่ยืนยันเพราะexecutorreplacementไม่เก็บ/tmp;CI140จบจริง.0.11local139/PR139/main139เป็นhistoryแยก
+
+Checklist24/10922.0%(v124/10822.2%);LIFE001engineDONE/VIS006ซ่อมแล้ว สองสายยังintro/in_progress;0finalendings/5NPC/4encounters/234recipes/7stages/5maps. ภาพต้นแบบ/hardwareSafari/FPS/humanfunยังไม่รับรอง. Next5+evidence: [Session21 report](evidence/session21/REPORT_TH.md). No automatic cross-session development claim
 
 ---
 

@@ -241,3 +241,8 @@ Combinedreducerproof142/142choices (bounded138+4learnedcorecases) /46reachableNo
 ## 0.11.0 candidate — แผนที่ที่เว้นที่ให้ราก
 
 หลังคืนแรกของงานฉลอง เรียนหลักสูตรนักสำรวจกับพิพหรือผู้พิทักษ์ธรรมชาติกับมาเรนได้ ภาคสนาม→การฝึก→ความสามารถเฉพาะ และเรียนข้ามสายหลังรับรองพื้นฐาน จบทั้งสองสายเพื่อแลกเปลี่ยนความรู้ร่วมกัน เพิ่ม16จุดเนื้อเรื่อง43ตัวเลือกและ2ภารกิจขั้นต้น สำรวจจังหวะใช้4MPเตรียมเวทผ่านท่าป้องกัน;รากคุ้มภัยเกิดเมื่อGUARDครั้งแรก แก้การได้เครื่องหมายผ่านบททดสอบก่อนชนะ รองรับไฟล์0.10เดิมแบบmanualเหมือนเดิม. การเผยแพร่รอqualitygate;นี่ไม่ใช่เกม1.0หรือ8Pathsครบ.
+
+
+## Session21 / final0.11.1 evidence update
+
+Stationary gestures now retain their starting position in pendingArrival until normal completion/cancellation. Route destinations keep existing behavior. Skip/ReducedMotion restore exactfeet239 and commit one turn; no save-field or damage calculation change. Actualpublic5VFX confirms canonicalposition and zeroeffectsaftercleanup. Old0.9/0.10/0.11 files recreated through original clients after executorreplacement load exactly. All 10 emulatedviewports pass; physicalSafari/iPhone/Android/iPad/FPS/humanfun are NOT TESTED. Source330899e PRCI140PASS;MainCI42351787262 PASS full140/140(22.4m),Build/DeploySUCCESS. Detailed current evidence in session21/REPORT_TH.md; earliercandidate notes above remain chronologicalhistory.

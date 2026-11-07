@@ -1,6 +1,12 @@
-# Session21 / candidate0.11.0
+# Session21 — current0.11.1
 
-223unit/2content/16negative+positivegraph/10roadmap/type/lint/buildPASS. InitialFocus7/7PASS(2.6m); final8/Full139/PRCI/mainCI/live0.11pending. Local native import of genuine published0.10file is exactly equal, new combat focus/cross-path progression and malformed-file rejection work, no storage/upload/reference/consoleerrors. Boundedsearch62/62nodes180choices/234craftedrecipes;5supplementalactualearnedspellroutes total185/185.145choices affect gameplay state by defined metric. This does not prove all seeds, human fun or every spell in a browser. Full evidence follows in session21 receipts. Physical devices/Safari/FPS/final pixel-diff baselineNOT TESTED.
+### Session21 — 2026-11-06–07 UTC / 0.11.1
+
+Content248220c/PR20/mergeb21e847;hotfix330899e/PR21/mergec9c2f56. เพิ่ม16nodes43choices รวม62/185;2หลักสูตรขั้นต้น/4Questcontracts/2ความสามารถที่เล่นต่างกัน/เรียนข้ามสาย/บทสรุปร่วม. แก้trialflagsก่อนชนะและSkipnonpathgestureค้างตำแหน่ง Source16nodebatch+1originalatlas4253bytes,80PNGreproexact79เดิมคงอยู่. ManualRAM/File2/State2 เดิม ไม่มีStorage/Cloud/Autosave
+
+223unit/2content/16graph/10roadmap/type/lint/build/PRCI140ผ่าน. Actualpublic0.11.1:3legacyversions exactfiles/2courses/3realspelleffects/10emulatedviewports/5normalVFX+canonicalfeet/0StorageUploadReferenceConsoleErrors PASS. MainCI42351787262 PASS full140/140(22.4m),Build/DeploySUCCESS. LocalFull140finalไม่ยืนยันเพราะexecutorreplacementไม่เก็บ/tmp;CI140จบจริง.0.11local139/PR139/main139เป็นhistoryแยก
+
+Checklist24/10922.0%(v124/10822.2%);LIFE001engineDONE/VIS006ซ่อมแล้ว สองสายยังintro/in_progress;0finalendings/5NPC/4encounters/234recipes/7stages/5maps. ภาพต้นแบบ/hardwareSafari/FPS/humanfunยังไม่รับรอง. Next5+evidence: [Session21 report](evidence/session21/REPORT_TH.md). No automatic cross-session development claim
 
 ---
 

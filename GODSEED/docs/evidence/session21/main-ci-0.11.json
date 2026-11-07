@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "version": "0.11.0",
+  "run": 42313865712,
+  "job": 128221592840,
+  "mergeCommit": "b21e847d8b817443268e16c274555a79c9fc80de",
+  "evidence": [
+    "2026-11-06T23:45:12.1852852Z ℹ pass 10",
+    "2026-11-06T23:45:13.9564350Z ℹ pass 16",
+    "2026-11-06T23:45:20.9449271Z  Test Files  1 passed (1)",
+    "2026-11-06T23:45:20.9450225Z       Tests  2 passed (2)",
+    "2026-11-06T23:45:25.2757784Z  Test Files  23 passed (23)",
+    "2026-11-06T23:45:25.2758988Z       Tests  223 passed (223)",
+    "2026-11-06T23:45:33.1092479Z dist/assets/index-DIovloRG.js   1,684.11 kB │ gzip: 449.77 kB",
+    "2026-11-06T23:45:33.1093932Z ✓ built in 4.46s",
+    "2026-11-07T00:09:47.0288875Z   139 passed (24.0m)",
+    "2026-11-07T00:09:50.1254465Z ./assets/index-DIovloRG.js"
+  ],
+  "deployJob": 128230375057,
+  "deploy": "SUCCESS"
+}
