@@ -56,3 +56,10 @@ test('Wind targets the actual blocked stream branch; moving it persists through 
 test('repository subpath serves the glade, choice conclusion and manual file without asset errors',async({page})=>{
  await page.setViewportSize({width:360,height:800});const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});await enterEcho(page,'http://127.0.0.1:4191/alltest/',false);await reachEchoTrial(page);await takeLife(page,'CH2102','CHE_BYPASS_WAIT','CHE_RESULT_RECORD','CHE_RECORD_KNOWLEDGE','CHE_REPORT_LIMIT','CHE_LUMI_PAUSE','CHE_CLOSE_PIERCE');await reloadFromFile(page);expect((await exportedState(page)).flags.echo_expedition_complete).toBe(true);expect(errors).toEqual([]);
 });
+
+test('a cold imported opening file loads Eira for the village expedition instead of a fallback actor',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await completeOpening(page);const file=await exportFile(page);await page.reload();await loadFile(page,file);
+ await takeLife(page,'CHE_HUB');await expect(canvas(page)).toHaveAttribute('data-npc','eira-v3');await expect(canvas(page)).toHaveAttribute('data-asset-errors','0');await page.screenshot({path:'test-results/echo-cold-eira-390.png',fullPage:true});
+ await page.reload();await loadFile(page,file);await page.route('**/art-v3/eira.png',route=>route.abort());await takeLife(page,'CHE_HUB');await expect(canvas(page)).toHaveAttribute('data-render-status','degraded');await expect(canvas(page)).toHaveAttribute('data-asset-errors','1');const before=await exportedState(page);
+ await page.unroute('**/art-v3/eira.png');await clickLife(page,'ลองโหลดภาพอีกครั้ง');await expect(canvas(page)).toHaveAttribute('data-npc','eira-v3');await expect(canvas(page)).toHaveAttribute('data-render-status','ready');expect(await exportedState(page)).toEqual(before);
+});

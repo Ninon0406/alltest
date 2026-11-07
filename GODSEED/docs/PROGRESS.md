@@ -1,3 +1,11 @@
+### Session22 / 0.12.1 candidate — cold imported scene actor
+
+แก้NPCข้ามgroupไม่ถูกโหลดเมื่อimportopeningfileแล้วเข้าECHO_CALLทันที:World.prepare/showระบุrequiredactorให้ArtLedgerและerror/retrycontext โหลดเฉพาะsheetที่ยังไม่มี คงtitle25PNGและcache. ภาพก่อน/Redจากactualpublic0.12.0และGreenอยู่[hotfix evidence](evidence/session22/hotfix/README.md)
+
+Unit244/Focused15+coldfileabort/retry1ผ่าน File2/State2/ID/234recipes/88PNGเดิมไม่เปลี่ยน. Native0.12.0activeECHOfileเก็บเฉพาะ/tmpเพื่อเพิ่มcompatibilityเป็น5รุ่น. Full149/CI/public0.12.1รอผลจริง;MainCI42365860406ของ0.12.0cancelledเพื่อpatch ไม่ใช้148เก่าอ้างว่าpatchผ่าน
+
+---
+
 ### Session22 — 2026-11-07 UTC / candidate0.12.0
 
 Session22 candidate0.12.0 ต่อจาก146db71:19newnodes47choices รวม81/232; actual81node/232choicewitnessesและ178state-changingchoices (ไม่ใช่distinctendings). 5Questcontracts/4chapterbatches/5encounters/8stages/6fixedmaps/234recipes/5NPC/2introductorypaths/0finalendings. บทเดินทางลานเสียงย้อนจบได้ทั้งfight/mentor-bypass พร้อมกลับชุมชน รางวัลร่วมให้ครั้งเดียว

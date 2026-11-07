@@ -287,3 +287,8 @@ Select **the highest priority area**, then rotate to next weak area after it pas
 รักษาbattle.echo optionalstrictและabsenceในเซฟเก่า;Intentใช้coreก่อนaction ส่วนcoreใหม่ใช้เทิร์นหน้า. FLEEต้องEIRAtrust2+WINDhit. คงstationarypendingArrivalfixของ0.11.1 ห้ามกลับไปทำให้Skipตำแหน่งเท้าค้าง. Full147/CI/Publicใหม่ต้องอ่านผลจริงในlog ไม่ใช้candidateเป็นหลักฐานผ่าน
 
 รอบ22finalfreezeแก้กิ่งไม้จากstate-onlyให้เป็นวัตถุ3stateที่ย้ายจริงและโหลดคืนได้ WINDอ้างeffectTargetรายวัตถุ ห้ามกลับไปยิงแท่นกลางฉากแทนกิ่งไม้ Full148ใหม่ต้องดูผลปิดรอบ;candidateFull147/CI42362726203ถูกหยุด/ยกเลิก ไม่ใช่PASSครบ
+
+
+## Session22 hotfix0.12.1 handoff
+
+อ่านhotfix/READMEและverification.jsonล่าสุด:0.12.0มีcoldfileNPCdependencybugที่ชุด148ไม่ครอบคลุม ECHO_CALLvillageต้องโหลดeira-v3นอกgrouparchive. Actor-awareArtLedger/World.prepareแก้แล้วและรักษาtitle25PNG/caching/errors/explicitretry อย่ากลับไปคาดว่าNPCทุกตัวอยู่ในstagegroupของตัวเอง. เป้าชุดใหม่149/Unit244 ต้องดูผลจริงก่อนปิดรอบ;Main42365860406เดิมcancelled ไม่อ้างPASS. Actual0.12.0fileเก็บ/tmpเท่านั้นเพื่อcompat5รุ่น

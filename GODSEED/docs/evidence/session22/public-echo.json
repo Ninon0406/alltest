@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "version": "0.12.0",
+  "sourceCommit": "355ef932c71589a5d6448883a22822b6a1a71d03",
+  "at": "2026-11-07T10:56:20.724Z",
+  "legacy": [
+    {
+      "version": "0.9.0",
+      "fileSha256": "c500d60135c06672caaad29b6f8d2b0f9629502c4ee9525c07211d3d1ebb6992",
+      "stateSha256": "d2d2f5ca3b9d5fecc87dadc673ee8bc2c6a5bec8b0fb20e552d521bf11308e2f",
+      "exactImport": true
+    },
+    {
+      "version": "0.10.0",
+      "fileSha256": "bd166e43f289d9770615210983ce5ca9fd78c248b16df8c2ad4cc901157be96b",
+      "stateSha256": "9ab9fd85171ab5ae5a6b04b5f71f374c5e6ad3387be9a581a8b935094d1d1f05",
+      "exactImport": true
+    },
+    {
+      "version": "0.11.0",
+      "fileSha256": "207a14e920c4dc9bc3e8da99c549e3cc2e17907351e1d38fa454130eae0bd9e8",
+      "stateSha256": "5181665b4f1bd87fe44124c86f9ae8b1de755c08ccf9dab2df28e97273918645",
+      "exactImport": true
+    },
+    {
+      "version": "0.11.1",
+      "fileSha256": "06b552d4ed959b73a243e85387634e17de84fa3ef297f3163d6233a791779553",
+      "stateSha256": "44b10fd3d053082be8200c93be0917c5848d2c5fadf27bf3abbd1b1e55831e1c",
+      "exactImport": true
+    }
+  ],
+  "coldTitlePngCount": 25,
+  "gladeNotLoadedOnTitle": true,
+  "activeEchoNativeFileRoundTrip": true,
+  "conditionalFlee": true,
+  "realB04Victory": true,
+  "coherentQuestConclusion": true,
+  "rewardMaterialsCraftAndEquipEchoChainPierce": true,
+  "earnedEchoSpellActuallyDamagesEnemy": true,
+  "malformedFilePreservesRAM": true,
+  "refreshStartsBlank": true,
+  "stateSha256": "bdf54204c96397c13aba9e4cde09882575110e802ca532131402c660a7a5a27a",
+  "sameStateAsLocal": true,
+  "persistentStorageCalls": 0,
+  "saveUploads": 0,
+  "referenceRequests": 0,
+  "consoleErrors": [],
+  "hardware": "NOT_TESTED"
+}

@@ -57,6 +57,7 @@ export class World extends Phaser.Scene {
  private lastOutcome:Outcome='none';
  private art=new ArtLedger();
  private assetStage:StageId='village';
+ private assetActor?:string;
  private assetWork?:Promise<void>;
  assetsLoading=true;
  private layered=false;
@@ -80,11 +81,11 @@ export class World extends Phaser.Scene {
  constructor(private host:HTMLElement){super('world');this.host.dataset.renderStatus='loading';document.addEventListener('visibilitychange',this.visibilityChanged);}
  private writeMetric(key:string,value:string|number){const text=String(value);if(this.host.dataset[key]!==text)this.host.dataset[key]=text;}
  private diagnostics(){
-  this.writeMetric('renderStatus',!this.ready||this.assetsLoading?'loading':this.art.errors(this.assetStage).length?'degraded':'ready');this.writeMetric('stage',this.currentStage);
+  this.writeMetric('renderStatus',!this.ready||this.assetsLoading?'loading':this.art.errors(this.assetStage,this.assetActor).length?'degraded':'ready');this.writeMetric('stage',this.currentStage);
   this.writeMetric('stageLayers',this.layered?3:1);this.writeMetric('streamMist',this.mist?.visible?'visible':'clear');this.writeMetric('npc',this.npcKey);this.writeMetric('playerAction',this.playerAction);
   this.writeMetric('actionPhase',this.phase);this.writeMetric('actionSequence',this.generation);this.writeMetric('activeEffects',this.effects.size);
   this.writeMetric('motion',this.motion?'full':'reduced');this.writeMetric('visibility',document.hidden?'hidden':'visible');
-  this.writeMetric('assetErrors',this.art.errors(this.assetStage).length);this.writeMetric('assetRequests',this.art.requests);this.writeMetric('assetsLoaded',this.art.loaded);this.writeMetric('assetsLoading',String(this.assetsLoading));this.writeMetric('lastOutcome',this.lastOutcome);this.writeMetric('lastCue',this.lastCue);
+  this.writeMetric('assetErrors',this.art.errors(this.assetStage,this.assetActor).length);this.writeMetric('assetRequests',this.art.requests);this.writeMetric('assetsLoaded',this.art.loaded);this.writeMetric('assetsLoading',String(this.assetsLoading));this.writeMetric('lastOutcome',this.lastOutcome);this.writeMetric('lastCue',this.lastCue);
   if(this.ready){const c=this.cameras.main;this.writeMetric('cameraShot',JSON.stringify({zoom:c.zoom,x:c.scrollX,y:c.scrollY,left:c.worldView.x,right:c.worldView.right,top:c.worldView.y,bottom:c.worldView.bottom}));}
   this.writeMetric('walkFacing',this.facing);this.writeMetric('walkTrace',this.walkTrace.join(','));
   this.writeMetric('location',this.currentStage==='village'?this.location:this.currentStage);
@@ -106,12 +107,12 @@ export class World extends Phaser.Scene {
   // Supply a real per-file timeout for both image and sheet requests.
   for(const asset of assets){if(asset.frame)this.load.spritesheet(asset.key,base+asset.path,asset.frame,{responseType:'blob',timeout:8000});else this.load.image(asset.key,base+asset.path,{responseType:'blob',timeout:8000});}
  }
- get assetStatus(){return {loading:this.assetsLoading,stage:this.assetStage,requests:this.art.requests,loaded:this.art.loaded,failed:this.art.errors(this.assetStage)};}
+ get assetStatus(){return {loading:this.assetsLoading,stage:this.assetStage,requests:this.art.requests,loaded:this.art.loaded,failed:this.art.errors(this.assetStage,this.assetActor)};}
  private reportArt(){this.diagnostics();this.game.events.emit('art-status');}
  async prepare(state:State|null,retry=false):Promise<void>{
   const stage=(state?.battle?encounters[state.battle.id].stage:state?scenes[state.scene].stage:'village') as StageId;
   if(this.assetWork){await this.assetWork;return this.prepare(state,retry);}
-  this.assetStage=stage;const assets=this.art.pending(stage,retry);if(!assets.length){this.reportArt();return;}
+  this.assetStage=stage;this.assetActor=state?.battle?encounters[state.battle.id].actor:state?scenes[state.scene].npc:undefined;const assets=this.art.pending(stage,retry,this.assetActor);if(!assets.length){this.reportArt();return;}
   this.assetsLoading=true;
   const work=new Promise<void>(resolve=>{
    this.load.once('complete',()=>{this.assetWork=undefined;this.assetsLoading=false;this.registerArtAnimations();this.reportArt();resolve();});
@@ -211,7 +212,7 @@ export class World extends Phaser.Scene {
   if(!this.ready)return;this.finishAction();
   const scene=state?scenes[state.scene]:null,encounter=state?.battle?encounters[state.battle.id]:null;
   const previousStage=this.currentStage,previousLocation=this.location;
-  this.currentStage=encounter?.stage||scene?.stage||'village';this.assetStage=this.currentStage;
+  this.currentStage=encounter?.stage||scene?.stage||'village';this.assetStage=this.currentStage;this.assetActor=encounter?.actor||scene?.npc;
   this.location=locationFor(scene?.id);
   const preserve=continuity&&!!state&&this.shown?.runId===state.runId&&this.shown.battle===!!state.battle&&previousStage===this.currentStage&&previousLocation===this.location;
   this.gardenArtActive=this.currentStage==='garden'&&['rear','ground','front'].every(layer=>this.textures.exists(`garden-${layer}-v2`));

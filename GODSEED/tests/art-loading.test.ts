@@ -42,3 +42,13 @@ describe('staged, recoverable art loading',()=>{
   expect(ledger.errors('village')).toEqual([]);expect(ledger.loaded).toBe(batch.length);
  });
 });
+
+it('loads only the required cross-stage actor while keeping the cold title bounded',()=>{
+ const ledger=new ArtLedger(),title=ledger.pending('village');expect(title.some(a=>a.key==='eira-v3')).toBe(false);ledger.request(title);title.forEach(a=>ledger.complete(a.key));
+ const actor=ledger.pending('village',false,'eira-v3');expect(actor.map(a=>a.key)).toEqual(['eira-v3']);expect(artForStage('village','eira-v3').filter(a=>a.group==='archive').map(a=>a.key)).toEqual(['eira-v3']);
+ ledger.request(actor);ledger.complete('eira-v3');expect(ledger.pending('village',false,'eira-v3')).toEqual([]);expect(ledger.pending('archive').some(a=>a.key==='eira-v3')).toBe(false);
+});
+it('reports and explicitly retries a required actor failure even outside its normal stage',()=>{
+ const ledger=new ArtLedger(),title=ledger.pending('village');ledger.request(title);title.forEach(a=>ledger.complete(a.key));const actor=ledger.pending('village',false,'eira-v3');ledger.request(actor);ledger.fail('eira-v3');
+ expect(ledger.errors('village')).toEqual([]);expect(ledger.errors('village','eira-v3')).toEqual(['eira-v3']);expect(ledger.pending('village',false,'eira-v3')).toEqual([]);expect(ledger.pending('village',true,'eira-v3').map(a=>a.key)).toEqual(['eira-v3']);ledger.complete('eira-v3');expect(ledger.errors('village','eira-v3')).toEqual([]);
+});

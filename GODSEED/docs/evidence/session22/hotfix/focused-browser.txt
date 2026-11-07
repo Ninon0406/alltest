@@ -1,0 +1,26 @@
+[WebServer] (node:19473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:19492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 15 tests using 1 worker
+
+(node:19504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 390 (3.8s)
+  ✓   2 tests/art-loading.spec.ts:11:52 › bounded title assets, cached revisit and explicit file to an unvisited stage 1366 (3.8s)
+  ✓   3 tests/art-loading.spec.ts:29:1 › explicit retry restores a failed shared atlas while preserving the seated checkpoint and dirty status (2.9s)
+  ✓   4 tests/art-loading.spec.ts:39:1 › repeated failure stays playable without automatic retry; later recovery retains its anchor and NPC memory (3.2s)
+  ✓   5 tests/art-loading.spec.ts:49:1 › a stalled stage asset times out, unlocks controls and can be retried without a second choice commit (10.5s)
+  ✓   6 tests/art-loading.spec.ts:59:1 › HTTP200 with undecodable PNG offers recovery and preserves the exact current file checkpoint (2.3s)
+  ✓   7 tests/echo.spec.ts:8:1 › 390: earned Light, announced Echo core, native mid-battle file, conditional flee and real victory (20.6s)
+  ✓   8 tests/echo.spec.ts:20:1 › 844 landscape: cooperating with Eira reaches a complete knowledge conclusion without a fake win (14.2s)
+  ✓   9 tests/echo.spec.ts:26:1 › 1366: both earned life paths open field choices and abilities in the new actual encounter (18.1s)
+  ✓  10 tests/echo.spec.ts:31:1 › normal walk, Skip and Reduced Motion arrive at the same real anchor and commit the same state (13.4s)
+  ✓  11 tests/echo.spec.ts:38:1 › normal enemy VFX echoes the previously announced core and Skip preserves canonical battle feet (15.8s)
+  ✓  12 tests/echo.spec.ts:45:1 › missing dedicated glade art degrades visibly, permits export and retries without progress changes (12.0s)
+  ✓  13 tests/echo.spec.ts:50:1 › Wind targets the actual blocked stream branch; moving it persists through a manual file (14.3s)
+  ✓  14 tests/echo.spec.ts:56:1 › repository subpath serves the glade, choice conclusion and manual file without asset errors (14.6s)
+  ✓  15 tests/echo.spec.ts:60:1 › a cold imported opening file loads Eira for the village expedition instead of a fallback actor (10.9s)
+
+  15 passed (2.7m)
