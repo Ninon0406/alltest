@@ -306,3 +306,12 @@ Main0.12.1CI42369615679failed148/149ไม่ใช่PASS149 แม้PR/local/
 อ่านGODSEED/docs/evidence/session23/{REPORT_TH.md,verification.json}ก่อนใช้candidatehandoffด้านบน. PR24merge222db4eจากfb91035หลังCI42434254047 full158PASS28.8m/Unit257/sourcegates/buildPASS. Runtimec39ไม่เปลี่ยน. Actualpublic0.13 guardian3phase/3chapterroutes/6legacyversions/10emulatedviewports/coreoldstory/78PNG+JSexact/noStorageUploadReferenceConsoleErrorsผ่าน LegacyPages42436489189SUCCESS. **MainCI42436489386ยังin_progressตอนปิดreceipt** ตรวจrunนี้ก่อนbatchใหม่;ห้ามแปลงpendingเป็นPASS. docs-onlyreceiptใช้[skip ci]ไม่เปลี่ยนruntimeหรือยกเลิกMainrun
 
 Phonecastต้องเห็นcanvasแล้วคืนscrollก่อนbusy-render;ReducedMotion/side-by-sideไม่jump. keyboardhelperต้องรอenabledก่อนlocator.pressEnter;openingใช้helperร่วมกัน ห้ามกลับไปfocusปุ่มdisabledแล้วglobalEnter. คงoldS20/CH2001..3/234recipeIDs/State2/File2/ManualRAM-only. 99nodes273choicesและ3chapterconclusionsไม่เท่ากับ12ARCหรือgameending. Next:PIPE002chapter/savecontext→optionalS29/ARC1acceptance→ARC2→LifePaths→V6magic/visualmobile. ยังไม่รับรองphysicalhardware/FPS/finalHD/humanfun
+
+
+## Session24 candidate handoff — 2026-11-08 / 0.14.0
+
+อ่านSession24/verification.jsonและผลFull165/CI/Publicจริงก่อนใช้candidateสถานะ. 127nodes340choices/260state-delta/8quests7batches7encounters9stages7maps/234recipes/5NPC2introPaths/3chapterconclusions0gameendings. เพิ่มPip3nodesและARC2opening25nodes;ยังไม่ปิดARC2ทั้งหมด. Main0.13CI42436489386ตรวจแล้ว158PASS23.8m+DeploySUCCESS ไม่pendingแล้ว
+
+คงoldIDsรวมCH0211ต้นไม้;Pipใช้CHPIP_HUB. Chapterregistry/batchownershipและactivejourneyใช้ข้อมูลเดียวกับUI/File2;Hub/โรงช่างเก่าอาจownerCH1แต่journeyCH2 ห้ามถอยprogressหรือเพิ่มcounterpersist. File2batchIdoptional/State2เดิม/old0.13nobatchdecoderexact. Revisit/pause/resumeต้องไม่rewritebranchหรือให้kit/giftซ้ำ. B06อ่านplanก่อนaction:0/9/18และWateroffensivehitcounter9 ภาพแยกdamage. ไม่มีAutoSave/browserprogress/saveupload
+
+Originalforestroadใช้Ref06เป็นdirectionเท่านั้น,99PNGbyte-repro/old89unchanged. Stagelegacyforestคงเดิม. Sourceskills/Nodecontracts/realreplay127nodes340choices/234recipesอยู่Session24. Earlierfocused7ไม่ได้แทนfinalFull165;physicalhardware/FPS/finalHD/humanfunยังไม่รับรอง. รอบถัดไปตรวจreleaseentryและRoadmapใหม่ก่อนเลือกงาน

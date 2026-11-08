@@ -7,6 +7,7 @@ export function choose(s:State,id:string){return transact(s,d=>{
  if(d.battle)throw Error('กรุณาจบการต่อสู้ก่อน');
  const c=scenes[d.scene].choices.find(c=>c.id===id);if(!c||!choiceAvailability(d,c).enabled)throw Error('ยังเลือกเส้นทางนี้ไม่ได้');
  const first=!d.choices.includes(id);const day=Math.floor(d.ticks/3);const daily=!!c.daily;const reward=daily?d.gathered[id]!==day:c.onceFlag?!d.flags[c.onceFlag]:first;
+ for(const [id,n] of Object.entries(c.costs||{}))d.inventory[id]-=n;
  if(c.clearFlags)c.clearFlags.forEach(f=>d.flags[f]=false);
  if(c.flags)c.flags.forEach(f=>d.flags[f]=true);
  // Stable, backwards-compatible flags restore resting poses after a reload.

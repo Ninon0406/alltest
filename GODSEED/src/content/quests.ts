@@ -14,6 +14,20 @@ export type QuestDefinition={
 /** Contracts for quests implemented in the existing story, not future roadmap quests. */
 export const quests:readonly QuestDefinition[]=[
  ...lifeQuests,
+ {id:'Q_PIP_FRUIT',title:'พิพกับผลไม้ประหลาด',description:'ช่วยเพื่อนตัวเล็ก เลือกว่าจะใช้ผลไม้อย่างไร แล้วกลับไปใช้ชีวิตด้วยกัน',startScene:'S29_PIP_SIDEQUEST',activationFlags:['pip_fruit_started'],completionFlag:'pip_sidequest_complete',rewardGuard:'pip_fruit_helped',rewardChoiceIds:['CH2901','CH2902','CH2903'],rewardText:'ผลไม้ป่า 1–2 ชิ้นตามวิธีช่วย ได้ครั้งเดียว;การแบ่งผลไม้ใช้ของจริงหนึ่งชิ้น',entrySteps:['help'],steps:[
+  {id:'help',label:'ช่วยหรือให้พิพหาวิธีหยุดผลไม้',flag:'pip_fruit_helped',scene:'S29_PIP_SIDEQUEST',choices:['CH2901','CH2902','CH2903'],next:['decide']},
+  {id:'decide',label:'เลือกแบ่งผลไม้หรือเก็บไว้พร้อมขอบคุณ',flag:'pip_fruit_decided',scene:'PIP_FRUIT_RESULT',choices:['CHPIP_SHARE','CHPIP_KEEP'],requiresFlags:['pip_fruit_helped'],next:['return']},
+  {id:'return',label:'จดเรื่องของเพื่อนแล้วกลับหมู่บ้าน',flag:'pip_sidequest_complete',scene:'PIP_PROMISE',choices:['CHPIP_FINISH','CHPIP_GARDEN'],requiresFlags:['pip_fruit_decided'],next:[]},
+ ]},
+ {id:'Q_FOREST_RETURN',title:'ถนนที่กลับมาเล่าได้',description:'เตรียมเวท ดูแลราก แยกเสียงในโพรง และนำข้อสังเกตกลับไปให้ผู้คน',startScene:'A2_CALL',activationFlags:['a2_started'],completionFlag:'a2_returned',rewardGuard:'a2_returned',rewardChoiceIds:['CHA2_EPILOGUE_FINISH','CHA2_EPILOGUE_TREE'],rewardText:'ข้อเชื่อมประกาย 1 และเศษเสียงสะท้อน 1 รับครั้งเดียวร่วมกันทุกทางเลือก',entrySteps:['pack'],steps:[
+  {id:'pack',label:'เตรียมชุดทดลองและช่องเวทกับคุโร',flag:'a2_kit_taken',scene:'A2_PACK',choices:['CHA2_PACK_TAKE'],next:['listen']},
+  {id:'listen',label:'แยกรอยในโพรง โดยไม่เติมคำตอบที่ยังไม่รู้',flag:'a2_hollow_recorded',scene:'A2_HOLLOW',choices:['CHA2_HOLLOW_TRACE','CHA2_HOLLOW_ECHO'],requiresFlags:['a2_kit_taken'],next:['care']},
+  {id:'care',label:'ประคองรากด้วยมือหรือความรู้ที่เรียนมา',flag:'a2_root_restored',scene:'A2_RING',choices:['CHA2_RING_HAND','CHA2_RING_BLOOM','CHA2_RING_NATURE'],requiresFlags:['a2_hollow_recorded'],next:['pass']},
+  {id:'pass',label:'ผ่านผู้ถักรากด้วยเวท ความอดทน หรือมิตรภาพ',flag:'a2_trial_resolved',scene:'A2_ENCOUNTER',choices:['CHA2_TRIAL_FIGHT','CHA2_TRIAL_PATIENCE','CHA2_TRIAL_FRIEND'],requiresFlags:['a2_root_restored'],next:['share']},
+  {id:'share',label:'กลับไปหาผู้ที่รอฟัง',flag:'a2_returned_to_people',scene:'A2_RETURN',choices:['CHA2_RETURN_MAREN','CHA2_RETURN_EIRA'],requiresFlags:['a2_trial_resolved'],next:['return']},
+  {id:'return',label:'รับวัสดุทดลองต่อและจบการสำรวจครั้งแรก',flag:'a2_returned',scene:'A2_EPILOGUE',choices:['CHA2_EPILOGUE_FINISH','CHA2_EPILOGUE_TREE'],requiresFlags:['a2_eira_reported','a2_root_restored','a2_trial_resolved'],next:[]},
+ ]},
+
  {id:'Q_GUARDIAN_SONG',title:'บทเพลงที่เลือกเดินทางต่อ',description:'เรียนจังหวะผู้พิทักษ์ ผ่านบททดสอบ และเลือกวิธีดูแลเพลงของหมู่บ้าน',startScene:'G_CALL',activationFlags:['guardian_journey_started'],completionFlag:'guardian_chapter_reward',rewardGuard:'guardian_chapter_reward',rewardChoiceIds:['CH2701','CH2702'],rewardText:'เส้นใยดารา 1 และประกายขยายเสียง 1 รับครั้งเดียวร่วมกันทุกบทสรุป',entrySteps:['prepare'],steps:[
   {id:'prepare',label:'เตรียมของกับคุโร',flag:'guardian_kit_taken',scene:'G_KIT',choices:['CHG_KIT_TAKE'],next:['understand']},
   {id:'understand',label:'อ่านจังหวะและข้อจำกัดของผนึก',flag:'guardian_pattern_understood',scene:'G_INSCRIPTION',choices:['CHG_READ_PATTERN','CHG_READ_LISTEN'],requiresFlags:['guardian_kit_taken'],next:['trial']},

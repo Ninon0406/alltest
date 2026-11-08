@@ -77,7 +77,7 @@ export const guardianScenes:StoryScene[]=[
   c('CHG_ARCHIVE_QUESTION','ฝากคำถามว่าผู้สร้างผนึกเคยสูญเสียอะไร','S27_EPILOGUE','pick',{flags:['chapter1_origin_question'],trust:'EIRA'}),
   c('CHG_ARCHIVE_LESSON','เปิดบทเรียนให้คนอื่นตรวจสำเนาร่วมกัน','S27_EPILOGUE','talk',{flags:['chapter1_open_lessons'],trust:'KORO'}),
  ]},
- {id:'S27_EPILOGUE',title:'โลกยังจดจำ',stage:'village',npc:'lumi',entryFlags:['chapter1_complete','village_changed'],staging:{location:'village_center',anchor:'fountain_front'},text:'เสียงน้ำพุยังดังเท่าเดิม แต่คราวนี้มีคนฟังอยู่รอบมัน บทแรกของการเดินทางจบลงแล้ว ความทรงจำ วิธีแก้ปัญหา และบทเรียนที่คุณเลือกยังอยู่ครบ หมู่บ้านเปิดให้กลับไปช่วยผู้คน ทดลองเวท และเรียนอีกสายได้ เรื่องราวโลกส่วนถัดไปยังอยู่ระหว่างพัฒนา',choices:[
+ {id:'S27_EPILOGUE',title:'โลกยังจดจำ',stage:'village',npc:'lumi',entryFlags:['chapter1_complete','village_changed'],staging:{location:'village_center',anchor:'fountain_front'},text:'เสียงน้ำพุยังดังเท่าเดิม แต่คราวนี้มีคนฟังอยู่รอบมัน บทแรกของการเดินทางจบลงแล้ว ความทรงจำ วิธีแก้ปัญหา และบทเรียนที่คุณเลือกยังอยู่ครบ หมู่บ้านเปิดให้กลับไปช่วยผู้คน ทดลองเวท และเรียนอีกสายได้ ถนนป่ามีเสียงตอบจากรากไม้ให้เริ่มสำรวจต่อได้ ส่วนเรื่องราวโลกที่ไกลกว่านั้นยังอยู่ระหว่างพัฒนา',choices:[
   c('CH2701','กลับไปใช้ชีวิตในหมู่บ้านหลังจบบท','S02_HUB','walk',{flags:['guardian_chapter_reward'],onceFlag:'guardian_chapter_reward',items:{FORM_RAY:1,MOD_AMPLIFY:1},cinematic:shot('village_road')}),
   c('CH2702','กลับไปใต้ต้นไม้และคิดถึงสิ่งที่เลือก','S02_TREE','walk',{flags:['guardian_chapter_reward'],onceFlag:'guardian_chapter_reward',items:{FORM_RAY:1,MOD_AMPLIFY:1},cinematic:shot('tree_path','talk','leaf')}),
  ]},

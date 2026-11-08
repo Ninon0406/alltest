@@ -12,6 +12,7 @@ export function authoredCinematic(command?:string):Choice['cinematic']{return co
 // Sprite centers, foot anchor y+20. Authored lanes avoid solid prop bases;
 // these routes are presentation data, never free-roam or serialized progress.
 export const travelPaths:Record<StageId,readonly Point[]>={
+ forest_road:[{x:130,y:219},{x:154,y:219},{x:218,y:219}],
  glade:[{x:130,y:219},{x:126,y:231},{x:80,y:231}],
  ruins:[{x:126,y:228},{x:240,y:231},{x:350,y:231}],
  village:[{x:154,y:237},{x:190,y:227},{x:230,y:219}],

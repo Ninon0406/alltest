@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "at": "2026-11-08T09:39:41.490Z",
+  "gameVersion": "0.13.0",
+  "formatVersion": 2,
+  "scene": "S22_GUARDIAN",
+  "battle": "B05_MEMORY_GUARDIAN",
+  "oldFile2HasNoBatchId": true,
+  "fileSha256": "15b5b024f50f0662e90cb19efb51a419ae2b0a79ca6946127f46014d43b873d5",
+  "stateSha256": "df4c6eb964cc36ef4bbd4038577a733029a52c4d3035b6b8ea25b078ef85fd7b",
+  "saveBytes": "private /tmp only; not committed or uploaded",
+  "consoleErrors": [],
+  "saveUploads": []
+}

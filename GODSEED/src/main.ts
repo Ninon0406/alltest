@@ -1,13 +1,14 @@
+import {storyContext} from './systems/story-context';
 import {revealCinematic} from './ui/cinematic-viewport';
 import {craftingPanel,spellbookPanel} from './ui/alchemy-panel';
 import type {BookFilter} from './systems/alchemy';
 import {lifePathsPanel} from './ui/life-paths-panel';
 import './styles/game.css';
 import {fresh,type State} from './engine/state';import {ManualSession} from './engine/manual-session';import {readSaveFile} from './engine/save-file';import {saveControls,downloadSave} from './ui/save-controls';
-import {scenes,type Choice} from './content/story';import {choiceAvailability,nextHint,rememberedLines} from './systems/story';import {memoryPanel} from './ui/memory-panel';import {choose,craft,equip,unequip,fight} from './systems/game';import {byId,itemNames} from './systems/spells';import {startWorld} from './scenes/world';import {combatPanel} from './ui/combat-panel';
+import {scenes,type Choice} from './content/story';import {choiceAvailability,nextHint,rememberedLines,narrativeText} from './systems/story';import {memoryPanel} from './ui/memory-panel';import {choose,craft,equip,unequip,fight} from './systems/game';import {byId,itemNames} from './systems/spells';import {startWorld} from './scenes/world';import {combatPanel} from './ui/combat-panel';
 const bookFilter:BookFilter={core:'',kind:'',mp:''};
 const app=document.querySelector<HTMLDivElement>('#app')!;
-app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.13.0</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
+app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.14.0</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
 const {world,game}=startWorld(document.querySelector('#canvas')!);const session=new ManualSession();let state:State|null=null,busy=true,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,screen='title',titleName='';let skip:()=>void=()=>{};
 const content=document.querySelector<HTMLDivElement>('#content')!,notice=document.querySelector<HTMLParagraphElement>('#notice')!;
 const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
@@ -60,6 +61,7 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
 
  });}finally{restoreView?.();}}
 function render(){
+ const context=state?storyContext(state):null;document.querySelector('.chapter')!.textContent=context?context.label+' · '+context.title:'บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง';
  renderArtNotice();content.setAttribute('aria-busy',String(busy));
  const banner=document.querySelector<HTMLElement>('#storage')!;banner.hidden=!state;banner.textContent=session.dirty?'ยังไม่ได้เก็บความคืบหน้าล่าสุดเป็นไฟล์ · บันทึกก่อนออก':'มีไฟล์ของความคืบหน้านี้แล้ว · เล่นต่อแล้วอย่าลืมบันทึกใหม่';
  banner.dataset.dirty=String(session.dirty);
@@ -69,7 +71,7 @@ function render(){
  if(state){if(screen!=='save'&&!leaving&&!pendingImport)nav.append(button('บันทึกเกมเป็นไฟล์',()=>void exportCurrent()));nav.append(button('เมนูหลัก',()=>leave('title')),button('เริ่มเกมใหม่',()=>leave('new')));}
  if(state&&busy)nav.append(el('p','กำลังเตรียมเหตุการณ์ จึงยังบันทึกหรือโหลดไฟล์ไม่ได้'));
  if(leaving||pendingImport)nav.querySelectorAll('button').forEach(b=>b.disabled=true);
- if(pendingImport){const result=pendingImport,loaded=result.state;section('ตรวจสอบไฟล์เซฟก่อนโหลด',`${result.fileName} · ${loaded.name} · บทที่หนึ่ง · ${scenes[loaded.scene].title} · HP ${loaded.hp}/100 · MP ${loaded.mp}/40 · EXP ${loaded.xp} · วันที่ ${Math.floor(loaded.ticks/3)+1} · เวท ${loaded.known.length} สูตร${loaded.battle?' · อยู่ระหว่างเทิร์นต่อสู้':''}${result.legacy?' · ไฟล์รุ่นเดิม จะปรับข้อมูลใน RAM':''}`);
+ if(pendingImport){const result=pendingImport,loaded=result.state;section('ตรวจสอบไฟล์เซฟก่อนโหลด',`${result.fileName} · ${loaded.name} · ${storyContext(loaded).label} · ${scenes[loaded.scene].title} · HP ${loaded.hp}/100 · MP ${loaded.mp}/40 · EXP ${loaded.xp} · วันที่ ${Math.floor(loaded.ticks/3)+1} · เวท ${loaded.known.length} สูตร${loaded.battle?' · อยู่ระหว่างเทิร์นต่อสู้':''}${result.legacy?' · ไฟล์รุ่นเดิม จะปรับข้อมูลใน RAM':''}`);
  content.append(el('p','การโหลดจะแทนที่เกมใน RAM ปัจจุบัน หากมีความคืบหน้าที่ยังไม่เก็บไฟล์ให้ยกเลิกและบันทึกก่อน'),button('ยืนยันโหลดไฟล์นี้',()=>void exclusive(async()=>{await world.prepare(loaded);session.load(loaded);pendingImport=null;showState(session.current!);})),button('ยกเลิกการโหลด',()=>{pendingImport=null;render();}));return;}
  if(leaving){section('ก่อนออกจากเรื่องราว','ความคืบหน้าที่ยังไม่ได้บันทึกเป็นไฟล์จะหายไป ต้องการบันทึกก่อนหรือไม่?');content.append(button('บันทึกเกมเป็นไฟล์',()=>void exportCurrent()),button('กลับไปเล่นต่อ',()=>{leaving=null;render();}),button('ออกโดยไม่บันทึก',finishLeaving),el('p','หลังเริ่มดาวน์โหลด ให้ตรวจว่าเก็บไฟล์ไว้แล้วก่อนออก เกมไม่บันทึกให้ลับหลัง'));return;}
  if(!state){section('โลกกำลังรอเรื่องราวของคุณ','ใต้เงาต้นเมล็ด มีบทเพลงหนึ่งกำลังเลือนหาย และมีใครบางคนรอให้คุณช่วยฟัง');const label=el('label','ชื่อผู้มาเยือน');const name=el('input');name.placeholder='อาเรน';name.maxLength=30;name.value=titleName;name.disabled=busy||!world.ready;name.oninput=()=>titleName=name.value;label.append(name);content.append(label,button('เริ่มการเดินทาง',()=>{if(state||busy||!world.ready)return;titleName=name.value;begin();render();}));
@@ -83,7 +85,7 @@ function render(){
  if(screen==='craft'){section('โต๊ะผสมเมล็ดเวท','แก่นธาตุ + รูปแบบ + ตัวปรับ ใช้อย่างละหนึ่งชิ้นเมื่อค้นพบครั้งแรก ร่ายครั้งถัดไปใช้ MP');craftingPanel(content,s,button,(c,f,m)=>void act(()=>craft(s,c,f,m),'craft',`SPELL_${c}_${f}_${m}`));return;}
  if(screen==='book'){section('สมุดเวทมนตร์',`${s.known.length} สูตรที่ค้นพบ · ติดตั้งได้ 4 ช่อง · เปลี่ยนเวทได้เมื่อนอกการต่อสู้`);spellbookPanel(content,s,button,(id,slot)=>void act(()=>equip(s,id,slot)),slot=>void act(()=>unequip(s,slot)),bookFilter);return;}
  if(s.battle){screen='battle';combatPanel(content,s,button,(id,cue,spellId)=>void act(()=>fight(s,id),cue,spellId,id));return;}
- const scene=scenes[s.scene];section(scene.title,scene.text);if(s.flags.slice_complete&&s.scene==='S02_HUB')content.append(el('p','คุณนำโน้ตจากป่ากลับมาแล้ว — จบช่วงทดลองเมล็ดแรก! ยังสำรวจ ผสมเวท และฝึกสู้ต่อได้ หอสมุด ลำธาร ศาลเจ้า และงานเพลงของหมู่บ้านยังมีเรื่องให้ติดตามต่อ'));
+ const scene=scenes[s.scene];section(scene.title,narrativeText(s,scene));if(s.flags.slice_complete&&s.scene==='S02_HUB')content.append(el('p','คุณนำโน้ตจากป่ากลับมาแล้ว — จบช่วงทดลองเมล็ดแรก! ยังสำรวจ ผสมเวท และฝึกสู้ต่อได้ หอสมุด ลำธาร ศาลเจ้า และงานเพลงของหมู่บ้านยังมีเรื่องให้ติดตามต่อ'));
  if(s.flags.lumi_helped&&s.scene==='S02_HUB')content.append(el('p','ลูมิโบกมือ: “หนูรู้แล้วว่าถ้าหาไม่เจอ ก็ลองฟังให้ดีกว่าเดิม!”'));
  for(const line of rememberedLines(s,scene))content.append(el('p',line));
  if(scene.id==='S02_HUB'){const hint=el('p',nextHint(s));hint.className='story-hint';content.append(hint);}

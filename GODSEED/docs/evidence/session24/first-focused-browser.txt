@@ -1,0 +1,20 @@
+[WebServer] (node:2125) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:2144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 6 tests using 1 worker
+
+(node:2156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/6] tests/forest.spec.ts:10:1 › 390: Pip side quest shows the new road, catches the real fruit, spends one and cannot duplicate the reward
+[2/6] tests/forest.spec.ts:18:1 › 390: the earned first chapter opens ARC2, actual ward crafting and all three forest resolutions round-trip with one gift
+[3/6] tests/forest.spec.ts:27:1 › 390: Weaver turn files, announced sweep, real water counter and victory return to the correct chapter2 scene
+[4/6] tests/forest.spec.ts:36:1 › 1366: a missing forest prop retries without changing the RAM state or chapter checkpoint
+[5/6] tests/forest.spec.ts:40:1 › forest scene and chapter2 file input fit all ten target viewports with no console/asset errors
+[6/6] tests/forest.spec.ts:48:1 › 390: skipping a normal forest action reaches the same feet, pose and next state
+  6 passed (2.1m)

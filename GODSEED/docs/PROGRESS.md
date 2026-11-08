@@ -1,3 +1,26 @@
+## Session24 final-source QA update — 2026-11-08
+
+แก้ข้อความrevisitให้ตรงworldfactsด้วยauthoredvariants:ผลไม้ที่เก็บแล้ว/รากที่ฟื้นแล้ว/ร่องน้ำที่เปิดแล้ว และไม่ให้ความทรงจำโพรงก่อนเหตุการณ์จริง. UIแสดงvariantจากfactเท่านั้น ไม่แก้State;Graphตรวจflag/textและNodecontractsส่งออกvariantsด้วย. Sourcechecksล่าสุดUnit273/Content2/Graph24/Roadmap10/type/lint/build/manual/refPASS. FirstLocal165หยุด63PASS/1interrupted/101notrun15.0mและPRCI42469155897cancelledเพื่อใช้finalsource ไม่ใช่ผลผ่านครบ. FinalLocal165/PRCIใหม่รอผลจริง;ดูSession24/verification.json
+
+---
+
+## Session24 — 2026-11-08 UTC / candidate0.14.0
+
+ต่อจากmain0dc39c0/public0.13โดยไม่เริ่มใหม่. ตรวจMainCI42436489386ของรอบก่อนแล้ว:158/158PASS23.8mและDeploySUCCESS. รอบนี้เพิ่ม28nodes67choices รวม127/340 พร้อม8questcontracts/7batches/7encounters/9stages/7fixedmaps. Actualreducerwitnessครบ127nodes340choices,260choicesมีstate deltaอย่างน้อยหนึ่งกรณี;re-executeoldrecipepathsสร้าง234สูตรจริงข้ามหลายเส้นทาง ไม่ใช่สูตรครบในเซฟเดียว
+
+ผู้เล่นช่วยพิพเก็บ/แบ่งผลไม้ด้วยInventoryจริง แล้วหลังจบบทแรกเริ่มสำรวจถนนป่า:เตรียมเวท→ดูป้าย/ราก/โพรง→ช่วยด้วยมือหรือเวท→ผ่านผู้ถักรากด้วยการสู้ รอ หรือมิตรภาพ→เลือกสิ่งที่จะฝากไว้→กลับเล่าให้ผู้คน→รับวัสดุครั้งเดียว. ผลFAMILY/COMMUNITY/ARCHIVEเดิมเปิดข้อสังเกตคนละมุม;สองLifePathsเดิมเปิดทางอ้อม/ดูแลรากต่างกัน. ARC2เป็นช่วงเปิดหนึ่งตอน ยังไม่ปิดทั้งARCหรือ1.0
+
+Chapterregistry/batchownership/Nodecontractsใช้ร่วมกับUI/File2. แยกบทของการเดินทางจากเจ้าของcheckpoint:แวะHub/โรงช่างเก่าแล้วยังคงบทสอง. State2ไม่มีfieldprogressใหม่ File2รับbatchIdแบบoptionalและตรวจchapter/batchแม้checksumถูก. Nativepublic0.13activeGuardiandecodeแล้วStateตรงเดิม;ไม่มีAutoSave/storage/cloud/upload. เซฟเก่าหกรุ่นใน/tmpของรอบก่อนไม่อยู่ในexecutorนี้ จึงอ้างเฉพาะหลักฐานประวัติ ไม่อ้างว่ารันทดสอบซ้ำ
+
+ถนนป่าใหม่ตามแนวReference06ที่เปิดดูจริง:original480×270/3layers/2foot-sortedtrees/root4states/fruit4frames/Weaver16frames/keepsakes3แบบ. PNG99สร้างซ้ำตรงbyteและ89เดิมไม่เปลี่ยน ไม่มีconceptpixelsในgeneratorหรือreferenceโหลดในเกม. ภาพยังpixelstudy ต้องทำfinalHDต่อ
+
+PASSขณะนี้:Unit272/Content2/Graph23/Roadmap10/type/lint/manual/reference/build. Earlierfocused7PASS2.3m/10emulatedviewports/normalnorthocclusion/Skip/nativefiles/retry. หลังปรับpause/resume/contextกำลังรันFull165บนbuildสุดท้าย;PRCI/actualpublic0.14ยังรอผล. JS `index-d2GkPOWY.js` SHA256 `4db52f4b566ecfc34a03a7e9fff189d638846271b445b4cee5464dba4d5d70e3`. Buildเตือนrawchunk>1800kB;gzipJS≈477kB ไม่ใช้warningเป็นfailureหรือรับรองphysicalFPS
+
+อ่าน[evidence/session24/verification.json](evidence/session24/verification.json)และรายงานก่อนสรุปสถานะ. hardwareSafari/Android/iPad/FPS/humanfun/finalHDยังไม่รับรอง
+
+
+---
+
 ## ผลส่งมอบ Session23 — 2026-11-08 UTC / เผยแพร่ 0.13.0 แล้ว
 
 PR24 merge `222db4e` จาก verification `fb91035`; runtime source `c39bccc` และ runtime bytes ไม่เปลี่ยนหลังจากนั้น. PR CI42434254047 ผ่าน **158/158 Browser (28.8m), Unit257, Content2, Graph21, Roadmap10, type/lint/manual-save/reference/build**. Local coverage158ชื่อมาจากprefix69+remaining89บนappเดียวกัน ไม่ใช่singlelocalFull158;ผลล้มเหลว/ยกเลิกเดิมเก็บไว้

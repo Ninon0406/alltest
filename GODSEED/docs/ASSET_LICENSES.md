@@ -1,3 +1,10 @@
+## Session24 — art-v17 original authored pixels
+
+สร้าง10PNGใหม่ด้วย`scripts/generate-forest-road-art.mjs`ในโปรเจกต์นี้:forest-roadrear/ground/front/fallback,oak,hollow,memoryroot,forestfruit,roadkeepsake,rootweaver. ไม่ใช้thirdpartyasset/code/imagepixels;pixelprimitivesเป็นการเขียน/นำโค้ดวาดของGODSEEDเดิมมาใช้. Concept06จากownerใช้เพื่อทิศทางและยังแยกจากruntime. Hash/reproduction99PNG/old89unchangedดูevidence/session24/art-reproduction.json. Licenseของconceptยังเป็นตามprovenanceเจ้าของเดิม ไม่อ้างสิทธิ์thirdpartyเพิ่ม
+
+
+---
+
 ## Session23 — art-v16/guardian.png
 
 Originalsource:`scripts/generate-guardian-art.mjs`สร้าง256x256/16framepixelatlasเอง ไม่มีexternalimageinput. Reference09ผู้ใช้ให้เป็นทิศทางซุ้ม/หิน/พฤกษา/แสงเท่านั้น ไม่รวมreferenceในruntimebundle. ใช้เงื่อนไขการใช้งานเดียวกับoriginalprojectassetsเดิม ไม่เพิ่มassetบุคคลที่สามหรือclaimfinalHD

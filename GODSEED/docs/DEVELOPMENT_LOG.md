@@ -536,3 +536,23 @@ Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelper�
 - ยังไม่เสร็จ:optionalS29/chapter-savecontext/ARC1wholeacceptance/ARC2–12/อีก6Paths/V6advancedmagic/worldeconomy/fullgameendings/finalHD10สถานที่/physicalSafariAndroidiPad/FPS/humanfun. Researchเข้าถึงเฉพาะแหล่งofficialpublicที่บันทึกไว้ ไม่อ้างอ่านเต็มหรือWayplaytest
 - Roadmap:26done/43in_progress/38not_started/0problem/2blocked=109,23.9%;1.0 26/10824.1%. ไม่เพิ่มคะแนนจากpartial/บทสรุปย่อย
 - ถัดไป5:PIPE002chapter/savecontext→STO001/ARC001optionalS29+acceptance→ARC002verticalslice→LifePaths→MAG010/visualmobile. อ่านREPORT_THและverification.jsonก่อนต่อ. ไม่มีการอ้างพัฒนาข้ามsessionอัตโนมัติ
+
+
+## Session24 — 2026-11-08 UTC / candidate0.14.0 — forest memory crossing
+
+- เป้าหมาย:PIPE002chapter/savecontract+STO001optionalS29+ARC002ช่วงสำรวจที่จบกลับผู้คนได้ ไม่เริ่มใหม่หรือรื้อระบบเดิม
+- ก่อนเริ่ม:main0dc39c0/public0.13/99nodes273choices/205state-deltawitnesses/6quests5batches6encounters8stages6maps/234recipes/5NPC2introPaths. ตรวจMainCI42436489386ของรอบก่อนเสร็จ158PASS23.8m/Build+DeploySUCCESS ไม่มีregressionค้าง
+- ทำจริง:28nodes67choices→127/340;Pipquest3nodes+ARC2opening25nodes,2newquestcontracts,1RootWeaverencounter,1originalforestroadstage/fixedmap,10originalPNGs. Actual127node340choicewitnesses/260state-deltaและ234earnedrecipepathsre-executedต่อcurrentreducers. ไม่ใช่340endingsหรือ234สูตรในไฟล์เดียว
+- ระบบ:chapterregistry+explicitbatchownership+exportedNodecontracts/UIcontext/File2metadataoptional;activejourneyแยกnodeownerไม่ถอยบทขณะแวะHub. Choicecostsหักfruitจริงภายในtransaction. OldFile2nobatch/V1/rawmigrationsเดิมคงState2/File2;ไม่มีAutoSave/Storage/Upload. B06gather→seeds9→sweep18/Watercounter9/flee/nosurrender/firstrewardonce/defeatrecovery
+- ปัญหาและแก้:assetunderscoreขัดpathconventionจึงใช้hyphenfilenameโดยคงstageID;testsnapshot99/273/6/8เปลี่ยนตามcatalogจริงโดยคงuniqueness/targetassertions. Unitfixtureซ้ำequippedถูกschemaจับจึงแก้fixture ไม่ลดvalidation. Browserreviewแก้ถนนgridเป็นsmallroundedcobbles/lowoakbranch. Boundedstatewitnessพบresume2choicesเข้าไม่ถึง จึงเพิ่มpauseทางกลับHubและทดสอบไม่rewriteผลเลือก/ไม่รับของซ้ำ. ReplayhelperมีtypoHOME_HUBแก้เป็นIDจริงHOME_RESTและrerunPASS
+- ทดสอบขณะบันทึก:Unit272/Content2/Graph23/Roadmap10/type/lint/manual/reference/buildPASS,earlierFocused7PASS2.3m/10emulatedviewports. FinalFull165กำลังรันบนbuildสุดท้าย;PRCI/public0.14รอผลจริง ไม่ใช้candidateเก่าแทนfinalgate
+- เซฟจริง:currentpublic0.13activeGuardiandownloadเก็บprivate/tmpเท่านั้น ตรวจmetadata/Statehashและdecodeผ่าน0.14ได้ตรงเดิม. Private6รุ่นเก่าใน/tmpรอบก่อนไม่อยู่ในexecutorปัจจุบัน จึงคงเป็นประวัติSession23 ไม่อ้างret ซ้ำหรือสร้างไฟล์ปลอมแทน. Browsernative0.13proofจะบันทึกแยก
+- ภาพ:Reference06openedจริง/ไม่อ่านconceptpixels/99PNGbyte-reproexact/89เดิมunchanged. Frameสอดคล้องmapfootcoordinatesและYsort;normalnorthbehindbranch/Skipnative/retryผ่านearlierfocus. ภาพยังpixelstudy/finalHDและhardwaregatesเปิดอยู่
+- ยังไม่เสร็จ:finalFull/CI/publicreceipt,ARC1wholeacceptance/ARC2ทั้งบท/ARC3–12/อีก6LifePaths/V6advancedmagic/worldeconomy/endings15เป้าหมาย/audio/accessibility/physicaldevicesFPS/humanfun. Buildมีrawchunkwarning>1800kBแต่gzipJS≈477kB ไม่claimFPS
+- Commit/ไฟล์:featurebranchfeat/godseed-forest-memory-crossing;sourcefilesforest-story/chapters/story-context/save-file/game/combat/forest-road-map/world/art-assets/generatorและtests. Hashสุดท้าย/PRผลจริงจะเพิ่มในreleaseentry
+- ถัดไป:ตรวจfinalFull/CI→STO001/ARC001wholeacceptance→ARC002ส่วนต่อ→LifePaths→MAG010/visualperformance. ไม่มีงานข้ามsessionอัตโนมัติ
+
+
+### Session24 QA — fact-gated revisit narration
+
+พบS29เล่าว่าผลไม้กำลังกลิ้งเมื่อกลับมาหลังเก็บแล้ว จึงหยุดfirstFull165หลัง63PASS/1interrupted/101notrun15mและcancelPRCI42469155897 ไม่อ้างผลครบ. เพิ่มStoryScene.variantsแบบflag/textและnarrativeTextpure ใช้factเดียวกับวัตถุในฉาก:collectedfruit/restoredroot/openwater. ผลไม้ที่แบ่งให้พิพไม่เท่ากับเหตุการณ์พบโพรง จึงใช้a2_pip_trustedสำหรับmemoryline. Validatorตรวจproducer/ข้อความและexportmetadata;Unit273/Content2/Graph24/sourcegates/BuildPASS. FinalFull165เริ่มใหม่บนbuildสุดท้าย รักษาPNG99/State2/File2/IDs/recipe234และreduceroutcomesเดิม. ไม่เพิ่มฟีเจอร์ระหว่างรอผลนอกจากแก้testfailureจริง

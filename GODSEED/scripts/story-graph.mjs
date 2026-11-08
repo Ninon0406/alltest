@@ -55,6 +55,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   const at=scene.id;
   if(scene.conclusion!==undefined&&!['chapter','game'].includes(scene.conclusion))error('INVALID_CONCLUSION',at,'Conclusion must explicitly distinguish chapter from game');
   if(!present(scene.title)||!present(scene.text))error('EMPTY_NARRATIVE',at,'Scene needs authored title and narrative');
+  for(const variant of scene.variants||[]){requireFlag(variant.flag,at+'.variants');if(!present(variant.text))error('EMPTY_NARRATIVE',at+'.variants','Conditional narrative must be authored text');}
   if(stages.size&&!stages.has(scene.stage))error('MISSING_STAGE',at,'Unknown stage '+scene.stage);
   if(actors.size&&!actors.has(scene.npc))error('MISSING_ACTOR',at,'Unknown actor asset '+scene.npc);
   if(!Array.isArray(scene.choices)){error('INVALID_CHOICES',at,'choices must be an array');continue;}
@@ -91,7 +92,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
      if(!cores.has(condition.core))error('INVALID_CORE_CONDITION',ca,'Unknown core '+condition.core);
     }else error('UNKNOWN_CONDITION',ca,'Unsupported condition kind '+condition.kind);
    }
-   for(const [id,qty] of Object.entries(choice.items||{})){
+   for(const [id,qty] of [...Object.entries(choice.items||{}),...Object.entries(choice.costs||{})]){
     if(items.size&&!items.has(id))error('MISSING_ITEM',ca,'Unknown reward item '+id);
     if(!Number.isInteger(qty)||qty<=0)error('INVALID_REWARD_QUANTITY',ca,'Reward quantities must be positive integers');
    }
@@ -169,13 +170,24 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   for(let i=0;i<queue.length;i++)for(const to of steps.get(queue[i])?.next||[])if(steps.has(to)&&!seen.has(to)){seen.add(to);queue.push(to);}
   for(const id of steps.keys())if(!seen.has(id))error('UNREACHABLE_QUEST_STEP',quest.id+'/'+id,'No chain route from the first quest step');
  }
+ const nodeContracts=[];
  if(catalog.contentBatches){
   const owners=new Map(),ids=new Set();
   for(const batch of catalog.contentBatches){
    if(!present(batch.id)||ids.has(batch.id))error('DUPLICATE_CONTENT_BATCH',batch.id,'Batch IDs must be unique');ids.add(batch.id);
-   if(batch.chapterId!=='CHAPTER_1'||batch.arc!=='ARC_01')error('UNSUPPORTED_BATCH_CHAPTER',batch.id,'Add a deliberate chapter/save contract before expanding the ARC');
+   const chapter=catalog.chapters?.[batch.chapterId];
+   if(!chapter||chapter.arc!==batch.arc)error('UNSUPPORTED_BATCH_CHAPTER',batch.id,'Batch must match a declared chapter/save contract');
    if(!batch.sceneIds?.length||!batch.entryScenes?.length||!batch.exitScenes?.length||!batch.completionFlags?.length)error('INCOMPLETE_CONTENT_BATCH',batch.id,'Batch needs owned nodes, entries, exits and completion facts');
-   for(const id of batch.sceneIds||[]){if(!scenes.has(id))error('MISSING_BATCH_NODE',batch.id,'Unknown node '+id);if(owners.has(id))error('DUPLICATE_BATCH_NODE',id,'Node belongs to two batches');owners.set(id,batch.id);}
+   for(const id of batch.sceneIds||[]){
+    if(!scenes.has(id))error('MISSING_BATCH_NODE',batch.id,'Unknown node '+id);
+    if(owners.has(id))error('DUPLICATE_BATCH_NODE',id,'Node belongs to two batches');owners.set(id,batch.id);
+    const scene=scenes.get(id);if(!scene)continue;
+    nodeContracts.push({nodeId:id,chapterId:batch.chapterId,arc:batch.arc,batchId:batch.id,location:scene.staging?.location||scene.stage,stage:scene.stage,
+     narrative:{title:scene.title,text:scene.text,variants:scene.variants||[]},entryEffects:scene.entryFlags||[],relevantNPCs:[scene.npc],
+     choices:scene.choices.map(c=>({id:c.id,label:c.label,preconditions:{requires:c.requires||null,when:c.when||[],costs:c.costs||{}},
+      characterAction:c.cue,cinematic:c.cinematic||{source:'shared-cue-library',cue:c.cue},stateEffects:{set:c.flags||[],clear:c.clearFlags||[],trust:c.trust||null,trustAmount:c.trustAmount??null,time:c.time||null},
+      rewards:c.items||{},rewardPolicy:c.daily?'daily':c.onceFlag||'first-choice',next:c.next,battle:c.battle||null,uiRoute:c.route||null})),nextNodes:[...new Set(scene.choices.map(c=>c.next))]});
+   }
    for(const id of batch.entryScenes||[])if(!batch.sceneIds?.includes(id))error('INVALID_BATCH_ENTRY',batch.id,'Entry must be owned by its batch');
    for(const id of batch.exitScenes||[])if(!scenes.has(id)||!canExit.has(id))error('INVALID_BATCH_EXIT',batch.id,'Exit needs a route to a safe hub');
    for(const flag of batch.completionFlags||[])requireFlag(flag,batch.id+'.completionFlags');
@@ -184,7 +196,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
  }
  return {result:errors.length?'FAIL':'PASS',scope:'Static catalog validation and structural reachability; conditions and combat wins are not assumed executable',
   counts:{contentBatches:(catalog.contentBatches||[]).length,storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,chapterConclusions:rows.filter(s=>s.conclusion==='chapter').length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,introductoryLifePathContracts:lifePathIds.size,stages:stages.size},
-  structurallyReachable:[...reachable].sort(),edges,flagProducers:[...flagSources].sort(),errors,warnings};
+  structurallyReachable:[...reachable].sort(),nodeContracts,edges,flagProducers:[...flagSources].sort(),errors,warnings};
 }
 
 /** Import actual content through the project's existing Vite TS resolver. */
@@ -226,7 +238,8 @@ export async function loadGameCatalog(gameRoot=root){
   let quests=story.quests||[];
   try{await readFile(path.join(gameRoot,'src/content/quests.ts'));quests=(await server.ssrLoadModule('/src/content/quests.ts')).quests;}catch(e){if(e.code!=='ENOENT')throw e;}
   let life={lifePaths:[]};try{await readFile(path.join(gameRoot,'src/systems/life-paths.ts'));life=await server.ssrLoadModule('/src/systems/life-paths.ts');}catch(e){if(e.code!=='ENOENT')throw e;}
-  return {scenes:story.scenes,contentBatches:story.contentBatches,quests,lifePaths:life.lifePaths,stages:STAGES,actors:artAssets.map(a=>a.key),items:spells.itemNames,cores:spells.cores,spells:spells.allSpells,encounters,locations:maps.sceneDefinitions,locationFor:maps.locationFor,walkable:maps.walkable,npcIds,engineFlags:[...engineFlags],declaredSceneIds,runtime:{...state,...game,...availability,...combat,...life,spells:spells.allSpells}};
+  const {chapters}=await server.ssrLoadModule('/src/content/chapters.ts');
+  return {scenes:story.scenes,chapters,contentBatches:story.contentBatches,quests,lifePaths:life.lifePaths,stages:STAGES,actors:artAssets.map(a=>a.key),items:spells.itemNames,cores:spells.cores,spells:spells.allSpells,encounters,locations:maps.sceneDefinitions,locationFor:maps.locationFor,walkable:maps.walkable,npcIds,engineFlags:[...engineFlags],declaredSceneIds,runtime:{...state,...game,...availability,...combat,...life,spells:spells.allSpells}};
  }finally{await server.close();}
 }
 
@@ -299,7 +312,7 @@ async function main(){
  if(args.includes('--explore'))report.playableWitnesses=exploreRealChoices(catalog);
  const outputIndex=args.indexOf('--output');
  if(outputIndex>=0){const {writeFile}=await import('node:fs/promises');await writeFile(path.resolve(args[outputIndex+1]),JSON.stringify(report,null,2)+'\n');}
- console.log(JSON.stringify({...report,edges:report.edges.length,flagProducers:report.flagProducers.length,playableWitnesses:report.playableWitnesses?{...report.playableWitnesses,nodeWitnesses:undefined,craftedRecipeWitnesses:undefined}:undefined},null,2));
+ console.log(JSON.stringify({...report,nodeContracts:undefined,edges:report.edges.length,flagProducers:report.flagProducers.length,playableWitnesses:report.playableWitnesses?{...report.playableWitnesses,nodeWitnesses:undefined,craftedRecipeWitnesses:undefined}:undefined},null,2));
  if(report.result==='FAIL'||report.playableWitnesses?.result==='FAIL')process.exitCode=1;
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await main();

@@ -1,3 +1,14 @@
+## 2026-11-08 — Session24 design and compatibility decisions
+
+1. OwnerV6ให้ARC2เป็นป่า/ความทรงจำ จึงประกาศCHAPTER_2/ARC_02สำหรับช่วงเปิดถนนป่า. แนวหอนาฬิกาดาวเก่าคงเป็นเบาะแส/เนื้อหาอนาคต ไม่ลบcanonหรือย้ายIDฉากที่เผยแพร่แล้ว. CH0211เดิมยังกลับต้นไม้;Pipใช้CHPIP_HUBใหม่
+2. คงState2/File2;เพิ่มmetadataoptionalและderiveactivejourneyจากfacts ไม่สร้างcounterที่อาจขัดกับscene. Nodeownershipต่างจากactivechapterเมื่อกลับหมู่บ้าน/โรงช่างเก่า. OldFile2ที่ไม่มีbatchIdยังรับได้ Stateไม่ถูกเติมdefaultfield. Checksumถูกไม่พอหากchapter/batchไม่ตรง
+3. เพิ่มเส้นทางหยุดรายงานแล้วกลับมาทำต่อ เพราะboundedsearchพบresumechoicesสองตัวเข้าไม่ถึงตามconditionsจริง. ทดสอบpause/nativefile/resume/revisitโดยไม่rewriteผลเลือกหรือรับkit/giftซ้ำ ไม่แก้flagsเพื่อสร้างwitness
+4. รักษาสองintroLifePaths/234legacyrecipes. เพิ่มความต่างจากการนำความรู้เก่าไปใช้ในราก/ป่าและWatercounterจริง ไม่เพิ่มชื่อสูตรให้ครบตัวเลข. รอบนี้ไม่มีโมเดลAIหรือการส่งบริบท/เซฟไปserver
+5. ศิลปะใหม่เป็นoriginalpixelstudyที่ใช้concept06เป็นทิศทางเท่านั้น. ปรับgridroadจากภาพbrowserจริงเป็นsmallroundedcobbles และเพิ่มlowoakbranchให้เห็นYsorting. ไม่ปิดfinalHDหรือhardwaregatesจากemulation
+
+
+---
+
 ## 2026-11-08 — Session23 release verification
 
 เผยแพร่0.13เมื่อPR158/sourcegatesผ่านแล้ว และตรวจpublicUI/nativefiles/78PNG+JSexactซ้ำ. แยกgameSourcec39,verificationfb,merge222db4eและdocumentationreceipt ไม่เปลี่ยนruntimeหลังผ่านgate. Main42436489386ยังทำงานและต้องตรวจผลจริงในรอบถัดไป ไม่เรียกว่าPASSหรือยกเลิกเพียงเพื่อปิดรายงาน. Finalreceiptเป็นเอกสารล้วนจึงใช้[skip ci]กับreceiptcommitได้ เพื่อไม่เริ่มวงจรCIซ้ำจากการบันทึกผลของCIเอง;ไม่ใช้ข้ามการทดสอบapp. ขอบเขต1.0/ARC1/finalHDและhardwareคงเกณฑ์เดิม ไม่เพิ่มสถานะdoneจากบทสรุปย่อย

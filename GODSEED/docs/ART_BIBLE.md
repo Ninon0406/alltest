@@ -1,3 +1,14 @@
+## Session24 — original Forest Road / concept06 study
+
+เปิด06_forest_road.webpจริง ใช้ทิศทางถนนหินคด แสงลอดใบไม้ ต้นโอ๊ก/โพรง/น้ำข้างทาง. วาดintegerpixelsใหม่480×270 ไม่อ่านcopy/trace/resizeconceptpixels. art-v17มี3layers+fallback480×270,oak128×160,hollow88×132,root288×64(4states),fruit128×32(4frames),keepsake128×48(4cells),Weaver256×256(16cells64×64/idleattackhitguard). Spriteplayer32×48/palette/nearest-neighborเดิมคงอยู่
+
+พิกัดเท้า/Collision/ทางเดินจากforest-road-map. TreesแยกSpriteYsortที่foot201/183;lowoakbranchบังผู้เล่นที่ยืนหลังและปล่อยผู้เล่นด้านหน้า. Root/keepsakeเปลี่ยนจากworldfactsและคืนจากไฟล์. Proceduralseeds3reduced/6–10normalใช้before-turnintent แยกdamage. ภาพยังprototypepixelstudy/finalHDไม่ผ่านทั้ง10สถานที่
+
+99PNGbyte-reproduced/89baselineunchanged/10neworiginals. Sourcegeneratorคือgenerate-forest-road-art.mjs;ปรับfirstpassgridจากbrowserreviewเป็นroundedcobblesและแสง3เส้นที่เบาลง. Proofต้นแบบและfinalscreensดูSession24 ไม่อ้างrealhardwareFPSหรือapprovedvisualregressionbaseline
+
+
+---
+
 # Session23 — original Memory Guardian study
 
 เปิดReference09จริงอีกครั้ง:ซุ้มแตก หินเก่า พฤกษาและแสงทองเป็นทิศทาง สร้างguardian-v16เองด้วยintegerpixel ไม่อ่านcopy/traceconceptpixels. Atlas256x256/16cells64x64/idle4/attack4/hit4/guard4/4–8fps;origin40/64ตรงเท้า237–239และcontactshadowของrendererเดิม. Silhouetteเป็นซุ้มโอบเมล็ดลอยพร้อมแขนหิน/ช่องว่างจริง ไม่ย้อมสีsentinelหรือEchoKnot. Transparentguardauraคงsilhouette ไม่เติมแผ่นวงกลมทับตัว

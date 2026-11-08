@@ -4,6 +4,7 @@ import {encounters} from '../content/encounters';
 import type {State} from '../engine/state';
 import {colors,cores,type Core,type Spell} from '../systems/spells';
 import {echoIntentCore,guardianPhase} from '../systems/combat';
+import {forestRoadScenery} from './forest-road-map';
 import {gladeScenery} from './glade-map';
 import {playerAnimations,trainingAnimations} from './actor-art';
 import {stageLayouts,type StageId} from './stage-layout';
@@ -69,6 +70,8 @@ export class World extends Phaser.Scene {
  private ruinsAltar?:Phaser.GameObjects.Sprite;
  private ruinsArtActive=false;
  private gladeBranch?:Phaser.GameObjects.Sprite;
+ private forestRoot?:Phaser.GameObjects.Sprite;
+ private forestFruit?:Phaser.GameObjects.Sprite;
  private cauldron?:Phaser.GameObjects.Sprite;
  private toolbox?:Phaser.GameObjects.Sprite;
  private gardenArch?:Phaser.GameObjects.Sprite;
@@ -90,7 +93,7 @@ export class World extends Phaser.Scene {
   this.writeMetric('walkFacing',this.facing);this.writeMetric('walkTrace',this.walkTrace.join(','));
   this.writeMetric('location',this.currentStage==='village'?this.location:this.currentStage);
   this.writeMetric('leafFall',this.leafFall?'active':'inactive');this.writeMetric('resting',String(this.resting));
-  this.writeMetric('occluderDepth',this.currentStage==='village'?(this.location==='under_tree'?201:204):this.currentStage==='ruins'||this.currentStage==='glade'?242:0);
+  this.writeMetric('occluderDepth',this.currentStage==='village'?(this.location==='under_tree'?201:204):this.currentStage==='ruins'||this.currentStage==='glade'?242:this.currentStage==='forest_road'?201:0);
   this.writeMetric('ruinsArt',this.currentStage==='ruins'?(this.ruinsArtActive?'shrine-v12':'fallback'):'none');this.writeMetric('altarFrame',this.ruinsAltar?.frame.name??-1);
   this.writeMetric('workshopAnvil',String(this.anvilVisible));if(this.npc){this.writeMetric('npcContact',JSON.stringify({x:this.npc.x,y:this.npc.y,originY:this.npc.originY,feetY:this.npc.y+20,depth:this.npc.depth,shadowY:this.npcShadow.y}));this.writeMetric('npcAnimation',this.npc.anims.currentAnim?.key||'none');this.writeMetric('npcFrame',this.npc.frame.name);}
   this.writeMetric('workshopArt',this.currentStage==='workshop'?(this.workshopArtActive?'atelier-v11':'legacy'):'none');this.writeMetric('cauldronFrame',this.cauldron?.frame.name??-1);this.writeMetric('toolboxFrame',this.toolbox?.frame.name??-1);
@@ -132,6 +135,7 @@ export class World extends Phaser.Scene {
   if(this.textures.exists('ruins-altar-v12'))for(let state=0;state<3;state++)add({key:'ruins-altar-'+state,frames:this.anims.generateFrameNumbers('ruins-altar-v12',{start:state*4,end:state*4+3}),frameRate:4,repeat:-1});
   if(this.textures.exists('echo-knot-v15'))for(const [row,name] of ['idle','attack','hit','listen'].entries())add({key:'echo-knot-v15-'+name,frames:this.anims.generateFrameNumbers('echo-knot-v15',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='listen'?4:8,repeat:name==='idle'||name==='listen'?-1:0});
   if(this.textures.exists('guardian-v16'))for(const [row,name] of ['idle','attack','hit','guard'].entries())add({key:'guardian-v16-'+name,frames:this.anims.generateFrameNumbers('guardian-v16',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='guard'?4:8,repeat:name==='idle'||name==='guard'?-1:0});
+  if(this.textures.exists('root-weaver-v17'))for(const [row,name] of ['idle','attack','hit','guard'].entries())add({key:'root-weaver-v17-'+name,frames:this.anims.generateFrameNumbers('root-weaver-v17',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='guard'?4:8,repeat:name==='idle'||name==='guard'?-1:0});
   if(this.textures.exists('glade-resonator-v15'))add({key:'glade-resonator-flow',frames:this.anims.generateFrameNumbers('glade-resonator-v15',{start:0,end:3}),frameRate:4,repeat:-1});
   if(this.textures.exists('festival-props-v13'))add({key:'festival-lantern',frames:this.anims.generateFrameNumbers('festival-props-v13',{frames:[1,2,3,2]}),frameRate:4,repeat:-1});
   if(this.textures.exists('workshop-cauldron-v11'))add({key:'workshop-simmer',frames:this.anims.generateFrameNumbers('workshop-cauldron-v11',{start:0,end:5}),frameRate:5,repeat:-1});
@@ -225,7 +229,7 @@ export class World extends Phaser.Scene {
   this.rear.setVisible(this.layered);this.ground.setVisible(this.layered);this.front.setVisible(this.layered);
   if(this.layered){this.rear.setTexture(layerKey('rear'));this.ground.setTexture(layerKey('ground'));this.front.setTexture(layerKey('front'));}
   const evening=festivalEvening(scene?.id)||!!state&&state.ticks%3===2,light=evening?0xa4afcf:0xffffff;for(const layer of [this.stage,this.rear,this.ground,this.front])layer.setTint(light);this.writeMetric('timeLight',evening?'evening':'day');
-  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;this.gardenBed=undefined;this.gardenArch=undefined;this.gardenCauldron=undefined;this.gardenHerbs=undefined;this.cauldron=undefined;this.toolbox=undefined;this.ruinsAltar=undefined;this.gladeBranch=undefined;this.writeMetric('streamBeat','idle');this.anvilVisible=false;this.writeMetric('ruinsBeat','idle');this.writeMetric('altarState',this.currentStage==='ruins'?['sealed','open','remembered'][altarState(state)]:'none');this.writeMetric('runeWard',String(!!state?.battle?.status.RUNE_WARD));this.writeMetric('workshopBeat','idle');this.writeMetric('gardenBeat','idle');
+  this.props.forEach(p=>p.destroy());this.ambient.forEach(p=>p.destroy());this.props=[];this.ambient=[];this.memoryProps=0;this.gardenBed=undefined;this.gardenArch=undefined;this.gardenCauldron=undefined;this.gardenHerbs=undefined;this.cauldron=undefined;this.toolbox=undefined;this.ruinsAltar=undefined;this.gladeBranch=undefined;this.forestRoot=undefined;this.forestFruit=undefined;this.writeMetric('streamBeat','idle');this.anvilVisible=false;this.writeMetric('ruinsBeat','idle');this.writeMetric('altarState',this.currentStage==='ruins'?['sealed','open','remembered'][altarState(state)]:'none');this.writeMetric('runeWard',String(!!state?.battle?.status.RUNE_WARD));this.writeMetric('workshopBeat','idle');this.writeMetric('gardenBeat','idle');
   const garden=gardenPresentation(state);this.writeMetric('gardenGrowth',garden?.frame===2?'bloom':garden?'buds':'none');
   if(garden&&this.textures.exists('garden-bed-v7')){this.gardenBed=this.add.sprite(garden.bed.x,garden.bed.y,'garden-bed-v7',garden.frame).setOrigin(.5,1).setDepth(garden.bed.depth);this.props.push(this.gardenBed);}
   const addProp=(frame:number,x:number,y:number)=>{if(this.textures.exists('props-v2')){const prop=this.add.sprite(x,y,'props-v2',frame).setOrigin(.5,1).setDepth(y);this.props.push(prop);return true;}return false;};
@@ -272,6 +276,15 @@ export class World extends Phaser.Scene {
    if(this.currentStage==='village'&&this.location==='under_tree'&&state?.flags.lp_explorer_marked){const frame=progress[0].rank===2?2:1;for(const p of [sceneDefinitions.under_tree.anchors.tree_path,sceneDefinitions.under_tree.anchors.behind_branch])this.props.push(this.add.sprite(p.x,p.y-2,'life-icons-v14',frame).setOrigin(.5,1).setScale(.5).setDepth(p.y-1));}
    if(this.currentStage==='garden'&&state?.flags.lp_nature_watered)this.props.push(this.add.sprite(259,229,'life-icons-v14',progress[1].rank===2?5:4).setScale(.5).setDepth(227));
   }
+  const road=this.currentStage==='forest_road';
+  const rootFrame=state?.flags.a2_resolution_care?3:state?.flags.a2_root_restored?2:state?.flags.a2_water_channel?1:0;
+  this.writeMetric('forestRootFrame',road?rootFrame:-1);this.writeMetric('forestResolution',road?(state?.flags.a2_resolution_care?'care':state?.flags.a2_resolution_path?'path':state?.flags.a2_resolution_record?'record':'none'):'none');
+  if(road&&this.layered){
+   for(const a of stageLayouts.forest_road.customProps||[])if(this.textures.exists(a.texture))this.props.push(this.add.sprite(a.x,a.y,a.texture).setOrigin(.5,1).setDepth(a.y));
+   if(this.textures.exists('memory-root-v17')){const a=forestRoadScenery.root;this.forestRoot=this.add.sprite(a.x,a.y,'memory-root-v17',rootFrame).setOrigin(.5,1).setDepth(a.y);this.props.push(this.forestRoot);}
+   if(scene?.id==='S29_PIP_SIDEQUEST'&&!state?.flags.pip_fruit_helped&&this.textures.exists('forest-fruit-v17')){const a=forestRoadScenery.fruit;this.forestFruit=this.add.sprite(a.x,a.y,'forest-fruit-v17').setOrigin(.5,1).setDepth(a.y);this.props.push(this.forestFruit);}
+   if(state?.flags.a2_decided&&this.textures.exists('road-keepsake-v17')){const frame=state.flags.a2_resolution_care?1:state.flags.a2_resolution_path?2:3,a=frame===1?{x:260,y:230}:frame===2?{x:190,y:182}:{x:335,y:196};this.props.push(this.add.sprite(a.x,a.y,'road-keepsake-v17',frame).setOrigin(.5,1).setDepth(a.y));}
+  }
   const branchState=state?.flags.echo_nature_shelter?'shelter':state?.flags.echo_water_open?'bank':'blocked';this.writeMetric('gladeBranch',this.currentStage==='glade'?branchState:'none');
   if(this.currentStage==='glade'&&this.textures.exists('glade-branch-v15')){const a=gladeScenery.branch[branchState];this.gladeBranch=this.add.sprite(a.x,a.y,'glade-branch-v15',branchState==='blocked'?0:branchState==='bank'?1:2).setOrigin(.5,1).setDepth(a.y);this.props.push(this.gladeBranch);}
   const gatherable=this.textures.exists('gathering-v6')?gatheringProps(state):[];this.writeMetric('gatheringProps',gatherable.map(p=>p.choice).join(','));
@@ -287,7 +300,7 @@ export class World extends Phaser.Scene {
   this.writeMetric('chapterResolution',state?.flags.song_restored?state.flags.chapter1_family?'family':state.flags.chapter1_community?'community':'archive':'none');
   this.writeMetric('echoCore',state?echoIntentCore(state)||'none':'none');this.writeMetric('echoExit',String(!!state?.battle?.echo?.exitOpened));
   this.npcRestPose=this.npcKey==='echo-knot-v15'&&!(state&&echoIntentCore(state))?'listen':(this.npcKey==='sentinel-v12'&&state?.battle?.status.RUNE_WARD||this.npcKey==='guardian-v16'&&state?.battle?.status.GUARDIAN_SEAL)?'guard':this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
-  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'||this.npcKey==='echo-knot-v15'||this.npcKey==='guardian-v16'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
+  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'||this.npcKey==='echo-knot-v15'||this.npcKey==='guardian-v16'||this.npcKey==='root-weaver-v17'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
   if(!preserve){this.player.setPosition(state?.battle?130:154,219);this.facing='east';
    if(this.currentStage==='glade'&&state?.battle)this.player.setPosition(gladeScenery.playerBattle.x,gladeScenery.playerBattle.y);
    if(this.currentStage==='ruins'&&state?.battle)this.player.setPosition(ruinsScenery.playerBattle.x,ruinsScenery.playerBattle.y);
@@ -311,7 +324,7 @@ export class World extends Phaser.Scene {
   if(arrival){this.player.setPosition(arrival.x,arrival.y);this.facing=arrival.facing||this.facing;this.writeMetric('targetAnchor',arrival.anchor||'none');this.playerShadow.setPosition(arrival.x,arrival.y+20);}
   this.tweens.killTweensOf(this.cameras.main);this.cameras.main.setZoom(this.motion?cameraFraming.zoom:1).setScroll(0,0);
   this.playerShadow.setVisible(true);
-  this.tweens.killTweensOf(this.player);this.tweens.killTweensOf(this.npc);if(this.gladeBranch)this.tweens.killTweensOf(this.gladeBranch);this.tweens.killTweensOf(this.parallax);
+  this.tweens.killTweensOf(this.player);this.tweens.killTweensOf(this.npc);if(this.gladeBranch)this.tweens.killTweensOf(this.gladeBranch);if(this.forestFruit)this.tweens.killTweensOf(this.forestFruit);this.tweens.killTweensOf(this.parallax);
   for(const effect of this.effects){this.tweens.killTweensOf(effect);effect.destroy();}this.effects.clear();
   for(const settle of [...this.settlers])settle();this.settlers.clear();
   this.player.clearTint().setAlpha(1).setFlipX(false);this.npc.clearTint().setAlpha(1);this.npc.setX(this.npcHomeX);this.npcIdle();
@@ -363,6 +376,10 @@ export class World extends Phaser.Scene {
    const t=i/count,particle=this.add.rectangle(this.npc.x+Math.sin(t*12)*8,this.npc.y-10,core==='EARTH'?5:3,core==='WATER'?6:3,color,.9).setDepth(850);this.effects.add(particle);
    this.tweens.add({targets:particle,x:this.player.x+Math.cos(t*12)*12,y:this.player.y-8+(core==='WIND'?Math.sin(t*12)*20:core==='LIGHT'?Math.cos(t*6)*10:0),angle:core==='BLOOM'?90:0,alpha:0,duration:reduced?100:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
   }
+ }
+ private forestSeeds(reduced:boolean,sweep:boolean){
+  this.writeMetric('forestAttack',sweep?'sweep':'seeds');const count=reduced?3:sweep?10:6;
+  for(let i=0;i<count;i++){const particle=this.add.rectangle(this.npc.x-12+i*3,this.npc.y-12+i%3*5,3,sweep?7:3,i%2?0xc2b471:0x7aa56a).setDepth(850);this.effects.add(particle);this.tweens.add({targets:particle,x:this.player.x-10+i*4,y:this.player.y+6+(i%3)*3,alpha:0,duration:reduced?80:420+i*18,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});}
  }
  private guardianShards(reduced:boolean){
   this.writeMetric('guardianCast','memory_shards');const count=reduced?4:12;
@@ -446,6 +463,10 @@ export class World extends Phaser.Scene {
   if(!lifting&&!ruinAction)this.pose(path?.pose==='talk'?'interact':path?.pose||(brewing?'idle':listening?'rest':cue==='walk'?'idle':poseFor(cue)));
   if(path?.pose==='talk')this.npcPose('talk');
   if(path?.pose){this.writeMetric('storyBeat',command||'none');if(path.effect)this.ruinsGlow(path.effect,reduced,{x:this.player.x,y:this.player.y-20});if(spell||cue==='cast')this.castEffect(reduced,spell,target,undefined,path.effectTarget);}
+  if(command==='CHA2_TRIAL_PATIENCE'){this.writeMetric('forestBeat','wildlife-pass');await this.beat(this.npc,{x:430,alpha:0,duration:reduced?35:900},token);if(token!==this.generation)return;}
+  if(this.forestFruit&&command==='CH2902'){await this.beat(this.npc,{x:254,duration:reduced?35:500},token);if(token!==this.generation)return;this.forestFruit.setFrame(2);}
+  if(this.forestFruit&&command==='CH2901'){await this.beat(this.forestFruit,{x:231,duration:reduced?35:450},token);if(token!==this.generation)return;}
+  if(this.forestRoot&&next?.flags.a2_root_restored&&!before?.flags.a2_root_restored){this.forestRoot.setFrame(2);this.writeMetric('forestRootFrame',2);}
   if(this.gladeBranch&&next?.flags.echo_water_open&&!before?.flags.echo_water_open){const a=gladeScenery.branch[next.flags.echo_nature_shelter?'shelter':'bank'];this.writeMetric('streamBeat','moving');await this.beat(this.gladeBranch,{x:a.x,y:a.y,duration:reduced?35:650},token);if(token!==this.generation)return;}
   if(listening){this.npcPose(command==='CH0602'?'hum':'talk');this.writeMetric('gardenBeat','listening');}
   if(path?.seatDepth&&(cue==='rest'||listening||path.pose==='rest')){this.resting=true;this.actionDepth=path.seatDepth;this.player.setDepth(path.seatDepth);this.playerShadow.setVisible(false);}
@@ -461,6 +482,7 @@ export class World extends Phaser.Scene {
    if(next.battle&&next.battle.enemyHp<before.battle.enemyHp||this.lastOutcome==='win'){
     this.npcPose('hit');this.npc.setTint(0xffe3b6);
    }
+   if(before.battle.id==='B06_ROOT_WEAVER'&&before.battle.turn%3===1)this.npcPose('guard');
    if(next.battle?.status.GUARDIAN_SEAL&&!before.battle.status.GUARDIAN_SEAL){this.npcPose('guard');this.ruinsGlow('ward',reduced,{x:this.npc.x,y:this.npc.y-12});}
    if(next.battle?.guardian?.assistUsed&&!before.battle.guardian?.assistUsed)this.pathGlyph('ROOT_REFUGE',reduced);
    if(next.battle?.status.RUNE_WARD&&!before.battle.status.RUNE_WARD){this.npcPose('guard');this.ruinsGlow('ward',reduced,{x:this.npc.x,y:this.npc.y-12});}
@@ -468,7 +490,7 @@ export class World extends Phaser.Scene {
     this.npcPose('attack');await this.beat(this.npc,{alpha:.7,duration:reduced?20:120,yoyo:true},token);
    }
    if(next.battle?.log.some(line=>line.includes(' โจมตี ')||line.includes('โจมตีพลาด'))){
-    this.npcPose('attack');if(before.battle.id==='B05_MEMORY_GUARDIAN'&&guardianPhase(before.battle)===3&&before.battle.turn%2===0)this.guardianShards(reduced);const echoed=echoIntentCore(before);if(echoed)this.echoCast(echoed,reduced);
+    this.npcPose('attack');if(before.battle.id==='B06_ROOT_WEAVER')this.forestSeeds(reduced,before.battle.turn%3===0);if(before.battle.id==='B05_MEMORY_GUARDIAN'&&guardianPhase(before.battle)===3&&before.battle.turn%2===0)this.guardianShards(reduced);const echoed=echoIntentCore(before);if(echoed)this.echoCast(echoed,reduced);
     await this.beat(this.npc,{x:this.npcHomeX-10,duration:reduced?20:120,yoyo:true},token);
    }
    if(token!==this.generation)return;

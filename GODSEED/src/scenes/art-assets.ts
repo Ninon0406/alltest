@@ -1,16 +1,18 @@
-import {STAGES,stageFolder,stageFallback,type StageId} from './stage-layout';
+import {STAGES,stageFolder,stageFallback,stageFile,type StageId} from './stage-layout';
 export type ArtAsset={key:string;path:string;group:'shared'|StageId;alsoFor?:readonly StageId[];frame?:{frameWidth:number;frameHeight:number}};
 const image=(key:string,path:string,group:ArtAsset['group']):ArtAsset=>({key,path,group});
 const sheet=(key:string,path:string,group:ArtAsset['group'],frameWidth=32,frameHeight=48):ArtAsset=>({key,path,group,frame:{frameWidth,frameHeight}});
 /** Static asset URLs only. This catalog and its RAM ledger contain no progress. */
 export const artAssets:readonly ArtAsset[]=[
+ sheet('root-weaver-v17','art-v17/root-weaver.png','forest_road',64,64),
+ image('road-oak-v17','art-v17/road-oak.png','forest_road'),image('road-hollow-v17','art-v17/road-hollow.png','forest_road'),sheet('memory-root-v17','art-v17/memory-root.png','forest_road',72,64),sheet('forest-fruit-v17','art-v17/forest-fruit.png','forest_road',32,32),sheet('road-keepsake-v17','art-v17/road-keepsake.png','forest_road',32,48),
  image('sky','sky.png','shared'),
  ...['player','pip','lumi','maren','koro','sprout'].map(key=>sheet(key,key+'.png','shared')),
  sheet('props-v2','art-v2/props.png','shared',64,96),sheet('ambient-v2','art-v2/ambient.png','shared',32,32),
  sheet('hero-v2','art-v2/player.png','shared'),sheet('hero-walk-v4','art-v4/hero-walk.png','shared'),sheet('hero-idle-v5','art-v5/hero-idle.png','shared'),
  sheet('gathering-v6','art-v6/gathering.png','shared',24,24),
  sheet('life-icons-v14','art-v14/life-icons.png','shared',32,32),
- ...STAGES.flatMap(stage=>[image(stage,stageFallback(stage),stage),...['rear','ground','front'].map(layer=>image(`${stage}-${layer}-v2`,`${stageFolder(stage)}/${stage}-${layer}.png`,stage))]),
+ ...STAGES.flatMap(stage=>[image(stage,stageFallback(stage),stage),...['rear','ground','front'].map(layer=>image(`${stage}-${layer}-v2`,`${stageFolder(stage)}/${stageFile(stage)}-${layer}.png`,stage))]),
  ...['rear','ground','front'].map(layer=>image('tree-'+layer+'-v5','art-v5/tree-'+layer+'.png','village')),
  image('ancient-tree-v5','art-v5/ancient-tree.png','village'),sheet('fountain-v5','art-v5/fountain.png','village',96,112),sheet('leaves-v5','art-v5/leaves.png','village',16,16),
  sheet('festival-props-v13','art-v13/festival-props.png','village',64,96),
