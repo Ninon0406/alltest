@@ -3,11 +3,13 @@ import {schema,type State} from './state';
 import {scenes} from '../content/story';
 import {encounters} from '../content/encounters';
 import {byId,itemNames} from '../systems/spells';
+import {chapters} from '../content/chapters';
+import {storyContext} from '../systems/story-context';
 export const SAVE_LIMIT=1_000_000;
-export const GAME_VERSION='0.13.0';
+export const GAME_VERSION='0.14.0';
 const digest=z.string().regex(/^[a-f0-9]{64}$/);
 const oldEnvelope=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(1),checksum:digest,state:z.unknown()}).strict();
-const fileSchema=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(2),gameVersion:z.string().regex(/^\d+\.\d+\.\d+$/),exportedAt:z.iso.datetime(),chapterId:z.literal('CHAPTER_1'),checkpoint:z.object({sceneId:z.string(),storyNodeId:z.string(),kind:z.enum(['story_choice','battle_turn'])}).strict(),checksum:digest,state:z.unknown()}).strict();
+const fileSchema=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(2),gameVersion:z.string().regex(/^\d+\.\d+\.\d+$/),exportedAt:z.iso.datetime(),chapterId:z.string().refine(id=>Object.hasOwn(chapters,id)),checkpoint:z.object({sceneId:z.string(),storyNodeId:z.string(),kind:z.enum(['story_choice','battle_turn']),batchId:z.string().optional()}).strict(),checksum:digest,state:z.unknown()}).strict();
 const choiceIds=new Set(Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id)));
 const npcIds=new Set(['LUMI','MAREN','KORO','EIRA','PIP']);
 const statuses=new Set(['SEAR','WET','SWIRL','GROUNDED','GLEAM','VEIL','ROOTED','RESONANCE','RUNE_WARD','TRAIL_FOCUS','GUARDIAN_SEAL']);
@@ -30,7 +32,7 @@ export function validateSaveState(value:unknown):State {
  return s;
 }
 export async function encodeSave(state:State){
- const valid=validateSaveState(state),body={format:'GODSEED_SAVE',formatVersion:2,gameVersion:GAME_VERSION,exportedAt:new Date().toISOString(),chapterId:'CHAPTER_1',checkpoint:{sceneId:valid.scene,storyNodeId:valid.scene,kind:valid.battle?'battle_turn':'story_choice'},state:valid};
+ const valid=validateSaveState(state),context=storyContext(valid),body={format:'GODSEED_SAVE',formatVersion:2,gameVersion:GAME_VERSION,exportedAt:new Date().toISOString(),chapterId:context.chapterId,checkpoint:{sceneId:valid.scene,storyNodeId:valid.scene,kind:valid.battle?'battle_turn':'story_choice',batchId:context.batchId},state:valid};
  const text=JSON.stringify({...body,checksum:await checksum(body)},null,2);if(new TextEncoder().encode(text).length>SAVE_LIMIT)throw Error('ข้อมูลเซฟมีขนาดใหญ่เกินไป');return text;
 }
 export async function decodeSave(text:string){
@@ -42,6 +44,7 @@ export async function decodeSave(text:string){
   const {checksum:expected,...body}=parsed.data;if(await checksum(body)!==expected)throw Error('ไฟล์เซฟเปลี่ยนแปลงหรือเสียหาย ตรวจสอบความถูกต้องไม่ผ่าน');
   const a=body.gameVersion.split('.').map(Number),b=GAME_VERSION.split('.').map(Number);for(let i=0;i<3;i++){if(a[i]>b[i])throw Error('ไฟล์นี้มาจากเกมเวอร์ชันใหม่กว่า กรุณาอัปเดตเกม');if(a[i]<b[i])break;}
   const state=validateSaveState(body.state);if(body.checkpoint.sceneId!==state.scene||body.checkpoint.storyNodeId!==state.scene||body.checkpoint.kind!==(state.battle?'battle_turn':'story_choice'))throw Error('จุดบันทึกไม่สอดคล้องกับข้อมูลเกม');
+  const context=storyContext(state);if(body.chapterId!==context.chapterId||body.checkpoint.batchId!==undefined&&body.checkpoint.batchId!==context.batchId)throw Error('ข้อมูลบทหรือชุดเหตุการณ์ไม่ตรงกับจุดบันทึก');
   return {state,legacy:false};
  }
  return {state:validateSaveState(raw),legacy:true};

@@ -1,3 +1,14 @@
+## Session24 — multi-chapter contracts, authored forest and item costs
+
+`content/chapters.ts`ประกาศARC/chapter/order/activationfact;`contentBatches`เป็นเจ้าของNodeเพียงแห่งเดียว. `systems/story-context.ts`derivejourneychapterจากownerและfactที่เกิดแล้ว โดยแยกcheckpointChapterId/batchId จึงไม่ถอยบทขณะแวะพื้นที่เก่า. UI,File2และvalidatorอ่านข้อมูลเดียวกัน ไม่มีpersistedcounterใหม่. File2batchIdoptionalรักษาoldshape;decodeเช็คchapter/batchกับstateหลังchecksumและreferencevalidation. LegacyV1/rawimport/migrationเดิมคงอยู่
+
+`story-graph.mjs --output`ส่งออกNodecontractsครบchapter/location/narrative/conditions/costs/actions/cinematics/effects/rewards/next/NPCจากข้อมูลจริง. Unknownchapter/arc/batch/negativecost/invaliditemถูกปฏิเสธ. `Choice.costs`ตรวจเงื่อนไขก่อนงบและหักในtransactionเท่านั้น;Pipsharingใช้fruit1จริง/ห้ามกดซ้ำผลเดิม
+
+Forestroadเป็นstageใหม่+fixedmapแยกจากlegacyforest ไม่เปลี่ยนตำแหน่งฉากเก่า. B06เพิ่มในenum/encountersโดยไม่เปลี่ยนState2หรือrecipeIDs:turnmod3→gather0/seeds9/sweep18,offensiveWaterที่ถูกเป้าลดsweepเหลือ9. อ่านplanก่อนplayeraction,VFXแยกdamage,หนีได้/ยอมแพ้ไม่ได้/แพ้ไปcheckpointเดิม/rewardonce. Native0.13activeGuardiandecoderexact;browser/full/CIผลสุดท้ายดูSession24receipt
+
+
+---
+
 ## Session23 delivery — 0.13.0
 
 Runtimec39/verificationfb/merge222db4eผ่านPR158และpublicproof. `ui/cinematic-viewport.ts`จับreadingpositionก่อนbusy-render:normalnarrowviewportเปิดcanvasที่อยู่นอกจอและคืนscrollหลังexclusivefinally/render;ReducedMotion/side-by-sideไม่ขยับ. ไม่มีgame-state/focus/storage/timerเพิ่ม. Guardianintentอ่านbeforestate;VFXแยกdamage. `battle.guardian`optionalstrictเฉพาะB05รักษาState2/File2และไฟล์เก่า. Keyboardtesthelperรอenabledแล้วlocator.pressEnter;openingใช้helperเดียวกัน ไม่มีforce/retries/timeoutinflation. [หลักฐาน](evidence/session23/verification.json). MainpostmergeCIยังรันซ้ำ ไม่ใช้PRผลแทนMain

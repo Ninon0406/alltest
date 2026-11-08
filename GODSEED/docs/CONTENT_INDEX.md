@@ -1,3 +1,10 @@
+## Session24 — source0.14.0 candidate
+
+99→127StoryNodes/273→340Choices (+28/+67);actualwitness127/340/260state-delta,8questcontracts/7explicitbatches/7encounters/9stages/7fixedmaps. 5NPC/2introLifePaths/234legalrecipes/3chapterconclusions/0fullgameendingsคงเดิม. NewARC1Pip3nodesและARC2forest25nodes. `node-contracts.json`ส่งออกNode/Chapter/Location/Conditions/Costs/Actions/Effects/Rewards/Next/NPCจากcatalog. Sourcecountsอยู่Session24before/after-contentและcombined-witnesses;234recipesreplayedด้วยของที่หาได้จริง ไม่ใช่ทั้งหมดในเซฟเดียว
+
+
+---
+
 # Session23 — Guardian and chapter-one conclusions / 0.13.0
 
 Before81/232→After99/273;18newnodes41newchoices. Actual99node/273choicewitnesses/205statedeltas;0gameendings/3explicit chapter conclusions;6questcontracts/5batches/6encounters(รวมtraining)/5NPC/2introPaths/234recipes/8stages/6maps

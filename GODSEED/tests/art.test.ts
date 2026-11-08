@@ -4,7 +4,7 @@ import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {describe,expect,it} from 'vitest';
 import {actorFrame,playerAnimations,trainingAnimations} from '../src/scenes/actor-art';
-import {STAGES,stageLayouts,stageFolder} from '../src/scenes/stage-layout';
+import {STAGES,stageLayouts,stageFolder,stageFile} from '../src/scenes/stage-layout';
 import {gardenMap,gardenScenery} from '../src/scenes/garden-map';
 
 it('herbalist arch leaves a genuine open passage, grounded piers and transparent surroundings',()=>{
@@ -50,11 +50,11 @@ const visible=(pixels:Buffer)=>{let count=0;for(let i=3;i<pixels.length;i+=4)if(
 
 describe('original layered-stage assets and layout bounds',()=>{
  it('contains three distinct nonempty full-size layers for each reachable stage',()=>{
-  expect([...STAGES].sort()).toEqual(['archive','forest','garden','glade','ruins','stream','village','workshop']);
+  expect([...STAGES].sort()).toEqual(['archive','forest','forest_road','garden','glade','ruins','stream','village','workshop']);
   for(const stage of STAGES){
    const hashes=[];
    for(const layer of ['rear','ground','front']){
-    const picture=image(`${stageFolder(stage)}/${stage}-${layer}.png`);
+    const picture=image(`${stageFolder(stage)}/${stageFile(stage)}-${layer}.png`);
     expect([picture.width,picture.height],`${stage}-${layer}`).toEqual([480,270]);
     expect(visible(picture.data),`${stage}-${layer}`).toBeGreaterThan(100);
     if(layer==='front')expect(visible(picture.data),`${stage} foreground permits actor visibility`).toBeLessThan(480*270);

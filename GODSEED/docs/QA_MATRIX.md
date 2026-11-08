@@ -1,3 +1,10 @@
+## Session24 — candidate0.14.0
+
+Unit272/Content2/Graph23/Roadmap10/type/lint/build/manual/referencePASS. Earlierfocused7PASS2.3m:fruitcosts/3forestresolutions/phasefiles/Watercounter/retry/normalSkip/northwalkoakocclusion และ10emulatedviewports360–1920. หลังfinalcontext/pauseเปลี่ยนเฉพาะส่วนที่จำเป็นแล้วกำลังFull165;อย่าใช้earlierfocusแทนfinalFull. Nativepublic0.13activeGuardiancapturedด้วยUIและdecoderexact State2/File2;browsernativeauditรอผลแยก. PhysicalSafari/iPhone/Android/iPad/FPS/humanfun/finalHD/approvedvisualbaselineยังไม่ทดสอบ. CurrentreceiptSession24/verification.json
+
+
+---
+
 ## Session23 final delivery gates — 2026-11-08
 
 PR full158PASS28.8m,Unit257/Content2/Graph21/Roadmap10/type/lint/build/manual/referencePASS. Actualpublic0.13ผ่านguardian3phases/3chapterroutes/native6versions/10emulatedviewports/normalcastvisible+exactreturn/coreoldstory/78PNG+JSexact/noStorageUploadReferenceConsoleErrors. [Receipts](evidence/session23/verification.json). Main42436489386กำลังรันซ้ำ;physicalSafari/Android/iPad/FPS/humanfun/approvedvisualbaselineยังไม่ทดสอบ ไม่อ้างemulationแทนhardware

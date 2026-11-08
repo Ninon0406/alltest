@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "fromVersion": "0.13.0",
+  "toVersion": "0.14.0",
+  "formatVersion": 2,
+  "stateVersion": 2,
+  "stateExact": true,
+  "batchId": "CH1_GUARDIAN_CONCLUSION",
+  "nativeBrowserImport": "pending separate browser verifier"
+}

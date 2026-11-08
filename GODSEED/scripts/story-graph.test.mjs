@@ -6,10 +6,18 @@ const c=(id,next,extra={})=>({id,label:id,next,cue:'talk',...extra});
 const s=(id,choices,extra={})=>({id,title:id,text:'Authored scene',stage:'village',npc:'pip',choices,...extra});
 const fixture=()=>({
  scenes:[s('S00_WAKE',[c('CH0001','S02_HUB')]),s('S02_HUB',[c('CH0201','S02_HUB',{cue:'rest'})])],
- stages:['village'],actors:['pip'],items:{IT_SEED:'seed'},cores:['WIND'],encounters:{},engineFlags:[],npcIds:['PIP'],
+ stages:['village'],actors:['pip'],items:{IT_SEED:'seed'},cores:['WIND'],encounters:{},engineFlags:[],npcIds:['PIP'],chapters:{CHAPTER_1:{arc:'ARC_01'}},
  spells:[{id:'SPELL_WIND_ORB_SEEK',power:10,mp:6,vfx:{identity:'WIND/ORB/SEEK'}}],
 });
 const codes=report=>report.errors.map(e=>e.code);
+
+test('declared second-chapter batches have complete exported node contracts, and mismatched arcs fail',()=>{
+ const x=fixture();x.chapters.CHAPTER_2={arc:'ARC_02'};x.engineFlags.push('done');
+ x.contentBatches=[{id:'FOREST',chapterId:'CHAPTER_2',arc:'ARC_02',sceneIds:['S00_WAKE','S02_HUB'],entryScenes:['S00_WAKE'],exitScenes:['S02_HUB'],completionFlags:['done']}];
+ const r=analyzeStoryGraph(x);assert.equal(r.result,'PASS');assert.equal(r.nodeContracts.length,2);assert.equal(r.nodeContracts[0].chapterId,'CHAPTER_2');assert.equal(r.nodeContracts[0].choices[0].characterAction,'talk');assert.deepEqual(r.nodeContracts[0].nextNodes,['S02_HUB']);
+ x.contentBatches[0].arc='ARC_01';assert.ok(codes(analyzeStoryGraph(x)).includes('UNSUPPORTED_BATCH_CHAPTER'));
+});
+test('choice item costs need real references and positive integer amounts',()=>{const x=fixture();x.scenes[0].choices[0].costs={TYPO:1};assert.ok(codes(analyzeStoryGraph(x)).includes('MISSING_ITEM'));x.scenes[0].choices[0].costs={IT_SEED:-1};assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_REWARD_QUANTITY'));});
 
 test('explicit chapter batches reject duplicate ownership, unknown nodes, exits and missing ownership',()=>{
  const x=fixture();x.engineFlags.push('complete');

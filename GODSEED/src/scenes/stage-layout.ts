@@ -1,8 +1,9 @@
-export const STAGES=['village','garden','workshop','forest','archive','stream','ruins','glade'] as const;
+export const STAGES=['village','garden','workshop','forest','archive','stream','ruins','glade','forest_road'] as const;
 export type StageId=typeof STAGES[number];
+export const stageFile=(stage:StageId)=>stage.replaceAll('_','-');
 export type AmbientKind='cloud'|'leaf'|'fire'|'glow'|'water';
-export const stageFolder=(stage:StageId)=>stage==='glade'?'art-v15':stage==='ruins'?'art-v12':stage==='workshop'?'art-v11':stage==='village'?'art-v5':stage==='garden'?'art-v9':stage==='archive'||stage==='stream'?'art-v3':'art-v2';
-export const stageFallback=(stage:StageId)=>stage==='glade'?'art-v15/glade-fallback.png':stage==='ruins'?'art-v12/ruins-fallback.png':stage==='archive'||stage==='stream'?`art-v3/${stage}-fallback.png`:`${stage}.png`;
+export const stageFolder=(stage:StageId)=>stage==='forest_road'?'art-v17':stage==='glade'?'art-v15':stage==='ruins'?'art-v12':stage==='workshop'?'art-v11':stage==='village'?'art-v5':stage==='garden'?'art-v9':stage==='archive'||stage==='stream'?'art-v3':'art-v2';
+export const stageFallback=(stage:StageId)=>stage==='forest_road'?'art-v17/forest-road-fallback.png':stage==='glade'?'art-v15/glade-fallback.png':stage==='ruins'?'art-v12/ruins-fallback.png':stage==='archive'||stage==='stream'?`art-v3/${stage}-fallback.png`:`${stage}.png`;
 export type StageLayout={
  /** A story spell acts on the scenery; battle spells continue targeting combatants. */
  spellTarget?:{x:number;y:number};
@@ -17,6 +18,7 @@ export type StageLayout={
 // Actor foot anchors stay player(154,239)/NPC(338,232), with walk154→230.
 // Props are sorted by their foot y; the actor lane has no blocking foreground prop.
 export const stageLayouts:Record<StageId,StageLayout>={
+ forest_road:{spellTarget:{x:286,y:206},props:[{frame:1,x:110,y:204}],customProps:[{texture:'road-oak-v17',...forestRoadScenery.oak},{texture:'road-hollow-v17',...forestRoadScenery.hollow}],ambient:[{kind:'leaf',x:35,y:101},{kind:'leaf',x:358,y:81},{kind:'glow',x:285,y:178},{kind:'water',x:455,y:221}]},
  glade:{spellTarget:gladeScenery.spellTarget,props:[],customProps:[{texture:'glade-resonator-v15',...gladeScenery.resonator},...gladeScenery.posts.map(p=>({texture:'glade-post-v15',...p}))],ambient:[{kind:'leaf',x:42,y:110},{kind:'water',x:452,y:215},{kind:'glow',x:350,y:139},{kind:'glow',x:272,y:171}]},
  ruins:{spellTarget:ruinsScenery.spellTarget,props:[],customProps:[{texture:'ruins-altar-v12',...ruinsScenery.altar},...ruinsScenery.pillars.map(p=>({texture:'ruins-pillars-v12',...p}))],ambient:[{kind:'fire',x:118,y:156},{kind:'fire',x:323,y:156},{kind:'water',x:452,y:217},{kind:'leaf',x:53,y:102},{kind:'glow',x:240,y:142},{kind:'glow',x:286,y:172}]},
  archive:{
@@ -51,3 +53,5 @@ import {gardenScenery} from './garden-map';
 import {ruinsScenery} from './ruins-map';
 
 import {gladeScenery} from './glade-map';
+
+import {forestRoadScenery} from './forest-road-map';

@@ -1,0 +1,21 @@
+
+> godseed@0.14.0 generate:art
+> node scripts/generate-art.mjs && node scripts/generate-stage-art.mjs && node scripts/generate-actor-art.mjs && node scripts/generate-exploration-art.mjs && node scripts/generate-directional-art.mjs && node scripts/generate-village-art.mjs && node scripts/generate-idle-art.mjs && node scripts/generate-gathering-art.mjs && node scripts/generate-garden-art.mjs && node scripts/generate-maren-art.mjs && node scripts/generate-herb-garden-art.mjs && node scripts/generate-koro-art.mjs && node scripts/generate-workshop-art.mjs && node scripts/generate-ruins-art.mjs && node scripts/generate-festival-art.mjs && node scripts/generate-life-art.mjs && node scripts/generate-glade-art.mjs && node scripts/generate-guardian-art.mjs && node scripts/generate-forest-road-art.mjs
+
+Generated original layered stages and six actor sheets
+Generated 12 original 480x270 stage layers, 8 depth-sortable props, and 16 ambient frames in assets/art-v2.
+player: 256×528; 56 original pose frames
+training: 256×144; 13 original pose frames
+Generated 12 original exploration PNGs: two layered stages/fallbacks, mist, six water frames, Eira and water spirit.
+hero-walk: 256x192; four authored 6-frame directions, source32x48 foot44
+art-v5: two original layered map studies, animated fountain, depth-sorted tree and leaf atlas; references excluded
+hero-idle: 96x192; four grounded 3-frame standing directions
+Original gathering atlas: feather, seed pouch, dew; 24x24 cells, four subtle glint frames each
+Original garden bed 3x64x48 and held-can watering 4x64x48; same pixel grid/feet
+Original Maren idle and humming: eight32x48frames, 4columns; no external art
+Generated original herb-garden source map: 3 layers, depth-sorted arch, six cauldron frames and four herb frames.
+Original Koro: idle, forging and recipe atlases (12 frames) + grounded anvil; provisional art
+Original workshop:3 layers,6-frame cauldron,3-state toolbox,held-box/north-brewing animation and21 recipe-part icons. Anchors: 11
+Original ruins: 3 layers + fallback, 12 altar frames, Y-sorted pillar, 16 sentinel frames, 10 north hero gestures. Anchors: 14
+Glade: original 3 layers + fallback, 4 resonator frames, depth-sorted lamp posts, 16 Echo Knot poses; reference 10 kept outside runtime assets.
+Original forest road: 3 layers, fallback, two occluding trees, 4 root/fruit states, 16 Root Weaver frames.

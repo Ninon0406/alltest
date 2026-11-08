@@ -2,7 +2,7 @@
 
 Generated view จาก [roadmap.json](roadmap.json); สถานะครบ/หลักฐาน/เกณฑ์อยู่ใน [GODSEED_MASTER_ROADMAP](../../GODSEED_MASTER_ROADMAP.md) ห้ามนับสถานะบอร์ดนี้ซ้ำ
 
-Checklist 23.9% · ✅26 🟡43 ⬜38 🔴0 ⛔2 · ทั้งหมด109
+Checklist 23.9% · ✅26 🟡46 ⬜35 🔴0 ⛔2 · ทั้งหมด109
 
 V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshotก่อนขยาย ดูscopeHistoryในJSON งานเดิมไม่ถูกลบ เป้าหมายตัวเลขไม่ใช่ของที่สร้างเสร็จ
 
@@ -20,12 +20,12 @@ V6ขยายขอบเขต12ARC/8LifePaths;21/76=27.6%เป็นsnapshot
 | 0 Audit & Benchmark — ตรวจและศึกษาต้นแบบ | FND-009, AUD-002 | AUD-001: 🟡 |
 | 1 Core Playability — เกมหลักเล่นต่อได้ | FND-001, FND-002, FND-003, FND-004, FND-007, FND-008 | FND-005: ⛔, FND-006: 🟡 |
 | 2 Story Engine & Content Pipeline | STO-002, PIPE-001 | STO-007: 🟡, STO-008: ⬜, WRD-003: 🟡, PIPE-002: 🟡 |
-| 3 Complete Opening Experience — ช่วงเริ่มต้นครบ | — | STO-001: 🟡, WRD-006: ⬜, ARC-001: 🟡 |
+| 3 Complete Opening Experience — ช่วงเริ่มต้นครบ | — | STO-001: 🟡, WRD-006: 🟡, ARC-001: 🟡 |
 | 4 Life Paths — เส้นทางชีวิต | LIFE-001 | LIFE-002: ⬜, LIFE-003: ⬜, LIFE-004: 🟡, LIFE-005: ⬜, LIFE-006: 🟡, LIFE-007: ⬜, LIFE-008: ⬜, LIFE-009: ⬜ |
 | 5 Magic System — ระบบเวทและการเรียนรู้ | MAG-003, MAG-004, MAG-005 | MAG-001: 🟡, MAG-002: 🟡, MAG-006: 🟡, MAG-007: 🟡, MAG-008: 🟡, MAG-009: 🟡, POWER-001: ⬜, MAG-010: ⬜ |
-| 6 Combat — การต่อสู้ | CMB-001, CMB-003, CMB-005, CMB-006, CMB-007 | CMB-002: 🟡, CMB-004: 🟡, CMB-008: 🟡, CMB-009: 🟡, CMB-010: ⬜, CMB-011: ⬜ |
+| 6 Combat — การต่อสู้ | CMB-001, CMB-003, CMB-005, CMB-006, CMB-007 | CMB-002: 🟡, CMB-004: 🟡, CMB-008: 🟡, CMB-009: 🟡, CMB-010: 🟡, CMB-011: ⬜ |
 | 7 World Systems — โลกและสังคม | — | STO-003: 🟡, STO-004: 🟡, WRD-001: 🟡, WRD-002: 🟡, WRD-004: 🟡, WRD-005: 🟡, WRD-009: ⬜, WRD-010: ⬜, WRD-011: ⬜, WRD-012: ⬜ |
-| 8 Main Story Expansion — ARC 1–6 | — | WRD-007: ⬜, ARC-002: ⬜, ARC-003: ⬜, ARC-004: ⬜, ARC-005: ⬜, ARC-006: ⬜ |
+| 8 Main Story Expansion — ARC 1–6 | — | WRD-007: ⬜, ARC-002: 🟡, ARC-003: ⬜, ARC-004: ⬜, ARC-005: ⬜, ARC-006: ⬜ |
 | 9 Advanced Story Expansion — ARC 7–12 | — | WRD-008: ⬜, ARC-007: ⬜, ARC-008: ⬜, ARC-009: ⬜, ARC-010: ⬜, ARC-011: ⬜, ARC-012: ⬜ |
 | 10 Visual & Cinematic Polish | VIS-002, VIS-003, VIS-006, VIS-011, VIS-013, VIS-014 | VIS-001: 🟡, VIS-004: 🟡, VIS-005: 🟡, VIS-007: 🟡, VIS-008: 🟡, VIS-009: 🟡, VIS-010: 🟡, VIS-012: 🟡, QA-002: 🟡 |
 | 11 Endings & World Consequences | — | STO-005: 🟡, STO-006: ⬜ |

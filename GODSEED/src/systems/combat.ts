@@ -23,7 +23,8 @@ export function scoutAvailability(s:State){
  const reason=!s.battle?'ใช้ได้ระหว่างการต่อสู้':!hasPathAbility(s,'TRAIL_FOCUS')?'ต้องผ่านบททดสอบนักสำรวจระดับ 2':s.battle.pathActions?.scouted?'สำรวจจังหวะไปแล้วในการต่อสู้นี้':s.mp<4?'MP ไม่พอ · ต้องใช้ 4 MP':'';
  return {enabled:!reason,reason};
 }
-function plannedIntent(b:Battle):'pulse'|'leaf'|'curl'|'splash'|'mist'|'rune'|'ward'|'listen'|'echo'|'seal'|'memory'|'clue'{
+function plannedIntent(b:Battle):'pulse'|'leaf'|'curl'|'splash'|'mist'|'rune'|'ward'|'listen'|'echo'|'seal'|'memory'|'clue'|'gather'|'seeds'|'sweep'{
+ if(b.id==='B06_ROOT_WEAVER')return b.turn%3===1?'gather':b.turn%3===2?'seeds':'sweep';
  if(b.id==='B05_MEMORY_GUARDIAN'){const phase=guardianPhase(b);return phase===3?(b.turn%2===0?'memory':'pulse'):b.turn%3===1?'seal':phase===1&&b.turn%3===0?'clue':'pulse';}
  if(b.id==='B04_ECHO_KNOT')return b.echo?.core?'echo':b.turn===1?'listen':'pulse';
  if(b.id==='B03_RUIN_SENTINEL')return b.turn%3===0?'ward':'rune';
@@ -31,14 +32,14 @@ function plannedIntent(b:Battle):'pulse'|'leaf'|'curl'|'splash'|'mist'|'rune'|'w
  if(b.id==='B02_STREAM_WISP')return b.enemyHp<=26&&b.turn%2===0?'mist':'splash';
  return b.turn%2===0?'curl':'leaf';
 }
-export function intent(s:State){if(!s.battle)return '';if(s.battle.id==='B05_MEMORY_GUARDIAN'){const plan=plannedIntent(s.battle),phase=guardianPhase(s.battle);return `ระยะ ${phase}/3 · `+({seal:'เตรียมกางผนึก — ไม่โจมตี ลดความเสียหาย 50% สองจังหวะ',memory:'เศษความทรงจำ — โจมตี 20 เตรียมตั้งรับ',clue:'หยุดฟัง — ไม่โจมตี เป็นจังหวะฟื้นพลัง',pulse:'คลื่นผนึก — โจมตี 12'}[plan as 'seal'|'memory'|'clue'|'pulse'])+(s.flags.guardian_gentle_test?' · ผ่อนแรง 25%':'');}if(s.battle.id==='B04_ECHO_KNOT'){const core=echoIntentCore(s);return core?`ทวนธาตุ${coreNames[cores.indexOf(core)]} — โจมตี 11; หากใช้เวทโจมตีธาตุเดิมซ้ำ จะแรงเป็น 16 ลองสลับธาตุหรือตั้งรับ`:s.battle.turn===1?'ฟังหนึ่งจังหวะแรก — ไม่โจมตี เทิร์นถัดไปคลื่นเสียง 11 แม้ยังไม่รู้ธาตุ':'คลื่นเสียง — โจมตี 11; ประกายพื้นฐานและเวทสนับสนุนไม่สอนธาตุ';}return ({seal:'กางผนึก',memory:'เศษความทรงจำ',clue:'หยุดฟัง',echo:'ทวนเสียงธาตุ',listen:'ฟังธาตุ',rune:'ลูกศรรูน — โจมตี 10',ward:'เตรียมกางเกราะรูน — ไม่โจมตี ลดความเสียหาย 50% ใน 2 จังหวะถัดไป',pulse:'ประกายฝึกหัด — โจมตี 5',leaf:'ลูกศรใบไม้ — โจมตี 7',curl:'หุบใบป้องกัน — ลดความเสียหายครึ่งหนึ่ง',splash:'ละอองน้ำ — โจมตี 8',mist:'ม่านหมอก — ลดความแม่นยำคุณ 10% ในเทิร์นถัดไป ไม่มีการโจมตี'})[plannedIntent(s.battle)];}
+export function intent(s:State){if(!s.battle)return '';if(s.battle.id==='B06_ROOT_WEAVER')return ({gather:'รวบราก — ไม่โจมตี เป็นจังหวะเตรียมโล่หรือฟื้น MP',seeds:'ปล่อยเมล็ด — โจมตี 9',sweep:'กวาดเถา — โจมตี 18; ตั้งรับหรือใช้เวทน้ำโจมตีถูกเป้าให้เหลือ 9'} as Record<string,string>)[plannedIntent(s.battle)];if(s.battle.id==='B05_MEMORY_GUARDIAN'){const plan=plannedIntent(s.battle),phase=guardianPhase(s.battle);return `ระยะ ${phase}/3 · `+({seal:'เตรียมกางผนึก — ไม่โจมตี ลดความเสียหาย 50% สองจังหวะ',memory:'เศษความทรงจำ — โจมตี 20 เตรียมตั้งรับ',clue:'หยุดฟัง — ไม่โจมตี เป็นจังหวะฟื้นพลัง',pulse:'คลื่นผนึก — โจมตี 12'}[plan as 'seal'|'memory'|'clue'|'pulse'])+(s.flags.guardian_gentle_test?' · ผ่อนแรง 25%':'');}if(s.battle.id==='B04_ECHO_KNOT'){const core=echoIntentCore(s);return core?`ทวนธาตุ${coreNames[cores.indexOf(core)]} — โจมตี 11; หากใช้เวทโจมตีธาตุเดิมซ้ำ จะแรงเป็น 16 ลองสลับธาตุหรือตั้งรับ`:s.battle.turn===1?'ฟังหนึ่งจังหวะแรก — ไม่โจมตี เทิร์นถัดไปคลื่นเสียง 11 แม้ยังไม่รู้ธาตุ':'คลื่นเสียง — โจมตี 11; ประกายพื้นฐานและเวทสนับสนุนไม่สอนธาตุ';}return ({gather:'รวบราก',seeds:'ปล่อยเมล็ด',sweep:'กวาดเถา',seal:'กางผนึก',memory:'เศษความทรงจำ',clue:'หยุดฟัง',echo:'ทวนเสียงธาตุ',listen:'ฟังธาตุ',rune:'ลูกศรรูน — โจมตี 10',ward:'เตรียมกางเกราะรูน — ไม่โจมตี ลดความเสียหาย 50% ใน 2 จังหวะถัดไป',pulse:'ประกายฝึกหัด — โจมตี 5',leaf:'ลูกศรใบไม้ — โจมตี 7',curl:'หุบใบป้องกัน — ลดความเสียหายครึ่งหนึ่ง',splash:'ละอองน้ำ — โจมตี 8',mist:'ม่านหมอก — ลดความแม่นยำคุณ 10% ในเทิร์นถัดไป ไม่มีการโจมตี'})[plannedIntent(s.battle)];}
 export function createBattle(id:EncounterId,checkpoint:string,next:string):Battle{return {id,enemyHp:encounters[id].hp,turn:1,shield:0,shieldTurns:0,status:{},playerStatus:{},log:[],checkpoint,next};}
 function tick(statuses:Record<string,number>,fresh=new Set<string>()){for(const key of Object.keys(statuses)){if(!fresh.has(key))statuses[key]--;if(statuses[key]<=0)delete statuses[key];}}
 function finish(d:State,b:Battle){
  const encounter=encounters[b.id],key='win:'+b.id;const first=!d.rewarded.includes(key);
  if(first){d.rewarded.push(key);d.inventory[encounter.reward]=(d.inventory[encounter.reward]||0)+1;d.xp+=encounter.xp;}
- if(b.id==='B01_FOREST_SPROUT'){d.flags.first_battle_won=true;d.flags.battle_B01_done=true;}else if(b.id==='BT_TRAINING')d.flags.training_won=true;else if(b.id==='B02_STREAM_WISP')d.flags.battle_B02_done=true;else if(b.id==='B04_ECHO_KNOT'){d.flags.battle_B04_done=true;d.flags.echo_knot_cleared=true;}else if(b.id==='B05_MEMORY_GUARDIAN'){d.flags.battle_B05_done=true;d.flags.guardian_trial_complete=true;}else d.flags.battle_B03_done=true;
- d.scene=b.next;for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;d.battle=undefined;d.journal.push((b.id==='BT_TRAINING'?'ผ่านการฝึกกับภูตจำลองแล้ว':b.id==='B02_STREAM_WISP'?'ละอองธาราสงบลงแล้ว':b.id==='B05_MEMORY_GUARDIAN'?'ผู้พิทักษ์ยอมเปิดบทสนทนาแล้ว':b.id==='B04_ECHO_KNOT'?'ปมเสียงย้อนยอมเว้นช่องให้เสียงอื่นแล้ว':b.id==='B03_RUIN_SENTINEL'?'หุ่นรูนลดเกราะและเปิดทางแล้ว':'ต้นอ่อนสงบลงแล้ว')+(first?` · ประสบการณ์ ${encounter.xp} และ ${itemNames[encounter.reward]} 1 ชิ้น`:' · เคยรับรางวัลครั้งแรกแล้ว'));
+ if(b.id==='B01_FOREST_SPROUT'){d.flags.first_battle_won=true;d.flags.battle_B01_done=true;}else if(b.id==='BT_TRAINING')d.flags.training_won=true;else if(b.id==='B02_STREAM_WISP')d.flags.battle_B02_done=true;else if(b.id==='B04_ECHO_KNOT'){d.flags.battle_B04_done=true;d.flags.echo_knot_cleared=true;}else if(b.id==='B05_MEMORY_GUARDIAN'){d.flags.battle_B05_done=true;d.flags.guardian_trial_complete=true;}else if(b.id==='B06_ROOT_WEAVER')d.flags.battle_B06_done=true;else d.flags.battle_B03_done=true;
+ d.scene=b.next;for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;d.battle=undefined;d.journal.push((b.id==='BT_TRAINING'?'ผ่านการฝึกกับภูตจำลองแล้ว':b.id==='B02_STREAM_WISP'?'ละอองธาราสงบลงแล้ว':b.id==='B05_MEMORY_GUARDIAN'?'ผู้พิทักษ์ยอมเปิดบทสนทนาแล้ว':b.id==='B04_ECHO_KNOT'?'ปมเสียงย้อนยอมเว้นช่องให้เสียงอื่นแล้ว':b.id==='B06_ROOT_WEAVER'?'ผู้ถักรากลดเถาและเปิดทางแล้ว':b.id==='B03_RUIN_SENTINEL'?'หุ่นรูนลดเกราะและเปิดทางแล้ว':'ต้นอ่อนสงบลงแล้ว')+(first?` · ประสบการณ์ ${encounter.xp} และ ${itemNames[encounter.reward]} 1 ชิ้น`:' · เคยรับรางวัลครั้งแรกแล้ว'));
 }
 function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
  const log=(text:string)=>b.log.push(text);
@@ -86,7 +87,7 @@ function cast(d:State,b:Battle,sp:Spell,fresh:Set<string>){
 }
 export function fight(state:State,action:string){return transact(state,d=>{
  const b=d.battle;if(!b)throw Error('ไม่มีการต่อสู้');
- const encounter=encounters[b.id],plan=plannedIntent(b);const fresh=new Set<string>(),playerFresh=new Set<string>();const burning=b.status.SEAR>0;const echoedCore=b.echo?.core;let repeatedCore=false,guarding=false;b.log=[];
+ const encounter=encounters[b.id],plan=plannedIntent(b);const fresh=new Set<string>(),playerFresh=new Set<string>();const burning=b.status.SEAR>0;const echoedCore=b.echo?.core;let repeatedCore=false,guarding=false,waterInterrupted=false;b.log=[];
  if(action==='FLEE'||action==='SURRENDER'){
   if(action==='SURRENDER'?!encounter.canSurrender:!battleRules(d).canFlee)throw Error('ออกจากการต่อสู้ด้วยวิธีนี้ไม่ได้');
   d.scene=b.checkpoint;d.battle=undefined;d.ticks++;d.journal.push(action==='FLEE'?'ถอยออกมาเตรียมตัว':'ยุติการฝึกอย่างปลอดภัย');return;
@@ -109,7 +110,8 @@ export function fight(state:State,action:string){return transact(state,d=>{
   if(action==='IT_POTION_DEW'){d.hp=Math.min(100,d.hp+25);b.log.push('ดื่มน้ำค้าง ฟื้น HP สูงสุด 25');}else{d.mp=Math.min(40,d.mp+15);b.log.push('ใบฟื้นเวท ฟื้น MP สูงสุด 15');}
  }else{
   const sp=byId[action];if(!sp||!d.equipped.includes(action)||d.mp<sp.mp)throw Error('ใช้เวทนี้ไม่ได้');
-  d.mp-=sp.mp;const hpBefore=b.enemyHp;cast(d,b,sp,fresh);
+  d.mp-=sp.mp;const hpBefore=b.enemyHp;cast(d,b,sp,fresh);waterInterrupted=b.id==='B06_ROOT_WEAVER'&&plan==='sweep'&&sp.core==='WATER'&&!sp.heal&&!sp.shield&&b.enemyHp<hpBefore;
+  if(waterInterrupted)b.log.push('เวทน้ำคลายแนวเถา — กวาดเถาเหลือแรงโจมตี 9');
   if(b.id==='B04_ECHO_KNOT'&&!sp.heal&&!sp.shield){
    repeatedCore=sp.core===echoedCore;b.echo={...b.echo,core:sp.core};
    if(sp.core==='WIND'&&b.enemyHp<hpBefore){b.echo.exitOpened=true;b.log.push('วายุเปิดช่องลมแล้ว — ถ้าไอราไว้วางใจ 2 ขึ้นไป สามารถถอยได้');}
@@ -117,17 +119,18 @@ export function fight(state:State,action:string){return transact(state,d=>{
  }
  if(burning&&b.enemyHp>0){b.enemyHp=Math.max(0,b.enemyHp-3);b.log.push('เพลิงคุกรุ่นกระทบ 3');}
  if(b.enemyHp===0){d.journal.push(...b.log);finish(d,b);return;}
- const attack=plan!=='curl'&&plan!=='mist'&&plan!=='ward'&&plan!=='listen'&&plan!=='seal'&&plan!=='clue';let misted=false;
+ const attack=plan!=='curl'&&plan!=='mist'&&plan!=='ward'&&plan!=='listen'&&plan!=='seal'&&plan!=='clue'&&plan!=='gather';let misted=false;
  if(b.status.SLOWED){b.log.push('ศัตรูเสียจังหวะ จึงเลื่อนการกระทำครั้งนี้');delete b.status.SLOWED;}
  else if(attack){
   if(b.status.VEIL&&random(d)>=.9)b.log.push('ม่านเงาทำให้ศัตรูโจมตีพลาด');
-  else {let incoming:number=(plan==='memory'?20:encounter.power)+(plan==='echo'&&repeatedCore?5:0);
+  else {let incoming:number=(plan==='memory'?20:plan==='sweep'?(waterInterrupted?9:18):encounter.power)+(plan==='echo'&&repeatedCore?5:0);
    if(b.id==='B05_MEMORY_GUARDIAN'&&d.flags.guardian_gentle_test)incoming=Math.ceil(incoming*.75);
    if(b.id==='B05_MEMORY_GUARDIAN'&&guardianPhase(b)===3&&!b.guardian?.assistUsed&&(d.flags.lumi_helped||d.flags.garden_tended||d.flags.maren_listened)){b.guardian={...b.guardian,assistUsed:true};incoming=Math.max(0,incoming-12);b.log.push('เสียงของเพื่อนช่วยคุ้มกัน 12 หน่วย — ช่วยได้หนึ่งครั้งในบททดสอบ');}
    if(guarding)incoming=Math.ceil(incoming*.6);if(b.playerStatus.GROUNDED)incoming=Math.max(0,incoming-2);
    const absorbed=Math.min(b.shield,incoming);b.shield-=absorbed;incoming-=absorbed;d.hp-=incoming;b.log.push(`${encounter.name} โจมตี ${incoming}${absorbed?` · โล่รับ ${absorbed}`:''}`);
   }
- }else if(plan==='seal'){b.status.GUARDIAN_SEAL=2;fresh.add('GUARDIAN_SEAL');b.log.push('ผู้พิทักษ์กางผนึก ลดความเสียหาย 50% สองจังหวะ — ไม่โจมตี');}
+ }else if(plan==='gather')b.log.push('ผู้ถักรากรวบเถา — ยังไม่โจมตี');
+ else if(plan==='seal'){b.status.GUARDIAN_SEAL=2;fresh.add('GUARDIAN_SEAL');b.log.push('ผู้พิทักษ์กางผนึก ลดความเสียหาย 50% สองจังหวะ — ไม่โจมตี');}
  else if(plan==='clue')b.log.push('ผู้พิทักษ์หยุดฟัง — ใช้จังหวะนี้ฟื้นพลังได้');
  else if(plan==='ward'){b.status.RUNE_WARD=2;fresh.add('RUNE_WARD');b.log.push('หุ่นกางเกราะรูน ป้องกัน 50% เป็นเวลา 2 จังหวะผู้เล่น — จังหวะนี้ไม่โจมตี');}
  else if(plan==='mist'){b.playerStatus.VEIL=1;misted=true;b.log.push('ม่านหมอกบดบังสายตา ลดความแม่นยำ 10% ในเทิร์นถัดไป');}

@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "reproducedPngCount": 99,
+  "unchangedBaselinePngCount": 89,
+  "newOriginalPngCount": 10,
+  "generator": "scripts/generate-forest-road-art.mjs",
+  "referencePixelsRead": false
+}

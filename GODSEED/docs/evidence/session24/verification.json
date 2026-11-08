@@ -1,0 +1,71 @@
+{
+  "status": "CANDIDATE_SOURCE_PASS_FULL165_RUNNING",
+  "date": "2026-11-08",
+  "version": "0.14.0",
+  "baselineCommit": "0dc39c0",
+  "baseline": {
+    "nodes": 99,
+    "choices": 273,
+    "stateChangingChoiceWitnesses": 205,
+    "questContracts": 6,
+    "contentBatches": 5,
+    "encounters": 6,
+    "stages": 8,
+    "fixedMaps": 6,
+    "originalPng": 89
+  },
+  "after": {
+    "nodes": 127,
+    "actualReachableNodes": 127,
+    "choices": 340,
+    "successfulChoiceWitnesses": 340,
+    "stateChangingChoiceWitnesses": 260,
+    "questContracts": 8,
+    "contentBatches": 7,
+    "encounters": 7,
+    "stages": 9,
+    "fixedMaps": 7,
+    "originalPng": 99,
+    "npcCharacters": 5,
+    "introductoryLifePaths": 2,
+    "legalRecipes": 234,
+    "actualCraftRecipeWitnesses": 234,
+    "chapterConclusions": 3,
+    "fullGameEndings": 0
+  },
+  "sourceChecks": {
+    "unit": 272,
+    "content": 2,
+    "graph": 23,
+    "roadmap": 10,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "manualSave": "PASS",
+    "references": "PASS",
+    "build": "PASS"
+  },
+  "browserEarlierCandidate": {
+    "passed": 7,
+    "failed": 0,
+    "minutes": 2.3,
+    "note": "Before the final pause/resume and active-journey context adjustment; final full165 includes those changes."
+  },
+  "native013Decoder": "PASS exact active guardian File2/State2; browser verifier pending",
+  "entryJs": "assets/index-d2GkPOWY.js",
+  "entryJsSha256": "4db52f4b566ecfc34a03a7e9fff189d638846271b445b4cee5464dba4d5d70e3",
+  "localFull": {
+    "target": 165,
+    "status": "running"
+  },
+  "pending": [
+    "Local full165",
+    "PR CI165",
+    "Deployment and actual public0.14 verification"
+  ],
+  "limitations": [
+    "Physical Safari/iPhone/Android/iPad, hardware FPS and human enjoyment not tested",
+    "Final HD art approval and the complete ARC2 remain open",
+    "This executor has no private native save files from 0.9–0.12.1; the six-version result in Session23 is historical, not rerun here. A fresh native published0.13 file was captured and decoded exactly.",
+    "Way of Xian and full novel access remain limited as recorded in existing official-source research. No new benchmark playtest is claimed."
+  ]
+}
