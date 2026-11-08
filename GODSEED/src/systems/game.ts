@@ -24,7 +24,7 @@ export function choose(s:State,id:string){return transact(s,d=>{
  if(d.scene==='S04_KORO')d.flags.forest_open=true;
  if(d.scene==='S05_CRAFT_TUTORIAL'&&!d.flags.starter_grant){for(const i of ['CORE_WIND','FORM_ORB','MOD_SEEK'])d.inventory[i]=Math.max(1,d.inventory[i]||0);d.flags.starter_grant=true;}
  if(!c.battle)for(const flag of scenes[d.scene].entryFlags||[])d.flags[flag]=true;
- if(c.battle){d.battle=createBattle(c.battle,prev,c.next);d.scene=prev;}
+ if(c.battle){d.battle=createBattle(c.battle,prev,c.next);if(c.battle==='B05_MEMORY_GUARDIAN')d.battle.guardian={supplies:{IT_POTION_DEW:d.inventory.IT_POTION_DEW||0,IT_MANA_LEAF:d.inventory.IT_MANA_LEAF||0}};d.scene=prev;}
  });}
 export function craft(s:State,c:Core,f:Form,m:Mod){return transact(s,d=>{
  if(d.battle)throw Error('ผสมเวทระหว่างต่อสู้ไม่ได้');const sp=spell(c,f,m);if(d.known.includes(sp.id))throw Error('ค้นพบสูตรนี้แล้ว ไม่ใช้วัตถุดิบซ้ำ');

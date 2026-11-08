@@ -1,0 +1,22 @@
+
+> godseed@0.13.0 test:e2e
+> playwright test --grep guardian|boss phases|defeat returns|gentle mode|normal enemy VFX|touch Skip during
+
+[WebServer] (node:31817) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:31848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/echo.spec.ts:38:1 › normal enemy VFX uses the announced core and completes at canonical battle feet (16.1s)
+  ✓  2 tests/echo.spec.ts:45:1 › touch Skip during a cast remains above the canvas and commits one canonical battle turn (13.9s)
+  ✓  3 tests/guardian.spec.ts:8:1 › 390: real earned healing, three boss phases, native files and all three chapter conclusions (41.6s)
+  ✓  4 tests/guardian.spec.ts:16:1 › 844: defeat returns brought supplies, checkpoint and retry without fake completion (26.8s)
+  ✓  5 tests/guardian.spec.ts:20:1 › 820: gentle mode still reaches a real chapter conclusion with the same full rewards (28.6s)
+  ✓  6 tests/guardian.spec.ts:23:1 › 390: normal guardian shard VFX reflects the telegraphed phase and settles at exact battle feet (25.0s)
+  ✓  7 tests/guardian.spec.ts:26:1 › 1366: missing guardian atlas has explicit retry and preserves manual-file state (16.8s)
+
+  7 passed (2.8m)

@@ -1,3 +1,13 @@
+# Session23 — Guardian and chapter-one conclusions / 0.13.0
+
+Before81/232→After99/273;18newnodes41newchoices. Actual99node/273choicewitnesses/205statedeltas;0gameendings/3explicit chapter conclusions;6questcontracts/5batches/6encounters(รวมtraining)/5NPC/2introPaths/234recipes/8stages/6maps
+
+G_CALL→G_LUMI(optional)→G_KIT→G_CRAFT→G_MAREN(optional)→G_SEAL_INNER→G_INSCRIPTION→G_PACT→S22_GUARDIAN→B05→S23_DECISION→S24/S25/S26→G_AFTER_*→S27_EPILOGUE→Hub/tree. G_REVIEWเปิดคำใบ้ เปลี่ยนmode หรือกลับโต๊ะผสมได้;defeat→S28→S22. เปิดจากHub/สถานที่อื่น/ตามไอราไปพบผู้พิทักษ์รอยลืมหลังecho_expedition_complete
+
+Q_GUARDIAN_SONG5ขั้น/kit+pattern+win+resolution+return;sharedgiftFORM_RAY+MOD_AMPLIFYครั้งเดียวผ่านCH2701/2. Recipeใหม่ไม่เพิ่มcatalog:ชุดที่ได้รับผสมBLOOM_RING_HEALจาก234สูตรเดิมได้จริง. Threechapterroutesเปลี่ยนflags/trust/memories/keepsakeprops;pastLUMI/MARENhelpให้assistหนึ่งครั้ง,Echoรายงาน/คำฝากส่งผลlines. ไม่อ้างว่าความทรงจำแบบลึกหรือLifePathsครบ8สายแล้ว
+
+---
+
 # Session22 / 0.12.0 candidate
 
 81nodes/232choices/81actualnodewitnesses/232executablechoicewitnesses/178choiceswithactualstatedelta. 5Questcontracts (เพิ่มQ_ECHO_EXPEDITION)/5encounters (เพิ่มB04)/8stages (เพิ่มglade)/6fixedmaps. 5NPC,2introductorypaths,234recipes,0finalendings

@@ -1,3 +1,11 @@
+# Session23 — original Memory Guardian study
+
+เปิดReference09จริงอีกครั้ง:ซุ้มแตก หินเก่า พฤกษาและแสงทองเป็นทิศทาง สร้างguardian-v16เองด้วยintegerpixel ไม่อ่านcopy/traceconceptpixels. Atlas256x256/16cells64x64/idle4/attack4/hit4/guard4/4–8fps;origin40/64ตรงเท้า237–239และcontactshadowของrendererเดิม. Silhouetteเป็นซุ้มโอบเมล็ดลอยพร้อมแขนหิน/ช่องว่างจริง ไม่ย้อมสีsentinelหรือEchoKnot. Transparentguardauraคงsilhouette ไม่เติมแผ่นวงกลมทับตัว
+
+Proceduralmemoryshards4particlesReducedMotion/12normalอ่านtelegraphก่อนaction ไม่เปลี่ยนdamage. ชุมชนหลังบทมีkeepsakesตามrouteด้วยpropsเดิม;ภาพยังpixelprototype ต้องผ่านfinalHD/cohesion/gestures/10สถานที่ต่อ ไม่อ้างคุณภาพเท่าconceptจากatlasหนึ่งใบ
+
+---
+
 # 0.12.0 — Reference10 / original Battle Glade study
 
 เปิด10_battle_glade.webpจริง ใช้ลานโปร่ง วงหิน ต้นไม้เก่า น้ำขอบลาน และซุ้มเรืองแสงเป็นทิศทาง ไม่มีอ่าน/trace/resizeconceptpixelsในgenerator. 480×270,hero32×48,integerpixel/paletteแสงอุ่นยังคงสัญญาเดิม

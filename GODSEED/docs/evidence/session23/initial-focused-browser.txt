@@ -1,0 +1,49 @@
+
+> godseed@0.13.0 test:e2e
+> playwright test --grep guardian|boss phases|defeat returns|gentle mode
+
+[WebServer] (node:30430) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30449) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:30461) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/guardian.spec.ts:8:1 › 390: real earned healing, three boss phases, native files and all three chapter conclusions (48.2s)
+  ✓  2 tests/guardian.spec.ts:16:1 › 844: defeat returns brought supplies, checkpoint and retry without fake completion (34.5s)
+  ✓  3 tests/guardian.spec.ts:20:1 › 820: gentle mode still reaches a real chapter conclusion with the same full rewards (26.9s)
+  ✓  4 tests/guardian.spec.ts:23:1 › 390: normal guardian shard VFX reflects the telegraphed phase and settles at exact battle feet (29.0s)
+  ✘  5 tests/guardian.spec.ts:26:1 › 1366: missing guardian atlas has explicit retry and preserves manual-file state (17.5s)
+
+
+  1) tests/guardian.spec.ts:26:1 › 1366: missing guardian atlas has explicit retry and preserves manual-file state 
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('#canvas')
+    Expected: "degraded"
+    Received: ""
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveAttribute" locator('#canvas') with timeout 5000ms
+      - waiting for locator('#canvas')
+        14 × locator resolved to <div role="img" id="canvas" data-npc="sprout" data-stage="ruins" data-npc-frame="0" data-prop-count="3" data-hero-frame="6" data-last-cue="talk" data-resting="false" data-altar-frame="0" data-trail-focus="0" data-stage-layers="3" data-motion="reduced" data-asset-errors="1" data-location="ruins" data-ambient-tick="0" data-memory-props="0" data-time-light="day" data-echo-core="none" data-walk-trace="east" data-garden-art="none" data-path-phase="idle" data-ruins-beat="idle" data-rune-ward="false" data…>…</div>
+           - unexpected value "null"
+
+
+      25 | });
+      26 | test('1366: missing guardian atlas has explicit retry and preserves manual-file state',async({page})=>{
+    > 27 |  await page.setViewportSize({width:1366,height:768});await page.route('**/art-v16/guardian.png',r=>r.abort());await enterGuardian(page);const s=await exportedState(page);await expect(canvas(page)).toHaveAttribute('data-render-status','degraded');await page.unroute('**/art-v16/guardian.png');await clickLife(page,'ลองโหลดภาพอีกครั้ง');await expect(canvas(page)).toHaveAttribute('data-npc','guardian-v16');expect(await exportedState(page)).toEqual(s);
+         |                                                                                                                                                                                                      ^
+      28 | });
+      29 |
+        at /workspace/alltest/GODSEED/tests/guardian.spec.ts:27:198
+
+    Error Context: test-results/guardian-1366-missing-guar-67f55-preserves-manual-file-state/error-context.md
+
+  1 failed
+    tests/guardian.spec.ts:26:1 › 1366: missing guardian atlas has explicit retry and preserves manual-file state 
+  4 passed (2.6m)

@@ -7,7 +7,7 @@ const cueKinds=new Set(['walk','talk','pick','cast','rest']);
 const poses=new Set(['interact','talk','pick_up','cast','rest','water']);
 const effects=new Set(['lantern','song','leaf']);
 const present=value=>typeof value==='string'&&value.trim().length>0;
-const ending=scene=>scene.terminal===true||scene.ending===true||/_END_/.test(scene.id);
+const ending=scene=>scene.conclusion==='game'||scene.conclusion!=='chapter'&&(scene.terminal===true||scene.ending===true);
 
 /** Data validation and graph reachability. Conditions are NOT assumed satisfied. */
 export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB'],recoveryScene='S28_RECOVER'}={}){
@@ -53,6 +53,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
  let declaredEffectChoices=0;
  for(const scene of rows){
   const at=scene.id;
+  if(scene.conclusion!==undefined&&!['chapter','game'].includes(scene.conclusion))error('INVALID_CONCLUSION',at,'Conclusion must explicitly distinguish chapter from game');
   if(!present(scene.title)||!present(scene.text))error('EMPTY_NARRATIVE',at,'Scene needs authored title and narrative');
   if(stages.size&&!stages.has(scene.stage))error('MISSING_STAGE',at,'Unknown stage '+scene.stage);
   if(actors.size&&!actors.has(scene.npc))error('MISSING_ACTOR',at,'Unknown actor asset '+scene.npc);
@@ -78,7 +79,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
    if(choice.requires!==undefined)requireFlag(choice.requires,ca+'.requires');
    if(choice.when!==undefined&&!Array.isArray(choice.when))error('INVALID_CONDITIONS',ca,'when must be an array');
    for(const condition of Array.isArray(choice.when)?choice.when:[]){
-    if(condition.kind==='flag')requireFlag(condition.id,ca+'.when');
+    if((condition.kind==='flag'||condition.kind==='notFlag'))requireFlag(condition.id,ca+'.when');
     else if(condition.kind==='anyFlag'){
      if(!Array.isArray(condition.ids)||!condition.ids.length)error('EMPTY_ANY_FLAG',ca,'anyFlag requires at least one flag');
      else condition.ids.forEach(flag=>requireFlag(flag,ca+'.when'));
@@ -182,7 +183,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   for(const id of scenes.keys())if(!owners.has(id))error('UNOWNED_BATCH_NODE',id,'Every node needs explicit chapter/batch ownership');
  }
  return {result:errors.length?'FAIL':'PASS',scope:'Static catalog validation and structural reachability; conditions and combat wins are not assumed executable',
-  counts:{contentBatches:(catalog.contentBatches||[]).length,storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,introductoryLifePathContracts:lifePathIds.size,stages:stages.size},
+  counts:{contentBatches:(catalog.contentBatches||[]).length,storyNodes:scenes.size,choices:choices.size,declaredEffectChoices,structurallyReachableNodes:reachable.size,endings:rows.filter(ending).length,chapterConclusions:rows.filter(s=>s.conclusion==='chapter').length,encounters:Object.keys(encounters).length,recipeDefinitions:spells.length,uniqueRecipes:spellIds.size,declaredQuestChains:quests.length,completableQuests:null,implementedLifePaths:null,introductoryLifePathContracts:lifePathIds.size,stages:stages.size},
   structurallyReachable:[...reachable].sort(),edges,flagProducers:[...flagSources].sort(),errors,warnings};
 }
 
@@ -289,7 +290,7 @@ export function exploreRealChoices(catalog,{maxStates=4000,maxMs=12000,seed=1234
  }
  const sceneIds=Object.keys(catalog.scenes);
  return {result:failures.length||deadlocks.length?'FAIL':'PASS_BOUNDED',scope:'Real fresh/choose/craft/fight reducers, seed '+seed+'; projected-state bounded search. Coverage is a verified lower bound, not exhaustive solvability or browser proof.',
-  limits:{maxStates,maxMs,processed,elapsedMs:Math.round(performance.now()-started)},counts:{witnessedNodes:nodes.size,successfulChoices:choices.size,witnessedStateChangingChoices:stateChanges.size,successfullyCraftedRecipes:recipes.size,endingWitnesses:[...nodes.keys()].filter(id=>ending(catalog.scenes[id])).length},
+  limits:{maxStates,maxMs,processed,elapsedMs:Math.round(performance.now()-started)},counts:{witnessedNodes:nodes.size,successfulChoices:choices.size,witnessedStateChangingChoices:stateChanges.size,successfullyCraftedRecipes:recipes.size,endingWitnesses:[...nodes.keys()].filter(id=>ending(catalog.scenes[id])).length,chapterConclusionWitnesses:[...nodes.keys()].filter(id=>catalog.scenes[id].conclusion==='chapter').length},
   nodeWitnesses:Object.fromEntries([...nodes].sort()),successfulChoiceIds:[...choices].sort(),stateChangingChoiceIds:[...stateChanges].sort(),craftedRecipeWitnesses:Object.fromEntries([...recipes].sort()),questCompletionWitnesses:Object.fromEntries([...questWitnesses].sort()),unverifiedQuests:(catalog.quests||[]).map(q=>q.id).filter(id=>!questWitnesses.has(id)),unverifiedNodes:sceneIds.filter(id=>!nodes.has(id)),deadlocks,failures};
 }
 

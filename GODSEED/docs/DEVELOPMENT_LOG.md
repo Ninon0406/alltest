@@ -487,3 +487,18 @@ Source355ef932c71589a5d6448883a22822b6a1a71d03/PR22/merge5964756fc4b835db1a75f41
 หยุดMainCI42365860406โดยตั้งใจเพื่อออก0.12.1 ไม่อ้างว่ามีMain148PASS. เก็บactual0.12.0activeECHOfileจากUIเฉพาะ/tmp/gs22-published-0.12.0.godseedสำหรับcompatibility5รุ่น. Codeเพิ่มactor-awareArtLedger/World.prepare+error/retrycontext โหลดเฉพาะNPCที่ฉากใช้ คงtitle25PNG/cache/SceneIDs/File2/State2/234recipes/88PNGเดิม. เพิ่มUnit2และBrowsercoldfile1 รวม244Unit/149Browserเป้าหมายรอบใหม่;กำลังรันFocused15และchecksก่อนเตรียมPR
 
 Hotfixtargetedผลจริง:Unit244/Focused15ผ่าน2.7m;casecoldfileเพิ่มเติมพร้อมabortEIRA PNG→degraded→explicitretry→EIRAcorrect/Stateexactผ่าน1/1ใน16.5s;title25คงเดิม คืนFND004จากproblemเป็นdoneตามหลักฐานเฉพาะsubsystem แต่Full149/CI/publicของ0.12.1ยังต้องตรวจ
+
+
+## Session23 — 2026-11-08 UTC — ผู้เฝ้าที่เรียนรู้การปล่อยเพลง / 0.13.0 candidate
+
+ฐานmain734e21d/actualpublic0.12.1. อ่าน03/Roadmap/Log/V6/spec/design/architecture/research ตรวจGitและของค้างเดิม. ปิดrelease22receiptตามจริง:Local149/PR149/public5nativefiles/10viewportsผ่าน แต่Main42369615679มี148PASS1FAILรวมcapture→lateSkip ไม่เหมารวมว่าMaingreen. แก้CSSz-index+แยกnormalVFXcompletion/earlytouchSkip+hittest Focus2ผ่าน
+
+พัฒนาCMB007/STO001/PIPE002/ARC001เป็นverticalslice18nodes41choices81/232→99/273;B05สามphase150HP/intent12/20/weaknessเปลี่ยน/Seal2จังหวะ/PIERCE+learnedBLOOM/ECHO/earnedonceassist/gentle25%/defeatrefundsupplies/40XPfirstwin→S23. สร้างoriginalguardianatlas16frames ไม่ใช้referenceทั้งภาพ. Typedchapterconclusion3/gameending0;negativeflag+postchapterrevisitรักษาผลเลือกเดิม/ของไม่ซ้ำ. Q_GUARDIAN_SONGและhealingkit→actualrecipeด้วย234catalogเดิม
+
+Actualreducer99nodes273choices205withstatedelta/6quests/5batches. Unit257/content2/graph21/roadmap10/type/lint/build/manual/referencegatesผ่าน.48freshseed/modevictories+Windonlyattack+phasefiles+oldfieldabsenceผ่านunit. InitialBrowser4PASS/1FAILเพราะdiagnosticselectorผิด แก้selectorเดิมdata-render-statusโดยไม่ลดstateassert. FinalFocused7/Full155/CI/deploy/publicกำลังตรวจและจะเพิ่มreceiptจริง
+
+ปัญหา/แก้:IDชนS20/CH2001..3ของopeningเดิม→ใช้G_SEAL_INNERnamespaced;endregexนับchapterเป็นgame→typedconclusion/negativevalidator;testpolicyhealทุกturnทำdamageไม่คืบ→เลือกhealจังหวะไม่โจมตี/guardtelegraphจริง ไม่แก้stateให้ชนะ;guardartวงทึบทับsilhouette→วาดเฉพาะขอบโปร่ง;NPCcountนับsheetMarenซ้ำ→ใช้actorIDเดิมซึ่งWorldmapไปv8;fixturecountsปรับตามsourceจริง ไม่ลดพฤติกรรม
+
+คงManualRAMonly/File2/State2/optionalguardianstrict ไม่มีdefaultfieldในoldfiles. Actualpublished0.12.1filecaptureผ่านUIเก็บ/tmpเท่านั้น;hashอยู่legacy-capture.json. Researchใช้หลักการabstractจากofficialresearchเดิมตามข้อจำกัด ไม่อ้างอ่านนิยายเต็ม/เล่นWayได้เพิ่ม ไม่มีคัดลอกIP. รอบนี้เปิดReference09จริงและสร้างspriteเอง
+
+ยังไม่เสร็จ:canonicaloptionalS29/Chaptermetadataข้ามARC/ARC2–12/อีก6LifePaths/AdvancedV6magic/FinalHDครบ10/audio/physicaldevices/FPS/humanfun. Next5:PIPE002chapter+savecontext→ARC002เล่นจบเป็นช่วง→LifePathsอีก2สาย→MAG010+catalystmigration→visual/mobilequalityควบคู่. ไม่มีการทำงานข้ามsessionอัตโนมัติ. Source/commit/CIสุดท้ายจะบันทึกเมื่อเกิดจริง

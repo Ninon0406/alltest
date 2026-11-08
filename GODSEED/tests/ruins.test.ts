@@ -60,7 +60,7 @@ describe('canonical ruins routes and world memory',()=>{
   s=path(s,['CH0210','CH0210']);const defended=fight(path(s,['CH0207','CH1502']),'SPELL_WIND_WARD_LINGER');expect(defended.battle!.shield).toBeGreaterThan(0);expect(defended.hp).toBe(s.hp);expect(defended.mp).toBe(s.mp-byId.SPELL_WIND_WARD_LINGER.mp);
  });
  it('all new scene/choice IDs are unique, reachable, and mapped to actual action targets',()=>{
-  expect(Object.keys(scenes)).toHaveLength(81);const ids=Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id));expect(ids).toHaveLength(232);expect(new Set(ids).size).toBe(232);
+  expect(Object.keys(scenes)).toHaveLength(99);const ids=Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id));expect(ids).toHaveLength(273);expect(new Set(ids).size).toBe(273);
   for(const scene of ['S15_RUINS','S16_RUINS_RESULT','S17_ECHO_TABLET']){expect(locationFor(scene)).toBe('ancient_shrine');for(const c of scenes[scene].choices){expect(scenes[c.next]).toBeDefined();expect(ruinsActions[c.id]).toBeDefined();}}
  });
 });

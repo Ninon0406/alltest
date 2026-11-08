@@ -1,0 +1,70 @@
+{
+  "status": "SOURCE_FOCUSED_ART_PASS_FULL_RELEASE_PENDING",
+  "date": "2026-11-08",
+  "version": "0.13.0",
+  "baselineCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
+  "baseline": {
+    "nodes": 81,
+    "choices": 232,
+    "stateChangingChoiceWitnesses": 178,
+    "questContracts": 5,
+    "contentBatches": 4,
+    "encounters": 5,
+    "fullGameEndings": 0
+  },
+  "after": {
+    "nodes": 99,
+    "choices": 273,
+    "actualReachableNodes": 99,
+    "successfulChoiceWitnesses": 273,
+    "stateChangingChoiceWitnesses": 205,
+    "questContracts": 6,
+    "contentBatches": 5,
+    "encounters": 6,
+    "chapterConclusions": 3,
+    "fullGameEndings": 0,
+    "introductoryLifePaths": 2,
+    "legalRecipes": 234,
+    "npcCharacters": 5,
+    "stages": 8,
+    "fixedMaps": 6
+  },
+  "sourceChecks": {
+    "unit": 257,
+    "content": 2,
+    "graph": 21,
+    "roadmap": 10,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "manualSave": "PASS",
+    "references": "PASS",
+    "build": "PASS"
+  },
+  "browserInitial": {
+    "passed": 4,
+    "failed": 1,
+    "reason": "Test used a nonexistent diagnostic attribute. Actual render-status was degraded and asset-errors=1; corrected selector without weakening game-state assertions."
+  },
+  "pending": [
+    "Full155 regression run",
+    "Native old-file compatibility through current build",
+    "Ten viewport evidence",
+    "PR CI and deployment/public proof"
+  ],
+  "limitations": [
+    "Physical Safari/iPhone/Android/iPad and hardware FPS not tested",
+    "Human enjoyment not playtested",
+    "Final HD art approval remains open",
+    "ARC2–12 and six life paths remain unimplemented",
+    "Source benchmark access limitations remain as recorded in research; no copied story/art/code"
+  ],
+  "browserFinalFocused": {
+    "passed": 7,
+    "failed": 0,
+    "minutes": 2.8
+  },
+  "art": {
+    "reproducedPNG": 89,
+    "unchangedBaselinePNG": 88
+  }
+}
