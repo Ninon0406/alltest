@@ -1,3 +1,11 @@
+# 0.13.0 candidate — ผู้เฝ้าที่เรียนรู้การปล่อยเพลง
+
+เพิ่มการเตรียมตัว สูตรเยียวยา บอสผู้พิทักษ์สามระยะและบทสรุปบทแรกสามทาง หลังภารกิจลานเสียงย้อน ชนะ/แพ้มีผลจริง พร้อมกลับหมู่บ้านหลังจบบท โหมดผ่อนแรงและคำใบ้เปิดได้ก่อนสู้ สไปรต์ผู้พิทักษ์ใหม่16framesและเอฟเฟกต์เศษความทรงจำ
+
+State2/File2ยังเข้ากับไฟล์เดิมที่ผ่านvalidation. ไม่มีAutoSave/browser/cloudprogress. Build/sourcechecksผ่าน;Full/CI/actualpublic0.13ยังรอผล ดูSession23receiptก่อนกล่าวว่าเผยแพร่แล้ว. 0.12.1publicผ่านแต่MainCI148/149มีSkipcasefailที่รอบนี้แก้
+
+---
+
 ### Session22 / 0.12.1 candidate — cold imported scene actor
 
 แก้NPCข้ามgroupไม่ถูกโหลดเมื่อimportopeningfileแล้วเข้าECHO_CALLทันที:World.prepare/showระบุrequiredactorให้ArtLedgerและerror/retrycontext โหลดเฉพาะsheetที่ยังไม่มี คงtitle25PNGและcache. ภาพก่อน/Redจากactualpublic0.12.0และGreenอยู่[hotfix evidence](evidence/session22/hotfix/README.md)

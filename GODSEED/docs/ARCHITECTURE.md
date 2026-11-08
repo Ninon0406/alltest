@@ -1,3 +1,19 @@
+# Session23 Batch B — Cinematic viewport
+
+ui/cinematic-viewport.tsเป็นpresentationcleanupที่คืนscrollหลังexclusivefinally+render ใช้เฉพาะwidth≤900/height>500/normalmotionเมื่อcanvasพ้นจอ. Instantcenterเพื่อให้เห็นเหตุการณ์แล้วคืนreadingpositionเดิม ReducedMotionและside-by-sideไม่ขยับ ไม่เปลี่ยนfocus/GameState/Save/animationtiming. RegressionredY−643.65625ก่อนแก้ มีnormal+reducedbrowsercasesและactualpublicverifierเพิ่ม
+
+# 0.13.0 — Guardian / typed chapter conclusions
+
+`guardian-story.ts`เป็นbatchแยกต่อจากEchoเดิม ไม่ย้ายS20_SEAL_PASSAGE/CH2001..3ที่เผยแพร่แล้ว ช่วงประตูชั้นในใช้G_SEAL_INNER/CHG_PASSAGE_*แทน IDsไม่ซ้ำและไฟล์เก่าอยู่ที่nodeเดิม. StoryScene.conclusionแยกchapter/game;validatorไม่เดาตอนจบจากชื่อ_END_และchapterยังต้องมีทางออก. Condition.notFlagใช้ล็อกการเลือกบทสรุปเมื่อsong_restoredแล้ว มีทางrevisitผ่านCHG_REVISITแทน
+
+B05เป็นpurefightreducer:phaseคำนวณจากHP150..101/100..51/50..1;แผนโจมตีอ่านก่อนplayeractionเหมือนB04 ไม่เปลี่ยนคำสัญญาที่telegraphเมื่อHPข้ามphase. GUARDIAN_SEAL2จังหวะแยกRUNE_WARDของB03;defaultmitigation50%,understoodBLOOM/ECHO25%,PIERCEใช้ระบบเดิม. Phase3memory20สลับpulse12. earnedfriendassistลดincoming12หนึ่งครั้งและเก็บoptionalassistUsed;gentleflagลดincoming25%ก่อนGUARD/shield
+
+State2เพิ่มbattle.guardian optionalstrictเฉพาะB05 มีsuppliesของIT_POTION_DEW/IT_MANA_LEAFก่อนเข้าและassistUsed:trueเมื่อเกิดจริง แพ้คืนsuppliesก่อนลบbattle;ชนะไม่คืนของ firstwin40XP/CORE_LIGHTครั้งเดียว→S23. SaveFile2ยังCHAPTER_1;ไม่มีdefaultguardianในoldfiles ไม่มีการเขียนstorageหรือupload. ARC2savecontextยังต้องพัฒนาก่อนเพิ่มchapterจริง
+
+Worldโหลดguardian-v16ผ่านArtLedgerเดิม/ruinsgroup/requiredactor retry;16frames64x64/origin40/64. Effectshardsแยกจากdamageอ่านphase/turnก่อนaction;particlebudget4/12. ทุกactionยังใช้pendingArrivalcleanupเดิม Skipวางz-index2เหนือcanvaswrapperและมีactualhittestregression. Victory/family/community/archiveใช้staging/anchorsเดิมพร้อมflag-derivedkeepsakes/lines ไม่เอาreferenceภาพทั้งใบเป็นพื้นหลัง
+
+---
+
 ### Session22 / 0.12.1 candidate — cold imported scene actor
 
 แก้NPCข้ามgroupไม่ถูกโหลดเมื่อimportopeningfileแล้วเข้าECHO_CALLทันที:World.prepare/showระบุrequiredactorให้ArtLedgerและerror/retrycontext โหลดเฉพาะsheetที่ยังไม่มี คงtitle25PNGและcache. ภาพก่อน/Redจากactualpublic0.12.0และGreenอยู่[hotfix evidence](evidence/session22/hotfix/README.md)

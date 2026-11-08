@@ -1,3 +1,11 @@
+## Session23 / 2026-11-08 — pending final release gates
+
+Chromiumemulation:initial390completeboss/3routes/nativephasefiles;844defeat/refund/retry;820gentlecomplete;390normalshards+canonicalfeetผ่าน4cases.1366missingatlasinitialassertผิดattribute แก้selectorและกำลังrerunทั้งหมดพร้อมSkipregression. ไม่ใช่physicalmobile/Safari/FPS/approvedvisualbaseline/humanfun.
+
+Full157/10viewport/currentpublic/hash/native6legacyversionsจะบันทึกผลจริงในevidence/session23/verification.json. เก็บinitialfailedoutputแยกจากfinal ไม่ทำskipหรือลดassertions
+
+---
+
 ### Session22 — Echo gates
 
 Unit19ใหม่:actualopening/materialconsumption/rewardonce/questcompletion/bypass/victory-onlyarrivals/conditionalflee/defeat/strictsave/coretelegraph/24seedroutes/14anchorcollision/lazyart. Graphเพิ่ม4fixturesตรวจbatchownership/chaptercontracts/trustcondition

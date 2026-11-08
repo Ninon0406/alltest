@@ -1,0 +1,46 @@
+
+> godseed@0.13.0 test:e2e
+> playwright test --grep off-screen normal cast|reading viewport|touch Skip during|normal enemy VFX
+
+[WebServer] (node:34288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:34307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:34319) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/echo.spec.ts:38:1 › normal enemy VFX uses the announced core and completes at canonical battle feet (14.4s)
+  ✓  2 tests/echo.spec.ts:45:1 › touch Skip during a cast remains above the canvas and commits one canonical battle turn (13.3s)
+  ✘  3 tests/guardian.spec.ts:30:1 › 390: an off-screen normal cast brings the scene into view and returns to the command position (19.3s)
+(node:34523) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 tests/guardian.spec.ts:34:1 › 390: reduced-motion battle actions keep the reading viewport instead of revealing the scene (17.9s)
+
+
+  1) tests/guardian.spec.ts:30:1 › 390: an off-screen normal cast brings the scene into view and returns to the command position 
+
+    Error: expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 717
+    Received: 775
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   58
+
+      29 |
+      30 | test('390: an off-screen normal cast brings the scene into view and returns to the command position',async({page})=>{
+    > 31 |  await page.setViewportSize({width:390,height:844});await enterGuardian(page);await takeLife(page,'CH2201');const before=await exportedState(page);await clickLife(page,'ลดการเคลื่อนไหว');const cast=page.getByRole('button',{name:'อรุณดารานำวิถี · MP 11',exact:true});await cast.scrollIntoViewIfNeeded();const original=await page.evaluate(()=>scrollY);expect((await canvas(page).boundingBox())!.y+(await canvas(page).boundingBox())!.height).toBeLessThan(0);await page.screenshot({path:'test-results/guardian-command-before-390.png'});await cast.tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','true');const box=(await canvas(page).boundingBox())!;expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(844);await page.screenshot({path:'test-results/guardian-cast-visible-390.png'});await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');expect(await page.evaluate(()=>scrollY)).toBeCloseTo(original,0);expect(await exportedState(page)).toEqual(fight(before,'SPELL_LIGHT_ORB_SEEK'));expect(JSON.parse((await canvas(page).getAttribute('data-player-anchor'))!)).toMatchObject({x:130,y:219,feetY:239,depth:239});
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+      32 | });
+      33 |
+      34 | test('390: reduced-motion battle actions keep the reading viewport instead of revealing the scene',async({page})=>{
+        at /workspace/alltest/GODSEED/tests/guardian.spec.ts:31:953
+
+    Error Context: test-results/guardian-390-an-off-screen-cd3cc-rns-to-the-command-position/error-context.md
+
+  1 failed
+    tests/guardian.spec.ts:30:1 › 390: an off-screen normal cast brings the scene into view and returns to the command position 
+  3 passed (1.1m)

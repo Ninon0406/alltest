@@ -1,3 +1,14 @@
+## 2026-11-08 — Session23
+
+- ไม่ใช้รหัสS20/CH2001..3ซ้ำ:openingเดิมเผยแพร่แล้ว ประตูชั้นในเป็นG_SEAL_INNER/CHG_PASSAGE_*โดยคงsemanticsเก่า
+- สามบทสรุปS24..26เป็นchapter ไม่ใช่gameendingหลังV6ขยาย12ARC;เลิกนับ_END_ด้วยregex และยังตรวจchapterdeadend
+- บททดสอบB05แพ้คืนของใช้ที่นำเข้า ชนะใช้ของตามจริง;เก็บsupplies/assistUsedในbattleoptionalstrict ไม่มีsnapshotใหญ่หรือbrowserstorage
+- โหมดgentle25%ไม่มีผลตัดสิทธิ์บทสรุป;ความช่วยเหลือเพื่อนเกิดจากfactจริงหนึ่งครั้ง ท่า/particleไม่กำหนดlogic
+- กันrouteเดิมเปลี่ยนเมื่อกลับมา:CHG_HUBใช้notFlag song_restored และCHG_REVISITอ่านบทสรุปเดิมได้ sharedgiftguardป้องกันของซ้ำ
+- Main0.12.1failedcombinedcapture/lateSkipต่างจากPR149PASS:แยกnormalcompletionกับearlytouchSkipและตรวจactualelementFromPoint เพิ่มz-indexจริง ไม่ใช้forceclick/retries/timeoutinflation ไม่ปิดบังMainfailure
+
+---
+
 ### Session22 / 0.12.1 candidate — cold imported scene actor
 
 แก้NPCข้ามgroupไม่ถูกโหลดเมื่อimportopeningfileแล้วเข้าECHO_CALLทันที:World.prepare/showระบุrequiredactorให้ArtLedgerและerror/retrycontext โหลดเฉพาะsheetที่ยังไม่มี คงtitle25PNGและcache. ภาพก่อน/Redจากactualpublic0.12.0และGreenอยู่[hotfix evidence](evidence/session22/hotfix/README.md)

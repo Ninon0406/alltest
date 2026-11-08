@@ -1,8 +1,8 @@
 {
-  "status": "HOTFIX_CANDIDATE_GATES_PENDING",
+  "status": "PUBLIC_VERIFIED_MAIN_CI_FAILED_SKIP_CASE",
   "version": "0.12.1",
   "baseCommit": "5964756fc4b835db1a75f419a431a1289f030e18",
-  "sourceCommit": "PENDING_HOTFIX_COMMIT",
+  "sourceCommit": "53c1dcbdc9b15225ba9672d2da7d8b43e3cb0bfb",
   "actualCompleted": {
     "unit": {
       "passed": 244,
@@ -27,16 +27,26 @@
     "manualSaveSourceGate": true,
     "referencePackingGate": true,
     "unchangedOriginalPng": 88,
-    "coldTitlePng": 25
+    "coldTitlePng": 25,
+    "localFullBrowser": {
+      "passed": 149,
+      "failed": 0,
+      "minutes": 28.9
+    },
+    "prFullBrowser": {
+      "passed": 149,
+      "failed": 0,
+      "minutes": 25.7
+    },
+    "localLegacyFilesExact": 5,
+    "localEmulatedViewports": 10,
+    "actualPublicLegacyFilesExact": 5,
+    "actualPublicEmulatedViewports": 10
   },
-  "pending": [
-    "hotfix localFull149",
-    "hotfix PRCI149",
-    "hotfix publish and actual public0.12.1 five-legacy-file/layout/hash proofs"
-  ],
+  "pending": [],
   "knownFix": "Actor-aware loading for a scene NPC outside its stage group, including failure/retry context; no game-state/schema/recipe/art changes",
   "release0120History": {
-    "status": "PUBLIC_VERIFIED_MAIN_CI_PENDING",
+    "status": "PUBLIC_VERIFIED_MAIN_CANCELLED_FOR_ACTOR_FIX",
     "version": "0.12.0",
     "baseCommit": "146db71790a8f2490b6ea4ba04615a71863f4265",
     "actualCompleted": {
@@ -142,5 +152,37 @@
     "Physical iPhone Safari/Android and hardware FPS not tested",
     "No human fun proof or finalHD acceptance",
     "Remaining12ARC/8Paths/mainstory/boss/endings scope still incomplete"
-  ]
+  ],
+  "pr": {
+    "number": 23,
+    "runId": 42367573181,
+    "buildJobId": 128388771945,
+    "status": "completed",
+    "url": "https://github.com/Ninon0406/alltest/pull/23",
+    "conclusion": "success"
+  },
+  "mergeCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
+  "mainCI": {
+    "run": 42369615679,
+    "buildJob": 128394832310,
+    "conclusion": "failure",
+    "e2e": {
+      "passed": 148,
+      "failed": 1,
+      "minutes": 37.2
+    },
+    "failedCase": "echo.spec.ts normal enemy VFX then late Skip after full-page screenshot",
+    "deployJob": "skipped",
+    "followup": "Session23 splits normal completion and early touch Skip with hit testing; CSS stacking fix; awaiting new full run"
+  },
+  "deployment": {
+    "legacyPagesRun": 42369615427,
+    "conclusion": "success",
+    "url": "https://ninon0406.github.io/alltest/",
+    "publicVersion": "0.12.1",
+    "sourceCommit": "53c1dcbdc9b15225ba9672d2da7d8b43e3cb0bfb",
+    "proof": "hotfix/public-echo.json + public-layouts.json",
+    "versionedPngExact": 77,
+    "jsSha256": "d61d9abf724816b5616e5c68719a1e5137fa594f8e3c8b011952a08f79d8efed"
+  }
 }

@@ -15,7 +15,10 @@ export const clueFacts=[
 ] as const;
 export const clueCount=(state:State)=>clueFacts.filter(clue=>state.flags[clue.flag]).length;
 export function nextHint(state:State){
- if(state.flags.echo_expedition_complete)return 'กลับไปทดลองวัสดุที่เลือกจากลานเสียงย้อน หรือเรียนเส้นทางชีวิตที่ยังสนใจ ประตูชั้นในยังต้องเตรียมบททดสอบต่อ';
+ if(state.flags.chapter1_complete)return 'บทแรกจบแล้ว คุณกลับไปช่วยหมู่บ้าน เรียนเส้นทางชีวิต หรือทดลองเวทต่อได้ เรื่องราวโลกบทถัดไปยังพัฒนาอยู่';
+ if(state.flags.guardian_trial_complete)return 'ผู้พิทักษ์พร้อมฟังแล้ว เลือกวิธีคืนเพลงให้ครอบครัว ชุมชน หรือหอสมุด';
+ if(state.flags.guardian_journey_started)return 'รับชุดเตรียมตัว อ่านจารึก และเลือกจังหวะทดสอบกับไอรา ก่อนพบผู้พิทักษ์สามระยะ ตั้งรับและพักก่อนสู้ได้';
+ if(state.flags.echo_expedition_complete)return 'กลับไปทดลองวัสดุที่เลือกจากลานเสียงย้อน หรือเรียนเส้นทางชีวิตที่ยังสนใจ หรือเลือกตามไอราไปพบผู้พิทักษ์รอยลืมในสถานที่อื่นที่จัตุรัส';
  if(state.flags.echo_expedition_started)return state.flags.echo_trial_resolved?'นำสิ่งที่เรียนรู้กลับไปเล่าให้มาเรน ไอรา และลูมิ แล้วรับของขอบคุณเพื่อจบการเดินทาง':'เตรียมเวทที่โรงช่าง แล้วฟังรูปแบบที่ลานเสียงย้อน เลือกสู้หรือให้ไอราช่วยแยกรูนได้';
  if(state.flags.arc1_opening_complete){const paths=pathProgress(state),learning=paths.find(p=>p.started&&p.rank<2);if(learning)return learning.name+' · '+learning.next+' กลับทางแยกในจัตุรัสเพื่อเรียนต่อได้';if(paths.every(p=>p.rank===2))return 'ทั้งสองสายเรียนพื้นฐานสำเร็จแล้ว ลองนำแผนที่ไปเล่าให้มาเรนฟังที่ทางแยก หรือใช้สำรวจจังหวะและรากคุ้มภัยในการต่อสู้';return 'หลังคืนแรก คุณเลือกเรียนจากพิพหรือมาเรนได้ที่ทางแยกในจัตุรัส แต่ละสายมีภาคสนาม การฝึก และความสามารถต่างกัน';}
  if(state.flags.festival_ready)return 'ช่วยซ่อมกล่องกับคุโร เรียงโน้ตกับไอรา และเตรียมโคมครบแล้วจึงรวมวงซ้อม ทุกงานมีวิธีทำด้วยมือโดยไม่บังคับหาเวทหายาก';
@@ -31,6 +34,8 @@ export function nextHint(state:State){
 }
 /** Authored facts only. Rendering cannot invent progress or grant rewards. */
 export function rememberedLines(state:State,scene:StoryScene):string[]{
+ if(state.flags.chapter1_complete&&(scene.id==='S02_HUB'||scene.id==='S27_EPILOGUE'))return [state.flags.chapter1_family?'ลูมินั่งฟังยายร้องหลังอาหาร เพลงของบ้านหลังหนึ่งเดินทางต่อผ่านผู้ที่กลับไปฟัง':state.flags.chapter1_community?'วงเพลงข้างน้ำพุเริ่มใหม่ได้เสมอ คนที่มาช้าไม่ต้องร้องแข่งใคร พิพคอยเคาะจังหวะให้':'สำเนาบทเพลงเปิดอยู่พร้อมชื่อผู้เล่า คนถัดมาเพิ่มคำถามได้โดยไม่ลบเสียงของคนก่อน'];
+ if(scene.id==='S23_DECISION')return [state.flags.guardian_family_promise?'ผู้พิทักษ์ได้ยินคำถามที่คุณสัญญากับลูมิไว้ เขากลัวว่าจะไม่มีใครกลับมาฟัง':state.flags.echo_report_knowledge?'บันทึกที่คุณไม่เติมคำเดาช่วยให้ไอราแยกเรื่องของผู้เฝ้าออกจากเสียงที่ผนึกทวนมา':'ช่วงเงียบที่คุณเคยเว้นให้ปมเสียงย้อน กลายเป็นที่ให้ผู้พิทักษ์เล่าเรื่องของตนเอง'];
  if(scene.stage==='glade'&&state.flags.echo_trial_resolved)return [state.flags.battle_B04_done?'ปมแสงจำการสลับจังหวะของคุณได้ มันรอให้น้ำไหลผ่านก่อนตอบ รางวัลชัยชนะครั้งแรกจะไม่เกิดซ้ำ':'วงรูนที่คุณกับไอราแยกไว้ยังมีช่องว่าง ปมแสงไม่จำเป็นต้องแพ้เพื่อให้ใครได้ผ่าน'];
  if(scene.id==='S02_HUB'&&state.flags.echo_expedition_complete)return [state.flags.echo_report_care?'มาเรนฝากเก้าอี้ไว้ข้างน้ำพุ ลูมิลองเว้นจังหวะให้ยายร้องต่อ การเดินทางของคุณกลับมาเป็นเวลาที่คนในหมู่บ้านใช้ร่วมกัน':'ไอราวางรายงานเสียงย้อนไว้ให้คนอื่นตรวจซ้ำ ทั้งคำตอบและข้อจำกัดยังอยู่ครบ ไม่ต้องเริ่มจากศูนย์อีก'];
  if((scene.id==='S00_WAKE'||scene.id==='S02_TREE'||scene.id==='LP_EXPLORER_BRIEF')&&state.flags.lp_explorer_rank2)return ['พิพหยุดรอที่ป้ายใบไม้ซึ่งคุณช่วยทำไว้ มันจำได้ว่าแผนที่ของคุณเว้นที่ให้คนเดินช้าด้วย'];

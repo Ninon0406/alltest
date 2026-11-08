@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "version": "0.12.1",
+  "sourceCommit": "53c1dcbdc9b15225ba9672d2da7d8b43e3cb0bfb",
+  "pr": 23,
+  "runId": 42367573181,
+  "jobId": 128388771945,
+  "url": "https://github.com/Ninon0406/alltest/actions/runs/42367573181",
+  "unitPassed": 244,
+  "contentPassed": 2,
+  "graphPassed": 20,
+  "roadmapPassed": 10,
+  "fullBrowser": {
+    "passed": 149,
+    "failed": 0,
+    "minutes": 25.7
+  },
+  "localFullBrowser": {
+    "passed": 149,
+    "failed": 0,
+    "minutes": 28.9
+  },
+  "productionBuild": true,
+  "deploy": "skipped on pull_request",
+  "verifiedAt": "2026-11-07 11:46:48 UTC"
+}

@@ -487,3 +487,39 @@ Source355ef932c71589a5d6448883a22822b6a1a71d03/PR22/merge5964756fc4b835db1a75f41
 หยุดMainCI42365860406โดยตั้งใจเพื่อออก0.12.1 ไม่อ้างว่ามีMain148PASS. เก็บactual0.12.0activeECHOfileจากUIเฉพาะ/tmp/gs22-published-0.12.0.godseedสำหรับcompatibility5รุ่น. Codeเพิ่มactor-awareArtLedger/World.prepare+error/retrycontext โหลดเฉพาะNPCที่ฉากใช้ คงtitle25PNG/cache/SceneIDs/File2/State2/234recipes/88PNGเดิม. เพิ่มUnit2และBrowsercoldfile1 รวม244Unit/149Browserเป้าหมายรอบใหม่;กำลังรันFocused15และchecksก่อนเตรียมPR
 
 Hotfixtargetedผลจริง:Unit244/Focused15ผ่าน2.7m;casecoldfileเพิ่มเติมพร้อมabortEIRA PNG→degraded→explicitretry→EIRAcorrect/Stateexactผ่าน1/1ใน16.5s;title25คงเดิม คืนFND004จากproblemเป็นdoneตามหลักฐานเฉพาะsubsystem แต่Full149/CI/publicของ0.12.1ยังต้องตรวจ
+
+
+## Session23 — 2026-11-08 UTC — ผู้เฝ้าที่เรียนรู้การปล่อยเพลง / 0.13.0 candidate
+
+ฐานmain734e21d/actualpublic0.12.1. อ่าน03/Roadmap/Log/V6/spec/design/architecture/research ตรวจGitและของค้างเดิม. ปิดrelease22receiptตามจริง:Local149/PR149/public5nativefiles/10viewportsผ่าน แต่Main42369615679มี148PASS1FAILรวมcapture→lateSkip ไม่เหมารวมว่าMaingreen. แก้CSSz-index+แยกnormalVFXcompletion/earlytouchSkip+hittest Focus2ผ่าน
+
+พัฒนาCMB007/STO001/PIPE002/ARC001เป็นverticalslice18nodes41choices81/232→99/273;B05สามphase150HP/intent12/20/weaknessเปลี่ยน/Seal2จังหวะ/PIERCE+learnedBLOOM/ECHO/earnedonceassist/gentle25%/defeatrefundsupplies/40XPfirstwin→S23. สร้างoriginalguardianatlas16frames ไม่ใช้referenceทั้งภาพ. Typedchapterconclusion3/gameending0;negativeflag+postchapterrevisitรักษาผลเลือกเดิม/ของไม่ซ้ำ. Q_GUARDIAN_SONGและhealingkit→actualrecipeด้วย234catalogเดิม
+
+Actualreducer99nodes273choices205withstatedelta/6quests/5batches. Unit257/content2/graph21/roadmap10/type/lint/build/manual/referencegatesผ่าน.48freshseed/modevictories+Windonlyattack+phasefiles+oldfieldabsenceผ่านunit. InitialBrowser4PASS/1FAILเพราะdiagnosticselectorผิด แก้selectorเดิมdata-render-statusโดยไม่ลดstateassert. FinalFocused7/Full157/CI/deploy/publicกำลังตรวจและจะเพิ่มreceiptจริง
+
+ปัญหา/แก้:IDชนS20/CH2001..3ของopeningเดิม→ใช้G_SEAL_INNERnamespaced;endregexนับchapterเป็นgame→typedconclusion/negativevalidator;testpolicyhealทุกturnทำdamageไม่คืบ→เลือกhealจังหวะไม่โจมตี/guardtelegraphจริง ไม่แก้stateให้ชนะ;guardartวงทึบทับsilhouette→วาดเฉพาะขอบโปร่ง;NPCcountนับsheetMarenซ้ำ→ใช้actorIDเดิมซึ่งWorldmapไปv8;fixturecountsปรับตามsourceจริง ไม่ลดพฤติกรรม
+
+คงManualRAMonly/File2/State2/optionalguardianstrict ไม่มีdefaultfieldในoldfiles. Actualpublished0.12.1filecaptureผ่านUIเก็บ/tmpเท่านั้น;hashอยู่legacy-capture.json. Researchใช้หลักการabstractจากofficialresearchเดิมตามข้อจำกัด ไม่อ้างอ่านนิยายเต็ม/เล่นWayได้เพิ่ม ไม่มีคัดลอกIP. รอบนี้เปิดReference09จริงและสร้างspriteเอง
+
+ยังไม่เสร็จ:canonicaloptionalS29/Chaptermetadataข้ามARC/ARC2–12/อีก6LifePaths/AdvancedV6magic/FinalHDครบ10/audio/physicaldevices/FPS/humanfun. Next5:PIPE002chapter+savecontext→ARC002เล่นจบเป็นช่วง→LifePathsอีก2สาย→MAG010+catalystmigration→visual/mobilequalityควบคู่. ไม่มีการทำงานข้ามsessionอัตโนมัติ. Source/commit/CIสุดท้ายจะบันทึกเมื่อเกิดจริง
+
+
+### Session23 Batch B — เห็นแอนิเมชันจากคำสั่งที่อยู่นอกจอ
+
+ตรวจภาพมือถือจริงในChromiumพบcastbuttonอยู่ล่างfold ทำให้canvasหลุดจอ เมื่อเปิดnormalmotionเห็นเพียงเมนู. RedbrowserยืนยันcanvasY−643.65625หลังcast ก่อนแก้ ไม่มีstateinjection. เพิ่มrevealCinematicเฉพาะหน้าportraitphone/tabletเมื่อcanvasพ้นจอ ใช้instantscrollไม่smoothและกลับreadingpositionหลังexclusivefinally/renderเสร็จ. ReducedMotion/side-by-sideไม่เลื่อน ไม่แตะfocus/state/storage/timers. เพิ่มnormal+reduced2browsercasesและpublicverifierproof
+
+หยุดlocalFull155โดยตั้งใจ17PASS/1interrupted/137notrun และPRCI42429662756cancelledเพื่อรันsourceใหม่ ไม่ถือว่ารอบนั้นผ่าน. เป้าชุดใหม่157;รอผลจริงก่อนเผยแพร่. Sourceเดิมbc2793มีFocused7ผ่าน ส่วนpatchviewportต้องตรวจใหม่ทั้งfocusและfull
+
+ViewportfinalFocus4PASS1.3m: firstfixคืนตำแหน่งคลาด58pxเพราะเก็บscrollYหลังแทรกbusy-nav;แก้เก็บreadingPositionก่อนexclusive/renderจึงคืนexact717px. ReducedMotionไม่ขยับจอ ทั้งสองกรณีstate/feetตรง. เก็บviewport-first-fix/green ไม่ผ่อนassertion
+
+
+### Session23 QA — cold desktop keyboard helper
+
+LocalFull157หยุดหลัง73PASS/1FAIL/1interrupted/82notrun19.9m. Failure1366missingguardianเริ่มไม่ถึงเกม:helperfocusไม่รอenabledแล้วส่งEnterตอนปุ่มStartdisabledก่อนworld-ready จากนั้นรอaria-busyfalseจนหน้าTitleพร้อมแล้วเผลอถือว่ากดเริ่มสำเร็จ. ไม่ใช่guardianloaderล้มเหลว Screenshot/stackเก็บstartup-full-failure.md/full-before-startup-fix.txt
+
+เพิ่มslowsharedsky750msด้วยจริงnetworkroute:oldhelperFAILซ้ำอย่างชัดที่ปุ่มลุกไม่ปรากฏ;แก้เฉพาะtests/life-helpers.tsให้expectEnabledก่อนlocator.pressEnter (ยังทดสอบkeyboardจริง) ไม่force/retry/เพิ่มtimeout. Focus2PASS17.9sรวมcoldstartกับmissingguardianretry. Appbundleยังe771a8d6...เหมือนc39ทุกbyte. PRCI42430389597cancelledเพื่อFull158ใหม่;localรันremaining89รวม8guardiancases+ระบบที่เหลือ โดย69prefixcasesผ่านแล้วบนappbyteเดียวกันและCIจะรันทั้งหมด158ด้วยhelperแก้แล้ว ไม่อ้างlocalsingleFull158จากการรวมruns
+
+
+### Session23 QA consolidation
+
+Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelperซ้ำกับจุดที่เพิ่งแก้และไม่มีenabledwait จึงลบเฉพาะhelperซ้ำแล้วimportclickLifeเดียวกัน ใช้keyboard/touchจริงและรักษาทุกassertion. Targetopening8PASS1.5m/type/lintPASS ไม่มีapp/asset/packageเปลี่ยน;sourceJSยังe771. CI158ใหม่บนverificationheadสุดท้ายจะใช้helperร่วมกันทั้งopeningและpaths ไม่ปล่อยknowncoldstartraceไว้อีกแห่ง. Localremaining89PASS16.8m;combinedcoverage69prefix+89remaining=158uniquecaseชื่อครบ ไม่มีmissing แต่ไม่ใช่singlelocalrun. ผลCIเก็บตามrunจริงแยกจากlocalทุกครั้ง

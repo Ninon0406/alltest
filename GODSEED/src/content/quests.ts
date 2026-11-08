@@ -14,6 +14,13 @@ export type QuestDefinition={
 /** Contracts for quests implemented in the existing story, not future roadmap quests. */
 export const quests:readonly QuestDefinition[]=[
  ...lifeQuests,
+ {id:'Q_GUARDIAN_SONG',title:'บทเพลงที่เลือกเดินทางต่อ',description:'เรียนจังหวะผู้พิทักษ์ ผ่านบททดสอบ และเลือกวิธีดูแลเพลงของหมู่บ้าน',startScene:'G_CALL',activationFlags:['guardian_journey_started'],completionFlag:'guardian_chapter_reward',rewardGuard:'guardian_chapter_reward',rewardChoiceIds:['CH2701','CH2702'],rewardText:'เส้นใยดารา 1 และประกายขยายเสียง 1 รับครั้งเดียวร่วมกันทุกบทสรุป',entrySteps:['prepare'],steps:[
+  {id:'prepare',label:'เตรียมของกับคุโร',flag:'guardian_kit_taken',scene:'G_KIT',choices:['CHG_KIT_TAKE'],next:['understand']},
+  {id:'understand',label:'อ่านจังหวะและข้อจำกัดของผนึก',flag:'guardian_pattern_understood',scene:'G_INSCRIPTION',choices:['CHG_READ_PATTERN','CHG_READ_LISTEN'],requiresFlags:['guardian_kit_taken'],next:['trial']},
+  {id:'trial',label:'ผ่านบททดสอบผู้พิทักษ์ทั้งสามระยะ',flag:'guardian_trial_complete',scene:'S22_GUARDIAN',choices:['CH2201'],requiresFlags:['guardian_pattern_understood'],next:['resolve']},
+  {id:'resolve',label:'เลือกวิธีคืนเพลงให้ผู้คน',flag:'song_restored',scene:'S23_DECISION',choices:['CH2301','CH2302','CH2303'],requiresFlags:['guardian_trial_complete'],next:['return']},
+  {id:'return',label:'จบบทแรกและนำสิ่งที่เรียนรู้กลับไปใช้',flag:'guardian_chapter_reward',scene:'S27_EPILOGUE',choices:['CH2701','CH2702'],requiresFlags:['song_restored'],next:[]},
+ ]},
  {id:'Q_ECHO_EXPEDITION',title:'เสียงที่ยอมฟังเสียงอื่น',description:'เตรียมของ อ่านรูปแบบเสียง คลี่ปม แล้วนำเรื่องกลับมาแบ่งปัน',startScene:'ECHO_CALL',activationFlags:['echo_expedition_started'],completionFlag:'echo_expedition_complete',rewardGuard:'echo_report_reward',rewardChoiceIds:['CHE_CLOSE_PIERCE','CHE_CLOSE_LINGER'],rewardText:'เลือกเขี้ยวผลึกเจาะหรือทรายเวลาอ่อนหนึ่งชิ้น รับครั้งเดียวร่วมกันทั้งสองทาง',entrySteps:['pack'],steps:[
   {id:'pack',label:'รับอุปกรณ์จากคุโรและเตรียมช่องเวท',flag:'echo_kit_taken',scene:'ECHO_PACK',choices:['CHE_PACK_TAKE'],next:['listen']},
   {id:'listen',label:'สังเกตรูปแบบธาตุที่ปมเสียงจดจำ',flag:'echo_pattern_observed',scene:'ECHO_LISTEN',choices:['CHE_LISTEN_PAUSE','CHE_LISTEN_NOTE'],requiresFlags:['echo_kit_taken'],next:['resolve']},

@@ -1,0 +1,152 @@
+{
+  "status": "TEST_HELPERS_CONSOLIDATED_APP_UNCHANGED_FINAL_CI158_PENDING",
+  "date": "2026-11-08",
+  "version": "0.13.0",
+  "baselineCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
+  "baseline": {
+    "nodes": 81,
+    "choices": 232,
+    "stateChangingChoiceWitnesses": 178,
+    "questContracts": 5,
+    "contentBatches": 4,
+    "encounters": 5,
+    "fullGameEndings": 0
+  },
+  "after": {
+    "nodes": 99,
+    "choices": 273,
+    "actualReachableNodes": 99,
+    "successfulChoiceWitnesses": 273,
+    "stateChangingChoiceWitnesses": 205,
+    "questContracts": 6,
+    "contentBatches": 5,
+    "encounters": 6,
+    "chapterConclusions": 3,
+    "fullGameEndings": 0,
+    "introductoryLifePaths": 2,
+    "legalRecipes": 234,
+    "npcCharacters": 5,
+    "stages": 8,
+    "fixedMaps": 6
+  },
+  "sourceChecks": {
+    "unit": 257,
+    "content": 2,
+    "graph": 21,
+    "roadmap": 10,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "manualSave": "PASS",
+    "references": "PASS",
+    "build": "PASS"
+  },
+  "browserInitial": {
+    "passed": 4,
+    "failed": 1,
+    "reason": "Test used a nonexistent diagnostic attribute. Actual render-status was degraded and asset-errors=1; corrected selector without weakening game-state assertions."
+  },
+  "pending": [
+    "PR full158 CI",
+    "Deployment and actual public0.13 verification"
+  ],
+  "limitations": [
+    "Physical Safari/iPhone/Android/iPad and hardware FPS not tested",
+    "Human enjoyment not playtested",
+    "Final HD art approval remains open",
+    "ARC2–12 and six life paths remain unimplemented",
+    "Source benchmark access limitations remain as recorded in research; no copied story/art/code"
+  ],
+  "browserFinalFocused": {
+    "passed": 7,
+    "failed": 0,
+    "minutes": 2.8
+  },
+  "art": {
+    "reproducedPNG": 89,
+    "unchangedBaselinePNG": 88
+  },
+  "initialSourceCommit": "bc2793cc64f0c5439e3aac11be85f1b752dfc40c",
+  "viewportFix": {
+    "redCanvasY": -643.65625,
+    "firstFixReturnOffsetPixels": 58,
+    "finalFocusedPassed": 4,
+    "finalFocusedFailed": 0,
+    "minutes": 1.3,
+    "reducedMotionUnchanged": true,
+    "stateAndFeetExact": true
+  },
+  "interruptedRuns": [
+    {
+      "scope": "Initial local Full155",
+      "passed": 17,
+      "interrupted": 1,
+      "notRun": 137,
+      "reason": "Intentional stop for a reproduced off-screen cinematic viewport defect"
+    },
+    {
+      "scope": "PR CI42429662756",
+      "conclusion": "cancelled",
+      "reason": "Intentional replacement by the final viewport-fix source"
+    },
+    {
+      "scope": "Local full157 on unchanged app c39",
+      "passed": 73,
+      "failed": 1,
+      "interrupted": 1,
+      "notRun": 82,
+      "minutes": 19.9,
+      "reason": "Desktop test helper pressed disabled start during asset load; snapshot remained at title. Reproduced separately and fixed only in the helper."
+    },
+    {
+      "scope": "PR CI42430389597",
+      "conclusion": "cancelled",
+      "reason": "Restart with deterministic cold-start helper regression and target158"
+    }
+  ],
+  "sourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
+  "entryJs": "assets/index-DWr4o--C.js",
+  "entryJsSha256": "e771a8d6a40ede79bd7d40343a3fdb817160c58a216680091640199f81aa6c93",
+  "localNativeLegacyVersionsExact": 6,
+  "localViewportCount": 10,
+  "localNormalCastVisibleAndReturn": true,
+  "localFinalStateSha256": "b71b2437d2807277a228089062ebd08ab265188f11c69211cc686dab5ee459c9",
+  "pr": 24,
+  "prCiRun": 42432370893,
+  "prCiBuildJob": 128583853836,
+  "gameSourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
+  "startupHelperFix": {
+    "reproducedWithDelayedSkyMs": 750,
+    "oldHelperResult": "FAIL: pressed Enter while disabled, remained at title",
+    "fix": "Explicit toBeEnabled then locator.press Enter; no retries/force/timeout increase",
+    "focusedPassed": 2,
+    "focusedFailed": 0,
+    "seconds": 17.9,
+    "applicationJsUnchanged": true
+  },
+  "verificationHead": "49a1278de52abea9dce83d75a200a27ea5b51d24",
+  "localRemaining": {
+    "passed": 89,
+    "failed": 0,
+    "minutes": 16.8
+  },
+  "localCombinedCoverage": {
+    "prefixUsed": 69,
+    "remaining": 89,
+    "uniqueCases": 158,
+    "missing": 0,
+    "singleFullRun": false,
+    "sameAppJs": true
+  },
+  "openingHelperConsolidation": {
+    "passed": 8,
+    "failed": 0,
+    "minutes": 1.5,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "applicationChanged": false
+  },
+  "previousPr49StatusBeforeConsolidation": {
+    "conclusion": "",
+    "status": "in_progress"
+  }
+}

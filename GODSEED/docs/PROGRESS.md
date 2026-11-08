@@ -1,3 +1,15 @@
+### Session23 — 2026-11-08 UTC / 0.13.0 candidate
+
+ต่อจากmain734e21d/เว็บ0.12.1โดยไม่รื้อระบบเดิม เพิ่ม18nodes41choices รวม99/273/6questcontracts/5chapterbatches/6encounters. Actualreducerwitness99nodes273choices/205withstatechange;3chapterconclusions≠0full-gameendings. 5NPC/2introductorypaths/234legalrecipes/8stages/6mapsคงเดิม. ดู[evidence/session23](evidence/session23/README.md)
+
+ผู้เล่นเตรียมชุดจากคุโร ผสมBLOOM_RING_HEALจริง อ่านผนึก เลือกโหมดปกติหรือผ่อนแรง25% ต่อสู้B05สามphase150HP/weaknessตามระยะ/ผนึก2จังหวะ/PIERCEและความเข้าใจBLOOM/ECHO/ช่วยจากLUMIหรือMARENครั้งเดียว แพ้คืนของใช้ก่อนสู้และลองใหม่ที่S22;ชนะ40XPครั้งแรกแล้วเลือกคืนเพลง3ทางและกลับหมู่บ้านได้ Revisitหลังจบบทไม่เปลี่ยนทางที่เลือกหรือให้ของซ้ำ
+
+Unit257/Content2/Graph21/Roadmap10/type/lint/build/manual/referencechecksผ่าน FinalFocused7/Full157/PRCI/Deploy/Public0.13ยังรอผลจริง. InitialFocused4PASS/1FAILเพราะselectorอ้างattributeที่ไม่มี แก้ให้ตรวจdata-render-statusเดิมและคงstateexactassertions. Main0.12.1CI42369615679มี148PASS/1FAILcombinedVFXscreenshot→lateSkip จึงแยกnormalcompletion/earlytouchSkip+hittestและเพิ่มz-index;Focused2ผ่านก่อนรวมsuiteใหม่
+
+ManualRAM/File2/State2คงเดิม guardian optionalstrict/supplies/assistUsedไม่เพิ่มdefaultsให้เซฟเก่า Actualpublic0.12.1openingfileเก็บ/tmp/gs23-published-0.12.1.godseedเฉพาะเครื่องสำหรับcompatibility6รุ่น ไม่มีcommit/uploadsavebytes. ยังไม่รับรองhardwareSafari/Android/FPS/humanfun/finalHD/12ARCsหรือ8Pathsครบ
+
+---
+
 ### Session22 / 0.12.1 candidate — cold imported scene actor
 
 แก้NPCข้ามgroupไม่ถูกโหลดเมื่อimportopeningfileแล้วเข้าECHO_CALLทันที:World.prepare/showระบุrequiredactorให้ArtLedgerและerror/retrycontext โหลดเฉพาะsheetที่ยังไม่มี คงtitle25PNGและcache. ภาพก่อน/Redจากactualpublic0.12.0และGreenอยู่[hotfix evidence](evidence/session22/hotfix/README.md)

@@ -1,3 +1,9 @@
+## Session23 — art-v16/guardian.png
+
+Originalsource:`scripts/generate-guardian-art.mjs`สร้าง256x256/16framepixelatlasเอง ไม่มีexternalimageinput. Reference09ผู้ใช้ให้เป็นทิศทางซุ้ม/หิน/พฤกษา/แสงเท่านั้น ไม่รวมreferenceในruntimebundle. ใช้เงื่อนไขการใช้งานเดียวกับoriginalprojectassetsเดิม ไม่เพิ่มassetบุคคลที่สามหรือclaimfinalHD
+
+---
+
 ## 0.12.0 — original glade assets
 
 8PNGในpublic/assets/art-v15สร้างจากrasterinstructionsของgenerate-glade-art.mjsและglade-map.ts ไม่มีภาพภายนอก/ฟอนต์/เพลงใหม่ ไม่อ่านภาพReference10ระหว่างgenerate ภาพเจ้าของใช้เป็นartdirectionหลังเปิดตรวจจริงและยังแยกจากproduction. Old80PNGไม่เปลี่ยนและ87สร้างซ้ำตรงbyte. ความเป็นต้นฉบับของไฟล์ไม่ใช่การรับรองfinalHD

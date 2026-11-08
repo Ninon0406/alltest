@@ -16,7 +16,7 @@ const morning=(s=tasks())=>take(s,'CH1810','CHV6_VOW_SHARE','CHV6_REHEARSE_SLOW'
 
 it('journal distinguishes available quests from completed gameplay without adding state',()=>{
  const state=fresh(),before=structuredClone(state),views=questSummary(state);
- expect(views).toHaveLength(5);expect(views.every(q=>q.status==='available')).toBe(true);
+ expect(views).toHaveLength(6);expect(views.every(q=>q.status==='available')).toBe(true);
  expect(views.every(q=>q.completedObjectives===0&&q.nextObjective.length>0)).toBe(true);
  expect(state).toEqual(before);expect('quests' in state).toBe(false);
 });

@@ -3,7 +3,7 @@ import {scenes,festivalEvening} from '../content/story';
 import {encounters} from '../content/encounters';
 import type {State} from '../engine/state';
 import {colors,cores,type Core,type Spell} from '../systems/spells';
-import {echoIntentCore} from '../systems/combat';
+import {echoIntentCore,guardianPhase} from '../systems/combat';
 import {gladeScenery} from './glade-map';
 import {playerAnimations,trainingAnimations} from './actor-art';
 import {stageLayouts,type StageId} from './stage-layout';
@@ -131,6 +131,7 @@ export class World extends Phaser.Scene {
   for(const [texture,animations] of Object.entries(ruinsAnimations))if(this.textures.exists(texture))for(const [name,config] of Object.entries(animations))add({key:texture+'-'+name,frames:this.anims.generateFrameNumbers(texture,{frames:[...config.frames]}),frameRate:config.frameRate,repeat:config.repeat});
   if(this.textures.exists('ruins-altar-v12'))for(let state=0;state<3;state++)add({key:'ruins-altar-'+state,frames:this.anims.generateFrameNumbers('ruins-altar-v12',{start:state*4,end:state*4+3}),frameRate:4,repeat:-1});
   if(this.textures.exists('echo-knot-v15'))for(const [row,name] of ['idle','attack','hit','listen'].entries())add({key:'echo-knot-v15-'+name,frames:this.anims.generateFrameNumbers('echo-knot-v15',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='listen'?4:8,repeat:name==='idle'||name==='listen'?-1:0});
+  if(this.textures.exists('guardian-v16'))for(const [row,name] of ['idle','attack','hit','guard'].entries())add({key:'guardian-v16-'+name,frames:this.anims.generateFrameNumbers('guardian-v16',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='guard'?4:8,repeat:name==='idle'||name==='guard'?-1:0});
   if(this.textures.exists('glade-resonator-v15'))add({key:'glade-resonator-flow',frames:this.anims.generateFrameNumbers('glade-resonator-v15',{start:0,end:3}),frameRate:4,repeat:-1});
   if(this.textures.exists('festival-props-v13'))add({key:'festival-lantern',frames:this.anims.generateFrameNumbers('festival-props-v13',{frames:[1,2,3,2]}),frameRate:4,repeat:-1});
   if(this.textures.exists('workshop-cauldron-v11'))add({key:'workshop-simmer',frames:this.anims.generateFrameNumbers('workshop-cauldron-v11',{start:0,end:5}),frameRate:5,repeat:-1});
@@ -256,6 +257,7 @@ export class World extends Phaser.Scene {
     }
    }
    if(this.textures.exists('ambient-v2'))for(const anchor of this.workshopArtActive?[{kind:'fire' as const,x:461,y:153},{kind:'glow' as const,x:236,y:98},{kind:'glow' as const,x:92,y:106},{kind:'leaf' as const,x:446,y:149}]:stageLayouts[this.currentStage].ambient){const sprite=this.add.sprite(anchor.x,anchor.y,anchor.kind==='water'&&this.textures.exists('water-v3')?'water-v3':'ambient-v2').setDepth(anchor.kind==='cloud'?-950:800);sprite.setData('anchor',anchor).play('ambient-'+(anchor.kind==='water'&&!this.textures.exists('water-v3')?'glow':anchor.kind));this.ambient.push(sprite);}
+   if(state?.flags.chapter1_complete&&this.currentStage==='village'){const points=state.flags.chapter1_family?[{frame:6,x:190,y:174}]:state.flags.chapter1_community?[{frame:6,x:174,y:174},{frame:6,x:204,y:174},{frame:6,x:310,y:174}]:[{frame:7,x:190,y:174}];for(const p of points)if(addProp(p.frame,p.x,p.y))this.memoryProps++;}
    if(state?.flags.archive_read&&this.currentStage==='archive'){if(addProp(7,278,179))this.memoryProps++;}
    if(state?.flags.stream_clean&&this.currentStage==='stream'){if(addProp(5,411,222))this.memoryProps++;}
    if(state?.flags.lumi_helped&&this.currentStage==='village'){if(addProp(6,246,172))this.memoryProps++;}
@@ -281,9 +283,11 @@ export class World extends Phaser.Scene {
   if(this.npcKey==='maren'&&this.textures.exists('maren-v8'))this.npcKey='maren-v8';
   if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
   this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
+  this.writeMetric('guardianPhase',state?.battle?.id==='B05_MEMORY_GUARDIAN'?guardianPhase(state.battle):0);this.writeMetric('guardianAssist',String(!!state?.battle?.guardian?.assistUsed));
+  this.writeMetric('chapterResolution',state?.flags.song_restored?state.flags.chapter1_family?'family':state.flags.chapter1_community?'community':'archive':'none');
   this.writeMetric('echoCore',state?echoIntentCore(state)||'none':'none');this.writeMetric('echoExit',String(!!state?.battle?.echo?.exitOpened));
-  this.npcRestPose=this.npcKey==='echo-knot-v15'&&!(state&&echoIntentCore(state))?'listen':this.npcKey==='sentinel-v12'&&state?.battle?.status.RUNE_WARD?'guard':this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
-  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'||this.npcKey==='echo-knot-v15'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
+  this.npcRestPose=this.npcKey==='echo-knot-v15'&&!(state&&echoIntentCore(state))?'listen':(this.npcKey==='sentinel-v12'&&state?.battle?.status.RUNE_WARD||this.npcKey==='guardian-v16'&&state?.battle?.status.GUARDIAN_SEAL)?'guard':this.npcKey==='koro-v10'?(scene?.id==='S05_CRAFT_TUTORIAL'?'show_recipe':this.anvilVisible?'hammer':'idle'):'idle';
+  this.npc.setTexture(this.npcKey).setOrigin(.5,this.npcKey==='sentinel-v12'||this.npcKey==='echo-knot-v15'||this.npcKey==='guardian-v16'?40/64:.5);this.npcIdle();this.player.setFlipX(false).clearTint().setAlpha(1);
   if(!preserve){this.player.setPosition(state?.battle?130:154,219);this.facing='east';
    if(this.currentStage==='glade'&&state?.battle)this.player.setPosition(gladeScenery.playerBattle.x,gladeScenery.playerBattle.y);
    if(this.currentStage==='ruins'&&state?.battle)this.player.setPosition(ruinsScenery.playerBattle.x,ruinsScenery.playerBattle.y);
@@ -359,6 +363,10 @@ export class World extends Phaser.Scene {
    const t=i/count,particle=this.add.rectangle(this.npc.x+Math.sin(t*12)*8,this.npc.y-10,core==='EARTH'?5:3,core==='WATER'?6:3,color,.9).setDepth(850);this.effects.add(particle);
    this.tweens.add({targets:particle,x:this.player.x+Math.cos(t*12)*12,y:this.player.y-8+(core==='WIND'?Math.sin(t*12)*20:core==='LIGHT'?Math.cos(t*6)*10:0),angle:core==='BLOOM'?90:0,alpha:0,duration:reduced?100:400+i*5,onComplete:()=>{this.effects.delete(particle);particle.destroy();}});
   }
+ }
+ private guardianShards(reduced:boolean){
+  this.writeMetric('guardianCast','memory_shards');const count=reduced?4:12;
+  for(let i=0;i<count;i++){const shard=this.add.rectangle(this.npc.x+(i%3-1)*14,this.npc.y-30-Math.floor(i/3)*7,3,7,i%2?0xe8d3a0:0xa8cbb5).setAngle(35).setDepth(850);this.effects.add(shard);this.tweens.add({targets:shard,x:this.player.x+(i%4-1.5)*12,y:this.player.y+8,angle:145,alpha:0,duration:reduced?100:420+i*12,onComplete:()=>{this.effects.delete(shard);shard.destroy();}});}
  }
  private ruinsGlow(kind:string,reduced:boolean,origin?:{x:number;y:number}){
   const target=origin||(kind==='crystal'?{x:350,y:170}:ruinsScenery.spellTarget),count=reduced?4:12;
@@ -453,12 +461,14 @@ export class World extends Phaser.Scene {
    if(next.battle&&next.battle.enemyHp<before.battle.enemyHp||this.lastOutcome==='win'){
     this.npcPose('hit');this.npc.setTint(0xffe3b6);
    }
+   if(next.battle?.status.GUARDIAN_SEAL&&!before.battle.status.GUARDIAN_SEAL){this.npcPose('guard');this.ruinsGlow('ward',reduced,{x:this.npc.x,y:this.npc.y-12});}
+   if(next.battle?.guardian?.assistUsed&&!before.battle.guardian?.assistUsed)this.pathGlyph('ROOT_REFUGE',reduced);
    if(next.battle?.status.RUNE_WARD&&!before.battle.status.RUNE_WARD){this.npcPose('guard');this.ruinsGlow('ward',reduced,{x:this.npc.x,y:this.npc.y-12});}
    if(next.battle?.playerStatus.VEIL&&!before.battle.playerStatus.VEIL){
     this.npcPose('attack');await this.beat(this.npc,{alpha:.7,duration:reduced?20:120,yoyo:true},token);
    }
    if(next.battle?.log.some(line=>line.includes(' โจมตี ')||line.includes('โจมตีพลาด'))){
-    this.npcPose('attack');const echoed=echoIntentCore(before);if(echoed)this.echoCast(echoed,reduced);
+    this.npcPose('attack');if(before.battle.id==='B05_MEMORY_GUARDIAN'&&guardianPhase(before.battle)===3&&before.battle.turn%2===0)this.guardianShards(reduced);const echoed=echoIntentCore(before);if(echoed)this.echoCast(echoed,reduced);
     await this.beat(this.npc,{x:this.npcHomeX-10,duration:reduced?20:120,yoyo:true},token);
    }
    if(token!==this.generation)return;

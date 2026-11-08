@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "updated": "2026-11-07",
-  "baseCommit": "5964756",
+  "updated": "2026-11-08",
+  "baseCommit": "734e21d",
   "phases": [
     {
       "id": 0,
@@ -173,7 +173,7 @@
         "GODSEED/tests/echo.spec.ts",
         "GODSEED/docs/evidence/session22/hotfix/README.md"
       ],
-      "evidence": "Session17/0.7.2 source5c58122: title23PNG/301231bytesจาก57/629017,cachedrevisit0,prepareก่อนcommit/import,explicitretryรักษาRAM/dirty/anchor;per-file8000ms/maxRetries0+HTTP200decode reconciliation;Local105/PRCI42209316444/MainCI42211897135ผ่าน105และBuild/Deploy;เว็บจริง0ConsoleErrors/0ReferenceRequests/51PNG+JSตรงBuild;ดูSession17; Session22hotfix:พบcoldimport0.11.1Hub→ECHO_CALLต้องใช้EIRAนอกgroupvillageแต่ไม่โหลดและแสดงMarenผิดตัว redทั้งlocalและactualpublic0.12.0;กำลังแก้Actor-awareAssetLedgerและเพิ่มcoldfiletest ไม่ใช้ผล148เก่าอ้างกรณีนี้ผ่าน;0.12.1Actor-awareโหลดNPCข้ามstageโดยไม่เพิ่มtitleassets พร้อมerror/retry/cache;Unit244/Focused15+coldretry1ผ่าน red→greenก่อนFull149",
+      "evidence": "Session17/0.7.2 source5c58122: title23PNG/301231bytesจาก57/629017,cachedrevisit0,prepareก่อนcommit/import,explicitretryรักษาRAM/dirty/anchor;per-file8000ms/maxRetries0+HTTP200decode reconciliation;Local105/PRCI42209316444/MainCI42211897135ผ่าน105และBuild/Deploy;เว็บจริง0ConsoleErrors/0ReferenceRequests/51PNG+JSตรงBuild;ดูSession17; Session22hotfix:พบcoldimport0.11.1Hub→ECHO_CALLต้องใช้EIRAนอกgroupvillageแต่ไม่โหลดและแสดงMarenผิดตัว redทั้งlocalและactualpublic0.12.0;กำลังแก้Actor-awareAssetLedgerและเพิ่มcoldfiletest ไม่ใช้ผล148เก่าอ้างกรณีนี้ผ่าน;0.12.1Actor-awareโหลดNPCข้ามstageโดยไม่เพิ่มtitleassets พร้อมerror/retry/cache;Unit244/Focused15+coldretry1ผ่าน red→greenก่อนFull149;0.12.1local149/PR149/public5nativefiles/coldEIRA+retry/10viewportsผ่านตามhotfixreceipt;Main148/149failedunrelatedlateSkipไม่ใช่PASS149",
       "acceptance": "โหลดผิดพลาดกู้ได้ไม่deadlock วัดbudget cold/warm และแบ่งโหลดอย่างปลอดภัย",
       "legacyIds": [
         "GS-001",
@@ -1000,16 +1000,20 @@
         "GODSEED/scripts/generate-glade-art.mjs",
         "GODSEED/tests/echo.test.ts",
         "GODSEED/tests/echo.spec.ts",
-        "GODSEED/docs/evidence/session22/README.md"
+        "GODSEED/docs/evidence/session22/README.md",
+        "GODSEED/src/ui/cinematic-viewport.ts",
+        "GODSEED/docs/evidence/session23/viewport-green.txt",
+        "GODSEED/tests/life-helpers.ts",
+        "GODSEED/docs/evidence/session23/startup-green.txt"
       ],
-      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ;Session21B:ตรวจnormalVFXบนเว็บ0.11พบSkipSCOUTค้างy219.98แทน219 สร้างredtestยืนยัน;แก้Directorให้nonpathgestureจำจุดเดิมและคืนตำแหน่งเมื่อยกเลิก Targetedskip+reducedtoggleผ่าน1/1ใน0.11.1 ยังรอFull140/CIจึงเปิดงานเดิมอีกครั้ง ไม่อ้างเก่าdoneครอบคลุมbugใหม่;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน",
+      "evidence": "คืนcast/craft1120/1600msและskipก่อนscreenshot; final full45/45 PASS8.4m; PR CI41997711472 SUCCESS รวมtouch4และWINDskip; Session8four-view integration/pace/skip/reduced/fallback focus17PASS; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;full113/CI/publicบันทึกในSession18เมื่อรันจริง;งานใหญ่ยังไม่ครบ;Session21B:ตรวจnormalVFXบนเว็บ0.11พบSkipSCOUTค้างy219.98แทน219 สร้างredtestยืนยัน;แก้Directorให้nonpathgestureจำจุดเดิมและคืนตำแหน่งเมื่อยกเลิก Targetedskip+reducedtoggleผ่าน1/1ใน0.11.1 ยังรอFull140/CIจึงเปิดงานเดิมอีกครั้ง ไม่อ้างเก่าdoneครอบคลุมbugใหม่;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน; Session23ตรวจMainCI42369615679จริง:148PASS/1FAILจากcombinedscreenshot→Skipที่จบระหว่างcaptureและcanvasintercept. แยกnormalVFXกับearlytouchSkip/hittestและเพิ่มz-indexแล้วFocused2PASS;รอFull155ก่อนคืนdone ไม่ใช้PR149อ้างMaingreen; คืนdoneหลังfinalFocused7PASS2.8m+sourcechecksPASS ไม่อ้างว่าFullหรือreleaseผ่านก่อนผลจริง;Session23BatchB redcanvasY−643.65625ขณะcastจากคำสั่งล่างจอ→revealCinematicnormalphone/tabletแล้วคืนreadingpositionก่อนbusy-render;firstfixreturnคลาด58pxจึงจับตำแหน่งก่อนrenderแล้วrerun4PASS1.3m รวมReducedMotionไม่jump/Skip/stateexact/canonicalfeet. Full157ใหม่กำลังตรวจ;Session23Full157พบdesktoptesthelperกดStartตอนdisabled ไม่ใช่loaderเกม. Reproduceด้วยsky750msแล้วแก้helperexpectEnabled+locator.pressEnter Focus2PASS17.9s/AppJSไม่เปลี่ยน. Full157มี73PASS1FAIL1interrupted82notrun/PRCI42430389597cancelled รอCI158และlocalremaining89ไม่แอบรวมเป็นsingleFull",
       "acceptance": "เดินถึงจุดก่อนเก็บ/นั่ง skip/toggle/reloadไม่ซ้ำผล ทดสอบphone/iPadสองแนว/desktop",
       "legacyIds": [
         "GS-010"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-07",
-      "verification": "0.11.1/source330899e/mergec9c2f56: redtest feet239.98→239 reproduced; skip and ReducedMotion targeted1PASS, CI42315999153 full140PASS19.8m; actualpublicVFX5actions all restorex130/y219/feet239/depth239,particles0aftercleanup/one turn,old0.9/0.10/0.11nativefilesexact and10viewportsPASS. MainCI42351787262 full140/Build/DeploySUCCESS; no finalHD/physicaldevice claim.",
+      "reviewed": "2026-11-08",
+      "verification": "Session23:Unit257/Content2/Graph21/type/lint/build/manual/refผ่าน;FinalFocused7/7PASS2.8m รวมactualthreephase/threeconclusions/nativephasefiles/refundretry/gentle/VFX/canonicalfeet/atlasretry/earlytouchSkip+hittest. Full155/CI/publicใหม่ยังต้องตรวจในquality/releasegate",
       "evidenceFiles": [
         "GODSEED/tests/cinematics.test.ts",
         "GODSEED/tests/cinematics.spec.ts",
@@ -1020,7 +1024,11 @@
         "GODSEED/docs/evidence/session21/hotfix-pr-ci.json",
         "GODSEED/docs/evidence/session21/public-vfx.json",
         "GODSEED/docs/evidence/session21/hotfix-main-ci.json",
-        "GODSEED/docs/evidence/session21/public-life.json"
+        "GODSEED/docs/evidence/session21/public-life.json",
+        "GODSEED/docs/evidence/session23/focused-browser.txt",
+        "GODSEED/docs/evidence/session23/source-checks.txt",
+        "GODSEED/tests/guardian.spec.ts",
+        "GODSEED/tests/echo.spec.ts"
       ],
       "legacyPhase": 2,
       "legacyScope": "v1",
@@ -1282,9 +1290,11 @@
         "GODSEED/scripts/generate-glade-art.mjs",
         "GODSEED/tests/echo.test.ts",
         "GODSEED/tests/echo.spec.ts",
-        "GODSEED/docs/evidence/session22/README.md"
+        "GODSEED/docs/evidence/session22/README.md",
+        "GODSEED/src/content/guardian-story.ts",
+        "GODSEED/tests/guardian.spec.ts"
       ],
-      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน",
+      "evidence": "17ฉาก56choices; introบางตัวเลือกและS15–S27/S29ยังขาด; รอบ19 candidate0.9.0: S15/S16/S17+CH0207 รวม21scenes70choices,ต้นแบบReference09/14anchors8solids/B03wardturn3/รางวัลQ_ARCHIVEครั้งเดียว/State2File2เดิม;Unit151/Focus10+retreat2ผ่าน;Full123/CI/publicจะลงผลเมื่อรันจริง ไม่ปิดงานใหญ่หรือB04; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน; Session23เพิ่ม18nodes41choicesรวม99/273/B05/3chapterconclusions typedchapter≠gameending/6questcontracts/5batches และpostchapterrevisitไม่เปลี่ยนrouteเดิม. actualbrowserผ่านสามบทสรุป/phasefile/defeat;finalFull/CI/publicยังรอ. ยังไม่ปิดขอบเขตใหญ่หรือ12ARCจากจำนวนnode",
       "acceptance": "canonicalchapter1ครบมีทางเล่นจบและกลับสำรวจ ทุกทางหลักผ่านgraph/golden paths",
       "legacyIds": [
         "GS-025",
@@ -1933,25 +1943,37 @@
       "id": "CMB-007",
       "phase": 6,
       "title": "B05 guardian3phases/assist25%/immunity",
-      "status": "not_started",
+      "status": "done",
       "priority": "P1",
       "dependsOn": [
         "CMB-006",
         "MAG-005"
       ],
       "files": [
-        "02_GODSEED_MASTER_SPEC.md"
+        "02_GODSEED_MASTER_SPEC.md",
+        "GODSEED/src/content/guardian-story.ts",
+        "GODSEED/src/systems/combat.ts",
+        "GODSEED/tests/guardian.test.ts",
+        "GODSEED/tests/guardian.spec.ts",
+        "GODSEED/scripts/generate-guardian-art.mjs"
       ],
-      "evidence": "150HP/3phasesออกแบบแล้ว ยังไม่มีbosscode",
+      "evidence": "Session23พัฒนาB05สามphase/telegraph150HP/phaseweakness/PIERCE+understoodBLOOM/ECHOลดผนึก/onceearnedassist/gentle25%/คืนของเมื่อแพ้/ไม่มีfleeหรือsurrender/first40XP→S23;Unitและactualbrowser4casesผ่านแต่ยังรอfinalFull/CI/public. Sourceไม่มีการเปลี่ยน234recipeIDs/File2/State2; คืนdoneหลังfinalFocused7PASS2.8m+sourcechecksPASS ไม่อ้างว่าFullหรือreleaseผ่านก่อนผลจริง",
       "acceptance": "ครบscript/phase warning/disablelimit/assist/retry/rewards เชื่อมS23หลังชนะ",
       "legacyIds": [
         "GS-023"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-05",
+      "reviewed": "2026-11-08",
       "legacyPhase": 5,
       "legacyScope": "v1",
-      "domain": "combat"
+      "domain": "combat",
+      "verification": "Session23:Unit257/Content2/Graph21/type/lint/build/manual/refผ่าน;FinalFocused7/7PASS2.8m รวมactualthreephase/threeconclusions/nativephasefiles/refundretry/gentle/VFX/canonicalfeet/atlasretry/earlytouchSkip+hittest. Full155/CI/publicใหม่ยังต้องตรวจในquality/releasegate",
+      "evidenceFiles": [
+        "GODSEED/docs/evidence/session23/focused-browser.txt",
+        "GODSEED/docs/evidence/session23/source-checks.txt",
+        "GODSEED/tests/guardian.spec.ts",
+        "GODSEED/tests/echo.spec.ts"
+      ]
     },
     {
       "id": "CMB-008",
@@ -2237,9 +2259,13 @@
       ],
       "files": [
         "GODSEED/src/main.ts",
-        "GODSEED/tests/alchemy.spec.ts"
+        "GODSEED/tests/alchemy.spec.ts",
+        "GODSEED/src/ui/cinematic-viewport.ts",
+        "GODSEED/docs/evidence/session23/viewport-green.txt",
+        "GODSEED/tests/life-helpers.ts",
+        "GODSEED/docs/evidence/session23/startup-green.txt"
       ],
-      "evidence": "nativeThai/touch/filterผ่าน; humanplay/pacingยังไม่วัด",
+      "evidence": "nativeThai/touch/filterผ่าน; humanplay/pacingยังไม่วัด;Session23BatchB redcanvasY−643.65625ขณะcastจากคำสั่งล่างจอ→revealCinematicnormalphone/tabletแล้วคืนreadingpositionก่อนbusy-render;firstfixreturnคลาด58pxจึงจับตำแหน่งก่อนrenderแล้วrerun4PASS1.3m รวมReducedMotionไม่jump/Skip/stateexact/canonicalfeet. Full157ใหม่กำลังตรวจ;Session23Full157พบdesktoptesthelperกดStartตอนdisabled ไม่ใช่loaderเกม. Reproduceด้วยsky750msแล้วแก้helperexpectEnabled+locator.pressEnter Focus2PASS17.9s/AppJSไม่เปลี่ยน. Full157มี73PASS1FAIL1interrupted82notrun/PRCI42430389597cancelled รอCI158และlocalremaining89ไม่แอบรวมเป็นsingleFull",
       "acceptance": "proofreadไทย มีnextobjective ใช้เวลา45–90minสมดุล50:50จากplaytest",
       "legacyIds": [
         "GS-030",
@@ -2283,9 +2309,11 @@
         "GODSEED/tests/workshop.spec.ts",
         "GODSEED/docs/evidence/session18/README.md",
         "GODSEED/docs/evidence/session18/verification.json",
-        "GODSEED/docs/evidence/session18/public-layout.json"
+        "GODSEED/docs/evidence/session18/public-layout.json",
+        "GODSEED/tests/life-helpers.ts",
+        "GODSEED/docs/evidence/session23/startup-green.txt"
       ],
-      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ",
+      "evidence": "runtime screenshotsหลายฉากและfour-viewplayerphone/desktopตรวจแล้ว; finalHDทุกฉาก/ทุกNPC/VFXยังไม่ผ่าน; Session13 เพิ่มภาพวัตถุดิบ3ชนิดจากpickup endpointจริง มีviewmodelรางวัลครั้งแรก/รายวันและPNGfallback; local109unit/content2/targeted5PASS; PRCI42053446169/mainCI42056090200 full70SUCCESS และเว็บจริง40PNG/JS/gathering/rewards/saveผ่าน; ไม่ถือว่าทั้งmilestoneเสร็จ งานใหญ่ยังin_progress; รอบ16 0.7.1 สวนต้นฉบับ3เลเยอร์/ซุ้มY-depth/หม้อยา6เฟรม/สมุนไพร4เฟรม/ถนนร่วมAnchor/9Colliders/CH03B1นั่งตามบท; Unit121/Focus20/Build/sourcegate/referencepackingผ่าน local93/PRCI42192866046/mainCI42195039742/เว็บจริงผ่านแล้ว ไม่รับรองfinalHDหรืออุปกรณ์จริง; actualpublic49PNG/JS/สวน/ไฟล์ผ่าน ดูSession16; Session17 Koro32x48/12cells + groundedanvil, hammer/show_recipeตรงCH0401/S05/ReducedMotion/fallback ผ่าน5viewportในFocused12 ส่วนงานใหญ่ยังไม่ครบ; ไม่รับรองfinalHD; ผลสุดท้ายรอบ17 Local/PR/Main full105/Build/Deploy/เว็บจริงผ่าน ดูSession17/REPORT_TH;ไม่ปิดงานใหญ่; รอบ18 0.8.0:WorkshopMap11anchors/10links/7solids,3originallayers,cauldron6frames,toolboxlift,northbrewing,3actualrecipeparts→mix→discovery;skip/motionfinishที่Anchor;Unit134/Focus20/Build/Previewผ่าน;Local113/PRCI42222588626 full113/publiccore+workshop+UI5/59PNG+JSผ่าน;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;งานใหญ่ยังไม่ครบ;Session23Full157พบdesktoptesthelperกดStartตอนdisabled ไม่ใช่loaderเกม. Reproduceด้วยsky750msแล้วแก้helperexpectEnabled+locator.pressEnter Focus2PASS17.9s/AppJSไม่เปลี่ยน. Full157มี73PASS1FAIL1interrupted82notrun/PRCI42430389597cancelled รอCI158และlocalremaining89ไม่แอบรวมเป็นsingleFull",
       "acceptance": "ทุกscene/actor/cue/effectผ่านrubricและreviewบน3กลุ่มจอ บันทึกหลักฐาน",
       "legacyIds": [
         "GS-033"
@@ -2359,9 +2387,11 @@
       ],
       "files": [
         "GODSEED/src/styles/game.css",
-        "GODSEED/src/main.ts"
+        "GODSEED/src/main.ts",
+        "GODSEED/src/ui/cinematic-viewport.ts",
+        "GODSEED/docs/evidence/session23/viewport-green.txt"
       ],
-      "evidence": "nativecontrols/aria/reducedmotionมี; fullaudit/fontscale/settingsยังไม่ครบ",
+      "evidence": "nativecontrols/aria/reducedmotionมี; fullaudit/fontscale/settingsยังไม่ครบ;Session23BatchB redcanvasY−643.65625ขณะcastจากคำสั่งล่างจอ→revealCinematicnormalphone/tabletแล้วคืนreadingpositionก่อนbusy-render;firstfixreturnคลาด58pxจึงจับตำแหน่งก่อนrenderแล้วrerun4PASS1.3m รวมReducedMotionไม่jump/Skip/stateexact/canonicalfeet. Full157ใหม่กำลังตรวจ",
       "acceptance": "WCAG2.2AA/44pxtouch/focus/fontscaling/keyboard/สถานะไม่พึ่งสีครบ",
       "legacyIds": [
         "GS-040",
@@ -2936,9 +2966,11 @@
         "GODSEED/scripts/generate-glade-art.mjs",
         "GODSEED/tests/echo.test.ts",
         "GODSEED/tests/echo.spec.ts",
-        "GODSEED/docs/evidence/session22/README.md"
+        "GODSEED/docs/evidence/session22/README.md",
+        "GODSEED/src/content/guardian-story.ts",
+        "GODSEED/tests/guardian.spec.ts"
       ],
-      "evidence": "ใช้StoryScene/Choice/cinematic/staging/timeและQuestcontractsกับ25nodes72choicesใหม่จริง แต่explicitChapterและbatchauthoringtoolingยังไม่ครบ;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน",
+      "evidence": "ใช้StoryScene/Choice/cinematic/staging/timeและQuestcontractsกับ25nodes72choicesใหม่จริง แต่explicitChapterและbatchauthoringtoolingยังไม่ครบ;Session21:62/185+2introductorypaths/4questcontracts/win-onlyarrivalflags/actualanchors/watering+pathglyph/234recipes unchanged;current223unit/initialFocus7+legacy0.10localnativefileผ่าน Full/CI/publicใหม่ยังรอ;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน; Session23เพิ่ม18nodes41choicesรวม99/273/B05/3chapterconclusions typedchapter≠gameending/6questcontracts/5batches และpostchapterrevisitไม่เปลี่ยนrouteเดิม. actualbrowserผ่านสามบทสรุป/phasefile/defeat;finalFull/CI/publicยังรอ. ยังไม่ปิดขอบเขตใหญ่หรือ12ARCจากจำนวนnode",
       "acceptance": "ทุกNodeมีchapter/location/narrative/preconditions/actions/choices/effects/rewards/next/NPC/cinematicmetadata;ใช้batchที่เล่นจบและมีvalidation+witnessจริง ไม่สร้างfillerให้ครบตัวเลข",
       "legacyIds": [],
       "scope": "v1",
@@ -3315,9 +3347,11 @@
         "GODSEED/scripts/generate-glade-art.mjs",
         "GODSEED/tests/echo.test.ts",
         "GODSEED/tests/echo.spec.ts",
-        "GODSEED/docs/evidence/session22/README.md"
+        "GODSEED/docs/evidence/session22/README.md",
+        "GODSEED/src/content/guardian-story.ts",
+        "GODSEED/tests/guardian.spec.ts"
       ],
-      "evidence": "กำลังขยายopeningจากของเดิม;รอunit/browser/statefulrouteก่อนพิจารณาเสร็จ ไม่ถือว่าทั้งARCเสร็จจากการออกแบบ; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน",
+      "evidence": "กำลังขยายopeningจากของเดิม;รอunit/browser/statefulrouteก่อนพิจารณาเสร็จ ไม่ถือว่าทั้งARCเสร็จจากการออกแบบ; V6รอบ20:46nodes142choices/25ใหม่72choices/เตรียมงาน3กิจกรรม/3บทสรุปย่อย/2Questcontracts/AnchorCSD/โคมต้นฉบับและเวลาเย็น–เช้า;Unit175ผ่าน ยังรอFull131/CI ไม่ปิดงานใหญ่; ผลปิดรอบ20:Local131/PRCI42255223231/MainCI42259628354 full131+Build+Deploy+Publiccore/opening/UI10/Post68PNG+JSผ่าน ไม่ปิดงานใหญ่ครบ12ARC/8Paths;Final0.11.1:CI140/223unit/buildผ่าน Source330899e/mergec9c2f56,actualpubliccore+2courses/3earnedspells/3legacyversions/nativefiles/10viewports/VFXnormal+skip canonicalfeetผ่าน;MainCI42351787262 full140/Build/DeploySUCCESS ส่วนFull140localfinalไม่อ้างผ่านเพราะenvironmentreplacementไม่เก็บlog;MainCI42351787262 full140PASS22.4m/Build/Deploy,actualpublic0.11.1core/legacyfiles/10viewports/canonicalVFXpositionsผ่าน; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน; Session23เพิ่ม18nodes41choicesรวม99/273/B05/3chapterconclusions typedchapter≠gameending/6questcontracts/5batches และpostchapterrevisitไม่เปลี่ยนrouteเดิม. actualbrowserผ่านสามบทสรุป/phasefile/defeat;finalFull/CI/publicยังรอ. ยังไม่ปิดขอบเขตใหญ่หรือ12ARCจากจำนวนnode",
       "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;หมู่บ้าน ความผูกพันกับNPC/วัตถุดิบ/เวทแรก/การต่อสู้และบทสรุปย่อย;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
       "legacyIds": [],
       "scope": "v1",
@@ -3809,7 +3843,7 @@
         "mobile": "done",
         "ready": "in_progress"
       },
-      "evidence": "รอบ19ต้นแบบReference09:3layers/altar12frames/Y-sortpillars/14anchors15links8solids/hero10gestures/sentinel16frames;PureUnit17และBrowser5viewportผ่านrune/musicbox/file/questmemory,retreatregressionfixผ่านUnit17และ2Browser;Mobile=Chromiumจำลอง ไม่ใช่อุปกรณ์จริง ภาพ/ทั้งบท/ทุกท่ายังin_progress",
+      "evidence": "รอบ19ต้นแบบReference09:3layers/altar12frames/Y-sortpillars/14anchors15links8solids/hero10gestures/sentinel16frames;PureUnit17และBrowser5viewportผ่านrune/musicbox/file/questmemory,retreatregressionfixผ่านUnit17และ2Browser;Mobile=Chromiumจำลอง ไม่ใช่อุปกรณ์จริง ภาพ/ทั้งบท/ทุกท่ายังin_progress;Session23เพิ่มguardian16frames/B05สามphase/phasefiles/telegraphshards4or12/earnedassist+normalVFX/canonicalfeet/actual3chapterconclusionsผ่านFocused7;finalHD/hardwareยังไม่รับรอง",
       "files": [
         "assets/reference/godseed/references/09_ancient_shrine.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
@@ -3817,7 +3851,11 @@
         "GODSEED/src/scenes/ruins-staging.ts",
         "GODSEED/scripts/generate-ruins-art.mjs",
         "GODSEED/tests/ruins.spec.ts",
-        "GODSEED/docs/evidence/session19/README.md"
+        "GODSEED/docs/evidence/session19/README.md",
+        "GODSEED/src/content/guardian-story.ts",
+        "GODSEED/scripts/generate-guardian-art.mjs",
+        "GODSEED/tests/guardian.spec.ts",
+        "GODSEED/docs/evidence/session23/focused-browser.txt"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },
@@ -4395,9 +4433,8 @@
     }
   ],
   "workQueue": [
-    "CMB-007",
-    "STO-001",
     "PIPE-002",
+    "STO-001",
     "ARC-001",
     "ARC-002",
     "LIFE-004",

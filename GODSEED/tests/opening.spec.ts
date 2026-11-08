@@ -1,10 +1,10 @@
+import {clickLife as click} from './life-helpers';
 import {test,expect,type Page} from '@playwright/test';
 import {scenes} from '../src/content/story';
 import {exportFile,exportedState,loadFile} from './file-helpers';
 test.setTimeout(90_000);
 test.use({hasTouch:true});
 const label=(id:string)=>Object.values(scenes).flatMap(s=>s.choices).find(c=>c.id===id)!.label;
-async function click(page:Page,name:string){const b=page.getByRole('button',{name,exact:true});if(!await b.isVisible()&&await page.locator('.other-routes summary').isVisible())await page.locator('.other-routes summary').tap();if((page.viewportSize()?.width||0)>=1280){await b.focus();await page.keyboard.press('Enter');}else await b.tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false',{timeout:20_000});}
 async function take(page:Page,...ids:string[]){for(const id of ids)await click(page,label(id));}
 async function opening(page:Page){await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await click(page,'เริ่มการเดินทาง');await take(page,'CH0001','CH0101','CH0202','CH0401');await click(page,'ทดลองสูตรแรกจากของที่มี');await click(page,'ผสมและค้นพบเวท');await take(page,'CH0201','CH0301','CH03B1','CH0204','CH0701','CH1401','CH0205','CH0802','CH0903','CH1301','CH0208');}
 async function ready(page:Page,animate=false){await take(page,'CH1801','CHV6_BOX_LOOK','CHV6_BOX_HAND','CH1802','CHV6_NOTES_MARK','CHV6_NOTES_COPY','CH1803');

@@ -1,3 +1,4 @@
+import {revealCinematic} from './ui/cinematic-viewport';
 import {craftingPanel,spellbookPanel} from './ui/alchemy-panel';
 import type {BookFilter} from './systems/alchemy';
 import {lifePathsPanel} from './ui/life-paths-panel';
@@ -6,7 +7,7 @@ import {fresh,type State} from './engine/state';import {ManualSession} from './e
 import {scenes,type Choice} from './content/story';import {choiceAvailability,nextHint,rememberedLines} from './systems/story';import {memoryPanel} from './ui/memory-panel';import {choose,craft,equip,unequip,fight} from './systems/game';import {byId,itemNames} from './systems/spells';import {startWorld} from './scenes/world';import {combatPanel} from './ui/combat-panel';
 const bookFilter:BookFilter={core:'',kind:'',mp:''};
 const app=document.querySelector<HTMLDivElement>('#app')!;
-app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.12.1</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
+app.innerHTML=`<header><a class="brand" href="./">GODSEED<span>THE WORLD THAT REMEMBERS</span></a><span class="edition">เมล็ดแรก · ฉบับทดลอง 0.13.0</span><button id="motion" aria-pressed="false">ลดการเคลื่อนไหว</button></header><aside id="storage" role="status" aria-live="polite" hidden></aside><p id="render-notice" role="status" hidden></p><main><section class="world"><div id="canvas" role="img" aria-label="โลกพิกเซลของ GODSEED"></div><span class="chapter">บทที่หนึ่ง · หมู่บ้านที่ลืมเสียงเพลง</span><div id="hud"></div><button id="skip" hidden>ข้ามแอนิเมชัน</button></section><section class="desk"><nav id="nav" aria-label="เมนูเกม"></nav><div id="content"></div><p id="notice" role="status" aria-live="polite"></p></section></main><footer>ทุกทางเลือกทิ้งความทรงจำไว้ · เซฟเป็นไฟล์ด้วยตัวเอง · ไม่ใช้ AI ภายนอก</footer>`;
 const {world,game}=startWorld(document.querySelector('#canvas')!);const session=new ManualSession();let state:State|null=null,busy=true,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,screen='title',titleName='';let skip:()=>void=()=>{};
 const content=document.querySelector<HTMLDivElement>('#content')!,notice=document.querySelector<HTMLParagraphElement>('#notice')!;
 const el=<K extends keyof HTMLElementTagNameMap>(tag:K,text?:string)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
@@ -41,8 +42,9 @@ function leave(target:'title'|'new'){
  if(target==='new')begin();else{session.clear();state=null;screen='title';world.show(null);render();}
 }
 function finishLeaving(){const target=leaving;leaving=null;session.clear();state=null;if(target==='new')begin();else{screen='title';world.show(null);}render();}
-async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,target?:'scene'){if(!state)return;const previousScreen=screen;await exclusive(async()=>{
+async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,target?:'scene'){if(!state)return;const previousScreen=screen,readingPosition={left:scrollX,top:scrollY};let restoreView:(()=>void)|undefined;try{await exclusive(async()=>{
  const previous=state!;const next=fn();
+ restoreView=revealCinematic(document.querySelector<HTMLElement>('#canvas')!,reduced,readingPosition);
  try{
   const anim=world.action(cue,reduced,spellId?byId[spellId]:undefined,previous,next,command,target);document.querySelector<HTMLButtonElement>('#skip')!.hidden=false;
   await Promise.race([anim,new Promise<void>(resolve=>skip=resolve)]);
@@ -56,7 +58,7 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
  showState(next,true);if(previousScreen==='book'&&!next.battle)screen='book';
  if(previous.battle&&!next.battle)msg(next.journal.at(-1)||'จบการต่อสู้แล้ว');
 
- });}
+ });}finally{restoreView?.();}}
 function render(){
  renderArtNotice();content.setAttribute('aria-busy',String(busy));
  const banner=document.querySelector<HTMLElement>('#storage')!;banner.hidden=!state;banner.textContent=session.dirty?'ยังไม่ได้เก็บความคืบหน้าล่าสุดเป็นไฟล์ · บันทึกก่อนออก':'มีไฟล์ของความคืบหน้านี้แล้ว · เล่นต่อแล้วอย่าลืมบันทึกใหม่';

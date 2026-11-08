@@ -292,3 +292,10 @@ Select **the highest priority area**, then rotate to next weak area after it pas
 ## Session22 hotfix0.12.1 handoff
 
 อ่านhotfix/READMEและverification.jsonล่าสุด:0.12.0มีcoldfileNPCdependencybugที่ชุด148ไม่ครอบคลุม ECHO_CALLvillageต้องโหลดeira-v3นอกgrouparchive. Actor-awareArtLedger/World.prepareแก้แล้วและรักษาtitle25PNG/caching/errors/explicitretry อย่ากลับไปคาดว่าNPCทุกตัวอยู่ในstagegroupของตัวเอง. เป้าชุดใหม่149/Unit244 ต้องดูผลจริงก่อนปิดรอบ;Main42365860406เดิมcancelled ไม่อ้างPASS. Actual0.12.0fileเก็บ/tmpเท่านั้นเพื่อcompat5รุ่น
+
+
+## Session23 handoff — 2026-11-08 / 0.13.0 candidate
+
+อ่านSession23/verification.jsonผลจริงก่อนเริ่ม99nodes273choices/B05/3chapterconclusions ไม่ใช่3gameendings. รักษาS20/CH2001..3เดิม;ประตูใหม่G_SEAL_INNER. guardianoptionalstrictเก็บsupplies/assistUsedเฉพาะB05 ไม่มีdefaultsในoldsave. Phaseintentอ่านก่อนaction/weaknessตามHP;แพ้คืนsupplies/ชนะไม่คืน. ยืนยันกลไกพร้อมchapterroutes/gentlemodeผ่านactualfiles. notFlag song_restoredกันrewriteเส้นทางและCHG_REVISITอ่านซ้ำโดยไม่ให้ของเพิ่ม
+
+Main0.12.1CI42369615679failed148/149ไม่ใช่PASS149 แม้PR/local/publicผ่าน. SplitnormalVFXcaptureจากearlytouchSkip+hittestและCSSz-indexแล้ว ดูFull155/CI/public0.13receiptก่อนปิดgate ห้ามกลับไปcaptureทั้งหน้าก่อนtapปุ่มชั่วคราวหรือใช้forceclickกลบปัญหา. ยังห้ามAutoSave/browserprogressหรือuploadsave. งานถัดไปchapter/savecontext→ARC2→อีกLifePaths→V6magic→Finalvisual/mobilequality

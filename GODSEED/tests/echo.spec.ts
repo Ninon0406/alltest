@@ -35,11 +35,18 @@ test('normal walk, Skip and Reduced Motion arrive at the same real anchor and co
  await loadFile(page,file);await clickLife(page,'ลดการเคลื่อนไหว');await takeLife(page,'CHE_ROAD_TRACK');expect(await exportedState(page)).toEqual(skipped);expect(JSON.parse((await canvas(page).getAttribute('data-player-anchor'))!)).toMatchObject({x:175,y:185,feetY:205,depth:205});await expect(canvas(page)).toHaveAttribute('data-active-effects','0');
 });
 
-test('normal enemy VFX echoes the previously announced core and Skip preserves canonical battle feet',async({page})=>{
+test('normal enemy VFX uses the announced core and completes at canonical battle feet',async({page})=>{
  await page.setViewportSize({width:390,height:844});await enterEcho(page);await reachEchoTrial(page);await takeLife(page,'CH2101');await clickLife(page,'วายุดารานำวิถี · MP 10');const before=await exportedState(page);
  await clickLife(page,'ลดการเคลื่อนไหว');await page.getByRole('button',{name:'อรุณดารานำวิถี · MP 11',exact:true}).tap();await expect(canvas(page)).toHaveAttribute('data-echo-cast','WIND');
- expect(Number(await canvas(page).getAttribute('data-active-effects'))).toBeGreaterThan(0);await page.screenshot({path:'test-results/echo-counter-wind-390.png',fullPage:true});await page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true}).tap();await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');
+ expect(Number(await canvas(page).getAttribute('data-active-effects'))).toBeGreaterThan(0);await page.screenshot({path:'test-results/echo-counter-wind-390.png',fullPage:true});await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');
  const after=await exportedState(page);expect(after.hp).toBe(before.hp-11);expect(after.revision).toBe(before.revision+1);expect(after.battle?.echo?.core).toBe('LIGHT');await expect(canvas(page)).toHaveAttribute('data-active-effects','0');expect(JSON.parse((await canvas(page).getAttribute('data-player-anchor'))!)).toMatchObject({x:130,y:219,feetY:239,depth:239});await expect(page.locator('.battle-intent')).toContainText('ทวนธาตุอรุณ');
+});
+
+test('touch Skip during a cast remains above the canvas and commits one canonical battle turn',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await enterEcho(page);await reachEchoTrial(page);await takeLife(page,'CH2101');await clickLife(page,'วายุดารานำวิถี · MP 10');const before=await exportedState(page);
+ await clickLife(page,'ลดการเคลื่อนไหว');await page.getByRole('button',{name:'อรุณดารานำวิถี · MP 11',exact:true}).tap();await expect(canvas(page)).toHaveAttribute('data-player-action','cast');await expect(page.locator('#content')).toHaveAttribute('aria-busy','true');
+ const skip=page.getByRole('button',{name:'ข้ามแอนิเมชัน',exact:true});await skip.scrollIntoViewIfNeeded();expect(await skip.evaluate(node=>{const r=node.getBoundingClientRect();return node===document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);})).toBe(true);await skip.tap({timeout:3000});await expect(page.locator('#content')).toHaveAttribute('aria-busy','false');
+ const after=await exportedState(page);expect(after.hp).toBe(before.hp-11);expect(after.revision).toBe(before.revision+1);expect(after.battle?.echo?.core).toBe('LIGHT');await expect(canvas(page)).toHaveAttribute('data-active-effects','0');expect(JSON.parse((await canvas(page).getAttribute('data-player-anchor'))!)).toMatchObject({x:130,y:219,feetY:239,depth:239});
 });
 
 test('missing dedicated glade art degrades visibly, permits export and retries without progress changes',async({page})=>{

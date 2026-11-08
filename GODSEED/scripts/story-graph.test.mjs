@@ -62,9 +62,9 @@ test('reaching a self loop still fails when it cannot escape to a safe hub or en
  assert.ok(codes(report).includes('CLOSED_STORY_COMPONENT'));
 });
 test('authored ending is allowed to terminate and is distinct from an accidental dead end',()=>{
- const x=fixture();x.scenes[1].choices.push(c('CHEND','V6_END_ORIGINAL'));x.scenes.push(s('V6_END_ORIGINAL',[]));
+ const x=fixture();x.scenes[1].choices.push(c('CHEND','V6_END_ORIGINAL'));x.scenes.push(s('V6_END_ORIGINAL',[],{conclusion:'game'}));
  assert.equal(analyzeStoryGraph(x).result,'PASS');
- x.scenes[2].id='S_BROKEN';x.scenes[1].choices[1].next='S_BROKEN';
+ x.scenes[2].conclusion=undefined;x.scenes[2].id='S_BROKEN';x.scenes[1].choices[1].next='S_BROKEN';
  assert.ok(codes(analyzeStoryGraph(x)).includes('NON_ENDING_DEAD_END'));
 });
 test('condition typos, impossible flag sources and unknown spell cores fail',()=>{
@@ -134,3 +134,5 @@ test('actual catalog and bounded real reducer exploration remain separate proof 
  assert.ok(witnesses.counts.witnessedStateChangingChoices>0);assert.ok(witnesses.counts.witnessedStateChangingChoices<=witnesses.counts.successfulChoices);
  assert.equal(witnesses.counts.witnessedNodes+witnesses.unverifiedNodes.length,report.counts.storyNodes);
 });
+
+test('chapter conclusions cannot masquerade as full-game endings or accidental dead ends',()=>{const x=fixture();x.scenes[1].choices.push(c('CHCHAPTER','S24_END_CHAPTER'));x.scenes.push(s('S24_END_CHAPTER',[c('CHRETURN','S02_HUB')],{conclusion:'chapter'}));let r=analyzeStoryGraph(x);assert.equal(r.result,'PASS');assert.equal(r.counts.endings,0);assert.equal(r.counts.chapterConclusions,1);x.scenes[2].choices=[];assert.ok(codes(analyzeStoryGraph(x)).includes('NON_ENDING_DEAD_END'));x.scenes[2].conclusion='typo';assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_CONCLUSION'));});

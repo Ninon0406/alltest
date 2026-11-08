@@ -1,0 +1,1005 @@
+{
+  "result": "PASS",
+  "recordedAt": "2026-11-08T00:19:14.157Z",
+  "scope": "Real fresh/choose/craft reducers and earned materials. No state injection or save upload. Supplements the bounded search; not a browser or all-seed proof.",
+  "allChoiceIds": [
+    "CH0001",
+    "CH0002",
+    "CH0003",
+    "CH0004",
+    "CH0101",
+    "CH0102",
+    "CH0103",
+    "CHG_REVISIT",
+    "CHG_HUB",
+    "CHE_HUB",
+    "CH0201",
+    "CH0202",
+    "CH0203",
+    "CH0204",
+    "CH0206",
+    "CHLP_HUB",
+    "CH0208",
+    "CH0207",
+    "CH0211",
+    "CH0205",
+    "CH0209",
+    "CH0210",
+    "CH02T1",
+    "CH02T2",
+    "CH0301",
+    "CH0302",
+    "CH0303",
+    "CH03B1",
+    "CH03B2",
+    "CH03B3",
+    "CH0401",
+    "CH0402",
+    "CH0403",
+    "CH0404",
+    "CH0405",
+    "CH0501",
+    "CH0502",
+    "CH0503",
+    "CH0601",
+    "CH0602",
+    "CH0603",
+    "CH0701",
+    "CH0702",
+    "CH0703",
+    "CH1401",
+    "CH1402",
+    "CH1403",
+    "CH1101",
+    "CH1102",
+    "CH1103",
+    "CH1104",
+    "CH1201",
+    "CH1202",
+    "CH1203",
+    "CH0801",
+    "CH0802",
+    "CH0803",
+    "CH0901",
+    "CH0903",
+    "CH0904",
+    "CH1001",
+    "CH1002",
+    "CH1301",
+    "CH1303",
+    "CH1501",
+    "CH1502",
+    "CH1503",
+    "CH1504",
+    "CH1601",
+    "CH1602",
+    "CH1701",
+    "CH1702",
+    "CH1703",
+    "CH1801",
+    "CH1802",
+    "CH1803",
+    "CH1810",
+    "CH1805",
+    "CH1806",
+    "CH1807",
+    "CH1808",
+    "CH1809",
+    "CH1804",
+    "CHV6_BOX_LOOK",
+    "CHV6_BOX_ASK",
+    "CHV6_BOX_BACK",
+    "CHV6_BOX_HAND",
+    "CHV6_BOX_WIND",
+    "CHV6_NOTES_MARK",
+    "CHV6_NOTES_LISTEN",
+    "CHV6_NOTES_BACK",
+    "CHV6_NOTES_COPY",
+    "CHV6_NOTES_ECHO",
+    "CHV6_GARDEN_KNOWN",
+    "CHV6_GARDEN_HELP",
+    "CHV6_GARDEN_BACK",
+    "CHV6_GARDEN_HAND",
+    "CHV6_GARDEN_WATER",
+    "CHV6_STREAM_CLEAR",
+    "CHV6_STREAM_RHYTHM",
+    "CHV6_STREAM_BACK",
+    "CHV6_BELL_KEEP",
+    "CHV6_BELL_SHARE",
+    "CHV6_FOREST_REMEMBER",
+    "CHV6_FOREST_WAIT",
+    "CHV6_FOREST_BACK",
+    "CHV6_FOREST_FALLEN",
+    "CHV6_FOREST_WIND",
+    "CHV6_RUIN_TRACE",
+    "CHV6_RUIN_LISTEN",
+    "CHV6_RUIN_BACK",
+    "CHV6_RUNE_COPY",
+    "CHV6_RUNE_ECHO",
+    "CHV6_LIGHT_HAND",
+    "CHV6_LIGHT_FIRE",
+    "CHV6_LIGHT_WIND",
+    "CHV6_LIGHT_BACK",
+    "CHV6_LIGHT_RECORD",
+    "CHV6_LIGHT_TEACH",
+    "CHV6_INVITE_MAREN",
+    "CHV6_INVITE_EIRA",
+    "CHV6_INVITE_PIP",
+    "CHV6_VOW_SHARE",
+    "CHV6_VOW_CARE",
+    "CHV6_VOW_LEARN",
+    "CHV6_REHEARSE_SLOW",
+    "CHV6_REHEARSE_REST",
+    "CH1901",
+    "CH1902",
+    "CH1903",
+    "CH2001",
+    "CH2002",
+    "CH2003",
+    "CHV6_CLOSE_SHARE",
+    "CHV6_CLOSE_CARE",
+    "CHV6_CLOSE_KNOWLEDGE",
+    "CHV6_SHARED_REMEMBER",
+    "CHV6_SHARED_REST",
+    "CHV6_CARE_STAY",
+    "CHV6_CARE_NOTE",
+    "CHV6_KNOWLEDGE_SHARE",
+    "CHV6_KNOWLEDGE_QUESTION",
+    "CHV6_MORNING_FINISH",
+    "CHV6_MORNING_LEARN",
+    "CHLP_START_EXPLORER",
+    "CHLP_START_NATURE",
+    "CHLP_RESUME_EXPLORER",
+    "CHLP_RESUME_NATURE",
+    "CHLP_SHARED_LESSON",
+    "CHLP_CROSSROADS_BACK",
+    "CHLP_E_BEGIN",
+    "CHLP_E_LISTEN",
+    "CHLP_E_BRIEF_BACK",
+    "CHLP_E_SURVEY_FEET",
+    "CHLP_E_SURVEY_WIND",
+    "CHLP_E_MARK_RIBBON",
+    "CHLP_E_MARK_STONES",
+    "CHLP_E_ACK_MAP",
+    "CHLP_E_ACK_SHOW",
+    "CHLP_E_TRIAL_START",
+    "CHLP_E_TRIAL_PREP",
+    "CHLP_E_TRIAL_BACK",
+    "CHLP_E_RANK2_SHARE",
+    "CHLP_E_RANK2_SAFE",
+    "CHLP_E_HOME_CROSS",
+    "CHLP_E_HOME_REST",
+    "CHLP_N_BEGIN",
+    "CHLP_N_REMEMBER",
+    "CHLP_N_BRIEF_BACK",
+    "CHLP_N_SOURCE_CLEAR",
+    "CHLP_N_SOURCE_LISTEN",
+    "CHLP_N_WATER_BUCKET",
+    "CHLP_N_WATER_SPELL",
+    "CHLP_N_ACK_PATIENCE",
+    "CHLP_N_ACK_BALANCE",
+    "CHLP_N_TRIAL_START",
+    "CHLP_N_TRIAL_PREP",
+    "CHLP_N_TRIAL_BACK",
+    "CHLP_N_RANK2_REFUGE",
+    "CHLP_N_RANK2_NEIGHBOR",
+    "CHLP_N_HOME_CROSS",
+    "CHLP_N_HOME_REST",
+    "CHLP_SHARED_GUIDE",
+    "CHLP_SHARED_REFUGES",
+    "CHLP_SHARED_NEIGHBORS",
+    "CHLP_SHARED_LATER",
+    "CHE_CALL_PROMISE",
+    "CHE_CALL_PREP",
+    "CHE_CALL_HOME",
+    "CHE_PROMISE_LISTEN",
+    "CHE_PROMISE_RECORD",
+    "CHE_PACK_TAKE",
+    "CHE_PACK_BACK",
+    "CHE_RECIPE_CRAFT",
+    "CHE_RECIPE_LIGHT",
+    "CHE_RECIPE_READY",
+    "CHE_RECIPE_HOME",
+    "CHE_ROAD_TRACK",
+    "CHE_ROAD_WATER",
+    "CHE_ROAD_MAP",
+    "CHE_ROAD_BACK",
+    "CHE_TRACK_MARK",
+    "CHE_TRACK_WAIT",
+    "CHE_TRACK_WATER",
+    "CHE_WATER_HAND",
+    "CHE_WATER_WIND",
+    "CHE_WATER_ROOT",
+    "CHE_ARCH_READ",
+    "CHE_ARCH_GAP",
+    "CHE_ARCH_RETREAT",
+    "CHE_LISTEN_PAUSE",
+    "CHE_LISTEN_NOTE",
+    "CHE_SIGNAL_TEAM",
+    "CHE_SIGNAL_SOLO",
+    "CH2101",
+    "CH2102",
+    "CH2103",
+    "CHE_BYPASS_WAIT",
+    "CHE_RESULT_SAMPLE",
+    "CHE_RESULT_RECORD",
+    "CHE_SAMPLE_TAKE",
+    "CHE_SAMPLE_LEAVE",
+    "CHE_RECORD_CARE",
+    "CHE_RECORD_KNOWLEDGE",
+    "CHE_MAREN_STAY",
+    "CHE_MAREN_NOTE",
+    "CHE_REPORT_COPY",
+    "CHE_REPORT_LIMIT",
+    "CHE_LUMI_PAUSE",
+    "CHE_LUMI_TRY",
+    "CHE_CLOSE_PIERCE",
+    "CHE_CLOSE_LINGER",
+    "CHG_CALL_LUMI",
+    "CHG_CALL_PREP",
+    "CHG_CALL_BACK",
+    "CHG_LUMI_PROMISE",
+    "CHG_LUMI_COPY",
+    "CHG_KIT_TAKE",
+    "CHG_KIT_HOME",
+    "CHG_CRAFT_OPEN",
+    "CHG_CRAFT_MAREN",
+    "CHG_CRAFT_ROAD",
+    "CHG_MAREN_REST",
+    "CHG_MAREN_THANK",
+    "CHG_PASSAGE_READ",
+    "CHG_PASSAGE_SAMPLE",
+    "CHG_PASSAGE_BACK",
+    "CHG_READ_PATTERN",
+    "CHG_READ_LISTEN",
+    "CHG_PACT_STANDARD",
+    "CHG_PACT_GENTLE",
+    "CH2201",
+    "CH2202",
+    "CH2203",
+    "CHG_REVIEW_BACK",
+    "CHG_REVIEW_MODE",
+    "CHG_REVIEW_CRAFT",
+    "CH2301",
+    "CH2302",
+    "CH2303",
+    "CH2401",
+    "CH2501",
+    "CH2601",
+    "CHG_FAMILY_STAY",
+    "CHG_FAMILY_COPY",
+    "CHG_COMMUNITY_PATH",
+    "CHG_COMMUNITY_TEACH",
+    "CHG_ARCHIVE_QUESTION",
+    "CHG_ARCHIVE_LESSON",
+    "CH2701",
+    "CH2702",
+    "CH2801",
+    "CH2802"
+  ],
+  "combinedProvenChoiceCount": 273,
+  "witnessedStateChangingChoiceCount": 205,
+  "stateChangingDefinition": "At least one witnessed action changes HP, MP, XP, inventory, known/equipped spells, flags, trust, battle or recovery checkpoint. Pure navigation, journal, revision and clock changes alone do not count. This is not a count of distinct final outcomes.",
+  "witnesses": [
+    {
+      "id": "CHV6_NOTES_ECHO",
+      "seed": 20261106,
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1402"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_LINGER"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_ECHO"
+        }
+      ],
+      "result": "PASS",
+      "scene": "S18_FESTIVAL_PREP",
+      "flag": "a1_echo_compared"
+    },
+    {
+      "id": "CHV6_GARDEN_WATER",
+      "seed": 20261106,
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1103"
+        },
+        {
+          "choice": "CH1202"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1805"
+        },
+        {
+          "choice": "CHV6_GARDEN_HELP"
+        },
+        {
+          "choice": "CHV6_GARDEN_WATER"
+        }
+      ],
+      "result": "PASS",
+      "scene": "S18_FESTIVAL_PREP",
+      "flag": "a1_garden_watered"
+    },
+    {
+      "id": "CHV6_RUNE_ECHO",
+      "seed": 20261106,
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1402"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_LINGER"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1701"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_ECHO"
+        }
+      ],
+      "result": "PASS",
+      "scene": "S18_FESTIVAL_PREP",
+      "flag": "a1_rune_echo"
+    },
+    {
+      "id": "CHV6_LIGHT_FIRE",
+      "seed": 20261106,
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "craft": "SPELL_FIRE_ORB_SPLIT"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_FIRE"
+        }
+      ],
+      "result": "PASS",
+      "scene": "V6_A1_LIGHT_RESULT",
+      "flag": "a1_light_fire"
+    },
+    {
+      "id": "CHLP_N_WATER_SPELL",
+      "seed": 20261106,
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1103"
+        },
+        {
+          "choice": "CH1202"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1805"
+        },
+        {
+          "choice": "CHV6_GARDEN_HELP"
+        },
+        {
+          "choice": "CHV6_GARDEN_WATER"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1903"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_LISTEN"
+        },
+        {
+          "choice": "CHLP_N_WATER_SPELL"
+        }
+      ],
+      "result": "PASS",
+      "scene": "LP_NATURE_ACK",
+      "flag": "lp_nature_water_spell"
+    },
+    {
+      "id": "CHE_RECIPE_LIGHT",
+      "seed": 12345,
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0904"
+        },
+        {
+          "choice": "CH0803"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B2"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1806"
+        },
+        {
+          "choice": "CHV6_STREAM_RHYTHM"
+        },
+        {
+          "choice": "CHV6_BELL_KEEP"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_LIGHT_ORB_SEEK"
+        },
+        {
+          "choice": "CHE_RECIPE_LIGHT"
+        }
+      ],
+      "result": "PASS",
+      "scene": "ECHO_ROAD",
+      "flag": "echo_light_prepared"
+    }
+  ]
+}
