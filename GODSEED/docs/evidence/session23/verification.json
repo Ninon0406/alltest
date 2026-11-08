@@ -1,5 +1,5 @@
 {
-  "status": "APP_C39_UNCHANGED_KEYBOARD_HELPER_FIXED_CI158_PENDING",
+  "status": "TEST_HELPERS_CONSOLIDATED_APP_UNCHANGED_FINAL_CI158_PENDING",
   "date": "2026-11-08",
   "version": "0.13.0",
   "baselineCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
@@ -46,7 +46,6 @@
     "reason": "Test used a nonexistent diagnostic attribute. Actual render-status was degraded and asset-errors=1; corrected selector without weakening game-state assertions."
   },
   "pending": [
-    "Local remaining89 coverage on unchanged app",
     "PR full158 CI",
     "Deployment and actual public0.13 verification"
   ],
@@ -112,8 +111,8 @@
   "localNormalCastVisibleAndReturn": true,
   "localFinalStateSha256": "b71b2437d2807277a228089062ebd08ab265188f11c69211cc686dab5ee459c9",
   "pr": 24,
-  "prCiRun": 42430389597,
-  "prCiBuildJob": 128577773804,
+  "prCiRun": 42432370893,
+  "prCiBuildJob": 128583853836,
   "gameSourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
   "startupHelperFix": {
     "reproducedWithDelayedSkyMs": 750,
@@ -123,5 +122,31 @@
     "focusedFailed": 0,
     "seconds": 17.9,
     "applicationJsUnchanged": true
+  },
+  "verificationHead": "49a1278de52abea9dce83d75a200a27ea5b51d24",
+  "localRemaining": {
+    "passed": 89,
+    "failed": 0,
+    "minutes": 16.8
+  },
+  "localCombinedCoverage": {
+    "prefixUsed": 69,
+    "remaining": 89,
+    "uniqueCases": 158,
+    "missing": 0,
+    "singleFullRun": false,
+    "sameAppJs": true
+  },
+  "openingHelperConsolidation": {
+    "passed": 8,
+    "failed": 0,
+    "minutes": 1.5,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "applicationChanged": false
+  },
+  "previousPr49StatusBeforeConsolidation": {
+    "conclusion": "",
+    "status": "in_progress"
   }
 }

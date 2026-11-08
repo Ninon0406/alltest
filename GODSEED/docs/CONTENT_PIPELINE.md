@@ -1,10 +1,10 @@
 # GODSEED content batches — implemented contracts and authoring checks
 
-Current scope: chapter one / ARC01, 81 nodes, 232 choices. This is an authoring guide to the existing engine, not evidence that the remaining V6 chapters are implemented. `PIPE-002` remains in progress.
+Current scope: chapter one / ARC01, 99 nodes, 273 choices. This is an authoring guide to the existing engine, not evidence that the remaining V6 chapters are implemented. `PIPE-002` remains in progress.
 
 ## Start with a finite experience
 
-Describe the entry, an action the player can take, a consequence, and a return or conclusion before adding node counts. The Echo expedition in [echo-story.ts](../src/content/echo-story.ts) is the current example: prepare materials → inspect → fight or cooperate → share results → receive one reward. No boss or future destination is declared playable until it exists.
+Describe the entry, an action the player can take, a consequence, and a return or conclusion before adding node counts. The Echo expedition in [echo-story.ts](../src/content/echo-story.ts) is the current example: prepare materials → inspect → fight or cooperate → share results → receive one reward. The Guardian batch in [guardian-story.ts](../src/content/guardian-story.ts) then demonstrates earned preparation, a three-phase boss, three chapter conclusions and a post-chapter return. No future ARC or full-game ending is declared playable until it exists.
 
 Keep published scene, choice, item, recipe and NPC IDs stable. Add a deliberate compatibility plan before changing them. Preserve the existing 234 recipe IDs; a reference design is not a migration.
 
@@ -20,7 +20,7 @@ Concept references remain outside runtime assets. Generated layers, sprite sheet
 
 ## Conditions, effects and one-time rewards
 
-Conditions currently support a true flag, any of several flags, a known spell core, life-path entry, and a known NPC trust threshold. The validator checks sources, NPC IDs and threshold bounds. Negative flag conditions and future chapter contracts need explicit engine work before use.
+Conditions currently support `flag`, `notFlag`, `anyFlag`, `knownCore`, `pathStart`, and `trust`. The validator checks flag sources, NPC IDs and threshold bounds. `notFlag: song_restored` prevents a post-chapter visit from overwriting the chosen conclusion; `CHG_REVISIT` reads the existing conclusion instead. Future chapter contracts still need explicit engine work.
 
 Choices describe effects; only reducers apply them. `flags`, `clearFlags`, `items`, `trust`, `spellCore`, `battle`, and time transitions must use the existing transactional path. AI/rendering must not grant rewards or edit progress.
 
@@ -32,7 +32,7 @@ A battle choice's `next` is its **victory** destination. Starting a battle does 
 
 [story.ts](../src/content/story.ts) exports the explicit batch contracts: chapter, ARC, owned node IDs, entries, exits and completion facts. Every compiled node must have exactly one owner. Do not let newly added narrative nodes silently fall into `CH1_FOUNDATIONS`; author their own batch membership.
 
-The current contract accepts only `CHAPTER_1` / `ARC_01`. Opening ARC02 requires deliberate chapter and file-metadata compatibility work, not changing a label. Before S23–27, distinguish a chapter conclusion from a full-game ending in validators/metrics so an ARC01 resolution is not counted as a V6 final ending.
+The current contract accepts only `CHAPTER_1` / `ARC_01`. Opening ARC02 requires deliberate chapter and file-metadata compatibility work, not changing a label. `StoryScene.conclusion` explicitly distinguishes `chapter` from `game`. S24–26 are implemented chapter conclusions and still require an exit; validators and metrics never infer a game ending from an `_END_` ID. Current counts are three chapter conclusions and zero full-game endings.
 
 Quest contracts in [quests.ts](../src/content/quests.ts) declare step scenes, allowed choices, prerequisites, completion facts and a shared reward guard. The journal derives status from those facts. Do not add a second independently saved quest state.
 
@@ -48,6 +48,7 @@ For each batch, verify:
 4. Export a player-initiated file, **reload**, explicitly import it, and revisit the new scene. A warm texture cache hid the Eira dependency in 0.12.0.
 5. Fail a required asset, confirm a visible degraded state, retry explicitly, and compare the exact RAM snapshot before/after. Failure must not prevent manual export.
 6. Test native file round trips, malformed files, blank refresh, no persistent progress storage/upload, mobile viewport layouts and the repository URL subpath.
-7. Record source SHA, actual results and screenshots. Regenerate the master roadmap from `docs/roadmap.json` and append the development log. Keep unverified hardware/quality gates open.
+7. For desktop keyboard helpers, wait for an enabled control before `locator.press('Enter')`; focusing a disabled button does not queue a future click. A delayed shared-asset test covers cold startup. Keep normal phone casts visible and verify exact viewport return while Reduced Motion retains its reading position.
+8. Record source SHA, actual results and screenshots. Regenerate the master roadmap from `docs/roadmap.json` and append the development log. Keep unverified hardware/quality gates open.
 
 Bounded search witnesses prove only the paths actually replayed. Browser emulation is not physical Safari/Android or an FPS measurement. Keep private `.godseed` bytes in temporary local files; commit only test scripts, hashes and evidence metadata.

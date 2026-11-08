@@ -1,0 +1,23 @@
+
+> godseed@0.13.0 test:e2e
+> playwright test tests/opening.spec.ts --grep opening preparation|prior care|rune-copy|missing festival
+
+[WebServer] (node:43965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:43984) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 8 tests using 1 worker
+
+(node:43996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/opening.spec.ts:14:84 › opening preparation, authored gesture, file checkpoint and complete shared evening 390 (13.1s)
+  ✓  2 tests/opening.spec.ts:14:84 › opening preparation, authored gesture, file checkpoint and complete shared evening 844 (14.5s)
+  ✓  3 tests/opening.spec.ts:14:84 › opening preparation, authored gesture, file checkpoint and complete shared evening 820 (13.8s)
+  ✓  4 tests/opening.spec.ts:14:84 › opening preparation, authored gesture, file checkpoint and complete shared evening 1024 (13.6s)
+  ✓  5 tests/opening.spec.ts:14:84 › opening preparation, authored gesture, file checkpoint and complete shared evening 1366 (10.7s)
+  ✓  6 tests/opening.spec.ts:21:1 › prior care and the invitation change the quiet closing, with real healing recipe from the new activities (9.4s)
+  ✓  7 tests/opening.spec.ts:25:1 › rune-copy knowledge unlocks the archive conclusion and shared morning reward cannot be doubled (9.7s)
+  ✓  8 tests/opening.spec.ts:29:1 › missing festival art remains playable and explicit retry keeps the complete RAM snapshot (4.9s)
+
+  8 passed (1.5m)
