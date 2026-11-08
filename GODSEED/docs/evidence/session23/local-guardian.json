@@ -1,9 +1,9 @@
 {
   "result": "PASS",
-  "url": "http://127.0.0.1:4204/",
+  "url": "http://127.0.0.1:4205/",
   "version": "0.13.0",
-  "at": "2026-11-08T00:25:01.078Z",
-  "sourceCommit": "uncommitted-candidate",
+  "at": "2026-11-08T00:35:57.797Z",
+  "sourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
   "legacy": [
     {
       "version": "0.9.0",
@@ -46,6 +46,7 @@
   "guardianAndGladeNotLoadedOnTitle": true,
   "coldEiraActorCorrect": true,
   "earnedHealingRecipe": true,
+  "normalPhoneCastVisibleAndReturn": true,
   "allThreeGuardianPhases": true,
   "nativeFilesAcrossAllPhases": true,
   "firstWinRewardOnce": true,

@@ -6,7 +6,8 @@ export const choiceLabel=(id:string)=>Object.values(scenes).flatMap(s=>s.choices
 export async function clickLife(page:Page,name:string){
  const button=page.getByRole('button',{name,exact:true});
  if(!await button.isVisible()&&await page.locator('.other-routes summary').isVisible())await page.locator('.other-routes summary').click();
- if((page.viewportSize()?.width||0)>=1280){await button.focus();await page.keyboard.press('Enter');}else await button.tap();
+ await expect(button).toBeEnabled();
+ if((page.viewportSize()?.width||0)>=1280)await button.press('Enter');else await button.tap();
  await expect(page.locator('#content')).toHaveAttribute('aria-busy','false',{timeout:20_000});
 }
 export async function takeLife(page:Page,...ids:string[]){for(const id of ids)await clickLife(page,choiceLabel(id));}

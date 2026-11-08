@@ -1,5 +1,5 @@
 {
-  "status": "FINAL_SOURCE_FOCUSED_PASS_FULL157_RELEASE_PENDING",
+  "status": "APP_C39_UNCHANGED_KEYBOARD_HELPER_FIXED_CI158_PENDING",
   "date": "2026-11-08",
   "version": "0.13.0",
   "baselineCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
@@ -46,10 +46,9 @@
     "reason": "Test used a nonexistent diagnostic attribute. Actual render-status was degraded and asset-errors=1; corrected selector without weakening game-state assertions."
   },
   "pending": [
-    "Full157 regression run",
-    "Native old-file compatibility through current build",
-    "Ten viewport evidence",
-    "PR CI and deployment/public proof"
+    "Local remaining89 coverage on unchanged app",
+    "PR full158 CI",
+    "Deployment and actual public0.13 verification"
   ],
   "limitations": [
     "Physical Safari/iPhone/Android/iPad and hardware FPS not tested",
@@ -89,6 +88,40 @@
       "scope": "PR CI42429662756",
       "conclusion": "cancelled",
       "reason": "Intentional replacement by the final viewport-fix source"
+    },
+    {
+      "scope": "Local full157 on unchanged app c39",
+      "passed": 73,
+      "failed": 1,
+      "interrupted": 1,
+      "notRun": 82,
+      "minutes": 19.9,
+      "reason": "Desktop test helper pressed disabled start during asset load; snapshot remained at title. Reproduced separately and fixed only in the helper."
+    },
+    {
+      "scope": "PR CI42430389597",
+      "conclusion": "cancelled",
+      "reason": "Restart with deterministic cold-start helper regression and target158"
     }
-  ]
+  ],
+  "sourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
+  "entryJs": "assets/index-DWr4o--C.js",
+  "entryJsSha256": "e771a8d6a40ede79bd7d40343a3fdb817160c58a216680091640199f81aa6c93",
+  "localNativeLegacyVersionsExact": 6,
+  "localViewportCount": 10,
+  "localNormalCastVisibleAndReturn": true,
+  "localFinalStateSha256": "b71b2437d2807277a228089062ebd08ab265188f11c69211cc686dab5ee459c9",
+  "pr": 24,
+  "prCiRun": 42430389597,
+  "prCiBuildJob": 128577773804,
+  "gameSourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
+  "startupHelperFix": {
+    "reproducedWithDelayedSkyMs": 750,
+    "oldHelperResult": "FAIL: pressed Enter while disabled, remained at title",
+    "fix": "Explicit toBeEnabled then locator.press Enter; no retries/force/timeout increase",
+    "focusedPassed": 2,
+    "focusedFailed": 0,
+    "seconds": 17.9,
+    "applicationJsUnchanged": true
+  }
 }

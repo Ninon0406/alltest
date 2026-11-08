@@ -511,3 +511,10 @@ Actualreducer99nodes273choices205withstatedelta/6quests/5batches. Unit257/conten
 หยุดlocalFull155โดยตั้งใจ17PASS/1interrupted/137notrun และPRCI42429662756cancelledเพื่อรันsourceใหม่ ไม่ถือว่ารอบนั้นผ่าน. เป้าชุดใหม่157;รอผลจริงก่อนเผยแพร่. Sourceเดิมbc2793มีFocused7ผ่าน ส่วนpatchviewportต้องตรวจใหม่ทั้งfocusและfull
 
 ViewportfinalFocus4PASS1.3m: firstfixคืนตำแหน่งคลาด58pxเพราะเก็บscrollYหลังแทรกbusy-nav;แก้เก็บreadingPositionก่อนexclusive/renderจึงคืนexact717px. ReducedMotionไม่ขยับจอ ทั้งสองกรณีstate/feetตรง. เก็บviewport-first-fix/green ไม่ผ่อนassertion
+
+
+### Session23 QA — cold desktop keyboard helper
+
+LocalFull157หยุดหลัง73PASS/1FAIL/1interrupted/82notrun19.9m. Failure1366missingguardianเริ่มไม่ถึงเกม:helperfocusไม่รอenabledแล้วส่งEnterตอนปุ่มStartdisabledก่อนworld-ready จากนั้นรอaria-busyfalseจนหน้าTitleพร้อมแล้วเผลอถือว่ากดเริ่มสำเร็จ. ไม่ใช่guardianloaderล้มเหลว Screenshot/stackเก็บstartup-full-failure.md/full-before-startup-fix.txt
+
+เพิ่มslowsharedsky750msด้วยจริงnetworkroute:oldhelperFAILซ้ำอย่างชัดที่ปุ่มลุกไม่ปรากฏ;แก้เฉพาะtests/life-helpers.tsให้expectEnabledก่อนlocator.pressEnter (ยังทดสอบkeyboardจริง) ไม่force/retry/เพิ่มtimeout. Focus2PASS17.9sรวมcoldstartกับmissingguardianretry. Appbundleยังe771a8d6...เหมือนc39ทุกbyte. PRCI42430389597cancelledเพื่อFull158ใหม่;localรันremaining89รวม8guardiancases+ระบบที่เหลือ โดย69prefixcasesผ่านแล้วบนappbyteเดียวกันและCIจะรันทั้งหมด158ด้วยhelperแก้แล้ว ไม่อ้างlocalsingleFull158จากการรวมruns
