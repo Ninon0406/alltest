@@ -523,3 +523,16 @@ LocalFull157หยุดหลัง73PASS/1FAIL/1interrupted/82notrun19.9m. Fai
 ### Session23 QA consolidation
 
 Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelperซ้ำกับจุดที่เพิ่งแก้และไม่มีenabledwait จึงลบเฉพาะhelperซ้ำแล้วimportclickLifeเดียวกัน ใช้keyboard/touchจริงและรักษาทุกassertion. Targetopening8PASS1.5m/type/lintPASS ไม่มีapp/asset/packageเปลี่ยน;sourceJSยังe771. CI158ใหม่บนverificationheadสุดท้ายจะใช้helperร่วมกันทั้งopeningและpaths ไม่ปล่อยknowncoldstartraceไว้อีกแห่ง. Localremaining89PASS16.8m;combinedcoverage69prefix+89remaining=158uniquecaseชื่อครบ ไม่มีmissing แต่ไม่ใช่singlelocalrun. ผลCIเก็บตามrunจริงแยกจากlocalทุกครั้ง
+
+
+### Session23 final delivery — 2026-11-08 UTC / 0.13.0
+
+- เป้าหมาย:จบผู้พิทักษ์/บทเพลงหมู่บ้านเป็นชุดที่เล่นจบได้ แก้phonecinematicและcoldkeyboardtestโดยคงระบบเดิม
+- ทำจริง:18nodes41choices/99nodes273choices/205state-deltachoices/6quests/5batches/6encounters/3chapterconclusions0gameendings. Guardian16framesต้นฉบับ/89PNGbyte-reproduced/old88unchanged. ระบบ234recipes/5NPC/2introductorypaths/8stages6maps/ManualRAMFile2State2คงเดิม
+- แก้ปัญหา:Skipstacking/แยกnormalVFXcaptureจากearlytouchSkip,phonecanvasoffscreen−643.65625และfirstfixreturn+58px→จับscrollก่อนbusy-render,desktophelperกดStartdisabled→expectEnabled+locator.pressEnterและรวมopeninghelper. เก็บred/failed/interrupted/cancelledทุกชุด ไม่ใช้force/retry/timeoutinflation
+- ทดสอบ:PR CI42434254047บนfb91035 full158PASS28.8m/Unit257/Content2/Graph21/Roadmap10/type/lint/manual/reference/buildPASS. Localprefix69+remaining89=158ชื่อครบแต่ไม่ใช่singlelocalFull158;Focused7/viewport4/startup2/opening8แยกตามlogs
+- Commit:gameSourcec39bccc/verificationfb91035/PR24/actualmerge222db4e. LegacyPages42436489189SUCCESS. Actualpublic0.13 guardian3phases/3chapterconclusions/giftonce/6nativelegacyversions/10emulatedviewports/normalcastvisible+exactscrollreturn/statehashตรงlocal/coreoldstory/78versionedPNG+JSexact/0StorageUploadReferenceConsoleErrors PASS
+- MainCI42436489386ยังin_progress เป็นautomaticduplicatechecksหลังmerge ไม่อ้างผ่าน;ดูmain-ci.json/Actionsจริงก่อนเริ่มรอบถัดไป. Finalreceiptเป็นdocs-only[skip ci] ไม่มีruntime/source/assets/package/indexเปลี่ยนหลังverifiedsource ไม่ยกเลิกMainrun
+- ยังไม่เสร็จ:optionalS29/chapter-savecontext/ARC1wholeacceptance/ARC2–12/อีก6Paths/V6advancedmagic/worldeconomy/fullgameendings/finalHD10สถานที่/physicalSafariAndroidiPad/FPS/humanfun. Researchเข้าถึงเฉพาะแหล่งofficialpublicที่บันทึกไว้ ไม่อ้างอ่านเต็มหรือWayplaytest
+- Roadmap:26done/43in_progress/38not_started/0problem/2blocked=109,23.9%;1.0 26/10824.1%. ไม่เพิ่มคะแนนจากpartial/บทสรุปย่อย
+- ถัดไป5:PIPE002chapter/savecontext→STO001/ARC001optionalS29+acceptance→ARC002verticalslice→LifePaths→MAG010/visualmobile. อ่านREPORT_THและverification.jsonก่อนต่อ. ไม่มีการอ้างพัฒนาข้ามsessionอัตโนมัติ

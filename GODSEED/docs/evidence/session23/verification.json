@@ -1,5 +1,5 @@
 {
-  "status": "TEST_HELPERS_CONSOLIDATED_APP_UNCHANGED_FINAL_CI158_PENDING",
+  "status": "RELEASED_PUBLIC_VERIFIED_MAIN_RETEST_PENDING",
   "date": "2026-11-08",
   "version": "0.13.0",
   "baselineCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
@@ -46,8 +46,7 @@
     "reason": "Test used a nonexistent diagnostic attribute. Actual render-status was degraded and asset-errors=1; corrected selector without weakening game-state assertions."
   },
   "pending": [
-    "PR full158 CI",
-    "Deployment and actual public0.13 verification"
+    "Main automatic post-merge retest: run42436489386"
   ],
   "limitations": [
     "Physical Safari/iPhone/Android/iPad and hardware FPS not tested",
@@ -101,6 +100,11 @@
       "scope": "PR CI42430389597",
       "conclusion": "cancelled",
       "reason": "Restart with deterministic cold-start helper regression and target158"
+    },
+    {
+      "scope": "PR CI42432370893",
+      "conclusion": "cancelled",
+      "reason": "Replace duplicate opening helper with the readiness-safe shared helper; no app bytes changed."
     }
   ],
   "sourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
@@ -111,8 +115,8 @@
   "localNormalCastVisibleAndReturn": true,
   "localFinalStateSha256": "b71b2437d2807277a228089062ebd08ab265188f11c69211cc686dab5ee459c9",
   "pr": 24,
-  "prCiRun": 42432370893,
-  "prCiBuildJob": 128583853836,
+  "prCiRun": 42434254047,
+  "prCiBuildJob": 128589652225,
   "gameSourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
   "startupHelperFix": {
     "reproducedWithDelayedSkyMs": 750,
@@ -123,7 +127,7 @@
     "seconds": 17.9,
     "applicationJsUnchanged": true
   },
-  "verificationHead": "49a1278de52abea9dce83d75a200a27ea5b51d24",
+  "verificationHead": "fb91035f652162ce7e93cdb18aef61e0a5a69300",
   "localRemaining": {
     "passed": 89,
     "failed": 0,
@@ -148,5 +152,129 @@
   "previousPr49StatusBeforeConsolidation": {
     "conclusion": "",
     "status": "in_progress"
-  }
+  },
+  "mergeCommit": "222db4e2a9981a26431a29458fe29c402c88a0b4",
+  "prCi": {
+    "conclusion": "success",
+    "browserPassed": 158,
+    "browserFailed": 0,
+    "browserMinutes": 28.8,
+    "unitPassed": 257,
+    "log": "pr-ci-build.txt",
+    "runUrl": "https://github.com/Ninon0406/alltest/actions/runs/42434254047"
+  },
+  "legacyPages": {
+    "run": 42436489189,
+    "conclusion": "success"
+  },
+  "mainCi": {
+    "run": 42436489386,
+    "status": "in_progress",
+    "conclusion": null,
+    "note": "PR full158 passed. The automatic main rerun is still running; no main PASS is claimed."
+  },
+  "publicGuardian": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "version": "0.13.0",
+    "at": "2026-11-08T01:59:45.165Z",
+    "sourceCommit": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
+    "legacy": [
+      {
+        "version": "0.9.0",
+        "fileSha256": "c500d60135c06672caaad29b6f8d2b0f9629502c4ee9525c07211d3d1ebb6992",
+        "stateSha256": "d2d2f5ca3b9d5fecc87dadc673ee8bc2c6a5bec8b0fb20e552d521bf11308e2f",
+        "exactImport": true
+      },
+      {
+        "version": "0.10.0",
+        "fileSha256": "bd166e43f289d9770615210983ce5ca9fd78c248b16df8c2ad4cc901157be96b",
+        "stateSha256": "9ab9fd85171ab5ae5a6b04b5f71f374c5e6ad3387be9a581a8b935094d1d1f05",
+        "exactImport": true
+      },
+      {
+        "version": "0.11.0",
+        "fileSha256": "207a14e920c4dc9bc3e8da99c549e3cc2e17907351e1d38fa454130eae0bd9e8",
+        "stateSha256": "5181665b4f1bd87fe44124c86f9ae8b1de755c08ccf9dab2df28e97273918645",
+        "exactImport": true
+      },
+      {
+        "version": "0.11.1",
+        "fileSha256": "06b552d4ed959b73a243e85387634e17de84fa3ef297f3163d6233a791779553",
+        "stateSha256": "44b10fd3d053082be8200c93be0917c5848d2c5fadf27bf3abbd1b1e55831e1c",
+        "exactImport": true
+      },
+      {
+        "version": "0.12.0",
+        "fileSha256": "64cee1785612ddb36115a68f60e59f3901da41d246804481859cd55cc4c61bd6",
+        "stateSha256": "278728586cca897ea1b093b2757435bc09055eeeafff0813208a7d1355aebc05",
+        "exactImport": true
+      },
+      {
+        "version": "0.12.1",
+        "fileSha256": "c240f49eeac397519711fa2491a774ca9fd5c84bea3cfe568087d0171605c004",
+        "stateSha256": "8718b8979278bf3f3cfc5c138ac276411b2f15404cc51676ab48c8572a86b391",
+        "exactImport": true
+      }
+    ],
+    "coldTitlePngCount": 25,
+    "guardianAndGladeNotLoadedOnTitle": true,
+    "coldEiraActorCorrect": true,
+    "earnedHealingRecipe": true,
+    "normalPhoneCastVisibleAndReturn": true,
+    "allThreeGuardianPhases": true,
+    "nativeFilesAcrossAllPhases": true,
+    "firstWinRewardOnce": true,
+    "conclusions": [
+      {
+        "route": "family",
+        "chapterComplete": true,
+        "sharedGiftOnce": true,
+        "roundTrip": true,
+        "stateSha256": "62c53af21066a2a260eacec916618b26731da2af085ab9097820a523a459078d"
+      },
+      {
+        "route": "community",
+        "chapterComplete": true,
+        "sharedGiftOnce": true,
+        "roundTrip": true,
+        "stateSha256": "474eceb3a266fd089fc90c95674ec47980ae9332303b2c75db8450f34a637c18"
+      },
+      {
+        "route": "archive",
+        "chapterComplete": true,
+        "sharedGiftOnce": true,
+        "roundTrip": true,
+        "stateSha256": "b71b2437d2807277a228089062ebd08ab265188f11c69211cc686dab5ee459c9"
+      }
+    ],
+    "malformedFilePreservesRAM": true,
+    "refreshStartsBlank": true,
+    "stateSha256": "b71b2437d2807277a228089062ebd08ab265188f11c69211cc686dab5ee459c9",
+    "sameStateAsLocal": true,
+    "persistentStorageCalls": 0,
+    "saveUploads": 0,
+    "referenceRequests": 0,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "publicLayouts": "public-layouts.json",
+  "publicCore": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 78,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "e771a8d6a40ede79bd7d40343a3fdb817160c58a216680091640199f81aa6c93",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+  },
+  "publicViewportCount": 10,
+  "publicProof": "public-guardian.json",
+  "runtimeUnchangedAfterSource": true
 }

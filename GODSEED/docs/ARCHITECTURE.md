@@ -1,3 +1,9 @@
+## Session23 delivery — 0.13.0
+
+Runtimec39/verificationfb/merge222db4eผ่านPR158และpublicproof. `ui/cinematic-viewport.ts`จับreadingpositionก่อนbusy-render:normalnarrowviewportเปิดcanvasที่อยู่นอกจอและคืนscrollหลังexclusivefinally/render;ReducedMotion/side-by-sideไม่ขยับ. ไม่มีgame-state/focus/storage/timerเพิ่ม. Guardianintentอ่านbeforestate;VFXแยกdamage. `battle.guardian`optionalstrictเฉพาะB05รักษาState2/File2และไฟล์เก่า. Keyboardtesthelperรอenabledแล้วlocator.pressEnter;openingใช้helperเดียวกัน ไม่มีforce/retries/timeoutinflation. [หลักฐาน](evidence/session23/verification.json). MainpostmergeCIยังรันซ้ำ ไม่ใช้PRผลแทนMain
+
+---
+
 # Session23 Batch B — Cinematic viewport
 
 ui/cinematic-viewport.tsเป็นpresentationcleanupที่คืนscrollหลังexclusivefinally+render ใช้เฉพาะwidth≤900/height>500/normalmotionเมื่อcanvasพ้นจอ. Instantcenterเพื่อให้เห็นเหตุการณ์แล้วคืนreadingpositionเดิม ReducedMotionและside-by-sideไม่ขยับ ไม่เปลี่ยนfocus/GameState/Save/animationtiming. RegressionredY−643.65625ก่อนแก้ มีnormal+reducedbrowsercasesและactualpublicverifierเพิ่ม

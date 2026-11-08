@@ -1,0 +1,105 @@
+{
+  "conclusion": "success",
+  "jobs": [
+    {
+      "completedAt": "2026-11-08T01:58:23Z",
+      "conclusion": "success",
+      "databaseId": 128596333764,
+      "name": "build",
+      "startedAt": "2026-11-08T01:58:09Z",
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Checkout",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Upload artifact",
+          "number": 3,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Post Checkout",
+          "number": 6,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 7,
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Ninon0406/alltest/actions/runs/42436489189/job/128596333764"
+    },
+    {
+      "completedAt": "2026-11-08T01:58:43Z",
+      "conclusion": "success",
+      "databaseId": 128596386762,
+      "name": "deploy",
+      "startedAt": "2026-11-08T01:58:26Z",
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Deploy to GitHub Pages",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Ninon0406/alltest/actions/runs/42436489189/job/128596386762"
+    },
+    {
+      "completedAt": "2026-11-08T01:58:28Z",
+      "conclusion": "success",
+      "databaseId": 128596386796,
+      "name": "report-build-status",
+      "startedAt": "2026-11-08T01:58:25Z",
+      "status": "completed",
+      "steps": [
+        {
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Report Build Status",
+          "number": 2,
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 3,
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Ninon0406/alltest/actions/runs/42436489189/job/128596386796"
+    }
+  ],
+  "status": "completed"
+}

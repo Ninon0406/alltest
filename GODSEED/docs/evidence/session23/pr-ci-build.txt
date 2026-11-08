@@ -1,0 +1,867 @@
+2026-11-08T01:26:41.7839547Z Current runner version: '2.338.2'
+2026-11-08T01:26:41.7865967Z ##[group]Runner Image Provisioner
+2026-11-08T01:26:41.7866918Z Hosted Compute Agent
+2026-11-08T01:26:41.7867580Z Version: 20261028.624
+2026-11-08T01:26:41.7868244Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-08T01:26:41.7869474Z Build Date: 2026-10-28T21:51:42Z
+2026-11-08T01:26:41.7870300Z Worker ID: {55e8ec4d-6a6b-4222-97fe-128768250151}
+2026-11-08T01:26:41.7871023Z Region: centralus
+2026-11-08T01:26:41.7871650Z Cloud: Azure
+2026-11-08T01:26:41.7872221Z ##[endgroup]
+2026-11-08T01:26:41.7873726Z ##[group]Operating System
+2026-11-08T01:26:41.7874453Z Ubuntu
+2026-11-08T01:26:41.7875060Z 24.04.5
+2026-11-08T01:26:41.7875602Z LTS
+2026-11-08T01:26:41.7876138Z ##[endgroup]
+2026-11-08T01:26:41.7876705Z ##[group]Runner Image
+2026-11-08T01:26:41.7877431Z Image: ubuntu-24.04
+2026-11-08T01:26:41.7878080Z Version: 20261101.360.1
+2026-11-08T01:26:41.7879818Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-08T01:26:41.7881410Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-08T01:26:41.7882436Z ##[endgroup]
+2026-11-08T01:26:41.7883596Z ##[group]GITHUB_TOKEN Permissions
+2026-11-08T01:26:41.7885534Z Contents: read
+2026-11-08T01:26:41.7886160Z Metadata: read
+2026-11-08T01:26:41.7886724Z ##[endgroup]
+2026-11-08T01:26:41.7889229Z Secret source: Actions
+2026-11-08T01:26:41.7890239Z Cache mode: write
+2026-11-08T01:26:41.7891345Z Prepare workflow directory
+2026-11-08T01:26:41.8306710Z Prepare all required actions
+2026-11-08T01:26:41.8357711Z Getting action download info
+2026-11-08T01:26:42.1225323Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-08T01:26:42.2740602Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-08T01:26:42.3808101Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-08T01:26:42.5451680Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+2026-11-08T01:26:42.8211199Z Getting action download info
+2026-11-08T01:26:42.9423428Z Complete job name: build
+2026-11-08T01:26:43.0347097Z ##[group]Run actions/checkout@v4
+2026-11-08T01:26:43.0348767Z with:
+2026-11-08T01:26:43.0349288Z   repository: Ninon0406/alltest
+2026-11-08T01:26:43.0354008Z   token: ***
+2026-11-08T01:26:43.0354490Z   ssh-strict: true
+2026-11-08T01:26:43.0354956Z   ssh-user: git
+2026-11-08T01:26:43.0355421Z   persist-credentials: true
+2026-11-08T01:26:43.0355982Z   clean: true
+2026-11-08T01:26:43.0356454Z   sparse-checkout-cone-mode: true
+2026-11-08T01:26:43.0357011Z   fetch-depth: 1
+2026-11-08T01:26:43.0357463Z   fetch-tags: false
+2026-11-08T01:26:43.0357944Z   show-progress: true
+2026-11-08T01:26:43.0358718Z   lfs: false
+2026-11-08T01:26:43.0359183Z   submodules: false
+2026-11-08T01:26:43.0359659Z   set-safe-directory: true
+2026-11-08T01:26:43.0360217Z   allow-unsafe-pr-checkout: false
+2026-11-08T01:26:43.0361147Z ##[endgroup]
+2026-11-08T01:26:43.5042992Z Syncing repository: Ninon0406/alltest
+2026-11-08T01:26:43.5045553Z ##[group]Getting Git version info
+2026-11-08T01:26:43.5047084Z Working directory is '/home/runner/work/alltest/alltest'
+2026-11-08T01:26:43.5049449Z [command]/usr/bin/git version
+2026-11-08T01:26:43.5139066Z git version 2.56.0
+2026-11-08T01:26:43.5169805Z ##[endgroup]
+2026-11-08T01:26:43.5184218Z Temporarily overriding HOME='/home/runner/work/_temp/5463633b-b87b-46b6-b905-b9c8b21eec7a' before making global git config changes
+2026-11-08T01:26:43.5190023Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-08T01:26:43.5194317Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/alltest/alltest
+2026-11-08T01:26:43.5245283Z Deleting the contents of '/home/runner/work/alltest/alltest'
+2026-11-08T01:26:43.5252703Z ##[group]Initializing the repository
+2026-11-08T01:26:43.5257265Z [command]/usr/bin/git init /home/runner/work/alltest/alltest
+2026-11-08T01:26:43.5385309Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-08T01:26:43.5388966Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-08T01:26:43.5391616Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-08T01:26:43.5393663Z hint: call:
+2026-11-08T01:26:43.5394749Z hint:
+2026-11-08T01:26:43.5396098Z hint: 	git config --global init.defaultBranch <name>
+2026-11-08T01:26:43.5397788Z hint:
+2026-11-08T01:26:43.5399892Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-08T01:26:43.5402936Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-08T01:26:43.5405388Z hint:
+2026-11-08T01:26:43.5406770Z hint: 	git branch -m <name>
+2026-11-08T01:26:43.5408114Z hint:
+2026-11-08T01:26:43.5411005Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-08T01:26:43.5414837Z Initialized empty Git repository in /home/runner/work/alltest/alltest/.git/
+2026-11-08T01:26:43.5430354Z [command]/usr/bin/git remote add origin https://github.com/Ninon0406/alltest
+2026-11-08T01:26:43.5489833Z ##[endgroup]
+2026-11-08T01:26:43.5492614Z ##[group]Disabling automatic garbage collection
+2026-11-08T01:26:43.5495239Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-08T01:26:43.5532485Z ##[endgroup]
+2026-11-08T01:26:43.5535063Z ##[group]Setting up auth
+2026-11-08T01:26:43.5539857Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-08T01:26:43.5581223Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-08T01:26:43.5985644Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-08T01:26:43.6033125Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-08T01:26:43.6275419Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-08T01:26:43.6321010Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-08T01:26:43.6563554Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-08T01:26:43.6646374Z ##[endgroup]
+2026-11-08T01:26:43.6648230Z ##[group]Fetching the repository
+2026-11-08T01:26:43.6661009Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fb63ce8b10b395eb24adad07a09b59fa8272eada:refs/remotes/pull/24/merge
+2026-11-08T01:26:48.0726943Z From https://github.com/Ninon0406/alltest
+2026-11-08T01:26:48.0727965Z  * [new ref]         fb63ce8b10b395eb24adad07a09b59fa8272eada -> pull/24/merge
+2026-11-08T01:26:48.0733106Z ##[endgroup]
+2026-11-08T01:26:48.0733956Z ##[group]Determining the checkout info
+2026-11-08T01:26:48.0736331Z ##[endgroup]
+2026-11-08T01:26:48.0744654Z [command]/usr/bin/git sparse-checkout disable
+2026-11-08T01:26:48.0812309Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-08T01:26:48.0859598Z ##[group]Checking out the ref
+2026-11-08T01:26:48.0863971Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+2026-11-08T01:26:48.4187669Z Note: switching to 'refs/remotes/pull/24/merge'.
+2026-11-08T01:26:48.4188962Z
+2026-11-08T01:26:48.4189610Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-08T01:26:48.4191195Z changes and commit them, and you can discard any commits you make in this
+2026-11-08T01:26:48.4192031Z state without impacting any branches by switching back to a branch.
+2026-11-08T01:26:48.4192745Z
+2026-11-08T01:26:48.4193463Z If you want to create a new branch to retain commits you create, you may
+2026-11-08T01:26:48.4194271Z do so (now or later) by using -c with the switch command. Example:
+2026-11-08T01:26:48.4194786Z
+2026-11-08T01:26:48.4195003Z   git switch -c <new-branch-name>
+2026-11-08T01:26:48.4195339Z
+2026-11-08T01:26:48.4195527Z Or undo this operation with:
+2026-11-08T01:26:48.4195919Z
+2026-11-08T01:26:48.4196094Z   git switch -
+2026-11-08T01:26:48.4196342Z
+2026-11-08T01:26:48.4197180Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-08T01:26:48.4198129Z
+2026-11-08T01:26:48.4199304Z HEAD is now at fb63ce8 Merge fb91035f652162ce7e93cdb18aef61e0a5a69300 into 734e21dc625909cb9362447cdff78de4c92e32da
+2026-11-08T01:26:48.4217767Z ##[endgroup]
+2026-11-08T01:26:48.4275829Z [command]/usr/bin/git log -1 --format=%H
+2026-11-08T01:26:48.4310765Z fb63ce8b10b395eb24adad07a09b59fa8272eada
+2026-11-08T01:26:48.4592872Z ##[group]Run actions/setup-node@v4
+2026-11-08T01:26:48.4593185Z with:
+2026-11-08T01:26:48.4593417Z   node-version: 24
+2026-11-08T01:26:48.4593626Z   cache: npm
+2026-11-08T01:26:48.4593882Z   cache-dependency-path: GODSEED/package-lock.json
+2026-11-08T01:26:48.4594205Z   always-auth: false
+2026-11-08T01:26:48.4594430Z   check-latest: false
+2026-11-08T01:26:48.4596910Z   token: ***
+2026-11-08T01:26:48.4597116Z ##[endgroup]
+2026-11-08T01:26:48.6064506Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+2026-11-08T01:26:48.6070014Z (node:2315) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-08T01:26:48.6071324Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-08T01:26:48.6073619Z ##[group]Environment details
+2026-11-08T01:26:49.0394083Z node: v24.22.2
+2026-11-08T01:26:49.0394385Z npm: 11.19.1
+2026-11-08T01:26:49.0394612Z yarn: 1.22.22
+2026-11-08T01:26:49.0395370Z ##[endgroup]
+2026-11-08T01:26:49.0416823Z [command]/opt/hostedtoolcache/node/24.22.2/x64/bin/npm config get cache
+2026-11-08T01:26:49.1527146Z /home/runner/.npm
+2026-11-08T01:26:49.3350667Z npm cache is not found
+2026-11-08T01:26:49.3515382Z ##[group]Run npm ci
+2026-11-08T01:26:49.3515708Z [36;1mnpm ci[0m
+2026-11-08T01:26:49.3547788Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:26:49.3548059Z ##[endgroup]
+2026-11-08T01:27:09.4449575Z npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-11-08T01:27:31.8371583Z
+2026-11-08T01:27:31.8372577Z added 155 packages, and audited 156 packages in 42s
+2026-11-08T01:27:31.8384124Z
+2026-11-08T01:27:31.8384589Z 51 packages are looking for funding
+2026-11-08T01:27:31.8385102Z   run `npm fund` for details
+2026-11-08T01:27:31.9889986Z
+2026-11-08T01:27:31.9891217Z 8 vulnerabilities (7 moderate, 1 high)
+2026-11-08T01:27:31.9891684Z
+2026-11-08T01:27:31.9891978Z To address all issues (including breaking changes), run:
+2026-11-08T01:27:31.9892413Z   npm audit fix --force
+2026-11-08T01:27:31.9892607Z
+2026-11-08T01:27:31.9892800Z Run `npm audit` for details.
+2026-11-08T01:27:31.9902357Z npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+2026-11-08T01:27:31.9903120Z npm warn install-scripts   esbuild@0.28.2 (postinstall: node install.js)
+2026-11-08T01:27:31.9903608Z npm warn install-scripts
+2026-11-08T01:27:31.9904297Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+2026-11-08T01:27:32.0813126Z ##[group]Run npm run test:all
+2026-11-08T01:27:32.0813436Z [36;1mnpm run test:all[0m
+2026-11-08T01:27:32.0833829Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:27:32.0834178Z ##[endgroup]
+2026-11-08T01:27:32.1859215Z
+2026-11-08T01:27:32.1860255Z > godseed@0.13.0 test:all
+2026-11-08T01:27:32.1861506Z > npm run roadmap:check && npm run validate:references && npm run validate:manual-save && npm run validate:story && npm run typecheck && npm run lint && npm run validate:content && npm test && npm run build
+2026-11-08T01:27:32.1862605Z
+2026-11-08T01:27:32.2851259Z
+2026-11-08T01:27:32.2851916Z > godseed@0.13.0 roadmap:check
+2026-11-08T01:27:32.2852767Z > node --test scripts/roadmap.test.mjs && node scripts/roadmap.mjs
+2026-11-08T01:27:32.2853244Z
+2026-11-08T01:27:32.4911316Z ✔ counts only DONE, including zero/all and each non-done state (1.905579ms)
+2026-11-08T01:27:32.4914513Z ✔ current audit has valid references, deterministic checklist and checked boxes only for DONE (19.311659ms)
+2026-11-08T01:27:32.4915708Z ✔ duplicate and unknown dependency IDs reject (11.588989ms)
+2026-11-08T01:27:32.4919380Z ✔ cycles and missing source evidence reject (7.916001ms)
+2026-11-08T01:27:32.4929815Z ✔ unsupported status and DONE without actual verification record reject (3.959894ms)
+2026-11-08T01:27:32.4931685Z ✔ next-work list excludes done/blocked tasks and promotes actual regressions (3.482313ms)
+2026-11-08T01:27:32.4933549Z ✔ location records reject missing aspects, duplicate locations and premature final readiness (24.571542ms)
+2026-11-08T01:27:32.4940402Z ✔ manual save subtasks have stable IDs, evidence and do not inflate the main denominator (9.135328ms)
+2026-11-08T01:27:32.4942946Z ✔ V6 preserves legacy IDs/phase/scope history while allowing unfinished expanded scope (18.722679ms)
+2026-11-08T01:27:32.4944490Z ✔ six domains partition milestones exactly once; designs and save substeps add no completion credit (11.094306ms)
+2026-11-08T01:27:32.5098881Z ℹ tests 10
+2026-11-08T01:27:32.5099369Z ℹ suites 0
+2026-11-08T01:27:32.5099758Z ℹ pass 10
+2026-11-08T01:27:32.5121099Z ℹ fail 0
+2026-11-08T01:27:32.5122276Z ℹ cancelled 0
+2026-11-08T01:27:32.5122865Z ℹ skipped 0
+2026-11-08T01:27:32.5123234Z ℹ todo 0
+2026-11-08T01:27:32.5123650Z ℹ duration_ms 188.757017
+2026-11-08T01:27:32.5607953Z {"result":"PASS","done":26,"in_progress":43,"not_started":38,"problem":0,"blocked":2,"total":109,"percent":23.9,"v1":{"done":26,"in_progress":43,"not_started":37,"problem":0,"blocked":2,"total":108,"percent":24.1}}
+2026-11-08T01:27:32.6661829Z
+2026-11-08T01:27:32.6663440Z > godseed@0.13.0 validate:references
+2026-11-08T01:27:32.6664173Z > node scripts/validate-references.mjs
+2026-11-08T01:27:32.6664546Z
+2026-11-08T01:27:32.7299488Z {"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}
+2026-11-08T01:27:32.8347200Z
+2026-11-08T01:27:32.8347908Z > godseed@0.13.0 validate:manual-save
+2026-11-08T01:27:32.8348984Z > node scripts/validate-manual-save.mjs
+2026-11-08T01:27:32.8349379Z
+2026-11-08T01:27:32.8799793Z {"result":"PASS","applicationFiles":42,"policy":"RAM only; explicit file export/import; no progress storage or outbound upload API in application source"}
+2026-11-08T01:27:32.9887671Z
+2026-11-08T01:27:32.9888117Z > godseed@0.13.0 validate:story
+2026-11-08T01:27:32.9889294Z > node --test scripts/story-graph.test.mjs && node scripts/story-graph.mjs
+2026-11-08T01:27:32.9889910Z
+2026-11-08T01:27:33.4160308Z ✔ explicit chapter batches reject duplicate ownership, unknown nodes, exits and missing ownership (3.201468ms)
+2026-11-08T01:27:33.4162803Z ✔ unknown chapter changes and incomplete batch contracts fail instead of silently inheriting chapter one (0.225141ms)
+2026-11-08T01:27:33.4164652Z ✔ relationship conditions reject invalid mentors and impossible thresholds (0.295351ms)
+2026-11-08T01:27:33.4166798Z ✔ cinematic spell targets require a named in-bounds object from the source map (0.421968ms)
+2026-11-08T01:27:33.4169435Z ✔ static graph reports structural counts without claiming executable quests or life paths (0.248745ms)
+2026-11-08T01:27:33.4170948Z ✔ missing transitions and duplicated global choice IDs fail (0.270896ms)
+2026-11-08T01:27:33.4172313Z ✔ duplicate source definitions cannot hide behind Object.fromEntries (0.954713ms)
+2026-11-08T01:27:33.4173589Z ✔ unlinked story nodes and closed non-ending loops fail (0.226964ms)
+2026-11-08T01:27:33.4175256Z ✔ reaching a self loop still fails when it cannot escape to a safe hub or ending (0.220051ms)
+2026-11-08T01:27:33.4177470Z ✔ authored ending is allowed to terminate and is distinct from an accidental dead end (0.338341ms)
+2026-11-08T01:27:33.4179434Z ✔ condition typos, impossible flag sources and unknown spell cores fail (0.314888ms)
+2026-11-08T01:27:33.4181495Z ✔ flag produced on an entry or literal engine action is a legal prerequisite (0.17109ms)
+2026-11-08T01:27:33.4183306Z ✔ reward IDs, quantities, relationship IDs and shared onceFlag guards are checked (0.237283ms)
+2026-11-08T01:27:33.4186083Z ✔ battle victory, defeat and dynamic checkpoint recovery are explicit graph edges (0.293488ms)
+2026-11-08T01:27:33.4189645Z ✔ scene staging and source choice cinematic anchors resolve against real map metadata (0.313566ms)
+2026-11-08T01:27:33.4191716Z ✔ authored time cuts accept supported boundaries and reject misspelled phases (0.1923ms)
+2026-11-08T01:27:33.4194712Z ✔ structured quest chains reject wrong scene references and unconnected steps (0.265757ms)
+2026-11-08T01:27:33.4211363Z ✔ invalid recipe definitions fail instead of inflating usable spell counts (0.200334ms)
+2026-11-08T01:27:33.4218081Z ✔ path conditions, mentor, ability, location and progression flags resolve to authored data (0.286125ms)
+2026-11-08T01:27:34.3073902Z ✔ actual catalog and bounded real reducer exploration remain separate proof levels (1225.503295ms)
+2026-11-08T01:27:34.3075747Z ✔ chapter conclusions cannot masquerade as full-game endings or accidental dead ends (0.377585ms)
+2026-11-08T01:27:34.3564568Z ℹ tests 21
+2026-11-08T01:27:34.3565233Z ℹ suites 0
+2026-11-08T01:27:34.3565611Z ℹ pass 21
+2026-11-08T01:27:34.3565948Z ℹ fail 0
+2026-11-08T01:27:34.3566300Z ℹ cancelled 0
+2026-11-08T01:27:34.3566543Z ℹ skipped 0
+2026-11-08T01:27:34.3566755Z ℹ todo 0
+2026-11-08T01:27:34.3567005Z ℹ duration_ms 1334.526861
+2026-11-08T01:27:35.2481873Z {
+2026-11-08T01:27:35.2482285Z   "result": "PASS",
+2026-11-08T01:27:35.2483355Z   "scope": "Static catalog validation and structural reachability; conditions and combat wins are not assumed executable",
+2026-11-08T01:27:35.2484376Z   "counts": {
+2026-11-08T01:27:35.2484732Z     "contentBatches": 5,
+2026-11-08T01:27:35.2485136Z     "storyNodes": 99,
+2026-11-08T01:27:35.2485521Z     "choices": 273,
+2026-11-08T01:27:35.2485953Z     "declaredEffectChoices": 273,
+2026-11-08T01:27:35.2486481Z     "structurallyReachableNodes": 99,
+2026-11-08T01:27:35.2486963Z     "endings": 0,
+2026-11-08T01:27:35.2487340Z     "chapterConclusions": 3,
+2026-11-08T01:27:35.2487775Z     "encounters": 6,
+2026-11-08T01:27:35.2488199Z     "recipeDefinitions": 234,
+2026-11-08T01:27:35.2488925Z     "uniqueRecipes": 234,
+2026-11-08T01:27:35.2489339Z     "declaredQuestChains": 6,
+2026-11-08T01:27:35.2489818Z     "completableQuests": null,
+2026-11-08T01:27:35.2490311Z     "implementedLifePaths": null,
+2026-11-08T01:27:35.2490853Z     "introductoryLifePathContracts": 2,
+2026-11-08T01:27:35.2491344Z     "stages": 8
+2026-11-08T01:27:35.2491681Z   },
+2026-11-08T01:27:35.2492023Z   "structurallyReachable": [
+2026-11-08T01:27:35.2492436Z     "ECHO_ARCH",
+2026-11-08T01:27:35.2492805Z     "ECHO_BYPASS",
+2026-11-08T01:27:35.2493224Z     "ECHO_CALL",
+2026-11-08T01:27:35.2493576Z     "ECHO_CLOSURE",
+2026-11-08T01:27:35.2493942Z     "ECHO_LISTEN",
+2026-11-08T01:27:35.2494301Z     "ECHO_LUMI",
+2026-11-08T01:27:35.2494655Z     "ECHO_MAREN",
+2026-11-08T01:27:35.2494997Z     "ECHO_PACK",
+2026-11-08T01:27:35.2495353Z     "ECHO_PROMISE",
+2026-11-08T01:27:35.2495721Z     "ECHO_RECIPE",
+2026-11-08T01:27:35.2496082Z     "ECHO_RECORD",
+2026-11-08T01:27:35.2496890Z     "ECHO_REPORT",
+2026-11-08T01:27:35.2497295Z     "ECHO_RESULT",
+2026-11-08T01:27:35.2497664Z     "ECHO_ROAD",
+2026-11-08T01:27:35.2498019Z     "ECHO_SAMPLE",
+2026-11-08T01:27:35.2498687Z     "ECHO_SIGNAL",
+2026-11-08T01:27:35.2499055Z     "ECHO_TRACKS",
+2026-11-08T01:27:35.2499401Z     "ECHO_WATER",
+2026-11-08T01:27:35.2499756Z     "G_AFTER_ARCHIVE",
+2026-11-08T01:27:35.2533510Z     "G_AFTER_COMMUNITY",
+2026-11-08T01:27:35.2533796Z     "G_AFTER_FAMILY",
+2026-11-08T01:27:35.2534029Z     "G_CALL",
+2026-11-08T01:27:35.2534235Z     "G_CRAFT",
+2026-11-08T01:27:35.2534724Z     "G_INSCRIPTION",
+2026-11-08T01:27:35.2534939Z     "G_KIT",
+2026-11-08T01:27:35.2535128Z     "G_LUMI",
+2026-11-08T01:27:35.2535365Z     "G_MAREN",
+2026-11-08T01:27:35.2535585Z     "G_PACT",
+2026-11-08T01:27:35.2535784Z     "G_REVIEW",
+2026-11-08T01:27:35.2536027Z     "G_SEAL_INNER",
+2026-11-08T01:27:35.2536240Z     "LP_CROSSROADS",
+2026-11-08T01:27:35.2536459Z     "LP_EXPLORER_ACK",
+2026-11-08T01:27:35.2536703Z     "LP_EXPLORER_BRIEF",
+2026-11-08T01:27:35.2536938Z     "LP_EXPLORER_HOME",
+2026-11-08T01:27:35.2537166Z     "LP_EXPLORER_MARKERS",
+2026-11-08T01:27:35.2537403Z     "LP_EXPLORER_RESULT",
+2026-11-08T01:27:35.2537634Z     "LP_EXPLORER_SURVEY",
+2026-11-08T01:27:35.2537857Z     "LP_EXPLORER_TRIAL",
+2026-11-08T01:27:35.2538087Z     "LP_NATURE_ACK",
+2026-11-08T01:27:35.2538300Z     "LP_NATURE_BRIEF",
+2026-11-08T01:27:35.2538740Z     "LP_NATURE_FIELD",
+2026-11-08T01:27:35.2538958Z     "LP_NATURE_HOME",
+2026-11-08T01:27:35.2539176Z     "LP_NATURE_RESULT",
+2026-11-08T01:27:35.2539398Z     "LP_NATURE_SOURCE",
+2026-11-08T01:27:35.2539688Z     "LP_NATURE_TRIAL",
+2026-11-08T01:27:35.2539940Z     "LP_SHARED_ROOTS",
+2026-11-08T01:27:35.2540144Z     "S00_WAKE",
+2026-11-08T01:27:35.2540343Z     "S01_FIRST_STEPS",
+2026-11-08T01:27:35.2540545Z     "S02_HUB",
+2026-11-08T01:27:35.2540737Z     "S02_TREE",
+2026-11-08T01:27:35.2540927Z     "S03B_MAREN",
+2026-11-08T01:27:35.2541123Z     "S03_LUMI",
+2026-11-08T01:27:35.2541305Z     "S04_KORO",
+2026-11-08T01:27:35.2541505Z     "S05_CRAFT_TUTORIAL",
+2026-11-08T01:27:35.2541727Z     "S06_GARDEN",
+2026-11-08T01:27:35.2541929Z     "S07_ARCHIVE",
+2026-11-08T01:27:35.2542131Z     "S08_FOREST_GATE",
+2026-11-08T01:27:35.2542335Z     "S09_FOREST",
+2026-11-08T01:27:35.2542537Z     "S10_FOREST_RESULT",
+2026-11-08T01:27:35.2542774Z     "S11_STREAM",
+2026-11-08T01:27:35.2542970Z     "S12_STREAM_RESULT",
+2026-11-08T01:27:35.2543189Z     "S13_FOREST_SHRINE",
+2026-11-08T01:27:35.2543398Z     "S14_RESEARCH",
+2026-11-08T01:27:35.2543593Z     "S15_RUINS",
+2026-11-08T01:27:35.2543795Z     "S16_RUINS_RESULT",
+2026-11-08T01:27:35.2544007Z     "S17_ECHO_TABLET",
+2026-11-08T01:27:35.2544218Z     "S18_FESTIVAL_PREP",
+2026-11-08T01:27:35.2544465Z     "S19_FESTIVAL",
+2026-11-08T01:27:35.2544667Z     "S20_SEAL_PASSAGE",
+2026-11-08T01:27:35.2544890Z     "S21_ECHO_TRIAL",
+2026-11-08T01:27:35.2545108Z     "S22_GUARDIAN",
+2026-11-08T01:27:35.2545305Z     "S23_DECISION",
+2026-11-08T01:27:35.2545500Z     "S24_END_FAMILY",
+2026-11-08T01:27:35.2545713Z     "S25_END_COMMUNITY",
+2026-11-08T01:27:35.2545936Z     "S26_END_ARCHIVE",
+2026-11-08T01:27:35.2546139Z     "S27_EPILOGUE",
+2026-11-08T01:27:35.2546332Z     "S28_RECOVER",
+2026-11-08T01:27:35.2546524Z     "V6_A1_BELL",
+2026-11-08T01:27:35.2546716Z     "V6_A1_CIRCLE",
+2026-11-08T01:27:35.2546915Z     "V6_A1_CLOSE_ARCHIVE",
+2026-11-08T01:27:35.2547147Z     "V6_A1_CLOSE_CIRCLE",
+2026-11-08T01:27:35.2547366Z     "V6_A1_CLOSE_GARDEN",
+2026-11-08T01:27:35.2547582Z     "V6_A1_FIRST_SONG",
+2026-11-08T01:27:35.2547791Z     "V6_A1_FOREST",
+2026-11-08T01:27:35.2548002Z     "V6_A1_FOREST_ECHO",
+2026-11-08T01:27:35.2548231Z     "V6_A1_GARDEN",
+2026-11-08T01:27:35.2548583Z     "V6_A1_GEARS",
+2026-11-08T01:27:35.2548785Z     "V6_A1_INVITATION",
+2026-11-08T01:27:35.2548999Z     "V6_A1_LIGHT_RESULT",
+2026-11-08T01:27:35.2549217Z     "V6_A1_MARGIN",
+2026-11-08T01:27:35.2549411Z     "V6_A1_MORNING",
+2026-11-08T01:27:35.2549612Z     "V6_A1_MUSICBOX",
+2026-11-08T01:27:35.2549814Z     "V6_A1_NOTES",
+2026-11-08T01:27:35.2550178Z     "V6_A1_REHEARSAL",
+2026-11-08T01:27:35.2550400Z     "V6_A1_RUINS_RETURN",
+2026-11-08T01:27:35.2550617Z     "V6_A1_RUNE_COPY",
+2026-11-08T01:27:35.2550824Z     "V6_A1_SEEDBEDS",
+2026-11-08T01:27:35.2551022Z     "V6_A1_STREAM",
+2026-11-08T01:27:35.2551229Z     "V6_A1_WORKSHOP_LIGHT"
+2026-11-08T01:27:35.2551456Z   ],
+2026-11-08T01:27:35.2551642Z   "edges": 295,
+2026-11-08T01:27:35.2551855Z   "flagProducers": 203,
+2026-11-08T01:27:35.2552075Z   "errors": [],
+2026-11-08T01:27:35.2552271Z   "warnings": []
+2026-11-08T01:27:35.2552599Z }
+2026-11-08T01:27:35.4075235Z
+2026-11-08T01:27:35.4075697Z > godseed@0.13.0 typecheck
+2026-11-08T01:27:35.4076044Z > tsc --noEmit
+2026-11-08T01:27:35.4076202Z
+2026-11-08T01:27:38.8796203Z
+2026-11-08T01:27:38.8796718Z > godseed@0.13.0 lint
+2026-11-08T01:27:38.8797069Z > eslint src tests
+2026-11-08T01:27:38.8797236Z
+2026-11-08T01:27:41.1842346Z
+2026-11-08T01:27:41.1843037Z > godseed@0.13.0 validate:content
+2026-11-08T01:27:41.1843492Z > vitest run tests/content.test.ts
+2026-11-08T01:27:41.1843708Z
+2026-11-08T01:27:41.4590372Z
+2026-11-08T01:27:41.4592746Z [1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/home/runner/work/alltest/alltest/GODSEED[39m
+2026-11-08T01:27:41.4593626Z
+2026-11-08T01:27:41.9167999Z  [32m✓[39m tests/content.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+2026-11-08T01:27:41.9194992Z
+2026-11-08T01:27:41.9199302Z [2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+2026-11-08T01:27:41.9200276Z [2m      Tests [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+2026-11-08T01:27:41.9201025Z [2m   Start at [22m 01:27:41
+2026-11-08T01:27:41.9202176Z [2m   Duration [22m 447ms[2m (transform 198ms, setup 0ms, import 279ms, tests 32ms, environment 0ms)[22m
+2026-11-08T01:27:41.9204222Z
+2026-11-08T01:27:42.0466601Z
+2026-11-08T01:27:42.0467126Z > godseed@0.13.0 test
+2026-11-08T01:27:42.0471256Z > vitest run tests/unit.test.ts tests/save.test.ts tests/combat.test.ts tests/balance.test.ts tests/art.test.ts tests/exploration.test.ts tests/alchemy.test.ts tests/cinematics.test.ts tests/directional.test.ts tests/camera.test.ts tests/scene-definitions.test.ts tests/gathering.test.ts tests/garden.test.ts tests/art-loading.test.ts tests/workshop.test.ts tests/ruins.test.ts tests/opening-content.test.ts tests/content-staging.test.ts tests/quests.test.ts tests/life-paths.test.ts tests/life-story.test.ts tests/path-combat.test.ts tests/arrival-flags.test.ts tests/echo.test.ts tests/guardian.test.ts
+2026-11-08T01:27:42.0474014Z
+2026-11-08T01:27:42.3128137Z
+2026-11-08T01:27:42.3131018Z [1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90m/home/runner/work/alltest/alltest/GODSEED[39m
+2026-11-08T01:27:42.3131693Z
+2026-11-08T01:27:43.1268221Z  [32m✓[39m tests/art.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 398[2mms[22m[39m
+2026-11-08T01:27:43.2400511Z  [32m✓[39m tests/life-story.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 334[2mms[22m[39m
+2026-11-08T01:27:43.3649750Z  [32m✓[39m tests/combat.test.ts [2m([22m[2m24 tests[22m[2m)[22m[33m 482[2mms[22m[39m
+2026-11-08T01:27:43.3651778Z      [33m[2m✓[22m[39m all 234 recipes craft with supplied later ingredients and resolve finite playable turns [33m 345[2mms[22m[39m
+2026-11-08T01:27:43.8304044Z  [32m✓[39m tests/opening-content.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 236[2mms[22m[39m
+2026-11-08T01:27:43.8740462Z  [32m✓[39m tests/ruins.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 424[2mms[22m[39m
+2026-11-08T01:27:44.1324832Z  [32m✓[39m tests/echo.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 362[2mms[22m[39m
+2026-11-08T01:27:44.2437946Z  [32m✓[39m tests/path-combat.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 96[2mms[22m[39m
+2026-11-08T01:27:44.3393438Z  [32m✓[39m tests/exploration.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 99[2mms[22m[39m
+2026-11-08T01:27:44.6540511Z  [32m✓[39m tests/scene-definitions.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+2026-11-08T01:27:44.8540659Z  [32m✓[39m tests/workshop.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 175[2mms[22m[39m
+2026-11-08T01:27:44.9743009Z  [32m✓[39m tests/life-paths.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+2026-11-08T01:27:45.2400426Z  [32m✓[39m tests/unit.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 91[2mms[22m[39m
+2026-11-08T01:27:45.3996795Z  [32m✓[39m tests/save.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 76[2mms[22m[39m
+2026-11-08T01:27:45.7409404Z  [32m✓[39m tests/guardian.test.ts [2m([22m[2m13 tests[22m[2m)[22m[33m 1247[2mms[22m[39m
+2026-11-08T01:27:45.7412190Z    [33m[2m✓[22m[39m a fresh earned loadout wins all three phases in both modes across 24 seeds [33m 870[2mms[22m[39m
+2026-11-08T01:27:45.7940231Z  [32m✓[39m tests/quests.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+2026-11-08T01:27:45.8117013Z  [32m✓[39m tests/art-loading.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 392[2mms[22m[39m
+2026-11-08T01:27:45.8141263Z      [33m[2m✓[22m[39m uses unique local static files with valid frames and a complete fallback per stage [33m 382[2mms[22m[39m
+2026-11-08T01:27:46.1047353Z  [32m✓[39m tests/garden.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+2026-11-08T01:27:46.1740491Z  [32m✓[39m tests/arrival-flags.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 40[2mms[22m[39m
+2026-11-08T01:27:46.2872397Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mBT_TRAINING: story-crafted WIND with GUARD fallback
+2026-11-08T01:27:46.2896617Z [22m[39mBALANCE_AUDIT {"encounter":"BT_TRAINING","strategy":"story-wind","seeds":100,"victories":100,"maxTurns":2,"minEndingHp":95}
+2026-11-08T01:27:46.2902305Z
+2026-11-08T01:27:46.4696688Z  [32m✓[39m tests/alchemy.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 31[2mms[22m[39m
+2026-11-08T01:27:46.4911936Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mBT_TRAINING: story-crafted support-only BLOOM with BASIC_PULSE
+2026-11-08T01:27:46.4938273Z [22m[39mBALANCE_AUDIT {"encounter":"BT_TRAINING","strategy":"story-support-pulse","seeds":100,"victories":100,"maxTurns":9,"minEndingHp":60}
+2026-11-08T01:27:46.4940149Z
+2026-11-08T01:27:46.6612216Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mBT_TRAINING: explicit zero-MP fixture with WIND and GUARD fallback
+2026-11-08T01:27:46.6630295Z [22m[39mBALANCE_AUDIT {"encounter":"BT_TRAINING","strategy":"zero-mp-fixture","seeds":100,"victories":100,"maxTurns":6,"minEndingHp":83}
+2026-11-08T01:27:46.6638791Z
+2026-11-08T01:27:46.6669783Z  [32m✓[39m tests/content-staging.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 261[2mms[22m[39m
+2026-11-08T01:27:46.8114262Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mB01_FOREST_SPROUT: story-crafted WIND with GUARD fallback
+2026-11-08T01:27:46.8130763Z [22m[39mBALANCE_AUDIT {"encounter":"B01_FOREST_SPROUT","strategy":"story-wind","seeds":100,"victories":100,"maxTurns":3,"minEndingHp":93}
+2026-11-08T01:27:46.8148975Z
+2026-11-08T01:27:46.8184229Z  [32m✓[39m tests/gathering.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+2026-11-08T01:27:46.8940629Z  [32m✓[39m tests/cinematics.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+2026-11-08T01:27:47.0575587Z  [32m✓[39m tests/camera.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 39[2mms[22m[39m
+2026-11-08T01:27:47.0597488Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mB01_FOREST_SPROUT: story-crafted support-only BLOOM with BASIC_PULSE
+2026-11-08T01:27:47.0600690Z [22m[39mBALANCE_AUDIT {"encounter":"B01_FOREST_SPROUT","strategy":"story-support-pulse","seeds":100,"victories":100,"maxTurns":14,"minEndingHp":51}
+2026-11-08T01:27:47.0602513Z
+2026-11-08T01:27:47.0867931Z  [32m✓[39m tests/directional.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+2026-11-08T01:27:47.1645477Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mB01_FOREST_SPROUT: explicit zero-MP fixture with WIND and GUARD fallback
+2026-11-08T01:27:47.1647913Z [22m[39mBALANCE_AUDIT {"encounter":"B01_FOREST_SPROUT","strategy":"zero-mp-fixture","seeds":100,"victories":100,"maxTurns":8,"minEndingHp":78}
+2026-11-08T01:27:47.1649871Z
+2026-11-08T01:27:47.2321168Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mB02_STREAM_WISP: story-crafted WIND with GUARD fallback
+2026-11-08T01:27:47.2323587Z [22m[39mBALANCE_AUDIT {"encounter":"B02_STREAM_WISP","strategy":"story-wind","seeds":100,"victories":100,"maxTurns":3,"minEndingHp":84}
+2026-11-08T01:27:47.2324464Z
+2026-11-08T01:27:47.3855769Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mB02_STREAM_WISP: story-crafted support-only BLOOM with BASIC_PULSE
+2026-11-08T01:27:47.3859141Z [22m[39mBALANCE_AUDIT {"encounter":"B02_STREAM_WISP","strategy":"story-support-pulse","seeds":100,"victories":100,"maxTurns":13,"minEndingHp":28}
+2026-11-08T01:27:47.3860472Z
+2026-11-08T01:27:47.4614248Z [90mstdout[2m | tests/balance.test.ts[2m > [22m[2m100-seed playable-route balance regression[2m > [22m[2mB02_STREAM_WISP: explicit zero-MP fixture with WIND and GUARD fallback
+2026-11-08T01:27:47.4620582Z [22m[39mBALANCE_AUDIT {"encounter":"B02_STREAM_WISP","strategy":"zero-mp-fixture","seeds":100,"victories":100,"maxTurns":8,"minEndingHp":59}
+2026-11-08T01:27:47.4621206Z
+2026-11-08T01:27:47.4732961Z  [32m✓[39m tests/balance.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 1385[2mms[22m[39m
+2026-11-08T01:27:47.4751204Z
+2026-11-08T01:27:47.4757370Z [2m Test Files [22m [1m[32m25 passed[39m[22m[90m (25)[39m
+2026-11-08T01:27:47.4758698Z [2m      Tests [22m [1m[32m257 passed[39m[22m[90m (257)[39m
+2026-11-08T01:27:47.4759745Z [2m   Start at [22m 01:27:42
+2026-11-08T01:27:47.4761603Z [2m   Duration [22m 5.14s[2m (transform 875ms, setup 0ms, import 3.77s, tests 6.39s, environment 4ms)[22m
+2026-11-08T01:27:47.4763813Z
+2026-11-08T01:27:47.6123652Z
+2026-11-08T01:27:47.6124186Z > godseed@0.13.0 build
+2026-11-08T01:27:47.6124550Z > tsc --noEmit && vite build
+2026-11-08T01:27:47.6124748Z
+2026-11-08T01:27:51.0607703Z [36mvite v7.3.7 [32mbuilding client environment for production...[36m[39m
+2026-11-08T01:27:51.1318811Z transforming...
+2026-11-08T01:27:54.5858140Z [32m✓[39m 122 modules transformed.
+2026-11-08T01:27:55.3861693Z rendering chunks...
+2026-11-08T01:27:55.4059963Z computing gzip size...
+2026-11-08T01:27:55.4546604Z [2mdist/[22m[32mindex.html                 [39m[1m[2m    0.60 kB[22m[1m[22m[2m │ gzip:   0.43 kB[22m
+2026-11-08T01:27:55.4548233Z [2mdist/[22m[2massets/[22m[35mindex-DiG9Wzs9.css  [39m[1m[2m    8.38 kB[22m[1m[22m[2m │ gzip:   2.67 kB[22m
+2026-11-08T01:27:55.4550132Z [2mdist/[22m[2massets/[22m[36mindex-DWr4o--C.js   [39m[1m[2m1,755.67 kB[22m[1m[22m[2m │ gzip: 465.68 kB[22m
+2026-11-08T01:27:55.4551108Z [32m✓ built in 4.36s[39m
+2026-11-08T01:27:55.5462092Z ##[group]Run node scripts/stage-site.mjs
+2026-11-08T01:27:55.5462453Z [36;1mnode scripts/stage-site.mjs[0m
+2026-11-08T01:27:55.5482376Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:27:55.5482639Z ##[endgroup]
+2026-11-08T01:27:55.6896872Z Staged GODSEED for main:/ Pages; retained previous GODSEED hashes in artifact
+2026-11-08T01:27:55.6982219Z ##[group]Run npm run validate:references
+2026-11-08T01:27:55.6982581Z [36;1mnpm run validate:references[0m
+2026-11-08T01:27:55.7002337Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:27:55.7002601Z ##[endgroup]
+2026-11-08T01:27:55.8022142Z
+2026-11-08T01:27:55.8022731Z > godseed@0.13.0 validate:references
+2026-11-08T01:27:55.8023180Z > node scripts/validate-references.mjs
+2026-11-08T01:27:55.8023410Z
+2026-11-08T01:27:55.8723713Z {"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}
+2026-11-08T01:27:55.8879775Z ##[group]Run sudo apt-get update -o Acquire::Retries=2 -o Acquire::http::Timeout=30
+2026-11-08T01:27:55.8880467Z [36;1msudo apt-get update -o Acquire::Retries=2 -o Acquire::http::Timeout=30[0m
+2026-11-08T01:27:55.8881022Z [36;1msudo apt-get install -y --no-install-recommends fonts-tlwg-loma-otf[0m
+2026-11-08T01:27:55.8901521Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:27:55.8901785Z ##[endgroup]
+2026-11-08T01:27:55.9727325Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-08T01:27:56.0090210Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-11-08T01:27:56.0104001Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-11-08T01:27:56.0117095Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-11-08T01:27:56.0176466Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-11-08T01:27:56.0194810Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-11-08T01:27:56.1643503Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [675 kB]
+2026-11-08T01:27:56.1860521Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [743 kB]
+2026-11-08T01:27:56.2280372Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1425 kB]
+2026-11-08T01:27:56.2342673Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [313 kB]
+2026-11-08T01:27:56.2369621Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1711 kB]
+2026-11-08T01:27:56.2444636Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [344 kB]
+2026-11-08T01:27:56.2474101Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1840 kB]
+2026-11-08T01:27:56.2598900Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [420 kB]
+2026-11-08T01:27:56.2629674Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [50.7 kB]
+2026-11-08T01:27:56.2631588Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-11-08T01:27:56.3410893Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1157 kB]
+2026-11-08T01:27:56.3467992Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [234 kB]
+2026-11-08T01:27:56.3954190Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1228 kB]
+2026-11-08T01:27:56.4017335Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [248 kB]
+2026-11-08T01:27:56.4037971Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1721 kB]
+2026-11-08T01:27:56.4130026Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [394 kB]
+2026-11-08T01:27:56.4149080Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [45.4 kB]
+2026-11-08T01:27:56.4162466Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.4 kB]
+2026-11-08T01:27:59.7035030Z Fetched 13.0 MB in 1s (9755 kB/s)
+2026-11-08T01:28:00.8563649Z Reading package lists...
+2026-11-08T01:28:00.8957071Z Reading package lists...
+2026-11-08T01:28:01.1245399Z Building dependency tree...
+2026-11-08T01:28:01.1253197Z Reading state information...
+2026-11-08T01:28:01.2690582Z Recommended packages:
+2026-11-08T01:28:01.2690970Z   fonts-tlwg-loma
+2026-11-08T01:28:01.2872574Z The following NEW packages will be installed:
+2026-11-08T01:28:01.2879400Z   fonts-tlwg-loma-otf
+2026-11-08T01:28:01.3078697Z 0 upgraded, 1 newly installed, 0 to remove and 27 not upgraded.
+2026-11-08T01:28:01.3079416Z Need to get 107 kB of archives.
+2026-11-08T01:28:01.3080194Z After this operation, 230 kB of additional disk space will be used.
+2026-11-08T01:28:01.3081045Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-08T01:28:01.3532089Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-11-08T01:28:01.6199845Z Fetched 107 kB in 0s (1808 kB/s)
+2026-11-08T01:28:01.6433591Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-11-08T01:28:01.6713244Z (Reading database ...
+2026-11-08T01:28:01.6713986Z (Reading database ... 5%
+2026-11-08T01:28:01.6714266Z (Reading database ... 10%
+2026-11-08T01:28:01.6714535Z (Reading database ... 15%
+2026-11-08T01:28:01.6714889Z (Reading database ... 20%
+2026-11-08T01:28:01.6715337Z (Reading database ... 25%
+2026-11-08T01:28:01.6715780Z (Reading database ... 30%
+2026-11-08T01:28:01.6716228Z (Reading database ... 35%
+2026-11-08T01:28:01.6716669Z (Reading database ... 40%
+2026-11-08T01:28:01.6717111Z (Reading database ... 45%
+2026-11-08T01:28:01.6717546Z (Reading database ... 50%
+2026-11-08T01:28:01.6770643Z (Reading database ... 55%
+2026-11-08T01:28:01.7655115Z (Reading database ... 60%
+2026-11-08T01:28:01.9205328Z (Reading database ... 65%
+2026-11-08T01:28:02.1661524Z (Reading database ... 70%
+2026-11-08T01:28:02.3205252Z (Reading database ... 75%
+2026-11-08T01:28:02.4046239Z (Reading database ... 80%
+2026-11-08T01:28:02.5623386Z (Reading database ... 85%
+2026-11-08T01:28:02.6644240Z (Reading database ... 90%
+2026-11-08T01:28:02.7800160Z (Reading database ... 95%
+2026-11-08T01:28:02.7800604Z (Reading database ... 100%
+2026-11-08T01:28:02.7801189Z (Reading database ... 215960 files and directories currently installed.)
+2026-11-08T01:28:02.7844032Z Preparing to unpack .../fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-11-08T01:28:02.7871635Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-11-08T01:28:02.8312590Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-11-08T01:28:02.8338207Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-11-08T01:28:03.5308155Z
+2026-11-08T01:28:03.5309010Z Running kernel seems to be up-to-date.
+2026-11-08T01:28:03.5309294Z
+2026-11-08T01:28:03.5309489Z No services need to be restarted.
+2026-11-08T01:28:03.5309700Z
+2026-11-08T01:28:03.5309860Z No containers need to be restarted.
+2026-11-08T01:28:03.5310064Z
+2026-11-08T01:28:03.5310256Z No user sessions are running outdated binaries.
+2026-11-08T01:28:03.5310504Z
+2026-11-08T01:28:03.5310832Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-11-08T01:28:04.5343748Z ##[group]Run npx playwright install chromium --only-shell
+2026-11-08T01:28:04.5344212Z [36;1mnpx playwright install chromium --only-shell[0m
+2026-11-08T01:28:04.5364137Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:28:04.5364396Z ##[endgroup]
+2026-11-08T01:28:05.3352360Z Downloading Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-headless-shell-linux64.zip
+2026-11-08T01:28:05.7887148Z |                                                                                |   0% of 120 MiB
+2026-11-08T01:28:06.1208926Z |■■■■■■■■                                                                        |  10% of 120 MiB
+2026-11-08T01:28:06.1968637Z |■■■■■■■■■■■■■■■■                                                                |  20% of 120 MiB
+2026-11-08T01:28:06.2594723Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 120 MiB
+2026-11-08T01:28:06.3387888Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 120 MiB
+2026-11-08T01:28:06.3788215Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 120 MiB
+2026-11-08T01:28:06.4196183Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 120 MiB
+2026-11-08T01:28:06.4780320Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 120 MiB
+2026-11-08T01:28:06.5191299Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 120 MiB
+2026-11-08T01:28:06.5575801Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 120 MiB
+2026-11-08T01:28:06.6137773Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 120 MiB
+2026-11-08T01:28:08.9161049Z Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1248
+2026-11-08T01:28:08.9166809Z Downloading FFmpeg (playwright ffmpeg v1013) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1013/ffmpeg-linux.zip
+2026-11-08T01:28:09.3836964Z |                                                                                |   0% of 2.2 MiB
+2026-11-08T01:28:09.4309609Z |■■■■■■■■                                                                        |  10% of 2.2 MiB
+2026-11-08T01:28:09.4529444Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.2 MiB
+2026-11-08T01:28:09.4661752Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.2 MiB
+2026-11-08T01:28:09.4747278Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.2 MiB
+2026-11-08T01:28:09.4821402Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.2 MiB
+2026-11-08T01:28:09.4883192Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.2 MiB
+2026-11-08T01:28:09.4930341Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.2 MiB
+2026-11-08T01:28:09.4975059Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.2 MiB
+2026-11-08T01:28:09.5018602Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.2 MiB
+2026-11-08T01:28:09.5073287Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.2 MiB
+2026-11-08T01:28:09.5701227Z FFmpeg (playwright ffmpeg v1013) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1013
+2026-11-08T01:28:09.6071660Z ##[group]Run npm run test:e2e
+2026-11-08T01:28:09.6071968Z [36;1mnpm run test:e2e[0m
+2026-11-08T01:28:09.6092057Z shell: /usr/bin/bash -e {0}
+2026-11-08T01:28:09.6092309Z env:
+2026-11-08T01:28:09.6092501Z   CHROMIUM_PATH:
+2026-11-08T01:28:09.6092712Z ##[endgroup]
+2026-11-08T01:28:09.7122714Z
+2026-11-08T01:28:09.7123283Z > godseed@0.13.0 test:e2e
+2026-11-08T01:28:09.7123820Z > playwright test
+2026-11-08T01:28:09.7124081Z
+2026-11-08T01:28:12.1150888Z
+2026-11-08T01:28:12.1151544Z Running 158 tests using 1 worker
+2026-11-08T01:45:02.9187289Z ················································································
+2026-11-08T01:56:57.6555715Z ··············································································
+2026-11-08T01:56:57.6562303Z   158 passed (28.8m)
+2026-11-08T01:56:57.6931250Z ##[group]Run actions/upload-artifact@v4
+2026-11-08T01:56:57.6931569Z with:
+2026-11-08T01:56:57.6931793Z   name: godseed-browser-evidence
+2026-11-08T01:56:57.6932063Z   path: GODSEED/test-results
+2026-11-08T01:56:57.6932323Z   if-no-files-found: warn
+2026-11-08T01:56:57.6932558Z   compression-level: 6
+2026-11-08T01:56:57.6932779Z   overwrite: false
+2026-11-08T01:56:57.6933058Z   include-hidden-files: false
+2026-11-08T01:56:57.6933302Z ##[endgroup]
+2026-11-08T01:56:57.8734036Z (node:5849) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-08T01:56:57.8735454Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-08T01:56:57.9492247Z With the provided path, there will be 246 files uploaded
+2026-11-08T01:56:57.9493549Z Artifact name is valid!
+2026-11-08T01:56:57.9494215Z Root directory input is valid!
+2026-11-08T01:56:58.1963102Z Beginning upload of artifact content to blob storage
+2026-11-08T01:56:58.5449146Z (node:5849) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-08T01:56:58.9910644Z Uploaded bytes 8388608
+2026-11-08T01:56:59.2684747Z Uploaded bytes 16777216
+2026-11-08T01:56:59.2819795Z Uploaded bytes 25165824
+2026-11-08T01:56:59.5667439Z Uploaded bytes 32385062
+2026-11-08T01:56:59.6071422Z Finished uploading artifact content to blob storage!
+2026-11-08T01:56:59.6072877Z SHA256 digest of uploaded artifact zip is f0570968baab8d13a9e8393b01c64cf7c38208bfa0bbf0aa70ec811b9a518fba
+2026-11-08T01:56:59.6074348Z Finalizing artifact upload
+2026-11-08T01:57:00.0053162Z Artifact godseed-browser-evidence.zip successfully finalized. Artifact ID 13600035861
+2026-11-08T01:57:00.0054987Z Artifact godseed-browser-evidence has been successfully uploaded! Final size is 32385062 bytes. Artifact ID is 13600035861
+2026-11-08T01:57:00.0062226Z Artifact download URL: https://github.com/Ninon0406/alltest/actions/runs/42434254047/artifacts/13600035861
+2026-11-08T01:57:00.0327355Z ##[group]Run actions/upload-pages-artifact@v3
+2026-11-08T01:57:00.0327697Z with:
+2026-11-08T01:57:00.0327900Z   path: GODSEED/dist
+2026-11-08T01:57:00.0328118Z   name: github-pages
+2026-11-08T01:57:00.0328746Z   retention-days: 1
+2026-11-08T01:57:00.0329127Z ##[endgroup]
+2026-11-08T01:57:00.0387918Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run]
+2026-11-08T01:57:00.0414859Z ##[group]Run echo ::group::Archive artifact
+2026-11-08T01:57:00.0415199Z [36;1mecho ::group::Archive artifact[0m
+2026-11-08T01:57:00.0415470Z [36;1mtar \[0m
+2026-11-08T01:57:00.0415708Z [36;1m  --dereference --hard-dereference \[0m
+2026-11-08T01:57:00.0416022Z [36;1m  --directory "$INPUT_PATH" \[0m
+2026-11-08T01:57:00.0416328Z [36;1m  -cvf "$RUNNER_TEMP/artifact.tar" \[0m
+2026-11-08T01:57:00.0416626Z [36;1m  --exclude=.git \[0m
+2026-11-08T01:57:00.0416880Z [36;1m  --exclude=.github \[0m
+2026-11-08T01:57:00.0417126Z [36;1m  .[0m
+2026-11-08T01:57:00.0417359Z [36;1mecho ::endgroup::[0m
+2026-11-08T01:57:00.0535144Z shell: /usr/bin/sh -e {0}
+2026-11-08T01:57:00.0535399Z env:
+2026-11-08T01:57:00.0535629Z   INPUT_PATH: GODSEED/dist
+2026-11-08T01:57:00.0535882Z ##[endgroup]
+2026-11-08T01:57:00.0593708Z ##[group]Archive artifact
+2026-11-08T01:57:00.0607522Z ./
+2026-11-08T01:57:00.0607869Z ./assets/
+2026-11-08T01:57:00.0608205Z ./assets/art-v4/
+2026-11-08T01:57:00.0609241Z ./assets/art-v4/hero-walk.png
+2026-11-08T01:57:00.0609747Z ./assets/index-BFhFxry3.css
+2026-11-08T01:57:00.0610214Z ./assets/index-C-j8N8xK.css
+2026-11-08T01:57:00.0610665Z ./assets/index-vaSgvZ5Q.js
+2026-11-08T01:57:00.0623066Z ./assets/index-DlmaLo85.js
+2026-11-08T01:57:00.0637338Z ./assets/index-DHiEtXqz.js
+2026-11-08T01:57:00.0650619Z ./assets/pip.png
+2026-11-08T01:57:00.0651059Z ./assets/index-DiG9Wzs9.css
+2026-11-08T01:57:00.0651529Z ./assets/index-DIovloRG.js
+2026-11-08T01:57:00.0664815Z ./assets/index-BwRmZie-.js
+2026-11-08T01:57:00.0676990Z ./assets/art-v9/
+2026-11-08T01:57:00.0677490Z ./assets/art-v9/garden-ground.png
+2026-11-08T01:57:00.0678048Z ./assets/art-v9/garden-front.png
+2026-11-08T01:57:00.0678769Z ./assets/art-v9/garden-arch.png
+2026-11-08T01:57:00.0679288Z ./assets/art-v9/garden-herbs.png
+2026-11-08T01:57:00.0679833Z ./assets/art-v9/garden-cauldron.png
+2026-11-08T01:57:00.0680385Z ./assets/art-v9/garden-rear.png
+2026-11-08T01:57:00.0680829Z ./assets/art-v12/
+2026-11-08T01:57:00.0681298Z ./assets/art-v12/ruins-ground.png
+2026-11-08T01:57:00.0681817Z ./assets/art-v12/ruins-rear.png
+2026-11-08T01:57:00.0682343Z ./assets/art-v12/ruins-fallback.png
+2026-11-08T01:57:00.0682887Z ./assets/art-v12/hero-ruins.png
+2026-11-08T01:57:00.0683393Z ./assets/art-v12/ruins-front.png
+2026-11-08T01:57:00.0683880Z ./assets/art-v12/sentinel.png
+2026-11-08T01:57:00.0684354Z ./assets/art-v12/pillar.png
+2026-11-08T01:57:00.0684813Z ./assets/art-v12/altar.png
+2026-11-08T01:57:00.0685256Z ./assets/index-DVTGai1s.js
+2026-11-08T01:57:00.0695402Z ./assets/art-v15/
+2026-11-08T01:57:00.0695877Z ./assets/art-v15/glade-front.png
+2026-11-08T01:57:00.0696418Z ./assets/art-v15/resonator.png
+2026-11-08T01:57:00.0696957Z ./assets/art-v15/glade-ground.png
+2026-11-08T01:57:00.0697495Z ./assets/art-v15/glade-rear.png
+2026-11-08T01:57:00.0698029Z ./assets/art-v15/stream-branch.png
+2026-11-08T01:57:00.0698816Z ./assets/art-v15/echo-knot.png
+2026-11-08T01:57:00.0699340Z ./assets/art-v15/glade-fallback.png
+2026-11-08T01:57:00.0699841Z ./assets/art-v15/post.png
+2026-11-08T01:57:00.0700289Z ./assets/index-CUDcoUwD.js
+2026-11-08T01:57:00.0712290Z ./assets/index-CSJDq0ZS.js
+2026-11-08T01:57:00.0725573Z ./assets/index-Jt7f5FbB.js
+2026-11-08T01:57:00.0738205Z ./assets/art-v14/
+2026-11-08T01:57:00.0738930Z ./assets/art-v14/life-icons.png
+2026-11-08T01:57:00.0739411Z ./assets/index-A1R1SRl4.js
+2026-11-08T01:57:00.0752845Z ./assets/index-CoaNX5A0.css
+2026-11-08T01:57:00.0753307Z ./assets/art-v16/
+2026-11-08T01:57:00.0753712Z ./assets/art-v16/guardian.png
+2026-11-08T01:57:00.0754152Z ./assets/art-v13/
+2026-11-08T01:57:00.0755074Z ./assets/art-v13/festival-props.png
+2026-11-08T01:57:00.0755601Z ./assets/index-BeUhtEyo.js
+2026-11-08T01:57:00.0767016Z ./assets/index-osd17Zi7.js
+2026-11-08T01:57:00.0780192Z ./assets/index-BRimgxpk.js
+2026-11-08T01:57:00.0793232Z ./assets/index-BIx_1hTc.js
+2026-11-08T01:57:00.0805547Z ./assets/index-ZYLEHKBZ.js
+2026-11-08T01:57:00.0820293Z ./assets/index-T1awm2xE.css
+2026-11-08T01:57:00.0820802Z ./assets/index-DioOt-Lj.js
+2026-11-08T01:57:00.0833186Z ./assets/art-v5/
+2026-11-08T01:57:00.0833689Z ./assets/art-v5/tree-front.png
+2026-11-08T01:57:00.0834210Z ./assets/art-v5/hero-idle.png
+2026-11-08T01:57:00.0834753Z ./assets/art-v5/village-rear.png
+2026-11-08T01:57:00.0835319Z ./assets/art-v5/village-ground.png
+2026-11-08T01:57:00.0835844Z ./assets/art-v5/leaves.png
+2026-11-08T01:57:00.0836364Z ./assets/art-v5/village-front.png
+2026-11-08T01:57:00.0836917Z ./assets/art-v5/tree-ground.png
+2026-11-08T01:57:00.0837429Z ./assets/art-v5/fountain.png
+2026-11-08T01:57:00.0837965Z ./assets/art-v5/ancient-tree.png
+2026-11-08T01:57:00.0838719Z ./assets/art-v5/tree-rear.png
+2026-11-08T01:57:00.0839197Z ./assets/index-CgyteXXu.js
+2026-11-08T01:57:00.0850206Z ./assets/index-DQH0QCuG.js
+2026-11-08T01:57:00.0864433Z ./assets/koro.png
+2026-11-08T01:57:00.0864882Z ./assets/index-D-DPVJ5Z.js
+2026-11-08T01:57:00.0877971Z ./assets/index-BFq8CXg8.css
+2026-11-08T01:57:00.0878691Z ./assets/index-BSoc9yrA.js
+2026-11-08T01:57:00.0891135Z ./assets/index-DMKH3K_W.css
+2026-11-08T01:57:00.0891641Z ./assets/index-DWr4o--C.js
+2026-11-08T01:57:00.0905818Z ./assets/index-d2GkPOWY.js
+2026-11-08T01:57:00.0919978Z ./assets/art-v10/
+2026-11-08T01:57:00.0920416Z ./assets/art-v10/koro.png
+2026-11-08T01:57:00.0920887Z ./assets/art-v10/anvil.png
+2026-11-08T01:57:00.0921364Z ./assets/index-Bhwu1tNt.js
+2026-11-08T01:57:00.0935207Z ./assets/workshop.png
+2026-11-08T01:57:00.0935690Z ./assets/index-CpNqzcjO.js
+2026-11-08T01:57:00.0948265Z ./assets/sky.png
+2026-11-08T01:57:00.0948714Z ./assets/index--jS-uu9s.js
+2026-11-08T01:57:00.0961638Z ./assets/index-5zSTAV7n.js
+2026-11-08T01:57:00.0974432Z ./assets/forest.png
+2026-11-08T01:57:00.0974892Z ./assets/godseed-mark.svg
+2026-11-08T01:57:00.0975328Z ./assets/art-v8/
+2026-11-08T01:57:00.0975742Z ./assets/art-v8/maren.png
+2026-11-08T01:57:00.0976175Z ./assets/art-v2/
+2026-11-08T01:57:00.0976656Z ./assets/art-v2/garden-ground.png
+2026-11-08T01:57:00.0977133Z ./assets/art-v2/village-rear.png
+2026-11-08T01:57:00.0977516Z ./assets/art-v2/garden-front.png
+2026-11-08T01:57:00.0979182Z ./assets/art-v2/props.png
+2026-11-08T01:57:00.0999169Z ./assets/art-v2/village-ground.png
+2026-11-08T01:57:00.0999810Z ./assets/art-v2/forest-rear.png
+2026-11-08T01:57:00.1000381Z ./assets/art-v2/village-front.png
+2026-11-08T01:57:00.1000947Z ./assets/art-v2/forest-ground.png
+2026-11-08T01:57:00.1001509Z ./assets/art-v2/forest-front.png
+2026-11-08T01:57:00.1002069Z ./assets/art-v2/workshop-ground.png
+2026-11-08T01:57:00.1002643Z ./assets/art-v2/workshop-rear.png
+2026-11-08T01:57:00.1003086Z ./assets/art-v2/ambient.png
+2026-11-08T01:57:00.1003447Z ./assets/art-v2/garden-rear.png
+2026-11-08T01:57:00.1003830Z ./assets/art-v2/player.png
+2026-11-08T01:57:00.1004147Z ./assets/art-v2/training.png
+2026-11-08T01:57:00.1004503Z ./assets/art-v2/workshop-front.png
+2026-11-08T01:57:00.1004817Z ./assets/art-v3/
+2026-11-08T01:57:00.1005118Z ./assets/art-v3/stream-mist.png
+2026-11-08T01:57:00.1005484Z ./assets/art-v3/stream-fallback.png
+2026-11-08T01:57:00.1005871Z ./assets/art-v3/archive-fallback.png
+2026-11-08T01:57:00.1006255Z ./assets/art-v3/stream-ground.png
+2026-11-08T01:57:00.1006584Z ./assets/art-v3/wisp.png
+2026-11-08T01:57:00.1006924Z ./assets/art-v3/archive-ground.png
+2026-11-08T01:57:00.1007303Z ./assets/art-v3/archive-front.png
+2026-11-08T01:57:00.1007659Z ./assets/art-v3/stream-rear.png
+2026-11-08T01:57:00.1007975Z ./assets/art-v3/eira.png
+2026-11-08T01:57:00.1008519Z ./assets/art-v3/archive-rear.png
+2026-11-08T01:57:00.1009086Z ./assets/art-v3/stream-front.png
+2026-11-08T01:57:00.1009558Z ./assets/art-v3/water.png
+2026-11-08T01:57:00.1010154Z ./assets/index-C0lU7g36.js
+2026-11-08T01:57:00.1010445Z ./assets/index-DYTC4tUw.css
+2026-11-08T01:57:00.1010707Z ./assets/maren.png
+2026-11-08T01:57:00.1010919Z ./assets/art-v6/
+2026-11-08T01:57:00.1011160Z ./assets/art-v6/gathering.png
+2026-11-08T01:57:00.1011444Z ./assets/index-SJv8uLs-.js
+2026-11-08T01:57:00.1011709Z ./assets/index-s30ybsLm.js
+2026-11-08T01:57:00.1021305Z ./assets/player.png
+2026-11-08T01:57:00.1021755Z ./assets/garden.png
+2026-11-08T01:57:00.1022168Z ./assets/index-B29ijMtb.js
+2026-11-08T01:57:00.1034258Z ./assets/index-Ddvo_RaA.js
+2026-11-08T01:57:00.1047092Z ./assets/index-hv1pG7Dh.js
+2026-11-08T01:57:00.1061234Z ./assets/village.png
+2026-11-08T01:57:00.1061692Z ./assets/index-CElof2kH.js
+2026-11-08T01:57:00.1075189Z ./assets/index-CoJoGZzC.css
+2026-11-08T01:57:00.1075685Z ./assets/index-DY5Y4SiF.js
+2026-11-08T01:57:00.1089618Z ./assets/index-DAxBjbLY.js
+2026-11-08T01:57:00.1102308Z ./assets/index-DlhkVw6p.js
+2026-11-08T01:57:00.1115701Z ./assets/lumi.png
+2026-11-08T01:57:00.1116179Z ./assets/index-CQ6ewXtE.css
+2026-11-08T01:57:00.1116627Z ./assets/art-v7/
+2026-11-08T01:57:00.1117097Z ./assets/art-v7/hero-water.png
+2026-11-08T01:57:00.1117638Z ./assets/art-v7/garden-bed.png
+2026-11-08T01:57:00.1118113Z ./assets/sprout.png
+2026-11-08T01:57:00.1118714Z ./assets/art-v11/
+2026-11-08T01:57:00.1119149Z ./assets/art-v11/cauldron.png
+2026-11-08T01:57:00.1119673Z ./assets/art-v11/hero-brew.png
+2026-11-08T01:57:00.1120512Z ./assets/art-v11/workshop-ground.png
+2026-11-08T01:57:00.1121126Z ./assets/art-v11/workshop-rear.png
+2026-11-08T01:57:00.1121698Z ./assets/art-v11/ingredients.png
+2026-11-08T01:57:00.1139850Z ./assets/art-v11/toolbox.png
+2026-11-08T01:57:00.1140432Z ./assets/art-v11/hero-toolbox.png
+2026-11-08T01:57:00.1141004Z ./assets/art-v11/workshop-front.png
+2026-11-08T01:57:00.1141460Z ./index.html
+2026-11-08T01:57:00.1142148Z ##[endgroup]
+2026-11-08T01:57:00.1154083Z ##[end-action id=__actions_upload-pages-artifact.__run;outcome=success;conclusion=success;duration_ms=76]
+2026-11-08T01:57:00.1158055Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_2]
+2026-11-08T01:57:00.1165272Z ##[end-action id=__actions_upload-pages-artifact.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-08T01:57:00.1168602Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_3]
+2026-11-08T01:57:00.1172819Z ##[end-action id=__actions_upload-pages-artifact.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-11-08T01:57:00.1174780Z ##[start-action display=Upload artifact;id=__actions_upload-pages-artifact.upload-artifact]
+2026-11-08T01:57:00.1229033Z ##[group]Run actions/upload-artifact@v4
+2026-11-08T01:57:00.1229316Z with:
+2026-11-08T01:57:00.1229511Z   name: github-pages
+2026-11-08T01:57:00.1229758Z   path: /home/runner/work/_temp/artifact.tar
+2026-11-08T01:57:00.1230045Z   retention-days: 1
+2026-11-08T01:57:00.1230259Z   if-no-files-found: error
+2026-11-08T01:57:00.1230493Z   compression-level: 6
+2026-11-08T01:57:00.1230713Z   overwrite: false
+2026-11-08T01:57:00.1230933Z   include-hidden-files: false
+2026-11-08T01:57:00.1231169Z ##[endgroup]
+2026-11-08T01:57:00.2957039Z (node:5864) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-08T01:57:00.2958009Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-08T01:57:00.3006915Z With the provided path, there will be 1 file uploaded
+2026-11-08T01:57:00.3013478Z Artifact name is valid!
+2026-11-08T01:57:00.3014544Z Root directory input is valid!
+2026-11-08T01:57:00.5783167Z Beginning upload of artifact content to blob storage
+2026-11-08T01:57:01.3668740Z (node:5864) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-08T01:57:01.8413859Z Uploaded bytes 8388608
+2026-11-08T01:57:02.2808121Z Uploaded bytes 16180382
+2026-11-08T01:57:02.3459847Z Finished uploading artifact content to blob storage!
+2026-11-08T01:57:02.3461362Z SHA256 digest of uploaded artifact zip is 19c24e75f1260c43324a32f91a98270c66652ee3a1c69dab50e925d90b8f836f
+2026-11-08T01:57:02.3462795Z Finalizing artifact upload
+2026-11-08T01:57:02.7566748Z Artifact github-pages.zip successfully finalized. Artifact ID 13600140266
+2026-11-08T01:57:02.7568645Z Artifact github-pages has been successfully uploaded! Final size is 16180382 bytes. Artifact ID is 13600140266
+2026-11-08T01:57:02.7574841Z Artifact download URL: https://github.com/Ninon0406/alltest/actions/runs/42434254047/artifacts/13600140266
+2026-11-08T01:57:02.7741766Z ##[end-action id=__actions_upload-pages-artifact.upload-artifact;outcome=success;conclusion=success;duration_ms=2656]
+2026-11-08T01:57:02.7835489Z Post job cleanup.
+2026-11-08T01:57:02.9117470Z (node:5876) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-08T01:57:02.9119283Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-08T01:57:02.9367361Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/alltest/alltest --files-from manifest.txt --use-compress-program zstdmt
+2026-11-08T01:57:03.3675344Z (node:5876) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-08T01:57:04.3592741Z Sent 52535188 of 52535188 (100.0%), 50.1 MBs/sec
+2026-11-08T01:57:04.8454837Z Cache saved with the key: node-cache-Linux-x64-npm-16901333631679f9246b28d3ed8406a8de6704016221b27ede7503a27e68a8bb
+2026-11-08T01:57:04.8656602Z Post job cleanup.
+2026-11-08T01:57:04.9571327Z [command]/usr/bin/git version
+2026-11-08T01:57:04.9618259Z git version 2.56.0
+2026-11-08T01:57:04.9659054Z Temporarily overriding HOME='/home/runner/work/_temp/2b95dd09-21c8-4563-aca6-3205b5fc5d47' before making global git config changes
+2026-11-08T01:57:04.9660568Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-08T01:57:04.9665580Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/alltest/alltest
+2026-11-08T01:57:04.9706950Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-08T01:57:04.9747555Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-08T01:57:05.0016479Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-08T01:57:05.0044559Z http.https://github.com/.extraheader
+2026-11-08T01:57:05.0057646Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-08T01:57:05.0098680Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-08T01:57:05.0412155Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-08T01:57:05.0460139Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-08T01:57:05.0883622Z Cleaning up orphan processes
+2026-11-08T01:57:05.1399053Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

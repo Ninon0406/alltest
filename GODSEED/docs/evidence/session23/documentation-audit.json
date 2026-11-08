@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "kind": "documentation-only release receipt",
+  "date": "2026-11-08",
+  "verifiedGameSource": "c39bccc58802fb31461de0cf60dcc77be0db8e0e",
+  "verifiedPrHead": "fb91035f652162ce7e93cdb18aef61e0a5a69300",
+  "mergedCommit": "222db4e2a9981a26431a29458fe29c402c88a0b4",
+  "unchangedRuntimePaths": [
+    "GODSEED/src",
+    "GODSEED/public",
+    "GODSEED/package.json",
+    "GODSEED/package-lock.json",
+    "assets",
+    "index.html"
+  ],
+  "samePublicEntrySha256": "e771a8d6a40ede79bd7d40343a3fdb817160c58a216680091640199f81aa6c93",
+  "roadmapChecksPassed": 10,
+  "mainAutomaticRetest": "42436489386 still in_progress; not cancelled or claimed as PASS",
+  "note": "[skip ci] applies only to these documentation receipts after verified PR full158 and actual public release tests."
+}

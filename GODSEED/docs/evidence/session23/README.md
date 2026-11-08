@@ -1,3 +1,9 @@
+## Final release receipt — 0.13.0 / 2026-11-08
+
+PR24 merged222db4e after CI42434254047:158browserPASS28.8m/257unit/allsourcegates. Runtimec39 unchanged under final verificationfb. ActualPages0.13 and Legacydeploy42436489189PASS. Main42436489386stillin_progress, notclaimedPASS. `verification.json`, `pr-ci.json`/`pr-ci-build.txt`, `pr-merge.json`, `legacy-pages.json`, `main-ci.json` are the recorded receipts. The decoded job log has only trailing whitespace and its BOM normalized; test messages and timestamps are retained. `public-core.json`:78versionedPNG+JSexact/coreoldstory. `public-guardian.json`:6nativelegacyversions/3phases/3chapterroutes/normalphonecast/exactlocalstate/noStorageUploadReferenceConsoleErrors. `public-layouts.json`:10emulatedviewports, hardwareNOT_TESTED. AllpublicPNGs captured inactualbrowser; guardian/cast/community images opened for visualinspection. Earlier pending/candidateentries below are development history
+
+---
+
 # Session23 — ผู้เฝ้าที่เรียนรู้การปล่อยเพลง
 
 2026-11-08, base main734e21d, candidate0.13.0. New18nodes41choices →99/273, actual99node/273choicewitnesses (205withstatechange),6quests/5batches/6encounters/3chapterconclusions/0gameendings. No recreated project, deleted old IDs, changed234recipes or browser save.

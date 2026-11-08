@@ -1,3 +1,9 @@
+## 2026-11-08 — Session23 release verification
+
+เผยแพร่0.13เมื่อPR158/sourcegatesผ่านแล้ว และตรวจpublicUI/nativefiles/78PNG+JSexactซ้ำ. แยกgameSourcec39,verificationfb,merge222db4eและdocumentationreceipt ไม่เปลี่ยนruntimeหลังผ่านgate. Main42436489386ยังทำงานและต้องตรวจผลจริงในรอบถัดไป ไม่เรียกว่าPASSหรือยกเลิกเพียงเพื่อปิดรายงาน. Finalreceiptเป็นเอกสารล้วนจึงใช้[skip ci]กับreceiptcommitได้ เพื่อไม่เริ่มวงจรCIซ้ำจากการบันทึกผลของCIเอง;ไม่ใช้ข้ามการทดสอบapp. ขอบเขต1.0/ARC1/finalHDและhardwareคงเกณฑ์เดิม ไม่เพิ่มสถานะdoneจากบทสรุปย่อย
+
+---
+
 ## 2026-11-08 — Session23
 
 - ไม่ใช้รหัสS20/CH2001..3ซ้ำ:openingเดิมเผยแพร่แล้ว ประตูชั้นในเป็นG_SEAL_INNER/CHG_PASSAGE_*โดยคงsemanticsเก่า

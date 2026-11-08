@@ -1,8 +1,8 @@
-# 0.13.0 candidate — ผู้เฝ้าที่เรียนรู้การปล่อยเพลง
+# 0.13.0 — ผู้เฝ้าที่เรียนรู้การปล่อยเพลง
 
 เพิ่มการเตรียมตัว สูตรเยียวยา บอสผู้พิทักษ์สามระยะและบทสรุปบทแรกสามทาง หลังภารกิจลานเสียงย้อน ชนะ/แพ้มีผลจริง พร้อมกลับหมู่บ้านหลังจบบท โหมดผ่อนแรงและคำใบ้เปิดได้ก่อนสู้ สไปรต์ผู้พิทักษ์ใหม่16framesและเอฟเฟกต์เศษความทรงจำ
 
-State2/File2ยังเข้ากับไฟล์เดิมที่ผ่านvalidation. ไม่มีAutoSave/browser/cloudprogress. Build/sourcechecksผ่าน;Full/CI/actualpublic0.13ยังรอผล ดูSession23receiptก่อนกล่าวว่าเผยแพร่แล้ว. 0.12.1publicผ่านแต่MainCI148/149มีSkipcasefailที่รอบนี้แก้
+State2/File2ยังเข้ากับไฟล์เดิมที่ผ่านvalidation. ไม่มีAutoSave/browser/cloudprogress. เผยแพร่แล้ว:PRCI42434254047 full158PASS28.8m/Unit257/sourcegates/BuildPASS;เว็บจริง3phase/3chapterroutes/6legacyversions/10emulatedviewports/coreoldstory/78PNG+JSexactผ่าน. Main42436489386ยังรันทดสอบซ้ำหลังmerge ไม่อ้างPASS. ดูSession23/verification.json. 0.12.1publicผ่านแต่MainCI148/149มีSkipcasefailที่รอบนี้แก้
 
 ---
 

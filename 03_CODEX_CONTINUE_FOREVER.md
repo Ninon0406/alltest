@@ -299,3 +299,10 @@ Select **the highest priority area**, then rotate to next weak area after it pas
 อ่านSession23/verification.jsonผลจริงก่อนเริ่ม99nodes273choices/B05/3chapterconclusions ไม่ใช่3gameendings. รักษาS20/CH2001..3เดิม;ประตูใหม่G_SEAL_INNER. guardianoptionalstrictเก็บsupplies/assistUsedเฉพาะB05 ไม่มีdefaultsในoldsave. Phaseintentอ่านก่อนaction/weaknessตามHP;แพ้คืนsupplies/ชนะไม่คืน. ยืนยันกลไกพร้อมchapterroutes/gentlemodeผ่านactualfiles. notFlag song_restoredกันrewriteเส้นทางและCHG_REVISITอ่านซ้ำโดยไม่ให้ของเพิ่ม
 
 Main0.12.1CI42369615679failed148/149ไม่ใช่PASS149 แม้PR/local/publicผ่าน. SplitnormalVFXcaptureจากearlytouchSkip+hittestและCSSz-indexแล้ว ดูFull155/CI/public0.13receiptก่อนปิดgate ห้ามกลับไปcaptureทั้งหน้าก่อนtapปุ่มชั่วคราวหรือใช้forceclickกลบปัญหา. ยังห้ามAutoSave/browserprogressหรือuploadsave. งานถัดไปchapter/savecontext→ARC2→อีกLifePaths→V6magic→Finalvisual/mobilequality
+
+
+## Session23 release handoff — 2026-11-08 / public0.13.0
+
+อ่านGODSEED/docs/evidence/session23/{REPORT_TH.md,verification.json}ก่อนใช้candidatehandoffด้านบน. PR24merge222db4eจากfb91035หลังCI42434254047 full158PASS28.8m/Unit257/sourcegates/buildPASS. Runtimec39ไม่เปลี่ยน. Actualpublic0.13 guardian3phase/3chapterroutes/6legacyversions/10emulatedviewports/coreoldstory/78PNG+JSexact/noStorageUploadReferenceConsoleErrorsผ่าน LegacyPages42436489189SUCCESS. **MainCI42436489386ยังin_progressตอนปิดreceipt** ตรวจrunนี้ก่อนbatchใหม่;ห้ามแปลงpendingเป็นPASS. docs-onlyreceiptใช้[skip ci]ไม่เปลี่ยนruntimeหรือยกเลิกMainrun
+
+Phonecastต้องเห็นcanvasแล้วคืนscrollก่อนbusy-render;ReducedMotion/side-by-sideไม่jump. keyboardhelperต้องรอenabledก่อนlocator.pressEnter;openingใช้helperร่วมกัน ห้ามกลับไปfocusปุ่มdisabledแล้วglobalEnter. คงoldS20/CH2001..3/234recipeIDs/State2/File2/ManualRAM-only. 99nodes273choicesและ3chapterconclusionsไม่เท่ากับ12ARCหรือgameending. Next:PIPE002chapter/savecontext→optionalS29/ARC1acceptance→ARC2→LifePaths→V6magic/visualmobile. ยังไม่รับรองphysicalhardware/FPS/finalHD/humanfun
