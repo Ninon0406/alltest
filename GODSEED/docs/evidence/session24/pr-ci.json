@@ -1,0 +1,79 @@
+{
+  "result": "PASS",
+  "run": 42470656350,
+  "job": 128700383047,
+  "url": "https://github.com/Ninon0406/alltest/actions/runs/42470656350",
+  "headSha": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+  "event": "pull_request",
+  "conclusion": "success",
+  "browserPassed": 165,
+  "browserMinutes": 28.5,
+  "unitPassed": 273,
+  "contentPassed": 2,
+  "graphPassed": 24,
+  "roadmapPassed": 10,
+  "startedAt": "2026-11-08T10:15:35Z",
+  "completedAt": "2026-11-08T10:45:48Z",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm ci",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:all",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run node scripts/stage-site.mjs",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run validate:references",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install Thai font",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install Chromium headless shell",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run npm run test:e2e",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-pages-artifact@v3",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ]
+}

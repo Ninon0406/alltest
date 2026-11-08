@@ -1,0 +1,5 @@
+# Native-file verifier correction
+
+The first additional local verifier imported the genuine 0.13 file and completed its guardian, then timed out at the second crafting select. The shared UI returns to the story after each successful craft. The verification loop incorrectly assumed it stayed on the crafting screen. Reopen the actual crafting choice before each recipe, as a player does. No app change, state injection, weakened assertion or timeout increase. Full local165 had already passed on frozen source3bb3915. Keep the first attempt log; the corrected run must pass before any release claim.
+
+The first public attempt loaded the real 0.14 page in Chromium but APIRequestContext.get used Node DNS and failed with EAI_AGAIN. Read the identical HTML through browser fetch, the configured transport already used for the JS and PNG byte checks. Retain the DNS log. No change to the game, expected JS/PNG/state hashes, UI actions, assertions or timeouts. This is a verification transport correction; it is not evidence that public gameplay failed.

@@ -1,3 +1,9 @@
+# Published 0.14.0 — current content receipt
+
+127 reachable nodes / 340 successfully witnessed choices / 260 choices with a witnessed gameplay state delta / 8 quest contracts / 7 explicit batches / 7 encounters including training / 9 stages / 7 fixed maps / 99 original PNGs. Five NPC characters, two introductory Life Paths, 234 earned recipes, three chapter conclusions and zero full-game endings. These are witnesses across paths, not all seeds or one save. The 28-node/67-choice Pip and forest batch is live; ARC2 as a whole remains open. See [Session24 report](evidence/session24/REPORT_TH.md) and [all node contracts](evidence/session24/node-contracts.json).
+
+---
+
 ## Session24 — source0.14.0 candidate
 
 99→127StoryNodes/273→340Choices (+28/+67);actualwitness127/340/260state-delta,8questcontracts/7explicitbatches/7encounters/9stages/7fixedmaps. 5NPC/2introLifePaths/234legalrecipes/3chapterconclusions/0fullgameendingsคงเดิม. NewARC1Pip3nodesและARC2forest25nodes. `node-contracts.json`ส่งออกNode/Chapter/Location/Conditions/Costs/Actions/Effects/Rewards/Next/NPCจากcatalog. Sourcecountsอยู่Session24before/after-contentและcombined-witnesses;234recipesreplayedด้วยของที่หาได้จริง ไม่ใช่ทั้งหมดในเซฟเดียว

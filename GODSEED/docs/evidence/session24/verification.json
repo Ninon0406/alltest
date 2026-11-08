@@ -1,5 +1,5 @@
 {
-  "status": "FINAL_NARRATIVE_SOURCE_PASS_FULL165_RUNNING",
+  "status": "VERIFIED_PUBLIC_MAIN_CI_PENDING",
   "date": "2026-11-08",
   "version": "0.14.0",
   "baselineCommit": "0dc39c0",
@@ -50,17 +50,20 @@
     "minutes": 2.3,
     "note": "Before the final pause/resume and active-journey context adjustment; final full165 includes those changes."
   },
-  "native013Decoder": "PASS exact active guardian File2/State2; browser verifier pending",
+  "native013Decoder": "PASS exact decoder plus actual local and public native-browser import",
   "entryJs": "assets/index-C474nCjh.js",
   "entryJsSha256": "0bcdb52f86655c789e915a51b92ec3e89ae7c328949969593cf5ea52824cdbcf",
   "localFull": {
     "target": 165,
-    "status": "running"
+    "passed": 165,
+    "failed": 0,
+    "status": "PASS",
+    "minutes": 32.0,
+    "summary": "165 passed (32.0m)",
+    "sourceCommit": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0"
   },
   "pending": [
-    "Local full165",
-    "PR CI165",
-    "Deployment and actual public0.14 verification"
+    "Main CI 42472995227 remains in_progress; do not claim success"
   ],
   "limitations": [
     "Physical Safari/iPhone/Android/iPad, hardware FPS and human enjoyment not tested",
@@ -82,5 +85,267 @@
     "minutes": 15.0,
     "reason": "Intentional stop before final narrative source; no failure hidden."
   },
-  "narrativeFix": "Authored fact variants for collected fruit, restored root and already-open water; no unearned hollow memory from fruit-sharing alone. Renderer is pure and graph validates every fact reference."
+  "narrativeFix": "Authored fact variants for collected fruit, restored root and already-open water; no unearned hollow memory from fruit-sharing alone. Renderer is pure and graph validates every fact reference.",
+  "sourceCommit": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+  "prCi": {
+    "result": "PASS",
+    "run": 42470656350,
+    "job": 128700383047,
+    "url": "https://github.com/Ninon0406/alltest/actions/runs/42470656350",
+    "headSha": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+    "event": "pull_request",
+    "conclusion": "success",
+    "browserPassed": 165,
+    "browserMinutes": 28.5,
+    "unitPassed": 273,
+    "contentPassed": 2,
+    "graphPassed": 24,
+    "roadmapPassed": 10,
+    "startedAt": "2026-11-08T10:15:35Z",
+    "completedAt": "2026-11-08T10:45:48Z",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test:all",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run node scripts/stage-site.mjs",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run validate:references",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install Thai font",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install Chromium headless shell",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm run test:e2e",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/upload-artifact@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/upload-pages-artifact@v3",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "sourceFreezeNote": "Final source 3bb3915 is frozen. Later changes are verification receipts and documentation only, including exact public PNG checks for art-v17.",
+  "localNative": {
+    "result": "PASS",
+    "version": "0.14.0",
+    "url": "http://127.0.0.1:4205/",
+    "at": "2026-11-08T10:47:47.280Z",
+    "sourceCommit": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+    "nativeLegacyVersion": "0.13.0",
+    "legacyStateExact": true,
+    "jsSha256": "0bcdb52f86655c789e915a51b92ec3e89ae7c328949969593cf5ea52824cdbcf",
+    "versionedPngExact": 88,
+    "legacyFileSha256": "15b5b024f50f0662e90cb19efb51a419ae2b0a79ca6946127f46014d43b873d5",
+    "titlePngCount": 25,
+    "forestArtNotLoadedOnTitle": true,
+    "actualWaterAndWardCraftedAndEquipped": true,
+    "normalPhoneFieldCastVisibleAndScrollExact": true,
+    "normalPhoneWaterVfxAtRoot": true,
+    "weaverWardAndWaterCounter": true,
+    "nativeBattleTurnRoundTrip": true,
+    "combatReturnsToCorrectScene": true,
+    "resolutions": [
+      {
+        "kind": "care",
+        "worldObject": true,
+        "worldRevisitAfterCompletion": true,
+        "collectedFruitNarrationMatches": true,
+        "nativeRoundTrip": true,
+        "activeChapterInOlderHub": 2,
+        "giftOnce": true
+      },
+      {
+        "kind": "path",
+        "worldObject": true,
+        "worldRevisitAfterCompletion": true,
+        "collectedFruitNarrationMatches": true,
+        "nativeRoundTrip": true,
+        "activeChapterInOlderHub": 2,
+        "giftOnce": true
+      },
+      {
+        "kind": "record",
+        "worldObject": true,
+        "worldRevisitAfterCompletion": true,
+        "collectedFruitNarrationMatches": true,
+        "nativeRoundTrip": true,
+        "activeChapterInOlderHub": 2,
+        "giftOnce": true
+      }
+    ],
+    "malformedFilePreservesRAM": true,
+    "refreshStartsBlank": true,
+    "stateSha256": "5d03bce3d231a813e8f37ddc1d5c9f37d11579f2a274def2a976817e8a289cd1",
+    "sameStateAsLocal": false,
+    "persistentStorageCalls": 0,
+    "saveUploads": 0,
+    "referenceRequests": 0,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "gameplayWitnessCommit": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+  "localViewports": 10,
+  "mergeCommit": "73948389c30daa4be0bcc8165396cdd08cd7135a",
+  "publicNative": {
+    "result": "PASS",
+    "version": "0.14.0",
+    "url": "https://ninon0406.github.io/alltest/",
+    "at": "2026-11-08T10:51:45.291Z",
+    "sourceCommit": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+    "nativeLegacyVersion": "0.13.0",
+    "legacyStateExact": true,
+    "jsSha256": "0bcdb52f86655c789e915a51b92ec3e89ae7c328949969593cf5ea52824cdbcf",
+    "versionedPngExact": 88,
+    "legacyFileSha256": "15b5b024f50f0662e90cb19efb51a419ae2b0a79ca6946127f46014d43b873d5",
+    "titlePngCount": 25,
+    "forestArtNotLoadedOnTitle": true,
+    "actualWaterAndWardCraftedAndEquipped": true,
+    "normalPhoneFieldCastVisibleAndScrollExact": true,
+    "normalPhoneWaterVfxAtRoot": true,
+    "weaverWardAndWaterCounter": true,
+    "nativeBattleTurnRoundTrip": true,
+    "combatReturnsToCorrectScene": true,
+    "resolutions": [
+      {
+        "kind": "care",
+        "worldObject": true,
+        "worldRevisitAfterCompletion": true,
+        "collectedFruitNarrationMatches": true,
+        "nativeRoundTrip": true,
+        "activeChapterInOlderHub": 2,
+        "giftOnce": true
+      },
+      {
+        "kind": "path",
+        "worldObject": true,
+        "worldRevisitAfterCompletion": true,
+        "collectedFruitNarrationMatches": true,
+        "nativeRoundTrip": true,
+        "activeChapterInOlderHub": 2,
+        "giftOnce": true
+      },
+      {
+        "kind": "record",
+        "worldObject": true,
+        "worldRevisitAfterCompletion": true,
+        "collectedFruitNarrationMatches": true,
+        "nativeRoundTrip": true,
+        "activeChapterInOlderHub": 2,
+        "giftOnce": true
+      }
+    ],
+    "malformedFilePreservesRAM": true,
+    "refreshStartsBlank": true,
+    "stateSha256": "5d03bce3d231a813e8f37ddc1d5c9f37d11579f2a274def2a976817e8a289cd1",
+    "sameStateAsLocal": true,
+    "persistentStorageCalls": 0,
+    "saveUploads": 0,
+    "referenceRequests": 0,
+    "consoleErrors": [],
+    "hardware": "NOT_TESTED"
+  },
+  "publicViewports": 10,
+  "publicCore": {
+    "url": "https://ninon0406.github.io/alltest/",
+    "result": "PASS",
+    "checksumExport": true,
+    "importRoundTrip": true,
+    "trainingAndFire": true,
+    "archiveAndStream": true,
+    "waterAndEcho": true,
+    "layeredArtFiles": 78,
+    "developmentReferenceRequests": 0,
+    "originalTrainingSpirit": true,
+    "jsSha256": "0bcdb52f86655c789e915a51b92ec3e89ae7c328949969593cf5ea52824cdbcf",
+    "consoleErrors": [],
+    "flow": "touch/start/craft/forest/clue/explicit-file-reload/fire-craft/practice/win/archive/echo/water/stream/explicit-file-reload/win/memory/export/import"
+  },
+  "pages": {
+    "id": 42472995208,
+    "html_url": "https://github.com/Ninon0406/alltest/actions/runs/42472995208",
+    "head_sha": "73948389c30daa4be0bcc8165396cdd08cd7135a",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-08T10:48:45Z",
+    "updated_at": "2026-11-08T10:49:22Z"
+  },
+  "mainCi": {
+    "id": 42472995227,
+    "html_url": "https://github.com/Ninon0406/alltest/actions/runs/42472995227",
+    "head_sha": "73948389c30daa4be0bcc8165396cdd08cd7135a",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-08T10:48:45Z",
+    "updated_at": "2026-11-08T10:48:48Z",
+    "jobs": [
+      {
+        "id": 128707935853,
+        "name": "build",
+        "status": "in_progress",
+        "conclusion": null
+      }
+    ]
+  },
+  "verificationCorrections": [
+    "Local native verifier initially failed to reopen crafting after one successful recipe; corrected the UI sequence without changing app or assertions.",
+    "Public APIRequestContext used Node DNS and failed EAI_AGAIN after the page loaded successfully; read HTML through browser fetch, retaining exact JS/PNG/state comparisons."
+  ],
+  "roadmap": {
+    "done": 27,
+    "inProgress": 45,
+    "notStarted": 35,
+    "problem": 0,
+    "blocked": 2,
+    "total": 109,
+    "checklistPercent": 24.8,
+    "v1Done": 27,
+    "v1Total": 108,
+    "v1ChecklistPercent": 25.0,
+    "completionThisRound": [
+      "PIPE-002"
+    ]
+  },
+  "closedAt": "2026-11-08T10:56:39.713196+00:00"
 }

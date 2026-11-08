@@ -1,3 +1,15 @@
+# 0.14.0 — chapter-aware manual files
+
+This is the current additive contract; the version-specific notes below remain historical. File2 and State2 are unchanged. `src/content/chapters.ts` declares chapter IDs and activation flags; `storyContext(state)` derives the active journey chapter and the owning checkpoint batch. UI and export use the same context. Returning to an older Hub or workshop after starting ARC 2 keeps `chapterId: CHAPTER_2` while its checkpoint can belong to `CH1_FOUNDATIONS`. Generic battle/recovery checkpoints derive ownership from the battle checkpoint or recovery scene. No duplicate chapter counter is persisted in State.
+
+New files include optional `checkpoint.batchId`; genuine older File2 files without it remain supported. If present, the batch must match the derived checkpoint, and chapter metadata must match the journey even when the checksum is valid. Import validation and migrations run in RAM before replacement. The original State is preserved exactly when no migration is required; no optional battle defaults are added.
+
+B05 guardian data from 0.13 remains strict and optional: `guardian{assistUsed?:true,supplies?:{IT_POTION_DEW,IT_MANA_LEAF}}`. B06 adds an encounter ID and derives its telegraph from the saved turn, with no extra default phase field. Preserve all existing item, recipe, choice and scene IDs. Authored narrative variants are computed from existing flags; they do not add or mutate saved state.
+
+Fresh published 0.13 native-file capture, exact decoder comparison and browser-verification status are recorded in [Session24](evidence/session24/verification.json). Private file bytes stay outside the repository. The six older native-file results in Session23 are historical; those private files are unavailable in this executor and are not claimed as rerun. Physical Safari/Android file retention remains unverified.
+
+---
+
 ### Session22 / 0.12.1 candidate — cold imported scene actor
 
 แก้NPCข้ามgroupไม่ถูกโหลดเมื่อimportopeningfileแล้วเข้าECHO_CALLทันที:World.prepare/showระบุrequiredactorให้ArtLedgerและerror/retrycontext โหลดเฉพาะsheetที่ยังไม่มี คงtitle25PNGและcache. ภาพก่อน/Redจากactualpublic0.12.0และGreenอยู่[hotfix evidence](evidence/session22/hotfix/README.md)
@@ -22,7 +34,7 @@ Save: “บันทึกเกมเป็นไฟล์” → validate com
 
 Load: fileinput `.godseed` (or historical `.json`) → byte size≤1,000,000 → JSON.parse → formatVersion → checksum → state migration/schema/reference checks → summary → explicitconfirm. Cancel/errors preserve RAM. No eval. Inputs never upload.
 
-File2 fields: formatGODSEED_SAVE, formatVersion2, gameVersion, exportedAtUTCISO, chapterIdCHAPTER_1, checkpoint{sceneId,storyNodeId,kind:story_choice|battle_turn}, completeState, checksum. Hash covers everyfieldexceptchecksum with sortedobjectkeys; arraysretainorder, undefinedomitted. This detects corruption, not authentic ownership or anti-cheat.
+File2 fields: `format: GODSEED_SAVE`, `formatVersion: 2`, `gameVersion`, `exportedAt` (UTC ISO), `chapterId`, `checkpoint{sceneId,storyNodeId,kind:story_choice|battle_turn,batchId?}`, complete `state`, and `checksum`. Hash covers everyfieldexceptchecksum with sortedobjectkeys; arraysretainorder, undefinedomitted. This detects corruption, not authentic ownership or anti-cheat.
 
 State2 carries everycurrentlyimplementedfield: run/name/seed/rng/revision/scene/ticks/hp/mp/xp/recoveryScene/inventory/known/equipped/flags/choices/trust/rewarded/gathered/journal andoptionalbattle (enemyHP/turn/shield/status/playerStatus/log/checkpoint/next). Current game has no separatelevel/gear/party/masterylevel progression; do not invent correspondingvalues. Futureimplementedfields require schema+migrationtests. Restflags andscenecheckpoint restore authored staging; no mid-animation snapshot. Stablebattleturns can be exported.
 

@@ -75,7 +75,7 @@ Running 165 tests using 1 worker
 [62/165] tests/forest.spec.ts:40:1 › forest scene and chapter2 file input fit all ten target viewports with no console/asset errors
 [63/165] tests/forest.spec.ts:48:1 › 390: skipping a normal forest action reaches the same feet, pose and next state
 [64/165] tests/forest.spec.ts:52:1 › 390: a real northbound route passes behind the low oak branch using foot depth
-  1) tests/forest.spec.ts:52:1 › 390: a real northbound route passes behind the low oak branch using foot depth 
+  1) tests/forest.spec.ts:52:1 › 390: a real northbound route passes behind the low oak branch using foot depth
 
     Test was interrupted.
 
@@ -113,6 +113,6 @@ Running 165 tests using 1 worker
 
 
   1 interrupted
-    tests/forest.spec.ts:52:1 › 390: a real northbound route passes behind the low oak branch using foot depth 
+    tests/forest.spec.ts:52:1 › 390: a real northbound route passes behind the low oak branch using foot depth
   101 did not run
   63 passed (15.0m)

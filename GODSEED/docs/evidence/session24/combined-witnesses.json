@@ -1,6 +1,6 @@
 {
   "result": "PASS",
-  "at": "2026-11-08T10:07:27.783Z",
+  "at": "2026-11-08T10:41:33.959Z",
   "scope": "Current bounded reducer search plus re-executed historical recipe/choice paths and original ARC2 paths. Fresh states and earned commands only; no injected flags/items; not an all-seed or browser proof.",
   "nodeCount": 127,
   "successfulChoiceCount": 340,

@@ -1,0 +1,118 @@
+{
+  "result": "PASS",
+  "url": "https://ninon0406.github.io/alltest/",
+  "at": "2026-11-08T10:52:05.551Z",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "input": "touch",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "input": "keyboard",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "input": "keyboard",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "input": "keyboard",
+      "layers": 3,
+      "chapter": 2,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    }
+  ],
+  "hardware": "NOT_TESTED"
+}

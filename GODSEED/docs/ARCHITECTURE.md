@@ -1,3 +1,9 @@
+# 0.14.0 — final verification on source3bb3915
+
+Chapter/batch context, transactional item costs and pure fact-gated narration are implemented and verified:273unit/24graph/localFull165/PRCI165/build plus actual public0.14/native0.13/threeforestoutcomes/tenemulatedviewports. No app changes followed the source freeze. Later edits are receipts and verifier navigation/transport corrections. [Final report](evidence/session24/REPORT_TH.md) supersedes pending candidate notes below. State2/File2/RAM-only progress remain unchanged; no final-HD, physical-device or whole-ARC acceptance is implied.
+
+---
+
 ## Session24 — authored fact variants
 
 StoryScene.variantsเป็นข้อมูลflag/textที่Graphตรวจproducerและnonemptytext. narrativeTextเลือกข้อความตามfactsที่มีอยู่และfallbackscene.textโดยไม่mutateState ไม่รันeventหรือrewardซ้ำ. UI/Nodecontractsใช้ข้อมูลเดียวกัน. การกลับมาS29/root/waterหลังช่วยแล้วจึงไม่อ้างว่าวัตถุยังอยู่ในสภาพก่อนหน้า. Hollowmemoryต้องมีa2_pip_trustedจากเหตุการณ์จริง ไม่มีAIเปลี่ยนfacts

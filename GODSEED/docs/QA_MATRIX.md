@@ -1,3 +1,9 @@
+# Session24 — final QA receipt
+
+Source3bb3915 / PR25 / merge7394838: local165/16532.0m and PRCI42470656350 165/16528.5m, 273unit/2content/24graph/10roadmap/type/lint/manual/reference/build PASS. Native published0.13 preserves State exactly on local and public0.14; three forest outcomes/objects/revisits, pause in an older hub with active chapter2, earned Water/Ward, real Weaver counter and turn-file roundtrip pass. Ten emulated viewports, 88PNG+entryJS exact and zero progress-storage/save-upload/reference/console errors pass. Main42472995227 remains in_progress separately. Physical devices/FPS/final-HD approval/human enjoyment remain NOT_TESTED. [Receipts](evidence/session24/verification.json).
+
+---
+
 ## Session24 — candidate0.14.0
 
 Unit272/Content2/Graph23/Roadmap10/type/lint/build/manual/referencePASS. Earlierfocused7PASS2.3m:fruitcosts/3forestresolutions/phasefiles/Watercounter/retry/normalSkip/northwalkoakocclusion และ10emulatedviewports360–1920. หลังfinalcontext/pauseเปลี่ยนเฉพาะส่วนที่จำเป็นแล้วกำลังFull165;อย่าใช้earlierfocusแทนfinalFull. Nativepublic0.13activeGuardiancapturedด้วยUIและdecoderexact State2/File2;browsernativeauditรอผลแยก. PhysicalSafari/iPhone/Android/iPad/FPS/humanfun/finalHD/approvedvisualbaselineยังไม่ทดสอบ. CurrentreceiptSession24/verification.json

@@ -315,3 +315,12 @@ Phonecastต้องเห็นcanvasแล้วคืนscrollก่อนbu
 คงoldIDsรวมCH0211ต้นไม้;Pipใช้CHPIP_HUB. Chapterregistry/batchownershipและactivejourneyใช้ข้อมูลเดียวกับUI/File2;Hub/โรงช่างเก่าอาจownerCH1แต่journeyCH2 ห้ามถอยprogressหรือเพิ่มcounterpersist. File2batchIdoptional/State2เดิม/old0.13nobatchdecoderexact. Revisit/pause/resumeต้องไม่rewritebranchหรือให้kit/giftซ้ำ. B06อ่านplanก่อนaction:0/9/18และWateroffensivehitcounter9 ภาพแยกdamage. ไม่มีAutoSave/browserprogress/saveupload
 
 Originalforestroadใช้Ref06เป็นdirectionเท่านั้น,99PNGbyte-repro/old89unchanged. Stagelegacyforestคงเดิม. Sourceskills/Nodecontracts/realreplay127nodes340choices/234recipesอยู่Session24. Earlierfocused7ไม่ได้แทนfinalFull165;physicalhardware/FPS/finalHD/humanfunยังไม่รับรอง. รอบถัดไปตรวจreleaseentryและRoadmapใหม่ก่อนเลือกงาน
+
+
+## Session24 release handoff — 2026-11-08 / public0.14.0
+
+อ่านGODSEED/docs/evidence/session24/{REPORT_TH.md,verification.json}แทนcandidateข้างบน. PR25 merge7394838จากsource3bb3915หลังLocal165PASS32.0m/PRCI42470656350Full165PASS28.5m/273unit+sourcegates. Actualpublic0.14ผ่านnative0.13Stateexact/สามผลป่า/pause-resume-revisit/gift-once/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/Coreเก่า/88PNG+JSexact/0StorageUploadReferenceConsoleErrors. LegacyPages42472995208SUCCESS. **MainCI42472995227ยัง in_progress** ตรวจผลก่อนbatchใหม่ ห้ามแปลงpendingเป็นPASS. Receiptcommitเป็นdocs-only[skip ci]ไม่เปลี่ยนruntimeและไม่ยกเลิกMainrun
+
+คงState2/File2/234recipeIDs/oldscene-choiceIDs, optionalbatchmetadata, activejourneyแยกownercheckpoint, transactionalitemcostsและpurefactvariants. การกลับเยี่ยมต้องแสดงผลไม้ที่เก็บแล้ว/รากฟื้นแล้ว/น้ำเปิดแล้วตามflags ไม่รันrewardใหม่หรืออ้างhollowmemoryจากfruitsharingอย่างเดียว. B06อ่านplanก่อนaction/WATERoffensivehitcounter ไม่เพิ่มdefaultbattlefieldsหรือautosave. Native6รุ่นในSession23เป็นประวัติ ไฟล์ส่วนตัวเหล่านั้นไม่ได้อยู่ในexecutorนี้;รอบ24พิสูจน์ไฟล์0.13จริงใหม่แล้ว
+
+Next:STO001/ARC001wholeacceptance→ARC002ต่อจาก3ผลป่า→LIFE004/006→MAG006/010→VIS008/QA003. Checklist24.8%=27/109/PIPE002DONEเฉพาะcontentcontract;127nodes340choicesไม่เท่ากับครบ12ARCหรือgameending. มี3chapterconclusions/0fullgameendings. ภาพ99PNGยังไม่ผ่านfinalHD/hardware/FPS/humanfun ไม่มีautomaticcodingข้ามsession

@@ -556,3 +556,14 @@ Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelper�
 ### Session24 QA — fact-gated revisit narration
 
 พบS29เล่าว่าผลไม้กำลังกลิ้งเมื่อกลับมาหลังเก็บแล้ว จึงหยุดfirstFull165หลัง63PASS/1interrupted/101notrun15mและcancelPRCI42469155897 ไม่อ้างผลครบ. เพิ่มStoryScene.variantsแบบflag/textและnarrativeTextpure ใช้factเดียวกับวัตถุในฉาก:collectedfruit/restoredroot/openwater. ผลไม้ที่แบ่งให้พิพไม่เท่ากับเหตุการณ์พบโพรง จึงใช้a2_pip_trustedสำหรับmemoryline. Validatorตรวจproducer/ข้อความและexportmetadata;Unit273/Content2/Graph24/sourcegates/BuildPASS. FinalFull165เริ่มใหม่บนbuildสุดท้าย รักษาPNG99/State2/File2/IDs/recipe234และreduceroutcomesเดิม. ไม่เพิ่มฟีเจอร์ระหว่างรอผลนอกจากแก้testfailureจริง
+
+
+## Session24 — ผลปิดรอบ / 2026-11-08 UTC / 0.14.0
+
+- เป้าหมาย: ชุดเนื้อหาที่เดินทางและกลับมาจบเป็นตอนได้ พร้อมแก้ Dependency ของบท/Batch/ไฟล์เซฟ โดยรักษาของเดิม
+- ทำจริง: 28nodes67choicesรวม127/340, ภารกิจพิพ/ARC2opening/Water-Wardจริง/Weavercounter/3worldoutcomes/10originalPNG, transactional item costs และ fact-gated narration ไม่ให้ข้อความขัดวัตถุที่เก็บแล้ว. ข้ามฉากเก่าไม่ทำให้บทถอย พักรายงานแล้วกลับมาทำต่อได้ รางวัล/ผลเลือกไม่เขียนทับซ้ำ
+- ปัญหาและวิธีแก้: หยุดcandidateแรก63pass/1interrupted/101notrunและcancelCI42469155897เพื่อแก้ข้อความกลับเยี่ยม แล้วทดสอบใหม่ครบ. Verifierรอบแรกต้องเปิดโต๊ะผสมหลังแต่ละสูตร; PublicNodeDNS EAI_AGAINแก้โดยอ่านHTMLผ่านBrowserfetch. ไม่มีการผ่อนAssertion/Timeoutหรือแก้เกมเพื่อซ่อนผล. เก็บทุกlog
+- ผล: Unit273/Content2/Graph24/Roadmap10/type/lint/build/manual/refPASS; Localfull165PASS32.0m / PRCI42470656350full165PASS28.5m. Actualreducerreplay127nodes340choices260state-delta234earnedrecipes. Native0.13Stateexact+3forestoutcomes/battleturnfiles/10emulatedviewports/WaterVFXtarget+scroll/Coreoldstory/88PNG+JSexact/noStorageUploadReferenceConsoleErrorsผ่านLocalและactualpublic0.14
+- Git: source20540b2 + final3bb3915 / PR25 / merge7394838. LegacyPages42472995208SUCCESS. Main42472995227ยัง in_progress ตอนปิดreceipt ไม่อ้างPASS. ไฟล์/ภาพ/รายงานอยู่docs/evidence/session24; private.godseedไม่commit/upload
+- Roadmap: PIPE002DONEตามเกณฑ์contractจริง 27/10924.8%,27/10825.0%เฉพาะ1.0; ARC1wholeacceptance/ARC2ทั้งหมด/finalHD/hardware/FPS/humanfunยังค้าง. ภาพถนนใหม่structure/collision/mobileChromiumdoneเฉพาะต้นแบบที่ตรวจ ไม่ใช่ฉากสมบูรณ์ทุกมิติ
+- รอบถัดไป: ตรวจMainrunก่อน → STO001/ARC001wholeacceptance → ARC2ผลป่า → LifePathsภาคสนาม → MAG006/010compatibility → VIS008/QA003. ไม่มีการพัฒนาข้ามsessionอัตโนมัติ

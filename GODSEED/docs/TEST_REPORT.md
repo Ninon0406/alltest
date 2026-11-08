@@ -1,3 +1,13 @@
+# ปิดรอบ 24 — 2026-11-08 / เผยแพร่ 0.14.0
+
+เพิ่ม 28 Story Nodes / 67 Choices รวม 127/340 พร้อมภารกิจพิพและการเดินทางป่าตอนแรก, บท/Batch/Manual-file context, ค่าไอเทมจริง, ข้อความตามสถานะโลก, ผู้ถักราก/เวทโต้จังหวะ และ PNG ต้นฉบับ 10 ไฟล์. Source3bb3915 / PR25 / Merge7394838. Local165/16532.0m + PRCI42470656350ครบ165/16528.5m / Unit273 / Graph24 / Source gates+Build PASS
+
+เว็บจริง0.14 ผ่าน native0.13 exact-state, Water/Ward/Weaver/สามผลป่า/pause-resume-revisit/gift once, normalWaterVFXตรงราก+scrollกลับ, 10Chromiumจำลอง, Coreเก่า, 88PNG+JSตรงBuild และไม่มีStorage/Upload/Reference/Console error ในเส้นทางตรวจ. Main42472995227 ยัง in_progress แยกจาก LegacyPages42472995208SUCCESS; ห้ามอ้างMainPASS. ดู[รายงานรอบ24](evidence/session24/REPORT_TH.md) และ[verification](evidence/session24/verification.json)
+
+Checklist24.8%=27/109 (✅27/🟡45/⬜35/🔴0/⛔2), เป็นChecklist ไม่ใช่คุณภาพเกม. PIPE002DONEเฉพาะContentcontract; ARC1wholeacceptance/ARC2ส่วนต่อ/finalHD/hardware/FPS/humanfunยังไม่ปิด. Main0.13รอบก่อนตรวจแล้ว158PASS23.8m+DeploySUCCESS. Handoffcandidateด้านล่างเป็นประวัติ ต้องอ่านผลปิดรอบนี้ก่อน
+
+---
+
 ## Session24 final-source QA update — 2026-11-08
 
 แก้ข้อความrevisitให้ตรงworldfactsด้วยauthoredvariants:ผลไม้ที่เก็บแล้ว/รากที่ฟื้นแล้ว/ร่องน้ำที่เปิดแล้ว และไม่ให้ความทรงจำโพรงก่อนเหตุการณ์จริง. UIแสดงvariantจากfactเท่านั้น ไม่แก้State;Graphตรวจflag/textและNodecontractsส่งออกvariantsด้วย. Sourcechecksล่าสุดUnit273/Content2/Graph24/Roadmap10/type/lint/build/manual/refPASS. FirstLocal165หยุด63PASS/1interrupted/101notrun15.0mและPRCI42469155897cancelledเพื่อใช้finalsource ไม่ใช่ผลผ่านครบ. FinalLocal165/PRCIใหม่รอผลจริง;ดูSession24/verification.json

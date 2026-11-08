@@ -1,0 +1,23 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+apiRequestContext.get: getaddrinfo EAI_AGAIN ninon0406.github.io
+Call log:
+[2m  - → GET https://ninon0406.github.io/alltest/[22m
+[2m    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36[22m
+[2m    - accept: */*[22m
+[2m    - accept-encoding: gzip,deflate,br[22m
+
+    at /workspace/alltest/GODSEED/docs/evidence/session24/verify-forest.mjs:23:36 {
+  log: [
+    '  - → GET https://ninon0406.github.io/alltest/',
+    '    - user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36',
+    '    - accept: */*',
+    '    - accept-encoding: gzip,deflate,br'
+  ],
+  name: 'Error',
+  code: 'EAI_AGAIN'
+}
+
+Node.js v24.19.0

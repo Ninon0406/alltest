@@ -6,5 +6,5 @@
   "stateVersion": 2,
   "stateExact": true,
   "batchId": "CH1_GUARDIAN_CONCLUSION",
-  "nativeBrowserImport": "pending separate browser verifier"
+  "nativeBrowserImport": "PASS actual local and public UI import; State exact"
 }

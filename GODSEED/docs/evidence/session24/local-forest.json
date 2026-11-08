@@ -1,0 +1,58 @@
+{
+  "result": "PASS",
+  "version": "0.14.0",
+  "url": "http://127.0.0.1:4205/",
+  "at": "2026-11-08T10:47:47.280Z",
+  "sourceCommit": "3bb3915d8001a93f74a3cb33f24dd7e3db9637c0",
+  "nativeLegacyVersion": "0.13.0",
+  "legacyStateExact": true,
+  "jsSha256": "0bcdb52f86655c789e915a51b92ec3e89ae7c328949969593cf5ea52824cdbcf",
+  "versionedPngExact": 88,
+  "legacyFileSha256": "15b5b024f50f0662e90cb19efb51a419ae2b0a79ca6946127f46014d43b873d5",
+  "titlePngCount": 25,
+  "forestArtNotLoadedOnTitle": true,
+  "actualWaterAndWardCraftedAndEquipped": true,
+  "normalPhoneFieldCastVisibleAndScrollExact": true,
+  "normalPhoneWaterVfxAtRoot": true,
+  "weaverWardAndWaterCounter": true,
+  "nativeBattleTurnRoundTrip": true,
+  "combatReturnsToCorrectScene": true,
+  "resolutions": [
+    {
+      "kind": "care",
+      "worldObject": true,
+      "worldRevisitAfterCompletion": true,
+      "collectedFruitNarrationMatches": true,
+      "nativeRoundTrip": true,
+      "activeChapterInOlderHub": 2,
+      "giftOnce": true
+    },
+    {
+      "kind": "path",
+      "worldObject": true,
+      "worldRevisitAfterCompletion": true,
+      "collectedFruitNarrationMatches": true,
+      "nativeRoundTrip": true,
+      "activeChapterInOlderHub": 2,
+      "giftOnce": true
+    },
+    {
+      "kind": "record",
+      "worldObject": true,
+      "worldRevisitAfterCompletion": true,
+      "collectedFruitNarrationMatches": true,
+      "nativeRoundTrip": true,
+      "activeChapterInOlderHub": 2,
+      "giftOnce": true
+    }
+  ],
+  "malformedFilePreservesRAM": true,
+  "refreshStartsBlank": true,
+  "stateSha256": "5d03bce3d231a813e8f37ddc1d5c9f37d11579f2a274def2a976817e8a289cd1",
+  "sameStateAsLocal": false,
+  "persistentStorageCalls": 0,
+  "saveUploads": 0,
+  "referenceRequests": 0,
+  "consoleErrors": [],
+  "hardware": "NOT_TESTED"
+}
