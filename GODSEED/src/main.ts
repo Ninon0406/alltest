@@ -1,3 +1,4 @@
+import {revealCinematic} from './ui/cinematic-viewport';
 import {craftingPanel,spellbookPanel} from './ui/alchemy-panel';
 import type {BookFilter} from './systems/alchemy';
 import {lifePathsPanel} from './ui/life-paths-panel';
@@ -41,8 +42,9 @@ function leave(target:'title'|'new'){
  if(target==='new')begin();else{session.clear();state=null;screen='title';world.show(null);render();}
 }
 function finishLeaving(){const target=leaving;leaving=null;session.clear();state=null;if(target==='new')begin();else{screen='title';world.show(null);}render();}
-async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,target?:'scene'){if(!state)return;const previousScreen=screen;await exclusive(async()=>{
+async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,target?:'scene'){if(!state)return;const previousScreen=screen,readingPosition={left:scrollX,top:scrollY};let restoreView:(()=>void)|undefined;try{await exclusive(async()=>{
  const previous=state!;const next=fn();
+ restoreView=revealCinematic(document.querySelector<HTMLElement>('#canvas')!,reduced,readingPosition);
  try{
   const anim=world.action(cue,reduced,spellId?byId[spellId]:undefined,previous,next,command,target);document.querySelector<HTMLButtonElement>('#skip')!.hidden=false;
   await Promise.race([anim,new Promise<void>(resolve=>skip=resolve)]);
@@ -56,7 +58,7 @@ async function act(fn:()=>State,cue='talk',spellId?:string,command?:string,targe
  showState(next,true);if(previousScreen==='book'&&!next.battle)screen='book';
  if(previous.battle&&!next.battle)msg(next.journal.at(-1)||'จบการต่อสู้แล้ว');
 
- });}
+ });}finally{restoreView?.();}}
 function render(){
  renderArtNotice();content.setAttribute('aria-busy',String(busy));
  const banner=document.querySelector<HTMLElement>('#storage')!;banner.hidden=!state;banner.textContent=session.dirty?'ยังไม่ได้เก็บความคืบหน้าล่าสุดเป็นไฟล์ · บันทึกก่อนออก':'มีไฟล์ของความคืบหน้านี้แล้ว · เล่นต่อแล้วอย่าลืมบันทึกใหม่';

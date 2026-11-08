@@ -1,3 +1,7 @@
+# Session23 Batch B — Cinematic viewport
+
+ui/cinematic-viewport.tsเป็นpresentationcleanupที่คืนscrollหลังexclusivefinally+render ใช้เฉพาะwidth≤900/height>500/normalmotionเมื่อcanvasพ้นจอ. Instantcenterเพื่อให้เห็นเหตุการณ์แล้วคืนreadingpositionเดิม ReducedMotionและside-by-sideไม่ขยับ ไม่เปลี่ยนfocus/GameState/Save/animationtiming. RegressionredY−643.65625ก่อนแก้ มีnormal+reducedbrowsercasesและactualpublicverifierเพิ่ม
+
 # 0.13.0 — Guardian / typed chapter conclusions
 
 `guardian-story.ts`เป็นbatchแยกต่อจากEchoเดิม ไม่ย้ายS20_SEAL_PASSAGE/CH2001..3ที่เผยแพร่แล้ว ช่วงประตูชั้นในใช้G_SEAL_INNER/CHG_PASSAGE_*แทน IDsไม่ซ้ำและไฟล์เก่าอยู่ที่nodeเดิม. StoryScene.conclusionแยกchapter/game;validatorไม่เดาตอนจบจากชื่อ_END_และchapterยังต้องมีทางออก. Condition.notFlagใช้ล็อกการเลือกบทสรุปเมื่อsong_restoredแล้ว มีทางrevisitผ่านCHG_REVISITแทน

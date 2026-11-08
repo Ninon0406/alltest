@@ -4,7 +4,7 @@
 
 Sourcechecks257unit/2content/21graph/10roadmap/type/lint/build/manual/referencePASS;Focused7PASS2.8m;actualreducer99nodes273choices205statechanges/6quests/234recipes. Artwork89PNGสร้างซ้ำตรงbyte/old88ไม่เปลี่ยน ManualFile2/State2/RAMonlyและIDเก่ายังอยู่
 
-Full155/CI/actualpublic0.13รอผลสุดท้าย ดูverification.json. Main0.12.1มี148PASS1FAILในcapture→lateSkip แก้ทั้งCSSstackingและแยกกรณีทดสอบแล้ว เก็บผลล้มเหลวจริง ไม่ใช้PR149อ้างMaingreen
+Full157/CI/actualpublic0.13รอผลสุดท้าย ดูverification.json. Main0.12.1มี148PASS1FAILในcapture→lateSkip แก้ทั้งCSSstackingและแยกกรณีทดสอบแล้ว เก็บผลล้มเหลวจริง ไม่ใช้PR149อ้างMaingreen
 
 Roadmap/ChecklistทุกPhase0–13และ9ด้านของ10สถานที่อยู่ในGODSEED_MASTER_ROADMAP.md;เปอร์เซ็นต์คำนวณSSOTอัตโนมัติ ไม่มีpartialcredit. งานรอบนี้กำลังรอปิดqualitygateจึงไม่เร่งปิดขอบเขตใหญ่จากจำนวนnode
 

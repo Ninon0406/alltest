@@ -1,5 +1,5 @@
 {
-  "status": "SOURCE_FOCUSED_ART_PASS_FULL_RELEASE_PENDING",
+  "status": "FINAL_SOURCE_FOCUSED_PASS_FULL157_RELEASE_PENDING",
   "date": "2026-11-08",
   "version": "0.13.0",
   "baselineCommit": "734e21dc625909cb9362447cdff78de4c92e32da",
@@ -46,7 +46,7 @@
     "reason": "Test used a nonexistent diagnostic attribute. Actual render-status was degraded and asset-errors=1; corrected selector without weakening game-state assertions."
   },
   "pending": [
-    "Full155 regression run",
+    "Full157 regression run",
     "Native old-file compatibility through current build",
     "Ten viewport evidence",
     "PR CI and deployment/public proof"
@@ -66,5 +66,29 @@
   "art": {
     "reproducedPNG": 89,
     "unchangedBaselinePNG": 88
-  }
+  },
+  "initialSourceCommit": "bc2793cc64f0c5439e3aac11be85f1b752dfc40c",
+  "viewportFix": {
+    "redCanvasY": -643.65625,
+    "firstFixReturnOffsetPixels": 58,
+    "finalFocusedPassed": 4,
+    "finalFocusedFailed": 0,
+    "minutes": 1.3,
+    "reducedMotionUnchanged": true,
+    "stateAndFeetExact": true
+  },
+  "interruptedRuns": [
+    {
+      "scope": "Initial local Full155",
+      "passed": 17,
+      "interrupted": 1,
+      "notRun": 137,
+      "reason": "Intentional stop for a reproduced off-screen cinematic viewport defect"
+    },
+    {
+      "scope": "PR CI42429662756",
+      "conclusion": "cancelled",
+      "reason": "Intentional replacement by the final viewport-fix source"
+    }
+  ]
 }

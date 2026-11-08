@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-08",
+  "method": "Connected web retrieval, public official book summaries and wiki HTML only; not browser playtest",
+  "wayWiki": {
+    "url": "https://way-of-xian.wox-game.workers.dev/wiki",
+    "observed": [
+      "Encyclopedia heading",
+      "menu",
+      "input",
+      "English",
+      "back to play"
+    ],
+    "notVerified": [
+      "life paths",
+      "economy",
+      "travel",
+      "actual interactions",
+      "mobile performance"
+    ]
+  },
+  "officialBooks": [
+    {
+      "url": "https://www.webnovel.com/book/soul-land_28854123108881805",
+      "publicSynopsisRetrieved": true,
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/8099443605005505",
+      "publicSynopsisRetrieved": true,
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/8093958205004005",
+      "publicSynopsisRetrieved": true,
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/14107168305361805",
+      "publicSynopsisRetrieved": true,
+      "fullNovelRead": false
+    },
+    {
+      "url": "https://www.webnovel.com/book/swallowed-star_7213811205000505",
+      "publicSynopsisRetrieved": true,
+      "fullNovelRead": false
+    }
+  ],
+  "unavailable": [
+    {
+      "url": "https://www.webnovel.com/book/swallowed-star_7213811205000505/catalog",
+      "result": "not accessible via tool"
+    },
+    {
+      "url": "https://book.qidian.com/info/1639199/",
+      "result": "403 Forbidden"
+    }
+  ],
+  "copyright": "No prose, plot sequence, names, artwork or source code copied into GODSEED. Documentation records abstract principles and URLs only."
+}

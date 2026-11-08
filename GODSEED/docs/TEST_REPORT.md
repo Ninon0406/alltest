@@ -4,7 +4,7 @@
 
 ผู้เล่นเตรียมชุดจากคุโร ผสมBLOOM_RING_HEALจริง อ่านผนึก เลือกโหมดปกติหรือผ่อนแรง25% ต่อสู้B05สามphase150HP/weaknessตามระยะ/ผนึก2จังหวะ/PIERCEและความเข้าใจBLOOM/ECHO/ช่วยจากLUMIหรือMARENครั้งเดียว แพ้คืนของใช้ก่อนสู้และลองใหม่ที่S22;ชนะ40XPครั้งแรกแล้วเลือกคืนเพลง3ทางและกลับหมู่บ้านได้ Revisitหลังจบบทไม่เปลี่ยนทางที่เลือกหรือให้ของซ้ำ
 
-Unit257/Content2/Graph21/Roadmap10/type/lint/build/manual/referencechecksผ่าน FinalFocused7/Full155/PRCI/Deploy/Public0.13ยังรอผลจริง. InitialFocused4PASS/1FAILเพราะselectorอ้างattributeที่ไม่มี แก้ให้ตรวจdata-render-statusเดิมและคงstateexactassertions. Main0.12.1CI42369615679มี148PASS/1FAILcombinedVFXscreenshot→lateSkip จึงแยกnormalcompletion/earlytouchSkip+hittestและเพิ่มz-index;Focused2ผ่านก่อนรวมsuiteใหม่
+Unit257/Content2/Graph21/Roadmap10/type/lint/build/manual/referencechecksผ่าน FinalFocused7/Full157/PRCI/Deploy/Public0.13ยังรอผลจริง. InitialFocused4PASS/1FAILเพราะselectorอ้างattributeที่ไม่มี แก้ให้ตรวจdata-render-statusเดิมและคงstateexactassertions. Main0.12.1CI42369615679มี148PASS/1FAILcombinedVFXscreenshot→lateSkip จึงแยกnormalcompletion/earlytouchSkip+hittestและเพิ่มz-index;Focused2ผ่านก่อนรวมsuiteใหม่
 
 ManualRAM/File2/State2คงเดิม guardian optionalstrict/supplies/assistUsedไม่เพิ่มdefaultsให้เซฟเก่า Actualpublic0.12.1openingfileเก็บ/tmp/gs23-published-0.12.1.godseedเฉพาะเครื่องสำหรับcompatibility6รุ่น ไม่มีcommit/uploadsavebytes. ยังไม่รับรองhardwareSafari/Android/FPS/humanfun/finalHD/12ARCsหรือ8Pathsครบ
 

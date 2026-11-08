@@ -2,7 +2,7 @@
 
 Chromiumemulation:initial390completeboss/3routes/nativephasefiles;844defeat/refund/retry;820gentlecomplete;390normalshards+canonicalfeetผ่าน4cases.1366missingatlasinitialassertผิดattribute แก้selectorและกำลังrerunทั้งหมดพร้อมSkipregression. ไม่ใช่physicalmobile/Safari/FPS/approvedvisualbaseline/humanfun.
 
-Full155/10viewport/currentpublic/hash/native6legacyversionsจะบันทึกผลจริงในevidence/session23/verification.json. เก็บinitialfailedoutputแยกจากfinal ไม่ทำskipหรือลดassertions
+Full157/10viewport/currentpublic/hash/native6legacyversionsจะบันทึกผลจริงในevidence/session23/verification.json. เก็บinitialfailedoutputแยกจากfinal ไม่ทำskipหรือลดassertions
 
 ---
 

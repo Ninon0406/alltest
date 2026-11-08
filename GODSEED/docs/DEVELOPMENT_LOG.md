@@ -495,10 +495,19 @@ Hotfixtargetedผลจริง:Unit244/Focused15ผ่าน2.7m;casecoldfile�
 
 พัฒนาCMB007/STO001/PIPE002/ARC001เป็นverticalslice18nodes41choices81/232→99/273;B05สามphase150HP/intent12/20/weaknessเปลี่ยน/Seal2จังหวะ/PIERCE+learnedBLOOM/ECHO/earnedonceassist/gentle25%/defeatrefundsupplies/40XPfirstwin→S23. สร้างoriginalguardianatlas16frames ไม่ใช้referenceทั้งภาพ. Typedchapterconclusion3/gameending0;negativeflag+postchapterrevisitรักษาผลเลือกเดิม/ของไม่ซ้ำ. Q_GUARDIAN_SONGและhealingkit→actualrecipeด้วย234catalogเดิม
 
-Actualreducer99nodes273choices205withstatedelta/6quests/5batches. Unit257/content2/graph21/roadmap10/type/lint/build/manual/referencegatesผ่าน.48freshseed/modevictories+Windonlyattack+phasefiles+oldfieldabsenceผ่านunit. InitialBrowser4PASS/1FAILเพราะdiagnosticselectorผิด แก้selectorเดิมdata-render-statusโดยไม่ลดstateassert. FinalFocused7/Full155/CI/deploy/publicกำลังตรวจและจะเพิ่มreceiptจริง
+Actualreducer99nodes273choices205withstatedelta/6quests/5batches. Unit257/content2/graph21/roadmap10/type/lint/build/manual/referencegatesผ่าน.48freshseed/modevictories+Windonlyattack+phasefiles+oldfieldabsenceผ่านunit. InitialBrowser4PASS/1FAILเพราะdiagnosticselectorผิด แก้selectorเดิมdata-render-statusโดยไม่ลดstateassert. FinalFocused7/Full157/CI/deploy/publicกำลังตรวจและจะเพิ่มreceiptจริง
 
 ปัญหา/แก้:IDชนS20/CH2001..3ของopeningเดิม→ใช้G_SEAL_INNERnamespaced;endregexนับchapterเป็นgame→typedconclusion/negativevalidator;testpolicyhealทุกturnทำdamageไม่คืบ→เลือกhealจังหวะไม่โจมตี/guardtelegraphจริง ไม่แก้stateให้ชนะ;guardartวงทึบทับsilhouette→วาดเฉพาะขอบโปร่ง;NPCcountนับsheetMarenซ้ำ→ใช้actorIDเดิมซึ่งWorldmapไปv8;fixturecountsปรับตามsourceจริง ไม่ลดพฤติกรรม
 
 คงManualRAMonly/File2/State2/optionalguardianstrict ไม่มีdefaultfieldในoldfiles. Actualpublished0.12.1filecaptureผ่านUIเก็บ/tmpเท่านั้น;hashอยู่legacy-capture.json. Researchใช้หลักการabstractจากofficialresearchเดิมตามข้อจำกัด ไม่อ้างอ่านนิยายเต็ม/เล่นWayได้เพิ่ม ไม่มีคัดลอกIP. รอบนี้เปิดReference09จริงและสร้างspriteเอง
 
 ยังไม่เสร็จ:canonicaloptionalS29/Chaptermetadataข้ามARC/ARC2–12/อีก6LifePaths/AdvancedV6magic/FinalHDครบ10/audio/physicaldevices/FPS/humanfun. Next5:PIPE002chapter+savecontext→ARC002เล่นจบเป็นช่วง→LifePathsอีก2สาย→MAG010+catalystmigration→visual/mobilequalityควบคู่. ไม่มีการทำงานข้ามsessionอัตโนมัติ. Source/commit/CIสุดท้ายจะบันทึกเมื่อเกิดจริง
+
+
+### Session23 Batch B — เห็นแอนิเมชันจากคำสั่งที่อยู่นอกจอ
+
+ตรวจภาพมือถือจริงในChromiumพบcastbuttonอยู่ล่างfold ทำให้canvasหลุดจอ เมื่อเปิดnormalmotionเห็นเพียงเมนู. RedbrowserยืนยันcanvasY−643.65625หลังcast ก่อนแก้ ไม่มีstateinjection. เพิ่มrevealCinematicเฉพาะหน้าportraitphone/tabletเมื่อcanvasพ้นจอ ใช้instantscrollไม่smoothและกลับreadingpositionหลังexclusivefinally/renderเสร็จ. ReducedMotion/side-by-sideไม่เลื่อน ไม่แตะfocus/state/storage/timers. เพิ่มnormal+reduced2browsercasesและpublicverifierproof
+
+หยุดlocalFull155โดยตั้งใจ17PASS/1interrupted/137notrun และPRCI42429662756cancelledเพื่อรันsourceใหม่ ไม่ถือว่ารอบนั้นผ่าน. เป้าชุดใหม่157;รอผลจริงก่อนเผยแพร่. Sourceเดิมbc2793มีFocused7ผ่าน ส่วนpatchviewportต้องตรวจใหม่ทั้งfocusและfull
+
+ViewportfinalFocus4PASS1.3m: firstfixคืนตำแหน่งคลาด58pxเพราะเก็บscrollYหลังแทรกbusy-nav;แก้เก็บreadingPositionก่อนexclusive/renderจึงคืนexact717px. ReducedMotionไม่ขยับจอ ทั้งสองกรณีstate/feetตรง. เก็บviewport-first-fix/green ไม่ผ่อนassertion

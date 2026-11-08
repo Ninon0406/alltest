@@ -9,7 +9,7 @@
 - `initial-focused-browser.txt`:4PASS/1FAIL(test used nonexistent diagnostic attribute); corrected to existing render-status and reran all7 without weakening state checks. Initial interrupted run was stopped after TypeScript build failure, not claimed as pass.
 - `art-reproduction.json`:89PNG byte-reproduced, old88 unchanged. Original guardian source `scripts/generate-guardian-art.mjs`, Ref09 viewed for direction only, never copied into pixels or production references.
 - `legacy-capture.json`: actual public0.12.1 opening export, private bytes only /tmp; extends compatibility to6nativeversions. No save bytes committed or uploaded.
-- `verification.json`: source/full/CI/deployment/public receipts, read final status before continuing. Full155 and release proof initially pending.
+- `verification.json`: source/full/CI/deployment/public receipts, read final status before continuing. Full157 and release proof initially pending.
 - `verify-guardian.mjs`: version-pinned native file/public UI verification; current legacyfiles in/tmp required. Emulation10viewports and local/public exact final-state comparison. No runtime progress injection or save upload.
 
 Read `REPORT_TH.md`, `GODSEED_MASTER_ROADMAP.md` and Development Log. Physical Safari/Android/iPad/FPS/humanfun/finalHD remain unverified. Research limitations are those of official-source documents; no added claim of full novel access or Way playtest.
