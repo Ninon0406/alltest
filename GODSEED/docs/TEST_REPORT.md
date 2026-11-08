@@ -1,3 +1,9 @@
+## Session24 final-source QA update — 2026-11-08
+
+แก้ข้อความrevisitให้ตรงworldfactsด้วยauthoredvariants:ผลไม้ที่เก็บแล้ว/รากที่ฟื้นแล้ว/ร่องน้ำที่เปิดแล้ว และไม่ให้ความทรงจำโพรงก่อนเหตุการณ์จริง. UIแสดงvariantจากfactเท่านั้น ไม่แก้State;Graphตรวจflag/textและNodecontractsส่งออกvariantsด้วย. Sourcechecksล่าสุดUnit273/Content2/Graph24/Roadmap10/type/lint/build/manual/refPASS. FirstLocal165หยุด63PASS/1interrupted/101notrun15.0mและPRCI42469155897cancelledเพื่อใช้finalsource ไม่ใช่ผลผ่านครบ. FinalLocal165/PRCIใหม่รอผลจริง;ดูSession24/verification.json
+
+---
+
 ## Session24 — 2026-11-08 UTC / candidate0.14.0
 
 ต่อจากmain0dc39c0/public0.13โดยไม่เริ่มใหม่. ตรวจMainCI42436489386ของรอบก่อนแล้ว:158/158PASS23.8mและDeploySUCCESS. รอบนี้เพิ่ม28nodes67choices รวม127/340 พร้อม8questcontracts/7batches/7encounters/9stages/7fixedmaps. Actualreducerwitnessครบ127nodes340choices,260choicesมีstate deltaอย่างน้อยหนึ่งกรณี;re-executeoldrecipepathsสร้าง234สูตรจริงข้ามหลายเส้นทาง ไม่ใช่สูตรครบในเซฟเดียว

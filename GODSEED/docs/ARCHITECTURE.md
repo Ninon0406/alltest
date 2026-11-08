@@ -1,3 +1,9 @@
+## Session24 — authored fact variants
+
+StoryScene.variantsเป็นข้อมูลflag/textที่Graphตรวจproducerและnonemptytext. narrativeTextเลือกข้อความตามfactsที่มีอยู่และfallbackscene.textโดยไม่mutateState ไม่รันeventหรือrewardซ้ำ. UI/Nodecontractsใช้ข้อมูลเดียวกัน. การกลับมาS29/root/waterหลังช่วยแล้วจึงไม่อ้างว่าวัตถุยังอยู่ในสภาพก่อนหน้า. Hollowmemoryต้องมีa2_pip_trustedจากเหตุการณ์จริง ไม่มีAIเปลี่ยนfacts
+
+---
+
 ## Session24 — multi-chapter contracts, authored forest and item costs
 
 `content/chapters.ts`ประกาศARC/chapter/order/activationfact;`contentBatches`เป็นเจ้าของNodeเพียงแห่งเดียว. `systems/story-context.ts`derivejourneychapterจากownerและfactที่เกิดแล้ว โดยแยกcheckpointChapterId/batchId จึงไม่ถอยบทขณะแวะพื้นที่เก่า. UI,File2และvalidatorอ่านข้อมูลเดียวกัน ไม่มีpersistedcounterใหม่. File2batchIdoptionalรักษาoldshape;decodeเช็คchapter/batchกับstateหลังchecksumและreferencevalidation. LegacyV1/rawimport/migrationเดิมคงอยู่

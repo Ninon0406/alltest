@@ -55,6 +55,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
   const at=scene.id;
   if(scene.conclusion!==undefined&&!['chapter','game'].includes(scene.conclusion))error('INVALID_CONCLUSION',at,'Conclusion must explicitly distinguish chapter from game');
   if(!present(scene.title)||!present(scene.text))error('EMPTY_NARRATIVE',at,'Scene needs authored title and narrative');
+  for(const variant of scene.variants||[]){requireFlag(variant.flag,at+'.variants');if(!present(variant.text))error('EMPTY_NARRATIVE',at+'.variants','Conditional narrative must be authored text');}
   if(stages.size&&!stages.has(scene.stage))error('MISSING_STAGE',at,'Unknown stage '+scene.stage);
   if(actors.size&&!actors.has(scene.npc))error('MISSING_ACTOR',at,'Unknown actor asset '+scene.npc);
   if(!Array.isArray(scene.choices)){error('INVALID_CHOICES',at,'choices must be an array');continue;}
@@ -182,7 +183,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
     if(owners.has(id))error('DUPLICATE_BATCH_NODE',id,'Node belongs to two batches');owners.set(id,batch.id);
     const scene=scenes.get(id);if(!scene)continue;
     nodeContracts.push({nodeId:id,chapterId:batch.chapterId,arc:batch.arc,batchId:batch.id,location:scene.staging?.location||scene.stage,stage:scene.stage,
-     narrative:{title:scene.title,text:scene.text},entryEffects:scene.entryFlags||[],relevantNPCs:[scene.npc],
+     narrative:{title:scene.title,text:scene.text,variants:scene.variants||[]},entryEffects:scene.entryFlags||[],relevantNPCs:[scene.npc],
      choices:scene.choices.map(c=>({id:c.id,label:c.label,preconditions:{requires:c.requires||null,when:c.when||[],costs:c.costs||{}},
       characterAction:c.cue,cinematic:c.cinematic||{source:'shared-cue-library',cue:c.cue},stateEffects:{set:c.flags||[],clear:c.clearFlags||[],trust:c.trust||null,trustAmount:c.trustAmount??null,time:c.time||null},
       rewards:c.items||{},rewardPolicy:c.daily?'daily':c.onceFlag||'first-choice',next:c.next,battle:c.battle||null,uiRoute:c.route||null})),nextNodes:[...new Set(scene.choices.map(c=>c.next))]});

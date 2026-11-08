@@ -551,3 +551,8 @@ Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelper�
 - ยังไม่เสร็จ:finalFull/CI/publicreceipt,ARC1wholeacceptance/ARC2ทั้งบท/ARC3–12/อีก6LifePaths/V6advancedmagic/worldeconomy/endings15เป้าหมาย/audio/accessibility/physicaldevicesFPS/humanfun. Buildมีrawchunkwarning>1800kBแต่gzipJS≈477kB ไม่claimFPS
 - Commit/ไฟล์:featurebranchfeat/godseed-forest-memory-crossing;sourcefilesforest-story/chapters/story-context/save-file/game/combat/forest-road-map/world/art-assets/generatorและtests. Hashสุดท้าย/PRผลจริงจะเพิ่มในreleaseentry
 - ถัดไป:ตรวจfinalFull/CI→STO001/ARC001wholeacceptance→ARC002ส่วนต่อ→LifePaths→MAG010/visualperformance. ไม่มีงานข้ามsessionอัตโนมัติ
+
+
+### Session24 QA — fact-gated revisit narration
+
+พบS29เล่าว่าผลไม้กำลังกลิ้งเมื่อกลับมาหลังเก็บแล้ว จึงหยุดfirstFull165หลัง63PASS/1interrupted/101notrun15mและcancelPRCI42469155897 ไม่อ้างผลครบ. เพิ่มStoryScene.variantsแบบflag/textและnarrativeTextpure ใช้factเดียวกับวัตถุในฉาก:collectedfruit/restoredroot/openwater. ผลไม้ที่แบ่งให้พิพไม่เท่ากับเหตุการณ์พบโพรง จึงใช้a2_pip_trustedสำหรับmemoryline. Validatorตรวจproducer/ข้อความและexportmetadata;Unit273/Content2/Graph24/sourcegates/BuildPASS. FinalFull165เริ่มใหม่บนbuildสุดท้าย รักษาPNG99/State2/File2/IDs/recipe234และreduceroutcomesเดิม. ไม่เพิ่มฟีเจอร์ระหว่างรอผลนอกจากแก้testfailureจริง

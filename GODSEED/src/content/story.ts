@@ -9,7 +9,7 @@ import type {StageId} from '../scenes/stage-layout';
 import type {ChapterId,ArcId} from './chapters';
 export type StoryLocation='village_center'|'under_tree'|'elder_garden'|'spell_workshop'|'ancient_shrine'|'battle_glade'|'forest_road';
 export type Choice={id:string;label:string;next:string;cue:'walk'|'talk'|'pick'|'cast'|'rest';flags?:string[];clearFlags?:string[];items?:Record<string,number>;costs?:Record<string,number>;trust?:string;trustAmount?:number;requires?:string;when?:Condition[];lockedHint?:string;daily?:boolean;onceFlag?:string;group?:'other';spellCore?:Core;target?:'scene';route?:'craft';battle?:EncounterId;time?:'evening'|'next-morning';cinematic?:{anchor:string;effectTarget?:string;pose?:'interact'|'talk'|'pick_up'|'cast'|'rest'|'water';effect?:'lantern'|'song'|'leaf'}};
-export type StoryScene={id:string;title:string;stage:StageId;npc:string;text:string;conclusion?:'chapter'|'game';entryFlags?:string[];staging?:{location?:StoryLocation;anchor:string};choices:Choice[]};
+export type StoryScene={id:string;title:string;stage:StageId;npc:string;text:string;variants?:{flag:string;text:string}[];conclusion?:'chapter'|'game';entryFlags?:string[];staging?:{location?:StoryLocation;anchor:string};choices:Choice[]};
 const c=(id:string,label:string,next:string,cue:Choice['cue']='talk',extra:Partial<Choice>={}):Choice=>({id,label,next,cue,...extra});
 const shot=(anchor:string,pose:NonNullable<Choice['cinematic']>['pose']='talk',effect?:NonNullable<Choice['cinematic']>['effect']):NonNullable<Choice['cinematic']>=>({anchor,pose,...effect?{effect}:{}});
 // V6 expands the opening without claiming the still-unbuilt guardian endings.

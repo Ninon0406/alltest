@@ -1,0 +1,5 @@
+# Final narrative correction — 2026-11-08
+
+Initial source20540b2:local63PASS/1interrupted/101notrun15.0m;CI42469155897cancelled intentionally, notfullPASS. Found staticPipfruittextcontradictingthecollectedobjectonrevisit. Added reusable authoredfactvariants rather than rerunningevents;restoredroots/openwaterusecurrentfacts too. Hollowmemoryrequiresa2_pip_trusted, not merelypip_shared_fruit. State2/File2/reducer outcomes,IDs,recipeIDs,PNGbytes unchanged.
+
+Newpure/graphchecksprovefallback,postcollection/rootnarration,nomutationandinvalidfact/emptytextrejection. ExistingbrowserPipcaseassertstheactualrevisitedtext. Finalsource273unit/2content/24graph/10roadmap/type/lint/build/manual/referencePASS. Full165restartedfromthefinalbuild;PRCIwillusefinalhead. Rawchunkwarningremains≈1813kB/gzip478kB. Noappchangesafterthissourceunlessanactualtestfailurejustifiesafix.

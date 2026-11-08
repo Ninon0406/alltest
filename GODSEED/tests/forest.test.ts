@@ -1,7 +1,7 @@
 import {it,expect} from 'vitest';
 import {fresh} from '../src/engine/state';
 import {choose,craft,fight} from '../src/systems/game';
-import {choiceAvailability,rememberedLines} from '../src/systems/story';
+import {choiceAvailability,rememberedLines,narrativeText} from '../src/systems/story';
 import {scenes,contentBatches} from '../src/content/story';
 import {chapters} from '../src/content/chapters';
 import {storyContext} from '../src/systems/story-context';
@@ -44,3 +44,5 @@ it('pauses the report in an older hub without losing chapter2, then resumes with
  const supplies={...s.inventory};s=take(s,'CHA2_HUB','CHA2_CALL_PACK','CHA2_PACK_TAKE');expect(s.inventory).toEqual(supplies);
  s=take(s,'CHA2_RECIPE_LEAVE','CHA2_GOODBYE_PROMISE','CHA2_EDGE_PIP','CHA2_PIP_WAIT','CHA2_HOLLOW_TRACE','CHA2_RING_HAND','CHA2_TRIAL_PATIENCE','CHA2_PATIENCE_PASS','CHA2_RESULT_COMPARE','CHA2_TRACE_OBSERVE','CHA2_LEGACY_LIMIT');expect(()=>choose(s,'CHA2_DECIDE_PATH')).toThrow();s=take(s,'CHA2_DECIDE_RECALL','CHA2_RETURN_PAUSE','CHA2_HUB','CHA2_CALL_RESUME');expect(s.scene).toBe('A2_RETURN');expect(s.flags.a2_resolution_care).toBe(true);expect(s.flags.a2_resolution_path).not.toBe(true);
 });
+
+it('revisited narration follows the same collected-fruit and restored-root facts as the scene, without changing RAM',()=>{const at=pip(),base=scenes.S29_PIP_SIDEQUEST;expect(narrativeText(at,base)).toBe(base.text);const picked=choose(at,'CH2901'),copy=structuredClone(picked);expect(narrativeText(picked,base)).not.toBe(base.text);expect(narrativeText(picked,base)).toContain('ผลไม้ถูกเก็บไปแล้ว');expect(picked).toEqual(copy);const shared=choose(picked,'CHPIP_SHARE');expect(rememberedLines(shared,base).join(' ')).not.toContain('เจ้าของโพรง');const root=forestReady();expect(narrativeText(root,scenes.A2_ROOT)).toContain('แตกใบ');expect(narrativeText(root,scenes.A2_RING)).not.toBe(scenes.A2_RING.text);});
