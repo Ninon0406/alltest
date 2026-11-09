@@ -324,3 +324,8 @@ Originalforestroadใช้Ref06เป็นdirectionเท่านั้น,99
 คงState2/File2/234recipeIDs/oldscene-choiceIDs, optionalbatchmetadata, activejourneyแยกownercheckpoint, transactionalitemcostsและpurefactvariants. การกลับเยี่ยมต้องแสดงผลไม้ที่เก็บแล้ว/รากฟื้นแล้ว/น้ำเปิดแล้วตามflags ไม่รันrewardใหม่หรืออ้างhollowmemoryจากfruitsharingอย่างเดียว. B06อ่านplanก่อนaction/WATERoffensivehitcounter ไม่เพิ่มdefaultbattlefieldsหรือautosave. Native6รุ่นในSession23เป็นประวัติ ไฟล์ส่วนตัวเหล่านั้นไม่ได้อยู่ในexecutorนี้;รอบ24พิสูจน์ไฟล์0.13จริงใหม่แล้ว
 
 Next:STO001/ARC001wholeacceptance→ARC002ต่อจาก3ผลป่า→LIFE004/006→MAG006/010→VIS008/QA003. Checklist24.8%=27/109/PIPE002DONEเฉพาะcontentcontract;127nodes340choicesไม่เท่ากับครบ12ARCหรือgameending. มี3chapterconclusions/0fullgameendings. ภาพ99PNGยังไม่ผ่านfinalHD/hardware/FPS/humanfun ไม่มีautomaticcodingข้ามsession
+
+
+## Session25 handoff — 2026-11-09 / candidate0.15
+
+อ่านGodseedMasterRoadmap/PROGRESSและsession25/verification.jsonก่อนต่อ มีAlchemist25nodes63choices/3originalPNG/Distillที่ต้องได้สิทธิ์จริงแล้ว Source293unit25graph/Focus5ผ่าน แต่Full170/PRCI/public0.15ยังรอผล ห้ามเอาผลก่อนfreezeหรือpublic0.14แทน0.15. Main0.14CI42472995227จบ165PASS30.5mและDeploySUCCESSแล้ว. คงFile2/State2/234recipes/RAM-onlyfiles ไม่ปิดwholeLifePath/ARC2/HD/hardwareจากpartial. ก่อนพัฒนารอบใหม่ทุกครั้ง ให้ตรวจสอบ GODSEED_MASTER_ROADMAP.md เพื่อทราบงานที่เสร็จแล้ว งานที่กำลังทำ และงานที่ยังเหลือ เมื่อดำเนินงานสำเร็จให้ทดสอบและอัปเดต Roadmap ก่อนจบรอบเสมอ

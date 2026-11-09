@@ -1,3 +1,9 @@
+## 0.15.0 candidate — ห้องเรียนที่กลับไปช่วยผู้คน
+
+25newnodes/63choices: learn from Tala, measure herbs with Maren, actually craft Water/Ring/Heal, certify through real turn-based training, then return to the prior forest outcome and deliver medicine or teach the method. New earned Distill action consumes one potion once per battle to heal12/restoreMP6/cleanseSEAR+VEIL while spending a normal turn. Three original pixel atlases and scene-specific cauldron/kit anchors. Legacy234recipes and ManualFileSave2/State2 remain stable. Candidate full170/CI/publicverification pending; this is not1.0 or a complete Life Path/ARC2.
+
+---
+
 # 0.14.0 — ถนนที่กลับมาเล่าได้ / released 2026-11-08
 
 หลังจบบทแรก เปิด “สถานที่อื่น” แล้วเลือก “ฟังเสียงตอบจากรากไม้หลังจบบทแรก”. ภารกิจพิพเริ่มได้จาก “ตามพิพไปดูผลไม้ข้างถนน” เมื่อรู้จักลูมิแล้ว. มีการเตรียมเวท สำรวจ เลือกช่วยป่า และกลับมาแบ่งความรู้กับคนในหมู่บ้าน พร้อมสามผลต่อโลกที่กลับมาเห็นได้จริง. ยังโหลดไฟล์เดิมเองและบันทึก .godseed เองเท่านั้น

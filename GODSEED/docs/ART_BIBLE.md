@@ -1,3 +1,9 @@
+## Session25 — art-v18 original studies
+
+Original Tala128×144 atlas (32×48 cells, foot44; idle/talk/show_recipe), field-kit32×48 at forest139,203 with foot44/48 and depth203, Alchemist stage icons192×32 preserving old layout. Tala uses auburn tied hair/teal coat/short trousers/satchel/vial; read scene silhouettes at native320×240 resolution. Kit_front stands at139,239 facing north; old sitting anchor is preserved. Water/Ring/Heal story VFX targets cauldron240,170; Distill targets caster at battlefeet130,239 without a walking craft route. All102PNGs reproduce exactly, old99 unchanged. Provisional original pixel studies, not final-HD acceptance.
+
+---
+
 ## Session24 — original Forest Road / concept06 study
 
 เปิด06_forest_road.webpจริง ใช้ทิศทางถนนหินคด แสงลอดใบไม้ ต้นโอ๊ก/โพรง/น้ำข้างทาง. วาดintegerpixelsใหม่480×270 ไม่อ่านcopy/trace/resizeconceptpixels. art-v17มี3layers+fallback480×270,oak128×160,hollow88×132,root288×64(4states),fruit128×32(4frames),keepsake128×48(4cells),Weaver256×256(16cells64×64/idleattackhitguard). Spriteplayer32×48/palette/nearest-neighborเดิมคงอยู่

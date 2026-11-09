@@ -1,0 +1,6318 @@
+{
+  "result": "PASS",
+  "at": "2026-11-09T09:25:33.631Z",
+  "scope": "Current bounded reducer search plus re-executed historical recipe/choice paths and original ARC2 and alchemist course paths. Fresh states and earned commands only; no injected flags/items; not an all-seed or browser proof.",
+  "nodeCount": 152,
+  "nodeIds": [
+    "A2_BROOK",
+    "A2_CALL",
+    "A2_CARE",
+    "A2_DECISION",
+    "A2_DRY",
+    "A2_EDGE",
+    "A2_EIRA",
+    "A2_ENCOUNTER",
+    "A2_EPILOGUE",
+    "A2_GOODBYE",
+    "A2_HOLLOW",
+    "A2_LEGACY",
+    "A2_MAREN",
+    "A2_MARKER",
+    "A2_PACK",
+    "A2_PATH",
+    "A2_PATIENCE",
+    "A2_PIP",
+    "A2_RECIPE",
+    "A2_RECORD",
+    "A2_RETURN",
+    "A2_RING",
+    "A2_ROOT",
+    "A2_TRACE",
+    "A2_TRIAL_RESULT",
+    "ALC_CALL",
+    "ALC_COMPARE",
+    "ALC_CONSENT",
+    "ALC_DELIVER",
+    "ALC_EPILOGUE",
+    "ALC_GARDEN",
+    "ALC_LEAF",
+    "ALC_MEET",
+    "ALC_NOTES",
+    "ALC_OBSERVE",
+    "ALC_PACK",
+    "ALC_PLAN",
+    "ALC_RANK1",
+    "ALC_RANK2",
+    "ALC_RECIPE",
+    "ALC_RESULT",
+    "ALC_RETURN",
+    "ALC_ROOTS",
+    "ALC_SAMPLE",
+    "ALC_SIGN",
+    "ALC_SOURCE",
+    "ALC_TABLE",
+    "ALC_TEACH",
+    "ALC_TRIAL",
+    "ALC_WASH",
+    "ECHO_ARCH",
+    "ECHO_BYPASS",
+    "ECHO_CALL",
+    "ECHO_CLOSURE",
+    "ECHO_LISTEN",
+    "ECHO_LUMI",
+    "ECHO_MAREN",
+    "ECHO_PACK",
+    "ECHO_PROMISE",
+    "ECHO_RECIPE",
+    "ECHO_RECORD",
+    "ECHO_REPORT",
+    "ECHO_RESULT",
+    "ECHO_ROAD",
+    "ECHO_SAMPLE",
+    "ECHO_SIGNAL",
+    "ECHO_TRACKS",
+    "ECHO_WATER",
+    "G_AFTER_ARCHIVE",
+    "G_AFTER_COMMUNITY",
+    "G_AFTER_FAMILY",
+    "G_CALL",
+    "G_CRAFT",
+    "G_INSCRIPTION",
+    "G_KIT",
+    "G_LUMI",
+    "G_MAREN",
+    "G_PACT",
+    "G_REVIEW",
+    "G_SEAL_INNER",
+    "LP_CROSSROADS",
+    "LP_EXPLORER_ACK",
+    "LP_EXPLORER_BRIEF",
+    "LP_EXPLORER_HOME",
+    "LP_EXPLORER_MARKERS",
+    "LP_EXPLORER_RESULT",
+    "LP_EXPLORER_SURVEY",
+    "LP_EXPLORER_TRIAL",
+    "LP_NATURE_ACK",
+    "LP_NATURE_BRIEF",
+    "LP_NATURE_FIELD",
+    "LP_NATURE_HOME",
+    "LP_NATURE_RESULT",
+    "LP_NATURE_SOURCE",
+    "LP_NATURE_TRIAL",
+    "LP_SHARED_ROOTS",
+    "PIP_FRUIT_RESULT",
+    "PIP_PROMISE",
+    "S00_WAKE",
+    "S01_FIRST_STEPS",
+    "S02_HUB",
+    "S02_TREE",
+    "S03B_MAREN",
+    "S03_LUMI",
+    "S04_KORO",
+    "S05_CRAFT_TUTORIAL",
+    "S06_GARDEN",
+    "S07_ARCHIVE",
+    "S08_FOREST_GATE",
+    "S09_FOREST",
+    "S10_FOREST_RESULT",
+    "S11_STREAM",
+    "S12_STREAM_RESULT",
+    "S13_FOREST_SHRINE",
+    "S14_RESEARCH",
+    "S15_RUINS",
+    "S16_RUINS_RESULT",
+    "S17_ECHO_TABLET",
+    "S18_FESTIVAL_PREP",
+    "S19_FESTIVAL",
+    "S20_SEAL_PASSAGE",
+    "S21_ECHO_TRIAL",
+    "S22_GUARDIAN",
+    "S23_DECISION",
+    "S24_END_FAMILY",
+    "S25_END_COMMUNITY",
+    "S26_END_ARCHIVE",
+    "S27_EPILOGUE",
+    "S28_RECOVER",
+    "S29_PIP_SIDEQUEST",
+    "V6_A1_BELL",
+    "V6_A1_CIRCLE",
+    "V6_A1_CLOSE_ARCHIVE",
+    "V6_A1_CLOSE_CIRCLE",
+    "V6_A1_CLOSE_GARDEN",
+    "V6_A1_FIRST_SONG",
+    "V6_A1_FOREST",
+    "V6_A1_FOREST_ECHO",
+    "V6_A1_GARDEN",
+    "V6_A1_GEARS",
+    "V6_A1_INVITATION",
+    "V6_A1_LIGHT_RESULT",
+    "V6_A1_MARGIN",
+    "V6_A1_MORNING",
+    "V6_A1_MUSICBOX",
+    "V6_A1_NOTES",
+    "V6_A1_REHEARSAL",
+    "V6_A1_RUINS_RETURN",
+    "V6_A1_RUNE_COPY",
+    "V6_A1_SEEDBEDS",
+    "V6_A1_STREAM",
+    "V6_A1_WORKSHOP_LIGHT"
+  ],
+  "successfulChoiceCount": 403,
+  "stateChangingChoiceCount": 295,
+  "craftedRecipeCount": 234,
+  "missingChoiceIds": [],
+  "successfulChoiceIds": [
+    "CH0001",
+    "CH0002",
+    "CH0003",
+    "CH0004",
+    "CH0101",
+    "CH0102",
+    "CH0103",
+    "CH0201",
+    "CH0202",
+    "CH0203",
+    "CH0204",
+    "CH0205",
+    "CH0206",
+    "CH0207",
+    "CH0208",
+    "CH0209",
+    "CH0210",
+    "CH0211",
+    "CH02T1",
+    "CH02T2",
+    "CH0301",
+    "CH0302",
+    "CH0303",
+    "CH03B1",
+    "CH03B2",
+    "CH03B3",
+    "CH0401",
+    "CH0402",
+    "CH0403",
+    "CH0404",
+    "CH0405",
+    "CH0501",
+    "CH0502",
+    "CH0503",
+    "CH0601",
+    "CH0602",
+    "CH0603",
+    "CH0701",
+    "CH0702",
+    "CH0703",
+    "CH0801",
+    "CH0802",
+    "CH0803",
+    "CH0901",
+    "CH0903",
+    "CH0904",
+    "CH1001",
+    "CH1002",
+    "CH1101",
+    "CH1102",
+    "CH1103",
+    "CH1104",
+    "CH1201",
+    "CH1202",
+    "CH1203",
+    "CH1301",
+    "CH1303",
+    "CH1401",
+    "CH1402",
+    "CH1403",
+    "CH1501",
+    "CH1502",
+    "CH1503",
+    "CH1504",
+    "CH1601",
+    "CH1602",
+    "CH1701",
+    "CH1702",
+    "CH1703",
+    "CH1801",
+    "CH1802",
+    "CH1803",
+    "CH1804",
+    "CH1805",
+    "CH1806",
+    "CH1807",
+    "CH1808",
+    "CH1809",
+    "CH1810",
+    "CH1901",
+    "CH1902",
+    "CH1903",
+    "CH2001",
+    "CH2002",
+    "CH2003",
+    "CH2101",
+    "CH2102",
+    "CH2103",
+    "CH2201",
+    "CH2202",
+    "CH2203",
+    "CH2301",
+    "CH2302",
+    "CH2303",
+    "CH2401",
+    "CH2501",
+    "CH2601",
+    "CH2701",
+    "CH2702",
+    "CH2801",
+    "CH2802",
+    "CH2901",
+    "CH2902",
+    "CH2903",
+    "CHA2_BROOK_LEAVE",
+    "CHA2_BROOK_SAMPLE",
+    "CHA2_CALL_LATER",
+    "CHA2_CALL_PACK",
+    "CHA2_CALL_RESUME",
+    "CHA2_CARE_RETURN",
+    "CHA2_DECIDE_CARE",
+    "CHA2_DECIDE_PATH",
+    "CHA2_DECIDE_RECALL",
+    "CHA2_DECIDE_RECORD",
+    "CHA2_DRY_HAND",
+    "CHA2_DRY_WATER",
+    "CHA2_EDGE_HOME",
+    "CHA2_EDGE_MARK",
+    "CHA2_EDGE_PIP",
+    "CHA2_EIRA_SHARE",
+    "CHA2_EPILOGUE_FINISH",
+    "CHA2_EPILOGUE_TREE",
+    "CHA2_GOODBYE_PROMISE",
+    "CHA2_GOODBYE_SKETCH",
+    "CHA2_HOLLOW_ECHO",
+    "CHA2_HOLLOW_TRACE",
+    "CHA2_HUB",
+    "CHA2_LEGACY_CARE",
+    "CHA2_LEGACY_LIMIT",
+    "CHA2_MAREN_LISTEN",
+    "CHA2_MARK_NOTE",
+    "CHA2_MARK_SCOUT",
+    "CHA2_PACK_BACK",
+    "CHA2_PACK_TAKE",
+    "CHA2_PATH_RETURN",
+    "CHA2_PATIENCE_PASS",
+    "CHA2_PIP_MEMORY",
+    "CHA2_PIP_WAIT",
+    "CHA2_RECIPE_LEAVE",
+    "CHA2_RECIPE_OPEN",
+    "CHA2_RECORD_RETURN",
+    "CHA2_RESULT_COMPARE",
+    "CHA2_RESULT_REST",
+    "CHA2_RETURN_EIRA",
+    "CHA2_RETURN_MAREN",
+    "CHA2_RETURN_PAUSE",
+    "CHA2_REVISIT",
+    "CHA2_RING_BLOOM",
+    "CHA2_RING_HAND",
+    "CHA2_RING_NATURE",
+    "CHA2_ROOT_LISTEN",
+    "CHA2_ROOT_SOIL",
+    "CHA2_TRACE_ARCHIVE",
+    "CHA2_TRACE_COMMUNITY",
+    "CHA2_TRACE_FAMILY",
+    "CHA2_TRACE_OBSERVE",
+    "CHA2_TRIAL_BACK",
+    "CHA2_TRIAL_FIGHT",
+    "CHA2_TRIAL_FRIEND",
+    "CHA2_TRIAL_PATIENCE",
+    "CHALC_CALL_HOME",
+    "CHALC_CALL_MEET",
+    "CHALC_CALL_RESUME",
+    "CHALC_CALL_TRIAL",
+    "CHALC_COMPARE_LIMIT",
+    "CHALC_COMPARE_USER",
+    "CHALC_CONSENT_HOME",
+    "CHALC_CONSENT_PATHS",
+    "CHALC_CRAFT",
+    "CHALC_DELIVER_CHECK",
+    "CHALC_DELIVER_PAUSE",
+    "CHALC_DELIVER_TALA",
+    "CHALC_EPILOGUE_FIELD",
+    "CHALC_EPILOGUE_TEACH",
+    "CHALC_FINISH",
+    "CHALC_GARDEN_ASK",
+    "CHALC_GARDEN_SOURCE",
+    "CHALC_HUB",
+    "CHALC_LEAF_BACK",
+    "CHALC_LEAF_CHECK",
+    "CHALC_MEASURE",
+    "CHALC_MEET_ASK",
+    "CHALC_MEET_SHOW",
+    "CHALC_NOTES_EIRA",
+    "CHALC_NOTES_LIMIT",
+    "CHALC_OBSERVE_SOURCE",
+    "CHALC_PACK_FIELD",
+    "CHALC_PACK_RECALL",
+    "CHALC_PACK_TEACH",
+    "CHALC_PLAN_PACK",
+    "CHALC_PLAN_REVIEW",
+    "CHALC_RANK1",
+    "CHALC_RANK1_REVIEW",
+    "CHALC_RANK2",
+    "CHALC_RANK2_REVIEW",
+    "CHALC_RECIPE_BACK",
+    "CHALC_RECIPE_TEST",
+    "CHALC_RESULT_ASK",
+    "CHALC_RESULT_NOTE",
+    "CHALC_RETURN_HOME",
+    "CHALC_RETURN_NOTES",
+    "CHALC_RETURN_ROOT",
+    "CHALC_RETURN_SIGN",
+    "CHALC_REVISIT",
+    "CHALC_ROOT_NATURE",
+    "CHALC_ROOT_SPACE",
+    "CHALC_SAMPLE_CAST",
+    "CHALC_SAMPLE_RECIPE",
+    "CHALC_SIGN_SCOUT",
+    "CHALC_SIGN_WALK",
+    "CHALC_SOURCE_EDGE",
+    "CHALC_SOURCE_WAIT",
+    "CHALC_START",
+    "CHALC_TABLE_LIMIT",
+    "CHALC_TABLE_USER",
+    "CHALC_TEACH_LIMIT",
+    "CHALC_TEACH_PAUSE",
+    "CHALC_TEACH_QUESTION",
+    "CHALC_TRIAL_HOME",
+    "CHALC_TRIAL_PREP",
+    "CHALC_TRIAL_START",
+    "CHALC_WASH_HELP",
+    "CHALC_WASH_SLOW",
+    "CHE_ARCH_GAP",
+    "CHE_ARCH_READ",
+    "CHE_ARCH_RETREAT",
+    "CHE_BYPASS_WAIT",
+    "CHE_CALL_HOME",
+    "CHE_CALL_PREP",
+    "CHE_CALL_PROMISE",
+    "CHE_CLOSE_LINGER",
+    "CHE_CLOSE_PIERCE",
+    "CHE_HUB",
+    "CHE_LISTEN_NOTE",
+    "CHE_LISTEN_PAUSE",
+    "CHE_LUMI_PAUSE",
+    "CHE_LUMI_TRY",
+    "CHE_MAREN_NOTE",
+    "CHE_MAREN_STAY",
+    "CHE_PACK_BACK",
+    "CHE_PACK_TAKE",
+    "CHE_PROMISE_LISTEN",
+    "CHE_PROMISE_RECORD",
+    "CHE_RECIPE_CRAFT",
+    "CHE_RECIPE_HOME",
+    "CHE_RECIPE_LIGHT",
+    "CHE_RECIPE_READY",
+    "CHE_RECORD_CARE",
+    "CHE_RECORD_KNOWLEDGE",
+    "CHE_REPORT_COPY",
+    "CHE_REPORT_LIMIT",
+    "CHE_RESULT_RECORD",
+    "CHE_RESULT_SAMPLE",
+    "CHE_ROAD_BACK",
+    "CHE_ROAD_MAP",
+    "CHE_ROAD_TRACK",
+    "CHE_ROAD_WATER",
+    "CHE_SAMPLE_LEAVE",
+    "CHE_SAMPLE_TAKE",
+    "CHE_SIGNAL_SOLO",
+    "CHE_SIGNAL_TEAM",
+    "CHE_TRACK_MARK",
+    "CHE_TRACK_WAIT",
+    "CHE_TRACK_WATER",
+    "CHE_WATER_HAND",
+    "CHE_WATER_ROOT",
+    "CHE_WATER_WIND",
+    "CHG_ARCHIVE_LESSON",
+    "CHG_ARCHIVE_QUESTION",
+    "CHG_CALL_BACK",
+    "CHG_CALL_LUMI",
+    "CHG_CALL_PREP",
+    "CHG_COMMUNITY_PATH",
+    "CHG_COMMUNITY_TEACH",
+    "CHG_CRAFT_MAREN",
+    "CHG_CRAFT_OPEN",
+    "CHG_CRAFT_ROAD",
+    "CHG_FAMILY_COPY",
+    "CHG_FAMILY_STAY",
+    "CHG_HUB",
+    "CHG_KIT_HOME",
+    "CHG_KIT_TAKE",
+    "CHG_LUMI_COPY",
+    "CHG_LUMI_PROMISE",
+    "CHG_MAREN_REST",
+    "CHG_MAREN_THANK",
+    "CHG_PACT_GENTLE",
+    "CHG_PACT_STANDARD",
+    "CHG_PASSAGE_BACK",
+    "CHG_PASSAGE_READ",
+    "CHG_PASSAGE_SAMPLE",
+    "CHG_READ_LISTEN",
+    "CHG_READ_PATTERN",
+    "CHG_REVIEW_BACK",
+    "CHG_REVIEW_CRAFT",
+    "CHG_REVIEW_MODE",
+    "CHG_REVISIT",
+    "CHLP_CROSSROADS_BACK",
+    "CHLP_E_ACK_MAP",
+    "CHLP_E_ACK_SHOW",
+    "CHLP_E_BEGIN",
+    "CHLP_E_BRIEF_BACK",
+    "CHLP_E_HOME_CROSS",
+    "CHLP_E_HOME_REST",
+    "CHLP_E_LISTEN",
+    "CHLP_E_MARK_RIBBON",
+    "CHLP_E_MARK_STONES",
+    "CHLP_E_RANK2_SAFE",
+    "CHLP_E_RANK2_SHARE",
+    "CHLP_E_SURVEY_FEET",
+    "CHLP_E_SURVEY_WIND",
+    "CHLP_E_TRIAL_BACK",
+    "CHLP_E_TRIAL_PREP",
+    "CHLP_E_TRIAL_START",
+    "CHLP_HUB",
+    "CHLP_N_ACK_BALANCE",
+    "CHLP_N_ACK_PATIENCE",
+    "CHLP_N_BEGIN",
+    "CHLP_N_BRIEF_BACK",
+    "CHLP_N_HOME_CROSS",
+    "CHLP_N_HOME_REST",
+    "CHLP_N_RANK2_NEIGHBOR",
+    "CHLP_N_RANK2_REFUGE",
+    "CHLP_N_REMEMBER",
+    "CHLP_N_SOURCE_CLEAR",
+    "CHLP_N_SOURCE_LISTEN",
+    "CHLP_N_TRIAL_BACK",
+    "CHLP_N_TRIAL_PREP",
+    "CHLP_N_TRIAL_START",
+    "CHLP_N_WATER_BUCKET",
+    "CHLP_N_WATER_SPELL",
+    "CHLP_RESUME_EXPLORER",
+    "CHLP_RESUME_NATURE",
+    "CHLP_SHARED_GUIDE",
+    "CHLP_SHARED_LATER",
+    "CHLP_SHARED_LESSON",
+    "CHLP_SHARED_NEIGHBORS",
+    "CHLP_SHARED_REFUGES",
+    "CHLP_START_EXPLORER",
+    "CHLP_START_NATURE",
+    "CHPIP_FINISH",
+    "CHPIP_GARDEN",
+    "CHPIP_HUB",
+    "CHPIP_KEEP",
+    "CHPIP_RECALL",
+    "CHPIP_REMEMBER",
+    "CHPIP_SHARE",
+    "CHPIP_WAIT",
+    "CHV6_BELL_KEEP",
+    "CHV6_BELL_SHARE",
+    "CHV6_BOX_ASK",
+    "CHV6_BOX_BACK",
+    "CHV6_BOX_HAND",
+    "CHV6_BOX_LOOK",
+    "CHV6_BOX_WIND",
+    "CHV6_CARE_NOTE",
+    "CHV6_CARE_STAY",
+    "CHV6_CLOSE_CARE",
+    "CHV6_CLOSE_KNOWLEDGE",
+    "CHV6_CLOSE_SHARE",
+    "CHV6_FOREST_BACK",
+    "CHV6_FOREST_FALLEN",
+    "CHV6_FOREST_REMEMBER",
+    "CHV6_FOREST_WAIT",
+    "CHV6_FOREST_WIND",
+    "CHV6_GARDEN_BACK",
+    "CHV6_GARDEN_HAND",
+    "CHV6_GARDEN_HELP",
+    "CHV6_GARDEN_KNOWN",
+    "CHV6_GARDEN_WATER",
+    "CHV6_INVITE_EIRA",
+    "CHV6_INVITE_MAREN",
+    "CHV6_INVITE_PIP",
+    "CHV6_KNOWLEDGE_QUESTION",
+    "CHV6_KNOWLEDGE_SHARE",
+    "CHV6_LIGHT_BACK",
+    "CHV6_LIGHT_FIRE",
+    "CHV6_LIGHT_HAND",
+    "CHV6_LIGHT_RECORD",
+    "CHV6_LIGHT_TEACH",
+    "CHV6_LIGHT_WIND",
+    "CHV6_MORNING_FINISH",
+    "CHV6_MORNING_LEARN",
+    "CHV6_NOTES_BACK",
+    "CHV6_NOTES_COPY",
+    "CHV6_NOTES_ECHO",
+    "CHV6_NOTES_LISTEN",
+    "CHV6_NOTES_MARK",
+    "CHV6_REHEARSE_REST",
+    "CHV6_REHEARSE_SLOW",
+    "CHV6_RUIN_BACK",
+    "CHV6_RUIN_LISTEN",
+    "CHV6_RUIN_TRACE",
+    "CHV6_RUNE_COPY",
+    "CHV6_RUNE_ECHO",
+    "CHV6_SHARED_REMEMBER",
+    "CHV6_SHARED_REST",
+    "CHV6_STREAM_BACK",
+    "CHV6_STREAM_CLEAR",
+    "CHV6_STREAM_RHYTHM",
+    "CHV6_VOW_CARE",
+    "CHV6_VOW_LEARN",
+    "CHV6_VOW_SHARE"
+  ],
+  "stateChangingChoiceIds": [
+    "CH0001",
+    "CH0002",
+    "CH0003",
+    "CH0004",
+    "CH0101",
+    "CH0102",
+    "CH0103",
+    "CH0201",
+    "CH0202",
+    "CH0203",
+    "CH0204",
+    "CH0205",
+    "CH0206",
+    "CH0207",
+    "CH0208",
+    "CH0209",
+    "CH0210",
+    "CH0211",
+    "CH02T1",
+    "CH02T2",
+    "CH0301",
+    "CH0302",
+    "CH0303",
+    "CH03B1",
+    "CH03B2",
+    "CH03B3",
+    "CH0401",
+    "CH0402",
+    "CH0403",
+    "CH0404",
+    "CH0405",
+    "CH0502",
+    "CH0601",
+    "CH0602",
+    "CH0603",
+    "CH0701",
+    "CH0702",
+    "CH0703",
+    "CH0802",
+    "CH0901",
+    "CH0903",
+    "CH1001",
+    "CH1002",
+    "CH1101",
+    "CH1102",
+    "CH1103",
+    "CH1201",
+    "CH1202",
+    "CH1203",
+    "CH1301",
+    "CH1303",
+    "CH1401",
+    "CH1402",
+    "CH1403",
+    "CH1501",
+    "CH1502",
+    "CH1503",
+    "CH1601",
+    "CH1602",
+    "CH1701",
+    "CH1702",
+    "CH1703",
+    "CH1901",
+    "CH1902",
+    "CH1903",
+    "CH2001",
+    "CH2002",
+    "CH2101",
+    "CH2201",
+    "CH2301",
+    "CH2302",
+    "CH2303",
+    "CH2401",
+    "CH2501",
+    "CH2601",
+    "CH2701",
+    "CH2702",
+    "CH2901",
+    "CH2902",
+    "CH2903",
+    "CHA2_BROOK_LEAVE",
+    "CHA2_BROOK_SAMPLE",
+    "CHA2_CARE_RETURN",
+    "CHA2_DECIDE_CARE",
+    "CHA2_DECIDE_PATH",
+    "CHA2_DECIDE_RECORD",
+    "CHA2_DRY_HAND",
+    "CHA2_DRY_WATER",
+    "CHA2_EDGE_MARK",
+    "CHA2_EDGE_PIP",
+    "CHA2_EIRA_SHARE",
+    "CHA2_EPILOGUE_FINISH",
+    "CHA2_EPILOGUE_TREE",
+    "CHA2_GOODBYE_PROMISE",
+    "CHA2_GOODBYE_SKETCH",
+    "CHA2_HOLLOW_ECHO",
+    "CHA2_HOLLOW_TRACE",
+    "CHA2_HUB",
+    "CHA2_LEGACY_CARE",
+    "CHA2_LEGACY_LIMIT",
+    "CHA2_MAREN_LISTEN",
+    "CHA2_MARK_NOTE",
+    "CHA2_MARK_SCOUT",
+    "CHA2_PACK_TAKE",
+    "CHA2_PATH_RETURN",
+    "CHA2_PATIENCE_PASS",
+    "CHA2_PIP_MEMORY",
+    "CHA2_PIP_WAIT",
+    "CHA2_RECORD_RETURN",
+    "CHA2_RESULT_COMPARE",
+    "CHA2_RESULT_REST",
+    "CHA2_RETURN_EIRA",
+    "CHA2_RETURN_MAREN",
+    "CHA2_RETURN_PAUSE",
+    "CHA2_REVISIT",
+    "CHA2_RING_BLOOM",
+    "CHA2_RING_HAND",
+    "CHA2_RING_NATURE",
+    "CHA2_ROOT_LISTEN",
+    "CHA2_ROOT_SOIL",
+    "CHA2_TRACE_ARCHIVE",
+    "CHA2_TRACE_COMMUNITY",
+    "CHA2_TRACE_FAMILY",
+    "CHA2_TRACE_OBSERVE",
+    "CHA2_TRIAL_FIGHT",
+    "CHA2_TRIAL_FRIEND",
+    "CHA2_TRIAL_PATIENCE",
+    "CHALC_COMPARE_LIMIT",
+    "CHALC_COMPARE_USER",
+    "CHALC_DELIVER_CHECK",
+    "CHALC_DELIVER_TALA",
+    "CHALC_FINISH",
+    "CHALC_GARDEN_ASK",
+    "CHALC_HUB",
+    "CHALC_LEAF_CHECK",
+    "CHALC_MEASURE",
+    "CHALC_MEET_ASK",
+    "CHALC_MEET_SHOW",
+    "CHALC_NOTES_EIRA",
+    "CHALC_NOTES_LIMIT",
+    "CHALC_PACK_FIELD",
+    "CHALC_PACK_TEACH",
+    "CHALC_RANK1",
+    "CHALC_RANK2",
+    "CHALC_RESULT_ASK",
+    "CHALC_RESULT_NOTE",
+    "CHALC_REVISIT",
+    "CHALC_ROOT_NATURE",
+    "CHALC_ROOT_SPACE",
+    "CHALC_SAMPLE_CAST",
+    "CHALC_SIGN_SCOUT",
+    "CHALC_SIGN_WALK",
+    "CHALC_SOURCE_EDGE",
+    "CHALC_SOURCE_WAIT",
+    "CHALC_START",
+    "CHALC_TABLE_LIMIT",
+    "CHALC_TABLE_USER",
+    "CHALC_TEACH_LIMIT",
+    "CHALC_TEACH_QUESTION",
+    "CHALC_TRIAL_START",
+    "CHALC_WASH_HELP",
+    "CHALC_WASH_SLOW",
+    "CHE_ARCH_GAP",
+    "CHE_ARCH_READ",
+    "CHE_BYPASS_WAIT",
+    "CHE_CLOSE_LINGER",
+    "CHE_CLOSE_PIERCE",
+    "CHE_HUB",
+    "CHE_LISTEN_NOTE",
+    "CHE_LISTEN_PAUSE",
+    "CHE_LUMI_PAUSE",
+    "CHE_LUMI_TRY",
+    "CHE_MAREN_NOTE",
+    "CHE_MAREN_STAY",
+    "CHE_PACK_TAKE",
+    "CHE_PROMISE_LISTEN",
+    "CHE_PROMISE_RECORD",
+    "CHE_RECIPE_LIGHT",
+    "CHE_RECIPE_READY",
+    "CHE_RECORD_CARE",
+    "CHE_RECORD_KNOWLEDGE",
+    "CHE_REPORT_COPY",
+    "CHE_REPORT_LIMIT",
+    "CHE_RESULT_RECORD",
+    "CHE_ROAD_MAP",
+    "CHE_SAMPLE_LEAVE",
+    "CHE_SAMPLE_TAKE",
+    "CHE_SIGNAL_SOLO",
+    "CHE_SIGNAL_TEAM",
+    "CHE_TRACK_MARK",
+    "CHE_TRACK_WAIT",
+    "CHE_WATER_HAND",
+    "CHE_WATER_ROOT",
+    "CHE_WATER_WIND",
+    "CHG_ARCHIVE_LESSON",
+    "CHG_ARCHIVE_QUESTION",
+    "CHG_COMMUNITY_PATH",
+    "CHG_COMMUNITY_TEACH",
+    "CHG_FAMILY_COPY",
+    "CHG_FAMILY_STAY",
+    "CHG_HUB",
+    "CHG_KIT_TAKE",
+    "CHG_LUMI_COPY",
+    "CHG_LUMI_PROMISE",
+    "CHG_MAREN_REST",
+    "CHG_MAREN_THANK",
+    "CHG_PACT_GENTLE",
+    "CHG_PACT_STANDARD",
+    "CHG_PASSAGE_SAMPLE",
+    "CHG_READ_LISTEN",
+    "CHG_READ_PATTERN",
+    "CHG_REVISIT",
+    "CHLP_E_ACK_MAP",
+    "CHLP_E_ACK_SHOW",
+    "CHLP_E_HOME_CROSS",
+    "CHLP_E_HOME_REST",
+    "CHLP_E_LISTEN",
+    "CHLP_E_MARK_RIBBON",
+    "CHLP_E_MARK_STONES",
+    "CHLP_E_RANK2_SAFE",
+    "CHLP_E_RANK2_SHARE",
+    "CHLP_E_SURVEY_FEET",
+    "CHLP_E_SURVEY_WIND",
+    "CHLP_E_TRIAL_START",
+    "CHLP_HUB",
+    "CHLP_N_ACK_BALANCE",
+    "CHLP_N_ACK_PATIENCE",
+    "CHLP_N_HOME_CROSS",
+    "CHLP_N_HOME_REST",
+    "CHLP_N_RANK2_NEIGHBOR",
+    "CHLP_N_RANK2_REFUGE",
+    "CHLP_N_REMEMBER",
+    "CHLP_N_SOURCE_CLEAR",
+    "CHLP_N_SOURCE_LISTEN",
+    "CHLP_N_TRIAL_START",
+    "CHLP_N_WATER_BUCKET",
+    "CHLP_N_WATER_SPELL",
+    "CHLP_SHARED_GUIDE",
+    "CHLP_SHARED_NEIGHBORS",
+    "CHLP_SHARED_REFUGES",
+    "CHLP_START_EXPLORER",
+    "CHLP_START_NATURE",
+    "CHPIP_FINISH",
+    "CHPIP_GARDEN",
+    "CHPIP_HUB",
+    "CHPIP_KEEP",
+    "CHPIP_SHARE",
+    "CHV6_BELL_KEEP",
+    "CHV6_BELL_SHARE",
+    "CHV6_BOX_ASK",
+    "CHV6_BOX_HAND",
+    "CHV6_BOX_LOOK",
+    "CHV6_BOX_WIND",
+    "CHV6_CARE_NOTE",
+    "CHV6_CARE_STAY",
+    "CHV6_CLOSE_CARE",
+    "CHV6_CLOSE_KNOWLEDGE",
+    "CHV6_CLOSE_SHARE",
+    "CHV6_FOREST_FALLEN",
+    "CHV6_FOREST_REMEMBER",
+    "CHV6_FOREST_WAIT",
+    "CHV6_FOREST_WIND",
+    "CHV6_GARDEN_HAND",
+    "CHV6_GARDEN_HELP",
+    "CHV6_GARDEN_KNOWN",
+    "CHV6_GARDEN_WATER",
+    "CHV6_INVITE_EIRA",
+    "CHV6_INVITE_MAREN",
+    "CHV6_INVITE_PIP",
+    "CHV6_KNOWLEDGE_QUESTION",
+    "CHV6_KNOWLEDGE_SHARE",
+    "CHV6_LIGHT_FIRE",
+    "CHV6_LIGHT_HAND",
+    "CHV6_LIGHT_RECORD",
+    "CHV6_LIGHT_TEACH",
+    "CHV6_LIGHT_WIND",
+    "CHV6_MORNING_FINISH",
+    "CHV6_MORNING_LEARN",
+    "CHV6_NOTES_COPY",
+    "CHV6_NOTES_ECHO",
+    "CHV6_NOTES_LISTEN",
+    "CHV6_NOTES_MARK",
+    "CHV6_REHEARSE_REST",
+    "CHV6_REHEARSE_SLOW",
+    "CHV6_RUIN_LISTEN",
+    "CHV6_RUIN_TRACE",
+    "CHV6_RUNE_COPY",
+    "CHV6_RUNE_ECHO",
+    "CHV6_SHARED_REMEMBER",
+    "CHV6_SHARED_REST",
+    "CHV6_STREAM_CLEAR",
+    "CHV6_STREAM_RHYTHM",
+    "CHV6_VOW_CARE",
+    "CHV6_VOW_LEARN",
+    "CHV6_VOW_SHARE"
+  ],
+  "recipeIds": [
+    "SPELL_BLOOM_CHAIN_AMPLIFY",
+    "SPELL_BLOOM_CHAIN_HEAL",
+    "SPELL_BLOOM_CHAIN_LINGER",
+    "SPELL_BLOOM_CHAIN_PIERCE",
+    "SPELL_BLOOM_CHAIN_SEEK",
+    "SPELL_BLOOM_CHAIN_SPLIT",
+    "SPELL_BLOOM_ORB_AMPLIFY",
+    "SPELL_BLOOM_ORB_GUARD",
+    "SPELL_BLOOM_ORB_HEAL",
+    "SPELL_BLOOM_ORB_LINGER",
+    "SPELL_BLOOM_ORB_PIERCE",
+    "SPELL_BLOOM_ORB_SEEK",
+    "SPELL_BLOOM_ORB_SPLIT",
+    "SPELL_BLOOM_RAIN_AMPLIFY",
+    "SPELL_BLOOM_RAIN_GUARD",
+    "SPELL_BLOOM_RAIN_HEAL",
+    "SPELL_BLOOM_RAIN_LINGER",
+    "SPELL_BLOOM_RAIN_PIERCE",
+    "SPELL_BLOOM_RAIN_SEEK",
+    "SPELL_BLOOM_RAIN_SPLIT",
+    "SPELL_BLOOM_RAY_AMPLIFY",
+    "SPELL_BLOOM_RAY_HEAL",
+    "SPELL_BLOOM_RAY_PIERCE",
+    "SPELL_BLOOM_RAY_SEEK",
+    "SPELL_BLOOM_RAY_SPLIT",
+    "SPELL_BLOOM_RING_AMPLIFY",
+    "SPELL_BLOOM_RING_GUARD",
+    "SPELL_BLOOM_RING_HEAL",
+    "SPELL_BLOOM_RING_LINGER",
+    "SPELL_BLOOM_WARD_AMPLIFY",
+    "SPELL_BLOOM_WARD_GUARD",
+    "SPELL_BLOOM_WARD_HEAL",
+    "SPELL_BLOOM_WARD_LINGER",
+    "SPELL_EARTH_CHAIN_AMPLIFY",
+    "SPELL_EARTH_CHAIN_LINGER",
+    "SPELL_EARTH_CHAIN_PIERCE",
+    "SPELL_EARTH_CHAIN_SEEK",
+    "SPELL_EARTH_CHAIN_SPLIT",
+    "SPELL_EARTH_ORB_AMPLIFY",
+    "SPELL_EARTH_ORB_GUARD",
+    "SPELL_EARTH_ORB_LINGER",
+    "SPELL_EARTH_ORB_PIERCE",
+    "SPELL_EARTH_ORB_SEEK",
+    "SPELL_EARTH_ORB_SPLIT",
+    "SPELL_EARTH_RAIN_AMPLIFY",
+    "SPELL_EARTH_RAIN_GUARD",
+    "SPELL_EARTH_RAIN_LINGER",
+    "SPELL_EARTH_RAIN_PIERCE",
+    "SPELL_EARTH_RAIN_SEEK",
+    "SPELL_EARTH_RAIN_SPLIT",
+    "SPELL_EARTH_RAY_AMPLIFY",
+    "SPELL_EARTH_RAY_PIERCE",
+    "SPELL_EARTH_RAY_SEEK",
+    "SPELL_EARTH_RAY_SPLIT",
+    "SPELL_EARTH_RING_AMPLIFY",
+    "SPELL_EARTH_RING_GUARD",
+    "SPELL_EARTH_RING_LINGER",
+    "SPELL_EARTH_WARD_AMPLIFY",
+    "SPELL_EARTH_WARD_GUARD",
+    "SPELL_EARTH_WARD_LINGER",
+    "SPELL_ECHO_CHAIN_AMPLIFY",
+    "SPELL_ECHO_CHAIN_LINGER",
+    "SPELL_ECHO_CHAIN_PIERCE",
+    "SPELL_ECHO_CHAIN_SEEK",
+    "SPELL_ECHO_CHAIN_SPLIT",
+    "SPELL_ECHO_ORB_AMPLIFY",
+    "SPELL_ECHO_ORB_GUARD",
+    "SPELL_ECHO_ORB_LINGER",
+    "SPELL_ECHO_ORB_PIERCE",
+    "SPELL_ECHO_ORB_SEEK",
+    "SPELL_ECHO_ORB_SPLIT",
+    "SPELL_ECHO_RAIN_AMPLIFY",
+    "SPELL_ECHO_RAIN_GUARD",
+    "SPELL_ECHO_RAIN_LINGER",
+    "SPELL_ECHO_RAIN_PIERCE",
+    "SPELL_ECHO_RAIN_SEEK",
+    "SPELL_ECHO_RAIN_SPLIT",
+    "SPELL_ECHO_RAY_AMPLIFY",
+    "SPELL_ECHO_RAY_PIERCE",
+    "SPELL_ECHO_RAY_SEEK",
+    "SPELL_ECHO_RAY_SPLIT",
+    "SPELL_ECHO_RING_AMPLIFY",
+    "SPELL_ECHO_RING_GUARD",
+    "SPELL_ECHO_RING_LINGER",
+    "SPELL_ECHO_WARD_AMPLIFY",
+    "SPELL_ECHO_WARD_GUARD",
+    "SPELL_ECHO_WARD_LINGER",
+    "SPELL_FIRE_CHAIN_AMPLIFY",
+    "SPELL_FIRE_CHAIN_LINGER",
+    "SPELL_FIRE_CHAIN_PIERCE",
+    "SPELL_FIRE_CHAIN_SEEK",
+    "SPELL_FIRE_CHAIN_SPLIT",
+    "SPELL_FIRE_ORB_AMPLIFY",
+    "SPELL_FIRE_ORB_GUARD",
+    "SPELL_FIRE_ORB_LINGER",
+    "SPELL_FIRE_ORB_PIERCE",
+    "SPELL_FIRE_ORB_SEEK",
+    "SPELL_FIRE_ORB_SPLIT",
+    "SPELL_FIRE_RAIN_AMPLIFY",
+    "SPELL_FIRE_RAIN_GUARD",
+    "SPELL_FIRE_RAIN_LINGER",
+    "SPELL_FIRE_RAIN_PIERCE",
+    "SPELL_FIRE_RAIN_SEEK",
+    "SPELL_FIRE_RAIN_SPLIT",
+    "SPELL_FIRE_RAY_AMPLIFY",
+    "SPELL_FIRE_RAY_PIERCE",
+    "SPELL_FIRE_RAY_SEEK",
+    "SPELL_FIRE_RAY_SPLIT",
+    "SPELL_FIRE_RING_AMPLIFY",
+    "SPELL_FIRE_RING_GUARD",
+    "SPELL_FIRE_RING_LINGER",
+    "SPELL_FIRE_WARD_AMPLIFY",
+    "SPELL_FIRE_WARD_GUARD",
+    "SPELL_FIRE_WARD_LINGER",
+    "SPELL_LIGHT_CHAIN_AMPLIFY",
+    "SPELL_LIGHT_CHAIN_HEAL",
+    "SPELL_LIGHT_CHAIN_LINGER",
+    "SPELL_LIGHT_CHAIN_PIERCE",
+    "SPELL_LIGHT_CHAIN_SEEK",
+    "SPELL_LIGHT_CHAIN_SPLIT",
+    "SPELL_LIGHT_ORB_AMPLIFY",
+    "SPELL_LIGHT_ORB_GUARD",
+    "SPELL_LIGHT_ORB_HEAL",
+    "SPELL_LIGHT_ORB_LINGER",
+    "SPELL_LIGHT_ORB_PIERCE",
+    "SPELL_LIGHT_ORB_SEEK",
+    "SPELL_LIGHT_ORB_SPLIT",
+    "SPELL_LIGHT_RAIN_AMPLIFY",
+    "SPELL_LIGHT_RAIN_GUARD",
+    "SPELL_LIGHT_RAIN_HEAL",
+    "SPELL_LIGHT_RAIN_LINGER",
+    "SPELL_LIGHT_RAIN_PIERCE",
+    "SPELL_LIGHT_RAIN_SEEK",
+    "SPELL_LIGHT_RAIN_SPLIT",
+    "SPELL_LIGHT_RAY_AMPLIFY",
+    "SPELL_LIGHT_RAY_HEAL",
+    "SPELL_LIGHT_RAY_PIERCE",
+    "SPELL_LIGHT_RAY_SEEK",
+    "SPELL_LIGHT_RAY_SPLIT",
+    "SPELL_LIGHT_RING_AMPLIFY",
+    "SPELL_LIGHT_RING_GUARD",
+    "SPELL_LIGHT_RING_HEAL",
+    "SPELL_LIGHT_RING_LINGER",
+    "SPELL_LIGHT_WARD_AMPLIFY",
+    "SPELL_LIGHT_WARD_GUARD",
+    "SPELL_LIGHT_WARD_HEAL",
+    "SPELL_LIGHT_WARD_LINGER",
+    "SPELL_SHADOW_CHAIN_AMPLIFY",
+    "SPELL_SHADOW_CHAIN_LINGER",
+    "SPELL_SHADOW_CHAIN_PIERCE",
+    "SPELL_SHADOW_CHAIN_SEEK",
+    "SPELL_SHADOW_CHAIN_SPLIT",
+    "SPELL_SHADOW_ORB_AMPLIFY",
+    "SPELL_SHADOW_ORB_GUARD",
+    "SPELL_SHADOW_ORB_LINGER",
+    "SPELL_SHADOW_ORB_PIERCE",
+    "SPELL_SHADOW_ORB_SEEK",
+    "SPELL_SHADOW_ORB_SPLIT",
+    "SPELL_SHADOW_RAIN_AMPLIFY",
+    "SPELL_SHADOW_RAIN_GUARD",
+    "SPELL_SHADOW_RAIN_LINGER",
+    "SPELL_SHADOW_RAIN_PIERCE",
+    "SPELL_SHADOW_RAIN_SEEK",
+    "SPELL_SHADOW_RAIN_SPLIT",
+    "SPELL_SHADOW_RAY_AMPLIFY",
+    "SPELL_SHADOW_RAY_PIERCE",
+    "SPELL_SHADOW_RAY_SEEK",
+    "SPELL_SHADOW_RAY_SPLIT",
+    "SPELL_SHADOW_RING_AMPLIFY",
+    "SPELL_SHADOW_RING_GUARD",
+    "SPELL_SHADOW_RING_LINGER",
+    "SPELL_SHADOW_WARD_AMPLIFY",
+    "SPELL_SHADOW_WARD_GUARD",
+    "SPELL_SHADOW_WARD_LINGER",
+    "SPELL_WATER_CHAIN_AMPLIFY",
+    "SPELL_WATER_CHAIN_HEAL",
+    "SPELL_WATER_CHAIN_LINGER",
+    "SPELL_WATER_CHAIN_PIERCE",
+    "SPELL_WATER_CHAIN_SEEK",
+    "SPELL_WATER_CHAIN_SPLIT",
+    "SPELL_WATER_ORB_AMPLIFY",
+    "SPELL_WATER_ORB_GUARD",
+    "SPELL_WATER_ORB_HEAL",
+    "SPELL_WATER_ORB_LINGER",
+    "SPELL_WATER_ORB_PIERCE",
+    "SPELL_WATER_ORB_SEEK",
+    "SPELL_WATER_ORB_SPLIT",
+    "SPELL_WATER_RAIN_AMPLIFY",
+    "SPELL_WATER_RAIN_GUARD",
+    "SPELL_WATER_RAIN_HEAL",
+    "SPELL_WATER_RAIN_LINGER",
+    "SPELL_WATER_RAIN_PIERCE",
+    "SPELL_WATER_RAIN_SEEK",
+    "SPELL_WATER_RAIN_SPLIT",
+    "SPELL_WATER_RAY_AMPLIFY",
+    "SPELL_WATER_RAY_HEAL",
+    "SPELL_WATER_RAY_PIERCE",
+    "SPELL_WATER_RAY_SEEK",
+    "SPELL_WATER_RAY_SPLIT",
+    "SPELL_WATER_RING_AMPLIFY",
+    "SPELL_WATER_RING_GUARD",
+    "SPELL_WATER_RING_HEAL",
+    "SPELL_WATER_RING_LINGER",
+    "SPELL_WATER_WARD_AMPLIFY",
+    "SPELL_WATER_WARD_GUARD",
+    "SPELL_WATER_WARD_HEAL",
+    "SPELL_WATER_WARD_LINGER",
+    "SPELL_WIND_CHAIN_AMPLIFY",
+    "SPELL_WIND_CHAIN_LINGER",
+    "SPELL_WIND_CHAIN_PIERCE",
+    "SPELL_WIND_CHAIN_SEEK",
+    "SPELL_WIND_CHAIN_SPLIT",
+    "SPELL_WIND_ORB_AMPLIFY",
+    "SPELL_WIND_ORB_GUARD",
+    "SPELL_WIND_ORB_LINGER",
+    "SPELL_WIND_ORB_PIERCE",
+    "SPELL_WIND_ORB_SEEK",
+    "SPELL_WIND_ORB_SPLIT",
+    "SPELL_WIND_RAIN_AMPLIFY",
+    "SPELL_WIND_RAIN_GUARD",
+    "SPELL_WIND_RAIN_LINGER",
+    "SPELL_WIND_RAIN_PIERCE",
+    "SPELL_WIND_RAIN_SEEK",
+    "SPELL_WIND_RAIN_SPLIT",
+    "SPELL_WIND_RAY_AMPLIFY",
+    "SPELL_WIND_RAY_PIERCE",
+    "SPELL_WIND_RAY_SEEK",
+    "SPELL_WIND_RAY_SPLIT",
+    "SPELL_WIND_RING_AMPLIFY",
+    "SPELL_WIND_RING_GUARD",
+    "SPELL_WIND_RING_LINGER",
+    "SPELL_WIND_WARD_AMPLIFY",
+    "SPELL_WIND_WARD_GUARD",
+    "SPELL_WIND_WARD_LINGER"
+  ],
+  "witnesses": [
+    {
+      "id": "CHV6_NOTES_ECHO",
+      "seed": 20261106,
+      "result": "PASS",
+      "scene": "S18_FESTIVAL_PREP",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1402"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_LINGER"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_ECHO"
+        }
+      ]
+    },
+    {
+      "id": "CHV6_GARDEN_WATER",
+      "seed": 20261106,
+      "result": "PASS",
+      "scene": "S18_FESTIVAL_PREP",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1103"
+        },
+        {
+          "choice": "CH1202"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1805"
+        },
+        {
+          "choice": "CHV6_GARDEN_HELP"
+        },
+        {
+          "choice": "CHV6_GARDEN_WATER"
+        }
+      ]
+    },
+    {
+      "id": "CHV6_RUNE_ECHO",
+      "seed": 20261106,
+      "result": "PASS",
+      "scene": "S18_FESTIVAL_PREP",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1402"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_LINGER"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1701"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_ECHO"
+        }
+      ]
+    },
+    {
+      "id": "CHV6_LIGHT_FIRE",
+      "seed": 20261106,
+      "result": "PASS",
+      "scene": "V6_A1_LIGHT_RESULT",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "craft": "SPELL_FIRE_ORB_SPLIT"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_FIRE"
+        }
+      ]
+    },
+    {
+      "id": "CHLP_N_WATER_SPELL",
+      "seed": 20261106,
+      "result": "PASS",
+      "scene": "LP_NATURE_ACK",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0701"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1103"
+        },
+        {
+          "choice": "CH1202"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1805"
+        },
+        {
+          "choice": "CHV6_GARDEN_HELP"
+        },
+        {
+          "choice": "CHV6_GARDEN_WATER"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1903"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_LISTEN"
+        },
+        {
+          "choice": "CHLP_N_WATER_SPELL"
+        }
+      ]
+    },
+    {
+      "id": "CHE_RECIPE_LIGHT",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "ECHO_ROAD",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0904"
+        },
+        {
+          "choice": "CH0803"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B2"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1806"
+        },
+        {
+          "choice": "CHV6_STREAM_RHYTHM"
+        },
+        {
+          "choice": "CHV6_BELL_KEEP"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_LIGHT_ORB_SEEK"
+        },
+        {
+          "choice": "CHE_RECIPE_LIGHT"
+        }
+      ]
+    },
+    {
+      "id": "ARC2_family_knowledge_paths_and_pause",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "S02_HUB",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CHPIP_HUB"
+        },
+        {
+          "choice": "CH2901"
+        },
+        {
+          "choice": "CHPIP_SHARE"
+        },
+        {
+          "choice": "CHPIP_GARDEN"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1201"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0603"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0209"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1703"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_LISTEN"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_LISTEN"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "choice": "CHE_RECIPE_READY"
+        },
+        {
+          "choice": "CHE_ROAD_TRACK"
+        },
+        {
+          "choice": "CHE_TRACK_MARK"
+        },
+        {
+          "choice": "CHE_ARCH_READ"
+        },
+        {
+          "choice": "CHE_LISTEN_PAUSE"
+        },
+        {
+          "choice": "CHE_SIGNAL_TEAM"
+        },
+        {
+          "choice": "CH2101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHE_RESULT_RECORD"
+        },
+        {
+          "choice": "CHE_RECORD_CARE"
+        },
+        {
+          "choice": "CHE_MAREN_STAY"
+        },
+        {
+          "choice": "CHE_LUMI_PAUSE"
+        },
+        {
+          "choice": "CHE_CLOSE_PIERCE"
+        },
+        {
+          "choice": "CHG_HUB"
+        },
+        {
+          "choice": "CHG_CALL_PREP"
+        },
+        {
+          "choice": "CHG_KIT_TAKE"
+        },
+        {
+          "choice": "CHG_CRAFT_ROAD"
+        },
+        {
+          "choice": "CHG_PASSAGE_READ"
+        },
+        {
+          "choice": "CHG_READ_PATTERN"
+        },
+        {
+          "choice": "CHG_PACT_GENTLE"
+        },
+        {
+          "choice": "CH2201"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH2301"
+        },
+        {
+          "choice": "CH2401"
+        },
+        {
+          "choice": "CHG_FAMILY_STAY"
+        },
+        {
+          "choice": "CH2701"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_EXPLORER"
+        },
+        {
+          "choice": "CHLP_E_BEGIN"
+        },
+        {
+          "choice": "CHLP_E_SURVEY_FEET"
+        },
+        {
+          "choice": "CHLP_E_MARK_RIBBON"
+        },
+        {
+          "choice": "CHLP_E_ACK_MAP"
+        },
+        {
+          "choice": "CHLP_E_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_E_RANK2_SHARE"
+        },
+        {
+          "choice": "CHLP_E_HOME_REST"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_CLEAR"
+        },
+        {
+          "choice": "CHLP_N_WATER_BUCKET"
+        },
+        {
+          "choice": "CHLP_N_ACK_PATIENCE"
+        },
+        {
+          "choice": "CHLP_N_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_N_RANK2_REFUGE"
+        },
+        {
+          "choice": "CHLP_N_HOME_REST"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_WATER_ORB_SPLIT"
+        },
+        {
+          "craft": "SPELL_BLOOM_ORB_SEEK"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_SEEK"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_PROMISE"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_NOTE"
+        },
+        {
+          "choice": "CHA2_ROOT_SOIL"
+        },
+        {
+          "choice": "CHA2_DRY_WATER"
+        },
+        {
+          "choice": "CHA2_BROOK_SAMPLE"
+        },
+        {
+          "choice": "CHA2_PIP_MEMORY"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_NATURE"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_FAMILY"
+        },
+        {
+          "choice": "CHA2_LEGACY_LIMIT"
+        },
+        {
+          "choice": "CHA2_DECIDE_CARE"
+        },
+        {
+          "choice": "CHA2_CARE_RETURN"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_RESUME"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_SKETCH"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_SCOUT"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_BLOOM"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_OBSERVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_CARE"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECALL"
+        },
+        {
+          "choice": "CHA2_RETURN_EIRA"
+        },
+        {
+          "choice": "CHA2_EIRA_SHARE"
+        },
+        {
+          "choice": "CHA2_EPILOGUE_FINISH"
+        }
+      ]
+    },
+    {
+      "id": "ALCHEMIST_care_earned_course_and_pause",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "S02_HUB",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CHPIP_HUB"
+        },
+        {
+          "choice": "CH2901"
+        },
+        {
+          "choice": "CHPIP_SHARE"
+        },
+        {
+          "choice": "CHPIP_GARDEN"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1201"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0603"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0209"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1703"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_LISTEN"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_LISTEN"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "choice": "CHE_RECIPE_READY"
+        },
+        {
+          "choice": "CHE_ROAD_TRACK"
+        },
+        {
+          "choice": "CHE_TRACK_MARK"
+        },
+        {
+          "choice": "CHE_ARCH_READ"
+        },
+        {
+          "choice": "CHE_LISTEN_PAUSE"
+        },
+        {
+          "choice": "CHE_SIGNAL_TEAM"
+        },
+        {
+          "choice": "CH2101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHE_RESULT_RECORD"
+        },
+        {
+          "choice": "CHE_RECORD_CARE"
+        },
+        {
+          "choice": "CHE_MAREN_STAY"
+        },
+        {
+          "choice": "CHE_LUMI_PAUSE"
+        },
+        {
+          "choice": "CHE_CLOSE_PIERCE"
+        },
+        {
+          "choice": "CHG_HUB"
+        },
+        {
+          "choice": "CHG_CALL_PREP"
+        },
+        {
+          "choice": "CHG_KIT_TAKE"
+        },
+        {
+          "choice": "CHG_CRAFT_ROAD"
+        },
+        {
+          "choice": "CHG_PASSAGE_READ"
+        },
+        {
+          "choice": "CHG_READ_PATTERN"
+        },
+        {
+          "choice": "CHG_PACT_GENTLE"
+        },
+        {
+          "choice": "CH2201"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH2301"
+        },
+        {
+          "choice": "CH2401"
+        },
+        {
+          "choice": "CHG_FAMILY_STAY"
+        },
+        {
+          "choice": "CH2701"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_EXPLORER"
+        },
+        {
+          "choice": "CHLP_E_BEGIN"
+        },
+        {
+          "choice": "CHLP_E_SURVEY_FEET"
+        },
+        {
+          "choice": "CHLP_E_MARK_RIBBON"
+        },
+        {
+          "choice": "CHLP_E_ACK_MAP"
+        },
+        {
+          "choice": "CHLP_E_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_E_RANK2_SHARE"
+        },
+        {
+          "choice": "CHLP_E_HOME_REST"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_CLEAR"
+        },
+        {
+          "choice": "CHLP_N_WATER_BUCKET"
+        },
+        {
+          "choice": "CHLP_N_ACK_PATIENCE"
+        },
+        {
+          "choice": "CHLP_N_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_N_RANK2_REFUGE"
+        },
+        {
+          "choice": "CHLP_N_HOME_REST"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_WATER_ORB_SPLIT"
+        },
+        {
+          "craft": "SPELL_BLOOM_ORB_SEEK"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_SEEK"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_PROMISE"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_NOTE"
+        },
+        {
+          "choice": "CHA2_ROOT_SOIL"
+        },
+        {
+          "choice": "CHA2_DRY_WATER"
+        },
+        {
+          "choice": "CHA2_BROOK_SAMPLE"
+        },
+        {
+          "choice": "CHA2_PIP_MEMORY"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_NATURE"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_FAMILY"
+        },
+        {
+          "choice": "CHA2_LEGACY_LIMIT"
+        },
+        {
+          "choice": "CHA2_DECIDE_CARE"
+        },
+        {
+          "choice": "CHA2_CARE_RETURN"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_RESUME"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_SKETCH"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_SCOUT"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_BLOOM"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_OBSERVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_CARE"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECALL"
+        },
+        {
+          "choice": "CHA2_RETURN_EIRA"
+        },
+        {
+          "choice": "CHA2_EIRA_SHARE"
+        },
+        {
+          "choice": "CHA2_EPILOGUE_FINISH"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_ASK"
+        },
+        {
+          "choice": "CHALC_TABLE_LIMIT"
+        },
+        {
+          "choice": "CHALC_CONSENT_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_SHOW"
+        },
+        {
+          "choice": "CHALC_TABLE_USER"
+        },
+        {
+          "choice": "CHALC_CONSENT_PATHS"
+        },
+        {
+          "choice": "CHLP_CROSSROADS_BACK"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_ASK"
+        },
+        {
+          "choice": "CHALC_TABLE_LIMIT"
+        },
+        {
+          "choice": "CHALC_START"
+        },
+        {
+          "choice": "CHALC_GARDEN_SOURCE"
+        },
+        {
+          "choice": "CHALC_SOURCE_EDGE"
+        },
+        {
+          "choice": "CHALC_WASH_HELP"
+        },
+        {
+          "choice": "CHALC_LEAF_BACK"
+        },
+        {
+          "choice": "CHALC_WASH_SLOW"
+        },
+        {
+          "choice": "CHALC_LEAF_CHECK"
+        },
+        {
+          "choice": "CHALC_OBSERVE_SOURCE"
+        },
+        {
+          "choice": "CHALC_GARDEN_ASK"
+        },
+        {
+          "choice": "CHALC_SOURCE_WAIT"
+        },
+        {
+          "choice": "CHALC_WASH_HELP"
+        },
+        {
+          "choice": "CHALC_LEAF_CHECK"
+        },
+        {
+          "choice": "CHALC_MEASURE"
+        },
+        {
+          "choice": "CHALC_RECIPE_BACK"
+        },
+        {
+          "choice": "CHALC_MEASURE"
+        },
+        {
+          "choice": "CHALC_CRAFT"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_RECIPE"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_CAST"
+        },
+        {
+          "choice": "CHALC_COMPARE_USER"
+        },
+        {
+          "choice": "CHALC_RANK1_REVIEW"
+        },
+        {
+          "choice": "CHALC_COMPARE_LIMIT"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_PREP"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_CAST"
+        },
+        {
+          "choice": "CHALC_COMPARE_LIMIT"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_TRIAL"
+        },
+        {
+          "choice": "CHALC_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WATER_ORB_SPLIT",
+            "GUARD",
+            "SPELL_WATER_ORB_SPLIT"
+          ]
+        },
+        {
+          "choice": "CHALC_RESULT_NOTE"
+        },
+        {
+          "choice": "CHALC_RANK2_REVIEW"
+        },
+        {
+          "choice": "CHALC_COMPARE_USER"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WATER_ORB_SPLIT"
+          ]
+        },
+        {
+          "choice": "CHALC_RESULT_ASK"
+        },
+        {
+          "choice": "CHALC_RANK2"
+        },
+        {
+          "choice": "CHALC_RETURN_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_RESUME"
+        },
+        {
+          "choice": "CHALC_RETURN_ROOT"
+        },
+        {
+          "choice": "CHALC_ROOT_NATURE"
+        },
+        {
+          "choice": "CHALC_PLAN_REVIEW"
+        },
+        {
+          "choice": "CHALC_RETURN_ROOT"
+        },
+        {
+          "choice": "CHALC_ROOT_SPACE"
+        },
+        {
+          "choice": "CHALC_PLAN_PACK"
+        },
+        {
+          "choice": "CHALC_PACK_FIELD"
+        },
+        {
+          "choice": "CHALC_DELIVER_PAUSE"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_RESUME"
+        },
+        {
+          "choice": "CHALC_RETURN_ROOT"
+        },
+        {
+          "choice": "CHALC_ROOT_SPACE"
+        },
+        {
+          "choice": "CHALC_PLAN_PACK"
+        },
+        {
+          "choice": "CHALC_PACK_RECALL"
+        },
+        {
+          "choice": "CHALC_EPILOGUE_FIELD"
+        },
+        {
+          "choice": "CHALC_DELIVER_TALA"
+        },
+        {
+          "choice": "CHALC_FINISH"
+        },
+        {
+          "choice": "CHALC_REVISIT"
+        },
+        {
+          "choice": "CHALC_FINISH"
+        }
+      ]
+    },
+    {
+      "id": "ARC2_community_knowledge_paths_and_pause",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "S02_HUB",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CHPIP_HUB"
+        },
+        {
+          "choice": "CH2901"
+        },
+        {
+          "choice": "CHPIP_SHARE"
+        },
+        {
+          "choice": "CHPIP_GARDEN"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1201"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0603"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0209"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1703"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_LISTEN"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_LISTEN"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "choice": "CHE_RECIPE_READY"
+        },
+        {
+          "choice": "CHE_ROAD_TRACK"
+        },
+        {
+          "choice": "CHE_TRACK_MARK"
+        },
+        {
+          "choice": "CHE_ARCH_READ"
+        },
+        {
+          "choice": "CHE_LISTEN_PAUSE"
+        },
+        {
+          "choice": "CHE_SIGNAL_TEAM"
+        },
+        {
+          "choice": "CH2101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHE_RESULT_RECORD"
+        },
+        {
+          "choice": "CHE_RECORD_CARE"
+        },
+        {
+          "choice": "CHE_MAREN_STAY"
+        },
+        {
+          "choice": "CHE_LUMI_PAUSE"
+        },
+        {
+          "choice": "CHE_CLOSE_PIERCE"
+        },
+        {
+          "choice": "CHG_HUB"
+        },
+        {
+          "choice": "CHG_CALL_PREP"
+        },
+        {
+          "choice": "CHG_KIT_TAKE"
+        },
+        {
+          "choice": "CHG_CRAFT_ROAD"
+        },
+        {
+          "choice": "CHG_PASSAGE_READ"
+        },
+        {
+          "choice": "CHG_READ_PATTERN"
+        },
+        {
+          "choice": "CHG_PACT_GENTLE"
+        },
+        {
+          "choice": "CH2201"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH2302"
+        },
+        {
+          "choice": "CH2501"
+        },
+        {
+          "choice": "CHG_COMMUNITY_PATH"
+        },
+        {
+          "choice": "CH2701"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_EXPLORER"
+        },
+        {
+          "choice": "CHLP_E_BEGIN"
+        },
+        {
+          "choice": "CHLP_E_SURVEY_FEET"
+        },
+        {
+          "choice": "CHLP_E_MARK_RIBBON"
+        },
+        {
+          "choice": "CHLP_E_ACK_MAP"
+        },
+        {
+          "choice": "CHLP_E_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_E_RANK2_SHARE"
+        },
+        {
+          "choice": "CHLP_E_HOME_REST"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_CLEAR"
+        },
+        {
+          "choice": "CHLP_N_WATER_BUCKET"
+        },
+        {
+          "choice": "CHLP_N_ACK_PATIENCE"
+        },
+        {
+          "choice": "CHLP_N_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_N_RANK2_REFUGE"
+        },
+        {
+          "choice": "CHLP_N_HOME_REST"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_WATER_ORB_SPLIT"
+        },
+        {
+          "craft": "SPELL_BLOOM_ORB_SEEK"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_SEEK"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_PROMISE"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_NOTE"
+        },
+        {
+          "choice": "CHA2_ROOT_SOIL"
+        },
+        {
+          "choice": "CHA2_DRY_WATER"
+        },
+        {
+          "choice": "CHA2_BROOK_SAMPLE"
+        },
+        {
+          "choice": "CHA2_PIP_MEMORY"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_NATURE"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_COMMUNITY"
+        },
+        {
+          "choice": "CHA2_LEGACY_LIMIT"
+        },
+        {
+          "choice": "CHA2_DECIDE_PATH"
+        },
+        {
+          "choice": "CHA2_PATH_RETURN"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_RESUME"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_SKETCH"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_SCOUT"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_BLOOM"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_OBSERVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_CARE"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECALL"
+        },
+        {
+          "choice": "CHA2_RETURN_EIRA"
+        },
+        {
+          "choice": "CHA2_EIRA_SHARE"
+        },
+        {
+          "choice": "CHA2_EPILOGUE_FINISH"
+        }
+      ]
+    },
+    {
+      "id": "ALCHEMIST_path_earned_course_and_pause",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "S02_HUB",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CHPIP_HUB"
+        },
+        {
+          "choice": "CH2901"
+        },
+        {
+          "choice": "CHPIP_SHARE"
+        },
+        {
+          "choice": "CHPIP_GARDEN"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1201"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0603"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0209"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1703"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_LISTEN"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_LISTEN"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "choice": "CHE_RECIPE_READY"
+        },
+        {
+          "choice": "CHE_ROAD_TRACK"
+        },
+        {
+          "choice": "CHE_TRACK_MARK"
+        },
+        {
+          "choice": "CHE_ARCH_READ"
+        },
+        {
+          "choice": "CHE_LISTEN_PAUSE"
+        },
+        {
+          "choice": "CHE_SIGNAL_TEAM"
+        },
+        {
+          "choice": "CH2101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHE_RESULT_RECORD"
+        },
+        {
+          "choice": "CHE_RECORD_CARE"
+        },
+        {
+          "choice": "CHE_MAREN_STAY"
+        },
+        {
+          "choice": "CHE_LUMI_PAUSE"
+        },
+        {
+          "choice": "CHE_CLOSE_PIERCE"
+        },
+        {
+          "choice": "CHG_HUB"
+        },
+        {
+          "choice": "CHG_CALL_PREP"
+        },
+        {
+          "choice": "CHG_KIT_TAKE"
+        },
+        {
+          "choice": "CHG_CRAFT_ROAD"
+        },
+        {
+          "choice": "CHG_PASSAGE_READ"
+        },
+        {
+          "choice": "CHG_READ_PATTERN"
+        },
+        {
+          "choice": "CHG_PACT_GENTLE"
+        },
+        {
+          "choice": "CH2201"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH2302"
+        },
+        {
+          "choice": "CH2501"
+        },
+        {
+          "choice": "CHG_COMMUNITY_PATH"
+        },
+        {
+          "choice": "CH2701"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_EXPLORER"
+        },
+        {
+          "choice": "CHLP_E_BEGIN"
+        },
+        {
+          "choice": "CHLP_E_SURVEY_FEET"
+        },
+        {
+          "choice": "CHLP_E_MARK_RIBBON"
+        },
+        {
+          "choice": "CHLP_E_ACK_MAP"
+        },
+        {
+          "choice": "CHLP_E_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_E_RANK2_SHARE"
+        },
+        {
+          "choice": "CHLP_E_HOME_REST"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_CLEAR"
+        },
+        {
+          "choice": "CHLP_N_WATER_BUCKET"
+        },
+        {
+          "choice": "CHLP_N_ACK_PATIENCE"
+        },
+        {
+          "choice": "CHLP_N_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_N_RANK2_REFUGE"
+        },
+        {
+          "choice": "CHLP_N_HOME_REST"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_WATER_ORB_SPLIT"
+        },
+        {
+          "craft": "SPELL_BLOOM_ORB_SEEK"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_SEEK"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_PROMISE"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_NOTE"
+        },
+        {
+          "choice": "CHA2_ROOT_SOIL"
+        },
+        {
+          "choice": "CHA2_DRY_WATER"
+        },
+        {
+          "choice": "CHA2_BROOK_SAMPLE"
+        },
+        {
+          "choice": "CHA2_PIP_MEMORY"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_NATURE"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_COMMUNITY"
+        },
+        {
+          "choice": "CHA2_LEGACY_LIMIT"
+        },
+        {
+          "choice": "CHA2_DECIDE_PATH"
+        },
+        {
+          "choice": "CHA2_PATH_RETURN"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_RESUME"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_SKETCH"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_SCOUT"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_BLOOM"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_OBSERVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_CARE"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECALL"
+        },
+        {
+          "choice": "CHA2_RETURN_EIRA"
+        },
+        {
+          "choice": "CHA2_EIRA_SHARE"
+        },
+        {
+          "choice": "CHA2_EPILOGUE_FINISH"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_ASK"
+        },
+        {
+          "choice": "CHALC_TABLE_LIMIT"
+        },
+        {
+          "choice": "CHALC_CONSENT_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_SHOW"
+        },
+        {
+          "choice": "CHALC_TABLE_USER"
+        },
+        {
+          "choice": "CHALC_CONSENT_PATHS"
+        },
+        {
+          "choice": "CHLP_CROSSROADS_BACK"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_ASK"
+        },
+        {
+          "choice": "CHALC_TABLE_LIMIT"
+        },
+        {
+          "choice": "CHALC_START"
+        },
+        {
+          "choice": "CHALC_GARDEN_SOURCE"
+        },
+        {
+          "choice": "CHALC_SOURCE_EDGE"
+        },
+        {
+          "choice": "CHALC_WASH_HELP"
+        },
+        {
+          "choice": "CHALC_LEAF_BACK"
+        },
+        {
+          "choice": "CHALC_WASH_SLOW"
+        },
+        {
+          "choice": "CHALC_LEAF_CHECK"
+        },
+        {
+          "choice": "CHALC_OBSERVE_SOURCE"
+        },
+        {
+          "choice": "CHALC_GARDEN_ASK"
+        },
+        {
+          "choice": "CHALC_SOURCE_WAIT"
+        },
+        {
+          "choice": "CHALC_WASH_HELP"
+        },
+        {
+          "choice": "CHALC_LEAF_CHECK"
+        },
+        {
+          "choice": "CHALC_MEASURE"
+        },
+        {
+          "choice": "CHALC_RECIPE_BACK"
+        },
+        {
+          "choice": "CHALC_MEASURE"
+        },
+        {
+          "choice": "CHALC_CRAFT"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_RECIPE"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_CAST"
+        },
+        {
+          "choice": "CHALC_COMPARE_USER"
+        },
+        {
+          "choice": "CHALC_RANK1_REVIEW"
+        },
+        {
+          "choice": "CHALC_COMPARE_LIMIT"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_PREP"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_CAST"
+        },
+        {
+          "choice": "CHALC_COMPARE_LIMIT"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_TRIAL"
+        },
+        {
+          "choice": "CHALC_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WATER_ORB_SPLIT",
+            "GUARD",
+            "SPELL_WATER_ORB_SPLIT"
+          ]
+        },
+        {
+          "choice": "CHALC_RESULT_NOTE"
+        },
+        {
+          "choice": "CHALC_RANK2_REVIEW"
+        },
+        {
+          "choice": "CHALC_COMPARE_USER"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WATER_ORB_SPLIT"
+          ]
+        },
+        {
+          "choice": "CHALC_RESULT_ASK"
+        },
+        {
+          "choice": "CHALC_RANK2"
+        },
+        {
+          "choice": "CHALC_RETURN_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_RESUME"
+        },
+        {
+          "choice": "CHALC_RETURN_SIGN"
+        },
+        {
+          "choice": "CHALC_SIGN_SCOUT"
+        },
+        {
+          "choice": "CHALC_PLAN_REVIEW"
+        },
+        {
+          "choice": "CHALC_RETURN_SIGN"
+        },
+        {
+          "choice": "CHALC_SIGN_WALK"
+        },
+        {
+          "choice": "CHALC_PLAN_PACK"
+        },
+        {
+          "choice": "CHALC_PACK_TEACH"
+        },
+        {
+          "choice": "CHALC_TEACH_PAUSE"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_RESUME"
+        },
+        {
+          "choice": "CHALC_RETURN_SIGN"
+        },
+        {
+          "choice": "CHALC_SIGN_WALK"
+        },
+        {
+          "choice": "CHALC_PLAN_PACK"
+        },
+        {
+          "choice": "CHALC_PACK_RECALL"
+        },
+        {
+          "choice": "CHALC_EPILOGUE_TEACH"
+        },
+        {
+          "choice": "CHALC_TEACH_QUESTION"
+        },
+        {
+          "choice": "CHALC_FINISH"
+        },
+        {
+          "choice": "CHALC_REVISIT"
+        },
+        {
+          "choice": "CHALC_FINISH"
+        }
+      ]
+    },
+    {
+      "id": "ARC2_archive_knowledge_paths_and_pause",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "S02_HUB",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CHPIP_HUB"
+        },
+        {
+          "choice": "CH2901"
+        },
+        {
+          "choice": "CHPIP_SHARE"
+        },
+        {
+          "choice": "CHPIP_GARDEN"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1201"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0603"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0209"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1703"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_LISTEN"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_LISTEN"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "choice": "CHE_RECIPE_READY"
+        },
+        {
+          "choice": "CHE_ROAD_TRACK"
+        },
+        {
+          "choice": "CHE_TRACK_MARK"
+        },
+        {
+          "choice": "CHE_ARCH_READ"
+        },
+        {
+          "choice": "CHE_LISTEN_PAUSE"
+        },
+        {
+          "choice": "CHE_SIGNAL_TEAM"
+        },
+        {
+          "choice": "CH2101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHE_RESULT_RECORD"
+        },
+        {
+          "choice": "CHE_RECORD_CARE"
+        },
+        {
+          "choice": "CHE_MAREN_STAY"
+        },
+        {
+          "choice": "CHE_LUMI_PAUSE"
+        },
+        {
+          "choice": "CHE_CLOSE_PIERCE"
+        },
+        {
+          "choice": "CHG_HUB"
+        },
+        {
+          "choice": "CHG_CALL_PREP"
+        },
+        {
+          "choice": "CHG_KIT_TAKE"
+        },
+        {
+          "choice": "CHG_CRAFT_ROAD"
+        },
+        {
+          "choice": "CHG_PASSAGE_READ"
+        },
+        {
+          "choice": "CHG_READ_PATTERN"
+        },
+        {
+          "choice": "CHG_PACT_GENTLE"
+        },
+        {
+          "choice": "CH2201"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH2303"
+        },
+        {
+          "choice": "CH2601"
+        },
+        {
+          "choice": "CHG_ARCHIVE_QUESTION"
+        },
+        {
+          "choice": "CH2701"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_EXPLORER"
+        },
+        {
+          "choice": "CHLP_E_BEGIN"
+        },
+        {
+          "choice": "CHLP_E_SURVEY_FEET"
+        },
+        {
+          "choice": "CHLP_E_MARK_RIBBON"
+        },
+        {
+          "choice": "CHLP_E_ACK_MAP"
+        },
+        {
+          "choice": "CHLP_E_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_E_RANK2_SHARE"
+        },
+        {
+          "choice": "CHLP_E_HOME_REST"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_CLEAR"
+        },
+        {
+          "choice": "CHLP_N_WATER_BUCKET"
+        },
+        {
+          "choice": "CHLP_N_ACK_PATIENCE"
+        },
+        {
+          "choice": "CHLP_N_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_N_RANK2_REFUGE"
+        },
+        {
+          "choice": "CHLP_N_HOME_REST"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_WATER_ORB_SPLIT"
+        },
+        {
+          "craft": "SPELL_BLOOM_ORB_SEEK"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_SEEK"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_PROMISE"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_NOTE"
+        },
+        {
+          "choice": "CHA2_ROOT_SOIL"
+        },
+        {
+          "choice": "CHA2_DRY_WATER"
+        },
+        {
+          "choice": "CHA2_BROOK_SAMPLE"
+        },
+        {
+          "choice": "CHA2_PIP_MEMORY"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_NATURE"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_ARCHIVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_LIMIT"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECORD"
+        },
+        {
+          "choice": "CHA2_RECORD_RETURN"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_RESUME"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_SKETCH"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_SCOUT"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_BLOOM"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_OBSERVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_CARE"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECALL"
+        },
+        {
+          "choice": "CHA2_RETURN_EIRA"
+        },
+        {
+          "choice": "CHA2_EIRA_SHARE"
+        },
+        {
+          "choice": "CHA2_EPILOGUE_FINISH"
+        }
+      ]
+    },
+    {
+      "id": "ALCHEMIST_record_earned_course_and_pause",
+      "seed": 12345,
+      "result": "PASS",
+      "scene": "S02_HUB",
+      "path": [
+        {
+          "choice": "CH0001"
+        },
+        {
+          "choice": "CH0101"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0401"
+        },
+        {
+          "craft": "SPELL_WIND_ORB_SEEK"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0801"
+        },
+        {
+          "choice": "CH0901"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH1002"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0301"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CHPIP_HUB"
+        },
+        {
+          "choice": "CH2901"
+        },
+        {
+          "choice": "CHPIP_SHARE"
+        },
+        {
+          "choice": "CHPIP_GARDEN"
+        },
+        {
+          "choice": "CH0601"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0402"
+        },
+        {
+          "choice": "CH0502"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0202"
+        },
+        {
+          "choice": "CH0404"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH0405"
+        },
+        {
+          "choice": "CH0503"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0201"
+        },
+        {
+          "choice": "CH0302"
+        },
+        {
+          "choice": "CH03B1"
+        },
+        {
+          "choice": "CH0205"
+        },
+        {
+          "choice": "CH0802"
+        },
+        {
+          "choice": "CH0903"
+        },
+        {
+          "choice": "CH1301"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0602"
+        },
+        {
+          "choice": "CH0206"
+        },
+        {
+          "choice": "CH1102"
+        },
+        {
+          "choice": "CH1201"
+        },
+        {
+          "choice": "CH0203"
+        },
+        {
+          "choice": "CH0603"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0209"
+        },
+        {
+          "choice": "CH0204"
+        },
+        {
+          "choice": "CH0702"
+        },
+        {
+          "choice": "CH1401"
+        },
+        {
+          "choice": "CH0207"
+        },
+        {
+          "choice": "CH1501"
+        },
+        {
+          "choice": "CH1703"
+        },
+        {
+          "choice": "CH0208"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_TRACE"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_LOOK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1808"
+        },
+        {
+          "choice": "CHV6_RUIN_LISTEN"
+        },
+        {
+          "choice": "CHV6_RUNE_COPY"
+        },
+        {
+          "choice": "CH1801"
+        },
+        {
+          "choice": "CHV6_BOX_ASK"
+        },
+        {
+          "choice": "CHV6_BOX_HAND"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_MARK"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1802"
+        },
+        {
+          "choice": "CHV6_NOTES_LISTEN"
+        },
+        {
+          "choice": "CHV6_NOTES_COPY"
+        },
+        {
+          "choice": "CH1803"
+        },
+        {
+          "choice": "CHV6_LIGHT_HAND"
+        },
+        {
+          "choice": "CHV6_LIGHT_RECORD"
+        },
+        {
+          "choice": "CH1810"
+        },
+        {
+          "choice": "CHV6_VOW_SHARE"
+        },
+        {
+          "choice": "CHV6_REHEARSE_SLOW"
+        },
+        {
+          "choice": "CH1902"
+        },
+        {
+          "choice": "CHV6_CLOSE_SHARE"
+        },
+        {
+          "choice": "CHV6_SHARED_REMEMBER"
+        },
+        {
+          "choice": "CHV6_MORNING_FINISH"
+        },
+        {
+          "choice": "CHE_HUB"
+        },
+        {
+          "choice": "CHE_CALL_PREP"
+        },
+        {
+          "choice": "CHE_PACK_TAKE"
+        },
+        {
+          "choice": "CHE_RECIPE_READY"
+        },
+        {
+          "choice": "CHE_ROAD_TRACK"
+        },
+        {
+          "choice": "CHE_TRACK_MARK"
+        },
+        {
+          "choice": "CHE_ARCH_READ"
+        },
+        {
+          "choice": "CHE_LISTEN_PAUSE"
+        },
+        {
+          "choice": "CHE_SIGNAL_TEAM"
+        },
+        {
+          "choice": "CH2101"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHE_RESULT_RECORD"
+        },
+        {
+          "choice": "CHE_RECORD_CARE"
+        },
+        {
+          "choice": "CHE_MAREN_STAY"
+        },
+        {
+          "choice": "CHE_LUMI_PAUSE"
+        },
+        {
+          "choice": "CHE_CLOSE_PIERCE"
+        },
+        {
+          "choice": "CHG_HUB"
+        },
+        {
+          "choice": "CHG_CALL_PREP"
+        },
+        {
+          "choice": "CHG_KIT_TAKE"
+        },
+        {
+          "choice": "CHG_CRAFT_ROAD"
+        },
+        {
+          "choice": "CHG_PASSAGE_READ"
+        },
+        {
+          "choice": "CHG_READ_PATTERN"
+        },
+        {
+          "choice": "CHG_PACT_GENTLE"
+        },
+        {
+          "choice": "CH2201"
+        },
+        {
+          "battlePolicy": "win",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK",
+            "IT_POTION_DEW",
+            "GUARD",
+            "IT_POTION_DEW",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CH2303"
+        },
+        {
+          "choice": "CH2601"
+        },
+        {
+          "choice": "CHG_ARCHIVE_QUESTION"
+        },
+        {
+          "choice": "CH2701"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CH0210"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_EXPLORER"
+        },
+        {
+          "choice": "CHLP_E_BEGIN"
+        },
+        {
+          "choice": "CHLP_E_SURVEY_FEET"
+        },
+        {
+          "choice": "CHLP_E_MARK_RIBBON"
+        },
+        {
+          "choice": "CHLP_E_ACK_MAP"
+        },
+        {
+          "choice": "CHLP_E_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_E_RANK2_SHARE"
+        },
+        {
+          "choice": "CHLP_E_HOME_REST"
+        },
+        {
+          "choice": "CHLP_HUB"
+        },
+        {
+          "choice": "CHLP_START_NATURE"
+        },
+        {
+          "choice": "CHLP_N_BEGIN"
+        },
+        {
+          "choice": "CHLP_N_SOURCE_CLEAR"
+        },
+        {
+          "choice": "CHLP_N_WATER_BUCKET"
+        },
+        {
+          "choice": "CHLP_N_ACK_PATIENCE"
+        },
+        {
+          "choice": "CHLP_N_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WIND_ORB_SEEK",
+            "SPELL_WIND_ORB_SEEK"
+          ]
+        },
+        {
+          "choice": "CHLP_N_RANK2_REFUGE"
+        },
+        {
+          "choice": "CHLP_N_HOME_REST"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "craft": "SPELL_WATER_ORB_SPLIT"
+        },
+        {
+          "craft": "SPELL_BLOOM_ORB_SEEK"
+        },
+        {
+          "craft": "SPELL_ECHO_ORB_SEEK"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_PROMISE"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_NOTE"
+        },
+        {
+          "choice": "CHA2_ROOT_SOIL"
+        },
+        {
+          "choice": "CHA2_DRY_WATER"
+        },
+        {
+          "choice": "CHA2_BROOK_SAMPLE"
+        },
+        {
+          "choice": "CHA2_PIP_MEMORY"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_NATURE"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_ARCHIVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_LIMIT"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECORD"
+        },
+        {
+          "choice": "CHA2_RECORD_RETURN"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_RESUME"
+        },
+        {
+          "choice": "CHA2_RETURN_PAUSE"
+        },
+        {
+          "choice": "CHA2_HUB"
+        },
+        {
+          "choice": "CHA2_CALL_PACK"
+        },
+        {
+          "choice": "CHA2_PACK_TAKE"
+        },
+        {
+          "choice": "CHA2_RECIPE_LEAVE"
+        },
+        {
+          "choice": "CHA2_GOODBYE_SKETCH"
+        },
+        {
+          "choice": "CHA2_EDGE_MARK"
+        },
+        {
+          "choice": "CHA2_MARK_SCOUT"
+        },
+        {
+          "choice": "CHA2_HOLLOW_ECHO"
+        },
+        {
+          "choice": "CHA2_RING_BLOOM"
+        },
+        {
+          "choice": "CHA2_TRIAL_FRIEND"
+        },
+        {
+          "choice": "CHA2_RESULT_COMPARE"
+        },
+        {
+          "choice": "CHA2_TRACE_OBSERVE"
+        },
+        {
+          "choice": "CHA2_LEGACY_CARE"
+        },
+        {
+          "choice": "CHA2_DECIDE_RECALL"
+        },
+        {
+          "choice": "CHA2_RETURN_EIRA"
+        },
+        {
+          "choice": "CHA2_EIRA_SHARE"
+        },
+        {
+          "choice": "CHA2_EPILOGUE_FINISH"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_ASK"
+        },
+        {
+          "choice": "CHALC_TABLE_LIMIT"
+        },
+        {
+          "choice": "CHALC_CONSENT_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_SHOW"
+        },
+        {
+          "choice": "CHALC_TABLE_USER"
+        },
+        {
+          "choice": "CHALC_CONSENT_PATHS"
+        },
+        {
+          "choice": "CHLP_CROSSROADS_BACK"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_MEET"
+        },
+        {
+          "choice": "CHALC_MEET_ASK"
+        },
+        {
+          "choice": "CHALC_TABLE_LIMIT"
+        },
+        {
+          "choice": "CHALC_START"
+        },
+        {
+          "choice": "CHALC_GARDEN_SOURCE"
+        },
+        {
+          "choice": "CHALC_SOURCE_EDGE"
+        },
+        {
+          "choice": "CHALC_WASH_HELP"
+        },
+        {
+          "choice": "CHALC_LEAF_BACK"
+        },
+        {
+          "choice": "CHALC_WASH_SLOW"
+        },
+        {
+          "choice": "CHALC_LEAF_CHECK"
+        },
+        {
+          "choice": "CHALC_OBSERVE_SOURCE"
+        },
+        {
+          "choice": "CHALC_GARDEN_ASK"
+        },
+        {
+          "choice": "CHALC_SOURCE_WAIT"
+        },
+        {
+          "choice": "CHALC_WASH_HELP"
+        },
+        {
+          "choice": "CHALC_LEAF_CHECK"
+        },
+        {
+          "choice": "CHALC_MEASURE"
+        },
+        {
+          "choice": "CHALC_RECIPE_BACK"
+        },
+        {
+          "choice": "CHALC_MEASURE"
+        },
+        {
+          "choice": "CHALC_CRAFT"
+        },
+        {
+          "craft": "SPELL_WATER_RING_HEAL"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_RECIPE"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_CAST"
+        },
+        {
+          "choice": "CHALC_COMPARE_USER"
+        },
+        {
+          "choice": "CHALC_RANK1_REVIEW"
+        },
+        {
+          "choice": "CHALC_COMPARE_LIMIT"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_PREP"
+        },
+        {
+          "choice": "CHALC_RECIPE_TEST"
+        },
+        {
+          "choice": "CHALC_SAMPLE_CAST"
+        },
+        {
+          "choice": "CHALC_COMPARE_LIMIT"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_TRIAL"
+        },
+        {
+          "choice": "CHALC_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "SPELL_WATER_ORB_SPLIT",
+            "GUARD",
+            "SPELL_WATER_ORB_SPLIT"
+          ]
+        },
+        {
+          "choice": "CHALC_RESULT_NOTE"
+        },
+        {
+          "choice": "CHALC_RANK2_REVIEW"
+        },
+        {
+          "choice": "CHALC_COMPARE_USER"
+        },
+        {
+          "choice": "CHALC_RANK1"
+        },
+        {
+          "choice": "CHALC_TRIAL_START"
+        },
+        {
+          "battlePolicy": "recorded",
+          "actions": [
+            "GUARD",
+            "SPELL_WIND_ORB_SEEK",
+            "GUARD",
+            "GUARD",
+            "SPELL_WATER_ORB_SPLIT"
+          ]
+        },
+        {
+          "choice": "CHALC_RESULT_ASK"
+        },
+        {
+          "choice": "CHALC_RANK2"
+        },
+        {
+          "choice": "CHALC_RETURN_HOME"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_RESUME"
+        },
+        {
+          "choice": "CHALC_RETURN_NOTES"
+        },
+        {
+          "choice": "CHALC_NOTES_EIRA"
+        },
+        {
+          "choice": "CHALC_PLAN_REVIEW"
+        },
+        {
+          "choice": "CHALC_RETURN_NOTES"
+        },
+        {
+          "choice": "CHALC_NOTES_LIMIT"
+        },
+        {
+          "choice": "CHALC_PLAN_PACK"
+        },
+        {
+          "choice": "CHALC_PACK_FIELD"
+        },
+        {
+          "choice": "CHALC_DELIVER_PAUSE"
+        },
+        {
+          "choice": "CHALC_HUB"
+        },
+        {
+          "choice": "CHALC_CALL_RESUME"
+        },
+        {
+          "choice": "CHALC_RETURN_NOTES"
+        },
+        {
+          "choice": "CHALC_NOTES_LIMIT"
+        },
+        {
+          "choice": "CHALC_PLAN_PACK"
+        },
+        {
+          "choice": "CHALC_PACK_RECALL"
+        },
+        {
+          "choice": "CHALC_EPILOGUE_FIELD"
+        },
+        {
+          "choice": "CHALC_DELIVER_TALA"
+        },
+        {
+          "choice": "CHALC_FINISH"
+        },
+        {
+          "choice": "CHALC_REVISIT"
+        },
+        {
+          "choice": "CHALC_FINISH"
+        }
+      ]
+    }
+  ]
+}

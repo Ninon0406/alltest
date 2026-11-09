@@ -6,6 +6,7 @@ export const workshopScenery={
  recipeDesk:{x:378,y:182,width:98,height:66},
 } as const;
 export const workshopMap={
+ effectTargets:{cauldron:workshopScenery.cauldron.mouth},
  anchors:{
   workshop_entrance:{x:154,y:239},west_turn:{x:126,y:248},toolbox_front:{x:111,y:237,facing:'west' as const},
   south_turn:{x:184,y:251},mixing_approach:{x:240,y:251},craft_front:{x:240,y:232,facing:'north' as const},

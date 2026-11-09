@@ -1,3 +1,9 @@
+## 0.15 compatibility addition
+
+File2/State2 unchanged. TALA is a validated optional NPC entry and ALCHEMIST/DISTILL are earned path references. Optional battle.pathActions.distilled:true is accepted only with earned rank-two ability and lp_alchemist_distilled fact; absence remains absent for old files. CH2_ALCHEMIST_RETURN uses existing CHAPTER_2 and optional batch checkpoint metadata. Learn/certification/support-tested facts are checked against actual prerequisites/known WaterRingHeal. Native0.14 captured from actual published UI on2026-11-09 (session25/legacy-014-capture.json); private bytes remain/tmp, candidate native import proof pending. No browser persistent state, save uploads or automatic recovery introduced.
+
+---
+
 # 0.14.0 — chapter-aware manual files
 
 This is the current additive contract; the version-specific notes below remain historical. File2 and State2 are unchanged. `src/content/chapters.ts` declares chapter IDs and activation flags; `storyContext(state)` derives the active journey chapter and the owning checkpoint batch. UI and export use the same context. Returning to an older Hub or workshop after starting ARC 2 keeps `chapterId: CHAPTER_2` while its checkpoint can belong to `CH1_FOUNDATIONS`. Generic battle/recovery checkpoints derive ownership from the battle checkpoint or recovery scene. No duplicate chapter counter is persisted in State.

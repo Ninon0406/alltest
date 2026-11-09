@@ -1,3 +1,13 @@
+## Session25 — 2026-11-09 UTC / 0.15.0 candidate
+
+เพิ่มหลักสูตรนักปรุงเวทของทาลา25nodes63choices (รวม152/403) เชื่อมการเลือกป่าเดิมทั้งสามผล การเรียนสูตรWater/Ring/Healจริง การสอบต่อสู้ และการส่งชุดยาหรือถ่ายทอดความรู้ มีค่าใช้จ่าย/การหยุดแล้วกลับมาทำต่อ/ของรางวัลครั้งเดียว. Distillใช้ยาจริงหนึ่งขวดต่อการต่อสู้ ฟื้นHP12/MP6 ล้างSEAR/VEILและกินเทิร์นตามปกติ. รักษา234RecipeIDs/State2/File2/RAM-onlyManualSave
+
+หลักฐานปัจจุบัน:293unit/2content/25graph/10roadmap/type/lint/manual/reference/build PASS;Focused5/5 PASS2.3mหลังแก้เป้าcauldronและจุดยืนkit;actual reducer witnesses152nodes403choices295state-delta/234recipesจากวัตถุดิบจริง. Full170/PRCI/public0.15ยังรอผล ไม่ใช้focusedแทนfull. Main0.14รอบก่อน42472995227จบ165PASS30.5mและDeploySUCCESSแล้ว. [รายงานรอบ25](evidence/session25/REPORT_TH.md) / [หลักฐาน](evidence/session25/verification.json)
+
+ภาพใหม่3PNGต้นฉบับ:ทาลา/ชุดยา/ไอคอน;102PNGสร้างซ้ำตรงbyteและ99เก่าไม่เปลี่ยน. ภาพยังpixelstudy ไม่ใช่finalHD. เส้นทางนักปรุง/ARC2เป็นตอนย่อยที่เล่นจบ ไม่ใช่ครบทั้งสาย/บท. อุปกรณ์จริง/Safari/FPS/ความสนุกจากผู้เล่นยังไม่ทดสอบ. Roadmap109งาน:27เสร็จ46กำลังทำ34ยังไม่เริ่ม2ติดข้อจำกัด=24.8%ของChecklist ไม่ใช่คุณภาพเกม
+
+---
+
 # ปิดรอบ 24 — 2026-11-08 / เผยแพร่ 0.14.0
 
 เพิ่ม 28 Story Nodes / 67 Choices รวม 127/340 พร้อมภารกิจพิพและการเดินทางป่าตอนแรก, บท/Batch/Manual-file context, ค่าไอเทมจริง, ข้อความตามสถานะโลก, ผู้ถักราก/เวทโต้จังหวะ และ PNG ต้นฉบับ 10 ไฟล์. Source3bb3915 / PR25 / Merge7394838. Local165/16532.0m + PRCI42470656350ครบ165/16528.5m / Unit273 / Graph24 / Source gates+Build PASS

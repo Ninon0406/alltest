@@ -12,7 +12,7 @@ export function lifePathsPanel(host:HTMLElement,state:State,onBack:()=>void){
   const card=document.createElement('section');card.className='life-path-card';card.dataset.lifePath=progress.id;card.dataset.rank=String(progress.rank);host.append(card);
   const heading=document.createElement('div');heading.className='life-path-heading';card.append(heading);
   const icon=document.createElement('span');icon.className='life-path-icon';icon.setAttribute('aria-hidden','true');
-  icon.style.backgroundImage='url("'+import.meta.env.BASE_URL+'assets/art-v14/life-icons.png")';
+  icon.style.backgroundImage='url("'+import.meta.env.BASE_URL+(definition.iconSheet||'assets/art-v14/life-icons.png')+'")';
   icon.style.setProperty('--life-icon-frame',String(definition.iconBase+progress.rank));
   heading.append(icon);text('h2',definition.name,heading);
   text('p',statuses[progress.status],card).className='life-path-status';

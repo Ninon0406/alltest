@@ -23,6 +23,10 @@ export function scoutAvailability(s:State){
  const reason=!s.battle?'ใช้ได้ระหว่างการต่อสู้':!hasPathAbility(s,'TRAIL_FOCUS')?'ต้องผ่านบททดสอบนักสำรวจระดับ 2':s.battle.pathActions?.scouted?'สำรวจจังหวะไปแล้วในการต่อสู้นี้':s.mp<4?'MP ไม่พอ · ต้องใช้ 4 MP':'';
  return {enabled:!reason,reason};
 }
+export function distillAvailability(s:State){
+ const reason=!s.battle?'ใช้ได้ระหว่างการต่อสู้':!hasPathAbility(s,'DISTILL')?'ต้องผ่านบททดสอบนักปรุงเวทขั้น 2':s.battle.pathActions?.distilled?'กลั่นน้ำค้างในการต่อสู้นี้แล้ว':!s.inventory.IT_POTION_DEW?'ต้องมีน้ำค้างฟื้นพลัง 1 ชิ้น':'';
+ return {enabled:!reason,reason};
+}
 function plannedIntent(b:Battle):'pulse'|'leaf'|'curl'|'splash'|'mist'|'rune'|'ward'|'listen'|'echo'|'seal'|'memory'|'clue'|'gather'|'seeds'|'sweep'{
  if(b.id==='B06_ROOT_WEAVER')return b.turn%3===1?'gather':b.turn%3===2?'seeds':'sweep';
  if(b.id==='B05_MEMORY_GUARDIAN'){const phase=guardianPhase(b);return phase===3?(b.turn%2===0?'memory':'pulse'):b.turn%3===1?'seal':phase===1&&b.turn%3===0?'clue':'pulse';}
@@ -104,6 +108,12 @@ export function fight(state:State,action:string){return transact(state,d=>{
    if(b.shield<=8){b.shield=8;b.shieldTurns=2;b.log.push('รากคุ้มภัย — โล่ 8 ป้องกัน 2 จังหวะศัตรู ใช้ได้ครั้งเดียวในการต่อสู้');}
    else b.log.push('รากคุ้มภัย — คงโล่เดิมที่แข็งแรงกว่า ไม่ต่อเวลา ใช้สิทธิ์ครั้งแรกแล้ว');
   }
+ }
+ else if(action==='DISTILL'){
+  const available=distillAvailability(d);if(!available.enabled)throw Error(available.reason);
+  d.inventory.IT_POTION_DEW--;d.hp=Math.min(100,d.hp+12);d.mp=Math.min(40,d.mp+6);
+  delete b.playerStatus.SEAR;delete b.playerStatus.VEIL;b.pathActions={...b.pathActions,distilled:true};d.flags.lp_alchemist_distilled=true;
+  b.log.push('กลั่นน้ำค้าง — ใช้น้ำค้าง 1 ฟื้น HP สูงสุด 12 / MP สูงสุด 6 ล้างเพลิงและม่านพร่า ใช้ได้ครั้งเดียว');
  }
  else if(action==='IT_POTION_DEW'||action==='IT_MANA_LEAF'){
   if(!d.inventory[action])throw Error('ไอเทมหมดแล้ว');d.inventory[action]--;

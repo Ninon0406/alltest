@@ -135,6 +135,7 @@ export class World extends Phaser.Scene {
   if(this.textures.exists('ruins-altar-v12'))for(let state=0;state<3;state++)add({key:'ruins-altar-'+state,frames:this.anims.generateFrameNumbers('ruins-altar-v12',{start:state*4,end:state*4+3}),frameRate:4,repeat:-1});
   if(this.textures.exists('echo-knot-v15'))for(const [row,name] of ['idle','attack','hit','listen'].entries())add({key:'echo-knot-v15-'+name,frames:this.anims.generateFrameNumbers('echo-knot-v15',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='listen'?4:8,repeat:name==='idle'||name==='listen'?-1:0});
   if(this.textures.exists('guardian-v16'))for(const [row,name] of ['idle','attack','hit','guard'].entries())add({key:'guardian-v16-'+name,frames:this.anims.generateFrameNumbers('guardian-v16',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='guard'?4:8,repeat:name==='idle'||name==='guard'?-1:0});
+  if(this.textures.exists('tala-v18'))for(const [row,name] of ['idle','talk','show_recipe'].entries())add({key:'tala-v18-'+name,frames:this.anims.generateFrameNumbers('tala-v18',{start:row*4,end:row*4+3}),frameRate:row?6:4,repeat:row?0:-1});
   if(this.textures.exists('root-weaver-v17'))for(const [row,name] of ['idle','attack','hit','guard'].entries())add({key:'root-weaver-v17-'+name,frames:this.anims.generateFrameNumbers('root-weaver-v17',{start:row*4,end:row*4+3}),frameRate:name==='idle'||name==='guard'?4:8,repeat:name==='idle'||name==='guard'?-1:0});
   if(this.textures.exists('glade-resonator-v15'))add({key:'glade-resonator-flow',frames:this.anims.generateFrameNumbers('glade-resonator-v15',{start:0,end:3}),frameRate:4,repeat:-1});
   if(this.textures.exists('festival-props-v13'))add({key:'festival-lantern',frames:this.anims.generateFrameNumbers('festival-props-v13',{frames:[1,2,3,2]}),frameRate:4,repeat:-1});
@@ -278,6 +279,8 @@ export class World extends Phaser.Scene {
   }
   const road=this.currentStage==='forest_road';
   const rootFrame=state?.flags.a2_resolution_care?3:state?.flags.a2_root_restored?2:state?.flags.a2_water_channel?1:0;
+  const fieldKit=!!(road&&state?.flags.alc_field_delivery&&this.textures.exists('field-kit-v18'));this.writeMetric('alchemistKit',fieldKit?'field':'none');
+  if(fieldKit){const a=forestRoadScenery.fieldKit;this.props.push(this.add.sprite(a.x,a.y,'field-kit-v18').setOrigin(.5,44/48).setDepth(a.y));}
   this.writeMetric('forestRootFrame',road?rootFrame:-1);this.writeMetric('forestResolution',road?(state?.flags.a2_resolution_care?'care':state?.flags.a2_resolution_path?'path':state?.flags.a2_resolution_record?'record':'none'):'none');
   if(road&&this.layered){
    for(const a of stageLayouts.forest_road.customProps||[])if(this.textures.exists(a.texture))this.props.push(this.add.sprite(a.x,a.y,a.texture).setOrigin(.5,1).setDepth(a.y));
@@ -294,7 +297,7 @@ export class World extends Phaser.Scene {
   this.npcKey=encounter?.actor||(state?.flags.lumi_helped&&scene?.id==='S02_HUB'?'lumi':scene?.npc||'pip');
   if(this.npcKey==='koro'&&this.textures.exists('koro-v10'))this.npcKey='koro-v10';
   if(this.npcKey==='maren'&&this.textures.exists('maren-v8'))this.npcKey='maren-v8';
-  if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'?'maren':'sprout');
+  if(!this.textures.exists(this.npcKey))this.npcKey=encounter?.fallbackActor||(this.npcKey==='eira-v3'||this.npcKey==='tala-v18'?'maren':'sprout');
   this.mist?.setVisible(this.currentStage==='stream'&&!state?.flags.stream_clean);
   this.writeMetric('guardianPhase',state?.battle?.id==='B05_MEMORY_GUARDIAN'?guardianPhase(state.battle):0);this.writeMetric('guardianAssist',String(!!state?.battle?.guardian?.assistUsed));
   this.writeMetric('chapterResolution',state?.flags.song_restored?state.flags.chapter1_family?'family':state.flags.chapter1_community?'community':'archive':'none');
@@ -337,6 +340,7 @@ export class World extends Phaser.Scene {
  }
  private castEffect(reduced:boolean,spell?:Spell,target?:'scene',bench?:{x:number;y:number},effectTarget?:{x:number;y:number}){
   const color=spell?.vfx.color||0xffdf90,shape=spell?.form||'ORB',modifier=spell?.mod||'SEEK';
+  this.writeMetric('lastSpellProfile',JSON.stringify({id:spell?.id??null,core:spell?.core??null,form:shape,modifier}));
   const support=!!bench||target!=='scene'&&!!spell&&(spell.heal>0||spell.shield>0);
   const sourceX=bench?.x??this.player.x,sourceY=bench?.y??this.player.y-12;
   const scenery=target==='scene'?effectTarget??stageLayouts[this.currentStage].spellTarget:undefined;
@@ -461,6 +465,8 @@ export class World extends Phaser.Scene {
   }
   const listening=this.currentStage==='garden'&&(command==='CH0602'||command==='CH03B1');
   if(!lifting&&!ruinAction)this.pose(path?.pose==='talk'?'interact':path?.pose||(brewing?'idle':listening?'rest':cue==='walk'?'idle':poseFor(cue)));
+  if(command==='DISTILL')this.pose('craft');
+  if(command==='CHALC_SAMPLE_CAST')this.npcPose('show_recipe');
   if(path?.pose==='talk')this.npcPose('talk');
   if(path?.pose){this.writeMetric('storyBeat',command||'none');if(path.effect)this.ruinsGlow(path.effect,reduced,{x:this.player.x,y:this.player.y-20});if(spell||cue==='cast')this.castEffect(reduced,spell,target,undefined,path.effectTarget);}
   if(command==='CHA2_TRIAL_PATIENCE'){this.writeMetric('forestBeat','wildlife-pass');await this.beat(this.npc,{x:430,alpha:0,duration:reduced?35:900},token);if(token!==this.generation)return;}

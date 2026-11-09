@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "capturedAt": "2026-11-08T11:32:41.642Z",
+  "fromVersion": "0.14.0",
+  "formatVersion": 2,
+  "stateVersion": 2,
+  "chapterId": "CHAPTER_2",
+  "checkpoint": {
+    "sceneId": "S02_HUB",
+    "storyNodeId": "S02_HUB",
+    "kind": "story_choice",
+    "batchId": "CH1_FOUNDATIONS"
+  },
+  "privateFile": "/tmp only; bytes not committed or uploaded",
+  "fileSha256": "1b1032727c0e083979fe44429f3e21e1b41c30a085d77f2a5dc80a031cd73569",
+  "stateSha256": "9ee94d3176a9a479556b0b52da59922dc0973b25560c99e53dfe632114343f3a",
+  "method": "genuine native 0.13 import on published0.14, finish guardian and forest through public choices, explicit browser download"
+}

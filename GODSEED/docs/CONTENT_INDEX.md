@@ -1,3 +1,9 @@
+## Session25 / 0.15 candidate — measured catalog
+
+152 story nodes /403 choices /295 witnessed state-changing choices across earned reducer paths /6 NPC /3 introductory Life Paths /9 quest contracts /8 batches /7 encounters /9 stages /7 fixed maps /234 recipes /3 chapter conclusions /0 full-game endings. New batch CH2_ALCHEMIST_RETURN contains25nodes63choices and Q_ALCHEMIST. See session25/node-contracts.json and combined-witnesses.json; not all seeds or all recipes in one save.
+
+---
+
 # Published 0.14.0 — current content receipt
 
 127 reachable nodes / 340 successfully witnessed choices / 260 choices with a witnessed gameplay state delta / 8 quest contracts / 7 explicit batches / 7 encounters including training / 9 stages / 7 fixed maps / 99 original PNGs. Five NPC characters, two introductory Life Paths, 234 earned recipes, three chapter conclusions and zero full-game endings. These are witnesses across paths, not all seeds or one save. The 28-node/67-choice Pip and forest batch is live; ARC2 as a whole remains open. See [Session24 report](evidence/session24/REPORT_TH.md) and [all node contracts](evidence/session24/node-contracts.json).

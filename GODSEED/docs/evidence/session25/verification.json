@@ -1,0 +1,75 @@
+{
+  "status": "SOURCE_AND_FOCUSED_PASS_FINAL_FULL170_PENDING",
+  "version": "0.15.0",
+  "started": "2026-11-08",
+  "resumed": "2026-11-09",
+  "baselineCommit": "49b911307c439b978d674ce2a2c41810de217ff5",
+  "before": {
+    "nodes": 127,
+    "choices": 340,
+    "stateChangingChoices": 260,
+    "npc": 5,
+    "introPaths": 2,
+    "quests": 8,
+    "batches": 7,
+    "stages": 9,
+    "fixedMaps": 7,
+    "encounters": 7,
+    "recipes": 234,
+    "originalPng": 99
+  },
+  "after": {
+    "nodes": 152,
+    "choices": 403,
+    "stateChangingChoices": 295,
+    "npc": 6,
+    "introPaths": 3,
+    "quests": 9,
+    "batches": 8,
+    "stages": 9,
+    "fixedMaps": 7,
+    "encounters": 7,
+    "recipes": 234,
+    "originalPng": 102,
+    "chapterConclusions": 3,
+    "fullGameEndings": 0
+  },
+  "actualReducerWitnesses": {
+    "nodes": 152,
+    "choices": 403,
+    "recipes": 234,
+    "scope": "Across earned paths, no injected flags/items, not all seeds or one save"
+  },
+  "sourceChecks": {
+    "unit": 293,
+    "content": 2,
+    "graph": 25,
+    "roadmap": 10,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "build": "PASS",
+    "manualSave": "PASS",
+    "references": "PASS"
+  },
+  "focused": {
+    "passed": 5,
+    "failed": 0,
+    "minutes": 2.3,
+    "scope": "After cauldron and station corrections; final extra resume choice/locked hints are covered by current source/reducer checks and upcoming full170"
+  },
+  "entryJs": "assets/index-DJlVOoeq.js",
+  "entryJsSha256": "59da9763a9e929a218d899e3f438992430264a0d5ec3f5a8bd79dd7c4f3989d2",
+  "localFull": {
+    "target": 170,
+    "status": "pending"
+  },
+  "prCi": "pending",
+  "public015": "pending",
+  "limitations": [
+    "Physical Safari/iPhone/Android/iPad, hardware FPS and human enjoyment NOT_TESTED",
+    "Original pixel studies are provisional, not final HD approval",
+    "Whole life path, ARC2 and V6 1.0 scope remain incomplete",
+    "Private tmp native files and logs from the prior executor were lost; fresh published0.14 recaptured through real UI on Nov9",
+    "Existing official-source research is qualified; no new Way playtest/full-novel access claim"
+  ]
+}
