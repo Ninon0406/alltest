@@ -579,3 +579,14 @@ Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelper�
 - ยังไม่เสร็จ:ทั้งLifePath/ARC2/ARC1acceptance/ARC3–12/อีก5Paths/advancedmagic/world/economy/15endings/audio/finalHD/physicalSafariAndroidiPad/FPS/humanfun;rawchunkwarning≈1858kBยังเปิด
 - ไฟล์:alchemist-story/quests/life-paths/combat/state/save-file/story/world/workshop-map/forest-road-map/art-assets/generate-alchemist-art+tests;ดูsession25/verification.jsonและREPORT_TH.md
 - ถัดไป:ปิดfull170/CI/native14/publicproofก่อนrelease→STO001/ARC001acceptance→ARC002ต่อ→LifePaths→MAG010/visualmobile. ไม่มีงานอัตโนมัติข้ามsession
+
+
+### Session25 final QA / release — 2026-11-09 UTC
+
+- ผลครบ:localFull170/170PASS36.0m/PRCI42595548362บนd6ee99d170/170PASS28.5m/293unit/25graph/2content/10roadmap/type/lint/build/manual/refผ่าน ไม่รวมfocusedเพื่อแกล้งเป็นfull
+- Nativeเก่าจริง:ไฟล์0.14ดาวน์โหลดจากpublishedUIใหม่Nov9หลัง/tmpเก่าหาย;importStateexact,เรียน/ผสมWaterRingHeal/สอบจริง/2ผลส่งยาหรือสอน/pause-recallต้องทำตามคำสัญญา/giftonce. ทดสอบB02รับVEILจริง→Distillใช้ยา1/ฟื้นHP12MP6แบบมีเพดาน/ล้างVEIL/ศัตรูลงมือตามIntentและturn+1;nativeused-turnโหลดแล้วใช้ซ้ำไม่ได้ จบกลับS12และHubถูกต้อง
+- Public0.15:stateSHA29f7ea324ccbfee060f5f9dd800179eadb19a87da44cc39a920321c0122ccd48ตรงlocal/10Chromiumviewports/JSsha59da9763a9e929a218d899e3f438992430264a0d5ec3f5a8bd79dd7c4f3989d2+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsผ่าน;corelegacyloopผ่านเพิ่มแยก78PNGsubset
+- ส่งมอบ:PR26merge728183f;Pages42600318779SUCCESS. Main42600319999ยังตรวจซ้ำหลังmerge ณreceipt ไม่อ้างPASS/ไม่cancel. Finalreceiptdocs-only[skip ci] ไม่มีapp/source/assets/package/indexเปลี่ยนหลังverifiedsource
+- Roadmap:27done46inprogress34notstarted0problem2blocked=10924.8%,v127/10825%. LIFE003เริ่มแล้วแต่ไม่ปิดทั้งสาย;102PNGreproexact/99เดิมไม่เปลี่ยน;3introPaths/6NPC/9quests/152nodes403choices ไม่ใช่ทั้งV6หรือ15endings
+- ข้อจำกัดค้าง:rawchunk1858.76kB/gzip486.99kBwarning,physicalSafari/Android/iPad/FPS/humanfun/finalHD/audio/advancedmagic/world/economy/ARC1acceptance/ARC2ทั้งบท/ARC3–12/อีก5LifePaths. ไม่มีknownP0/P1ในเส้นทางที่ตรวจ ไม่ครอบคลุมเกมเต็มที่ยังไม่สร้าง
+- ต่อรอบหน้า:ตรวจMainจริงและอ่านREPORT_TH/SSOT→STO001/ARC001wholeacceptance→ARC002ต่อผลAlchemist→LifePaths→MAG010→visual/mobile. ไม่ต้องทำintrocourseซ้ำและไม่มีงานข้ามsessionอัตโนมัติ

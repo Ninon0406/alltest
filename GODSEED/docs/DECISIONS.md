@@ -1,3 +1,11 @@
+## ส่งมอบ 0.15.0 — 2026-11-09 UTC / Session25
+
+เพิ่ม25จุดเนื้อเรื่องและ63ตัวเลือก รวม152/403 พร้อมหลักสูตรนักปรุงเวทขั้นต้นของทาลาและความสามารถกลั่นน้ำค้างที่ใช้ยาและเสียเทิร์นจริง. Source `d6ee99d` / [PR26](https://github.com/Ninon0406/alltest/pull/26) / merge `728183f`; localFull170/170ผ่าน36.0m, PRCI170/170ผ่าน28.5m, unit293/graph25/content2/roadmap10/type/lint/build/manual/referenceผ่าน. Nativeไฟล์จากเว็บ0.14โหลดตรงStateเดิม เล่นต่อจบหลักสูตรและล้างVEILจากศัตรูจริงได้. เว็บ0.15ยืนยันStateSHAตรงlocal,10ขนาดChromiumจำลอง,JS+91versionedPNGตรงbyte,ไม่มีStorage/Upload/Reference/ConsoleErrors. [รายงานและภาพจริง](evidence/session25/REPORT_TH.md) / [ผลตรวจ](evidence/session25/verification.json)
+
+Pages42600318779SUCCESS. MainCI42600319999กำลังตรวจซ้ำหลังmerge ณเวลาบันทึก ไม่อ้างว่าผ่าน. ไม่มีruntime/source/assets/package/indexเปลี่ยนหลังfreeze;งานท้ายรอบเป็นเอกสารและหลักฐาน. Checklist27/109=24.8%:27เสร็จ46กำลังทำ34ยังไม่เริ่ม2ติดข้อจำกัด. ทั้งLifePath/ARC2/V6/finalHD/physicalhardware/FPS/humanfunยังไม่ผ่านเกณฑ์รวม
+
+---
+
 ## 2026-11-09 — Session25
 
 Build a finite Alchemist teaching/delivery experience after the forest return, preserving both old introductory paths and234recipes. Learn a named existing support recipe instead of gifting an invented spell. Certification requires an actual trial result. Distill trades one potion and a normal turn for a smaller heal plus MP/cleanse; it does not trigger offensive core reactions. Delivery spends a potion while teaching preserves it; either promise must actually be completed before the once-only reward. Prior care/path/record results change observations rather than being rewritten.

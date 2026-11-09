@@ -329,3 +329,10 @@ Next:STO001/ARC001wholeacceptance→ARC002ต่อจาก3ผลป่า→L
 ## Session25 handoff — 2026-11-09 / candidate0.15
 
 อ่านGodseedMasterRoadmap/PROGRESSและsession25/verification.jsonก่อนต่อ มีAlchemist25nodes63choices/3originalPNG/Distillที่ต้องได้สิทธิ์จริงแล้ว Source293unit25graph/Focus5ผ่าน แต่Full170/PRCI/public0.15ยังรอผล ห้ามเอาผลก่อนfreezeหรือpublic0.14แทน0.15. Main0.14CI42472995227จบ165PASS30.5mและDeploySUCCESSแล้ว. คงFile2/State2/234recipes/RAM-onlyfiles ไม่ปิดwholeLifePath/ARC2/HD/hardwareจากpartial. ก่อนพัฒนารอบใหม่ทุกครั้ง ให้ตรวจสอบ GODSEED_MASTER_ROADMAP.md เพื่อทราบงานที่เสร็จแล้ว งานที่กำลังทำ และงานที่ยังเหลือ เมื่อดำเนินงานสำเร็จให้ทดสอบและอัปเดต Roadmap ก่อนจบรอบเสมอ
+
+
+## Session25 final handoff — 2026-11-09 / published0.15.0
+
+Source d6ee99d/PR26/merge728183f. LocalFull170PASS36.0m/PRCI42595548362Full170PASS28.5m/unit293/graph25/buildผ่าน. Actualnativepublished0.14Stateexact→Alchemistcourse→bothdeliveryoutcomes→realB02VEILcleanseและpublic0.15StateSHAตรงlocal/10emulatedviewports/JS+91PNGexact/noStorageUploadReferenceConsoleErrorsผ่าน. Pages42600318779SUCCESS;Main42600319999ยังin_progressที่บันทึก ไม่อ้างPASS. ตรวจActionsจริงก่อนรอบหน้า;อย่ารันพัฒนาซ้ำAlchemistintroที่ผ่านแล้ว. Sourcefreezeไม่มีapp/asset/indexเปลี่ยนในreceiptท้ายรอบ. Private/tmpเซฟรุ่นเก่าหายตอนenvironmentเปลี่ยน จึงยืนยันใหม่เฉพาะ0.14ที่จับจากเว็บจริงNov9 ไม่อ้างrerunอีก6รุ่นจากรอบ23
+
+152nodes403choices295state-delta witnesses/234recipes/6NPC3introPaths9quests8batches7encounters9stages7maps/102originalPNG/3chapterconclusions0fullendings. ทั้งAlchemistPath/ARC2/finalHD/hardware/FPS/humanfunยังไม่ปิด. Checklist27done46inprogress34notstarted2blocked=10924.8%. งานต่อSTO001/ARC001acceptance→ARC002ผลต่อเนื่อง→LifePaths→MAG006/MAG010→VIS008/QA003. อ่านsession25/REPORT_TH.mdและverification.jsonก่อนทำต่อ ไม่มีการทำงานข้ามsessionอัตโนมัติ

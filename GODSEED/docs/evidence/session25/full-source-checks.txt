@@ -1,0 +1,311 @@
+
+> godseed@0.15.0 test:all
+> npm run roadmap:check && npm run validate:references && npm run validate:manual-save && npm run validate:story && npm run typecheck && npm run lint && npm run validate:content && npm test && npm run build
+
+
+> godseed@0.15.0 roadmap:check
+> node --test scripts/roadmap.test.mjs && node scripts/roadmap.mjs
+
+✔ counts only DONE, including zero/all and each non-done state (1.962438ms)
+✔ current audit has valid references, deterministic checklist and checked boxes only for DONE (17.35427ms)
+✔ duplicate and unknown dependency IDs reject (12.274503ms)
+✔ cycles and missing source evidence reject (9.046417ms)
+✔ unsupported status and DONE without actual verification record reject (3.49631ms)
+✔ next-work list excludes done/blocked tasks and promotes actual regressions (3.560397ms)
+✔ location records reject missing aspects, duplicate locations and premature final readiness (18.547379ms)
+✔ manual save subtasks have stable IDs, evidence and do not inflate the main denominator (12.78995ms)
+✔ V6 preserves legacy IDs/phase/scope history while allowing unfinished expanded scope (18.000314ms)
+✔ six domains partition milestones exactly once; designs and save substeps add no completion credit (11.826878ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.323264
+{"result":"PASS","done":27,"in_progress":46,"not_started":34,"problem":0,"blocked":2,"total":109,"percent":24.8,"v1":{"done":27,"in_progress":46,"not_started":33,"problem":0,"blocked":2,"total":108,"percent":25}}
+
+> godseed@0.15.0 validate:references
+> node scripts/validate-references.mjs
+
+{"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}
+
+> godseed@0.15.0 validate:manual-save
+> node scripts/validate-manual-save.mjs
+
+{"result":"PASS","applicationFiles":48,"policy":"RAM only; explicit file export/import; no progress storage or outbound upload API in application source"}
+
+> godseed@0.15.0 validate:story
+> node --test scripts/story-graph.test.mjs && node scripts/story-graph.mjs
+
+✔ declared second-chapter batches have complete exported node contracts, and mismatched arcs fail (3.256789ms)
+✔ choice item costs need real references and positive integer amounts (0.33792ms)
+✔ explicit chapter batches reject duplicate ownership, unknown nodes, exits and missing ownership (0.564992ms)
+✔ unknown chapter changes and incomplete batch contracts fail instead of silently inheriting chapter one (0.19242ms)
+✔ relationship conditions reject invalid mentors and impossible thresholds (0.262987ms)
+✔ cinematic spell targets require a named in-bounds object from the source map (1.692251ms)
+✔ static graph reports structural counts without claiming executable quests or life paths (0.217257ms)
+✔ missing transitions and duplicated global choice IDs fail (0.137307ms)
+✔ duplicate source definitions cannot hide behind Object.fromEntries (0.19268ms)
+✔ unlinked story nodes and closed non-ending loops fail (0.248465ms)
+✔ reaching a self loop still fails when it cannot escape to a safe hub or ending (0.167212ms)
+✔ authored ending is allowed to terminate and is distinct from an accidental dead end (0.166411ms)
+✔ condition typos, impossible flag sources and unknown spell cores fail (0.206371ms)
+✔ flag produced on an entry or literal engine action is a legal prerequisite (0.224668ms)
+✔ reward IDs, quantities, relationship IDs and shared onceFlag guards are checked (0.407304ms)
+✔ battle victory, defeat and dynamic checkpoint recovery are explicit graph edges (0.221704ms)
+✔ scene staging and source choice cinematic anchors resolve against real map metadata (0.208935ms)
+✔ authored time cuts accept supported boundaries and reject misspelled phases (0.146571ms)
+✔ structured quest chains reject wrong scene references and unconnected steps (0.335205ms)
+✔ invalid recipe definitions fail instead of inflating usable spell counts (0.13228ms)
+✔ path conditions, mentor, ability, location and progression flags resolve to authored data (0.304268ms)
+✔ actual catalog and bounded real reducer exploration remain separate proof levels (1099.584593ms)
+✔ chapter conclusions cannot masquerade as full-game endings or accidental dead ends (0.411731ms)
+✔ conditional narration must reference a real fact and contain authored text (0.268925ms)
+✔ exact-recipe story conditions and named VFX require a real learned recipe (0.191098ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1186.309062
+{
+  "result": "PASS",
+  "scope": "Static catalog validation and structural reachability; conditions and combat wins are not assumed executable",
+  "counts": {
+    "contentBatches": 8,
+    "storyNodes": 152,
+    "choices": 403,
+    "declaredEffectChoices": 403,
+    "structurallyReachableNodes": 152,
+    "endings": 0,
+    "chapterConclusions": 3,
+    "encounters": 7,
+    "recipeDefinitions": 234,
+    "uniqueRecipes": 234,
+    "declaredQuestChains": 9,
+    "completableQuests": null,
+    "implementedLifePaths": null,
+    "introductoryLifePathContracts": 3,
+    "stages": 9
+  },
+  "structurallyReachable": [
+    "A2_BROOK",
+    "A2_CALL",
+    "A2_CARE",
+    "A2_DECISION",
+    "A2_DRY",
+    "A2_EDGE",
+    "A2_EIRA",
+    "A2_ENCOUNTER",
+    "A2_EPILOGUE",
+    "A2_GOODBYE",
+    "A2_HOLLOW",
+    "A2_LEGACY",
+    "A2_MAREN",
+    "A2_MARKER",
+    "A2_PACK",
+    "A2_PATH",
+    "A2_PATIENCE",
+    "A2_PIP",
+    "A2_RECIPE",
+    "A2_RECORD",
+    "A2_RETURN",
+    "A2_RING",
+    "A2_ROOT",
+    "A2_TRACE",
+    "A2_TRIAL_RESULT",
+    "ALC_CALL",
+    "ALC_COMPARE",
+    "ALC_CONSENT",
+    "ALC_DELIVER",
+    "ALC_EPILOGUE",
+    "ALC_GARDEN",
+    "ALC_LEAF",
+    "ALC_MEET",
+    "ALC_NOTES",
+    "ALC_OBSERVE",
+    "ALC_PACK",
+    "ALC_PLAN",
+    "ALC_RANK1",
+    "ALC_RANK2",
+    "ALC_RECIPE",
+    "ALC_RESULT",
+    "ALC_RETURN",
+    "ALC_ROOTS",
+    "ALC_SAMPLE",
+    "ALC_SIGN",
+    "ALC_SOURCE",
+    "ALC_TABLE",
+    "ALC_TEACH",
+    "ALC_TRIAL",
+    "ALC_WASH",
+    "ECHO_ARCH",
+    "ECHO_BYPASS",
+    "ECHO_CALL",
+    "ECHO_CLOSURE",
+    "ECHO_LISTEN",
+    "ECHO_LUMI",
+    "ECHO_MAREN",
+    "ECHO_PACK",
+    "ECHO_PROMISE",
+    "ECHO_RECIPE",
+    "ECHO_RECORD",
+    "ECHO_REPORT",
+    "ECHO_RESULT",
+    "ECHO_ROAD",
+    "ECHO_SAMPLE",
+    "ECHO_SIGNAL",
+    "ECHO_TRACKS",
+    "ECHO_WATER",
+    "G_AFTER_ARCHIVE",
+    "G_AFTER_COMMUNITY",
+    "G_AFTER_FAMILY",
+    "G_CALL",
+    "G_CRAFT",
+    "G_INSCRIPTION",
+    "G_KIT",
+    "G_LUMI",
+    "G_MAREN",
+    "G_PACT",
+    "G_REVIEW",
+    "G_SEAL_INNER",
+    "LP_CROSSROADS",
+    "LP_EXPLORER_ACK",
+    "LP_EXPLORER_BRIEF",
+    "LP_EXPLORER_HOME",
+    "LP_EXPLORER_MARKERS",
+    "LP_EXPLORER_RESULT",
+    "LP_EXPLORER_SURVEY",
+    "LP_EXPLORER_TRIAL",
+    "LP_NATURE_ACK",
+    "LP_NATURE_BRIEF",
+    "LP_NATURE_FIELD",
+    "LP_NATURE_HOME",
+    "LP_NATURE_RESULT",
+    "LP_NATURE_SOURCE",
+    "LP_NATURE_TRIAL",
+    "LP_SHARED_ROOTS",
+    "PIP_FRUIT_RESULT",
+    "PIP_PROMISE",
+    "S00_WAKE",
+    "S01_FIRST_STEPS",
+    "S02_HUB",
+    "S02_TREE",
+    "S03B_MAREN",
+    "S03_LUMI",
+    "S04_KORO",
+    "S05_CRAFT_TUTORIAL",
+    "S06_GARDEN",
+    "S07_ARCHIVE",
+    "S08_FOREST_GATE",
+    "S09_FOREST",
+    "S10_FOREST_RESULT",
+    "S11_STREAM",
+    "S12_STREAM_RESULT",
+    "S13_FOREST_SHRINE",
+    "S14_RESEARCH",
+    "S15_RUINS",
+    "S16_RUINS_RESULT",
+    "S17_ECHO_TABLET",
+    "S18_FESTIVAL_PREP",
+    "S19_FESTIVAL",
+    "S20_SEAL_PASSAGE",
+    "S21_ECHO_TRIAL",
+    "S22_GUARDIAN",
+    "S23_DECISION",
+    "S24_END_FAMILY",
+    "S25_END_COMMUNITY",
+    "S26_END_ARCHIVE",
+    "S27_EPILOGUE",
+    "S28_RECOVER",
+    "S29_PIP_SIDEQUEST",
+    "V6_A1_BELL",
+    "V6_A1_CIRCLE",
+    "V6_A1_CLOSE_ARCHIVE",
+    "V6_A1_CLOSE_CIRCLE",
+    "V6_A1_CLOSE_GARDEN",
+    "V6_A1_FIRST_SONG",
+    "V6_A1_FOREST",
+    "V6_A1_FOREST_ECHO",
+    "V6_A1_GARDEN",
+    "V6_A1_GEARS",
+    "V6_A1_INVITATION",
+    "V6_A1_LIGHT_RESULT",
+    "V6_A1_MARGIN",
+    "V6_A1_MORNING",
+    "V6_A1_MUSICBOX",
+    "V6_A1_NOTES",
+    "V6_A1_REHEARSAL",
+    "V6_A1_RUINS_RETURN",
+    "V6_A1_RUNE_COPY",
+    "V6_A1_SEEDBEDS",
+    "V6_A1_STREAM",
+    "V6_A1_WORKSHOP_LIGHT"
+  ],
+  "edges": 431,
+  "flagProducers": 302,
+  "errors": [],
+  "warnings": []
+}
+
+> godseed@0.15.0 typecheck
+> tsc --noEmit
+
+
+> godseed@0.15.0 lint
+> eslint src tests
+
+
+> godseed@0.15.0 validate:content
+> vitest run tests/content.test.ts
+
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  09:42:59
+   Duration  419ms (transform 220ms, setup 0ms, import 292ms, tests 24ms, environment 0ms)
+
+
+> godseed@0.15.0 test
+> vitest run tests/unit.test.ts tests/save.test.ts tests/combat.test.ts tests/balance.test.ts tests/art.test.ts tests/exploration.test.ts tests/alchemy.test.ts tests/cinematics.test.ts tests/directional.test.ts tests/camera.test.ts tests/scene-definitions.test.ts tests/gathering.test.ts tests/garden.test.ts tests/art-loading.test.ts tests/workshop.test.ts tests/ruins.test.ts tests/opening-content.test.ts tests/content-staging.test.ts tests/quests.test.ts tests/life-paths.test.ts tests/life-story.test.ts tests/path-combat.test.ts tests/arrival-flags.test.ts tests/echo.test.ts tests/guardian.test.ts tests/forest.test.ts tests/alchemist.test.ts
+
+
+ RUN  v4.1.12 /workspace/alltest/GODSEED
+
+
+ Test Files  27 passed (27)
+      Tests  293 passed (293)
+   Start at  09:42:59
+   Duration  9.46s (transform 519ms, setup 0ms, import 2.37s, tests 4.25s, environment 2ms)
+
+
+> godseed@0.15.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 128 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.60 kB │ gzip:   0.43 kB
+dist/assets/index-DiG9Wzs9.css      8.38 kB │ gzip:   2.67 kB
+dist/assets/index-DJlVOoeq.js   1,858.76 kB │ gzip: 486.99 kB
+
+(!) Some chunks are larger than 1800 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.06s
+Staged GODSEED for main:/ Pages; retained previous GODSEED hashes in artifact
+
+> godseed@0.15.0 validate:references
+> node scripts/validate-references.mjs
+
+{"result":"PASS","references":10,"originalFiles":13,"productionReferenceFiles":0,"zipSha256":"b3d3f742b535efbdcd12dabf16fbfa78f79208a9ec8681fbecadf1db7aa9f56f"}

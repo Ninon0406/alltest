@@ -1,0 +1,17 @@
+{
+  "id": 42595548362,
+  "url": "https://github.com/Ninon0406/alltest/actions/runs/42595548362",
+  "headSha": "d6ee99d413576df02bbe7ccfa9dd63ed3fcbb670",
+  "status": "completed",
+  "conclusion": "success",
+  "jobId": 129087169218,
+  "startedAt": "2026-11-09T09:43:13Z",
+  "completedAt": "2026-11-09T10:13:11Z",
+  "log": "pr-ci.txt",
+  "expectedBrowserCases": 170,
+  "scope": "Full PR CI on frozen source; count and duration in job log, not an aggregate of focused runs",
+  "browserPassed": 170,
+  "browserFailed": 0,
+  "browserMinutes": 28.5,
+  "unitPassed": 293
+}

@@ -1,6 +1,6 @@
 ## Session25 / 0.15 candidate — measured catalog
 
-152 story nodes /403 choices /295 witnessed state-changing choices across earned reducer paths /6 NPC /3 introductory Life Paths /9 quest contracts /8 batches /7 encounters /9 stages /7 fixed maps /234 recipes /3 chapter conclusions /0 full-game endings. New batch CH2_ALCHEMIST_RETURN contains25nodes63choices and Q_ALCHEMIST. See session25/node-contracts.json and combined-witnesses.json; not all seeds or all recipes in one save.
+152 story nodes /403 choices /295 witnessed state-changing choices across earned reducer paths /6 NPC /3 introductory Life Paths /9 quest contracts /8 batches /7 encounters /9 stages /7 fixed maps /234 recipes /3 chapter conclusions /0 full-game endings. New batch CH2_ALCHEMIST_RETURN contains25nodes63choices and Q_PATH_ALCHEMIST. See session25/node-contracts.json and combined-witnesses.json; not all seeds or all recipes in one save.
 
 ---
 

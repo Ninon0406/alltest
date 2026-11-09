@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "updated": "2026-11-09",
-  "baseCommit": "49b911307c439b978d674ce2a2c41810de217ff5",
+  "baseCommit": "d6ee99d413576df02bbe7ccfa9dd63ed3fcbb670",
   "phases": [
     {
       "id": 0,
@@ -219,16 +219,22 @@
         "GODSEED/scripts/generate-glade-art.mjs",
         "GODSEED/tests/echo.test.ts",
         "GODSEED/tests/echo.spec.ts",
-        "GODSEED/docs/evidence/session22/README.md"
+        "GODSEED/docs/evidence/session22/README.md",
+        "GODSEED/docs/evidence/session25/verification.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json",
+        "GODSEED/docs/evidence/session25/combined-witnesses.json"
       ],
-      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน; รอบ16 core/manual-file regression93ผ่าน รอเฉพาะphysicalSafari/iOS/Android SAVE-011/012 จัดblockedเพื่อไม่ให้คิวกลับมาทำcoreซ้ำ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน",
+      "evidence": "Manual-only code/Unit115/focused15ผ่าน แต่mobilephysicaldownload/uploadยังin_progressตามSAVE-011/012; FND-005เปิดเกณฑ์ใหม่ตามOwner V2 ไม่ใช้DONEระบบautosaveเก่า; PRCI42113575343/mainCI42116389685/local85ผ่าน, actualpublicmanual/nativepicker/roundtrip/emptyreload/audit0ผ่าน; รอบ16 core/manual-file regression93ผ่าน รอเฉพาะphysicalSafari/iOS/Android SAVE-011/012 จัดblockedเพื่อไม่ให้คิวกลับมาทำcoreซ้ำ; Session22 candidate0.12.0:19newnodes47choices รวม81/232, actual reducer witnesses81nodes/232choices (178with state delta, notdistinctendings),5Questcontracts,4explicitchapterbatches,8stages/6fixedmaps,234recipesunchanged;B04 76HP/11power/LIGHTweakness/repeatcore16/firstlisten1turn/EIRAtrust2+successfulWindflee/firstwinCORE_ECHO+20XP;87PNGbyteidenticalreproduction/old80unchanged;Unit240/Content2/Graph19/Focused7/type/lint/buildผ่าน Full147/CI/publicรอตรวจจริง;ManualRAM/File2/State2คงเดิมและlegacy0.11.1capturedfromactualpublicUIbeforedeploy; Finalfreeze:แก้object-state mismatchของกิ่งไม้และWINDstage-targetด้วยeffectTargetที่ตรวจreferenceได้;8newPNG/88reproexact/242unit/20graph/Focused8ผ่าน Source238candidateFull147หยุด59pass+1interrupted/PRCI42362726203cancelledเพื่อรันFull148ใหม่ ไม่อ้างcandidateครบ; Releaseproofปัจจุบัน:source355ef93/PR22/merge5964756;localFull14828.6m/PRCI42363869084Full14825.4mผ่าน;actualpublic0.12legacy4versions/statehashเทียบlocalตรง/10emulatedviewports/earnedECHOcraft+damage/nativefiles/77versionedPNG+JSsha4db52f4b/0StorageUploadReferenceConsoleErrorsผ่าน;MainCI42365860406ยังรอ ไม่รับรองphysicalhardware/finalHD;Hotfix0.12.1พบcoldimportEIRAfallbackผิดตัวหลัง0.12publicproof จึงเพิ่มrequiredActorloading+coldfile+retrytestและเก็บredจริง ไม่ใช้148เก่าแทน149ของpatch;Unit244/Focus15+coldretry1ผ่าน;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "RAM only; explicit .godseed export/import/preview/validation/migration; safe-boundary controls/dirty-exit guard; no persistent progress or save upload; mobilebrowser QA ตามSAVE tasks โดยhardwareแยกQA-009",
       "legacyIds": [
         "GS-005",
         "GS-035"
       ],
       "scope": "v1",
-      "reviewed": "2026-11-07",
+      "reviewed": "2026-11-09",
       "subtasks": [
         {
           "id": "SAVE-001",
@@ -1714,9 +1720,13 @@
         "GODSEED/tests/alchemist.test.ts",
         "GODSEED/tests/alchemist.spec.ts",
         "GODSEED/docs/evidence/session25/verification.json",
-        "GODSEED/docs/evidence/session25/combined-witnesses.json"
+        "GODSEED/docs/evidence/session25/combined-witnesses.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json"
       ],
-      "evidence": "234finite single-targetfixtureผ่าน; mastery/party/multitargetไม่มี;Session24ผลปิดรอบ0.14: source3bb3915/PR25/merge7394838;273unit/2content/24graph/10roadmap/type/lint/build/manual/refPASS;localFull165PASS32.0mและPRCI42470656350Full165PASS28.5m. Actualpublished0.14native0.13Stateexact/สามผลป่า/pause-resume-revisit/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/88versionedPNG+JSexact/0StorageUploadReferenceConsoleErrorsPASS. Witness127nodes340choices260state-deltaและ234สูตรจากวัตถุดิบจริง. MainCI42472995227ยังin_progress ไม่อ้างPASS. ARC2เป็นเพียงตอนเปิด/finalHD/hardware/FPS/humanfunยังไม่ปิด.;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;ตรวจ2026-11-09:MainCI42472995227จบแล้ว165PASS30.5m/Build+DeploySUCCESS ดูsession25/prior-main-ci.txt",
+      "evidence": "234finite single-targetfixtureผ่าน; mastery/party/multitargetไม่มี;Session24ผลปิดรอบ0.14: source3bb3915/PR25/merge7394838;273unit/2content/24graph/10roadmap/type/lint/build/manual/refPASS;localFull165PASS32.0mและPRCI42470656350Full165PASS28.5m. Actualpublished0.14native0.13Stateexact/สามผลป่า/pause-resume-revisit/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/88versionedPNG+JSexact/0StorageUploadReferenceConsoleErrorsPASS. Witness127nodes340choices260state-deltaและ234สูตรจากวัตถุดิบจริง. MainCI42472995227ยังin_progress ไม่อ้างPASS. ARC2เป็นเพียงตอนเปิด/finalHD/hardware/FPS/humanfunยังไม่ปิด.;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;ตรวจ2026-11-09:MainCI42472995227จบแล้ว165PASS30.5m/Build+DeploySUCCESS ดูsession25/prior-main-ci.txt;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "category/power/MP/status/ward/multi-targetตามspec mastery0–3มีearnedupgrade/migrationtests",
       "legacyIds": [
         "GS-016",
@@ -1791,9 +1801,13 @@
         "GODSEED/tests/alchemist.test.ts",
         "GODSEED/tests/alchemist.spec.ts",
         "GODSEED/docs/evidence/session25/verification.json",
-        "GODSEED/docs/evidence/session25/combined-witnesses.json"
+        "GODSEED/docs/evidence/session25/combined-witnesses.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json"
       ],
-      "evidence": "knownWINDclearmist+sceneVFXจริง; shrineCH1302ยังขาด;Session24candidate0.14:28nodes67choicesรวม127/340/260state-delta/234earnedrecipewitnesses/8quests7batches7encounters9stages7maps;Pip3nodes+ARC2opening25nodes/activechapter-savecontract/itemcosts/Weavercounter/10originalPNG. Unit272/Content2/Graph23/type/lint/build/manual/refPASS;earlierFocused7PASS2.3m/10emulatedviewports;finalFull165/CI/publicยังรอ. WholeARC/finalHD/hardwareยังไม่ปิด.;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.",
+      "evidence": "knownWINDclearmist+sceneVFXจริง; shrineCH1302ยังขาด;Session24candidate0.14:28nodes67choicesรวม127/340/260state-delta/234earnedrecipewitnesses/8quests7batches7encounters9stages7maps;Pip3nodes+ARC2opening25nodes/activechapter-savecontract/itemcosts/Weavercounter/10originalPNG. Unit272/Content2/Graph23/type/lint/build/manual/refPASS;earlierFocused7PASS2.3m/10emulatedviewports;finalFull165/CI/publicยังรอ. WholeARC/finalHD/hardwareยังไม่ปิด.;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "WIND/BLOOM/ECHO/รูนตามcanonicalconditionsมีeffectsจริง fallbackไม่ติด",
       "legacyIds": [
         "GS-026"
@@ -1931,9 +1945,13 @@
         "GODSEED/tests/alchemist.test.ts",
         "GODSEED/tests/alchemist.spec.ts",
         "GODSEED/docs/evidence/session25/verification.json",
-        "GODSEED/docs/evidence/session25/combined-witnesses.json"
+        "GODSEED/docs/evidence/session25/combined-witnesses.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json"
       ],
-      "evidence": "SEAR/WET/WIND/LIGHT/VEIL/wardsมี; multipleenemiesยังไม่มี;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.",
+      "evidence": "SEAR/WET/WIND/LIGHT/VEIL/wardsมี; multipleenemiesยังไม่มี;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "ทุกform/mod/coreและexpiry/immunity/targetsตามspec มีcounterที่เข้าถึงได้",
       "legacyIds": [
         "GS-016",
@@ -2167,9 +2185,13 @@
         "GODSEED/tests/alchemist.test.ts",
         "GODSEED/tests/alchemist.spec.ts",
         "GODSEED/docs/evidence/session25/verification.json",
-        "GODSEED/docs/evidence/session25/combined-witnesses.json"
+        "GODSEED/docs/evidence/session25/combined-witnesses.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json"
       ],
-      "evidence": "5NPCdialogue/trustมี; Sentinel/ทุกmemorytagยังขาด;ขยายเกณฑ์V6 ยังไม่ใช่implementationที่ผ่านแล้ว;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.",
+      "evidence": "5NPCdialogue/trustมี; Sentinel/ทุกmemorytagยังขาด;ขยายเกณฑ์V6 ยังไม่ใช่implementationที่ผ่านแล้ว;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "NPCcanon6ตัวและspecialreactions มีบท/ประวัติไม่ขัดcanonและเวลาไม่blockquest; V6: เป้าหมายNPCสำคัญ30คนขึ้นไปมีบุคลิก/เป้าหมาย/กิจกรรม/ความทรงจำ/ทางเลือกและผลจริง;5NPCปัจจุบันไม่เท่ากับครบ30",
       "legacyIds": [
         "GS-011",
@@ -3225,9 +3247,13 @@
         "GODSEED/tests/alchemist.test.ts",
         "GODSEED/tests/alchemist.spec.ts",
         "GODSEED/docs/evidence/session25/verification.json",
-        "GODSEED/docs/evidence/session25/combined-witnesses.json"
+        "GODSEED/docs/evidence/session25/combined-witnesses.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json"
       ],
-      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.",
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "มีวิธีเริ่ม/ความสามารถ/ข้อจำกัด/กิจกรรม/NPC/แหล่งวัตถุดิบ/การฝึก/เหตุการณ์/ตัวเลือก/จุดเปลี่ยน/ผลmainstory/บทสรุปครบ;เอกลักษณ์คือเตรียมวัตถุดิบและปรับพฤติกรรมสูตร;ทดสอบอย่างน้อยหนึ่งrouteที่เล่นต่างจากสายอื่นจริง",
       "legacyIds": [],
       "scope": "v1",
@@ -3581,9 +3607,13 @@
         "GODSEED/tests/alchemist.test.ts",
         "GODSEED/tests/alchemist.spec.ts",
         "GODSEED/docs/evidence/session25/verification.json",
-        "GODSEED/docs/evidence/session25/combined-witnesses.json"
+        "GODSEED/docs/evidence/session25/combined-witnesses.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json",
+        "GODSEED/docs/evidence/session25/public-core.json"
       ],
-      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว;Session24candidate0.14:28nodes67choicesรวม127/340/260state-delta/234earnedrecipewitnesses/8quests7batches7encounters9stages7maps;Pip3nodes+ARC2opening25nodes/activechapter-savecontract/itemcosts/Weavercounter/10originalPNG. Unit272/Content2/Graph23/type/lint/build/manual/refPASS;earlierFocused7PASS2.3m/10emulatedviewports;finalFull165/CI/publicยังรอ. WholeARC/finalHD/hardwareยังไม่ปิด.;Session24ผลปิดรอบ0.14: source3bb3915/PR25/merge7394838;273unit/2content/24graph/10roadmap/type/lint/build/manual/refPASS;localFull165PASS32.0mและPRCI42470656350Full165PASS28.5m. Actualpublished0.14native0.13Stateexact/สามผลป่า/pause-resume-revisit/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/88versionedPNG+JSexact/0StorageUploadReferenceConsoleErrorsPASS. Witness127nodes340choices260state-deltaและ234สูตรจากวัตถุดิบจริง. MainCI42472995227ยังin_progress ไม่อ้างPASS. ARC2เป็นเพียงตอนเปิด/finalHD/hardware/FPS/humanfunยังไม่ปิด.;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;ตรวจ2026-11-09:MainCI42472995227จบแล้ว165PASS30.5m/Build+DeploySUCCESS ดูsession25/prior-main-ci.txt",
+      "evidence": "ข้อกำหนด V6 เป็นแผนงาน ยังไม่มี implementation/ผลทดสอบสำหรับเกณฑ์นี้ ห้ามนับสเปกว่าเกมสร้างแล้ว;Session24candidate0.14:28nodes67choicesรวม127/340/260state-delta/234earnedrecipewitnesses/8quests7batches7encounters9stages7maps;Pip3nodes+ARC2opening25nodes/activechapter-savecontract/itemcosts/Weavercounter/10originalPNG. Unit272/Content2/Graph23/type/lint/build/manual/refPASS;earlierFocused7PASS2.3m/10emulatedviewports;finalFull165/CI/publicยังรอ. WholeARC/finalHD/hardwareยังไม่ปิด.;Session24ผลปิดรอบ0.14: source3bb3915/PR25/merge7394838;273unit/2content/24graph/10roadmap/type/lint/build/manual/refPASS;localFull165PASS32.0mและPRCI42470656350Full165PASS28.5m. Actualpublished0.14native0.13Stateexact/สามผลป่า/pause-resume-revisit/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/88versionedPNG+JSexact/0StorageUploadReferenceConsoleErrorsPASS. Witness127nodes340choices260state-deltaและ234สูตรจากวัตถุดิบจริง. MainCI42472995227ยังin_progress ไม่อ้างPASS. ARC2เป็นเพียงตอนเปิด/finalHD/hardware/FPS/humanfunยังไม่ปิด.;Session25 candidate0.15:25nodes63choices→152/403;295actual state-delta choice witnesses/234earnedrecipes;Tala6thNPC/Alchemist3rdintroPath/9quests/8batches. ActualWaterRingHeal lesson, real training certification, once-per-battle Distill consumes potion/heals12+MP6/clearsSEAR+VEIL/normal enemy turn. Three prior forest outcomes×delivery-or-teaching/pause/recall/giftonce. 3originalPNG/102reproexact/old99unchanged;293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3m after cauldron/station fixes. FinalFull170/PRCI/public0.15PENDING. WholeLifePath/ARC2/finalHD/hardware not accepted.;ตรวจ2026-11-09:MainCI42472995227จบแล้ว165PASS30.5m/Build+DeploySUCCESS ดูsession25/prior-main-ci.txt;Session25 final0.15:source d6ee99d/PR26/merge728183f. 293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;localFull170PASS36.0m/PRCI42595548362Full170PASS28.5m. Actualnativepublished0.14Stateexact→course/training/two delivery conclusions→actualB02VEILcleanse/used-turnfile/return;public0.15sameStateSHA as local/tenChromiumviewports/JS+91versionedPNGexact/0StorageUploadReferenceConsoleErrorsPASS. Pages42600318779SUCCESS;Main42600319999duplicate still pending at receipt, not claimedPASS. 152nodes403choices295state-deltawitnesses/234recipes/6NPC3introPaths9quests/102originalPNG(old99unchanged). WholePath/ARC2/finalHD/hardware remain open.",
       "acceptance": "มีต้น/ทางเลือกสำคัญ/ระบบเกม/จุดเปลี่ยน/บทสรุปย่อยและเส้นทางเข้าถึงจริง เชื่อมARCก่อนและผลเก่าชัดเจน;ป่า/ต้นไม้ ความทรงจำ/เวทสิ่งแวดล้อม/สถานที่ลับ/ผลทางเลือกเก่า;มีstatefulplaythrough/choiceeffects/cinematic/saveพร้อม ไม่ถือจำนวนNodeอย่างเดียวว่าเสร็จ",
       "legacyIds": [],
       "scope": "v1",
@@ -3979,7 +4009,7 @@
         "mobile": "in_progress",
         "ready": "in_progress"
       },
-      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก; รอบ16 เริ่มแปลงฉากใหม่ตามReference05จริง บ้านหลังคาม่วง/ถนนหิน/ซุ้ม/หม้อยา/สมุนไพรแยกเลเยอร์ อ่านแผนที่เดียวกับDirectorและตรวจ9Colliders Focus20ผ่าน ยังเป็นต้นแบบไม่ครบfinalHD/mobilehardware; local/PR/main93/Build/Deploy และ actualpublicสวนใหม่/49PNG/JS/ไฟล์ผ่าน ยังไม่finalHDหรือครบphysicalmobile;Session21ใช้Anchorจริงกับบทเรียนพิพ/มาเรน เพิ่มเครื่องหมายเส้นทางและรูปรากตามสถานะ/รดน้ำตรงแปลง+skip ต้นแบบทั้งฉากยังไม่ครบfinalquality/hardware",
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้; รอบ14 เริ่มส่วนย่อยแปลงสมุนไพรต้นฉบับ/ท่ารดน้ำ/ทางอ้อม/ดอกบานและความทรงจำใน Stage garden เดิม Browser7 ผ่าน แต่ยังไม่มีอาคารและแผนที่ครบตาม Reference05 จึงไม่ถือว่าฉากแปลงเสร็จหรือ ready; Session15 Maren original8frames/bench-listening/file-owned-memoryผ่านactualpublicและ5viewport ยังไม่ใช่Reference05ครบฉาก; รอบ16 เริ่มแปลงฉากใหม่ตามReference05จริง บ้านหลังคาม่วง/ถนนหิน/ซุ้ม/หม้อยา/สมุนไพรแยกเลเยอร์ อ่านแผนที่เดียวกับDirectorและตรวจ9Colliders Focus20ผ่าน ยังเป็นต้นแบบไม่ครบfinalHD/mobilehardware; local/PR/main93/Build/Deploy และ actualpublicสวนใหม่/49PNG/JS/ไฟล์ผ่าน ยังไม่finalHDหรือครบphysicalmobile;Session21ใช้Anchorจริงกับบทเรียนพิพ/มาเรน เพิ่มเครื่องหมายเส้นทางและรูปรากตามสถานะ/รดน้ำตรงแปลง+skip ต้นแบบทั้งฉากยังไม่ครบfinalquality/hardware;Session25:originalTala/fieldkit/cauldron240170/standingkit_front139239/class25nodes63choices/full170+native14+public15/10emulatedviewportsPASS. Existing99PNGunchanged;wholeHDscene/hardware not accepted.",
       "files": [
         "assets/reference/godseed/references/05_elder_herb_garden.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
@@ -3991,7 +4021,11 @@
         "GODSEED/tests/herb-garden.spec.ts",
         "GODSEED/docs/evidence/session16/README.md",
         "GODSEED/src/content/life-story.ts",
-        "GODSEED/tests/life-paths.spec.ts"
+        "GODSEED/tests/life-paths.spec.ts",
+        "GODSEED/docs/evidence/session25/verification.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },
@@ -4009,7 +4043,7 @@
         "mobile": "done",
         "ready": "in_progress"
       },
-      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้;Session24candidate0.14:28nodes67choicesรวม127/340/260state-delta/234earnedrecipewitnesses/8quests7batches7encounters9stages7maps;Pip3nodes+ARC2opening25nodes/activechapter-savecontract/itemcosts/Weavercounter/10originalPNG. Unit272/Content2/Graph23/type/lint/build/manual/refPASS;earlierFocused7PASS2.3m/10emulatedviewports;finalFull165/CI/publicยังรอ. WholeARC/finalHD/hardwareยังไม่ปิด.;Session24ผลปิดรอบ0.14: source3bb3915/PR25/merge7394838;273unit/2content/24graph/10roadmap/type/lint/build/manual/refPASS;localFull165PASS32.0mและPRCI42470656350Full165PASS28.5m. Actualpublished0.14native0.13Stateexact/สามผลป่า/pause-resume-revisit/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/88versionedPNG+JSexact/0StorageUploadReferenceConsoleErrorsPASS. Witness127nodes340choices260state-deltaและ234สูตรจากวัตถุดิบจริง. MainCI42472995227ยังin_progress ไม่อ้างPASS. ARC2เป็นเพียงตอนเปิด/finalHD/hardware/FPS/humanfunยังไม่ปิด. structure/Collision/Anchorพร้อมเฉพาะแผนที่ถนนที่สร้างแล้วและผ่านทดสอบ;mobileหมายถึงChromiumจำลองเท่านั้น เลเยอร์/ท่า/เหตุการณ์/เอฟเฟกต์/readyยังต้องขัดเกลาเป็นฉากHDฉบับสมบูรณ์.",
+      "evidence": "ภาพเจ้าของพร้อมและเปิด Contact Sheet แล้ว; การแปลงเป็นสถานที่ตาม reference นี้ยังไม่เริ่ม ไม่มีพิกัด gameplay จากภาพอ้างอิง; เกมเดิมมีฉากเกี่ยวข้องบางส่วน แต่ยังไม่ใช่การแปลง reference นี้;Session24candidate0.14:28nodes67choicesรวม127/340/260state-delta/234earnedrecipewitnesses/8quests7batches7encounters9stages7maps;Pip3nodes+ARC2opening25nodes/activechapter-savecontract/itemcosts/Weavercounter/10originalPNG. Unit272/Content2/Graph23/type/lint/build/manual/refPASS;earlierFocused7PASS2.3m/10emulatedviewports;finalFull165/CI/publicยังรอ. WholeARC/finalHD/hardwareยังไม่ปิด.;Session24ผลปิดรอบ0.14: source3bb3915/PR25/merge7394838;273unit/2content/24graph/10roadmap/type/lint/build/manual/refPASS;localFull165PASS32.0mและPRCI42470656350Full165PASS28.5m. Actualpublished0.14native0.13Stateexact/สามผลป่า/pause-resume-revisit/WaterVFXตรงราก+scrollคืน/Weavercounter/10Chromiumจำลอง/88versionedPNG+JSexact/0StorageUploadReferenceConsoleErrorsPASS. Witness127nodes340choices260state-deltaและ234สูตรจากวัตถุดิบจริง. MainCI42472995227ยังin_progress ไม่อ้างPASS. ARC2เป็นเพียงตอนเปิด/finalHD/hardware/FPS/humanfunยังไม่ปิด. structure/Collision/Anchorพร้อมเฉพาะแผนที่ถนนที่สร้างแล้วและผ่านทดสอบ;mobileหมายถึงChromiumจำลองเท่านั้น เลเยอร์/ท่า/เหตุการณ์/เอฟเฟกต์/readyยังต้องขัดเกลาเป็นฉากHDฉบับสมบูรณ์.;Session25:originalTala/fieldkit/cauldron240170/standingkit_front139239/class25nodes63choices/full170+native14+public15/10emulatedviewportsPASS. Existing99PNGunchanged;wholeHDscene/hardware not accepted.",
       "files": [
         "assets/reference/godseed/references/06_forest_road.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
@@ -4024,7 +4058,11 @@
         "GODSEED/docs/evidence/session24/node-contracts.json",
         "GODSEED/docs/evidence/session24/combined-witnesses.json",
         "GODSEED/docs/evidence/session24/public-revisit-record-390.png",
-        "GODSEED/docs/evidence/session24/public-water-visible-390.png"
+        "GODSEED/docs/evidence/session24/public-water-visible-390.png",
+        "GODSEED/docs/evidence/session25/verification.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },
@@ -4063,7 +4101,7 @@
         "mobile": "done",
         "ready": "in_progress"
       },
-      "evidence": "รอบ18ต้นแบบReference08:วาด3layers/หม้อ/21icons/ท่ายกกล่อง/ปรุงหันเหนือจากmanifest ใช้Map11Anchor10links7ColliderกับCSDจริง;Unit134/Focus20บน5viewportผ่านรวมfallback/filecheckpoint/skip/สูตรจริง;MobileหมายถึงChromiumจำลอง ไม่ใช่physical;โครงสร้าง/Collisionผ่านเฉพาะต้นแบบ งานภาพ/บท/ทุกท่าทั้งฉากยังin_progress; Actualpublic0.8.0 core/workshop/UI5ผ่านรวมtouch/keyboardและfileanchors ไม่มีhorizontaloverflow/normalconsoleerror;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน",
+      "evidence": "รอบ18ต้นแบบReference08:วาด3layers/หม้อ/21icons/ท่ายกกล่อง/ปรุงหันเหนือจากmanifest ใช้Map11Anchor10links7ColliderกับCSDจริง;Unit134/Focus20บน5viewportผ่านรวมfallback/filecheckpoint/skip/สูตรจริง;MobileหมายถึงChromiumจำลอง ไม่ใช่physical;โครงสร้าง/Collisionผ่านเฉพาะต้นแบบ งานภาพ/บท/ทุกท่าทั้งฉากยังin_progress; Actualpublic0.8.0 core/workshop/UI5ผ่านรวมtouch/keyboardและfileanchors ไม่มีhorizontaloverflow/normalconsoleerror;MainCI42225430490 full113/Build/Deployผ่าน;post-Actions59PNG+JSผ่าน;Session25:originalTala/fieldkit/cauldron240170/standingkit_front139239/class25nodes63choices/full170+native14+public15/10emulatedviewportsPASS. Existing99PNGunchanged;wholeHDscene/hardware not accepted.",
       "files": [
         "assets/reference/godseed/references/08_spell_workshop.webp",
         "assets/reference/godseed/IMPORT_PROVENANCE.json",
@@ -4075,7 +4113,11 @@
         "GODSEED/scripts/generate-workshop-art.mjs",
         "GODSEED/tests/workshop.spec.ts",
         "GODSEED/docs/evidence/session18/README.md",
-        "GODSEED/docs/evidence/session18/public-layout.json"
+        "GODSEED/docs/evidence/session18/public-layout.json",
+        "GODSEED/docs/evidence/session25/verification.json",
+        "GODSEED/docs/evidence/session25/pr-ci.json",
+        "GODSEED/docs/evidence/session25/public-alchemist.json",
+        "GODSEED/docs/evidence/session25/public-layouts.json"
       ],
       "acceptance": "ครบโครงสร้าง/ชั้นภาพ/ทางเดินปลอดภัย/ทิศและท่าตามบท/เอฟเฟกต์เฉพาะสถานที่ ผ่าน browser mobile และ reviewคุณภาพฉากเทียบreference; hardwareยังติด QA-009 ไม่ถือ conceptพร้อม=ฉากเสร็จ"
     },

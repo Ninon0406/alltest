@@ -1,3 +1,9 @@
+## 0.15.0 — release verification / 2026-11-09
+
+Source d6ee99d/PR26/merge728183f: local170/CI170/unit293/actualnative0.14/public0.15/10emulatedviewports/JS+91versionedPNGผ่าน. ดู [รายงานรอบ25](evidence/session25/REPORT_TH.md). คงState2/File2/234recipes/RAM-onlyManualSave;ภาพยังoriginalpixelstudyและphysicalhardwareยังไม่ทดสอบ. Candidate notesด้านล่างเป็นประวัติ มิใช่สถานะรอปัจจุบัน
+
+---
+
 ## 0.15 compatibility addition
 
 File2/State2 unchanged. TALA is a validated optional NPC entry and ALCHEMIST/DISTILL are earned path references. Optional battle.pathActions.distilled:true is accepted only with earned rank-two ability and lp_alchemist_distilled fact; absence remains absent for old files. CH2_ALCHEMIST_RETURN uses existing CHAPTER_2 and optional batch checkpoint metadata. Learn/certification/support-tested facts are checked against actual prerequisites/known WaterRingHeal. Native0.14 captured from actual published UI on2026-11-09 (session25/legacy-014-capture.json); private bytes remain/tmp, candidate native import proof pending. No browser persistent state, save uploads or automatic recovery introduced.

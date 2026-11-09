@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-09T10:27:14Z",
+  "pagesRun": 42600318779,
+  "pagesResult": "SUCCESS",
+  "htmlEntry": "assets/index-DJlVOoeq.js",
+  "initialProbe": "Old014 HTML while deployment was still in progress. Bounded propagation watcher stopped before deployment completed; it did not run public gameplay tests. Public tests started only after new entry was actually visible."
+}

@@ -1,0 +1,128 @@
+{
+  "result": "PASS",
+  "url": "http://127.0.0.1:4205/",
+  "at": "2026-11-09T10:20:56.784Z",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "input": "touch",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "input": "keyboard",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "input": "keyboard",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "input": "keyboard",
+      "coldTalaExactFile": true,
+      "threePathCards": true,
+      "usedDistillDisabled": true,
+      "persistentStorageCalls": 0,
+      "saveUploads": 0,
+      "referenceRequests": 0,
+      "consoleErrors": []
+    }
+  ],
+  "hardware": "NOT_TESTED"
+}

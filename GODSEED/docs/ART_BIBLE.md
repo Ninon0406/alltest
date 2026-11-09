@@ -1,3 +1,9 @@
+## 0.15.0 — release verification / 2026-11-09
+
+Source d6ee99d/PR26/merge728183f: local170/CI170/unit293/actualnative0.14/public0.15/10emulatedviewports/JS+91versionedPNGผ่าน. ดู [รายงานรอบ25](evidence/session25/REPORT_TH.md). คงState2/File2/234recipes/RAM-onlyManualSave;ภาพยังoriginalpixelstudyและphysicalhardwareยังไม่ทดสอบ. Candidate notesด้านล่างเป็นประวัติ มิใช่สถานะรอปัจจุบัน
+
+---
+
 ## Session25 — art-v18 original studies
 
 Original Tala128×144 atlas (32×48 cells, foot44; idle/talk/show_recipe), field-kit32×48 at forest139,203 with foot44/48 and depth203, Alchemist stage icons192×32 preserving old layout. Tala uses auburn tied hair/teal coat/short trousers/satchel/vial; read scene silhouettes at native320×240 resolution. Kit_front stands at139,239 facing north; old sitting anchor is preserved. Water/Ring/Heal story VFX targets cauldron240,170; Distill targets caster at battlefeet130,239 without a walking craft route. All102PNGs reproduce exactly, old99 unchanged. Provisional original pixel studies, not final-HD acceptance.

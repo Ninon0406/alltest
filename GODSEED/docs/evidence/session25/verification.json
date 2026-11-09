@@ -1,5 +1,5 @@
 {
-  "status": "SOURCE_AND_FOCUSED_PASS_FINAL_FULL170_PENDING",
+  "status": "SOURCE_LOCAL170_CI170_NATIVE14_PUBLIC015_PASS_MAIN_DUPLICATE_PENDING",
   "version": "0.15.0",
   "started": "2026-11-08",
   "resumed": "2026-11-09",
@@ -60,16 +60,77 @@
   "entryJs": "assets/index-DJlVOoeq.js",
   "entryJsSha256": "59da9763a9e929a218d899e3f438992430264a0d5ec3f5a8bd79dd7c4f3989d2",
   "localFull": {
-    "target": 170,
-    "status": "pending"
+    "result": "PASS",
+    "passed": 170,
+    "failed": 0,
+    "duration": "36.0m",
+    "sourceCommit": "d6ee99d413576df02bbe7ccfa9dd63ed3fcbb670",
+    "log": "full-browser.txt"
   },
-  "prCi": "pending",
-  "public015": "pending",
+  "prCi": {
+    "result": "PASS",
+    "runId": 42595548362,
+    "jobId": 129087169218,
+    "browserPassed": 170,
+    "browserMinutes": 28.5,
+    "unitPassed": 293
+  },
+  "public015": {
+    "result": "PASS",
+    "url": "https://ninon0406.github.io/alltest/",
+    "legacyVersion": "0.14.0",
+    "stateExact": true,
+    "sameStateAsLocal": true,
+    "stateSha256": "29f7ea324ccbfee060f5f9dd800179eadb19a87da44cc39a920321c0122ccd48",
+    "jsSha256": "59da9763a9e929a218d899e3f438992430264a0d5ec3f5a8bd79dd7c4f3989d2",
+    "versionedPngExact": 91,
+    "viewports": 10,
+    "storageCalls": 0,
+    "saveUploads": 0,
+    "consoleErrors": 0,
+    "evidence": [
+      "public-alchemist.json",
+      "public-layouts.json",
+      "public-core.json"
+    ]
+  },
   "limitations": [
     "Physical Safari/iPhone/Android/iPad, hardware FPS and human enjoyment NOT_TESTED",
     "Original pixel studies are provisional, not final HD approval",
     "Whole life path, ARC2 and V6 1.0 scope remain incomplete",
     "Private tmp native files and logs from the prior executor were lost; fresh published0.14 recaptured through real UI on Nov9",
     "Existing official-source research is qualified; no new Way playtest/full-novel access claim"
-  ]
+  ],
+  "sourceCommit": "d6ee99d413576df02bbe7ccfa9dd63ed3fcbb670",
+  "pr": 26,
+  "nativeLocal": {
+    "result": "PASS",
+    "legacyVersion": "0.14.0",
+    "stateExact": true,
+    "layouts": 10,
+    "evidence": "local-alchemist.json",
+    "scope": "Actual published14 file through browser UI, not forged fixture; care legacy route with both delivery conclusions. Full suite covers all three forest branches."
+  },
+  "mergeCommit": "728183fb0198cf4cc09cfb356a625cd4d38fa778",
+  "verifiedAt": "2026-11-09T10:30:31.819109+00:00",
+  "pages": {
+    "id": 42600318779,
+    "html_url": "https://github.com/Ninon0406/alltest/actions/runs/42600318779",
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "728183fb0198cf4cc09cfb356a625cd4d38fa778",
+    "created_at": "2026-11-09T10:21:45Z",
+    "updated_at": "2026-11-09T10:27:03Z",
+    "checkedAt": "2026-11-09T10:30:31.819109+00:00"
+  },
+  "mainCi": {
+    "id": 42600319999,
+    "html_url": "https://github.com/Ninon0406/alltest/actions/runs/42600319999",
+    "status": "in_progress",
+    "conclusion": null,
+    "head_sha": "728183fb0198cf4cc09cfb356a625cd4d38fa778",
+    "created_at": "2026-11-09T10:21:46Z",
+    "updated_at": "2026-11-09T10:21:55Z",
+    "checkedAt": "2026-11-09T10:30:31.819109+00:00"
+  }
 }

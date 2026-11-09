@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-09",
+  "id": 42472995227,
+  "status": "completed",
+  "conclusion": "success",
+  "headSha": "73948389c30daa4be0bcc8165396cdd08cd7135a",
+  "url": "https://github.com/Ninon0406/alltest/actions/runs/42472995227",
+  "jobs": [
+    {
+      "id": 128707935853,
+      "name": "build",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-08T10:48:47Z",
+      "completed_at": "2026-11-08T11:20:53Z"
+    },
+    {
+      "id": 128715309473,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-08T11:20:57Z",
+      "completed_at": "2026-11-08T11:21:06Z"
+    }
+  ],
+  "browser": {
+    "passed": 165,
+    "minutes": 30.5,
+    "evidence": "prior-main-ci.txt"
+  }
+}

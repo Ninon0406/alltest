@@ -52,3 +52,20 @@ For each batch, verify:
 8. Record source SHA, actual results and screenshots. Regenerate the master roadmap from `docs/roadmap.json` and append the development log. Keep unverified hardware/quality gates open.
 
 Bounded search witnesses prove only the paths actually replayed. Browser emulation is not physical Safari/Android or an FPS measurement. Keep private `.godseed` bytes in temporary local files; commit only test scripts, hashes and evidence metadata.
+
+## Session25 — named learned recipes and finite mentor courses
+
+A story demonstration can now require an exact existing recipe instead of any spell of the same core:
+
+```ts
+when: [{kind:'knownSpell', id:'SPELL_WATER_RING_HEAL'}],
+spellId: 'SPELL_WATER_RING_HEAL',
+target: 'scene',
+cinematic: {anchor:'craft_front', pose:'cast', effectTarget:'cauldron'}
+```
+
+This does not teach the recipe; the player must actually discover it at the existing crafting UI first. The graph rejects unknown recipe references or a named action without its exact ownership condition. Node contracts retain the exact ID/profile. Bounded exploration additionally tries only named recipes currently requested by choices, avoiding a blind expansion of all recipe combinations. Keep existing core-only actions unchanged.
+
+Use an authored effect target from the current map: Workshop cauldron derives from the actual mouth coordinate240,170. A `scene` target without a compatible anchor previously fell back to the NPC; the browser regression now checks both the exact profile and scene coordinate with visible particles. A standing packing station uses `kit_front` at forest139,239, while the existing sitting anchor keeps its original meaning.
+
+The Alchemist quest is a worked example of source→filter→material→measure→actual recipe demonstration→certification→real training win→practical use→two costed conclusions. Completion is gated by the promised delivery check or actual teaching; a pause/recall is not completion. Add actual reducer witnesses for condition-dependent branches and native-file browser round trips before marking a larger ARC or Life Path complete.
