@@ -1,3 +1,4 @@
+import {alchemistQuests} from './alchemist-quests';
 import type {State} from '../engine/state';
 import {lifeQuests} from './life-quests';
 
@@ -13,6 +14,7 @@ export type QuestDefinition={
 
 /** Contracts for quests implemented in the existing story, not future roadmap quests. */
 export const quests:readonly QuestDefinition[]=[
+ ...alchemistQuests,
  ...lifeQuests,
  {id:'Q_PIP_FRUIT',title:'พิพกับผลไม้ประหลาด',description:'ช่วยเพื่อนตัวเล็ก เลือกว่าจะใช้ผลไม้อย่างไร แล้วกลับไปใช้ชีวิตด้วยกัน',startScene:'S29_PIP_SIDEQUEST',activationFlags:['pip_fruit_started'],completionFlag:'pip_sidequest_complete',rewardGuard:'pip_fruit_helped',rewardChoiceIds:['CH2901','CH2902','CH2903'],rewardText:'ผลไม้ป่า 1–2 ชิ้นตามวิธีช่วย ได้ครั้งเดียว;การแบ่งผลไม้ใช้ของจริงหนึ่งชิ้น',entrySteps:['help'],steps:[
   {id:'help',label:'ช่วยหรือให้พิพหาวิธีหยุดผลไม้',flag:'pip_fruit_helped',scene:'S29_PIP_SIDEQUEST',choices:['CH2901','CH2902','CH2903'],next:['decide']},

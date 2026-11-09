@@ -1,5 +1,5 @@
-export type LifePathId='EXPLORER'|'NATURE_KEEPER';
-export type PathAbilityId='TRAIL_FOCUS'|'ROOT_REFUGE';
+export type LifePathId='EXPLORER'|'NATURE_KEEPER'|'ALCHEMIST';
+export type PathAbilityId='TRAIL_FOCUS'|'ROOT_REFUGE'|'DISTILL';
 export type LifePathStatus='locked'|'available'|'learning'|'rank1'|'rank2';
 type PathState={flags:Record<string,boolean>};
 type Objective={flag:string;label:string};
@@ -9,7 +9,7 @@ export type LifePathDefinition={
  requirements:{start:readonly Objective[];rank1:readonly Objective[]};
  limits:readonly string[];activities:readonly string[];
  ability:{id:PathAbilityId;name:string;description:string};
- iconBase:0|3;
+ iconBase:0|3;iconSheet?:string;
 };
 const opening={flag:'arc1_opening_complete',label:'ผ่านคืนแรกของงานฉลองและรับของขอบคุณในเช้าวันใหม่'};
 /** Only paths with authored introductory lessons are exposed. Future paths are not cards. */
@@ -36,6 +36,20 @@ export const lifePaths:readonly LifePathDefinition[]=[
   activities:['ตามหาต้นทางน้ำ','ดูแลแปลงโดยไม่เร่งการเติบโต','กลับให้อาจารย์ตรวจสิ่งที่พบ','ฝึกตั้งรับอย่างมีจังหวะในโรงช่าง'],
   ability:{id:'ROOT_REFUGE',name:'รากคุ้มภัย',description:'การตั้งรับครั้งแรกในการต่อสู้แต่ละครั้งสร้างโล่อย่างน้อย 8 หน่วย คุ้มกัน 2 จังหวะศัตรู หากมีโล่ที่แรงกว่าอยู่แล้วจะรักษาพลังและเวลาของโล่เดิม'},
   limits:['ต้องเรียนพื้นฐานและผ่านบททดสอบก่อนรับความสามารถ','รากคุ้มภัยเกิดจากการตั้งรับครั้งแรกเท่านั้น ไม่เพิ่มซ้อนทุกเทิร์น','เรียนข้ามสายได้เมื่อจบพื้นฐานขั้น 1 ของสายแรก'],
+ },
+ {
+  id:'ALCHEMIST',name:'นักปรุงเวท',mentor:'ทาลา',mentorId:'TALA',location:'โรงช่างของคุโร',locationId:'spell_workshop',
+  startedFlag:'lp_alchemist_started',rank1Flag:'lp_alchemist_rank1',trialFlag:'lp_alchemist_trial_passed',rank2Flag:'lp_alchemist_rank2',iconBase:0,iconSheet:'assets/art-v18/alchemist-icons.png',
+  requirements:{start:[{flag:'a2_returned',label:'กลับมารายงานการสำรวจถนนป่าครั้งแรก'}],rank1:[
+   {flag:'alc_source_checked',label:'ตรวจแหล่งน้ำกับมาเรน'},
+   {flag:'alc_water_filtered',label:'กรองส่วนผสมตามขั้นตอนที่จดไว้'},
+   {flag:'alc_material_examined',label:'ตรวจและรับวัตถุดิบจริง'},
+   {flag:'alc_measured',label:'กำหนดส่วนผสมให้เทียบผลได้'},
+   {flag:'alc_support_tested',label:'ค้นพบและสาธิตสูตรน้ำ/วงแหวน/ฟื้นพลังจริง'},
+  ]},
+  activities:['ตรวจแหล่งและคุณภาพส่วนผสม','ผสมและตรวจสูตรจริงที่โต๊ะ','ทดสอบการเตรียมตัวกับภูตจำลอง','นำของหรือความรู้กลับไปดูแลผู้เดินทาง'],
+  ability:{id:'DISTILL',name:'กลั่นน้ำค้าง',description:'ใช้น้ำค้างฟื้นพลัง 1 ชิ้น ฟื้น HP 12 และ MP 6 พร้อมล้างเพลิงคุกรุ่นกับม่านพร่า ใช้หนึ่งเทิร์นและได้ครั้งเดียวต่อการต่อสู้ ศัตรูยังลงมือตามจังหวะ'},
+  limits:['ต้องค้นพบสูตร ทดลอง และชนะบททดสอบก่อนรับรองขั้นสอง','ไม่สร้างไอเทมหรือเพิ่มรางวัล และไม่ได้ล้างทุกสถานะ','ถ้าต้องการ HP มากอย่างเดียว ดื่มปกติฟื้น 25 อาจเหมาะกว่า'],
  },
 ];
 

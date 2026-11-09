@@ -5,6 +5,7 @@ import {pathProgress} from './life-paths';
 import {itemNames} from './spells';
 
 export function choiceAvailability(state:State,choice:Choice){
+ if(choice.spellId&&!state.known.includes(choice.spellId))return {enabled:false,reason:choice.lockedHint||'ค้นพบสูตรที่ใช้ในเหตุการณ์นี้ก่อน'};
  const enabled=(!choice.requires||!!state.flags[choice.requires])&&(!choice.when||choice.when.every(condition=>satisfies(state,condition)));
  if(!enabled)return {enabled:false,reason:choice.lockedHint||'คุยกับคุโรก่อน'};
  const missing=Object.entries(choice.costs||{}).find(([id,n])=>(state.inventory[id]||0)<n);
@@ -20,6 +21,8 @@ export const clueCount=(state:State)=>clueFacts.filter(clue=>state.flags[clue.fl
 /** Authored expression of verified facts; revisiting never reruns their effects. */
 export function narrativeText(state:Pick<State,'flags'>,scene:StoryScene){return scene.variants?.find(v=>state.flags[v.flag])?.text??scene.text;}
 export function nextHint(state:State){
+ if(state.flags.lp_alchemist_started&&!state.flags.alc_completed){const next=pathProgress(state).find(p=>p.id==='ALCHEMIST')!;return next.rank===2?'กลับไปหาทาลา แล้วเลือกฝากน้ำค้างหรือสอนวิธีให้ผู้เดินทาง':next.next;}
+ if(state.flags.a2_returned&&!state.flags.lp_alchemist_started)return 'ทาลาผู้ปรุงเวทรอคุยเรื่องถนนป่าที่โรงช่าง เลือกพบผู้ปรุงเวทจากสถานที่อื่นเพื่อเริ่มบทเรียนใหม่';
  if(state.flags.a2_returned)return 'คุณนำเรื่องจากถนนป่ากลับมาแล้ว รากและสิ่งที่เลือกฝากไว้ยังอยู่ กลับไปอ่านบันทึกได้ หรือเรียนเส้นทางชีวิตและทดลองเวทต่อ เนื้อหา ARC 2 ส่วนต่อไปยังพัฒนาอยู่';
  if(state.flags.a2_started)return state.flags.a2_decided?'นำสิ่งที่เลือกฝากไว้กลับไปเล่าให้ลูมิ มาเรน และไอรา แล้วรับวัสดุทดลองที่บทสรุป':'เตรียมเวทคุ้มกันกับคุโร แล้วฟังรากและโพรงในถนนป่า ผู้ถักรากหลีกได้ด้วยการรอ ทุกทางมีทางกลับ';
  if(state.flags.chapter1_complete)return 'บทแรกจบแล้ว คุณกลับไปช่วยหมู่บ้าน เรียนเส้นทางชีวิต หรือทดลองเวทต่อได้ เลือกฟังเสียงตอบจากรากไม้ในสถานที่อื่นเพื่อเริ่มการสำรวจบทที่สอง';
@@ -41,6 +44,8 @@ export function nextHint(state:State){
 }
 /** Authored facts only. Rendering cannot invent progress or grant rewards. */
 export function rememberedLines(state:State,scene:StoryScene):string[]{
+ if(scene.npc==='tala-v18'&&state.flags.alc_completed)return [state.flags.alc_field_delivery?'ทาลาจำได้ว่าคุณฝากน้ำค้างจริงไว้ข้างม้านั่ง และเขียนขอบเขตวิธีใช้ไว้ให้คนถัดไป':'ทาลาเก็บวิธีสอนที่คุณแบ่งปันไว้คู่กับข้อจำกัด น้ำค้างที่เลือกเก็บไม่ได้ถูกนำไปอ้างว่าฝากในป่า'];
+
  if(scene.stage==='forest_road'&&state.flags.a2_pip_trusted)return ['พิพเว้นระยะให้เจ้าของโพรงเหมือนที่คุณเคยเว้นเวลามันแบ่งผลไม้ มิตรภาพครั้งเล็กทำให้มีทางอ้อมที่สงบ'];
  if(scene.id==='S02_HUB'&&state.flags.a2_returned)return [state.flags.a2_resolution_care?'มาเรนวางใบนัดตรวจรากไว้ข้างสมุด ถนนยังมีเขตพักให้ต้นอ่อนฟื้นตัว':state.flags.a2_resolution_path?'ลูมิลองอ่านป้ายที่คุณทำให้คนเดินช้า แล้วแก้ลูกศรในภาพของเธอให้บอกจุดพักด้วย':'ไอราเปิดสำเนาถนนป่าไว้คู่กับวันที่และระดับน้ำ คนถัดมาถามต่อได้โดยไม่ต้องเชื่อคำเดา'];
  if(state.flags.chapter1_complete&&(scene.id==='S02_HUB'||scene.id==='S27_EPILOGUE'))return [state.flags.chapter1_family?'ลูมินั่งฟังยายร้องหลังอาหาร เพลงของบ้านหลังหนึ่งเดินทางต่อผ่านผู้ที่กลับไปฟัง':state.flags.chapter1_community?'วงเพลงข้างน้ำพุเริ่มใหม่ได้เสมอ คนที่มาช้าไม่ต้องร้องแข่งใคร พิพคอยเคาะจังหวะให้':'สำเนาบทเพลงเปิดอยู่พร้อมชื่อผู้เล่า คนถัดมาเพิ่มคำถามได้โดยไม่ลบเสียงของคนก่อน'];

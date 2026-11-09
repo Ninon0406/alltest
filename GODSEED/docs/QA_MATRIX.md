@@ -1,3 +1,9 @@
+## Session25 candidate
+
+Source293unit/25graph PASS;5 focused Chromium cases PASS after real target/station fixes. Ten viewport card/layout checks are browser emulation; physical Safari/iPhone/Android/iPad and hardware FPS NOT_TESTED. Final full170/PR/public0.15 pending; current public remains0.14. Manual files are exported by explicit clicks and imported with preview/confirmation, never uploaded or persisted by the game.
+
+---
+
 # Session24 — final QA receipt
 
 Source3bb3915 / PR25 / merge7394838: local165/16532.0m and PRCI42470656350 165/16528.5m, 273unit/2content/24graph/10roadmap/type/lint/manual/reference/build PASS. Native published0.13 preserves State exactly on local and public0.14; three forest outcomes/objects/revisits, pause in an older hub with active chapter2, earned Water/Ward, real Weaver counter and turn-file roundtrip pass. Ten emulated viewports, 88PNG+entryJS exact and zero progress-storage/save-upload/reference/console errors pass. Main42472995227 remains in_progress separately. Physical devices/FPS/final-HD approval/human enjoyment remain NOT_TESTED. [Receipts](evidence/session24/verification.json).

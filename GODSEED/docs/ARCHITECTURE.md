@@ -1,3 +1,13 @@
+## Session25 — exact recipe story actions / Alchemist
+
+KnownSpell condition validates an existing recipe ID and earned ownership; a named spellId on a choice is checked by the story graph, node contracts and bounded recipe exploration. Old core-only actions retain their API. Scene actions explicitly target workshopScenery.cauldron.mouth (240,170); forest kit_front is a standing road anchor (139,239) distinct from the old sitting anchor. Both use existing movement/collision/depth systems.
+
+Alchemist is appended to the two existing Life Paths. Entry needs actual a2_returned; rank one needs field/lab facts and actual Water/Ring/Heal discovery; rank two needs a genuine BT_TRAINING win. Distill is a transactional combat action consuming one potion, restoring capped HP12/MP6 and removing player SEAR/VEIL once per battle before the ordinary enemy turn. Optional pathActions.distilled has no old-state default; forged usage needs earned ability + actual-use fact. File2/State2 remain stable; TALA is an added validated NPC reference. Progress stays in RAM only.
+
+Actor-aware art loading requests Tala even on cold forest imports. Explicit fallback/retry preserves exact state; original99PNGs remain byte-identical. Three original art-v18 studies add no reference images to production.
+
+---
+
 # 0.14.0 — final verification on source3bb3915
 
 Chapter/batch context, transactional item costs and pure fact-gated narration are implemented and verified:273unit/24graph/localFull165/PRCI165/build plus actual public0.14/native0.13/threeforestoutcomes/tenemulatedviewports. No app changes followed the source freeze. Later edits are receipts and verifier navigation/transport corrections. [Final report](evidence/session24/REPORT_TH.md) supersedes pending candidate notes below. State2/File2/RAM-only progress remain unchanged; no final-HD, physical-device or whole-ARC acceptance is implied.

@@ -1,5 +1,5 @@
 import type {State} from '../engine/state';
-import {battleRules,enemyMaxHp,enemyName,intent,statusSummary,statusHelp,scoutAvailability} from '../systems/combat';
+import {battleRules,enemyMaxHp,enemyName,intent,statusSummary,statusHelp,scoutAvailability,distillAvailability} from '../systems/combat';
 import {hasPathAbility} from '../systems/life-paths';
 import {byId,cores,coreNames} from '../systems/spells';
 
@@ -74,6 +74,10 @@ export function combatPanel(content:HTMLElement,s:State,button:ButtonFactory,act
  const scoutDetail=element('p',scout.reason||'ใช้หนึ่งเทิร์น ไม่โจมตี · เวทโจมตีที่ติดตั้งครั้งถัดไปแม่นยำและผ่านท่าป้องกัน ต้องใช้ใน 2 เทิร์น');
  scoutDetail.id='battle-scout-detail';scoutDetail.className='action-detail';scoutControl.setAttribute('aria-describedby',scoutDetail.id);scoutControl.dataset.pathAbility='TRAIL_FOCUS';
  utilities.append(scoutControl,scoutDetail);
+ const distill=distillAvailability(s),distillControl=button('กลั่นน้ำค้าง · น้ำค้าง 1',()=>action('DISTILL','cast','SPELL_WATER_RING_HEAL'),!distill.enabled);
+ const distillDetail=element('p',distill.reason||'ใช้หนึ่งเทิร์น ฟื้น HP 12 / MP 6 ล้างเพลิงคุกรุ่นและม่านพร่า ศัตรูยังลงมือ ใช้ครั้งเดียวต่อการต่อสู้');distillDetail.id='battle-distill-detail';distillDetail.className='action-detail';distillControl.setAttribute('aria-describedby',distillDetail.id);distillControl.dataset.pathAbility='DISTILL';
+ if(hasPathAbility(s,'DISTILL'))utilities.append(distillControl,distillDetail);
+
  const abilities=element('section');abilities.className='path-abilities';abilities.setAttribute('aria-label','ความสามารถจากเส้นทางชีวิต');
  if(hasPathAbility(s,'TRAIL_FOCUS'))abilities.append(element('p',battle.pathActions?.scouted?'นักสำรวจ · ใช้สำรวจจังหวะในการต่อสู้นี้แล้ว':'นักสำรวจ · สำรวจจังหวะได้ครั้งเดียวในการต่อสู้นี้'));
  if(hasPathAbility(s,'ROOT_REFUGE'))abilities.append(element('p',battle.pathActions?.rootGuardUsed?'ผู้พิทักษ์ธรรมชาติ · ใช้รากคุ้มภัยจากการตั้งรับครั้งแรกแล้ว':'ผู้พิทักษ์ธรรมชาติ · ตั้งรับครั้งแรกสร้างโล่ 8 คุ้มกัน 2 จังหวะศัตรู คงโล่เดิมที่แรงกว่าและไม่ต่อเวลา'));

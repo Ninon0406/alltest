@@ -146,3 +146,9 @@ test('actual catalog and bounded real reducer exploration remain separate proof 
 test('chapter conclusions cannot masquerade as full-game endings or accidental dead ends',()=>{const x=fixture();x.scenes[1].choices.push(c('CHCHAPTER','S24_END_CHAPTER'));x.scenes.push(s('S24_END_CHAPTER',[c('CHRETURN','S02_HUB')],{conclusion:'chapter'}));let r=analyzeStoryGraph(x);assert.equal(r.result,'PASS');assert.equal(r.counts.endings,0);assert.equal(r.counts.chapterConclusions,1);x.scenes[2].choices=[];assert.ok(codes(analyzeStoryGraph(x)).includes('NON_ENDING_DEAD_END'));x.scenes[2].conclusion='typo';assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_CONCLUSION'));});
 
 test('conditional narration must reference a real fact and contain authored text',()=>{const x=fixture();x.scenes[0].variants=[{flag:'invented',text:'A claimed event'}];assert.ok(codes(analyzeStoryGraph(x)).includes('UNPRODUCED_FLAG'));x.engineFlags.push('invented');x.scenes[0].variants[0].text='';assert.ok(codes(analyzeStoryGraph(x)).includes('EMPTY_NARRATIVE'));x.scenes[0].variants[0].text='Verified event';assert.equal(analyzeStoryGraph(x).result,'PASS');});
+
+
+test('exact-recipe story conditions and named VFX require a real learned recipe',()=>{
+ const x=fixture(),c=x.scenes[0].choices[0];c.when=[{kind:'knownSpell',id:'TYPO'}];assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_SPELL_CONDITION'));
+ c.when=[{kind:'knownSpell',id:'SPELL_WIND_ORB_SEEK'}];c.spellId='SPELL_WIND_ORB_SEEK';assert.equal(analyzeStoryGraph(x).result,'PASS');c.when=[];assert.ok(codes(analyzeStoryGraph(x)).includes('INVALID_NAMED_SPELL'));
+});

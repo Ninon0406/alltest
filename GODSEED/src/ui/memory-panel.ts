@@ -20,7 +20,7 @@ export function memoryPanel(host:HTMLElement,state:State){
  if(state.flags.a1_festival_quest_complete)text('p','ภารกิจงานเพลงแรก · สำเร็จ รางวัลร่วมได้รับครั้งเดียวแล้ว');
  if(state.flags.arc1_opening_complete)text('p','บทสรุปช่วงเปิด · '+(state.flags.a1_resolution_care?'ดูแลผู้คน':state.flags.a1_resolution_knowledge?'ถ่ายทอดความรู้':'แบ่งปันเสียงเพลง')+' · ยังไม่ใช่ตอนจบของ GODSEED ทั้งเรื่อง');
  text('h2','ผู้คนที่ร่วมเรื่องราว');
- const names:Record<string,string>={LUMI:'ลูมิ',MAREN:'มาเรน',KORO:'คุโร',PIP:'พิพ',EIRA:'ไอรา'};
+ const names:Record<string,string>={LUMI:'ลูมิ',MAREN:'มาเรน',KORO:'คุโร',PIP:'พิพ',EIRA:'ไอรา',TALA:'ทาลา'};
  for(const [id,value] of Object.entries(state.trust))text('p',`${names[id]||id}: ความไว้วางใจ ${value}`);
  text('h2','ความทรงจำระหว่างทาง');
  for(const line of state.journal.slice(-30))text('p',line);

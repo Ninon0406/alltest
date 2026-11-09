@@ -1,3 +1,11 @@
+## 2026-11-09 — Session25
+
+Build a finite Alchemist teaching/delivery experience after the forest return, preserving both old introductory paths and234recipes. Learn a named existing support recipe instead of gifting an invented spell. Certification requires an actual trial result. Distill trades one potion and a normal turn for a smaller heal plus MP/cleanse; it does not trigger offensive core reactions. Delivery spends a potion while teaching preserves it; either promise must actually be completed before the once-only reward. Prior care/path/record results change observations rather than being rewritten.
+
+Apply only abstract growth principles from qualified research: mentors teach testable limits, skills earn practical uses, prior small decisions persist. No characters/places/story sequences/code/art copied, no new Way gameplay or full-novel access claim. Whole ARC/Life Path acceptance remains open.
+
+---
+
 ## 2026-11-08 — Session24 design and compatibility decisions
 
 1. OwnerV6ให้ARC2เป็นป่า/ความทรงจำ จึงประกาศCHAPTER_2/ARC_02สำหรับช่วงเปิดถนนป่า. แนวหอนาฬิกาดาวเก่าคงเป็นเบาะแส/เนื้อหาอนาคต ไม่ลบcanonหรือย้ายIDฉากที่เผยแพร่แล้ว. CH0211เดิมยังกลับต้นไม้;Pipใช้CHPIP_HUBใหม่

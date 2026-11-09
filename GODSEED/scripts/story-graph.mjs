@@ -88,6 +88,8 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
      if(!lifePathIds.has(condition.id))error('MISSING_LIFE_PATH',ca,'Unknown introductory life path '+condition.id);
     }else if(condition.kind==='trust'){
      if(!catalog.npcIds?.includes(condition.npc)||!Number.isInteger(condition.min)||condition.min< -2||condition.min>5)error('INVALID_TRUST_CONDITION',ca,'Trust needs a known NPC and integer -2..5');
+    }else if(condition.kind==='knownSpell'){
+     if(!(catalog.spells||[]).some(sp=>sp.id===condition.id))error('INVALID_SPELL_CONDITION',ca,'Unknown recipe '+condition.id);
     }else if(condition.kind==='knownCore'){
      if(!cores.has(condition.core))error('INVALID_CORE_CONDITION',ca,'Unknown core '+condition.core);
     }else error('UNKNOWN_CONDITION',ca,'Unsupported condition kind '+condition.kind);
@@ -103,6 +105,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
     if(choice.daily)error('CONFLICTING_REWARD_POLICY',ca,'daily and onceFlag cannot both control a reward');
    }
    if(choice.clearFlags?.some(flag=>choice.flags?.includes(flag)))error('CONFLICTING_FLAGS',ca,'The same choice both clears and sets a flag');
+   if(choice.spellId&&(!(catalog.spells||[]).some(sp=>sp.id===choice.spellId)||!choice.when?.some(c=>c.kind==='knownSpell'&&c.id===choice.spellId)))error('INVALID_NAMED_SPELL',ca,'A named environmental spell needs a real recipe and its exact knowledge condition');
    if(choice.spellCore&&!cores.has(choice.spellCore))error('MISSING_SPELL_CORE',ca,'Unknown environmental spell core');
    if(choice.route&&choice.route!=='craft')error('UNKNOWN_ROUTE',ca,'Unknown UI route '+choice.route);
    if(choice.cinematic){
@@ -185,7 +188,7 @@ export function analyzeStoryGraph(catalog,{start='S00_WAKE',safeHubs=['S02_HUB']
     nodeContracts.push({nodeId:id,chapterId:batch.chapterId,arc:batch.arc,batchId:batch.id,location:scene.staging?.location||scene.stage,stage:scene.stage,
      narrative:{title:scene.title,text:scene.text,variants:scene.variants||[]},entryEffects:scene.entryFlags||[],relevantNPCs:[scene.npc],
      choices:scene.choices.map(c=>({id:c.id,label:c.label,preconditions:{requires:c.requires||null,when:c.when||[],costs:c.costs||{}},
-      characterAction:c.cue,cinematic:c.cinematic||{source:'shared-cue-library',cue:c.cue},stateEffects:{set:c.flags||[],clear:c.clearFlags||[],trust:c.trust||null,trustAmount:c.trustAmount??null,time:c.time||null},
+      characterAction:c.cue,spell:{id:c.spellId||null,core:c.spellCore||null,target:c.target||null},cinematic:c.cinematic||{source:'shared-cue-library',cue:c.cue},stateEffects:{set:c.flags||[],clear:c.clearFlags||[],trust:c.trust||null,trustAmount:c.trustAmount??null,time:c.time||null},
       rewards:c.items||{},rewardPolicy:c.daily?'daily':c.onceFlag||'first-choice',next:c.next,battle:c.battle||null,uiRoute:c.route||null})),nextNodes:[...new Set(scene.choices.map(c=>c.next))]});
    }
    for(const id of batch.entryScenes||[])if(!batch.sceneIds?.includes(id))error('INVALID_BATCH_ENTRY',batch.id,'Entry must be owned by its batch');
@@ -286,7 +289,10 @@ export function exploreRealChoices(catalog,{maxStates=4000,maxMs=12000,seed=1234
    try{const crafted=rt.craft(s,sp.core,sp.form,sp.mod);if(crafted.known.includes(sp.id))recipes.set(sp.id,{from:s.scene,path:[...path,{craft:sp.id}]});}
    catch(e){failures.push({scene:s.scene,recipe:sp.id,message:e.message,path});}
   }
-  // Only one representative craft state expands the queue; every listed recipe above was actually crafted.
+  // Expand exact recipes requested by the current story contract, without exploring all recipe subsets.
+  const neededRecipes=new Set(scene.choices.flatMap(c=>[c.spellId,...(c.when||[]).filter(x=>x.kind==='knownSpell').map(x=>x.id)]).filter(Boolean));
+  for(const sp of craftable.filter(sp=>neededRecipes.has(sp.id)))enqueue(rt.craft(s,sp.core,sp.form,sp.mod),[...path,{craft:sp.id}]);
+  // One starter craft also expands the queue; every listed recipe above was actually crafted.
   if(!s.flags.crafted_first&&craftable.length){
    const sp=craftable.find(sp=>sp.id==='SPELL_WIND_ORB_SEEK')||craftable[0];
    enqueue(rt.craft(s,sp.core,sp.form,sp.mod),[...path,{craft:sp.id}]);

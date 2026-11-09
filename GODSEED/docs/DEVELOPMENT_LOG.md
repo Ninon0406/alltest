@@ -567,3 +567,15 @@ Read-onlyscanพบopening.spec.tsยังมีprivatefocus+globalEnterhelper�
 - Git: source20540b2 + final3bb3915 / PR25 / merge7394838. LegacyPages42472995208SUCCESS. Main42472995227ยัง in_progress ตอนปิดreceipt ไม่อ้างPASS. ไฟล์/ภาพ/รายงานอยู่docs/evidence/session24; private.godseedไม่commit/upload
 - Roadmap: PIPE002DONEตามเกณฑ์contractจริง 27/10924.8%,27/10825.0%เฉพาะ1.0; ARC1wholeacceptance/ARC2ทั้งหมด/finalHD/hardware/FPS/humanfunยังค้าง. ภาพถนนใหม่structure/collision/mobileChromiumdoneเฉพาะต้นแบบที่ตรวจ ไม่ใช่ฉากสมบูรณ์ทุกมิติ
 - รอบถัดไป: ตรวจMainrunก่อน → STO001/ARC001wholeacceptance → ARC2ผลป่า → LifePathsภาคสนาม → MAG006/010compatibility → VIS008/QA003. ไม่มีการพัฒนาข้ามsessionอัตโนมัติ
+
+
+## Session25 — 2026-11-08–09 UTC / candidate0.15.0 — Alchemist return
+
+- เป้าหมาย:LIFE003/ARC002/MAG008/CMB004เป็นหลักสูตรเรียน–ทดสอบ–ช่วยคนที่เล่นจบได้ รักษาเกม/เซฟ/234สูตรเดิม
+- ก่อนเริ่ม:49b9113/public0.14 มี127nodes340choices260state-deltawitnesses/5NPC2introPaths8quests7batches99PNG. ตรวจMainCI42472995227จบ165PASS30.5m/BuildDeploySUCCESS
+- ทำจริง:25nodes63choices→152/403/295state-delta,ทาลาNPCที่6/Alchemistintroที่3/questที่9/batchที่8/3originalPNG→102. WaterRingHealต้องเรียนจริง,สอบBT_TRAININGจริง,Distillใช้ยา1/HP12/MP6/cleanse/กินเทิร์น;ผลป่าเดิม3แบบ×ส่งชุดยาหรือสอน/หยุดกลับมาทำต่อ/ของรางวัลครั้งเดียว
+- ปัญหา/แก้:VFXscenefallbackไปNPCเพราะไม่มีcauldronanchor→เพิ่มtargetจากmouth240170;disabledlabeltestจับข้อความเก่า→prefixแต่ยังassertdisabled;แยกkit_front139239จากoldseatเพื่อยืนจัดยา;rank1resumeไม่ต้องเรียนซ้ำ. Environmentเปลี่ยนNov9ทำ/tmpเก่าหาย→รันchecksและเก็บnativepublic0.14ใหม่จากUIจริง ไม่สร้างเซฟปลอม
+- ผลปัจจุบัน:293unit/2content/25graph/10roadmap/type/lint/build/manual/refPASS;Focused5PASS2.3mหลังtarget/stationfix;actualreducerwitness152nodes403choices234recipes. 102PNGreproexact/old99unchanged. FinalFull170/PRCI/public0.15ยังรอ ไม่อ้างผ่านก่อนผล
+- ยังไม่เสร็จ:ทั้งLifePath/ARC2/ARC1acceptance/ARC3–12/อีก5Paths/advancedmagic/world/economy/15endings/audio/finalHD/physicalSafariAndroidiPad/FPS/humanfun;rawchunkwarning≈1858kBยังเปิด
+- ไฟล์:alchemist-story/quests/life-paths/combat/state/save-file/story/world/workshop-map/forest-road-map/art-assets/generate-alchemist-art+tests;ดูsession25/verification.jsonและREPORT_TH.md
+- ถัดไป:ปิดfull170/CI/native14/publicproofก่อนrelease→STO001/ARC001acceptance→ARC002ต่อ→LifePaths→MAG010/visualmobile. ไม่มีงานอัตโนมัติข้ามsession

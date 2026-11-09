@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "reproducedPngCount": 102,
+  "unchangedBaselinePngCount": 99,
+  "newOriginalPngCount": 3,
+  "generator": "scripts/generate-alchemist-art.mjs",
+  "referencePixelsRead": false
+}

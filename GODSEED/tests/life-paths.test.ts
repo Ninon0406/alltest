@@ -17,7 +17,7 @@ const nature=lifePaths.find(path=>path.id==='NATURE_KEEPER')!;
 
 it('legacy states without life path flags remain rank zero with no abilities',()=>{
  const state=fresh();state.xp=9999;
- expect(pathProgress(state).map(p=>p.rank)).toEqual([0,0]);
+ expect(pathProgress(state).map(p=>p.rank)).toEqual([0,0,0]);
  expect(pathProgress(state).every(p=>p.status==='locked')).toBe(true);
  expect(hasPathAbility(state,'TRAIL_FOCUS')).toBe(false);expect(hasPathAbility(state,'ROOT_REFUGE')).toBe(false);
  expect(pathStartAvailability(state,'EXPLORER').reason).toContain('คืนแรก');
@@ -26,7 +26,7 @@ it('both introductory paths become available after the actual opening completion
  const state=rule({arc1_opening_complete:true});
  expect(pathStartAvailability(state,'EXPLORER').enabled).toBe(true);
  expect(pathStartAvailability(state,'NATURE_KEEPER').enabled).toBe(true);
- expect(pathProgress(state).every(p=>p.status==='available')).toBe(true);
+ expect(pathProgress(state).filter(p=>p.id!=='ALCHEMIST').every(p=>p.status==='available')).toBe(true);expect(pathProgress(state).find(p=>p.id==='ALCHEMIST')!.status).toBe('locked');
 });
 it('the player may resume the current course while cross-learning waits for its foundation',()=>{
  const state=rule({arc1_opening_complete:true,lp_explorer_started:true});
@@ -68,7 +68,7 @@ it('cross-learning preserves the first ability and permits both courses to resum
  const before=structuredClone(state);
  expect(pathStartAvailability(state,'EXPLORER').enabled).toBe(true);
  expect(pathStartAvailability(state,'NATURE_KEEPER').enabled).toBe(true);
- expect(pathProgress(state).map(p=>p.rank)).toEqual([2,0]);
+ expect(pathProgress(state).map(p=>p.rank)).toEqual([2,0,0]);
  expect(hasPathAbility(state,'TRAIL_FOCUS')).toBe(true);expect(hasPathAbility(state,'ROOT_REFUGE')).toBe(false);
  expect(state).toEqual(before);
 });

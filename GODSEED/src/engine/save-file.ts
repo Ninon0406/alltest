@@ -11,7 +11,7 @@ const digest=z.string().regex(/^[a-f0-9]{64}$/);
 const oldEnvelope=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(1),checksum:digest,state:z.unknown()}).strict();
 const fileSchema=z.object({format:z.literal('GODSEED_SAVE'),formatVersion:z.literal(2),gameVersion:z.string().regex(/^\d+\.\d+\.\d+$/),exportedAt:z.iso.datetime(),chapterId:z.string().refine(id=>Object.hasOwn(chapters,id)),checkpoint:z.object({sceneId:z.string(),storyNodeId:z.string(),kind:z.enum(['story_choice','battle_turn']),batchId:z.string().optional()}).strict(),checksum:digest,state:z.unknown()}).strict();
 const choiceIds=new Set(Object.values(scenes).flatMap(s=>s.choices.map(c=>c.id)));
-const npcIds=new Set(['LUMI','MAREN','KORO','EIRA','PIP']);
+const npcIds=new Set(['LUMI','MAREN','KORO','EIRA','PIP','TALA']);
 const statuses=new Set(['SEAR','WET','SWIRL','GROUNDED','GLEAM','VEIL','ROOTED','RESONANCE','RUNE_WARD','TRAIL_FOCUS','GUARDIAN_SEAL']);
 function canonical(value:unknown):string {
  if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';

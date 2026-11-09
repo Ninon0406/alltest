@@ -4,6 +4,7 @@ const image=(key:string,path:string,group:ArtAsset['group']):ArtAsset=>({key,pat
 const sheet=(key:string,path:string,group:ArtAsset['group'],frameWidth=32,frameHeight=48):ArtAsset=>({key,path,group,frame:{frameWidth,frameHeight}});
 /** Static asset URLs only. This catalog and its RAM ledger contain no progress. */
 export const artAssets:readonly ArtAsset[]=[
+ sheet('tala-v18','art-v18/tala.png','workshop'),image('field-kit-v18','art-v18/field-kit.png','forest_road'),image('alchemist-icons-v18','art-v18/alchemist-icons.png','workshop'),
  sheet('root-weaver-v17','art-v17/root-weaver.png','forest_road',64,64),
  image('road-oak-v17','art-v17/road-oak.png','forest_road'),image('road-hollow-v17','art-v17/road-hollow.png','forest_road'),sheet('memory-root-v17','art-v17/memory-root.png','forest_road',72,64),sheet('forest-fruit-v17','art-v17/forest-fruit.png','forest_road',32,32),sheet('road-keepsake-v17','art-v17/road-keepsake.png','forest_road',32,48),
  image('sky','sky.png','shared'),

@@ -1,0 +1,19 @@
+[WebServer] (node:2799) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:2818) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 5 tests using 1 worker
+
+(node:2830) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/5] GODSEED/tests/alchemist.spec.ts:9:1 › 390: three remembered forest routes earn the real alchemist course; delivery and teaching keep their costs and one gift
+[2/5] GODSEED/tests/alchemist.spec.ts:21:1 › 390: the laboratory casts the exact learned Water Ring Heal profile at the cauldron
+[3/5] GODSEED/tests/alchemist.spec.ts:25:1 › 390: actual Distill particles target the player, spend one potion and round-trip the used turn without walking to the cauldron
+[4/5] GODSEED/tests/alchemist.spec.ts:31:1 › 1366: a cold forest checkpoint loads Tala across the workshop asset group and an explicit retry preserves the file state
+[5/5] GODSEED/tests/alchemist.spec.ts:36:1 › alchemist course, three life-path cards and manual file checkpoint fit all ten target viewports
+  5 passed (2.4m)
